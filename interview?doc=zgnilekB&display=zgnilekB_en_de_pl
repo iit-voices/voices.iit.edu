@@ -1,0 +1,2952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Bella Zgnilek; August 4, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-bella-zgnilek-august-4-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Bella Zgnilek; August 4, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=zgnilekB">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=zgnilekB&display=zgnilekB_en_de_pl">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=zgnilekB">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.426" end="x">[In English] This is Spool 22nd. I am interviewing Miss Bella Zgnilek, who lives here in the home for adults on Rue de Patin number 9. Today is Sunday, July 4th. <a class="placename" href="#vothL13">Paris</a>. Now, Bella . . . May I call you by your first name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="31.595" end="x">All right?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="31.942" end="x">All right, Bella. Tell me, what are you doing now in <a class="placename" href="#vothL13">Paris</a>? [This interview proceeds in English unless otherwise indicated.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="35.423" end="x">I am working now with the American <a class="term" href="#vothG_ajdc">Joint</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="39.360" end="x">Yes. Speak slower. You are working for the <a class="term" href="#vothG_ajdc">Joint Distribution Committee</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="44.271" end="x">That's right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="44.618" end="x">Yes. And what are you doing for them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="46.943" end="x">I am in bookkeeping for them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="50.119" end="x">You are doing office work in the English language?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="52.322" end="x">That's right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="53.247" end="x">And where did you learn English?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="54.963" end="x">In school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="55.584" end="x">At school where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="56.783" end="x">Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="57.678" end="x">In what city?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="58.664" end="x"><a class="placename" href="#vothL98">Sosnowiec</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="60.776" end="x">All right. Now, Bella, I want you to tell me right from the start what happened. Where were you when the Germans came to Poland? And then tell me what happened. Don't tell me much what happened to other people, just to you or your family. Go ahead.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="80.732" end="x">In the beginni- . . . in the beginning, when the Germans came in—it was maybe two months after—my brother was out [word not clear] in the town [at] five minutes past seven, and the law was that we had to be on the street only till seven o'clock. The Germans picked him up and then shot him in the night.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="101.969" end="x">Your brother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="102.651" end="x">My brother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="103.211" end="x">What for did they shoot him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="105.049" end="x">Because he . . . there was a law that they have to be . . . people have to be only on the street till si- . . . till seven o'clock.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="112.455" end="x">So it was for infringement of curfew.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="114.901" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="115.522" end="x">All right. Tell me, how large was your family? Who were your family?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="120.798" end="x">Mother, brother, sister, brother-in-law, children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="127.899" end="x">And where was your father?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="129.311" end="x">Dead.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="130.053" end="x">Your father died.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="131.100" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="131.447" end="x">How many children were you in your family, in your own?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="135.171" end="x">Four. Four.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="137.222" end="x">Did you have older brothers and older sisters?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="140.794" end="x">Yes. A married brother, married sister.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="145.096" end="x">Yes. And then did you have younger brothers and sisters?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="147.421" end="x">A younger brother, two years older than me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="150.354" end="x">An older brother . . . than you.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="152.253" end="x">Older than me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="153.117" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="153.646" end="x">And he was shot.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="154.328" end="x">Yes. And you were the youngest in the family?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="156.500" end="x">That's right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="157.212" end="x">You were the youngest in the family. All right. We will now continue telling. Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="163.188" end="x">And after, my brother was sent to the camp, working.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="168.220" end="x">Which brother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="168.993" end="x">My oldest brother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="170.344" end="x">The married brother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="171.543" end="x">The married brother. And he left his wife and his child home.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="176.058" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="179.539" end="x">Oh, after a while, it was a . . . the German picked up all the Jews on one big place, and they made a segregation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="188.953" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="190.578" end="x">And young people they sent to concentration camp, and older people . . . [correction, pertaining to the young people] to working camps, and older people to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="199.292" end="x">Yes. Tell me, how was that? How did they announce that all the Jews should come together? Was that what they called Aussiedlung [expulsion, deportation]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="208.036" end="x">That's right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="209.022" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="209.278" end="x">Then they issued an order that all the Jews assemble [?] in one place, and one day there [?] was the segregation. They took the young people to different camps, working camps, older people to Aussiedlung.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="222.951" end="x">To <a class="placename" href="#vothC4" type="camp">Auschwitz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="224.150" end="x">To <a class="placename" href="#vothC4" type="camp">Auschwitz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="225.075" end="x">And what happened to those other people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="227.278" end="x">What happened to them? They were sent to gas and killed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="231.915" end="x">How did you know that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="234.027" end="x">Because when I have been in the camp, I have been working there at the beginning . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="238.755" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="239.041" end="x">. . . after they sent us into a concentration camp. There were the <a class="term" href="#vothG_ss">SS</a> women and a terrible [word not clear], but before, when we were in working camp, there came some girls, young girls, from <a class="placename" href="#vothC4" type="camp">Auschwitz</a> also for work, and they told us everything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="256.885" end="x">What did they tell you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="258.905" end="x">That they pick up people just from the train, because there are too many to send them to camp. So they pick them just from the train and send them to gas. They didn't tell them that they are sending to kill, but to the bath.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="275.986" end="x">Yes, to a bath. And then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="277.976" end="x">To a bath. And then they closed . . . shut all the doors, and they gassed them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="285.899" end="x">Yes. And then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="287.615" end="x">And then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="289.027" end="x">They . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="290.530" end="x">So they killed all the Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="293.676" end="x">Aha. There were only Jews among them. So, when you came together that . . . that morning to the . . . to the plaza, so what happened to your family then? Were you separated from your family?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="306.863" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="308.031" end="x">Who . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="309.108" end="x">My sister, my brother-in-law with their [?] child, they were freed for the moment and sent back to the town. My mother was sent to Aussiedlung, and me they took to [the] working camp.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="320.134" end="x">Yes. Did you ever hear anything afterwards from your mother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="323.219" end="x">No, nothing. And my sister was sent to Aussiedlung, also to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, in half a year later.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="330.016" end="x">Half a year later.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="331.032" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="331.470" end="x">Well, she was with your brother and their child. What happened . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="334.829" end="x">My brother was sent also to the concentration camp before.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="338.066" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="338.839" end="x">Before me. To a working camp. And I was sent later, after, together with my mother. But my mother to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, and me to a camp. And my sister was for the moment free.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="350.017" end="x">All right. Now what do you know? What happened to your brother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="353.102" end="x">I don't know anything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="354.575" end="x">You don't know anything. What happened to your sister?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="357.265" end="x">I don't know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="358.281" end="x">You don't know. Did you try to find them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="360.910" end="x">Oh, yes. I was in different committees and gave the name of [words not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="368.620" end="x">Yes. But they are not . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="370.732" end="x">I didn't get any news from anybody of them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="373.452" end="x">All right. [Pause.] Now, and you were there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="381.953" end="x"><a class="placename" href="#vothC39" type="camp">Grossrosen</a> outside detail.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="385.099" end="x">And what was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="387.880" end="x">Hm. I have been working in the factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="392.639" end="x">In a factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="393.686" end="x">Beginning.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="394.581" end="x">Yes. All right. Could you describe me a full day in [pause] . . . Go on. Tell me, what have you been doing? Describe the whole day. You have been working in a factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="408.467" end="x">In a fac- . . . in the beginning I have been working in a factory, but as I talk and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="411.583" end="x">Slower.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="411.991" end="x">. . . as I talk and type German, they choose me for the office.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="416.841" end="x">Oh! You type and you talk German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="419.561" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="420.182" end="x">Well, tell me, Bella, what kind of an education did you get, anyway?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="423.845" end="x">Commercial school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="424.953" end="x">Did you graduate from it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="426.547" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="427.271" end="x">How old are you now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="428.324" end="x">Twenty-two.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="429.736" end="x">You are twenty-two. And when they . . . and when they took you, how old were you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="435.347" end="x">Eighteen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="436.059" end="x">Eighteen. And you were through with the school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="438.810" end="x">Not quite through.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="439.826" end="x">Yes. But you were nearly through with . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="441.633" end="x">Nearly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="442.801" end="x">. . . through with the commercial school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="443.391" end="x">That's right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="444.286" end="x">All right. So you knew how to type German, and they took you into the office.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="448.254" end="x">That's right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="449.301" end="x">All right. So tell me, how was it? In the morning, when did you get up?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="453.025" end="x">Seven o'clock in the morning.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="455.167" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="456.001" end="x">When I was working in the factory I had . . . I had to get up four o'clock in the morning.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="461.825" end="x">How would they wake you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="464.058" end="x">[In German] Oh, by the eldest of the Jews. He would say in German, 'Get up.'</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="468.847" end="x">Get up. The eldest of the Jews would say that.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="470.411" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="470.849" end="x">Yes. Did you sleep women and men separately?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="473.417" end="x">[In English] We have been all women.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="476.289" end="x">Only women in the barrack.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="477.092" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="477.348" end="x">All right. So at . . . you would get up at four o'clock in the morning. And then what would come . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="483.019" end="x">And then I went to work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="485.283" end="x">Well, would they count you before?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="487.273" end="x">Yes. It was a <a class="term" href="#vothG_appell">Zaehlappell</a> [count <a class="term" href="#vothG_appell">appell</a>].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="489.658" end="x">A <a class="term" href="#vothG_appell">Zaehlappell</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="489.974" end="x">They took out all . . . all to the court.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="493.729" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="494.624" end="x">And they made a <a class="term" href="#vothG_appell">Zaehlappell</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="496.705" end="x">They counted. Did they . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="498.025" end="x">They counted all of us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="499.680" end="x">And suppose somebody wasn't there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="501.731" end="x">It never was in our camp.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="504.451" end="x">Why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="505.528" end="x">It would be very . . . very bad. They would kill different . . . other girls.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="511.078" end="x">Oh! They would kill other girls?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="512.064" end="x">Of course.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="512.989" end="x">Did that happen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="514.614" end="x">In different camps, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="516.604" end="x">But not in yours.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="517.590" end="x">No, because everybody has been in the camp.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="520.341" end="x">Aha. All right. And then, after the <a class="term" href="#vothG_appell">Zaehlappell</a>, would they give you something to eat?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="528.081" end="x">No, not before . . . at four o' clock in the morning nothing, but at nine o'clock.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="533.174" end="x">At nine o'clock. Where? Where did you eat?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="535.012" end="x">They brought some soup to the factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="536.789" end="x">They brought some soup to the factory. And did they stop working? Did they stop the machines?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="540.331" end="x">Yes. For twenty minutes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="542.138" end="x">And they would give you something . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="543.671" end="x">It was different. Sometimes when the director was in a good mood, he stopped. If not, we had to eat and work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="550.438" end="x">Aha. Yes. And what were you working . . . what [kind of] factory was it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="554.771" end="x">Flax yarn spinnery.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="555.909" end="x">Oh, flax yarn spinnery . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="557.625" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="559.098" end="x">In what city was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="561.057" end="x">In <a class="placename" href="#vothL9">Gabersdorf</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="562.347" end="x"><a class="placename" href="#vothL9">Gabersdorf</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="562.937" end="x">A village.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="563.710" end="x">A village <a class="placename" href="#vothL9">Gabersdorf</a>. Flax yarn spinnery. You were spinning flax.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="567.830" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="568.238" end="x">What were they making there of that yarn?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="574.335" end="x">For uniforms.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="576.112" end="x">For uniforms.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="576.824" end="x">For soldier uniforms.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="577.323" end="x">All right. Then, how late would you work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="582.781" end="x">Twelve hours.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="584.162" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="585.270" end="x">And after, fourteen hours.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="586.773" end="x">Fourteen hours a day.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="587.881" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="588.258" end="x">Would they bring you something to eat in between?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="590.704" end="x">Twelve o'clock again soup.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="592.694" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="593.741" end="x">And that was all.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="596.157" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="596.443" end="x">But weekly we got some bread and some margarine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="602.388" end="x">Some margarine. Now tell me this. What were you eating your soup with? Did you have your plates? Did you have your spoons?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="609.581" end="x">Oh, we got just a plate and a spoon, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="614.340" end="x">They gave it to you, or you had your own? What was it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="618.034" end="x">It was in the beginning that we got it from home.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="621.636" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="622.318" end="x">And they didn't take it away from us. But they took away all our clothes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="627.320" end="x">They took away your clothes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="628.367" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="629.201" end="x">And what did they do with your clothes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="632.043" end="x">We had it from home brought. When we came to the camp we brought with us [our] clothes. But they took it away from us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="638.505" end="x">Aha. All right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="640.160" end="x">They left us only two things.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="641.785" end="x">Yes? All right. You were through with work at what time in the evening?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="650.734" end="x">It depends on the shift.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="652.480" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="653.009" end="x">Sometimes twelve o'clock at night, sometimes four o'clock in the afternoon.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="656.581" end="x">You were in the morning shift?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="658.084" end="x">Different. One week in one . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="661.778" end="x">The other week in the other.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="662.990" end="x">Other.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="663.683" end="x">All right. So at four o'clock when you were through with your shift, what would you do then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="667.885" end="x">Oh, then we had other work. We had to dig [?] potatoes. We had to do . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="672.911" end="x">In the field?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="673.604" end="x">In the cellar [?]. In the field.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="674.968" end="x">Yes? And?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="678.102" end="x">Oh well, we had . . . and we had to take turns . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="682.182" end="x">What is that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="682.814" end="x">It was called du jour. To clean the barracks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="685.460" end="x">To clean the barracks. Yes? And then what time did you . . . Did you have some books to read?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="691.463" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="692.308" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="692.757" end="x">We weren't allowed to.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="693.663" end="x">Were you allowed to get together to talk to each other, to sing?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="698.628" end="x">It depends. If the <a class="term" href="#vothG_ss">SS</a> Frau was in a very good mood, maybe sometimes yes. But the . . . I remember once we have been singing in our room, and then the <a class="term" href="#vothG_ss">SS</a> Frau, she came to our room, and she said to me, 'Such noise,' and she started to [?] strike everybody, so that it never happened again.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="721.056" end="x">What did she strike you with? [Pause.] With the hand?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="724.539" end="x">With the hand, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="725.812" end="x">Where, in your face?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="727.451" end="x">In [the] face.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="728.083" end="x">Yes. Now tell me this. Do you remember any of the songs that were made in the camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="734.757" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="736.365" end="x">Can you sing a song?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="739.042" end="x">Oh,</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="739.355" end="x">You can sing in a very low voice. The main thing we want, the words very clear. You understand? The melody does . . . just go on and try one. We will see how it comes out.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="750.625" end="x">I'll just sing a little bit of the end.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="755.167" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="755.480" end="x">This is the end, because before was [words not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="757.877" end="x">[Recites in German] Und die Deutschen, die verfluchten Schweine, / die bekommen noch von uns gebroch'ne Beine. / Und wir müssen selber sehn, / wie alle Deutschen schnell kaputt gehen.<note n="1"><span class="note">Translation: "And the damned German swines, / They will get their bones broken by us yet. / And we must see ourselves, / How the Germans go Kaput quickly."</span><sup><a href="#note_1">1</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="768.262" end="x">[In English] Well, why don't you want to sing the first part?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="771.557" end="x">Oh. [Words not clear] too much.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="773.376" end="x">Well, go ahead. Do it. Perhaps you can do it now. We want to preserve that material. We don't want that material lost. It is very important that we preserve that material. Start the first part. Just hum a little bit with the words. Go ahead.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="787.719" end="x">[In German] Vor den Baracken in <a class="placename" href="#vothC33" type="camp">Gabersdorf</a> / steht ein Gitter um den Hof / und die Mädels traurig wissen, / draußen tut die Freiheit glitzen. / Ade Sudentenland!<note n="2"><span class="note">Translation: "In front of the barracks in  / Stands a barbed fence around the yard, / And the girls with sorrowful faces [or sit sorrowfully] / while outside freedom glitters. / Good-bye Sudetenland."</span><sup><a href="#note_2">2</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="800.782" end="x">[In English] Bella will now recite the first and last verse of a poem that she has written in camp. The rest she will give me later in typed form, and we can preserve it together with the record. Go ahead.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="818.174" end="x">[In Polish] Moje Miasto: [Tylko niektóre zdania są wyrażne] . . . piękny, majowy . . . płacze bolesne . . .pociąg . . . tam moji drodzy zostali . . . a miasto . . . oderwali . . . piękny, majowy . . . już przemineło . . . i tylko po nocach . . . to miasto mi się śni . . .<note n="3"><span class="note">Due to the audio quality of the reproduction, an accurate Polish transcription was not possible. Boder's English translation from  reads: "My Town: I remember, the day was like any other, beautiful, May-like. / The sun was in its last rays. / [unintelligible] bitter cries. / [unintelligible] childhood games. / I remember with longing, sadly and with tears / and by night that town appears in my dreams."</span><sup><a href="#note_3">3</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="890.802" end="x">[In English] Well, that was very good. Bella, you will give me the whole thing typed out in Polish and then a free English translation. Good? [Footnote: Unfortunately I did not obtain the promised material in written form. I may have left <a class="placename" href="#vothL13">Paris</a> without seeing her again. —D.P.B.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="902.139" end="x">All right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="902.723" end="x">All right. Now tell me what happened then after the . . . you were through with . . . when you . . . from the factory work I understand you were transferred to office work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="911.892" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="912.627" end="x">Now tell how things were going there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="915.290" end="x">Well, it was quite simple. It only was the good point that I didn't work so very hard, because the work in the factory was terrible and unhealthy. Most of the girls . . . they got ill, because it was dusty.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="934.429" end="x">All right. Now, in the office. Who were your chiefs? Who was over you? How were you working there? Were you working with Germans together?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="942.825" end="x">[I was] not supposed to work with Germans together. And the chief was director of the factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="949.644" end="x">Yes? Well, how did they treat you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="954.084" end="x">The Germans in the factory when I walked [?] through—all was quite indifferent to them if I am going through or not.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="964.217" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="965.163" end="x">But most mistreated [?] we have been by the <a class="term" href="#vothG_ss">SS</a> women.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="968.759" end="x">What? By the <a class="term" href="#vothG_ss">SS</a> women.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="969.886" end="x"><a class="term" href="#vothG_ss">SS</a> women.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="971.103" end="x">Yes? What were they doing there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="975.844" end="x">Striking for nothing, shaving our hair.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="979.952" end="x">Did they have your's shaved off?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="986.621" end="x">[Pause.] Not quite, but I had shaved [cut] the hair very short.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="990.488" end="x">Aha. [Aside] she has now a nice head of black hair. All right. Nun . . . And how long did you work there, in the office?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1003.061" end="x">Two years.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1004.489" end="x">You worked for two years there in the office.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1006.820" end="x">That's right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1007.977" end="x">Were you well all the time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1011.272" end="x">Yes. If I wouldn't have been working in the office maybe I wouldn't be alive any more, because the factory work would be too difficult for me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1019.055" end="x">Yes. Did they pay anything for the work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1022.320" end="x">Nothing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1023.928" end="x">Well, when you needed some things, soap, or . . . did you have toothpaste?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1029.091" end="x">Oh, we didn't get anything from them. Just one little piece of soap, and we had to wash ourselves only with water.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1038.651" end="x">You washed yourself only with water.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1041.464" end="x">And . . . Oh yes, we got one piece of soap, but that wasn't enough for the whole month.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1047.078" end="x">Aha. And how did you handle you laundry? Or did you wash your clothing?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1056.096" end="x">[Giggles.] Everybody knows that in camp [it] wasn't so clean.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1059.572" end="x">The camp wasn't so clean. Did you have any insects there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1066.391" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1067.608" end="x">No? How did they manage . . . if the camp wasn't so clean, how did they manage to keep the insects away? Did you have lice?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1077.030" end="x">It was some. We haven't been too many in one camp, so it wasn't . . . we haven't had so many lice as in camps where it was overcrowded. There was epidemic, too.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1088.954" end="x">Yes. Now tell me, so after the two years working in the office, what happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1094.960" end="x">I worked in the office till the liberation. Then came the Russians. They liberated us, and we were free.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1103.587" end="x">Oh! You worked until the liberation?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1106.159" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1106.773" end="x">And then . . . and you were freed. Tell me, how did you get to France?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1116.224" end="x">We have been seven girls together . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1121.838" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1122.332" end="x">in camp. And we decided to come to France. We wanted to go to Palestine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1128.760" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1129.706" end="x">So we decided to come to France before, to get transportation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1134.326" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1136.115" end="x">And so we came . . . we managed to come to France. We tried to pass through the border.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1141.609" end="x">Which border, the Russian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1143.368" end="x">It was the German border.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1145.639" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1146.314" end="x">The German border, Austrian border, and then the French.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1149.459" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1150.194" end="x">And we came to French.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1152.314" end="x">You came to France. And how did you pay your passage?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1157.592" end="x">Oh, we didn't pay for anything. We just came together with all people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1162.363" end="x">Yes? And then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1163.941" end="x">Liberated people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1164.917" end="x">Liberated people were what? Shipped . . . sent . . . shipped by the . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1168.845" end="x">Sent by the government [word not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1171.146" end="x">By railroad. You said that you wanted to go to France, and you went to France?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1175.706" end="x">Yes. It was easy for us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1179.242" end="x">Did you have to cross the border . . . what . . . you came . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1184.043" end="x">With . . . with other French people we came together.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1187.338" end="x">Aha. Nun . . . and now what do you plan to do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1192.574" end="x">I am waiting for transportation. I have relatives in <a class="term" href="#vothG_canada">Canada</a>. I have relatives in Argentina, but it is very difficult for me to get over, because . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1201.050" end="x">And [?] why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1202.689" end="x">Because [there is] no transportation. I am twenty-two, and transportation is only for children till sixteen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1208.364" end="x">Oh! You mean a transporation permit to Argentina?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1211.810" end="x">Yes. I am not permitted to enter the country.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1215.738" end="x">Argentina? Do you have relatives in Argentina?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1218.521" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1220.039" end="x">You told me you have relatives in <a class="placename" href="#vothL256">Chicago</a>. Who are they?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1223.394" end="x">No. It is just a friend, a little girl friend.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1226.539" end="x">Aha. The other girl has her relatives there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1228.870" end="x">That's right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1229.906" end="x">what is the name of your girl friend?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1231.966" end="x">Goldie Birnbaum.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1233.815" end="x">Birnbaum.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1234.761" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1235.406" end="x">Was she with you in camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1236.683" end="x">No, no, no. She is in the States for . . . from before the war.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1240.912" end="x">What did you say is her first name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1243.304" end="x">Goldie.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1243.798" end="x">Goldie Birnbaum. Do you know her address?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1246.973" end="x">I have it written somewhere, but I have to look for it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1250.238" end="x">Have you written to her?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1251.605" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1252.219" end="x">Did she reply?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1253.135" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1253.810" end="x">Did she send you some packages?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1256.081" end="x">She did.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1256.967" end="x">Aha. And now you are working here in the office of the <a class="term" href="#vothG_ajdc">Joint</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1261.106" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1262.504" end="x">And so that is what you are at present doing. All right, Bella, thank you very much. Can you ask your girl friend to come in?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1274.896" end="x">I will.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1275.480" end="x">Was she with you in the same place all the time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1277.811" end="x">No, no. She hasn't been in a camp.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1278.335" end="x">No. Where was she?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1280.365" end="x">Sorry, I can't tell you. I don't know. We know each other since [for] two weeks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1284.775" end="x">All right. Will you ask her to come in?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1287.317" end="x">Yes, I sure will.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1288.323" end="x">Thank you very much. Is there anything . . . is there anything you want to tell your own people in America from you? [Pause.] The microphone is yours. What do you think shall we tell them about all these . . . displaced people and deportees?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1319.176" end="x">Well, I will just send them regards, and I am happy that not everybody of the Jews went through such a hell [?] as we did. [Pause.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1335.937" end="x">Bella wants to add a few remarks in Polish. Go ahead, Bella.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bella Zgnilek</span>:
+            </span>
+            <span class="utterance" who="#zgnilekB" start="1342.084" end="x">[In Polish] [unintelligible]<note n="4"><span class="note">Due to the audio quality of the reproduction, an accurate Polish transcription was not possible. Boder's English translation from  reads: "I would like to tell you, my friends, that all of us Jews ought to hate the Germans because of the wrongs which they did to us and our families, because they broke our hearts, broke our homes, and we ought never to forget that."</span><sup><a href="#note_4">4</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1372.963" end="x">This was a kind of a postscript that I wanted to have, because it's exceedingly important to have the feelings of these young people. We notice here that she spoke in German, in English, in Polish, and when it came to express her feelings she preferred to express it in Polish. This polyglotism, or multilinguistics if we want to call it that way, represents a psychological and ethnic problem at the same time.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            Translation: "And the damned German swines, / They will get their bones broken by us yet. / And we must see ourselves, / How the Germans go Kaput quickly."
+        </li>
+                <li>
+            <a name="note_2"></a>
+            Translation: "In front of the barracks in  / Stands a barbed fence around the yard, / And the girls with sorrowful faces [or sit sorrowfully] / while outside freedom glitters. / Good-bye Sudetenland."
+        </li>
+                <li>
+            <a name="note_3"></a>
+            Due to the audio quality of the reproduction, an accurate Polish transcription was not possible. Boder's English translation from  reads: "My Town: I remember, the day was like any other, beautiful, May-like. / The sun was in its last rays. / [unintelligible] bitter cries. / [unintelligible] childhood games. / I remember with longing, sadly and with tears / and by night that town appears in my dreams."
+        </li>
+                <li>
+            <a name="note_4"></a>
+            Due to the audio quality of the reproduction, an accurate Polish transcription was not possible. Boder's English translation from  reads: "I would like to tell you, my friends, that all of us Jews ought to hate the Germans because of the wrongs which they did to us and our families, because they broke our hearts, broke our homes, and we ought never to forget that."
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription (English)
+                            </i>: 
+            <span class="Transcription (English)">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Transcription (German)
+                            </i>: 
+            <span class="Transcription (German)">
+                <name>Dagmar Platt</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Transcription (Polish)
+                            </i>: 
+            <span class="Transcription (Polish)">
+                <name>Alicia Nitecki</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_1 = 50.033300;
+                        var lon_1 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC39">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC39" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Gross-Rosen
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Rogoźnica, Poland<br />
+                            </p>
+                            <div>
+                Established in Silesia in 1940 as a satellite camp to Sachsenhausen, it became an independent camp in 1941. Work centered on a huge stone quarry and many sub-camps were established (reaching 60 in 1944).
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC39 = new OpenLayers.Map('map_vothC39', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC39.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC39.addLayer(markers);
+map_id_vothC39.zoomToMaxExtent();
+
+                        var lat_2 = 51.016700;
+                        var lon_2 = 16.300000;
+                        var vothC39 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC39_icon = new OpenLayers.Marker(vothC39);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC39);
+markers.addMarker(vothC39_icon);
+    addMarker(vothC39, popupClass, "", true, false, false);
+    map_id_vothC39.setCenter(vothC39, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC33">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC33" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Gabersdorf
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Gross-Rosen
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Gabersdorf, Austria<br />
+                            </p>
+                            <div>
+                This camp included a spinning factory.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC33 = new OpenLayers.Map('map_vothC33', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC33.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC33.addLayer(markers);
+map_id_vothC33.zoomToMaxExtent();
+
+                        var lat_3 = 46.950000;
+                        var lon_3 = 15.320000;
+                        var vothC33 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC33_icon = new OpenLayers.Marker(vothC33);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC33);
+markers.addMarker(vothC33_icon);
+    addMarker(vothC33, popupClass, "", true, false, false);
+    map_id_vothC33.setCenter(vothC33, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_4 = 48.866700;
+                        var lon_4 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL98">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL98" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Sosnowiec, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL98 = new OpenLayers.Map('map_vothL98', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL98.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL98.addLayer(markers);
+map_id_vothL98.zoomToMaxExtent();
+
+                        var lat_5 = 50.266700;
+                        var lon_5 = 19.116700;
+                        var vothL98 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL98_icon = new OpenLayers.Marker(vothL98);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL98);
+markers.addMarker(vothL98_icon);
+    addMarker(vothL98, popupClass, "", true, false, false);
+    map_id_vothL98.setCenter(vothL98, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL9">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL9" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Gabersdorf, Austria
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL9 = new OpenLayers.Map('map_vothL9', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL9.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL9.addLayer(markers);
+map_id_vothL9.zoomToMaxExtent();
+
+                        var lat_6 = 46.950000;
+                        var lon_6 = 15.320000;
+                        var vothL9 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL9_icon = new OpenLayers.Marker(vothL9);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL9);
+markers.addMarker(vothL9_icon);
+    addMarker(vothL9, popupClass, "", true, false, false);
+    map_id_vothL9.setCenter(vothL9, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL256">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL256" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chicago, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL256 = new OpenLayers.Map('map_vothL256', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL256.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL256.addLayer(markers);
+map_id_vothL256.zoomToMaxExtent();
+
+                        var lat_7 = 41.850000;
+                        var lon_7 = -87.650000;
+                        var vothL256 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL256_icon = new OpenLayers.Marker(vothL256);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL256);
+markers.addMarker(vothL256_icon);
+    addMarker(vothL256, popupClass, "", true, false, false);
+    map_id_vothL256.setCenter(vothL256, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ajdc">
+                <a name="vothG_ajdc"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    American Joint Distribution Committee.
+                </span>
+                <span class="definition">
+                    Founded in 1914, the American Jewish Joint Distribution Committee, often referred to as the “Joint,” was a major relief and rehabilitation agency before, during, and after the Holocaust. The JDC’s operations were the main manner in which American Jewry provided aid to its fellow European Jews.
+                </span>
+            </li>
+                        <li class="vothG_ss">
+                <a name="vothG_ss"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    SS.
+                </span>
+                <span class="definition">
+                    Acronym for the German Schutzstaffel (“Protective Echelon”), a major Nazi organization. It grew from a small paramilitary unit to a powerful force that served as Hitler's "Praetorian Guard," the Nazi Party's "Shield Squadron" and a force that, fielding almost a million men (both on the front lines and as political police), managed to exert as much political influence as the German Army. Built upon the Nazi racial ideology, the SS, under Heinrich Himmler's command, was responsible for many (and most of the worst) of the crimes against humanity perpetrated by the Nazis during World War II.
+                </span>
+            </li>
+                        <li class="vothG_appell">
+                <a name="vothG_appell"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    appell.
+                </span>
+                <span class="definition">
+                    The appell was a camp roll call. Its purpose was not merely to count the prisoners but also to weaken, humiliate and intimidate them.
+                </span>
+            </li>
+                        <li class="vothG_canada">
+                <a name="vothG_canada"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Canada.
+                </span>
+                <span class="definition">
+                    An area of Birkenau where the possessions of newly arrived inmates were stored. It was so named because Canada was thought to be a country of great riches. The items were sorted and sent back to Germany, although some were stolen by SS guards.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Translation: "And the damned German swines, / They will get their bones broken by us yet. / And we must see ourselves, / How the Germans go Kaput quickly."
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Translation: "In front of the barracks in  / Stands a barbed fence around the yard, / And the girls with sorrowful faces [or sit sorrowfully] / while outside freedom glitters. / Good-bye Sudetenland."
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Due to the audio quality of the reproduction, an accurate Polish transcription was not possible. Boder's English translation from  reads: "My Town: I remember, the day was like any other, beautiful, May-like. / The sun was in its last rays. / [unintelligible] bitter cries. / [unintelligible] childhood games. / I remember with longing, sadly and with tears / and by night that town appears in my dreams."
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Due to the audio quality of the reproduction, an accurate Polish transcription was not possible. Boder's English translation from  reads: "I would like to tell you, my friends, that all of us Jews ought to hate the Germans because of the wrongs which they did to us and our families, because they broke our hearts, broke our homes, and we ought never to forget that."
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

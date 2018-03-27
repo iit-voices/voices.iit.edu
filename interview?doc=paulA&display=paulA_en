@@ -1,0 +1,1952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Anna Paul; September 21, 1946; München, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-anna-paul-september-21-1946-mnchen-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Anna Paul; September 21, 1946; München, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=paulA">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=paulA&display=paulA_ru">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=paulA&display=paulA_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=paulA">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="7.165" end="">[In English] <a class="placename" href="#vothL29">Munich</a>, September the 21st, 1946, at Camp Lohengrin, a camp for Baltic <a class="term" href="#vothG_dp">DPs</a> . . . ah . . . displaced persons. The interviewee is [pause] the interviewee is Ms. Anna Paul, a teacher, forty-five years old, who is alone here. Ah . . . she prefers to talk Russian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="29.798" end="x">[In Russian] And so, Mrs. Paul, tell me, what is your name, where were you born, and where were you when the war started?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="39.227" end="">My last name is Paul. My first name is Anna. I am forty-five years old and I was born in <a class="placename" href="#vothL11">Tartu</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="46.553" end="">And where is that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="47.582" end="">That is in Estonia. A large city in Estonia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="48.599" end="">What was its Russian name before?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="50.274" end=""><a class="placename" href="#vothL11">Yurief</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="50.809" end="">Oh, Yurief, <a class="placename" href="#vothL11">Dorpat</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="52.162" end="">In <a class="placename" href="#vothL11">Dorpat</a>, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="52.836" end="">The university town.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="54.147" end="">Yes, the university town. And I studied in the University of <a class="placename" href="#vothL11">Yurief</a>. I studied in the University of Yurief, then I graduated from the school of education in <a class="placename" href="#vothL148">Tallinn</a>, and I was working all the time.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="63.336" end="">Where were you employed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="63.852" end="">At the school. I was the superintendent of a school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="66.400" end="">An elementary school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="67.622" end="">An elementary school. A six-grade elementary school. I worked in that capacity for eighteen years.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="71.264" end="">Now beginning from the time, when the war started, I mean for you, for Estonia. Tell me where you were and what happened to you. Don't hurry. Do not abbreviate. Give us as many details as you can. Get nearer to the microphone and make yourself comfortable.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="95.940" end="">When the war started I lived at my place of work, not in the city where I had my apartment, where my husband lived, not in <a class="placename" href="#vothL11">Dorpat</a>, but in the country. I lived at the place of service. My school was exactly at the border with the Soviet Union. I may say that in Estonia everybody hoped for the war to come. I can say everybody hoped for war because in it many saw the lesser evil, that is the delivery from Bolshevism.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="123.692" end="">Wait, I want you to start first of all with the time when the Soviets came to Estonia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="131.095" end="">Oh, when they started building bases. That was in 1939.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="134.192" end="">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="134.607" end="">That was still before the war.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="135.400" end="">Yes, yes. For you the changes so to speak, started with the advent of the Soviets.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="140.754" end="">No, the change did not start yet. There wasn't any war. Things started when our government admitted them to Estonia. [She apparently makes a distinction between the time of the arrival of Russian contingents for the purpose of building bases according to treaty and the time of transformation of Estonia into "the 17th Soviet Republic". ]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="146.890" end="">Tell me about it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="149.408" end="">We learned from our government that the Government of the Soviet Union, in fear of war, needs to build bases at the border of their country. But since Estonia was at the frontiers of Europe they marched in in 1939 and started building bases.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="169.950" end="">But they did not take over the government?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="171.357" end="">Our life did not change. We had our own government. </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="174.426" end="">Well, tell me about it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="175.950" end="">Yes. It happened this way. All at once communistic propaganda emerged everywhere. And finally—you see as a school principal I had to attend these meetings very often, and I know perfectly well how these things were managed. You know, upon the instigation of two-three rowdies, the mood of the whole meeting would change, and often it was a meeting of many thousands, and all at once a resolution would be passed, that such and such a province, or such and such a region desires incorporation into the Soviet Union. And finally it appeared that all Estonia wishes to be incorporated into the Soviet Union.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="211.652" end="">Now go ahead. Please speak in the direction of the microphone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="217.889" end="">Well, what shall I tell you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="219.222" end="">Well, and that lasted how long?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="223.960" end="">Let me see. What date was it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="227.291" end="">Don't bother about the date. How long did this last? Was it until the Russians and the Germans started the war against . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="234.139" end="">No, no, no. Things continued in the following fashion. Our government was arrested. We were not informed about the details. Our president of Estonia Constantine Datz, I don't know where they took him, but he was arrested. The people were talking later about it. Inmates of the prisons were set free. They assembled around the palace, and with them crowds of workers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="262.873" end="">What kind of workers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="265.113" end="">Workers from the factories who were already well indoctrinated with propaganda. In our capital <a class="placename" href="#vothL148">Tallinn</a> which before was called Reval . . . there too all the inmates from the prisons were set free, political prisoners as well as those . . . what do you call them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="280.691" end="">Criminals.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="281.370" end="">Yes, the criminals, and they started to demand . . . they had a very large meeting . . . that now they wish to have a government of Soviets,—they don't need any more a president. And then things ended up by electing a new government. This government went to <a class="placename" href="#vothL361">Moscow</a> to plead—this I learned from the radio, there was already a radio of the new government—and they pleaded accordingly. By then we had already revolutionaries in Estonia. They pleaded that Estonia be incorporated into the Soviet Union. And so Estonia was proclaimed the Seventeenth republic of the Soviet Union.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="308.801" end="">Go on. What happened afterwards?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="316.247" end="">Now the life under the Bolsheviks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="318.124" end="">Go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="319.643" end="">Of course with the advent of the Soviet rule our mode of living has changed, tremendously. People had to participate under compulsion in all kinds of meetings. For example, at one of those big meetings, in <a class="placename" href="#vothL11">Dorpat</a> all the professors had to be present, all students had to be there. We still had our own police in their uniforms. The students had to be present at that meeting. People had to carry big banners; the women cooks from the restaurants had to be present, the help from the restaurants. The meeting had to start at three. I remember my husband and I were at that time in a restaurant, and by about a quarter of four the head waiter had to clear the tables, and he told us in a rather disgusted manner: "Here we were living peacefully, and now there has come an end to it."</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="406.196" end="">Who said that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="406.715" end="">O, that was the head waiter of the restaurant, he said it. "There was a life in peace and now it has come to an end. Now we have to drag ourselves along, we have to run somewhere to fetch the red banners, we ourselves don't know why. We were living in peace; what else do we need?" And that is what the head waiter of the restaurant said to us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="420.521" end="">Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="421.896" end="">However, we were still friendly toward them. When the Soviet armies entered we still believed in the propaganda of the government that people of dissenting opinions will not be persecuted. Again other people thought we will be able to travel into the Soviet Union, and there will ensue a friendship with great people. That is what our people believed. But barely two weeks had passed since their arrival and arrests began. Among the first people to be arrested was my husband. The reason for his arrest is not known to anybody until this day. The only reason was that he was a highly educated person and according to his convictions he was not a communist. He did not share the views of the communists.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="463.580" end="">What was his occupation?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="464.720" end="">My husband was by profession and education a chemist. He graduated from the University of <a class="placename" href="#vothL11">Yurief</a>. He was a chemist, and he did not share the views of the communists.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="471.545" end="">What happened?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="472.649" end="">He was arrested shortly. By the way, about the fate of those who were arrested. It was worse than a piece of lead or zinc on the bottom of the sea, because there was just no information obtainable about them. Absolutely none. And when I later returned and learned that my husband was taken only with his brief case, and I didn't know whether he had an overcoat, a blanket, or a change of underwear, I was told that there was no such person. And since that instant I didn't hear a thing about my husband. No word whatsoever. To all my questions at the prison, to all my questions at the prison, I got the answer: "There is no such person!"</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="499.876" end="">And so?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="500.602" end="">Afterwards . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="501.390" end="">[interrupting] Tell me, were there in Reval any Estonian communists who helped the Soviets? [slight pause] Did you have communists of your own?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="511.320" end="">Of course there were.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="512.168" end="">And they worked with the Soviets.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="514.410" end="">Of course there were such who helped them. [indignantly] Of our own people!! Very definitely there were. The government that they had, the government that they had formed, the communist government, was composed of Estonians. It consisted of Estonians. We too had our communists.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="529.716" end="">And what happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="533.801" end="">Then the action began . . . I could tell you about my work . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="536.405" end="">Yes. That is the main thing I want to hear about.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="537.860" end="">Of course. Right from the start the teaching curriculum was subjected to changes. Such subjects as religion were looked at with sarcasm. I was asked for my opinion about the teaching of religion, and I used to say that this subject was of a high moral and educational significance in the schools. Religion and morals . . . but, of course, they only scoffed at it. Now let me tell you that the school began to fall apart.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="561.393" end="">In what way?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="561.393" end="">In such a way that children were compelled . . . they picked spies among the children who had to watch their teachers. They picked spies among the children who had to watch their teachers. They watched every word of the teacher and reported about it. That I know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="574.364" end="">[interrupting] Well, tell me, didn't the same thing happen during the Reval government?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="577.534" end="x">Such things never happened. Such things never happened!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="580.930" end="x">Then what kind of political prisoners did you have?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="584.912" end="x">Communists.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="585.894" end="x">They imprisoned the communists?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="588.092" end="x">Our government? Yes, of course. We had no freedom for communists; we had no freedom for communists.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="593.998" end="x">Well, why then are you surprised that the communists did not grant freedom to the "others". [Mrs. P. is silent and Boder continues] I mean that when the communists came to power, they did not grant freedom to the "others".</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="603.861" end="x">Well, that is perfectly understandable. We had a "republican government" [republican is used in terms of democracy].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="608.234" end="x">I understand. But you did not have complete freedom of convictions during the time of the Reval government.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="615.756" end="x">No. What was prohibited, was communistic propaganda. The work of the communists, but as to opinions, please. However, we had no communist newspapers. Indeed we had no periodicals of the communist press.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="625.927" end="x">And what do you think? Was that right? [There is a long pause; Boder continues] I'm asking your opinion. You understand. As an American I am asking you that, because in America, in every city, in every large city, you may buy a communist newspaper.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="645.515" end="x">Yes, I know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="647.229" end="x">Well then, what do you think? Should we also prohibit it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="650.388" end="x">No. I know, of course, that there is no such thing in America. In America there is complete freedom. I know that in America there is complete freedom. And if at times we marvel at such liberty, we reply . . . when some people express their astonishment over such a measure of liberty in America—the others reply to them that the American government feels so secure, so strong, that they don't have to be afraid of any such propaganda.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="673.479" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="673.783" end="x">Well, that is our retort.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="680.203" end="x">Of course, I only wanted to hear what answer you would give. Now go ahead.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="688.970" end="x">Yes. What was I talking about?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="691.006" end="x">You were talking about your school. The teaching of religion was stopped.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="693.633" end="x">The teaching of religion was stopped, and then all the subjects, well, all our text books were changed. All the textbooks were now imported from the Soviets.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="705.101" end="x">But they didn't change the language?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="706.371" end="x">Well, you see, I was working in a Russian region.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="709.479" end="x">And what kind of religion were you teaching there, Greek Orthodox?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="715.133" end="x">Yes, Greek Orthodox. Our population was Russian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="717.392" end="x">And you had a priest teaching it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="719.065" end="x">No, the teachers themselves were teaching religion, because the school was quite a way from the city, and travel of the priests was connected with certain difficulties, and according to orders from the school board the teachers themselves were teaching religion.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="734.747" end="x">Well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="735.059" end="x">The language in the Russian schools of Estonia remained Russian, and in the Estonian schools the Estonian language remained, because after all that was in Estonia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="743.858" end="x">And you your self, are you a Russian or an Estonian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="745.790" end="x">Well, I am an Estonian on my mother's side and on my father's side I am Russian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="747.857" end="x">And you were teaching in a Russian school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="749.397" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="752.361" end="x">Now go ahead.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="753.661" end="x">Yes. I was in charge of a Russian school. Now about the textbooks. The textbooks were all changed over to Soviet textbooks. They were brought over from there. There was a <a class="placename" href="#vothL361">Moscow</a> publishing house and a <a class="placename" href="#vothL453">Leningrad</a> publishing house. Now, I want to state that our textbooks were excellent. They were published in Estonia. Of course some of them were published by the Russians. Some were from Estonian publishers. The material was of considerable variety and it was interesting. And now about the textbooks. The children, the more intelligent ones, used to say, "What a bore!" That is what the children would say because in the readers, in the Russian readers, besides all the variations of biographies of Lenin, there was practically nothing, save the story of a Chinaman weeping on the occasion of his death. There was nothing else. Propaganda, and solely propaganda. Now about the texts in arithmetic. All the problems were about Kolkhosy. [Collective farms organized by the Soviet government.] About Kolkhos sheep or Kolkhos cows and so on, and so on. It was all very boresome and very onesided. Attention was directed not towards education but solely toward propaganda. Exclusively towards propaganda. Now let me tell you another interesting thing. I have read . . . and never had I read so much as during the time the Communists were with us because . . . here is what I was thinking: "For twenty-five years people have lived with the communist government. Well people live. So we too should be able to adjust ourselfs in some way." I wanted to know what was the matter. Maybe I have the wrong viewpoint. Maybe I am mistaken. I am a person of definite views. You see at school we had to install . . . we had to change entirely the library for the teachers. I bought an awful lot of books. I bought a large quantity of books for the children's library. We teachers had to pass examinations on the history of the party. But the more I studied communism [here the recording is not clear, but it seems that it sounds like "darker became my outlook"]. The more I felt that I was getting suffocated. I remember the following incident. One of my friends, she was the director of Gitznek. This was an organization for the self-defense of women. And knowing . . . raids had already started . . . that she will be arrested, [she was a very nervous person] she committed suicide. She took poison. Now the idea of the inviolability of the home, that was just an empty word. They used to come into my house and without asking whether they may enter a room, whether they may not enter a room. They ordered me to remove the icon; to take it off the wall. I tell them . . . well they say, "Do parents come to see you?" I say "yes, parents do come." I was on very good terms with the parents. I worked in that school for eighteen years and I was on very good terms with my whole district . . . "So parents are coming to see you"—"Yes, they do come."—"Well if they will see that there is an icon on your wall you will lose prestige in their eyes, and it will also be a bad example for the parents and the children."—"Well," I told them, "in my 'official office' as a teacher—my apartment was upstairs,—I had to take off all the icons." By the way, all the children and the whole population, even the Lutheran population of the region—all received this order with tears in their eyes, that I must tell you.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="938.742" end="x">What did you say?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="939.528" end="x">With tears in their eyes they received the order that there should be no icons in the school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="942.411" end="x">But the Lutherans do not use icons.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="944.084" end="x">But the image of Christ is used by the Lutherans as well. They don't call it an icon, but they use the picture of Christ.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="950.962" end="x">And so, well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="952.464" end="x">And so they ordered me that in my apartment . . . they ordered me to remove the icon. They ordered me to do so in my apartment. Moreover . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="959.392" end="x">And you took it off?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="960.612" end="x">Yes, I took it off.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="961.983" end="x">How did it happen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="962.719" end="x">Well, they ordered me a second time to remove it from my apartment. A commission came to check up and I had to take it off. Moreover I want to tell you . . . what was I talking about [a long pause].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="980.020" end="x">Now what happened then? Wait, I will give you some matches. Take one of my cigarettes. Keep the matches.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="992.625" end="x">Then you won't have any.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="994.893" end="x">Now tell me how things developed with the evacuation of the civilians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1003.306" end="x">Excuse me, what do you mean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1004.536" end="x">Well, afterwards when the Soviets left Estonia, when the war started.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1008.977" end="x">Yes, afterwards when the war started . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1010.564" end="x">Now let us proceed with the story from the beginning of the war.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1016.187" end="x">People who followed the newspapers . . . everybody was waiting for the war. Because even those who understood well the plans of the Germans, felt that by their advent they would save us from Communism. People saw that the evil that the Germans would bring us would be the lesser evil in comparison with what the communists brought over our country. Let me tell you about the time they started to build their bases. They literally robbed our whole country because they would buy, they would buy by the dozen and a half men's shirts, they would buy . . . you see we had free trade when they came. Their ladies would buy, their military ladies would buy underwear by the dozen. By the way, I have to tell you, they had literally nothing, because one of the seamstresses who worked for me for several years, the owner of the shop, told me that. Ladies would come and would ask her to go with them shopping because they did not know the names of our yard goods. [Of course the Russian women did not speak Estonian and therefore could have been in need of an interpreter. What Mrs. P. apparently implies is that the Estonian shopkeepers spoke Russian, but that the Russian women "never having seen at home good dress material" were unable to ask for the goods by name. ] They were not acquainted with our dress patterns. Let me tell you that, as a fact, they would pick up candy wrappings and wrappings from chocolate because they had not seen such paper. They would ask us: "Do you really use such paper for wrapping? How do you wrap? We have to take with us a piece of newspaper because we just don't have any wrapping paper." They were marvelling at everything. They would marvel that one could buy a half a kilo of sausage at the time because [at home] the could buy only by the gram.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1125.546" end="x">[In English] This ends Spool 140, a interview with Ms. Anna Paul which we will continue on Spool 141. Taken at Lohengrin camp in <a class="placename" href="#vothL29">Munich</a>, September the 21st, 1946. I am beginning to mix all my languages. Illinois Institute of Technology wire recording.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1156.687" end="x">Spool 9-141A, Anna Paul. The same person goes in the book I Did Not Interview the Dead as Anna Prest. November the 7th, 1950, <a class="placename" href="#vothL256">Chicago</a>, Boder.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1204.712" end="x"><a class="placename" href="#vothL29">Munich</a>, September the 21st, 1946 at Camp Lohengrin, a camp for displaced Baltics. The interviewee is an Estonian teacher, Ms. Anna Paul. She continues now with her story which we have recorded from Spool 140.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1222.211" end="x">[In Russian] Now tell me, you spoke about the appraisal of the war. You knew the aims of Hitler?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1230.559" end="x">We knew that he didn't come just to liberate us from the communists. We knew that very well. But we also knew for certain; we shall regain our liberty.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1240.297" end="x">Did you really not understand that Hitler could not win?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1243.019" end="x">At that time it was still inconceivable that he could not win. We simply were expecting delivery from the hell in which we found ourselves. But . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1251.729" end="x">But you went from the fire into the flame. [Russian equivalent for "from the frying pan into the fire"].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1254.088" end="x">We did not know what was going to happen . We did not know then. We did not know anything at the beginning of the war. And so . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1259.267" end="x">Now tell me about the departure of the Soviets and the arrival of the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1263.259" end="x">We learned from the radio that cities were being bombed, such as <a class="placename" href="#vothL240">Kiev</a>, <a class="placename" href="#vothL338">Kahrkov</a>, and even further east. I don't remember which. That is how we learned that the war started. And then commenced the most trying times for our people. Those mass deportations. That was the fourteenth and fifteenth of July.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1301.336" end="x">Where to were they deported?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1301.765" end="x">Mass deportations to the Soviet Union. The Soviet radio was telling us about the great concern of the Soviet government over the Estonian people. Not to abandon them to the horrors of Hitler! That's what they said. And that is how the deportations took place. At night—as a matter of fact, day and night—an automobile would come and, that depended on the commission in the car—that depended on the militiamen who would come—twenty minutes time to get ready, some were permitted a half an hour.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1329.048" end="x">The militiamen were Estonians?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1330.403" end="x">[hesitatingly] The militiamen were Russians and by that time as we learned later there were three hundred men from the Cheka which were assigned to this task. Some families were permitted to take a little baggage. The maximum they could take was about six pud, which is six times sixteen kilos. Others were not permitted to take anything. They would not show consideration for anything. In some places there would be a dead body. People would plead: "Let us at least bury him," In a family of two of my friends there were two children. The husband was arrested before. He was superintendent of a Gymnasium. [long pause] The child had pneumonia, his temperature was 40 [centigrade]. The child was left in his bed, the family sent to the railroad station. And then the transport was standing there two, three days. [The heat happened to be intolerable those days.] People could not get any water. Afterwards a friend, a doctor told me, he had to examine the transport, and after going a over few cars, he fainted; he, a man, a doctor, after seeing these sights. Some people died yet before the departure of the train, because they could not stand it. And into these boxcars they drove about eighty people in each. People had no room to sit down. They had to stand. Now let us talk of the people who remained.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1410.883" end="x">And how did you happen to remain?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1412.395" end="x">I was forewarned so I wasn't home. I hid in the woods.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1415.129" end="x">And so?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1415.552" end="x">Thanks to that, only thanks to that. I had a little son, and with my little son we were in the woods.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1420.754" end="x">And your husband?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1421.903" end="x">He was arrested earlier.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1423.348" end="x">Yes . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1423.669" end="x">He was taken away much before. Like on pilgrimages, the peasants would come and bring bread on their carts to the trains and when the militiamen would ask for whom was the bread, whether they had relatives [on the train], they would reply: "All who suffer are our relatives." That is what our people were saying. Perfect strangers tried to pass on [some food], but no packages were accepted.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1446.617" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1447.043" end="x">Not withstanding that there were little children. Sometimes a man was on his job. The family would be taken. They would come to the father and tell him that he was wanted for something at home. And without reaching his home, he was taken to the station. The fate of those people is not known to us. The fate of those people is not known to us. From our city alone, from <a class="placename" href="#vothL11">Dorpat</a>, they deported twenty-thousand people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1471.239" end="x">By the way, did you know in Yurief Professor Pusep?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1476.134" end="x">No—[pause]—of course, the psychiatrist.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1477.616" end="x">The neuropsychiatrist.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1478.977" end="x">Yes, I know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1479.703" end="x">And what happened to him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1480.731" end="x">I couldn't tell you anything for certain about professor Pusep, I couldn't tell you, but I was acquainted personally with professor Pusep, and I know that he is not alive any more.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1491.075" end="x">And so?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1493.450" end="x">I was talking about the deportations. That is how the Soviet government was preoccupied about the Estonian people! Well, let me tell you about another event. The Soviet army . . . there is something. The trains as some people knew, were prepared beforehand and a week later another transport was to go away. But here the war set in. One of the commissars expressed himself in this fashion: "First we will remove the pigs; then we will proceed with the sheep." That is what I was told by a laborer who worked that time on the railroad station. So you see the second echelon simply didn't materialize because the war put a halt to it. The civil servants were evacuated, and the armies were in retreat. Now let me tell you about the retreat of the army. They were surrounded. You can imagine. Pskov, Ostrov, they were already taken by the Germans. The Germans managed to by-pass them. Part of the Soviet armies remained behind. These armies marched without their commanding complements. They marched alone. They marched barefooted; many had no soles on their boots.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1564.251" end="x">And what happened to the commanders?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="x" end="x">They ran away before. The army was hungry. They begged everywhere for bread. They would barter away their last shirt. It was very hot that time. They called them Mayka [apparently from the month of May, meaning summer shirts], and they begged; "Take my Mayka and give me a piece of bread." That is how the armies retreated. Many of them remained in Estonia. Many remained in Estonia and hired themselves out to the peasants. It was the time of bringing in the hay . . . and only for bread, only to be satiated for the first time after several years. "I will work for you," he said, "like an ox," helping the peasant to cut down the hay, only to have a bellyful. And they would tell us a lot. They would tell us that they were awakening to life again, seeing the conditions of our Estonian peasants, seeing how our Estonian peasants lived. Then they would tell us about the life in the Kolkhos. One of them was a plain laborer. That is, he was a peasant, a farmer at home in his fatherland. He told us about the following occurrence in their Kolkhos. In that Kolkhos his son got as a homework assignment the following problem: to find out exactly how many working days there were in a certain period of time, what did they earn, and how much that would come to per day. The boy asked his mother for exact information. When the mother supplied him with the data—that is, how much they got for one working day—and the child presented it at school the mother was arrested because she was supposed to have given the child the kind of data somebody needed her to give, and not the correct data.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1654.629" end="x">And so . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1656.262" end="x">There is so much to tell. Would it not be better if you ask me some questions?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1660.556" end="x">No, I wouldn't like to do that. You are doing very well. Now I would like to hear something about the German occupation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1675.705" end="x">Now, the Soviet armies which remained with us were surrounded. They did not know where to go. They hid in the woods. Later they were driven by hunger out of the forests. I had the opportunity to talk to them. They would ask where they could go, how they could get away safely, because if their government should find out that they were here, surrounded, without making any attempts to fight their way through, their families would be shot. One of them was a young fellow. He said, "I have a wife; I have three children; and they will all perish if they should find out that I am a prisoner, that I am surrounded, and that I am not making any attempt to get away." So I started telling him:—"What are you going to fight for, what are you going to fight for?" And he would say: "We are liberators; we are liberating Europe from a regime of horror."</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1730.053" end="x">That is what the Soviet soldier told you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1731.202" end="x">The Soviet soldier. "We have come to liberate you." And so I said to him: "We don't need you. We have lived a quiet peaceful life, and now after you have been here a year, we are living in a devestated country and we have only widows and orphans. Such is our life." And you know, after my talk with him he lived for some time in the vicinity and did not go anywhere. He said afterwards: "Indeed, there is nowhere to go; indeed there is nothing to fight a war for." He saw the books; Russian literature was permitted in our country. Soviet literature was free in our country. I couldn't say that everything was free, not all the literature, but many literary works were permitted. They were in our library. But at home they would read only communistic literature and you know how a Soviet person is being brought up. From the earliest childhood; I told you already what kind of textbooks they had.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1779.304" end="x">Now since I want your personal experiences, tell me about the arrival of the Germans and what happened to you afterwards.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1788.891" end="x">I can't tell you about it in its whole measure, about the life under the Germans, because I lived entirely my own life.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1799.022" end="x">I just want to learn about your personal fate and all that happened from the time the Germans came until the Germans left. When did the Germans come to Estonia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1813.462" end="x">They came to Estonia approximately in the month of July. I couldn't tell you exactly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1821.809" end="x">Well, so what happened then? [pause] No, Mrs. P., give me a general review of your personal experiences during the German occupation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1838.330" end="x">All about it, I couldn't.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1841.838" end="x">No, no. I don't ask you that. Give me just a similar picture, as you have given me about the Russian occupation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1851.515" end="x">Yes. You see Estonia is an agricultural country. That means that the presence of Germans would manifest itself especially on the state of agriculture.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1858.440" end="x">I don't want the economic history. I want to know what happened to the people. In a political sense—how much freedom did you have, how did they treat the people? When you talked about the Soviets you were just talking about the human side of the events. So now tell me about the human side of the German occupation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1879.343" end="x"> . . . but there is so much to tell.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1886.106" end="x">You must understand that the interview will appear greatly unbalanced, if after telling me everything that happened during the Russians you are reluctant to tell me anything about the German occupation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1897.749" end="x"> Far be it from me, my God, not to want to tell you about the Germans. I just don't know how to start.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1901.227" end="x">First of all, what did they do to your school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1907.941" end="x">I will tell you about it. My school was a two story building. Upstairs was my apartment. Downstairs were the classrooms. Now a German military unit was assigned to the school. Well, there arrived some people of authority in a car. It was yet before the start of classes. School was supposed to start by the end of September and at the beginning of September I was told that by the eighth or ninth of September my school will be occupied by the German military. I only asked how much time I will be given because I had to look for other quarters. They told me two, three days should be enough. I told them, that would be a little insufficient because I had to travel through the district, and find means to transfer the school and all its property. Well they allowed me three or four days. They gave me facilities to get to the regional authorities. They assigned to me twenty horses with carts, and I went to look for quarters to distribute my classes. I also asked them about my personal quarters; would I have to look for new quarters or would they leave me my apartment? Well, they told me that my personal quarters would remain intact and I would remain in my apartment until the end. Afterwards when their contingent increased I ceded to them a room in my apartment and reduced, so to speak, myself to less. Still my apartment remained intact.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1989.484" end="x">In what language did you start to teach?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="1992.085" end="x">In the same language as before, Russian. They personally had no business whatsoever with the school. They did not interfere with the school whatsoever. They absolutely did not interfere with the school. They readily talked about their own schools. They were marvelling very much at our long vacations in Estonia. They told me that in Germany they had no summer vacations at all, maybe only for a week or two. [At this point of the interview we hear on the wire a violent whistle; it seems to be the noon whistle]. I, as a teacher, was interested in what the peasant children were doing. Our children help their parents in the summer. They told me that their laws are so strict that the parents have already adjusted themselves to them, to the fact that the children go to school all summer. They also told me . . . as a teacher I was very much interested in the situation of the schools in Germany. I myself had never been in Germany. I knew about it only from the literature like about the schools all over Europe. But I never heard any personal reports about them. And so they told me that their classes begin in the summer at six in the morning . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2052.223" end="x">Well, we know about the German schools. What did they do in general to the civilian population?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="2059.663" end="x">The civilian population, as they lived before, so they continued living. Only of course, it was very difficult to deliver those "quotas", but I think that about the situation, that is the delivery of the quotas . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2073.054" end="x">What quotas are you referring to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="x" end="x">The quotas of agricultural products which the peasants had to deliver. Better you talk about it to some people who were engaged in agriculture because I did not have my own farm. I can only tell you in the words of a peasant woman who told me: "If I were to deliver the quotas of butter that they have imposed, the cows would have to give not milk but straight butter. Only then could I fulfill the norm."</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2095.170" end="x">What did they do with the Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="2099.525" end="x">About our Estonia, I could not tell you anything, but I had relatives in Latvia, and about Latvia I can tell you something. In the city of <a class="placename" href="#vothL129">Riga</a> there was a certain section of the city which before one could freely pass through. And now I was told that one could not get through. Why? I did not know a thing about it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2113.894" end="x">You were in <a class="placename" href="#vothL129">Riga</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="2115.073" end="x">No, I was in my place, but at the beginning when the Germans came I did not live in the city. But when I would come to <a class="placename" href="#vothL129">Riga</a> and wanted to visit some of my acquaintances told me, when I asked them what are the wires for . . . they painted to me the whole horrible picture, because I did not know anything about the attitude of the Germans to the Jewish people until I came ot the capital of Latvia. And let me tell you, when the Germans were telling me about educational problems I listened to them with interest. But it was impossible, if you didn't want to quarrel with them, it was impossible to touch upon the Jewish question. You couldn't because you were immediately an enemy. I told them, "I do not interfere with the business of Hitler or your policies, but," I told them, "it was inhuman and that such things are impossible." I told them it was an impermissible attitude, and with such an opinion one would just acquire enemies.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2181.169" end="x">Was there a difference in this respect between the Russians and the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Paul</span>:
+            </span>
+            <span class="utterance" who="#paulA" start="2185.917" end="x">But the Bolsheviks did not exclude . . . [at this moment somebody entered and told Mrs. P. that she was definitely wanted in the barracks].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2194.143" end="x">[In English] This concludes the interview with Ms. Anna Paul simply because she has no more time. She is busy and we will change to another interviewee. September the 21st, 1946, Camp Lohengrin.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2207.167" end="x">Remarks to the duplicate spool: This concludes the interview with Mrs. Anna Paul which was called in the book Anna Prest. The next section is an interview with Mrs. Sophia, who does not want to give her last name, but it seems that she later gave as Zurilis. Check Spool 9-141B. This concludes Spool 9-141A. Boder, <a class="placename" href="#vothL256">Chicago</a>, November the 7th, 1950.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Olga Collin</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_1 = 48.133300;
+                        var lon_1 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL11">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL11" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Tartu, Estonia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL11 = new OpenLayers.Map('map_vothL11', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL11.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL11.addLayer(markers);
+map_id_vothL11.zoomToMaxExtent();
+
+                        var lat_2 = 58.366000;
+                        var lon_2 = 26.745000;
+                        var vothL11 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL11_icon = new OpenLayers.Marker(vothL11);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL11);
+markers.addMarker(vothL11_icon);
+    addMarker(vothL11, popupClass, "", true, false, false);
+    map_id_vothL11.setCenter(vothL11, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL148">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL148" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Tallinn, Estonia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL148 = new OpenLayers.Map('map_vothL148', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL148.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL148.addLayer(markers);
+map_id_vothL148.zoomToMaxExtent();
+
+                        var lat_3 = 59.433000;
+                        var lon_3 = 24.728000;
+                        var vothL148 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL148_icon = new OpenLayers.Marker(vothL148);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL148);
+markers.addMarker(vothL148_icon);
+    addMarker(vothL148, popupClass, "", true, false, false);
+    map_id_vothL148.setCenter(vothL148, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL361">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL361" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Moskva, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL361 = new OpenLayers.Map('map_vothL361', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL361.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL361.addLayer(markers);
+map_id_vothL361.zoomToMaxExtent();
+
+                        var lat_4 = 55.750000;
+                        var lon_4 = 37.700000;
+                        var vothL361 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL361_icon = new OpenLayers.Marker(vothL361);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL361);
+markers.addMarker(vothL361_icon);
+    addMarker(vothL361, popupClass, "", true, false, false);
+    map_id_vothL361.setCenter(vothL361, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL453">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL453" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Sankt-Peterburg, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL453 = new OpenLayers.Map('map_vothL453', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL453.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL453.addLayer(markers);
+map_id_vothL453.zoomToMaxExtent();
+
+                        var lat_5 = 59.950000;
+                        var lon_5 = 30.316667;
+                        var vothL453 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL453_icon = new OpenLayers.Marker(vothL453);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL453);
+markers.addMarker(vothL453_icon);
+    addMarker(vothL453, popupClass, "", true, false, false);
+    map_id_vothL453.setCenter(vothL453, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL256">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL256" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chicago, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL256 = new OpenLayers.Map('map_vothL256', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL256.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL256.addLayer(markers);
+map_id_vothL256.zoomToMaxExtent();
+
+                        var lat_6 = 41.850000;
+                        var lon_6 = -87.650000;
+                        var vothL256 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL256_icon = new OpenLayers.Marker(vothL256);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL256);
+markers.addMarker(vothL256_icon);
+    addMarker(vothL256, popupClass, "", true, false, false);
+    map_id_vothL256.setCenter(vothL256, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL240">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL240" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kiyev, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL240 = new OpenLayers.Map('map_vothL240', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL240.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL240.addLayer(markers);
+map_id_vothL240.zoomToMaxExtent();
+
+                        var lat_7 = 50.433300;
+                        var lon_7 = 30.516700;
+                        var vothL240 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL240_icon = new OpenLayers.Marker(vothL240);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL240);
+markers.addMarker(vothL240_icon);
+    addMarker(vothL240, popupClass, "", true, false, false);
+    map_id_vothL240.setCenter(vothL240, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL338">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL338" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kharkov, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL338 = new OpenLayers.Map('map_vothL338', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL338.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL338.addLayer(markers);
+map_id_vothL338.zoomToMaxExtent();
+
+                        var lat_8 = 49.916667;
+                        var lon_8 = 36.316667;
+                        var vothL338 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL338_icon = new OpenLayers.Marker(vothL338);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL338);
+markers.addMarker(vothL338_icon);
+    addMarker(vothL338, popupClass, "", true, false, false);
+    map_id_vothL338.setCenter(vothL338, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL129">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL129" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Rīga, Latvia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL129 = new OpenLayers.Map('map_vothL129', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL129.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL129.addLayer(markers);
+map_id_vothL129.zoomToMaxExtent();
+
+                        var lat_9 = 56.883300;
+                        var lon_9 = 24.133300;
+                        var vothL129 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL129_icon = new OpenLayers.Marker(vothL129);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL129);
+markers.addMarker(vothL129_icon);
+    addMarker(vothL129, popupClass, "", true, false, false);
+    map_id_vothL129.setCenter(vothL129, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_dp">
+                <a name="vothG_dp"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    DP.
+                </span>
+                <span class="definition">
+                    Displaced Person, or refugee.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

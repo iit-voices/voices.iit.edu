@@ -1,0 +1,1678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Boleslaw Czolopicki; July 30, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-boleslaw-czolopicki-july-30-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Boleslaw Czolopicki; July 30, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=czolopickiB">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=czolopickiB&display=czolopickiB_pl_ru">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=czolopickiB&display=czolopickiB_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=czolopickiB">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=czolopickiB">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.555" end="x">[In English] <a class="placename" href="#vothL15">Paris</a>, July 30th. July 30th, 1946. I am interviewing now a gentleman, a Polish refugee, Mr. Boleslaw Czolopicki.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="17.055" end="x">[In Russian] No family, forty-three years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="22.142" end="x">[In English] Alright, er, you understand English?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="30.487" end="x">Yes. I understand a little.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="33.269" end="x">[In English] Now, I will ask you in English, and you please answer in Polish. Understand? You can answer in Polish, because we want to have it in the language you can best speak. You understand? Where were you born, Mr. Czolopicki?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="52.813" end="x">In Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="53.828" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="55.003" end="x">I must speak . . . in Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="56.809" end="56.809">No, no, you speak Polish. Where were you born?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="60.510" end="x">[In Polish] I was born in <a class="placename" href="#vothL79">Warsaw</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="62.106" end="x">[In Russian] In <a class="placename" href="#vothL79">Warsaw</a>? Do you have a wife, children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="66.974" end="x">[In Polish] No. No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="68.474" end="x">[In Russian] Do you understand my Russian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="70.537" end="x">[In Polish] I understand.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="71.903" end="x">[In Russian] I will speak in Russian, and you will answer in Polish. When did you leave Russia? Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="83.864" end="x">[In Polish] It was after the <a class="placename" href="#vothL79">Warsaw</a> Uprising in '44.<note n="1"><span class="note">The Polish uprising against the German occupiers of Warsaw began on August 1, 1944. It was led by the Polish Home Army, allied with the Polish government-in-exile in London. The Home Army was joined by the smaller People's Army, a leftist Polish resistance organization which included some Jews who had fought in the Warsaw Ghetto rebellion of April 19-May 16, 1943. The aim of the uprising was to seize the city of Warsaw before the approaching Red Army could conquer it. The unequal struggle ended on October 2, 1943 with the defeat of the insurgents.During the uprising some 150,000 civilians were killed including several thousand Jews who had been living in hiding in "Aryan" Warsaw after the collapse of the Warsaw Ghetto rebellion and some 16,000-20,000 Polish insurgents.</span><sup><a href="#note_1">1</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="90.072" end="x">[In Russian] Oh, in '43. And where did you go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="94.860" end="x">[In Polish] I was deported by the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="98.860" end="x">[In Russian] In '43?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="99.990" end="x">[In Polish] Not in '43. In '44.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="104.135" end="x">[In Russian] Oh, you left <a class="placename" href="#vothL79">Warsaw</a> in '44? Why did you leave <a class="placename" href="#vothL79">Warsaw</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="110.636" end="x">[In Polish] Well, the Germans were deporting everybody out of <a class="placename" href="#vothL79">Warsaw</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="115.798" end="x">[In Russian] And where did they deport you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="118.485" end="x">[In Polish] They deported us to the Rhineland.<note n="2"><span class="note">The Rhineland is located in western Germany and is named for the Rhine river. After World War I, it was a buffer zone between Germany and the West with Allied troops occupying it from 1918-1930. It was then a demilitarized zone until occupied by Germany in 1936. Though this occupation was in defiance of the Versailles Treaty, there was no meaningful Allied response to it in keeping with the policy of appeasement at the time.</span><sup><a href="#note_2">2</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="120.854" end="x">[In Russian] Well . . . Now I want you to tell me everything that happened to you from the moment when the Nazis had taken <a class="placename" href="#vothL79">Warsaw</a> to the moment when you had been liberated in <a class="placename" href="#vothL13">Paris</a>. Tell me . . . And don't skip anything, tell me all the details.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="144.516" end="x">[In Polish] The moment that on the 5th of October 1944 the Germans deported . . . the entire population of <a class="placename" href="#vothL79">Warsaw</a> . . . er . . . to Germany.<note n="3"><span class="note">With the collapse of the Polish uprising, the Germans expelled the bulk of the population of Warsaw to nearby detention camps and razed what was left of the city. About 100,000, including Mr. Czolopicki, were conscripted for forced labor, 65,000 were sent to concentration camps and the rest were deported  to the Generalgouvernement, the Polish administrative unit established by the Germans in October, 1939 and comprised of those parts of the country not incorporated into the Third Reich.</span><sup><a href="#note_3">3</a></sup></note> It's a bit hard for me . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="178.503" end="x">To speak in Polish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="179.636" end="x">No. Just what form to take . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="182.989" end="x">[In Russian] Speak freely. Speak as if you were chatting with somebody else. That's all.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="192.661" end="x">[In Polish] So . . . we were sent, I mean we were given the opportunity . . . to pack our things, just what we could put on ourselves . . . to walk on foot to <a class="placename" href="#vothL366">Ursus</a>, a place a few kilometers out of <a class="placename" href="#vothL79">Warsaw</a>. There, we were kept for about two days, and then in freight trains . . . er . . . under German . . . escort. They transported us for almost five days and nights into the heart of Germany, to the Rhineland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="253.336" end="x">[In English] And then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="257.286" end="x">[In Polish] . . . Of course the people were very mixed—meaning women, children, men, everybody together. The conditions were dreadful because, for example, in the freight cars there were no . . . suitable facilities . . . they sometimes stopped so that one could go to the toilet. All of this, of course, under supervision by the guards, men and women together, nothing else was possible . . . And the food was also very poor, we ate just once a day . . . When we found ourselves in [<a class="placename" href="#vothL460">Wanne</a>?] near <a class="placename" href="#vothL284">Bochum</a><note n="4"><span class="note">Bochum is located in northwestern  western Germany  northwest of the city of Essen and in the heart of the Ruhr district, the industrial heartland of Germany and one of the world's largest single industrial regions with ironworks, steelworks and coal mines.</span><sup><a href="#note_4">4</a></sup></note> we arrived at the precise moment that <a class="placename" href="#vothL284">Bochum</a> was being bombarded by . . . the English. The result of this air-strike was that five of our wagons were burned, several people burned too, killed . . . The rest of us were transported to a camp, to a distributing camp . . . near <a class="placename" href="#vothL285">Essen</a>.<note n="5"><span class="note">Essen is located in northwestern western Germany. It was the largest industrial city in the Ruhr coalfield. It suffered a great deal of destruction from Allied bombing during World War II as a center of the German war industry.</span><sup><a href="#note_5">5</a></sup></note> There, of course, we were also kept under very primitive conditions. [Unintelligible] in the floor, crowded conditions, one person on top of another, no bedding. There we were kept . . . a month, or two months, I think. Then, we were taken to various factories, or else placed on a list for farm work. I found myself . . . in <a class="placename" href="#vothL343">Geldern-Kapellen</a><note n="6"><span class="note">Geldern-Kappellen is located in the same area as Bochum and Essen.</span><sup><a href="#note_6">6</a></sup></note> . . . I was employed at a camp which . . . deportees worked there, digging trenches . . . There, I spent . . . remained, until . . . liberation by the Americans. March 3, 1945 we were liberated by the Americans<note n="7"><span class="note">In early March, 1945, General Eisenhower's armies began an all-out advance towards the Rhine during which Mr. Czolopicki was liberated.</span><sup><a href="#note_7">7</a></sup></note> . . . So at that time German deportations ceased. Am I to go on to talk of further . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="516.797" end="x">[In Russian] Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="522.781" end="x">[In Polish] . . . Then with the Americans . . . I signed up to work for the Americans and came to France with the Americans. For a while, I worked with Americans in France. Then I resigned, came to <a class="placename" href="#vothL13">Paris</a> where I began further studies at the school of design.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="572.848" end="x">[In Russian] Tell me the following. Did you work [or] did they keep you in "concentration camps"? <a class="term" href="#vothG_kz">Konzentrationslager</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="595.022" end="x">[In Polish] No, it wasn't really a concentration camp, but a camp for those deported specifically to work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="606.828" end="x">[In Russian] Aha, you were working. How was the food?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="613.010" end="x">[In Polish] The food was, of course . . . rutabaga, it was [background noise; unintelligible]. Food.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="620.596" end="x">[In Russian] Aha, and who were your supervisors: Germans or Poles?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="627.994" end="x">[In Polish] No. Germans, of course. Those who served in those yellow uniforms. It was their—I can't remember what it was called—members of the German People's Party.<note n="8"><span class="note">It is unclear to which party Mr. Czolopicki is referring since at this time Germany was a one party Nazi (National Socialist German Workers Party) state established in 1933. The Storm troopers of the party wore brown uniforms.</span><sup><a href="#note_8">8</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="650.486" end="x">[In Russian] Aha, aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="653.315" end="x">[In Polish] In yellow uniforms with those armbands</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="656.087" end="x">[In Russian] Aha, aha, <a class="term" href="#vothG_ss">SS</a> swastikas.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="659.905" end="x">[In Polish] It probably was [background noise; unintelligible] . . . which will go on for a while.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="666.463" end="x">[In Russian] And where did the Americans liberate you? In which town?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="670.864" end="x">[In Polish] [Inaudible] <a class="placename" href="#vothL342">Moers</a>.<note n="9"><span class="note">Moers is a town located in the Ruhr just west of Duisberg. It is west of the Rhine river. American troops did not cross the Rhine until March 7, 1945. Contrary to what is indicated in the interview, Moers is not over the Rhine. </span><sup><a href="#note_9">9</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="672.476" end="x">[In Russian] <a class="placename" href="#vothL342">Moers</a> . . . over the Rhine?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="674.870" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="675.463" end="x">Aha. Do you plan to return to Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="682.484" end="x">[In Polish] At present I plan to finish my studies here [inaudible]. Which will still take a while.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="692.631" end="x">[In Russian] And what are you studying now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="695.700" end="x">[In Polish] At the moment I'm learning the radio.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="698.522" end="x">[In Russian] The radio. Are you paying to study at this school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="706.798" end="x">[In Polish] Up to now, I'm paying at that school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="710.276" end="x">[In Russian] You're paying?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="711.825" end="x">[In Polish] But here, I'm to be paid for. In this school . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="719.340" end="x">[In Russian] And your school, is it a day school? Do you have some job in <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="724.433" end="x">[In Polish] No. I mean, so far, I worked, but now, because I signed up for that course, I've stopped working. And here that course will be paid for.<note n="10"><span class="note">Mr. Czolopiciki indicated earlier that he had begun studying at a school for design. It was for this school that he was paying. He then switched to the study of radio. There is no indication as to which organization was paying for his training in this area. It is possible that he was enrolled in an ORT training program.</span><sup><a href="#note_10">10</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="737.326" end="x">[In Russian] Aha, and where in <a class="placename" href="#vothL13">Paris</a> do you live?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="743.341" end="x">[In Polish] At Le Bonoir [?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="746.733" end="x">[In Russian] Do you pay for your lodgings, or is it communal living for many Poles?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="755.133" end="x">[In Polish] No, I live in a hotel.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="758.287" end="x">[In Russian] Have you any relatives in America? Any members of your family in the U.S.?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="768.370" end="x">[In Polish] No. I have no relatives in America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="770.900" end="x">[In Russian] You have no relatives in America. And what do you plan to do: will you stay in France, or something else?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="777.936" end="x">[In Polish] I would most like to emigrate.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="783.044" end="x">[In Russian] Where to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="784.399" end="x">[In Polish] Let's say precisely to America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="786.287" end="x">[In Russian] To America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="786.820" end="x">[In Polish] If it were possible.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="795.785" end="x">[In Russian] Tell me something. When you lived in <a class="placename" href="#vothL79">Warsaw</a> up to '44, were you there during the destruction of the Jewish <a class="term" href="#vothG_ghetto">ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="807.679" end="x">[In Polish] Yes. I was. I was there the whole time up to '44. I was in <a class="placename" href="#vothL79">Warsaw</a> during the entire period of the war. Of course, I also had to keep hiding from the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="819.912" end="x">[In Russian] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="822.418" end="x">[In Polish] Even . . . under an assumed name.<note n="11"><span class="note">Was  Mr. Czolopicki living under an assumed name because he was Jewish or because as a non-Jewish able-bodied Polish male he feared deportation by the Germans for forced labor? The battle of the Warsaw Ghetto, the first urban uprising in German occupied Europe, was the longest of any Jewish uprising against the Germans.</span><sup><a href="#note_11">11</a></sup></note> At the time of that <a class="term" href="#vothG_pogrom">Pogrom</a> . . . I was in <a class="placename" href="#vothL79">Warsaw</a>. And . . . I kept observing and seeing, of course, the battle of the <a class="term" href="#vothG_ghetto">ghetto</a>.<note n="12"><span class="note">It is interesting that Mr. Czolopicki refers to the battle of the Warsaw ghetto aa as "pogrom", a Yiddish word derived from the Russian meaning an organized massacre of Jews.</span><sup><a href="#note_12">12</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="858.611" end="x">[In Russian] And you think that having no relatives in America, it would be possible for you to travel there? Would you like to go to South America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="871.305" end="x">[In Polish] Brazil.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="872.430" end="x">[In Russian] Brazil. Do you speak French well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="878.375" end="x">[In Polish] A bit. I understand it, I mean.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="882.090" end="x">[In Russian] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="882.959" end="x">[In Polish] I can read it . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="884.169" end="x">[In Russian] You can read it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="885.455" end="x">[In Polish] I write it quite well . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="886.352" end="x">[In Russian] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="887.685" end="x">[In Polish] It's just that speaking . . . when it comes to speaking it still presents certain problems . . . [background noise; unintelligible] . . . very quickly</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="901.192" end="x">[In Russian] Thank you, Mr. Czolopicki. I was very interesting to talk to you. I would like to propose one small experiment . . . I have some pictures. What do you think this picture represents?<note n="13"><span class="note">As a psychologist, Boder was interested in Mr. Czolopicki's reactions to the pictures he showed him, a variation on the Rorschach test.</span><sup><a href="#note_13">13</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="938.121" end="x">[In Polish] It's a photograph of a woman [background noise; unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="941.363" end="x">[In Russian] Speak up. Well, and what does it represent?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="964.596" end="x">[In Polish] . . . a boy, lost in thought, sitting on [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="973.245" end="x">[In Russian] Good. What does this picture represent?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="981.478" end="x">[In Polish] . . . [long pause] And this represents . . . a sick person, dead, or dying, and above her stands . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="999.611" end="x">[In Russian] Aha, and what is happening in this picture?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="1029.027" end="x">[In Polish] It looks as though women are running away from some air raid.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1033.748" end="x">[In Russian] Aha, and this one?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boleslaw Czolopicki</span>:
+            </span>
+            <span class="utterance" who="#czolopickiB" start="1040.960" end="x">[In Polish] [background noise] It's farm work. On one side . . . work on a piece of land, cleaning or [background noise; unintelligible] . . . on the other side some mountaineer with a book in his hand is teaching. A woman [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1077.756" end="x">[In English] Alright.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            The Polish uprising against the German occupiers of Warsaw began on August 1, 1944. It was led by the Polish Home Army, allied with the Polish government-in-exile in London. The Home Army was joined by the smaller People's Army, a leftist Polish resistance organization which included some Jews who had fought in the Warsaw Ghetto rebellion of April 19-May 16, 1943. The aim of the uprising was to seize the city of Warsaw before the approaching Red Army could conquer it. The unequal struggle ended on October 2, 1943 with the defeat of the insurgents.During the uprising some 150,000 civilians were killed including several thousand Jews who had been living in hiding in "Aryan" Warsaw after the collapse of the Warsaw Ghetto rebellion and some 16,000-20,000 Polish insurgents.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            The Rhineland is located in western Germany and is named for the Rhine river. After World War I, it was a buffer zone between Germany and the West with Allied troops occupying it from 1918-1930. It was then a demilitarized zone until occupied by Germany in 1936. Though this occupation was in defiance of the Versailles Treaty, there was no meaningful Allied response to it in keeping with the policy of appeasement at the time.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            With the collapse of the Polish uprising, the Germans expelled the bulk of the population of Warsaw to nearby detention camps and razed what was left of the city. About 100,000, including Mr. Czolopicki, were conscripted for forced labor, 65,000 were sent to concentration camps and the rest were deported  to the Generalgouvernement, the Polish administrative unit established by the Germans in October, 1939 and comprised of those parts of the country not incorporated into the Third Reich.
+        </li>
+                <li>
+            <a name="note_4"></a>
+            Bochum is located in northwestern  western Germany  northwest of the city of Essen and in the heart of the Ruhr district, the industrial heartland of Germany and one of the world's largest single industrial regions with ironworks, steelworks and coal mines.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            Essen is located in northwestern western Germany. It was the largest industrial city in the Ruhr coalfield. It suffered a great deal of destruction from Allied bombing during World War II as a center of the German war industry.
+        </li>
+                <li>
+            <a name="note_6"></a>
+            Geldern-Kappellen is located in the same area as Bochum and Essen.
+        </li>
+                <li>
+            <a name="note_7"></a>
+            In early March, 1945, General Eisenhower's armies began an all-out advance towards the Rhine during which Mr. Czolopicki was liberated.
+        </li>
+                <li>
+            <a name="note_8"></a>
+            It is unclear to which party Mr. Czolopicki is referring since at this time Germany was a one party Nazi (National Socialist German Workers Party) state established in 1933. The Storm troopers of the party wore brown uniforms.
+        </li>
+                <li>
+            <a name="note_9"></a>
+            Moers is a town located in the Ruhr just west of Duisberg. It is west of the Rhine river. American troops did not cross the Rhine until March 7, 1945. Contrary to what is indicated in the interview, Moers is not over the Rhine. 
+        </li>
+                <li>
+            <a name="note_10"></a>
+            Mr. Czolopiciki indicated earlier that he had begun studying at a school for design. It was for this school that he was paying. He then switched to the study of radio. There is no indication as to which organization was paying for his training in this area. It is possible that he was enrolled in an ORT training program.
+        </li>
+                <li>
+            <a name="note_11"></a>
+            Was  Mr. Czolopicki living under an assumed name because he was Jewish or because as a non-Jewish able-bodied Polish male he feared deportation by the Germans for forced labor? The battle of the Warsaw Ghetto, the first urban uprising in German occupied Europe, was the longest of any Jewish uprising against the Germans.
+        </li>
+                <li>
+            <a name="note_12"></a>
+            It is interesting that Mr. Czolopicki refers to the battle of the Warsaw ghetto aa as "pogrom", a Yiddish word derived from the Russian meaning an organized massacre of Jews.
+        </li>
+                <li>
+            <a name="note_13"></a>
+            As a psychologist, Boder was interested in Mr. Czolopicki's reactions to the pictures he showed him, a variation on the Rorschach test.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription (Polish)
+                            </i>: 
+            <span class="Transcription (Polish)">
+                <name>Alicia Nitecki</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Transcription (Russian)
+                            </i>: 
+            <span class="Transcription (Russian)">
+                <name>Alexander Gribanov</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Translation (Polish)
+                            </i>: 
+            <span class="Translation (Polish)">
+                <name>Alicia Nitecki</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Translation (Russian)
+                            </i>: 
+            <span class="Translation (Russian)">
+                <name>Alexander Gribanov</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL15">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL15" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL15 = new OpenLayers.Map('map_vothL15', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL15.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL15.addLayer(markers);
+map_id_vothL15.zoomToMaxExtent();
+
+                        var lat_1 = 48.866700;
+                        var lon_1 = 2.333300;
+                        var vothL15 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL15_icon = new OpenLayers.Marker(vothL15);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL15);
+markers.addMarker(vothL15_icon);
+    addMarker(vothL15, popupClass, "", true, false, false);
+    map_id_vothL15.setCenter(vothL15, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL79">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL79" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Warsaw, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL79 = new OpenLayers.Map('map_vothL79', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL79.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL79.addLayer(markers);
+map_id_vothL79.zoomToMaxExtent();
+
+                        var lat_2 = 52.250000;
+                        var lon_2 = 21.000000;
+                        var vothL79 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL79_icon = new OpenLayers.Marker(vothL79);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL79);
+markers.addMarker(vothL79_icon);
+    addMarker(vothL79, popupClass, "", true, false, false);
+    map_id_vothL79.setCenter(vothL79, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_3 = 48.866700;
+                        var lon_3 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL366">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL366" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Czechowice, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL366 = new OpenLayers.Map('map_vothL366', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL366.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL366.addLayer(markers);
+map_id_vothL366.zoomToMaxExtent();
+
+                        var lat_4 = 52.192778;
+                        var lon_4 = 20.889722;
+                        var vothL366 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL366_icon = new OpenLayers.Marker(vothL366);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL366);
+markers.addMarker(vothL366_icon);
+    addMarker(vothL366, popupClass, "", true, false, false);
+    map_id_vothL366.setCenter(vothL366, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL460">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL460" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Wanne, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL460 = new OpenLayers.Map('map_vothL460', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL460.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL460.addLayer(markers);
+map_id_vothL460.zoomToMaxExtent();
+
+                        var lat_5 = 51.537217;
+                        var lon_5 = 7.155331;
+                        var vothL460 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL460_icon = new OpenLayers.Marker(vothL460);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL460);
+markers.addMarker(vothL460_icon);
+    addMarker(vothL460, popupClass, "", true, false, false);
+    map_id_vothL460.setCenter(vothL460, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL284">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL284" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Bochum, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL284 = new OpenLayers.Map('map_vothL284', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL284.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL284.addLayer(markers);
+map_id_vothL284.zoomToMaxExtent();
+
+                        var lat_6 = 51.466700;
+                        var lon_6 = 7.183300;
+                        var vothL284 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL284_icon = new OpenLayers.Marker(vothL284);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL284);
+markers.addMarker(vothL284_icon);
+    addMarker(vothL284, popupClass, "", true, false, false);
+    map_id_vothL284.setCenter(vothL284, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL285">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL285" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Essen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL285 = new OpenLayers.Map('map_vothL285', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL285.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL285.addLayer(markers);
+map_id_vothL285.zoomToMaxExtent();
+
+                        var lat_7 = 51.450000;
+                        var lon_7 = 6.950000;
+                        var vothL285 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL285_icon = new OpenLayers.Marker(vothL285);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL285);
+markers.addMarker(vothL285_icon);
+    addMarker(vothL285, popupClass, "", true, false, false);
+    map_id_vothL285.setCenter(vothL285, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL343">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL343" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Geldern, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL343 = new OpenLayers.Map('map_vothL343', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL343.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL343.addLayer(markers);
+map_id_vothL343.zoomToMaxExtent();
+
+                        var lat_8 = 51.519722;
+                        var lon_8 = 6.332500;
+                        var vothL343 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL343_icon = new OpenLayers.Marker(vothL343);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL343);
+markers.addMarker(vothL343_icon);
+    addMarker(vothL343, popupClass, "", true, false, false);
+    map_id_vothL343.setCenter(vothL343, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL342">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL342" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Moers, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL342 = new OpenLayers.Map('map_vothL342', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL342.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL342.addLayer(markers);
+map_id_vothL342.zoomToMaxExtent();
+
+                        var lat_9 = 51.459167;
+                        var lon_9 = 6.619722;
+                        var vothL342 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL342_icon = new OpenLayers.Marker(vothL342);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL342);
+markers.addMarker(vothL342_icon);
+    addMarker(vothL342, popupClass, "", true, false, false);
+    map_id_vothL342.setCenter(vothL342, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_kz">
+                <a name="vothG_kz"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    KZ.
+                </span>
+                <span class="definition">
+                    Abbreviation for “konzentrationslager” (concentration camp).
+                </span>
+            </li>
+                        <li class="vothG_ss">
+                <a name="vothG_ss"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    SS.
+                </span>
+                <span class="definition">
+                    Acronym for the German Schutzstaffel (“Protective Echelon”), a major Nazi organization. It grew from a small paramilitary unit to a powerful force that served as Hitler's "Praetorian Guard," the Nazi Party's "Shield Squadron" and a force that, fielding almost a million men (both on the front lines and as political police), managed to exert as much political influence as the German Army. Built upon the Nazi racial ideology, the SS, under Heinrich Himmler's command, was responsible for many (and most of the worst) of the crimes against humanity perpetrated by the Nazis during World War II.
+                </span>
+            </li>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                        <li class="vothG_pogrom">
+                <a name="vothG_pogrom"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    pogrom.
+                </span>
+                <span class="definition">
+                    A form of riot or mob violence directed against a particular group, whether ethnic, religious, or other, and characterized by the killing and destruction of their homes, businesses, and religious centers. The term was originally used to denote extensive violence against Jews.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Polish uprising against the German occupiers of Warsaw began on August 1, 1944. It was led by the Polish Home Army, allied with the Polish government-in-exile in London. The Home Army was joined by the smaller People's Army, a leftist Polish resistance organization which included some Jews who had fought in the Warsaw Ghetto rebellion of April 19-May 16, 1943. The aim of the uprising was to seize the city of Warsaw before the approaching Red Army could conquer it. The unequal struggle ended on October 2, 1943 with the defeat of the insurgents.During the uprising some 150,000 civilians were killed including several thousand Jews who had been living in hiding in "Aryan" Warsaw after the collapse of the Warsaw Ghetto rebellion and some 16,000-20,000 Polish insurgents.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Rhineland is located in western Germany and is named for the Rhine river. After World War I, it was a buffer zone between Germany and the West with Allied troops occupying it from 1918-1930. It was then a demilitarized zone until occupied by Germany in 1936. Though this occupation was in defiance of the Versailles Treaty, there was no meaningful Allied response to it in keeping with the policy of appeasement at the time.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            With the collapse of the Polish uprising, the Germans expelled the bulk of the population of Warsaw to nearby detention camps and razed what was left of the city. About 100,000, including Mr. Czolopicki, were conscripted for forced labor, 65,000 were sent to concentration camps and the rest were deported  to the Generalgouvernement, the Polish administrative unit established by the Germans in October, 1939 and comprised of those parts of the country not incorporated into the Third Reich.
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Bochum is located in northwestern  western Germany  northwest of the city of Essen and in the heart of the Ruhr district, the industrial heartland of Germany and one of the world's largest single industrial regions with ironworks, steelworks and coal mines.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Essen is located in northwestern western Germany. It was the largest industrial city in the Ruhr coalfield. It suffered a great deal of destruction from Allied bombing during World War II as a center of the German war industry.
+        </li>
+                <li class="note_6">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Geldern-Kappellen is located in the same area as Bochum and Essen.
+        </li>
+                <li class="note_7">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            In early March, 1945, General Eisenhower's armies began an all-out advance towards the Rhine during which Mr. Czolopicki was liberated.
+        </li>
+                <li class="note_8">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            It is unclear to which party Mr. Czolopicki is referring since at this time Germany was a one party Nazi (National Socialist German Workers Party) state established in 1933. The Storm troopers of the party wore brown uniforms.
+        </li>
+                <li class="note_9">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Moers is a town located in the Ruhr just west of Duisberg. It is west of the Rhine river. American troops did not cross the Rhine until March 7, 1945. Contrary to what is indicated in the interview, Moers is not over the Rhine. 
+        </li>
+                <li class="note_10">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Czolopiciki indicated earlier that he had begun studying at a school for design. It was for this school that he was paying. He then switched to the study of radio. There is no indication as to which organization was paying for his training in this area. It is possible that he was enrolled in an ORT training program.
+        </li>
+                <li class="note_11">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Was  Mr. Czolopicki living under an assumed name because he was Jewish or because as a non-Jewish able-bodied Polish male he feared deportation by the Germans for forced labor? The battle of the Warsaw Ghetto, the first urban uprising in German occupied Europe, was the longest of any Jewish uprising against the Germans.
+        </li>
+                <li class="note_12">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            It is interesting that Mr. Czolopicki refers to the battle of the Warsaw ghetto aa as "pogrom", a Yiddish word derived from the Russian meaning an organized massacre of Jews.
+        </li>
+                <li class="note_13">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            As a psychologist, Boder was interested in Mr. Czolopicki's reactions to the pictures he showed him, a variation on the Rorschach test.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

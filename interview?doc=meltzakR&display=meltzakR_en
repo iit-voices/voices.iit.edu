@@ -1,0 +1,1972 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Raisel Meltzak; September 8, 1946; Bellevue, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-raisel-meltzak-september-8-1946-bellevue-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Raisel Meltzak; September 8, 1946; Bellevue, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=meltzakR">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=meltzakR&display=meltzakR_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=meltzakR">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=meltzakR">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4.161" end="x">[In Yiddish] Talk in here. And so, Rose, tell me again, what is your name and how old are you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="9.770" end="x">[Words not clear] . . . speak Polish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="12.014" end="x">No, no, no. I have asked you before. Yiddish. You must speak Yiddish. Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="17.282" end="x">Rose Meltzak. On the 30th . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="22.934" end="x">How old are you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="24.161" end="x">Eh . . . eh . . . /pause/</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="31.137" end="x">In short, how old are you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="33.173" end="x">Thirteen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="33.973" end="x">You are thirteen years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="34.871" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="35.170" end="x">[Words not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="37.296" end="x">In January.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="39.092" end="x">Wait a moment. Where were you when the war broke out?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="43.673" end="x">In the forest.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="45.110" end="x">When the war broke out?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="46.848" end="x">At home still. In <a class="placename" href="#vothL147">Busk</a>. With the mother and with the father.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="50.082" end="x">In which town?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="51.038" end="x">In <a class="placename" href="#vothL147">Busk</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="52.226" end="x">In <a class="placename" href="#vothL147">Busk</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="53.125" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="53.933" end="x">And how old were you then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="56.658" end="x">I do not remember.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="58.125" end="x">You do not remember.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="58.815" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="59.292" end="x">You were a little girl.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="61.091" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="61.658" end="x">Were you seven, eight years old?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="63.783" end="x">I do not remember.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="65.163" end="">You do not remember.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="65.702" end="x">[Giggles.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="66.061" end="x">And so. Nu, and when the war broke out, what happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="72.197" end="x">To us?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="73.606" end="x">To you. To your family.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="75.073" end="x">Aha. [When] the Germans were there my father worked in the Judenrat [Jewish Community Council].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="80.891" end="x">In Judenrat?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="81.810" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="82.448" end="x">Nu.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="82.927" end="x">He was, well, no rich [?]. He just worked. When the Germans were with us . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="91.819" end="x">Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="92.207" end="x">. . . my father, earlier yet, excav- . . . excav- . . . how does one say it?--made such a hole [cave] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="99.363" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="99.632" end="x">. . . where I, my mother, my father, and my little brother three years old . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="105.203" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="105.620" end="x">. . . and we hid there. We sat there not a [full] month.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="113.009" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="113.520" end="x">Hid. Hidden. Around two weeks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="114.686" end="x">What was the name of the town? . . . What was the name of the town?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="117.470" end="x"><a class="placename" href="#vothL147">Busk</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="118.219" end="x"><a class="placename" href="#vothL147">Busk</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="118.848" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="119.626" end="x">Was it near <a class="placename" href="#vothL79">Warsaw</a>? What city was it near?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="122.981" end="x">It was near <a class="placename" href="#vothL378">Zlochev</a>, <a class="placename" href="#vothL511">Ternopol</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="126.153" end="x">Near <a class="placename" href="#vothL511">Ternopol</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="127.293" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="128.339" end="x">All right, now we know. Nu, when did the father make . . . the father made a hole in which to hide?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="132.921" end="x">I do not remember any more?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="133.608" end="x">You do not remember.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="134.389" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="134.668" end="x">Nu, did you hide . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="135.833" end="x">I tell only what I know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="136.793" end="x">Yes. Good. You hid in a hole.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="140.088" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="140.356" end="x">Why did you have to hide?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="142.181" end="x">Because the Germans wanted to kill us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="145.120" end="x">Aha. Nu, what happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="147.600" end="x">There we . . . we lay. It was a--Can I tell where the hole was?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="154.246" end="x">Yes, naturally.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="155.386" end="x">There it was . . . It was such a hole, there where horses stood.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="162.015" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="162.288" end="x">Such a stable.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="163.540" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="164.021" end="x">And under the stable we had that hole . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="167.288" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="168.410" end="x">. . . where we sat. There on top was an attic.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="171.284" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="172.035" end="x">And in the attic the Germans were walking. My brother--he was not even three years old then--began to cry. My mother gave him to . . . to drink. He refused. He cried so we thought that the Germans would kill us. But they did not hear [him]. We had enough money. My father was a horse trader.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="188.165" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="188.706" end="x">We . . . we were not poor. A gentile woman brought us food. Not much, because we had been robbed, too [possibly she means cheated], but . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="204.782" end="x">You had been robbed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="205.509" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="205.989" end="x">What was taken from you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="206.856" end="x">Things were taken from us, gold, such things.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="210.272" end="x">Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="211.138" end="x">And afterwards my father . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="212.814" end="x">Who took it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="213.892" end="x">Gentiles. The Ukrainians. I lived in the Ukraine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="217.168" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="217.828" end="x">There the gentiles robbed us, at night. Any my father paid the gentiles to bring us food. And she . . . she brought us a little soup, such a cold one.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="232.138" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="232.743" end="x">It was not good. Well, it is better than nothing. Then we . . . the gentile woman said that the Germans were coming with dogs, and she must . . . The Germans had such dogs which only had to sniff to know where we are, where there is a Jew. And we ran away in the morning. In the morning, it was such . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="253.440" end="x">Who ran away? You ran away?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="254.512" end="x">Yes. All of us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="256.518" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="256.998" end="x">Yes. I, the mother, the father, [in a barely audible whisper] the little brother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="258.136" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="259.152" end="x">And the gentile woman . . . We were in a grove. We got so scared. There were many Jews lying unbur- . . . not yet buried, but they just lay about.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="269.813" end="x">Dead people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="270.610" end="x">Yes, dead people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="271.310" end="x">Did you yourself see that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="272.238" end="x">Yes, I saw that.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="272.238" end="x">Go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="274.814" end="x">And we got away. It was so muddy it came up to . . . it was very . . . it was going on winter. It was going on winter. And . . . and we still had enough money, but the Ukrainians looted us. They took everything away from us. We remained in just one . . . one shirt.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="296.431" end="296.431">What do you mean, 'in one shirt'?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="297.299" end="x">In one shirt. We only had that what we had on us. [That] they did not take away but that which we carried.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="302.510" end="x">But you wore more than a shirt. You wore a dress, a coat.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="309.801" end="x">Yes. A coat they took off, too.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="312.102" end="x">The coat.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="314.315" end="x">Yes. We had left only one dress, two dresses, just what we wore. This was not taken away. But a coat they took off. And we went on. Afterwards we sat in the forest. Eh . . . and they took everything away from us, the—what is it in Yiddish?—the pastuchy [Polish for shepards].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="334.740" end="x">Yes. Shepards.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="336.117" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="336.448" end="x">Go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="336.896" end="x">They took everything away from us. And . . . all right. I was . . . It was raining. We were all sitting. We made a shack out of sticks and out of hay and other such things.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="349.352" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="349.800" end="x">And we were sitting there. Afterwards two other Jews arrived, a girl [a young woman?] and a boy [a young man?] from <a class="placename" href="#vothL147">Busk</a>, from our home town.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="357.745" end="357.745">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="358.882" end="x">And they said . . . They dragged away my father, and he went. [They possibly belonged to the Jewish police.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="363.284" end="x">Wasn't your father with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="365.230" end="x">Yes, he was with us, but then they came, and, the girl and the boy, and dragged him away. He did not want to go, but they dragged him away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="374.700" end="x">How could the girl and the boy drag him away?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="378.221" end="x">They began . . . they took him aside and persuaded my father . . . why should he remain here? . . . [apparently imitating the conversation] that so he will be killed, and so he will be killed . . . [The so and so seem not to mean here either way, but an ennumeration of possibilities].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="385.768" end="x">Oh.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="385.292" end="x">But . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="386.206" end="x">Oh, they persuaded him to go.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="387.410" end="x">Yes, yes, that he should go to a <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="390.283" end="x">And who remained?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="391.362" end="x">I with the mother and [barely audible whisper] the little brother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="392.998" end="x">In the forest.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="393.879" end="x">Yes, we remained in the forest. Afterwards we—shall I tell . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="398.518" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="398.850" end="x">. . . everything about the whole life?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="399.386" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="400.923" end="x">Afterwards we . . . eh . . . we remained alone. The father said, 'Shh' . . . My mother's name was was Rachel . . . 'Rachel, if you want to come, you and Raisel' . . . My Jewish name is Raisel.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="415.200" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="415.672" end="x">'If you [singular] want to go' . . . if you [plural] want to go with me, you must take the little brother and set him under a tree, or else you must throw him into . . . whichever . . . whichever you want, as long as you do not take him along' [Little children, liable to cry unexpectedly, were one of the paramount handicaps in flight. —D.P.B.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="429.320" end="x">The baby?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="429.919" end="x">Yes, yes. That's what he told me. It is all true. [Words not clear] very, very . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="434.531" end="x">Well, yes. I understood. Why did he want . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="437.473" end="x">I do not know. I was still little. I did not understand at all.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="440.647" end="x">Wait a moment. [Adjusting equipment.] And so, what happened? Go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="445.318" end="x">Eh . . . eh . . . Go on, yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="447.922" end="x">yes</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="448.402" end="x">And afterwards my brother . . . All right. My mother said, 'No! I will not leave the brother behind. And what will . . . The children . . . Whatever will happen to me will happen to the children. Whatever will happen to the children will happen to me.' And the father . . . the father said, 'Yes. If you want it so, remain. Remain. I am going.' And my father was eating a piece of bread, and he leaned over. He started so . . . he threw away the bread he was eating. He could not eat . . . eat any more, and started to cry, just like a little child. Ah, he went away. And he went away. He did not want to remain with us. Afterwards we went . . . The Ukranians, the police, caught us and started to beat him . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="492.473" end="492.473">Whom?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="492.952" end="x">Us. Me and the mother. They began to beat and kick the mother. She did not . . . she cried so. She did not . . . she did not know what was happening to her. She fell down, my mother. They began to kick and beat me. I was thr- . . . thrown into a . . . into such a . . . such a ditch [word in Polish dialect].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="512.524" end="x">Into what? Into a ditch?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="513.782" end="x">I was thrown into a ditch [word in Polish].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="516.147" end="x">Into a what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="517.015" end="x">Into a ditch.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="518.250" end="x">What does it mean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="519.143" end="x">Such a—how is it in Yiddish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="522.015" end="x">Say it in Polish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="523.512" end="x">[In Polish] Into . . . into such a hole.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="527.943" end="x">Yes. Go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="529.081" end="x">And there . . . [in Yiddish] and there I was thrown in. They began to beat me with a horse whip. Afterwards my mother got up and pulled me out. The brother, she left him standing on the street, and me she . . . I got out. And then I cried so. The mother asked me why. I was still a small child, so I did not know. 'Why is he doing this to me? Why? Did I deserve it, or what?' I surely did not deserve it. I did not know. And the brother cried so. And afterwards we . . . All right. We ran away. We left everything and ran away. [As if to herself] And after that, what happened? Aha. And the father went away. The father said that, and he left. It was all the same already to him. After that, what else? [A very friendly, confident giggle.] I have already forgotten . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="581.355" end="x">Of course.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="581.894" end="x">. . . quite a bit. Such a long time. Aha. After that we went away. We went to Antolowka. Antolowka.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="591.726" end="x">What is that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="592.538" end="x">There were such . . . Germans . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="594.662" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="596.278" end="x">. . . such folk- . . . <a class="term" href="#vothG_folk">folk-Germans</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="597.012" end="x">A small town.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="597.668" end="x">Yes. Folk- . . . <a class="term" href="#vothG_folk">folk-Germans</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="599.668" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="600.527" end="x">. . . were there. They spoke German. I was there. They were very kind, very kind. They gave us food. They brought us food to the forest. I was [there] with the mother. Afterwards one . . . I have forgotten already. What is it in Polish? Do you understand Polish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="616.429" end="x">What is it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="617.351" end="x">[In Polish] A policeman.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="620.882" end="x">A policeman. Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="621.803" end="x">[In Yiddish] The police caught us there in the forest. We were asked where we are from and what we are doing here and what business we have there. So we said, 'We are Jews.' We answered simply, 'We are Jews, and we have nobody.' The mother talked to them [words not clear]. I was sitting like a fool. I did not know what to say. And he said, 'Come.' Is it like this? So we went. The mother pleaded so, she cried, to let us go. We gave him something, so he let us go.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="654.865" end="x">You gave him something?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="656.036" end="x">Yes, the mother gave him something, so he let us go. After that we went to Huta . . . Huta . . . [Khust?] Olejska.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="664.426" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="665.130" end="x">It is a Polish [in Polish] village—how does one say it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="668.599" end="x">A Polish village?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="669.584" end="x">A Polish village, yes. We were there. The gentiles were also very kind. We were there. We slept in barns.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="678.833" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="679.521" end="x">We slept here a day, here a day, here a night. Thus we slept. My mother . . . I helped a little. The mother helped a little. We worked in the garden. We did all that . . . I had a—[In Polish] how does one say cow?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="695.954" end="x">A cow?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="697.672" end="x">Yes, a cow.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="698.672" end="x">Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="699.172" end="x">We had . . . I tended [the cow] all day until night. Afterwards we left for <a class="placename" href="#vothL379">Huta Olejska</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="706.031" end="x">And the little brother was with you.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="707.968" end="x">Yes. After that, when we were in <a class="placename" href="#vothL379">Huta Olejska</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="712.296" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="713.733" end="x">. . . we went back there [where] we had been, with the Germans. I have already forgotten what the name of it is. There my brother died.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="724.467" end="x">What did he die from?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="725.935" end="x">Yes, yes, he died. My brother had such a stomach . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="729.560" end="x">Oh.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="730.341" end="x">. . . such a large [stomach]--I do not know how it is [said] in Yiddish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="731.857" end="x">All right. Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="733.295" end="x">And he died. We . . . my mother . . . He told my mother that his stomach hurts him, everything hurts him, and he cannot walk. And my mother set him down, and I with the mother went for bottles. My mother went to pick . . . There were bottles there with which I could go to the gentiles . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="749.093" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="749.781" end="x">. . . and bring water . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="751.000" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="751.625" end="x">. . . or a little milk.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="752.906" end="x">Yes. Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="753.594" end="x">And . . . and . . . and my brother had already died when we came from . . . and my mother had gone there. I said, 'You will go and pick' . . . from there I used to bring a little milk . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="766.094" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="767.313" end="x">. . . or water. There I would leave the bottles. I always used to say, 'I am . . . I feel . . . I do not need any more.' I said this to the mother, because we were not supposed to be here in the forest, because the gentiles had said that we should not come, that today the police are around. And we did not go. And my mother took the bottles and went to the village[?]. And when I came [returned] the brother was already dead.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="788.815" end="x">Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="789.893" end="x">The brother was already dead. And my mother cried so much. In the forest there are many—how does one say it?—[in Polish] trees?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="800.721" end="x">Trees.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="801.846" end="x">Trees. So she began to do it so, with her head [she apparently demonstrates]. She had such bumps.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="807.017" end="x">She beat herself . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="807.919" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="808.325" end="x">. . . against the trees?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="809.044" end="x">Yes. And she cried so very much. She screamed. She could not bear it. After my brother died we . . . we buried him.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="817.418" end="x">Who buried him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="819.101" end="x">I with the mother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="819.944" end="x">You with the mother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="821.413" end="x">Yes, I with the mother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="821.960" end="x">In the forest?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="822.491" end="x">Yes, in the forest. Nothing, just dug such a tiny grave. He was only three years old. He was very small. And afterwards I remained with the mother. The mother cried very much. [short break in the wire] . . . very much. My mother was badly emaciated [?]. My mother did not get better, because my mother cried very much. She was so thin as this, as a stick. And afterwards I went with my mother another month, [or] two. I was with the mother another two months. And my mother died.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="852.528" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="853.247" end="x">My mother died.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="853.747" end="x">In the forest?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="854.247" end="x">Yes, in the forest. Everything in the forest, because I was in the forest three years [words not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="859.779" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="860.639" end="x">Two and a half [years], not three.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="861.967" end="x">[In whispers] You must go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="865.912" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="866.490" end="x">We shall talk again later, yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Raisel Meltzak</span>:
+            </span>
+            <span class="utterance" who="#meltzakR" start="868.724" end="x">Yes.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL147">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL147" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Busk, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL147 = new OpenLayers.Map('map_vothL147', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL147.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL147.addLayer(markers);
+map_id_vothL147.zoomToMaxExtent();
+
+                        var lat_1 = 49.966700;
+                        var lon_1 = 24.583300;
+                        var vothL147 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL147_icon = new OpenLayers.Marker(vothL147);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL147);
+markers.addMarker(vothL147_icon);
+    addMarker(vothL147, popupClass, "", true, false, false);
+    map_id_vothL147.setCenter(vothL147, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL79">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL79" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Warsaw, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL79 = new OpenLayers.Map('map_vothL79', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL79.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL79.addLayer(markers);
+map_id_vothL79.zoomToMaxExtent();
+
+                        var lat_2 = 52.250000;
+                        var lon_2 = 21.000000;
+                        var vothL79 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL79_icon = new OpenLayers.Marker(vothL79);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL79);
+markers.addMarker(vothL79_icon);
+    addMarker(vothL79, popupClass, "", true, false, false);
+    map_id_vothL79.setCenter(vothL79, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL378">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL378" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Zlochev, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL378 = new OpenLayers.Map('map_vothL378', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL378.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL378.addLayer(markers);
+map_id_vothL378.zoomToMaxExtent();
+
+                        var lat_3 = 49.808333;
+                        var lon_3 = 24.901111;
+                        var vothL378 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL378_icon = new OpenLayers.Marker(vothL378);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL378);
+markers.addMarker(vothL378_icon);
+    addMarker(vothL378, popupClass, "", true, false, false);
+    map_id_vothL378.setCenter(vothL378, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL511">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL511" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Ternopol, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL511 = new OpenLayers.Map('map_vothL511', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL511.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL511.addLayer(markers);
+map_id_vothL511.zoomToMaxExtent();
+
+                        var lat_4 = 49.583300;
+                        var lon_4 = 25.650000;
+                        var vothL511 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL511_icon = new OpenLayers.Marker(vothL511);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL511);
+markers.addMarker(vothL511_icon);
+    addMarker(vothL511, popupClass, "", true, false, false);
+    map_id_vothL511.setCenter(vothL511, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL379">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL379" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Hucisko Oleskie, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL379 = new OpenLayers.Map('map_vothL379', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL379.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL379.addLayer(markers);
+map_id_vothL379.zoomToMaxExtent();
+
+                        var lat_5 = 49.808333;
+                        var lon_5 = 24.901111;
+                        var vothL379 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL379_icon = new OpenLayers.Marker(vothL379);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL379);
+markers.addMarker(vothL379_icon);
+    addMarker(vothL379, popupClass, "", true, false, false);
+    map_id_vothL379.setCenter(vothL379, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_folk">
+                <a name="vothG_folk"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    folk-german (Volkdeutsche).
+                </span>
+                <span class="definition">
+                    The Nazi term for ethnic Germans living outside of Germany. The Nazis made every effort to win the support of these German minorities.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

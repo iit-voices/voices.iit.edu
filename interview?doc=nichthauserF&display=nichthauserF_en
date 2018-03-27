@@ -1,0 +1,3518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Fela Nichthauser; August 1, 1946; Fontenay-aux-Roses, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-fela-nichthauser-august-1-1946-fontenay-aux-roses-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Fela Nichthauser; August 1, 1946; Fontenay-aux-Roses, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=nichthauserF">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=nichthauserF&display=nichthauserF_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=nichthauserF&display=nichthauserF_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=nichthauserF">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=nichthauserF">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3.042" end="x">This is Spool No. 15 taken at <a class="placename" href="#vothL28">Boucicaut</a>, France near <a class="placename" href="#vothL13">Paris</a>, August 1, 1946. The interviewee is a young girl, Fela Nichthauser. She is so accustomed having her last name called first, that when I asked her about her first name she replied "Nichthauser," and as her last name she gave "Fela." That apparently comes from being so often on roll call.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="37.809" end="x">[In German] Tell me, Fela, what is your full name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="42.749" end="x">What does it mean—a full name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="45.460" end="x">Just your name.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="46.888" end="x">Fela Nichthauser.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="48.135" end="x">And how old are you, Fela?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="51.551" end="x">I am twenty-three years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="53.129" end="x">You are twenty-three years old, and where do you live?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="57.196" end="x">I now live in France.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="60.732" end="x">Yes, but where do you live at present?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="64.196" end="x">I don't live in the chateau. I live a few houses further away. Not in <a class="placename" href="#vothL28">Chateau Boucicaut</a>, but also in a home of <a class="term" href="#vothG_ose">OSE</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="73.533" end="x">Are there other girls with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="77.630" end="x">There are no other girl-deportees living there, but I am an exception because I have my brother in <a class="placename" href="#vothL28">Chateau Boucicaut</a>, and so that we could be together, they arranged that I could live there, although I don't work there. I don't work at the home. I go to school in <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="96.829" end="x">You are attending school in <a class="placename" href="#vothL13">Paris</a>? What kind of a school is it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="100.034" end="x">That is a school for dental technicians, also belonging to <a class="term" href="#vothG_ose">OSE</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="103.239" end="x">And you are being trained to become a dental technician. Does the <a class="term" href="#vothG_ose">OSE</a> have its own technical school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="108.432" end="x">Yes, <a class="term" href="#vothG_ose">OSE</a> has its own school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="112.360" end="x">And how many people study there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="114.480" end="x">About seventy people. Seventy or seventy-five students.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="118.727" end="x">And you think that being a dental technician is a good profession for a girl?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="124.420" end="x">I don't know exactly, but I am all alone in the world. I have to decide for myself and I hope if not this, I may later learn something else. I don't know myself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="138.120" end="x">Is your brother here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="139.717" end="x">No, my brother has been sent away for a vacation at the sea.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="143.253" end="x">And who are the other children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="147.319" end="x">They are mostly <a class="placename" href="#vothC15" type="camp">Buchenwald</a> children. There are also a few French children who were not deported.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="158.344" end="x">And how many girls are there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="160.254" end="x">Eleven girls. One is a deportee; the others had their parents here [she apparently refers to French-Jewish children who were orphaned as a consequence of deportation of their parents by the Nazis].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="173.489" end="x">Tell me Fela, you are now twenty-three years old. Where were you born?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="180.670" end="x">I was born in Poland in the city of <a class="placename" href="#vothL86">Wadowice</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="184.869" end="x">In <a class="placename" href="#vothL86">Wadowice</a>. Now tell me what happened there when the Germans first arrived?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="192.502" end="x">In the year of 1939, when the war started, we like all people ran away. We had our own horses and our own carriages; and our whole family—not exactly the whole family, but my mother, and father, two brothers and I,—we ran away, far away. Beyond <a class="placename" href="#vothL397">Sandomierz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="219.589" end="x">What was your father's occupation?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="222.903" end="x">He was a poultry dealer. He was a poultry dealer and a fish merchant.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="229.421" end="x">In the city?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="230.596" end="x">In the city. On a large scale.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="236.030" end="x">Was that wholesale? Did he sell to other merchants?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="241.584" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="242.638" end="x">What for did he have the horses and wagons?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="246.132" end="x">In addition my father had another business, a warehouse where they sell coal. He had a coal business and he needed the wagons to haul the coal from other cities, and to sell it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="277.117" end="x">So you took your horses and wagons and got away. Where did you all go? Your father and mother and who else?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="285.322" end="x">Two younger brothers and I.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="289.250" end="x">Are you the oldest in the family?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="291.009" end="x">No, I still had a married sister who lived before the war at the Russian border in <a class="placename" href="#vothL398">Baranovici</a>. And since 1939, we have had no word from our sister and we don't know what happened to her.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="307.967" end="x">Is <a class="placename" href="#vothL398">Baranovici</a> not far from <a class="placename" href="#vothL7">Slonim</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="311.654" end="x">I think so, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="313.895" end="x">Now tell me, one of your brothers is now here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="320.112" end="x">Yes. He is here with me and the other was also with the younger one in <a class="placename" href="#vothC15" type="camp">Buchenwald</a>. And fate wanted it so that a few days before the Americans came he was sent away with a transport because he still could move as if he were well, and on the road the whole transport was shot.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="346.312" end="x">They shot the whole transport? ! So it is the older brother who is here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="350.451" end="x">No. The younger one. The youngest of the whole family.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="353.716" end="x">And why wasn't he taken?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="356.397" end="x">Because he was very sick at the infirmary. He was very sick at <a class="placename" href="#vothC15" type="camp">Buchenwald</a> and didn't even know that the other brother was taken.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="365.837" end="x">So you went with your parents to <a class="placename" href="#vothL399">Radovitz</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="370.518" end="x">No, we went to <a class="placename" href="#vothL397">Sandomierz</a>. We wanted to go further but we found out that the Germans were already there and we had to return home. The things were stolen from us. We had at home a big garden. Everything was ransacked and we were left without anything. Five people and we didn't have a penny to live on. And I had to work very, very hard—and with my daddy, with my mutti, and my brother,—just to pay the rent and to have some bread.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="407.078" end="x">Weren't you living in your own home?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="411.084" end="x">We had no home of our own. Father just rented a flat. My father was the manager of the building.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="418.494" end="x">So then you returned to --</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="422.030" end="x">Back to Poland and the same city.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="425.313" end="x">What city was it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="426.639" end="x">Exactly the same city. We went back to <a class="placename" href="#vothL162">Andrychów</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="430.266" end="x">You returned to <a class="placename" href="#vothL162">Andrychów</a>. And what did your father do then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="435.730" end="x">He worked on the street with a shovel. Because the Germans demanded it. All men had to work on the street and the Jewish girls were taken to scrub floors and to wash windows.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="451.555" end="x">For whom?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="452.941" end="x">For the Germans. For the police. For everybody. And I was taken, but I worked well and worked very hard, because I intended to go to the Lieutenant and to tell him that I don't want to work for nothing and that I should get paid. And the other people worked without pay. And so it became possible for me to get three marks a day and that helped me a great deal, because I had to eat. And my father also earned something, and a few other Jews also worked well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="490.269" end="x">Did you have any money hidden?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="493.010" end="x">No. We really didn't have such luck. We couldn't hide away anything. We had a family of five children, five not yet grown up children who couldn't earn their money, so everything was on the shoulders of the parents.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="510.619" end="x">You told me before that you had horses and wagons. Did you return with those horses and wagons?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="518.372" end="x">Yes, with one horse. The other horse was shot.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="522.468" end="x">Who shot the horse?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="524.155" end="x">He was hit by a piece of shrapnel.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="527.709" end="x">Shrapnel! How did shrapnel happen to strike there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="531.354" end="x">Because we were returning together with the Polish Army on the same road, and many other carriages and lots of people have joined it. That was a terrible thing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="547.209" end="x">Why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="548.264" end="x">Because we were betrayed. It was known that the Polish Army was with us, and so they were shooting at us and we were in constant fear. We could not move to get anything for ourselves.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="566.107" end="x">Now, and then what happened?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="569.963" end="x">Then I remained two years at home, and in 1940 came the first blow. With the first transport they deported my brother who was at the time seventeen years old. It was terrible. And my father didn't want him to go alone to the <a class="term" href="#vothG_lager">lager</a>. So he represented himself to be a man of fifty-six. It did not help that Mutti pleaded with him and I pleaded with him that he shouldn't leave us because it would be much more difficult for us without him. But he replied that he could not let the child go to the <a class="term" href="#vothG_lager">lager</a> alone. He must go with him. And so he was accepted very readily. The Germans accepted him. And my father departed with my brother. In 1940. And then it became very hard for us. I had to work; the twelve year old child did work with a shovel in the street. We had to pay our rent, buy food and buy provisions to send packages to the <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="635.994" end="x">Did they permit you to send packages?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="637.602" end="x">Yes, we could send packages of two kilos.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="640.614" end="x">How far away was the camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="642.783" end="x">It was very far away. My father was with my brother in various camps. The first <a class="term" href="#vothG_lager">lager</a> was <a class="placename" href="#vothC35" type="camp">Wischau</a>. That is in Germany. I don't know where. Then he was in Flessing. That is near <a class="placename" href="#vothL105">Gleiwitz</a>. Then he was in Blechame near Sakrow. The last <a class="term" href="#vothG_lager">lager</a> was <a class="placename" href="#vothC25" type="camp">Dachau</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="660.404" end="x">The last <a class="term" href="#vothG_lager">lager</a> was <a class="placename" href="#vothC25" type="camp">Dachau</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="661.621" end="x">Yes. After a year my brother returned home. He was freed because he had a terrible leg. He did something to himself on purpose, so that he should be sent home.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="676.513" end="x">By the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="677.278" end="x">Yes, by the Germans. And the papa remained there. So since that time we don't know a thing . . . And we remained home for another year. In 1941 the whole city was evacuated. It was two weeks after my brother returned from the <a class="term" href="#vothG_lager">lager</a>. He came from the <a class="term" href="#vothG_lager">lager</a> and Mutti worked in another city in order to get a special card so that she would not be sent away. She worked there. And we three children, my brothers and I, were in the city, working on the street. And it was on the 10th of June in the year '41 that the whole city was called to a big square.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="725.768" end="x">Only the Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="726.943" end="x">Only the Jews. Naturally. And we were to be deported.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="732.467" end="x">And what was the name of this city?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="735.238" end="x"><a class="placename" href="#vothL162">Andrychów</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="736.925" end="x">That was in what district?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="739.527" end="x">That was in the district of <a class="placename" href="#vothL403">Bielitz</a>. I was born in <a class="placename" href="#vothL86">Wadowice</a> but we lived in <a class="placename" href="#vothL162">Andrychów</a>. That wasn't far.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="751.425" end="x">The whole city was called together? Where was your mother at that time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="754.497" end="x">My mother was in the other city where she worked. That was twelve kilometers away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="759.377" end="x">Oh. That was twelve kilometers away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="760.504" end="x">Yes. And she had left in the evening because she worked on the night shift and she was to return by six o'clock. We were deported Monday night. We saw our mother off at the station and we kissed her and she gave us instructions as to what we should do the next morning and, alas, we didn't know that we were seeing Mutti for the last time. And the next morning at six we got up to go to work. It was a wonderful day and there was nothing in the air at all . . . We didn't think at all that such a horrible thing may come. And here there come two Jewish policemen and two <a class="term" href="#vothG_ss">SS</a> and tell us we were to go immediately to the square of assembly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="811.403" end="x">You told them that your mother was in the other city?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="814.066" end="x">Indeed I told them. I was so dumb. I couldn't believe that the Germans could be so mean as to laugh at me. And I told them I have to wait for my mutti because she was supposed to return by six o'clock. So they told me not to worry about Mutti, that Mutti will come, and so we had to go to the assembly square and there frightful things occurred before us. This I won't ever forget.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="841.953" end="x">What happened there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="843.339" end="x">They took not only the healthy persons, but also the very old people who were almost unable to move, who were very sick. I myself, I personally saw a seventy-year-old woman, all swollen from sickness, being dragged along the grass because it was revulsive to them to lift her. She was all soft, from her swellings. But I could not look on. I was permitted to lift up that woman and to carry her on a bed to the big hall. And we saw various things that I could not forget. People were separated . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="887.611" end="x">Tell me what happened to you. You were with your brother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="893.225" end="x">With two brothers. One who had returned from the <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="896.870" end="x">And where is he now, the one who returned from the <a class="term" href="#vothG_lager">lager</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="899.159" end="x">He isn't alive anymore.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="901.057" end="x">He doesn't live anymore?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="902.033" end="x">That is the one who just before liberation was sent to transport.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="906.172" end="x">Oh, the one from the transport. Do you mean to say he returned and then he was sent away again?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="911.636" end="x">No, but that is how we came to the square for assembly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="914.979" end="x">That means you and your two brothers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="918.142" end="x">And we stood before a committee and they questioned us; we showed our work cards and they saw that we were three young and healthy people, so it was ordered that all three should be sent to the <a class="term" href="#vothG_lager">lager</a>. This business was settled and I don't want to describe the whole scene.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="938.124" end="x">I want you to tell me everything. Tell me what happened.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="943.407" end="x">My uncle stood there with three children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="946.630" end="x">Tell me only that which you have seen yourself. Your uncle stood there because</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="950.907" end="x">Because all the people were distributed in groups. People for the camps, old people for transport to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, and some people who were to remain in the same city for work. So there were three groups. What we saw made one's heart ache terribly. Just to see how these people treated us, that on one motion, on one gesture of a German man depended the fate and life of a person. If he made with the hand so, or so, [she demonstrates] that meant he would go for deportation from which nobody returned. My uncle with the three children stood on the side for deportation, while his wife with my mutti were working together. And he cried terribly and the children around him held on to his arms and they all cried terribly, and they yelled to me that I should transmit regards to his wife, and he didn't know that I too was being sent to a <a class="term" href="#vothG_lager">lager</a>. He thought I will see his wife and he pleaded with me that I should console her, that he will return, that he will protect the three children and nothing will happen to them. And we saw his face and the little children and I will never forget it. There stood next to him a man whom I also knew very well. He was an acquaintance from our city who stood there with nine children. The oldest child was eleven years old. His wife also remained in the same city where my mutti worked; most of the women remained there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1059.107" end="x">What was there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1060.926" end="x">A factory. A shop they called it. [It is interesting to note that the Germans used the English words shop]. They were sewing there for the Germans. Uniforms or sacks for bread for the soldiers. He stood there with his nine children. It was really . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1073.999" end="x">How many children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1074.945" end="x">Nine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1076.252" end="x">Your uncle with nine children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1077.758" end="x">No, that man with the nine children. The oldest was eleven years old. And indeed when one saw it, how one's heart could be moved, and all the nine children started crying and their faces looked horrible. Really, I don't find words.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1098.391" end="x">And so your uncle with his three children together was sent away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1103.042" end="x">Yes, they went with the old people to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1107.813" end="x">The children were sent with the old people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1110.072" end="x">Together, because they knew that nothing can be gotten from old people nor children. That nothing can be gotten.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1116.458" end="x">Now tell me what happened to you and your brothers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1120.566" end="x">We stood there for several hours on the square. We got food and we were worried over Mutti. We also thought that she will return but unfortunately we didn't know that in that city the same thing happened as here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1139.331" end="x">In the other city too?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1140.175" end="x">In the other city too. And there, the people were sent away. And although my mother was forty-five years old she and my aunt too, and also the wife of my friend - they all were deported and sent to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. That is what fate wanted.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1155.488" end="x">They were sent to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>? And what was <a class="placename" href="#vothC4" type="camp">Auschwitz</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1163.048" end="x"><a class="placename" href="#vothC4" type="camp">Auschwitz</a> was a work <a class="term" href="#vothG_lager">lager</a>. It was called a work <a class="term" href="#vothG_lager">lager</a> but it was a crematory. I wasn't there but people who survived personally, have told me a lot about it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1177.307" end="x">On the same day you were taken your mother also was taken from her shop?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1183.434" end="x">And sent to <a class="placename" href="#vothC4" type="camp">Auschwitz</a> with the whole transport. They wrote to me about seeing my mother in the last moment, how she was in the railroad car in which previously cattle were transported, and she had sent regards to the three children. And she was told that she should not worry, that the three children were taken to the <a class="term" href="#vothG_lager">lager</a>. And that was the last.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1207.693" end="x">Now wait a moment. Your mother worked there during the night, and you were called in the morning. And you thought your mother will return. What time did you say your mother will be back?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1219.220x" end="x">At half past five. And this time she did not return and that is what happened there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1225.425" end="x">So you went with your two brothers to the <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1228.449" end="x">No, not at first. First we were sent to <a class="placename" href="#vothC105" type="camp">Sosnovitzi</a>. All the transports that had to go to a camp first went there. There was a transit <a class="term" href="#vothG_lager">lager</a>. There the people were sorted out. And after that the girls were sent to a <a class="term" href="#vothG_lager">lager</a> for women and the boys went to a <a class="term" href="#vothG_lager">lager</a> for men.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1251.813" end="x">And how old were the two boys?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1254.205" end="x">One brother was at that time 18, and the younger brother was 13.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1260.783" end="x">Now</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1261.476" end="x">Now we came, we stood before the doctor. I was the first. And they saw that I was well. I had a beautiful tan. I was very beautiful. [Here she stops and blushes and then continues the sentence]. I was very beautifully sunburned, because for the last half year I worked in the fields for the Germans outdoors all day, and so he said that surely I was fit to go to the <a class="term" href="#vothG_lager">lager</a>. I didn't say a word. I couldn't defend myself, I still stood there and my heart ached. I wanted badly that the two brothers should go home, because I was sure that Mutti will come home. I didn't know that the same thing happened in the other city. That we got to know only later. And there stood the other brother, the eighteen-year-old one, before the doctor. And the doctor recognized him. He was the one who let him go two weeks ago from <a class="placename" href="#vothC25" type="camp">Dachau</a>. He recognized him. It was a Pole and he asked him, 'What are you doing here? I have set you free.' And my brother said, 'What can I do? We had a selection and I had to go and my leg is not yet well.' He said, 'I shall give you a note and you can go back home', and he was put aside with the people who were to go home and then came the little one before the doctor. I pleaded with him that he should set the little one free, that he wasn't yet 14 years old, only 13. He should permit him to go home so he could be with Mutti and the other brother. He is still a child and he wouldn't be able to get along. But the doctor said: 'Since I have set free one, I cannot set free the other.' And we had to agree. Because the inspector of the <a class="term" href="#vothG_lager">lager</a>. Knoll, a German and an <a class="term" href="#vothG_ss">SS</a> man, had called all the Jews to the square. He could free them; he could send them to the <a class="term" href="#vothG_lager">lager</a>. And he [the doctor] told my brother that he should stand right in front and because he is so small possibly something fortunate might happen. They may notice that he was small and he will be set free. He had beautiful hair, golden curls, but he didn't obey, it was something new for him. [Mockingly] He goes to a <a class="term" href="#vothG_lager">lager</a>. He doesn't understand what it means. He goes to a <a class="term" href="#vothG_lager">lager</a> that's a new life for him. He didn't understand.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1416.344" end="x">Did he think that was something good?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1417.911" end="x">He thought it was something good. He couldn't understand; he was a child. He wanted to appear important, be sent to a <a class="term" href="#vothG_lager">lager</a> and write letters from the <a class="term" href="#vothG_lager">lager</a> and so on. We couldn't explain it to him and he hid behind, and still it was written by fate differently. Knoll noticed him and called him forward and asked him how old he was. And he said 13 years. And Knoll asked him whether he can work. So he said yes. Do you want to go to the <a class="term" href="#vothG_lager">lager</a>? And he said no. So he asked him whether he had somebody at home, so he said yes, I have the mutti home, he thought that Mother was home [her weeping comes through on the wire].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1473.009" end="x">So what did Knoll say?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1475.630" end="x">He asked him: 'Do you have somebody home?' And he said, 'Yes, the mother'. So he says 'Run home,' and I stood at the window and saw it all. And again it was fortunate that by sheer accident the little brother was set free. I saw the two brothers set free and I went to the <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1502.161" end="x">And what happened then? To what <a class="term" href="#vothG_lager">lager</a> were you sent?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1507.022" end="x">I was sent to a <a class="term" href="#vothG_lager">lager</a>
+                        <a class="placename" href="#vothC11" type="camp">Birkenheim</a>. That was the district of <a class="placename" href="#vothL176">Auerbach</a> in lower Silesia. There was a big factory. A big textile plant.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1527.715" end="x">Where was the plant?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1529.474" end="x">In <a class="placename" href="#vothC11" type="camp">Birkenheim</a>. A big plant. Germans worked there. And there were already a hundred girls in the barracks. And other hundreds arrived, from our city, and from the different towns around. And so I felt for the first time that everything behind me was lost. The gate closed and I entered into a dark hall. There stood beds, and beds, and more beds and nothing else. And so my second life began.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1578.032" end="x">And that was where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1579.399" end="x">In <a class="placename" href="#vothC11" type="camp">Birkenheim</a>. I worked there for half a year.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1585.634" end="x">At the loom?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1586.960" end="x">At two looms.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1589.412" end="x">Were these electric looms?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1590.779" end="x">Yes. Electric looms. I had to service the machines myself, had to fix everything, had to get the material. I knew the machine well. The German master taught me. It wasn't very bad with the food. Nor with the cleanliness, but only very little freedom. We saw no people at all. The gates were covered with sack cloth and shutters so that we shouldn't see the street. We only saw the little garden where we sat and the barracks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1645.467" end="x">Did they allow any books or papers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1647.708" end="x">No, nothing. We were allowed once in two weeks to write a letter. A post card and that was all. And Sunday when we were free we were permitted to lie on the bed, or on that little square. We barely had room for ourselves and nothing else.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1668.895" end="x">Were you permitted to sing?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1670.925" end="x">Yes, that we were permitted to do. That was during the first year in the <a class="term" href="#vothG_lager">lager</a>. Things were not yet so bad. It wasn't yet a concentration camp. It was a so-called work <a class="term" href="#vothG_lager">lager</a> [Arbeitslager] where one worked very hard. In the winter we could not dress well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1684.901" end="x">Why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1685.323" end="x">Well, for example, we could put something on on the way to the factory, but in the factory we could not wear a pullover or a jacket. One would become stiff. You see they were afraid that one works badly when one is warmly dressed. One has less movement and it was believed that one works less and makes lots less meters of goods when one moves slower. When you are lightly dressed you can move faster.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1711.178" end="x">Was the factory heated?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1713.648" end="x">No, no, no it was not heated at all. There were frightfully large rooms with long, long rows of machines, just machine after machine. We were not permitted to talk all day. Not even to each other. Even if the girls would not be watched, because the motors, the many motors would not permit us to talk.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1734.552" end="x">Was it too noisy?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1737.004" end="x">Yes. And before our eyes was a very large clock so that we should know the time; that we should know that we have to work from 7 to 12 and from 1 to 6 in the evening. And it was done for the purpose that the time should appear to us longer, for if one has a clock before his eyes time goes much slower. When one does not see the time, one asks, 'What time it is, what time is it?', and one is pleasantly surprised if he hears it is already eleven or eleven thirty, and if one has constantly the time before his eyes it is very bad. And they did it on purpose so that we should feel bad.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1776.986" end="x">Now tell me, what happened when somebody would get sick?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1780.793" end="x">When one was sick, one had to be really sick, so that one could remain a day or two in the <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1789.498" end="x">Was there a doctor, was there a hospital?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1791.968" end="x">No, absolutely no. There was only a nurse, a very small sick room of two or three beds. When one really had gall stones or heart trouble he would be put there for a few days until he was again well and could work again.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1811.016" end="x">Now tell me, how long did you work in the spinnery?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1816.182" end="x">We worked there six months and then came an order that in another <a class="term" href="#vothG_lager">lager</a>, in Weidenburg in Lower Silesia fifty girls were needed. So we were sorted out and I was in the group that had to go. And so I left this <a class="term" href="#vothG_lager">lager</a> and went to another <a class="term" href="#vothG_lager">lager</a>. This was not a weaving plant, but a spinning plant.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1846.897" end="x">Did you have to learn it anew?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1849.548" end="x">There was nobody. It was a new <a class="term" href="#vothG_lager">lager</a>; the barracks were just put up, there was nothing, no beds, not a thing. We had to beg for everything. They didn't want to give us any water, not a dish. They believed that because we are Jews we don't need anything, that we keep dirty and we, of course, don't need anything. We can live like animals. And so we had to fight for each saucer, for every little dish, for every blanket to cover ourselves. In a few months the situation somewhat improved. It happened that a woman <a class="term" href="#vothG_lager">lager</a> commander arrived and when she saw how neat we kept and that we are just like other people with whom one can talk; who understand; that we were not like people were saying abut us here in the factory; and she took the matter up with the director and we were given various things.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1904.142" end="x">Who was the <a class="term" href="#vothG_lager">lager</a> commander?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1905.769" end="x">She was a German woman. Not an <a class="term" href="#vothG_ss">SS</a> woman. She was a plain German woman.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1909.185" end="x">Did it ever happen that some girls refused to work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1914.227" end="x">No, everybody wanted to work because every girl was in good health. Not very eagerly. But when one was forced, one was put before a machine, she stayed there and worked. And in time we would get accustomed to the work. The people with us were not too bad. We worked together with the Germans and from time to time we could slip a word to them. And there we were eighteen months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1942.984" end="x">You mean to say that also Germans worked there? Prisoners or outside workers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1949.069" end="x">Outside workers. Free people, free Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1951.159" end="x">These people came to the factory?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1952.394" end="x">Yes. Those who wanted to earn something.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1954.533" end="x">Were they friendly to the prisoners?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1956.834" end="x">Not all of them. Some were dangerous. Some spied whether we were not talking to the other Germans. One had to be very careful.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1967.497" end="x">Now how long did that last?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1969.919" end="x">Eighteen months I was there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1971.979" end="x">Did they pay you for the work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1974.118" end="x">No. Absolutely nothing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1975.787" end="x">Was there no concentration camp money? Some script to the canteen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1979.504" end="x">No, absolutely nothing. We had our own kitchen and the girls cooked in the kitchen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1986.052" end="x">Did they give you soap?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="1989.124" end="x">No, we never got soap. We still had some things from the other <a class="term" href="#vothG_lager">lager</a>. When we came to that <a class="term" href="#vothG_lager">lager</a> we still had all our things from home. And we had soap and some other things that we needed. And that they did not take away from us, in that <a class="term" href="#vothG_lager">lager</a> so that we had everything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2007.220" end="x">And so you were for a year and a half in the spinnery.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2010.293" end="x">Yes, and year and a half in the spinnery.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2011.871" end="x">And that was in what city?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2013.227" end="x">In Weidenburg.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2015.287" end="x">And where did you go from Weidenburg?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2017.787" end="x">From Weidenburg we went to <a class="placename" href="#vothC37" type="camp">Graeben</a>. That is twelve kilometers from a very big and famous <a class="term" href="#vothG_lager">lager</a>, <a class="placename" href="#vothC39" type="camp">Gross Rosen</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2027.004" end="x">And why were you sent away from Weidenburg?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2029.444" end="x">Because the time came when all the little <a class="term" href="#vothG_lager">lagers</a> were concentrated into larger <a class="term" href="#vothG_lager">lagers</a>. And our <a class="term" href="#vothG_lager">lager</a> consisted only of fifty people and there came Knoll, the same one who was one time in <a class="placename" href="#vothC105" type="camp">Sosnovitz</a>. He came to us and said that we have to go to a different <a class="term" href="#vothG_lager">lager</a>, and the next day we left the <a class="term" href="#vothG_lager">lager</a> and traveled to <a class="placename" href="#vothC37" type="camp">Graeben</a>. That was a flax camp.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2059.227" end="x">Only women?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2060.462" end="x">Yes, only women. It was only a <a class="term" href="#vothG_lager">lager</a> for women and there we were again for more than a year and a half. But then already the bad times started. That was already a concentration camp with very strict rules, and we definitely felt that we were not human being. No Jews, just animals, just at the mercy of the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2087.746" end="x">Was that in the flax camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2089.523" end="x">Yes, in the flax camp [there was an interruption in the interview. Somebody entered the room and left again]. The work was very hard; I suffered very much. The halls were large. We worked there the whole winter. It was terribly cold. I had nothing to wear. They took away everything. The <a class="term" href="#vothG_ss">SS</a> came one day to the manager of women. They called us out of bed. We were told to get out of bed and get out on the yard. They counted us up and they talked to us. The <a class="term" href="#vothG_ss">SS</a> people told us that they see that we are in good health and fine looking and that they won't do us any harm. They will give us our things back, that we should work well and no harm will be done to us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2156.761" end="x">That occurred in the same place, in the flax plant?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2158.779" end="x">Yes, and they told us that we should remain for an hour outside.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2166.102" end="x">In what month was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2167.879" end="x">That was in December. That was in the year 1944. And they told us that we should remain outside. And while we were there all the <a class="term" href="#vothG_ss">SS</a> men and all the <a class="term" href="#vothG_ss">SS</a> women went into the barracks. They took away everything. They ruined everything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2193.937" end="x">What do you mean, they ruined everything?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2196.178" end="x">Well, they opened all the lockers, they turned over the beds. They made an inspection and they just threw together our best things, cut them with scissors. They just ruined everything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2214.985" end="x">And then what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2216.130" end="x">We didn't know a thing. Just a moment ago they told us everything will be all right. That we will have our things, and that we will be able to dress the way we want to and so on. And that was just a trick on their part so that we should just forget ourselves for a moment, and then they did to us such a thing. [This concludes spool 15, we continue with spool 16].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2239.275" end="x">[In English] This concludes Spool fifteen (15) of Fela Nichthauser and we shall continue with her story on Spool sixteen (16). David Boder, Interviewer.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2254.639" end="x">This is a continuation of Spool 15—Spool 16 , the continuation of the story of Fela Nichthauser.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2266.046" end="x">[In German] You were telling me that they came and you had to stand outside. They had promised that they will allow you to keep your things; they went into the barracks. Now what did they do while you were outside?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2282.534" end="x">They ruined our things thoroughly, thoroughly. And then they told us to go inside. So we were left with nothing to wear, except the things we had on ourselves. And there were many girls who were just ready to go bathing and so they had put on some kind of morning dress and the other things they had left inside, in the barracks. And they remained that way. All completely naked, just in a morning dress.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2314.999" end="x">I don't understand. What do you really mean by saying they have ruined your things?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2318.083" end="x">Well, they didn't want us to go around in nice things. We were still young, we were girls, and we had still all our things from home. They did not want it. They just craved the satisfaction to have done something bad to us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2335.282" end="x">All right, but what did they really do with your things?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2338.445" end="x">Most of the things they have taken away and they made a warehouse and they told us that each week we will get a shirt, a pair of stockings, a dress, an overcoat in case it should be cold; and of course, we had to submit. And we were not permitted to have anything. But afterward the rooms were again put in order and they told us that none of us would dare have more than a pair of stockings, a pair of underthings or more than one shirt. We should not dare to have more than what is being given to us. And that was for us a big blow because we were not accustomed to such conditions. Anything that we had from home was so dear to us, because these were the only tokens of remembrance. And it was difficult during the war to make something. Still they have ruined everything without heart, without anything. And everything they have ruined. And they liked to see it so. And they told us to get on with our work. We were on the night shift. Without food, without sleep, without washing ourselves. Still they told us to go on to the factory. Go on with our work as usual. And there came a very strong winter, and we had to stand at the machinery that was thousands of times bigger than ourselves. Terribly big machinery, without help, without anybody, in frost, and in hunger; and we had to stay there and work. Twelve hours, from six o'clock in the morning until six o'clock in the evening. Only the next week it was six o'clock in the evening until six o'clock in the morning. With only a quarter of an hour for rest.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2449.092" end="x">Were they working on Sunday.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2451.050" end="x">They mostly worked Sundays. They told us that we were free, but wagon-loads of flax would arrive from the fields and we had to go to work and unload everything, and unload all of that in the biggest and worst frost.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2466.803" end="x">What were you doing with that flax?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2469.303" end="x">That was processed by machines and a better flax would come out and then it was processed by other machines and then it would come to the spinnery and from the spinnery to the weaving plant. So it went on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2490.085" end="x">And how long were you at this flax plant?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2492.356" end="x">About a year and a half. There I was terribly sick. I once fell off my bed, because we had two level or three level bunks. I was on the night shift and I wanted to get up early I was still half asleep, and so I fell down and I caused myself a very small wound on the bone. I paid no attention, I thought it would heal in a couple of days. I have been working in dust, because there was a terrible dust. That was the worst thing. That was because this dust got into our noses and our lungs. We could not talk or breathe there. We couldn't even see each other, so much dust there was around. So the dust got into that little wound; it became larger. She is showing me now a scar on her right leg about two inches long, and an inch and a half wide]. And so, this wound became bigger from day to day. Pus developed and I had a temperature of 40[centigrade] and had to stay in bed. I thought that in a week or two that will get well. Still it lasted two and a half months. I could not walk. I was very weak, and so I remained in bed for two and a half months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2593.436" end="x">Did you remain in the barracks?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2595.484" end="x">In the barracks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2596.719" end="x">You were not in a hospital?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2597.713" end="x">No, absolutely, no.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2599.490" end="x">Did the doctor come to see you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2601.328" end="x">No, absolutely, no. I didn't want him. If I would have asked for a doctor there would have come a German doctor and he would have said that I had to go to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, as being unfit for work. And so it happened after a certain length of time.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2617.183" end="x">And how did they allow you to stay in bed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2622.695" end="x">Well, in the morning <a class="term" href="#vothG_appell">appell</a> your name was called. So the doctor (she was a Russian woman medico-sanitar), would say: 'The Nichthauser is sick, she is unable to work'. And they believed her, and the <a class="term" href="#vothG_ss">SS</a>
+                        <a class="term" href="#vothG_lager">lager</a> chief woman would come every day to the barracks to see whether somebody hadn't remained there. She would go into the room for the sick and see especially that somebody isn't pretending to be sick. She herself would examine the people. The reports from our <a class="term" href="#vothG_lager">lager</a> were going to <a class="placename" href="#vothC39" type="camp">Gross-Rosen</a> because that wasn't far from us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2655.711" end="x">Why so?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2656.597" end="x">For example, we belonged to the concentration camp <a class="placename" href="#vothC39" type="camp">Gross-Rosen</a> and everything that happened in our <a class="term" href="#vothG_lager">lager</a> had to be made known to the <a class="term" href="#vothG_commandant">commandant</a> of <a class="placename" href="#vothC39" type="camp">Gross-Rosen</a>. For example, every day there went over a list of the sick and also of the ones who were well and able to work. And so my name went there often, almost every day during the two and a half months. I am sick, constantly sick, and they didn't like it very much because I remained so long in the <a class="term" href="#vothG_lager">lager</a> so there came an order that I should be sent to the <a class="placename" href="#vothC4" type="camp">Auschwitz</a> crematory because I am unfit for work and it is impossible to keep me longer. They didn't tell me that. They knew how sensitive I was. They were afraid that I would do something; they didn't tell me anything. Only after liberation I was told that I was to be sent within a few day to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>; and all were very grieved and still they couldn't do anything and it surely would have happened that way. Within a few days there came an order that all girls, that means the whole <a class="term" href="#vothG_lager">lager</a> had to go to transport. It was again one of those times when all the <a class="term" href="#vothG_lager">lagers</a> were dissolved and again people were driven away because the Russians were already near. And so we, the sick, had to get up and those who were well also had to get up, and we had to pack all our things, everything we had. We were given a little piece of bread, a bit of margarine, a bit of marmalade, and so we started on foot to transport, and we didn't know where to. And we were marching thirty-five kilometers a day without a stop, without a halt for rest, without anything with <a class="term" href="#vothG_ss">SS</a> men, with soldiers, with all the <a class="term" href="#vothG_ss">SS</a> women who were with us, and so we were driven day and night, day and night.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2793.025" end="x">Were the <a class="term" href="#vothG_ss">SS</a> men also marching on foot?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2795.646" end="x">Yes, also on foot. Often it would happen that an automobile would pass. They would take all the <a class="term" href="#vothG_ss">SS</a> men on the automobiles. Only two or three soldiers remained with us to watch us, and the rest were driving a few kilometers ahead and then wait for us again, in some town.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2821.077" end="x">Were all people able to march?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2824.432" end="x">That's it. We were not. I myself couldn't walk. I had a sick leg, I had that time a temperature of about 40, about 39.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2833.107" end="x">Was it winter or summer?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2835.938" end="x">It was winter. It was in January. And before we started out—we knew that someday we will have to march—and so many girls made themselves socks and caps out of blankets.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2853.619" end="x">Did they permit that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="2854.866" end="x">It wasn't permitted. We were hiding them. They would have killed us if they would have known that we have made these things. And then, on the day of the transport when she saw that we have these things on us she did not care anymore. She was already leaving the <a class="term" href="#vothG_lager">lager</a>. And that was in part our salvation because it was terribly cold, and we outdoors. One night we came to a village where they permitted us to sleep in a barn. But we were five hundred girls and barely one hundred and fifty could get in. The rest remained outside. So we lay down on the cobble-stones and on the snow. It was just a miracle that many did not fall asleep forever. And so we marched and marched until we came to Yanoff. I don't know where it is; I just know the name of the city. There they put us in railroad cards, but such cold cars, open gondolas, dirty. Where barely eighty people could get on, they put one hundred and fifty of us in each car. We were lying one on the other; we were yelling. We began to cease being human because we knew it was just impossible otherwise. We would shout at each other: "Move on! Make room!" We had to talk rudely to each other; it just didn't go otherwise. They did it all on purpose so that we should become mean to each other. Well, we did not beat each other, but it wasn't far from it. And the conditions were terrible. In general no food, and traveling day and night. It was snowing and we were wet through and through. The soldiers and <a class="term" href="#vothG_ss">SS</a> men had a separate car. Not a passenger car, but a closed one and there they had a stove, not an electrical, but just a stove, and there they cooked, and prepared various things. They drank coffee and we had to look on. And so we traveled for several days. When we stopped at a station we asked permission of the woman <a class="term" href="#vothG_lager">lager</a> commander to wash ourselves, because we haven't washed ourselves for already two, three weeks. When the trip was first on foot she permitted us to wash, and it was January. We undressed and we went into the pond. So we washed ourselves in icy, ice-cold water. She marveled at us. Everybody marveled at us. They didn't want to believe that we were Jews. All that they have heard was that the Jews are dirty. They are unfit to keep clean. The young and beautiful girls had to use such water! With a knife we had to break through the ice so that we could wash a little bit. We cleaned our things and returned to the dirty railroad car. So we traveled several weeks again without food, without anything. They gave us some cold preserves without bread, without anything. It was salty. No water. It really was a miracle . . . One asked a soldier to give us from a pump or a well some water! At every station there was so much water but they wouldn't permit us to fetch it. Sometimes when the train was standing we went over to the locomotive and we
+                        scooped up that dirty water, oily warm water. It was so greasy from the oil but we grabbed it so nobody would see us and we drank that water, that dirty water. One night we arrived in <a class="placename" href="#vothC8" type="camp">Belsen</a>. We stood there in the open. We arrived there at three o'clock at night. We were told we had first to bathe because they were afraid we may have lice. So we, five hundred girls divided into five groups, and each group went separately and they let the girls out from different doors so that they could not talk to us and could not tell us anything what they had been doing, so that we could be prepared. And that precisely was bad. And then my turn came. We were undressed completely naked, we were permitted to take only our shoes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3156.369" end="x">Who did that? Other women?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3158.237" end="x">Those were men.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3159.936" end="x">And men made you undress.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3161.063" end="x">Yes. they were special prisoners, still lower than we were, so they should have the satisfaction of doing it to us. But we responded with ironic laughter. Women were also present. Jewish women who had to work there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3178.605" end="x">What were the women doing?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3181.346" end="x">The women were taking away the things. They put them on a stick and the things went into a special oven where they were disinfected so no lice should remain on them, although we had no lice at that time. They undressed us and told us that we will get out things back. So we went in bathing. We wanted to take a shirt or something else for a towel but they did not permit us to do it. We went in just so, only the shoes we could take. But at that time we had no good shoes. Mine were big, very big wooden shoes. Three pair of feet like mine could go into one such shoe, with which I have worked already for months in the <a class="term" href="#vothG_lager">lager</a>, and these we could take with us. I still had some pictures from home, from my mutti, from my papa, and from my brothers and sisters and many, many other pictures. But I specially wanted to take with me those of my family. They didn't permit me to do so. They immediately burned it all except for a few small pictures that I hid deep in the shoe so that they could not find them. I saved these few pictures which are so precious to me, and are full of deep memories. And so I went bathing under the shower and there were men present. They laughed, they mocked us, they went amidst the wet bodies and they . . . [here she said she couldn't find a German expression and just showed what they were doing slapping herself on the buttocks]. And for the bathing they took us into a hall where the water was frozen on the walls. And no towels were given, no soap, we just washed ourselves, that way in the water and we stood in that hall for hours, and waited until the things came from that oven, from disinfection. That is how we dried ourselves. The water on our hair froze to the head, and the drops of water froze on us. We huddled ourselves to each other so that we could warm ourselves a bit. We really could not believe that people could do such things to us, move us after such very hot water to such a cold hall, where there was only water and frost. We had to get dry by ourselves. I was all blue from the cold. So we waited two hours until our things came and they were really not our things that came. I did not get my dress but a dress that belonged to another girl, and to the other girl they gave in turn my things. Everything was mixed up. We got a shirt, a pair of pantaloons and a dress. They did not permit anything more. Everything else we had to abandon. So we went at night, deep in the night, late in the night to the barracks. We were chased and beaten, so we should go faster.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3399.588" end="x">Who beat you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3400.703" end="x">The soldiers. They were just soldiers, not <a class="term" href="#vothG_ss">SS</a> men. Plain soldiers. We didn't know the way to the barracks. It was very far from the bathhouse. We arrived in the barracks and it was ptich dark. We couldn't see the door or nothing. They pushed us in like pigs. Locked us up and went away. And so in the dark we looked for some bed, for a table. One couldn't find anything. But on the next morning, when daylight appeared, we saw that the room was empty, that we had nothing. We had only the floor and the walls. Broken glass in the windows, and the wind blew from all sides. We sat down on the dirty floor and our life started anew. From January to April, I was in <a class="placename" href="#vothC8" type="camp">Belsen</a>. But these couple of months cost me much more than the three and a half years spent in other <a class="term" href="#vothG_lager">lagers</a>. In the other <a class="term" href="#vothG_lager">lagers</a> I could wash myself, we did not suffer from hunger, we could go around clean, I could keep my things still in order. Here we were five hundred girls in one barracks. Soon arrived five hundred more two hundred more, one hundred more, everyday . . . Hungarian poeple, Russian people, all kinds. Old people, healthy people and sick people. All together, one next to the other. One had lice, the other did not have any, so now she had lice too. And so it was. Horrible, horrible. And so we sat there for months on the dirty soiled floor.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3524.393" end="x">Didn't you work in <a class="placename" href="#vothC8" type="camp">Belsen</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3526.050" end="x">Absolutely no. Only the strong Russian people worked there. Not the Russians, the Ukranians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3533.884" end="x">Women?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3534.728" end="x">Yes, they were very strong, twenty-five to thirty years of age.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3539.770" end="x">What kind of work were they doing?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3540.915" end="x">They worked in the fields. In the gardens. It was a very, very big <a class="term" href="#vothG_lager">lager</a> and extended for kilometers. Before, it was a military instalation. Soldiers lived there, and later they made it a concentration camp. There the people were concentrated to be led to their death, to be driven to their death. There was a crematory where they burned only the dead people. They didn't have to burn the people alive because thousands and thousands were lying before the <a class="term" href="#vothG_block">blocks</a> every day, dead from typhus.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3584.087" end="x">Before your <a class="term" href="#vothG_block">block</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3585.153" end="x">My <a class="term" href="#vothG_block">block</a> and various other <a class="term" href="#vothG_block">blocks</a>. After I was a few days in the <a class="term" href="#vothG_block">block</a> they ordered a part of the girls to go to another <a class="term" href="#vothG_block">block</a>. So I went there. We didn't know where and what for and we noticed that it was a <a class="term" href="#vothG_block">block</a> on which it was written, "Here reigns death". It was a typhus <a class="term" href="#vothG_block">block</a>. In it were only old Gypsies, Hungarians. They all had typhus and we were still all well. We still looked human. This <a class="term" href="#vothG_block">block</a> led us to all evil. I was there with Gypsies, they were reasonably friendly with me. These were German Gypsies. It was dirty, terribly dirty.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3641.522" end="x">Were there so many Gypsies?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3644.576" end="x">There were a lot of people. There really weren't so many Gypsies but they were all mixed up. There was a terrible mess of people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3651.685" end="x">And you too were in those barracks?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3653.745" end="x">Yes, I still was well that time. I still had a little piece of blanket, that I was beating out every day. I cleaned it. I still had in my possession a little comb, a tooth brush, some tooth paste, and my hair brush.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3672.450" end="x">Tooth paste, where from? Where did you get toothpaste?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3674.378" end="x">We got it sometimes in the other <a class="term" href="#vothG_lager">lager</a>, not very good paste, but one could still clean his teeth with it. I had that and nothing else. My overcoat and a piece of blanket and I brushed them every day. I brushed them with my hair brush.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3689.751" end="x">Did they let you out during the day?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3692.342" end="x">Only in front of the <a class="term" href="#vothG_block">block</a>. It was fenced off with barbed wire, because that was a typhus <a class="term" href="#vothG_block">block</a>. It was contagious and so other people shouldn't get near there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3709.312" end="x">Did any of the girls with you get sick?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3712.155" end="x">We came five hundred to <a class="placename" href="#vothC8" type="camp">Belsen</a> and one hundred and twenty-two remained. There was a special list made of us. The rest died from typhus or from sheer dirt. I too came pretty close to it. I remember the day when I saw the first lice on myself. On my blouse. I couldn't believe it, I cried like a little child. I had never lice on me and I couldn't believe it. Other people had lice, but I shouldn't have had any. And so the others, near to whom I was sitting laughed at me! 'today you have one, tomorrow you will have two, in a week you will have thousands!' And so it was. And then I didn't have any more strength to remove the lice from me. They crawled over me like ants . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3765.147" end="x">On your body?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3766.514" end="x">Yes. And although I looked over my things twice a day so that I should have some rest at least for five minutes. But at night I couldn't sleep. We were not sleeping with our legs stretched out. We slept sitting up because there was no room. People were sitting in rows, back to back. The legs, just very little space for them. So we sat for months, for weeks without food. At the end we didn't get any bread; for six weeks we had no bread. Only a little bit of soup if you could call that soup. Water with turnips and without salt. Once a day a very small cup, and we had still to fight for it. And there were terrifying scenes. So frightful. There were my girl friends with whom I was in the other <a class="term" href="#vothG_lager">lager</a>. Such beautiful girls, young girls. In the other <a class="term" href="#vothG_lager">lager</a> we sometimes enjoyed a bit of humor, we danced, even gave some plays. There were very gifted girls among us. I too was one of them. For instance I arranged various theatricals. If a girl had a birthday, for example, we always would arrange something. And we sang or put a little verse together so we could bring about a bit of joy. And that all passed through my memories while I was in <a class="placename" href="#vothC8" type="camp">Belsen</a>. And I saw the same girls who danced with me, who were so gay before, so full of will to live in spite of the hard life. Then we still believed in freedom. Now one after the other died. At the <a class="term" href="#vothG_block">block</a> where I was, the face of every girl near dead was so changed, I could recognize that such a girl will die in a few minutes. Only from hunger and from filth. How often was I called, I should come over! People, the called. ''Come over to me!' I couldn't do it because I felt my heart would break. One was unable to see the person. Just the eyes. Eyes and lice. One didn't see anything else but lice. And all in tatters, no clothes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3923.838" end="x">What do you mean by lice, just lice?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3925.838" end="x">No person, just lice all over her. One would look over his things. Everything would be cleaned up. All beaten out to the last piece of blanket. And one would sit down. In a moment the same thing all over again. People had terrible skin erruptions. After I was freed I was full of skin sores. My body was covered with wounds. It was terrible. We did not believe that I will get it over. Many girls, many of my girl friends went insane. People were yelling at night: 'Where am I?' They were calling, mama. They were calling brother. They were calling. One had to hold one's ears, not to listen to such screams. One didn't want to believe it and every day the Germans would come in, the German women—for <a class="term" href="#vothG_appell">appell</a>. Every day they called us for <a class="term" href="#vothG_appell">appell</a>. I can remember Irma Grese. Her I knew in person. You should have heard of her.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3991.016" end="x">Which Irma Groese?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3991.691" end="x">Irma Grese who was recently hanged.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3994.263" end="x">Oh, that one.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="3995.739" end="x">Yes, from <a class="placename" href="#vothC8" type="camp">Belsen</a>. I knew her personally. I didn't know that she was called Irma Grese. Now after liberation I saw her picture in the paper. These things have been written about, how she dressed and what kind of a face she had and so I knew that it was she. I remember her very well. She did with us, specially with our <a class="term" href="#vothG_block">block</a>, such terrible things. Her face, you know, was so beautiful. Large blue eyes, and beatuiful golden hair. Beautifully dressed in such a trim <a class="term" href="#vothG_ss">SS</a> costume and a stick in her hand and a large dog. And she would come to us every day and before she would arrive we had to wait for her three, four hours. From eight in the morning to eleven in the morning, we were called to the <a class="term" href="#vothG_appell">appell</a> square without washing, without food, without anything. We had to stand there in the rain and snow and frost, that was all the same. Stand lined up, four or five abreast. The <a class="term" href="#vothG_block">block</a>
+                        <a class="term" href="#vothG_trusty">trusty</a> was inside the <a class="term" href="#vothG_block">block</a>, and waiting until she came. We had to stand, we couldn't sit down. We wanted to sit down even on that wet, muddy ground. But we had to stand at attention till Irma Grese came. Then she would come . . . She had once prohibited us to have anything on our head.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4087.091" end="x">What do you mean "anything on your head"?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4088.278" end="x">A kerchief or some covering. Kerchiefs we really didn't have. Everything was taken away from us, but we had such little rags that were cut out from the blankets, grey blankets. It was fortunate the one could have such a little piece. And standing outside for hours, in the snow or in the rain one would throw such a thing over her head. We needed it. She had prohibited it. And these girls who were doing it would hide behind. They would not stand in the first rows, but in the fifth row behind. She could not count at a distance with her eyes. But she had to put on every head her whip. That is how she counted. One after the other.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4140.229" end="x">Did she beat you with the whip?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4142.952" end="x">So, 1,2,3 [demonstrating the strokes] and nobody could move. And when she would notice that some of us would have that little piece of blanket on her head she would approach her immediately with a smile, and would tear down that piece of blanket with the person together . She would call her dog, not that the dog should bite, but just to terrorize. It was more terrible than being bitten.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4174.587" end="x">What would the dog do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4176.184" end="x">The dog would jump at the girl and gnash his teeth as if he was going to bite. She did not permit him to bite. She did not want it. She just wanted to horrify us. She wanted to cause anguish and terror and that was much worse. So she would throw down this blanket together with the person and kick [her] in addition and beat [her] with her whip. She should know not to do it again once it was prohibited. And then, afterwards, when she would talk to the blokova [Polish like word for <a class="term" href="#vothG_block">block</a>
+                        <a class="term" href="#vothG_trusty">trusty</a>] when she would talk to the <a class="term" href="#vothG_block">block</a>
+                        <a class="term" href="#vothG_trusty">trusty</a>, she would ask how many people there were, how many have died and so on, and show such a beautiful countenance, such a kind face. Indeed nobody could tell that just a moment ago she made such scenes and was so bad, that she could be so merciless to other people. As if we were somebody worse than the <a class="term" href="#vothG_block">block</a>
+                        <a class="term" href="#vothG_trusty">trusties</a> I can just tell you that the <a class="term" href="#vothG_block">block</a>
+                        <a class="term" href="#vothG_trusty">trusties</a> were not better. Before the war maybe they were selling onions and garlic on the streets. Now they were big personages in our <a class="term" href="#vothG_lager">lager</a>. These girls, we, were really not any more human; real animals. People dragged down and down into the mud, once human, who have been going to universities and museums, something of the kind. I am not talking now about myself. I am now talking about the people who were not people any more. Before the war they really were human beings.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4280.911" end="x">You are talking about the prisoners?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4282.690" end="x">The prisoners of course. We were not treated like human beings. They thought we were Jews, born, of course, in cellars somewhere, that we didn't have any mutti. We don't know what a white bed is! We don't know what good soup is! That is what they all believed. And I am telling you that the <a class="term" href="#vothG_block">block</a>
+                        <a class="term" href="#vothG_trusty">trusties</a> who ordered us around, were not different, they were worse than any of these girls, these children. What hurt us so badly was that they have but us at such a low level. When we wanted to go out we had to report, to ask permission to go out we had to stand at attention and say, 'Frau <a class="term" href="#vothG_lager">Lager</a>
+                        <a class="term" href="#vothG_trusty">Trusty</a>', or leader, something of the kind, depending on who the <a class="term" href="#vothG_ss">SS</a> woman was. It was up to her to say 'yes'.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4337.393" end="x">What do you mean, to go out?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4339.414" end="x">Well, to relieve oneself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4340.846" end="x">To the toilet?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4341.901" end="x">To the toilet. If she was in a mood to say yes, all right. If she would say no we would have to go back. Nothing would help. They could make us do what ever they wanted. That means we continued in the <a class="term" href="#vothG_block">block</a>, lying on the filthy floor, no food, just waiting from morning till night, night till morning, just listening to the shooting.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4379.592" end="x">Where are now your parents?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4382.637" end="x">My papa—when he was taken, we still had letters from him. I sent him packages. Afterwards his <a class="term" href="#vothG_lager">lager</a> was <a class="placename" href="#vothC25" type="camp">Dachau</a> and at that time all mail was already blocked. We couldn't write. We lost trace of him, we don't know anything about him. My mutti surely is not alive anymore. She was about fifty years old. My mother would have been now fifty-four . But she was in <a class="placename" href="#vothC4" type="camp">Auschwitz</a> and surely is not alive anymore.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4420.056" end="x">Was she deported to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4421.443" end="x">Deported.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4422.257" end="x">Did you know about it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4423.644" end="x">A whole transport of the women has gone to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. My older sister was with her husband in [name of locality indistinct]. During the war I still received some little mail and all at once that stopped and those horrible things were going on. Germans have murdered the people and I don't know anything about them till this day and that is already seven years. Eight years I haven't seen my sister. Neither my brother-in-law. Also my brother, a married one, he had a little boy two years old. He also was deported in 1942 from [name of locality indistinct] where he used to live and was sent away to the Ukraine. He is not alive any more.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4475.435" end="x">You don't know anything about the child.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4477.184" end="x">The child was taken with them. The child was dragged along.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4480.033" end="x">Tell me, how were you freed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4483.139" end="x">I was liberated in <a class="placename" href="#vothC8" type="camp">Belsen</a> on the fifteenth of April.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4489.124" end="x">Tell me about the day or the day before liberation. What happened there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4494.476" end="x">I can tell you, I haven't told you half of what I went through in <a class="placename" href="#vothC8" type="camp">Belsen</a>. Believe me, I could not tell you as much about the three and a half years [of captivity] as about the few months I spent in <a class="placename" href="#vothC8" type="camp">Belsen</a>. And about the people I have seen, as well as about myself. It is horrible; one cannot describe it in words because it hurts too much. I looked like a seventy-year old woman. I was unable to move. I was all run down, emaciated, unwashed for weeks, without undressing. In that one dress and coat I was lying on the floor. I wanted some water for a drink, I couldn't get it. I had diarrhea for two months and then I had typhus.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4555.922" end="x">You also contracted typhus?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4557.038" end="x">Yes, naturally. I had a horrible typhus. I had diarrhea that I couldn't stay for a moment in the <a class="term" href="#vothG_block">block</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4563.927" end="x">What was it, spotted typhus or intestinal typhus?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4566.551" end="x">That was intestinal typhus.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4570.905" end="x">Where were you lying? In the hospital?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4575.955" end="x">No, absolutely no. We were not being treated. When it was known that there are many people sick with typhus, they wanted it that way. Sure, every day a few soldiers would come in to see that the bodies were thrown out in front of the <a class="term" href="#vothG_block">block</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4586.945" end="x">How many dead were there lying in front of the <a class="term" href="#vothG_block">block</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4587.412" end="x">They were not immediately transported to the crematories.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4599.051" end="x">What do you mean in front of the <a class="term" href="#vothG_block">block</a>? Weren't the dead people removed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4601.780" end="x">Yes, there were four special women. Four Hungarian women whose job it was to do it. When a woman would die, that was immediately reported. The four women who received a bit of soup for it, because they were still reasonably strong, would take a grey blanket, put the dead person on the blanket and throw her out in front of the <a class="term" href="#vothG_block">block</a>. And so these bodies would lie sometimes two weeks—sometimes two weeks, sometimes three weeks, till there had accumulated fifty, one hundred, two hundred dead, till there came the Jews, men under guard, and transported them to the crematory. And often I, when I would pass the crematories . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4654.754" end="x">You mean to say the dead ones were lying there many weeks outside?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4657.875" end="x">Yes, they were lying there with nothing on. Often I would pass the crematory because at night we had to fetch these kettles with soup; every day there was another shift. We passed the crematories and we saw mounds and mounds, it was unbelievable, of dead, of dead with thom the crematory could not keep up. There were mountains of dead, and from the air came all the sickness, these typhus diseases swept through the <a class="term" href="#vothG_lager">lager</a> where people lived, where thousands and thousands were still moving around. People went out to pick up some potato peelings, they went around begging for something. There was cooking going on in the kitchen and one could come and beg for a bit of soup. So one would see all those terrible things.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4720.979" end="x">And so who freed you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4723.391" end="x">The English. In April, when we didn't expect it at all. We didn't expect any liberty. We absolutely did not know that liberation was so near. And it comes to us. We didn't have any contact with anybody. All at once we saw the <a class="term" href="#vothG_ss">SS</a> men and the <a class="term" href="#vothG_ss">SS</a> women carrying white bands on their arms.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4748.062" end="x">What does that mean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Fela Nichthauser</span>:
+            </span>
+            <span class="utterance" who="#nichthauserF" start="4749.268" end="x">Armbands. That means—they surrender.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Dagmer Platt</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC15">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC15" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Buchenwald
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Weimar, Germany<br />
+                            </p>
+                            <div>
+                Established in July 1937 near the city of Weimar for prisoners from central Germany, who were put to work making bricks at a nearby clay pit.  Around 9000 were normally housed there, but the population reached around 48,000 by April 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC15 = new OpenLayers.Map('map_vothC15', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC15.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC15.addLayer(markers);
+map_id_vothC15.zoomToMaxExtent();
+
+                        var lat_1 = 50.983300;
+                        var lon_1 = 11.316700;
+                        var vothC15 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC15_icon = new OpenLayers.Marker(vothC15);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC15);
+markers.addMarker(vothC15_icon);
+    addMarker(vothC15, popupClass, "", true, false, false);
+    map_id_vothC15.setCenter(vothC15, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC35">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC35" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Gleiwitz<br /><span class="alt">(Gleiwitz I, II, III and IV)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Auschwitz
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Gliwice, Poland<br />
+                            </p>
+                            <div>
+                Gleiwitz was an Auschwitz subcamp from July 1944 to January 1945, consisting of four locations working in mining and industrial companies and railroad repair.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC35 = new OpenLayers.Map('map_vothC35', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC35.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC35.addLayer(markers);
+map_id_vothC35.zoomToMaxExtent();
+
+                        var lat_2 = 50.333300;
+                        var lon_2 = 18.666700;
+                        var vothC35 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC35_icon = new OpenLayers.Marker(vothC35);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC35);
+markers.addMarker(vothC35_icon);
+    addMarker(vothC35, popupClass, "", true, false, false);
+    map_id_vothC35.setCenter(vothC35, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC25">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC25" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Dachau
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Auschwitz
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Dachau, Germany<br />
+                            </p>
+                            <div>
+                The first concentration camp opened in Germany (March 1933), located on the grounds of an abandoned munitions factory near the medieval town of Dachau, about 16 km (10 miles) northwest of Munich. In total, over 200,000 prisoners from more than 30 countries were housed in Dachau.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC25 = new OpenLayers.Map('map_vothC25', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC25.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC25.addLayer(markers);
+map_id_vothC25.zoomToMaxExtent();
+
+                        var lat_3 = 48.250000;
+                        var lon_3 = 11.433300;
+                        var vothC25 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC25_icon = new OpenLayers.Marker(vothC25);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC25);
+markers.addMarker(vothC25_icon);
+    addMarker(vothC25, popupClass, "", true, false, false);
+    map_id_vothC25.setCenter(vothC25, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Auschwitz
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_4 = 50.033300;
+                        var lon_4 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC105">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC105" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Sosnowiec Ghetto
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Auschwitz
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Sosnowiec, Poland<br />
+                            </p>
+                            <div>
+                This ghetto was formed in October 1942 and liquidated in August 1943, when most of the residents were sent to Auschwitz. The remaining Jews were placed in a work camp in the area of the former ghetto; the labor camp was liquidated in January 1944.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC105 = new OpenLayers.Map('map_vothC105', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC105.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC105.addLayer(markers);
+map_id_vothC105.zoomToMaxExtent();
+
+                        var lat_5 = 50.266700;
+                        var lon_5 = 19.116700;
+                        var vothC105 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothC105_icon = new OpenLayers.Marker(vothC105);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC105);
+markers.addMarker(vothC105_icon);
+    addMarker(vothC105, popupClass, "", true, false, false);
+    map_id_vothC105.setCenter(vothC105, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC11">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC11" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Birkenheim
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Auschwitz
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Auerbach, Germany<br />
+                            </p>
+                            <div>
+                Part of Organisation Schmelt camps network, this was a labor camp located in Lower Silesia.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC11 = new OpenLayers.Map('map_vothC11', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC11.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC11.addLayer(markers);
+map_id_vothC11.zoomToMaxExtent();
+
+                        var lat_6 = 50.500000;
+                        var lon_6 = 12.400000;
+                        var vothC11 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothC11_icon = new OpenLayers.Marker(vothC11);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC11);
+markers.addMarker(vothC11_icon);
+    addMarker(vothC11, popupClass, "", true, false, false);
+    map_id_vothC11.setCenter(vothC11, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC37">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC37" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Gr&#195;ben<br /><span class="alt">(Graeben)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Gross-Rosen
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Strzegom, Poland<br />
+                            </p>
+                            <div>
+                In March 1943 around 450 young Polish girls were interned here; in mid-1944 this camp (strictly for women) was placed under the control of Gross-Rosen.  Its inmates worked at a nearby linen mill.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC37 = new OpenLayers.Map('map_vothC37', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC37.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC37.addLayer(markers);
+map_id_vothC37.zoomToMaxExtent();
+
+                        var lat_7 = 50.983300;
+                        var lon_7 = 16.333300;
+                        var vothC37 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothC37_icon = new OpenLayers.Marker(vothC37);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC37);
+markers.addMarker(vothC37_icon);
+    addMarker(vothC37, popupClass, "", true, false, false);
+    map_id_vothC37.setCenter(vothC37, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC39">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC39" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Gross-Rosen
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Gross-Rosen
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Rogoźnica, Poland<br />
+                            </p>
+                            <div>
+                Established in Silesia in 1940 as a satellite camp to Sachsenhausen, it became an independent camp in 1941. Work centered on a huge stone quarry and many sub-camps were established (reaching 60 in 1944).
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC39 = new OpenLayers.Map('map_vothC39', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC39.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC39.addLayer(markers);
+map_id_vothC39.zoomToMaxExtent();
+
+                        var lat_8 = 51.016700;
+                        var lon_8 = 16.300000;
+                        var vothC39 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothC39_icon = new OpenLayers.Marker(vothC39);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC39);
+markers.addMarker(vothC39_icon);
+    addMarker(vothC39, popupClass, "", true, false, false);
+    map_id_vothC39.setCenter(vothC39, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC8">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC8" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Bergen-Belsen
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Gross-Rosen
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Bergen, Germany<br />
+                            </p>
+                            <div>
+                Established in the spring of 1943 and initially intended as a transit camp, it soon was integrated into the concentration camp network.  Its population swelled late in the war as inmates from other camps further east were moved into it--from around 15,000 in late 1944 to 41,250 in March 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC8 = new OpenLayers.Map('map_vothC8', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC8.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC8.addLayer(markers);
+map_id_vothC8.zoomToMaxExtent();
+
+                        var lat_9 = 52.766700;
+                        var lon_9 = 9.916700;
+                        var vothC8 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothC8_icon = new OpenLayers.Marker(vothC8);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC8);
+markers.addMarker(vothC8_icon);
+    addMarker(vothC8, popupClass, "", true, false, false);
+    map_id_vothC8.setCenter(vothC8, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL28">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL28" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Fontenay-aux-Roses, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL28 = new OpenLayers.Map('map_vothL28', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL28.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL28.addLayer(markers);
+map_id_vothL28.zoomToMaxExtent();
+
+                        var lat_10 = 48.790372;
+                        var lon_10 = 2.289936;
+                        var vothL28 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL28_icon = new OpenLayers.Marker(vothL28);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL28);
+markers.addMarker(vothL28_icon);
+    addMarker(vothL28, popupClass, "", true, false, false);
+    map_id_vothL28.setCenter(vothL28, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_11 = 48.866700;
+                        var lon_11 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL86">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL86" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Wadowice, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL86 = new OpenLayers.Map('map_vothL86', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL86.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL86.addLayer(markers);
+map_id_vothL86.zoomToMaxExtent();
+
+                        var lat_12 = 49.900000;
+                        var lon_12 = 19.483300;
+                        var vothL86 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL86_icon = new OpenLayers.Marker(vothL86);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL86);
+markers.addMarker(vothL86_icon);
+    addMarker(vothL86, popupClass, "", true, false, false);
+    map_id_vothL86.setCenter(vothL86, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL397">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL397" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Sandomierz, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL397 = new OpenLayers.Map('map_vothL397', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL397.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL397.addLayer(markers);
+map_id_vothL397.zoomToMaxExtent();
+
+                        var lat_13 = 50.683300;
+                        var lon_13 = 21.750000;
+                        var vothL397 = new OpenLayers.LonLat(lon_13, lat_13);
+            vothL397_icon = new OpenLayers.Marker(vothL397);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL397);
+markers.addMarker(vothL397_icon);
+    addMarker(vothL397, popupClass, "", true, false, false);
+    map_id_vothL397.setCenter(vothL397, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL398">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL398" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Baranovichi, Belarus
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL398 = new OpenLayers.Map('map_vothL398', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL398.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL398.addLayer(markers);
+map_id_vothL398.zoomToMaxExtent();
+
+                        var lat_14 = 53.150000;
+                        var lon_14 = 26.000000;
+                        var vothL398 = new OpenLayers.LonLat(lon_14, lat_14);
+            vothL398_icon = new OpenLayers.Marker(vothL398);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL398);
+markers.addMarker(vothL398_icon);
+    addMarker(vothL398, popupClass, "", true, false, false);
+    map_id_vothL398.setCenter(vothL398, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL7">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL7" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Slonim, Belarus
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL7 = new OpenLayers.Map('map_vothL7', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL7.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL7.addLayer(markers);
+map_id_vothL7.zoomToMaxExtent();
+
+                        var lat_15 = 53.083300;
+                        var lon_15 = 25.350000;
+                        var vothL7 = new OpenLayers.LonLat(lon_15, lat_15);
+            vothL7_icon = new OpenLayers.Marker(vothL7);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL7);
+markers.addMarker(vothL7_icon);
+    addMarker(vothL7, popupClass, "", true, false, false);
+    map_id_vothL7.setCenter(vothL7, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL399">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL399" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Rădăuţi, Romania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL399 = new OpenLayers.Map('map_vothL399', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL399.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL399.addLayer(markers);
+map_id_vothL399.zoomToMaxExtent();
+
+                        var lat_16 = 47.816700;
+                        var lon_16 = 25.966700;
+                        var vothL399 = new OpenLayers.LonLat(lon_16, lat_16);
+            vothL399_icon = new OpenLayers.Marker(vothL399);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL399);
+markers.addMarker(vothL399_icon);
+    addMarker(vothL399, popupClass, "", true, false, false);
+    map_id_vothL399.setCenter(vothL399, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL162">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL162" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Andrych&#195;w, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL162 = new OpenLayers.Map('map_vothL162', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL162.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL162.addLayer(markers);
+map_id_vothL162.zoomToMaxExtent();
+
+                        var lat_17 = 49.850000;
+                        var lon_17 = 19.300000;
+                        var vothL162 = new OpenLayers.LonLat(lon_17, lat_17);
+            vothL162_icon = new OpenLayers.Marker(vothL162);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL162);
+markers.addMarker(vothL162_icon);
+    addMarker(vothL162, popupClass, "", true, false, false);
+    map_id_vothL162.setCenter(vothL162, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL105">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL105" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Gliwice, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL105 = new OpenLayers.Map('map_vothL105', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL105.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL105.addLayer(markers);
+map_id_vothL105.zoomToMaxExtent();
+
+                        var lat_18 = 50.333300;
+                        var lon_18 = 18.666700;
+                        var vothL105 = new OpenLayers.LonLat(lon_18, lat_18);
+            vothL105_icon = new OpenLayers.Marker(vothL105);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL105);
+markers.addMarker(vothL105_icon);
+    addMarker(vothL105, popupClass, "", true, false, false);
+    map_id_vothL105.setCenter(vothL105, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL403">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL403" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Bielsko-Biała, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL403 = new OpenLayers.Map('map_vothL403', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL403.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL403.addLayer(markers);
+map_id_vothL403.zoomToMaxExtent();
+
+                        var lat_19 = 49.833300;
+                        var lon_19 = 19.000000;
+                        var vothL403 = new OpenLayers.LonLat(lon_19, lat_19);
+            vothL403_icon = new OpenLayers.Marker(vothL403);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL403);
+markers.addMarker(vothL403_icon);
+    addMarker(vothL403, popupClass, "", true, false, false);
+    map_id_vothL403.setCenter(vothL403, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL176">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL176" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Auerbach, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL176 = new OpenLayers.Map('map_vothL176', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL176.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL176.addLayer(markers);
+map_id_vothL176.zoomToMaxExtent();
+
+                        var lat_20 = 50.500000;
+                        var lon_20 = 12.400000;
+                        var vothL176 = new OpenLayers.LonLat(lon_20, lat_20);
+            vothL176_icon = new OpenLayers.Marker(vothL176);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL176);
+markers.addMarker(vothL176_icon);
+    addMarker(vothL176, popupClass, "", true, false, false);
+    map_id_vothL176.setCenter(vothL176, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ose">
+                <a name="vothG_ose"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    OSE.
+                </span>
+                <span class="definition">
+                    Acronym for the Oeuvre de Secours aux Enfants, a French Jewish humanitarian organization that saved hundreds of Jewish refugee children in Vichy France during World War II.
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_ss">
+                <a name="vothG_ss"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    SS.
+                </span>
+                <span class="definition">
+                    Acronym for the German Schutzstaffel (“Protective Echelon”), a major Nazi organization. It grew from a small paramilitary unit to a powerful force that served as Hitler's "Praetorian Guard," the Nazi Party's "Shield Squadron" and a force that, fielding almost a million men (both on the front lines and as political police), managed to exert as much political influence as the German Army. Built upon the Nazi racial ideology, the SS, under Heinrich Himmler's command, was responsible for many (and most of the worst) of the crimes against humanity perpetrated by the Nazis during World War II.
+                </span>
+            </li>
+                        <li class="vothG_appell">
+                <a name="vothG_appell"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    appell.
+                </span>
+                <span class="definition">
+                    The appell was a camp roll call. Its purpose was not merely to count the prisoners but also to weaken, humiliate and intimidate them.
+                </span>
+            </li>
+                        <li class="vothG_commandant">
+                <a name="vothG_commandant"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    commandant.
+                </span>
+                <span class="definition">
+                    A commander of a Nazi camp. In the death camps the commandant was required to witness every gassing carried out through a peephole, and supervise both the preparations and the aftermath.
+                </span>
+            </li>
+                        <li class="vothG_block">
+                <a name="vothG_block"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    block.
+                </span>
+                <span class="definition">
+                    A single concentration camp barrack.
+                </span>
+            </li>
+                        <li class="vothG_trusty">
+                <a name="vothG_trusty"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    trusty.
+                </span>
+                <span class="definition">
+                    Similar to a capo or blockälteste. A prisoner in the camps who held some authority over other prisoners, and in return received special treatment. These were often convicts.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

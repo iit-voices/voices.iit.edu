@@ -1,0 +1,2547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Jacob Button; August 5, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-jacob-button-august-5-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Jacob Button; August 5, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=buttonJ">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=buttonJ&display=buttonJ_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=buttonJ&display=buttonJ_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=buttonJ">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=buttonJ">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.573" end="x">[In English] This is Spool 99-25, that is a reproduction not from the original, but from the Spool 9-25 which was reproduced from the original before the latter was damaged in its first section.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="123.458" end="x">This is Spool 25, taken from Mister Jacob Button, a Spanish Jew, who lived in Greece, in <a class="placename" href="#vothL68">Salonika</a>. Mr. Button is very worried that the data will not be in proper chronological order, but we have convinced him that we want especially his personal experiences. This spool is from the collection of the Illinois Institute of Technology.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="151.377" end="x">[In German] So, Mr. Button, tell me again, what is your full name, how old are you, and where were you born?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="162.307" end="x">I call myself Jacob Button, was born in Saloni—, <a class="placename" href="#vothL68">Salonika</a><note n="1"><span class="note">Thessaloniki or Salonika was home to the most flourishing Sephardic Jewish community in the world before the Holocaust. Nearly all of its prewar Jewish population of some 56,000 perished in the Holocaust,  most of them in Auschwitz-Birkenau.</span><sup><a href="#note_1">1</a></sup></note>, and I am 41 years old today. I am sorry to speak in German—I would rather express myself in French or Greek or Hebrew—but out of necessity I will do it in German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="194.778" end="x">. . . the, Mr. Button, if you want to express yourself in Hebrew, and want to have something corrected, maybe you can have it ready by tomorrow—[for] another conversation, and I will then ask you to read for me for half an hour in Hebrew. Is that good?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="215.314" end="x">Yes, I think I can give it a try.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="219.203" end="x">Good.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="219.595" end="x">. . . from . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="220.108" end="x">So let us proceed with the matter. Mr. Button, where were you when the war started?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="228.806" end="x">At the beginning of the war I was in <a class="placename" href="#vothL68">Saloniki</a>, and had a business of pharmaceutical [?] products. And [I] never wanted to speak German, know Germans, never wanted to have to do [anything] with Germans. And wanted to stay away from the Germans. As a Spaniard, I was held as [one of] the last Jews of <a class="placename" href="#vothL68">Saloniki</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="270.712" end="x">[unintelligible] So, you were born in <a class="placename" href="#vothL68">Saloniki</a>, but you were a Spanish subject?<note n="2"><span class="note">Because their ancestors were originally from the Iberian peninsula, some Greek Sephardic Jews were able to obtain Spanish citizenship.</span><sup><a href="#note_2">2</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="278.204" end="x">Yes, I was separately . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="283.029" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="285.848" end="x">. . . and also of Spanish citizenship.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="290.944" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="292.135" end="x">And because of this we were the last Jews of <a class="placename" href="#vothL68">Saloniki</a> to be, ah, to be driven away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="304.904" end="x">Now, ah, say, ah, were the other Jews taken first?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="310.708" end="x">Yes, first the Greek Jews were rounded up, and after a short stay in a <a class="term" href="#vothG_ghetto">ghetto</a> at Baron Hirsch—ah . . .<note n="3"><span class="note">The Baron Hirsch neighborhood in Salonika was one of the three neighborhoods in the city that comprised the Jewish ghetto. Since the it was close to a key railroad station, the neighborhood became the departure point for Jews being  deported to extermination and concentration camp centers.</span><sup><a href="#note_3">3</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="331.851" end="x">. . . ah . . . and you [were] sent away?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="333.404" end="x">In a, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="334.414" end="x">In a camp, or in a <a class="term" href="#vothG_ghetto">ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="337.218" end="x">They were assembled in a <a class="term" href="#vothG_ghetto">ghetto</a> first, next to, of the train station of <a class="placename" href="#vothL68">Saloniki</a>, ah, and, ah, were sent to Silesia, to Upper Silesia in weekly or daily transports of 3,000 to, ah, 3,500 people.<note n="4"><span class="note">The first rail convoy to Auschwitz-Birkenau departed on March 15, 1943. Subsequent convoys left in the following weeks. The last convoy left Salonika on August 10,1943.</span><sup><a href="#note_4">4</a></sup></note> From a, ah, German, I could later privately and personally l—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="372.345" end="x">Learn . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="373.928" end="x">. . . learn that Jews were sent to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="385.476" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="388.054" end="x">And I was made aware that it was supposed to be an extinction at work, at the trip. When the Spanish, Spanish Jews were summoned by the German police to make an announcement, I finally attended the assembly and was able to hide, and to later find a way to go to <a class="placename" href="#vothL126">Athens</a>.<note n="5"><span class="note">The rumor Mr. Button heard about "an extinction at work" was unfortunately accurate. Most of the at least 43,850 Jews from Salonikia who arrived at Auschwitz-Birkenau between March and August, 1943 were gassed on arrival.</span><sup><a href="#note_5">5</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="454.520" end="x">Yes, now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="457.279" end="x">I had the first bad luck that a Greek sailor, a, a, ah, a ship, a captain of a sail boat cheated me, and took me, my wife and my two children, [took] my, ah, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="491.559" end="x">Now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="492.072" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="494.137" end="x">Now, is it proceeding?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="495.132" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="498.509" end="x">Yes, on shore, what did he do to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="502.399" end="x">Left me and took my things and my money, he had, on the shore, taken my money already . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="513.178" end="x">Took it away . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="514.037" end="x">. . . took it away. Such . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="515.213" end="x">So, you stayed ashore with your wife and your kids?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="518.560" end="x">I was, I stayed ashore with my wife and two children, two little children of six and eight years, and was to, afterwards, go back to <a class="placename" href="#vothL68">Saloniki</a> that was "judenrein" [free of Jews] as the Germans said.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="539.982" end="x">Yes. Where did you want to go with the captain?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="543.434" end="x">I want[ed], I want[ed] to go to <a class="placename" href="#vothL283">Piraeus</a>,<note n="6"><span class="note">Piraeus is the port linked to the city of Athens.</span><sup><a href="#note_6">6</a></sup></note> where in a part of Greece, where the Italian, that was under Italian rule . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="556.806" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="556.881" end="x">. . . and there were no measures, no measures taken against the Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="562.037" end="x">Yes. And so you packed your things?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="565.082" end="x">And I had that, it was prepared like that, to go away, and was cheated at the last moment, and left behind.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="577.384" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="578.002" end="x">So, luckily I had some Greek friends who helped me, and when I came back to the city, I could hide, and after one, three days try again to go to <a class="placename" href="#vothL126">Athens</a>. This time I was also, in the, on the train, I was arrested because a man had recognized me as a Jew, and that [resulted in] three months of arrest in a [noise]—in a prison of, ah, in a German prison in <a class="placename" href="#vothL68">Saloniki</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="625.513" end="x">Yes, and where did you . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="626.101" end="x">. . . and [my] wife . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="626.629" end="x">. . . you were arrested on the train?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="628.664" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="629.267" end="x">And where did your wife and children go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="632.252" end="x">Fortunately, my wife and children were not recognized then, they were not with . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="638.403" end="x">. . . me . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="638.810" end="x">. . . me, and then they went on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="642.187" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="643.227" end="x">I was arrested, and was going, ah, was treated very harshly, for eight days we in a prison in, ah, pro—, in a city in the province of Macedonia,<note n="7"><span class="note">The Germans occupied central Macedonia located in northern Greece.</span><sup><a href="#note_7">7</a></sup></note> and from there afterwards we were taken by the German secret police to <a class="placename" href="#vothL68">Saloniki</a>—and there we were, were routed to a prison where we stayed for four months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="690.059" end="x">After that, and where were your wife and the children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="692.683" end="x">My wife and my children could continue to go, continue to <a class="placename" href="#vothL126">Athens</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="697.914" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="698.608" end="x">I was, after many efforts, and—, of the Spanish Embassy, I was freed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="709.236" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="710.050" end="x">And now I was free, too . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="710.653" end="x">Was that already the Franco government, was the Spanish Embassy not of the Franco government?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="718.372" end="x">Yes, but . . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="719.141" end="x">But they acted on behalf of the Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="722.382" end="x">As Spanish citizen, I was to get their, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="728.081" end="x">Have you then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="728.669" end="x">. . . help, get their help, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="732.423" end="x">Ah, you did receive [help], indeed . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="733.946" end="x">Yes, [I was] helped by the Embassy.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="737.459" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="740.067" end="x">I—was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="740.761" end="x">And you were freed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="741.620" end="x">I was freed, but in the meantime I had, ah, I was treated very harshly by the German, ah, pol—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="754.932" end="x">Police . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="755.309" end="x">Police, of the <a class="term" href="#vothG_gestapo">Gestapo</a>, and I was, ah . . . one tried to . . . [unintelligible] [I was . . . ?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="770.641" end="x">Murder?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="772.646" end="x">[unintelligible] [ . . . no, not murder, I don't know . . . what that was and what . . . ?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="777.229" end="x">Aha. You were tortured, one did the torture, tortured [tries to express the term]—right?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="783.817" end="x">[In English] They tortured.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="785.551" end="x">[In German] They wanted to know where your things and your family were.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="789.636" end="x">Oh, oh, and where my, my, my children and my wife [were] and what I knew of other affairs regarding the Jews, the Jews . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="799.104" end="x">And what did you say?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="800.958" end="x">And—I did not say it, and I was, ah— [menacie, mena?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="808.828" end="x">I was threatened, you were threatened . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="810.652" end="x">I was threatened to inquire, and to kill me, and to . . . but I . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="819.577" end="x">Were you beaten?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="821.733" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="822.502" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="822.939" end="x">One did, one did, one did beat me, and I did not say it, what I knew, because of my family.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="834.879" end="x">Aha. Why, they wanted to know where your family was?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="838.331" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="838.572" end="x">Did your family want to part with you, did they, didn't they send you anything? Didn't they [the police] know, anyway?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="848.552" end="x">I, I knew, I, ah, I was absolutely separated from my family, I had no . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="853.346" end="x">Yes, you had no contact, that . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="855.216" end="x">I personally had no contact, but the Germans wanted to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="860.628" end="x">Know . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="861.080" end="x">Know who had, ah, given us the papers to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="866.387" end="x">Ah so, from the Embassy.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="868.663" end="x">No, not from the Embassy, who gave us the papers, to get on a German train and to, ah, go to, to <a class="placename" href="#vothL126">Athens</a>, without, without permission.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="881.055" end="x">Hm. Now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="883.166" end="x">So, after four months I went again to <a class="placename" href="#vothL126">Athens</a>, and found my family, meanwhile the Germans had counted [accounted for] the Greek Jews, and, ah, they were supposed to report, ah, weekly with the, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="909.819" end="x">register with the police . . .<note n="8"><span class="note">The German army occupied Athens on September 8, 1943 following Italy's capitulation. On October 7, 1943, an order was issued for all Jews in Athens to register with the community. There  was a very limited response, and the following month all Jewish property was confiscated in retaliation for the poor registration showing. Some Jews in Athens joined partisan groups. Most went into hiding although by March 1944 about 1,500 had registered either to receive permission to work or out of fear of reprisals against Christian neighbors who were sheltering them.</span><sup><a href="#note_8">8</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="910.482" end="x">. . . synagogue, at the, at the, in the temple, every, every week, to come and report, and in March of '43, in—in March of '44, not '43, they were caught and after two days . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="939.311" end="x">Who was caught?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="940.381" end="x">The Greek Jews who . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="943.939" end="x">Reported to the synagogue . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="944.844" end="x">. . . reported to the synagogue, to, ah, were arrested and afterwards—one had the addresses of the other Jews who lived in <a class="placename" href="#vothL126">Athens</a>, and of the Spaniards in general, and they were arrested at their homes at night.<note n="9"><span class="note">At the outset of the Italian occupation of Athens, there were some 3,500 Jews in the city. This number rose to 8,000-10,000 due to Jews who escaped to Athens from German and Bulgarian parts of occupied Greece. Among these escapees were Mr. Button and his family. On March 25, 1944, the Germans rounded up 1,690 Jews from Athens ( a number of them refugees from Salonikia) for deportation to Auschwitz-Birkenau.</span><sup><a href="#note_9">9</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="967.774" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="972.689" end="x">First, we were [put] in a prison . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="980.001" end="x">Were you arrested, too?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="981.162" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="981.659" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="982.051" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="982.353" end="x">One did arrest you again?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="983.514" end="x">One did . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="984.253" end="x">And your wife and the children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="985.565" end="x">My, my wife and my two young children were arrested with me, we were also assembled there in the prison, near <a class="placename" href="#vothL126">Athens</a>, in <placeName type="camp" ref="#vothC41">Haidari</a>,<note n="10"><span class="note">The Haidary concentration camp was located in the town of Haidary near Athens. It operated from September 2, 1943 to September 20, 1944. The majority of Haidary's inmates were transported to Bergen Belsen or to Auschwitz.</span><sup><a href="#note_10">10</a></sup></note> there, there we received a visit from the Spanish ambassadors in <a class="placename" href="#vothL126">Athens</a>, and I was, ah, we were told that the Germans had promised them to send us to Spain.<note n="11"><span class="note">This promise was not as empty as it sounds. The Franco government did agree to take Jews with Spanish citizenship but stipulated that they could only remain temporarily on Spanish soil. Only when one group had left the country could another be admitted. This policy greatly restricted the number of Jews who were admitted to Spain during the course of the war.</span><sup><a href="#note_11">11</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1025.394" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1026.525" end="x">But, on April 2 . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1033.264" end="x">'44 . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1033.822" end="x">. . . '44 we were sent from the prison of <placeName type="camp" ref="#vothC41">Haidari</a> to the train station of <a class="placename" href="#vothL126">Athens</a>, ah, there were, we were with other—cars with, that were sealed, and [there were] other Jews present, and we were, one was told to get on, and with the same transport we were sent, sent to Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1073.364" end="x">What kind of transport were you [on]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1074.133" end="x">Some of the railcars, sealed, those were, ah, lorries [?]—freight cars, of, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1082.440" end="x">It, yes—freight, freight trains . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1085.229" end="x">fr—, freight, freight trains . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1086.541" end="x">Transport trains . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1087.219" end="x">Freight cars were . . . we were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1088.576" end="x">The cars were all locked up?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1090.988" end="x">Were, were locked, and, ah, . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1093.551" end="x">Seals from the outside . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1095.059" end="x">From the outside were, were also seals. We had, from the [mission?] of the Red Cross, some bread and some packages, where we were thirty-two people my car—there were other cars with some forty people on it, and we took a long journey of seven days, ah, from <a class="placename" href="#vothL126">Athens</a> to, to <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1128.902" end="x">Were your wife and your children with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1129.445" end="x">With, with, with my wife and my two young children, and my brother also.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1134.797" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1135.656" end="x">We . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1135.958" end="x">And that was in the same car?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1137.511" end="x">In the same, we were in the same car. And . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1139.908" end="x">Yes, and wait, did one open the car, that people could go outside, or what . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1145.802" end="x">After, ah, two days of the journey we were able to descend from the car once, and we could . . . the . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1161.421" end="x">. . . the dirt?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1162.341" end="x">the dirt—ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1164.738" end="x">dispose . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1165.296" end="x">Dump, dump it, and, ah get some water . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1170.316" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1171.130" end="x">With us were—with us—in the Greek part, we were [united] with another transport that was, ah, with us . . . combined . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1191.923" end="x">. . . was combined with you, yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1193.943" end="x">Was combined . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1195.572" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1196.009" end="x">And we went to . . . through, ah, Serbia, Austria, and Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1210.391" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1210.753" end="x">. . . and Hungary, and Hungary, we drove, drove to Germany. In Hungary I have—we saw the, in April of '44 the first Hungarians with the star . . . .<note n="12"><span class="note">Germany occupied Hungary on March 19, 1944. A special commando headed by Adolph Eichmann was part of the occupying force. Its task was to implement the "Final Solution" program. The Germans installed a collaborationist government which rapidly issued a host of anti-Jewish decrees including the wearing of the yellow star.</span><sup><a href="#note_12">12</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1230.306" end="x">. . . who wore it [?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1230.864" end="x">. . . wore it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1231.573" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1232.070" end="x">And [we] had the opportunity to talk to one, and we were told that in the last days—how, how—what [kind of] laws and measures against the Jews in, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1251.608" end="x">Hungary . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1252.543" end="x">In, in ah . . . [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1259.402" end="x">. . . were applied?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1260.759" end="x">. . . were, were applied.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1262.960" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1266.669" end="x">One part of our transport, ah, the largest part of the transport was ah, separated in, ah, a Hungarian border town, and was sent on in another . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1287.518" end="x">Direction.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1288.121" end="x">. . . direction.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1289.388" end="x">Did you not know where you were sent?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1293.534" end="x">[We] did not know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1294.635" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1295.313" end="x">But he, the people did not have much hope, and they knew, and they knew that the whole [?] was sent to Upper Silesia and <a class="placename" href="#vothC4" type="camp">Auschwitz</a>,</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1314.942" end="x">Who [?] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1315.560" end="x">Would be sent there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1316.947" end="x">And?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1317.731" end="x">Our train with some cars continued to go to Germany, and we . . . arrived in, ah, <a class="placename" href="#vothC8" type="camp">Belsen</a>—there we descended from the car, and the Germans forced us . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1345.634" end="x">Were you still with your wife and your children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1347.866" end="x">[I was still] with, with my wife and my two children. And the Germans force, force—, forced us to get off and [to walk], from the train station to the camp, walk on foot, old and young, men and women.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1371.497" end="x">How far was that approximately?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1373.608" end="x">It was about seven kilometers away from the train station.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1377.543" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1388.639" end="x">And?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1388.895" end="x">Again, we arrived at the camp, and we also found some Greek Jews from <a class="placename" href="#vothL68">Saloniki</a> there. We were told that we arrived in a very harsh camp, and, ah, were also told that other Jews from <a class="placename" href="#vothL68">Saloniki</a> of Spanish citizenship had been there, but that these people were . . . were gone from the camp three months earlier, and [nobody] knew exactly in what direction and where.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1446.747" end="x">I stayed in the camp with my family, my wife and my two children, exactly for one year.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1459.848" end="x">Were you allowed to be together?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1463.300" end="x">We lived in large barracks, wooden barracks . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1469.994" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1471.456" end="x">And found there also Polish—some three hundred to four hundred Polish Jews . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1482.190" end="x">Men and women?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1483.260" end="x">Men and women, some children . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1486.366" end="x">In the same, ah, room?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1488.974" end="x">In, ah, a neighbor <a class="term" href="#vothG_block">block</a>, in the neighboring <a class="term" href="#vothG_block">block</a>, there were Polish Jews who had a South American citizenship, and as neutrals could not be forced to work . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1511.662" end="x">Could not?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1512.989" end="x">Were not.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1514.014" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1517.301" end="x">One was, when—, we were guarded by German soldiers, and every morning we were supposed to come out for a roll call, and, ah, were often made to wait two, three hours, one hour, if something was not right. When the numbers [?] were not in order, and when arrest [were made.] We—one promised us that we would have the opportunity with outside countries to , ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1579.743" end="x">. . . communicate?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1580.723" end="x">to connect get in touch, but those were only pro—, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1587.703" end="x">Promises . . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1588.050" end="x">. . . only empty promises, we never had the possibility to get in touch with the outside world. One—for food, we had the food that everybody, that, that all internees had. Our food was not better or not worse than that of the others because the whole could not be worse. Early we had some warm water that one called infusion of coffee, and that had nothing to do with coffee. One, for lunch [following section is not coherent] very hungry person from last month could a fare of, a , a soup that with some vegetable . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1663.366" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1664.211" end="x">That one . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1665.734" end="x">Yes, well, so, mixed with some vegetables, and?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1671.206" end="x">And, and, grasses [?] and so on, that was our food—one had 300 grams of bread per person, and later we only had 250 grams, and even later nothing, and there was the same warm water and nothing else, that was the nutrition that diminished our strengths, and in the last days we were forced to stay hungry without [any] food, and to live without making any movement [?] , and to die of, ah, of hunger because our strength was so . . .<note n="13"><span class="note">Mr. Button is referring here to the last months that the camp was in existence as conditions deteriorated  dramatically due to the influx of tens of thousands of prisoner evacuees and a typhus epidemic. From January to mid-April 1945, some 35,000 prisoners perished in the camp. Mr. Button and others in the "neutral camp" suffered during this time but were still afforded better treatment than the majority of the inmates as seen by Mr. Button's subsequent testimony regarding the cruelty and brutality he witnessed in Belsen during the winter of 1945.</span><sup><a href="#note_13">13</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1723.535" end="x">Weakened?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1724.349" end="x">Weakened.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1725.525" end="x">Now, what did the children do in such a camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1730.545" end="x">The children were able to—when we, me and my wife were together, have some more of our rations.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1741.460" end="x">But did they do otherwise, read, play?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1745.515" end="x">The children did not have to do forced labor as the adults.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1752.073" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1752.631" end="x">I could, I can personally say what I saw around me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1765.912" end="x">But what did your own children do, what did they do all day long?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1770.465" end="x">The children, the . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1773.450" end="x">Were they allowed to go outside?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1775.832" end="x">Outside, where outside, we were outside, next, ah, between the barracks outside . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1782.614" end="x">Barracks. Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1784.046" end="x">And the children were allowed to, from those, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1788.689" end="x">Barracks . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1789.654" end="x">From the barracks, [to go] away, 20, 25 meters away, go away, to get away further, and, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1801.473" end="x">Tell me, Mr. Button, where are you, ah, where are your wife and children now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1807.744" end="x">My wife and my children are now in <a class="placename" href="#vothL13">Paris</a>, where I also am still, living in a Centre de [unintelligible] of the Fédération des Sociétés Juives de France.<note n="14"><span class="note">The Jewish Committee for Social Action and Reconciliation, an arm of the organized French Jewish community, was able to provide food and shelter for some three quarters of the approximately 40,000 Holocaust survivors who came to France following their liberation.</span><sup><a href="#note_14">14</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1822.171" end="x">You don't live in this house?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1823.890" end="x">I live in this house.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1825.111" end="x">And the wife and the children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1826.619" end="x">And my children, too, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1828.232" end="x">They, you live here, you have a room here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1830.946" end="x">Yes, I have a room here. I would like to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1836.147" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1836.690" end="x">. . . say something about the bad treatment of the Jews and other internees in <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1845.027" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1845.344" end="x">. . . and—where I saw men and women who, in winter and in the snow and in, ah great cold, had large boards and carts to, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1868.364" end="x">Haul.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1869.419" end="x">. . . were stretched on carts on which one would normally only have, ah, horses, and, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1881.447" end="x">Mules . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1882.578" end="x">Mu—, Mules, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1884.402" end="x">Yoked . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1885.457" end="x">Yo—, yoked. Under very bad . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1895.498" end="x">Conditions . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1896.176" end="x">Conditions, were under very bad conditions, were, ah, beaten, beaten by men and women. I saw how German women forced internees to work, and, ah, beat them, ready with large . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1925.261" end="x">Whips . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1927.251" end="x">With whips and, ah wooden, ah, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1931.382" end="x">Canes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1931.819" end="x">. . . and wooden canes—and I also saw that some internees—maybe Germans or I don't know which nationality they were—were used to beat the other, other Jews. I, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1959.482" end="x">Were those Jews who beat you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1962.572" end="x">No, it . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1963.326" end="x">No, other prisoners?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1963.809" end="x">. . . it, those were other prisoners, Germans or Ro—, Russians or I don't know exactly how . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1972.809" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="1973.201" end="x">What they were . . . who were beating the Jews, the Jews. I have also seen that a woman who wanted to give a little—a, a little bread and salt, was seen by a German, ah, <a class="term" href="#vothG_gestapo">Gestapo</a> woman, she beat her on the head so hard that I did not see her come out again after two days, and I learned later that she dropped dead—dead.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2023.553" end="x">Now tell me, Mr. Button, what are you planning to do now? What will you do, where do you want to go, or are you going to stay in <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="2033.322" end="x">First, I have applied to Palestine, and want to [go to] Palestine . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2042.940" end="x">You have applied, once again, you have for Pal— . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="2046.468" end="x">I have applied for Palestine, and wanted to go first to Palestine where I also have other relatives.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2055.981" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="2056.720" end="x">Unfortunately, I am waiting for a whole year here, and I have not received the permission to go to Palestine.<note n="15"><span class="note">At the time, Palestine was under the control of the British who severely restricted Jewish immigration. Like other survivors, Mr. Button had lost his home, his business, his belongings and the cultural and religious milieu into which he was born and was attempting to make a new life for himself and his family.
+</span><sup><a href="#note_15">15</a></sup></note> I had to try to find something to work here in France to make a possibility—to ensure a . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2088.077" end="x">To support, or . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Button</span>:
+            </span>
+            <span class="utterance" who="#buttonJ" start="2089.294" end="x">To make a living.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2091.344" end="x">[In English] This concludes Spool number 25, spoken by Mr. Jacob Button, a Spanish Jew born in Greece, he is now doing some work, he expects to go to Palestine. Illinois Institute of Technology recording.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            Thessaloniki or Salonika was home to the most flourishing Sephardic Jewish community in the world before the Holocaust. Nearly all of its prewar Jewish population of some 56,000 perished in the Holocaust,  most of them in Auschwitz-Birkenau.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            Because their ancestors were originally from the Iberian peninsula, some Greek Sephardic Jews were able to obtain Spanish citizenship.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            The Baron Hirsch neighborhood in Salonika was one of the three neighborhoods in the city that comprised the Jewish ghetto. Since the it was close to a key railroad station, the neighborhood became the departure point for Jews being  deported to extermination and concentration camp centers.
+        </li>
+                <li>
+            <a name="note_4"></a>
+            The first rail convoy to Auschwitz-Birkenau departed on March 15, 1943. Subsequent convoys left in the following weeks. The last convoy left Salonika on August 10,1943.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            The rumor Mr. Button heard about "an extinction at work" was unfortunately accurate. Most of the at least 43,850 Jews from Salonikia who arrived at Auschwitz-Birkenau between March and August, 1943 were gassed on arrival.
+        </li>
+                <li>
+            <a name="note_6"></a>
+            Piraeus is the port linked to the city of Athens.
+        </li>
+                <li>
+            <a name="note_7"></a>
+            The Germans occupied central Macedonia located in northern Greece.
+        </li>
+                <li>
+            <a name="note_8"></a>
+            The German army occupied Athens on September 8, 1943 following Italy's capitulation. On October 7, 1943, an order was issued for all Jews in Athens to register with the community. There  was a very limited response, and the following month all Jewish property was confiscated in retaliation for the poor registration showing. Some Jews in Athens joined partisan groups. Most went into hiding although by March 1944 about 1,500 had registered either to receive permission to work or out of fear of reprisals against Christian neighbors who were sheltering them.
+        </li>
+                <li>
+            <a name="note_9"></a>
+            At the outset of the Italian occupation of Athens, there were some 3,500 Jews in the city. This number rose to 8,000-10,000 due to Jews who escaped to Athens from German and Bulgarian parts of occupied Greece. Among these escapees were Mr. Button and his family. On March 25, 1944, the Germans rounded up 1,690 Jews from Athens ( a number of them refugees from Salonikia) for deportation to Auschwitz-Birkenau.
+        </li>
+                <li>
+            <a name="note_10"></a>
+            The Haidary concentration camp was located in the town of Haidary near Athens. It operated from September 2, 1943 to September 20, 1944. The majority of Haidary's inmates were transported to Bergen Belsen or to Auschwitz.
+        </li>
+                <li>
+            <a name="note_11"></a>
+            This promise was not as empty as it sounds. The Franco government did agree to take Jews with Spanish citizenship but stipulated that they could only remain temporarily on Spanish soil. Only when one group had left the country could another be admitted. This policy greatly restricted the number of Jews who were admitted to Spain during the course of the war.
+        </li>
+                <li>
+            <a name="note_12"></a>
+            Germany occupied Hungary on March 19, 1944. A special commando headed by Adolph Eichmann was part of the occupying force. Its task was to implement the "Final Solution" program. The Germans installed a collaborationist government which rapidly issued a host of anti-Jewish decrees including the wearing of the yellow star.
+        </li>
+                <li>
+            <a name="note_13"></a>
+            Mr. Button is referring here to the last months that the camp was in existence as conditions deteriorated  dramatically due to the influx of tens of thousands of prisoner evacuees and a typhus epidemic. From January to mid-April 1945, some 35,000 prisoners perished in the camp. Mr. Button and others in the "neutral camp" suffered during this time but were still afforded better treatment than the majority of the inmates as seen by Mr. Button's subsequent testimony regarding the cruelty and brutality he witnessed in Belsen during the winter of 1945.
+        </li>
+                <li>
+            <a name="note_14"></a>
+            The Jewish Committee for Social Action and Reconciliation, an arm of the organized French Jewish community, was able to provide food and shelter for some three quarters of the approximately 40,000 Holocaust survivors who came to France following their liberation.
+        </li>
+                <li>
+            <a name="note_15"></a>
+            At the time, Palestine was under the control of the British who severely restricted Jewish immigration. Like other survivors, Mr. Button had lost his home, his business, his belongings and the cultural and religious milieu into which he was born and was attempting to make a new life for himself and his family.
+
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Stefan Meuser</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English translation
+                            </i>: 
+            <span class="Translation">
+                <name>Stefan Meuser</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Eben E. English</name>, <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_1 = 50.033300;
+                        var lon_1 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC41">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC41" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Haidari
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Ath&#195;nai, Greece<br />
+                            </p>
+                            <div>
+                Located in the Haidari suburb of Athens, it operated from September 1943 until September 1944 as the largest concentration camp in Greece.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC41 = new OpenLayers.Map('map_vothC41', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC41.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC41.addLayer(markers);
+map_id_vothC41.zoomToMaxExtent();
+
+                        var lat_2 = 38.000000;
+                        var lon_2 = 23.733300;
+                        var vothC41 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC41_icon = new OpenLayers.Marker(vothC41);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC41);
+markers.addMarker(vothC41_icon);
+    addMarker(vothC41, popupClass, "", true, false, false);
+    map_id_vothC41.setCenter(vothC41, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC8">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC8" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Bergen-Belsen
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Bergen, Germany<br />
+                            </p>
+                            <div>
+                Established in the spring of 1943 and initially intended as a transit camp, it soon was integrated into the concentration camp network.  Its population swelled late in the war as inmates from other camps further east were moved into it--from around 15,000 in late 1944 to 41,250 in March 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC8 = new OpenLayers.Map('map_vothC8', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC8.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC8.addLayer(markers);
+map_id_vothC8.zoomToMaxExtent();
+
+                        var lat_3 = 52.766700;
+                        var lon_3 = 9.916700;
+                        var vothC8 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC8_icon = new OpenLayers.Marker(vothC8);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC8);
+markers.addMarker(vothC8_icon);
+    addMarker(vothC8, popupClass, "", true, false, false);
+    map_id_vothC8.setCenter(vothC8, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL68">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL68" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Thessalon&#195;ki, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL68 = new OpenLayers.Map('map_vothL68', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL68.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL68.addLayer(markers);
+map_id_vothL68.zoomToMaxExtent();
+
+                        var lat_4 = 40.633300;
+                        var lon_4 = 22.933300;
+                        var vothL68 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL68_icon = new OpenLayers.Marker(vothL68);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL68);
+markers.addMarker(vothL68_icon);
+    addMarker(vothL68, popupClass, "", true, false, false);
+    map_id_vothL68.setCenter(vothL68, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL126">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL126" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Ath&#195;nai, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL126 = new OpenLayers.Map('map_vothL126', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL126.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL126.addLayer(markers);
+map_id_vothL126.zoomToMaxExtent();
+
+                        var lat_5 = 38.000000;
+                        var lon_5 = 23.733300;
+                        var vothL126 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL126_icon = new OpenLayers.Marker(vothL126);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL126);
+markers.addMarker(vothL126_icon);
+    addMarker(vothL126, popupClass, "", true, false, false);
+    map_id_vothL126.setCenter(vothL126, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL283">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL283" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Piraeus, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL283 = new OpenLayers.Map('map_vothL283', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL283.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL283.addLayer(markers);
+map_id_vothL283.zoomToMaxExtent();
+
+                        var lat_6 = 37.961000;
+                        var lon_6 = 23.643000;
+                        var vothL283 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL283_icon = new OpenLayers.Marker(vothL283);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL283);
+markers.addMarker(vothL283_icon);
+    addMarker(vothL283, popupClass, "", true, false, false);
+    map_id_vothL283.setCenter(vothL283, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_7 = 48.866700;
+                        var lon_7 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_block">
+                <a name="vothG_block"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    block.
+                </span>
+                <span class="definition">
+                    A single concentration camp barrack.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Thessaloniki or Salonika was home to the most flourishing Sephardic Jewish community in the world before the Holocaust. Nearly all of its prewar Jewish population of some 56,000 perished in the Holocaust,  most of them in Auschwitz-Birkenau.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Because their ancestors were originally from the Iberian peninsula, some Greek Sephardic Jews were able to obtain Spanish citizenship.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Baron Hirsch neighborhood in Salonika was one of the three neighborhoods in the city that comprised the Jewish ghetto. Since the it was close to a key railroad station, the neighborhood became the departure point for Jews being  deported to extermination and concentration camp centers.
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The first rail convoy to Auschwitz-Birkenau departed on March 15, 1943. Subsequent convoys left in the following weeks. The last convoy left Salonika on August 10,1943.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The rumor Mr. Button heard about "an extinction at work" was unfortunately accurate. Most of the at least 43,850 Jews from Salonikia who arrived at Auschwitz-Birkenau between March and August, 1943 were gassed on arrival.
+        </li>
+                <li class="note_6">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Piraeus is the port linked to the city of Athens.
+        </li>
+                <li class="note_7">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Germans occupied central Macedonia located in northern Greece.
+        </li>
+                <li class="note_8">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The German army occupied Athens on September 8, 1943 following Italy's capitulation. On October 7, 1943, an order was issued for all Jews in Athens to register with the community. There  was a very limited response, and the following month all Jewish property was confiscated in retaliation for the poor registration showing. Some Jews in Athens joined partisan groups. Most went into hiding although by March 1944 about 1,500 had registered either to receive permission to work or out of fear of reprisals against Christian neighbors who were sheltering them.
+        </li>
+                <li class="note_9">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            At the outset of the Italian occupation of Athens, there were some 3,500 Jews in the city. This number rose to 8,000-10,000 due to Jews who escaped to Athens from German and Bulgarian parts of occupied Greece. Among these escapees were Mr. Button and his family. On March 25, 1944, the Germans rounded up 1,690 Jews from Athens ( a number of them refugees from Salonikia) for deportation to Auschwitz-Birkenau.
+        </li>
+                <li class="note_10">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Haidary concentration camp was located in the town of Haidary near Athens. It operated from September 2, 1943 to September 20, 1944. The majority of Haidary's inmates were transported to Bergen Belsen or to Auschwitz.
+        </li>
+                <li class="note_11">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            This promise was not as empty as it sounds. The Franco government did agree to take Jews with Spanish citizenship but stipulated that they could only remain temporarily on Spanish soil. Only when one group had left the country could another be admitted. This policy greatly restricted the number of Jews who were admitted to Spain during the course of the war.
+        </li>
+                <li class="note_12">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Germany occupied Hungary on March 19, 1944. A special commando headed by Adolph Eichmann was part of the occupying force. Its task was to implement the "Final Solution" program. The Germans installed a collaborationist government which rapidly issued a host of anti-Jewish decrees including the wearing of the yellow star.
+        </li>
+                <li class="note_13">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Button is referring here to the last months that the camp was in existence as conditions deteriorated  dramatically due to the influx of tens of thousands of prisoner evacuees and a typhus epidemic. From January to mid-April 1945, some 35,000 prisoners perished in the camp. Mr. Button and others in the "neutral camp" suffered during this time but were still afforded better treatment than the majority of the inmates as seen by Mr. Button's subsequent testimony regarding the cruelty and brutality he witnessed in Belsen during the winter of 1945.
+        </li>
+                <li class="note_14">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Jewish Committee for Social Action and Reconciliation, an arm of the organized French Jewish community, was able to provide food and shelter for some three quarters of the approximately 40,000 Holocaust survivors who came to France following their liberation.
+        </li>
+                <li class="note_15">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            At the time, Palestine was under the control of the British who severely restricted Jewish immigration. Like other survivors, Mr. Button had lost his home, his business, his belongings and the cultural and religious milieu into which he was born and was attempting to make a new life for himself and his family.
+
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

@@ -1,0 +1,4366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Rita Benmayor; August 5, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-rita-benmayor-august-5-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Rita Benmayor; August 5, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=benmayorR">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=benmayorR&display=benmayorR_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=benmayorR&display=benmayorR_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=benmayorR">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=benmayorR">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.753" end="x">[In English] This is Spool 27 of the collection of Illinois Institute of Technology, taken in Paris on August the 5th, on 9 Rue Guy Patin, a home for adult displaced people, especially Jews. The interviewee is, eh, Miss Rita Benmayor, eh, age twenty, from Jewish Greek, from Saloniki? From Saloniki. Eh, she carries on her left arm a tattoo number, 38758, underneath a little triangle, indicating her Jewish descent.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="52.980" end="x">[In German] Nun, sagen sie mir, Frau, eh, Fräulein, eh, Benmayor, eh, wo sind sie geboren, wer ist ihre Familie, und wieviel waren Sie in der Famile und womit haben sich Ihre Eltern beschäftigt?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="68.003" end="x">Ich bin geboren in Griechenland, und '43, on '43, die Deutsch gekommen Griechenland, die hab ganz Familie genommen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="80.616" end="x">Ja—wieviel Menschen waren in ihrer Familie?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="83.279" end="x">Meine Familie war fünf Leute.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="85.701" end="x">Fünf Leute, wer waren das, sagen Sie?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="87.309" end="x">Meine Vater, Mutter und zwei Brüder und ich.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="91.327" end="x">Ja, now—wo sind jetzt Ihre Vater und Ihre Mutter?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="94.050" end="x">Meine Vater, meine Mutter war deportier-, und ganze Familie war im Krematorium, war im Krematorium, alle gesterben.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="102.375" end="x">Eh, Ihre zwei Brüder auch?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="104.556" end="x">Meine zwei Brüder auch.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="106.827" end="x">Nun?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="107.411" end="x">Ich hab geblieben ganz alleine von die Familie.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="109.642" end="x">Ja, also—sagen Sie mal, wenn die Deutschen gekommen sind in '42, wie alt war Ihr Vater?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="115.558" end="x">Meine Vater war 40 Jahre.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="118.010" end="x">Und ihre Mutter?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="119.137" end="x">Meine Mutter war 38 Jahre.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="121.589" end="x">Und die zwei Brüder?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="123.197" end="x">Zwei Brüder, eine 25 und eine 18 Jahre.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="126.995" end="x">Waren Sie—und wie, wie alt waren Sie?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="130.441" end="x">Ich war 16 Jahre.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="132.230" end="x">Sie waren 16—nun, und waren Ihre Brüder verheiratet?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="136.954" end="x">Der eine war 'erheirat und der andere war nicht verheiratet.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="139.767" end="x"> . . . war nicht verheiratet—und wo ist, eh, die Frau von dem verheiraten Bruder?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="144.679" end="x">Die Frau von dem verheirat Bruder war auch im Krematorium, die hat klein Kinder gehabt und war in Krematorium.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="150.881" end="x">Sie hat -ach, sie hat ein kleines Kind gehabt?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="153.032" end="x">Ja, sie hat viel klein Kind.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="154.821" end="x">Wieviel?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="155.857" end="x">Vier.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="156.441" end="x">Sie hatte vier kleine Kinder?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="158.230" end="x">Sie war vier . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="159.417" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="159.821" end="x">Vier.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="161.701" end="x">Nun, erzählen Sie mir, eh, die Ihre ganze Geschichte, wo hat ihr Bruder, ihr verheirateter Bruder mit seiner Frau gelebt, hat er mit Ihnen gelebt oder hat er für sich selbst gelebt?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="172.606" end="x">Er hat ihre gelebt.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="174.354" end="x">Was, er hat für sich selbst gelebt—erzählen Sie—hat für sich selbst gelebt?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="177.679" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="178.384" end="x">Also erzählen Sie, sie haben in Saloniki gelebt?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="182.161" end="x">Jawohl.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="183.438" end="x">Ja, sprechen Sie lauter, und sprechen Sie bitte in diese Weg [?]. Nun gut, also dann: die Deutschen sind gekommen nach Saloniki, und was haben die dort befohlen und was haben die dort gemacht?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="193.178" end="x">Wann die Deutsch gekommen Saloniki, das war gut, [?] sie . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="197.166" end="x">Aha . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="197.841" end="x">. . . und dann dreiund—zweiundvierzig . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="200.714" end="x">Aha, ja . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="201.027" end="x">. . . und dann in '43 die Gestapo gekommen und der haben alle Jude genommen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="204.767" end="x">Die haben alle Juden genommen—wo haben sie sie genommen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="207.821" end="x">Es waren 2 Uhr bei Nacht, das war gekommen zuhause und hat ganze Familie genommen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="213.899" end="x">Und wo hat man Sie hingebracht?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="215.748" end="x">No, gebracht in Auschwitz.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="217.748" end="x">Nun ja, also gleich vom Hause, wo hat man sie genommen zur, eh, Station?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="223.483" end="x">. . . zum Station von Saloniki.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="226.477" end="x">Also, sagen sie, man ist gekommen um 2 Uhr in der Nacht—und wo hat man sie genommen, direkt vom Hause . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="233.387" end="x">. . . von zuhause . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="234.935" end="x">. . . von zuhause . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="235.519" end="x">. . . von zuhause hat genommen ganze Familie und—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="237.911" end="x">. . . und man hat . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="238.616" end="x">. . . und war in Station im Waggon . . . und war 72 Leute im Waggon . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="244.110" end="x">Ja, was war das, ein Passagier-Waggon, oder ein eh . . . ein eh . . . Wa . . . ein eh—Waren-Waggon . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="251.441" end="x">Ja, eh, Waggon . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="252.598" end="x">. . . ein Waren-Waggon—waren dort Bänke zu sitzen im Waggon?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="257.068" end="x">Nein, runter gesitzen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="257.833" end="x">Man ist gesessen auf der Diele . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="259.803" end="x">. . . gesitzen, ja . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="260.448" end="x">War da, eh, eine Toilette- war da ein Kabinett?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="263.562" end="x">Nein, das war eine—Kübel . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="265.923" end="x">Da war ein Kübel dort . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="267.501" end="x">. . . ein Kübel . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="268.507" end="x">Und waren Männer und Frauen zusammen im Waggon?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="271.411" end="x">Ja. Waren 72 Leute, Männer und Frauen, klein Kinder, alle zusammen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="275.158" end="x">. . . und kleine—Ja. Nun, und was hat man gesagt, wohin nimmt man sie?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="279.046" end="x">Er hat gesagt, es kommen alle in Polen, und alle Jude zusammen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="284.510" end="x">Alle Juden zusammen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="284.914" end="x">Aber hat nicht gewusst, was wird gemacht . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="287.818" end="x">Sie haben nicht gewusst.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="288.553" end="x">Wir haben nicht gewusst.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="289.288" end="x">Ja—also . . . und so sind Sie gefahren, wie lange sind Sie gefahren?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="294.571" end="x">. . . eh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="294.884" end="x">. . . von Saloniki im Zug, wie lange sind Sie gefahren?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="298.059" end="x">Acht Tage . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="299.487" end="x">Sie sind acht Tage . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="299.740" end="x">. . . im acht Tage, wir habt in Auschwitz gekommen, warn in Auschwitz.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="302.824" end="x">. . . in Auschwitz gekommen—was hat dort in Auschwitz passiert?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="306.993" end="x">. . . warn wir in Auschwitz, wir habt die Deutsch gekommen, sar—die Männer . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="312.427" end="x">. . . apartiert . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="313.433" end="x">. . . apartier, und die Frauen apartier . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="315.373" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="315.656" end="x">Die Männer hat genommen eine Automobil, das bald in Krematorium. Der hat die alte Leute . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="321.331" end="x">Ach, das warn die alte Leute . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="322.668" end="x">. . . die alte Leute war bald in Krematorium . . . und die junge Leute war in Lager.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="327.529" end="x">Ja—und was hat man mit Ihnen getan?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="330.995" end="x">Ich war jung, ich war 16 Jahre, und hat mich genommen und alle zusammen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="335.826" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="336.260" end="x">Arbeiten in Lager, in eine Lager.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="338.621" end="x">Ja. Und eh . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="339.838" end="x">. . . meine . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="340.181" end="x">Sie sind gekommen nach Auschwitz zusammen mit Ihre Vater und Ihre Mutter?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="343.961" end="x">Ja, meine . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="345.191" end="x">Und Ihr Va . . . Ja?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="346.001" end="x">Meine Mutter gesehen in Auto, gehn in Auto—warum, die warn alte—und meine Vater auch in Auto, bald in Krematorium geschaff . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="355.361" end="x">Gut, Sie Sie sagen, Ihr Vater war 40 Jahre, das ist doch nicht alt.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="358.901" end="x">Ja. Aber hat so gemacht . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="362.141" end="x">Ja. Das haben die gemacht—und Ihre Brüder, eh, und Ihre zwei Brüder?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="366.671" end="x">Die eine Bruder, ich haben nicht gewusst alles . . . und die andere, die war auch in andere Lager.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="372.101" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="372.941" end="x">Und die geht in libere . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="374.771" end="x">Oh, und der ist free, frei gekommen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="376.901" end="x">Frei gekommen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="377.381" end="x">Und wo ist er jetzt?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="379.061" end="x">Jetzt ist in Palästina.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="380.441" end="x">In Palästina?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="381.371" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="381.851" end="x">Wie ist er dort rüber gekommen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="382.871" end="x">. . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="385.961" end="x">Ohne Permit. Sprechen Sie darein . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="389.591" end="x">Ohne Permit . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="390.491" end="x">Ist einfach rüber gegangen und ist reingekommen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="393.461" end="x">Wann ist freit, er war in Griechenland, er hat gesucht die Familie. Er hat gewusst die ganze Familie . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="400.211" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="400.601" end="x">. . . niemei—und es war in Palästina.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="403.421" end="x">Ja, und er ist- hat er Ihnen von Palästina geschrieben?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="407.441" end="x">Nein, er hat zurückge --er, äh, ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="410.561" end="x">Hat er Ihnen geschrieben?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="411.701" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="412.061" end="x">Sie wissen, dass er dort ist?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="413.261" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="413.711" end="x">Ja, und, eh . . . nun, und so sind Sie im Lager geblieben, was hat man mit Ihnen im Lager getan?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="421.121" end="x">Ich?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="422.021" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="422.501" end="x">Wann ich war in Lager, hat die Deutsche genommen, hat mich ganze Haare ge-, geschn . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="427.481" end="x">Ihr ganzen Haare hat man abgeschnitten.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="429.461" end="x">Geschnitte.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="430.091" end="x">[In English] She now has a wonderful head of hair, that she says that her hair will—was cut off entirely.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="436.781" end="x">[In German] Nun. Man hat Ihre Haare abgeschnitten, dann?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="439.241" end="x">Die Haare geschnitte, hat mich ganze Kleid genommen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="445.661" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="446.741" end="x">Hat mich gegeben eine Männerkleid.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="447.161" end="x">Ja, Männerkleidung?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="448.511" end="x">Eine Männeranzug, ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="448.811" end="x">Ja, ein Männeranzug—auch Hosen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="449.201" end="x">Männeranzug, Hose und Jacke.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="451.001" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="451.571" end="x">Und dann ich war Arbeit bei die Straße.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="453.611" end="x">Arbeiten auf der Straße?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="455.051" end="x">Auf der Straße.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="455.471" end="x">Und wann hat man Sie tattooiert—wann hat man die Tatoo gemacht?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="459.821" end="x">Die erste Tag wann war in Lager gekommen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="462.701" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="463.001" end="x">. . . das war zwei Häftlinge, der hat ganze . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="467.021" end="x">Ja, das hat . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="468.281" end="x">. . . die Nummer gemacht.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="468.881" end="x">. . . die Nummer gemacht.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="469.241" end="x">. . . war zwei Männer . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="469.931" end="x">. . . und dann, wenn man Ihnen die Nummer gemacht hat, dann haben Sie schon gewusst, dass Sie leben bleiben werden, dass Sie . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="474.941" end="x">Nein.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="475.421" end="x">Warum nicht?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="476.321" end="x">Warum, wir habt die Nummer ausgenommen, aber wir war mager, ganze Monat, wie—alle Monate hat Selektion gehabt.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="483.911" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="484.601" end="x">. . . wer ist mager, wer schlecht ausgab, ganz in Krematorium, der hat . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="489.131" end="x">. . . das war in Auschwitz?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="490.121" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="490.481" end="x">Ja, und, eh, wie so haben Sie sich gesund erhalten?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="493.931" end="x">Nun ich hab alle Schmutz gegessen, wir habt geklaut eine mit andere die Brot, wir habt das gemacht.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="500.651" end="x">Was heißt, wir haben Schmutz ge-, Schmutz gegessen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="502.961" end="x">Die Schmutz von die Kartoffel . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="505.271" end="x">Die Schmutz von die Kartoffel haben Sie gegessen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="507.611" end="x">. . . die Kartoffel—ich hat gegessen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="508.391" end="x">. . . und das hat Sie erhalten ein bisschen stärker?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="510.761" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="511.691" end="x">Und, eh, sie sagen, weiter Sie haben voneinander das Brot weg genommen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="516.131" end="x">Ja, eh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="517.091" end="x">Sprechen Sie weiter . . . Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="518.711" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="519.041" end="x">Nun, und was haben Sie gearbeitet? In Auschwitz?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="521.891" end="x">Die erste Monat, drei Monat, ich habe bei die Straße gearbeit, Schneise, äh, Steine ge . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="528.911" end="x">Sie haben Steine gearbeit . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="529.601" end="x">Steine ge . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="530.171" end="x">Ja—nun?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="531.041" end="x">Und dann ich war die Schuhkommando, ich habe Schuhe repariert, ich war die Schuhkommando . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="536.591" end="x">Eh, Sie waren im Schuhkommando?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="538.841" end="x">Schuhkommando . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="539.321" end="x">Haben Sie gelernt, Schuhe zu reparieren?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="540.971" end="x">. . . Schuhe zu reparieren.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="542.381" end="x">Eh, eh, von wem waren die Schuhe?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="545.861" end="x">Von die SS.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="547.331" end="x">Oh, die waren SS-Schuhe?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="549.131" end="x">. . . SS-Schuhe.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="550.331" end="x">Eh—haben Sie—womit haben Sie gearbeitet, mit, eh, mit Hammer, oder mit der Maschine?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="557.561" end="x">Mit Arme.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="558.431" end="x">Was?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="559.451" end="x">Mit Arme.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="559.811" end="x">Mit Ihre Hände haben Sie gearbeitet?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="561.041" end="x">Mit Ihre Hände.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="561.641" end="x">Und, eh, haben Sie richtig gelernt zu reparieren Schuhe?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="565.031" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="566.051" end="x">Können Sie das jetzt noch?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="566.801" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="567.371" end="x">Können Sie ein Schuhmacher sein?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="568.091" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="568.601" end="x">Ja, nun, und . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="571.031" end="x">Ich war eine Jahre im Schuhkommando.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="573.101" end="x">Sie waren ein ganzes Jahr im Schuhkommando.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="574.601" end="x">Ein ganzes Jahr im Schuhkommando.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="575.651" end="x">Ein ganzes Jahr im Schukommando.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="576.881" end="x">Jawohl.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="577.511" end="x">Und dann, was hat passiert?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="580.031" end="x">Und dann, wann wir—wann die Russe gekommen Auschwitz, wir habt transportiert nach andere Lager . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="586.571" end="x">Aha, wenn die Russen nach Auschwitz gekommen sind . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="588.641" end="x">. . . wir habt transportiert . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="589.121" end="x">Hat man Sie transportier nach andere . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="589.631" end="x">. . . in andere Lager, wir war in Ravensbrück.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="592.481" end="x">Ravensbrück, wo ist das?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="594.521" end="x">In Deutschland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="595.721" end="x">Das ist in Deutschland, nun erzählen Sie, wieviel Tage sind Sie gefahren von Auschwitz nach Ravensbrück?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="600.911" end="x">Na, fünf Tage wir habt gelaufen, in bei Fuß . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="605.201" end="x">Sie sind zu Fuß gegangen fünf Tage?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="607.571" end="x">Fünf Tage . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="608.441" end="x">Er, eh, wer, wieviel Menschen sind zu Fuß gegangen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="611.651" end="x">Drei Men-, dreihundert Menschen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="614.291" end="x">Dreihundert Menschen, Männer und Frauen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="615.881" end="x">Nein, nur Frauen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="616.871" end="x">Nur Frauen, und wer hat sie aufgepasst?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="620.231" end="x">Die, eh, die Posten von die SS.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="622.781" end="x">Die SS, waren die gut zu Ihnen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="624.941" end="x">Nein, wer hat kann nicht viel laufen, der schnell er . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="629.711" end="x">Was, erschossen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="630.191" end="x">. . . ereschossen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="631.391" end="x">Oh, haben Sie das selbst gesehen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="633.521" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="634.301" end="x">Ja, was tuten die . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="635.531" end="x">Viel.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="636.011" end="x">Was haben sie getan, mit einem Revolver sie erschossen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="638.531" end="x">Ne, schoa sie . . . die hat gescho . . . [?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="641.291" end="x">Ach die, die Flinte?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="642.431" end="x">Die Flinte, ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="643.481" end="x">Haben sie genommen und sie gleich erschossen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="644.951" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="645.701" end="x">. . . und . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="646.001" end="x">. . . wer kann gut laufen, er hat gelaufen, wer kann nicht laufen, der hat nicht gegessen, der hat . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="651.521" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="651.911" end="x">. . . nur ein Brot für vier Tage . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="653.831" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="654.671" end="x">. . . der hat gegessen alle zwei Tage, gegessen die Brot . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="657.851" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="658.811" end="x">. . . er hat, kann nicht laufen, er hat schnell erschossen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="661.241" end="x">Nun, und so sind Sie from Auschwitz wohin gekommen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="665.411" end="x">Nach Ravensbrück.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="666.461" end="x">Sie sind nach Ravensbrück gekommen, und was hat man dort gemacht?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="669.881" end="x">Wir habt dort, eh, wieder die Straße lang gearbeitet.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="673.391" end="x">Was haben sie gearbeitet Straße?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="674.891" end="x">Steine tragen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="676.421" end="x">Steine tragen, und was hat man, eine Straße gebaut?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="678.311" end="x">St-, eh, ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="679.511" end="x">Ja, nun und denn?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="682.151" end="x">Wir hat dort vier Monat gearbeit, und dann wir hab, eh . . . bei Stucko[?] war so . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="690.341" end="x">Was?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="690.911" end="x">. . . im Block gearbeit.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="691.361" end="x">Im Block gearbeitet, wieviel Leute waren Sie im Block?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="694.781" end="x">Im Block wart 150 Leute.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="697.901" end="x">150 Leute, wie haben Sie im Block geschlafen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="700.721" end="x">[?] . . . in die . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="702.341" end="x">Was?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="702.701" end="x">In die Bett.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="703.961" end="x">Waren Betten, oder . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="704.501" end="x">Waren fünf Leute in eine Bett geschlafen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="706.451" end="x">Fünf Leute in einem Bett?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="707.231" end="x">Fünf Leute in eine kleine Bett.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="708.881" end="x">Eh, also haben Sie, eh, haben Sie, war es rein, war es sauber?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="715.331" end="x">Sauber, ja?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="716.561" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="716.951" end="x">Ja, das war sauber.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="719.051" end="x">Sie haben sich waschen können, und so—haben Sie Läuse gehabt, Flöhe, Läuse?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="723.941" end="x">Läuse, viele.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="725.531" end="x">Oh, sie hatten viele Läuse?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="726.551" end="x">Wir hat viel Läuse.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="727.991" end="x">Und was haben sie getan, um sich von den Läuse freizumachen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="732.881" end="x">[?] wir habt so in . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="734.381" end="x">Was, sich gekratzt?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="736.001" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="736.991" end="x">[In English] Eh . . . ? She said they scratched themselves.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="741.011" end="x">[In German] Nun, also, eh, und dann, wie lange waren Sie dort in diesem Lager, wie heißt das zweite Lager?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="746.801" end="x">Ist Ravensbrück.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="749.411" end="x">Das heißt Ravesblick [does not know the camp] . . . und, eh, wie lange waren Sie in Ravensbrück?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="755.081" end="x">Vier Monate.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="756.821" end="x">Vier Monate, und was hat denn passiert?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="758.801" end="x">Hat immer dort . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="760.901" end="x">Ja, aber nach die vier Monate, was hat dort passiert?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="763.301" end="x">Und dann wir hat wieder transportiert, warum die Russ gekomm nach Ravensbrück, wieder transportiert nach andere Lager, Retzow . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="770.381" end="x">Nach, hat man Sie nach Retzow transpor . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="771.851" end="x">Retzow.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="773.201" end="x">Ja, und was hat man . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="774.131" end="x">Wir hat wieder dort Steine trage, bei die Straße, Star gearbeit . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="779.291" end="x">Was, haben Sie immer Straßen gebaut?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="781.211" end="x">Ja, immer dort.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="782.171" end="x">Immer Straßen gebaut, nun, und so haben Sie in Retzow gearbeitet, und wie lange waren Sie in Retzow?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="789.371" end="x">Drei Monate.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="790.361" end="x">Drei Monate—wie hat man sich dort benommen mit Ihnen, wie hat man Sie, eh, behandelt? Waren sie gut zu Ihnen oder lieb?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="799.331" end="x">In Raven . . . , in Retzow, das war nicht gut, hat nicht gehabt sich zu essen, wir hat einmal Suppe gehabt und ein kleine Stück Brot zu essen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="808.901" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="809.831" end="x">Hat viele Leute sind gesterbe von Hunger.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="811.421" end="x">Sind Leute—nun sagen Sie mal, sind gestorben von Hunger, wie stellt man das, von Hunger, was, wie ist das regiert[?] passierte?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="819.071" end="x">Früh wir hat Kaffee getrinkt . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="821.141" end="x">Nun?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="821.441" end="x">Um Mittag eine halbe Liter Suppe . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="823.781" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="824.561" end="x">Und abend eine kleine Stück Brot zu esse.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="827.321" end="x">Nun, und sagen sie, Leute sind von Hunger gestorben, was hat ihnen passiert? Sind sie krank geworden, sind sie mager geworden, was . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="833.861" end="x">Na, da mage . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="835.091" end="x">Mager . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="835.841" end="x">. . . da kann nicht laufen, die SS hat, eh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="838.871" end="x">Eh, mit der Peitsche . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="840.145" end="x">Mit der Peitsche, und lange . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="841.394" end="x">[In English] She makes a gesture.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="842.680" end="x">[In German] Haben sie mit der Peitsche geschlagen, nun, und?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="845.233" end="x">Und sterben.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="846.519" end="x">Und sie sind gestorben. Oh, sagen Sie, was hat man genannt ein Muselmann, wissen Sie, was das ist?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="852.272" end="x">Muselmann, ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="853.588" end="x">Ja, was ist das?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="854.210" end="x">Der—nicht gegessen, es war Muselmann, und die SS, die hat genommen die Muselmann, gleich nach Krematorium.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="862.498" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="877.357" end="x">Also, Muselmann war eine abgef . . . [?] Person—und was haben die SS, sagen Sie, mit dem Muselmann getan?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="885.392" end="x">Gleich nach Krematorium.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="887.221" end="x">Und so, nun, eh, und so, wie lange waren Sie in Retzow?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="892.405" end="x">Drei Monat.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="893.630" end="x">Und denn, von dort sind Sie, wohin?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="895.127" end="x">Und dann wieder transportiert nach, eh, Malchow. Eine Tag und die zwei Tage—wir habt die Russe gekommen. Wir habt, eh, . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="903.072" end="x">Sind Sie freigekommen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="904.237" end="x">Frei gek- . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="905.221" end="x">Nun, also, die Russen, eh, das war in Malchow?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="908.257" end="x">. . . Malchow.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="909.633" end="x">Na sagen sie mal, wenn die Russen Sie freigemacht haben, was hat denn passiert?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="914.239" end="x">Wir habt eine . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="915.917" end="x">Wo sind die SS gegangen, wenn die Russen gekommen sind?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="918.802" end="x">Die Früh, wir habt aufstehen, und wir habt ge- mit der SS geblieben . . . Und dann wir sind nach alle fünf nacheinander hinein, zu fünft, wir geblieben ganze Stunde dort, zu fünft und dann die SS weg . . . Wir habt geblieben ohne Russe, ohne Deutsch . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="938.758" end="x">Und . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="939.108" end="x">. . . wir habt ganz alleine geblieben, die Leute . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="940.696" end="x">Und was haben Sie getan, wer da . . . .?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="942.404" end="x">. . . die Häftlinge.Wir habt laufen bei die Straße, so, Häftling alleine, und eh ganze Tag wir habt geblieben ohne Poste . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="949.907" end="x">Ohne Posten.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="950.861" end="x">Ohne Deutsche, ohne Posten.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="952.026" end="x">Sie sind, in der Straße . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="952.678" end="x">Nach wie . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="953.360" end="x">. . . oder sind Sie reingegangen zu den Deutschen, was haben die Deutschen gemacht?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="956.758" end="x">Gar nichts, die Deutsche immer weg.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="959.281" end="x">Die—die, die Privatleute, auch?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="961.291" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="962.275" end="x">No, sin . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="962.776" end="x">Die Privatleute auch, die hat ge . . . eine Koffer, eh, genommen und . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="966.416" end="x">Nun?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="966.736" end="x">Alle weg.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="967.660" end="x">Weg, weg.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="968.010" end="x">Wir hat nicht gesehen, wir hat bloß . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="969.779" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="970.069" end="x">So weg.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="970.510" end="x">Sind die Häuser offen geblieben, haben Sie mal reingeschaut?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="973.244" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="973.653" end="x">In die Häuser?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="974.590" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="975.260" end="x">Sind Sie reingegangen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="976.178" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="976.709" end="x">Haben Sie was genommen, zum Essen, gefunden zum Essen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="979.443" end="x">Ja, wir habt zu Hause ge-, gegangen, wir habt genommen zu Essen, wir habt genommen Kleider . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="984.049" end="x">Kleider?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="985.093" end="x">Und schnell wir weg.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="986.681" end="x">Und . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="987.122" end="x">Wir habt geblieben zwei Tage ohne Russe, ohne Deutsche . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="990.158" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="990.568" end="x">Und nach drei Tage wir habt gesehen Tanke . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="993.846" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="994.136" end="x">. . . wir habt gesehen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="995.422" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="995.772" end="x">. . . die Russ gekommen. Und schnell, eh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="998.506" end="x">Ja. Und?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="998.856" end="x">. . . ein Offizier gekommen, da wer ist Häftlinge, wer war in Lager, wir war schnell mit, eh, Offizier, und dann wir nach andere Lager mit Russe . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1006.661" end="x">. . . mit die Russen gegangen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1007.766" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1008.056" end="x">Zurück gegangen nach dem anderen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1009.281" end="x">Zurück gegangen nach dem Lager mit Russen. Hat man Ihnen zu Essen gegeben?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1011.593" end="x">Und die Russen wir habt viel zu Essen gegebt, wir habe gut gemacht uns, wir habt Seife gegebt zu Waschen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1017.919" end="x">Aha . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1018.360" end="x">Die war gut.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1018.650" end="x">Aha. Ja. Und dann sind Sie zurück gegangen, wohin?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1022.863" end="x">Dann wir habt zurück gegangen nach amerikanisch . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1025.597" end="x">Wo?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1026.822" end="x">Na, hat, viel laufen, eine, eine, drei Wochen laufen zu Fuß, wir hat gewollt in amerikanisch . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1033.721" end="x">Oh, Sie sind weggelaufen von die Russen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1035.459" end="x">Ja, wir hat weglaufen von die Russen, wir hat gewollt mit amerikanisch gehen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1039.702" end="x">Ja, und so, wo sind Sie . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1040.505" end="x">Wir hat drei Wochen laufen sollt, wir hat, wir hat nicht gewusst . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1043.451" end="x">Wieviel Menschen sind Sie gelaufen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1045.853" end="x">Wir wart 25 Menschen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1047.954" end="x">Männer und Frauen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1049.421" end="x">Männer und Frauen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1050.073" end="x">Und wo sind Sie gegangen, durch Deutschland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1052.204" end="x">Zurück in Deutschland nach amerikanisch . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1054.692" end="x">Nach der amerikanischen Seite?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1056.340" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1056.841" end="x">Und wie lange hat das gedauert, dass Sie sind nach der amerikanischen Seite gekommen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1059.863" end="x">Drei Wochen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1060.847" end="x">Sprechen Sie lauter, drei Wochen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1061.650" end="x">Drei Wochen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1062.423" end="x">Hat Sie keiner abgestellt, hat Sie keiner gesagt, wo geht Ihr?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1066.546" end="x">Nein, wir hat ein Adresse gehabt, wo die amerikanisch ist . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1070.488" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1071.532" end="x">Und wir hat laufen so . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1071.822" end="x">Wo war das?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1072.093" end="x">Das war in Deutschland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1074.176" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1074.568" end="x">Wo, war es die Seite war die Russen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1076.892" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1077.254" end="x">Der hat eine Adresse genommen von eine amerik- von eine Offizier Russe, wir sagt wieviel Seite amerikanisch, wann woll gehen, kann laufen drei Wochen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1085.295" end="x">[Laughs] . . . kann laufen drei Wochen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1086.188" end="x">Wir hat laufen drei Wochen, wir hat gekommen bis amerikanisch . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1088.409" end="x">Und was haben Sie gegessen auf dem Weg?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1090.449" end="x">Wir hat gekommen zu Hause von die Deutschen, wir hat gestohlen zu Essen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1095.839" end="x">Haben die Deutschen nicht selbst Ihnen zu Essen gegeben?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1098.241" end="x">Ja, es wie—Nein.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1100.613" end="x">Haben Sie es nicht wollen nehmen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1101.597" end="x">Nicht gewollen, wir hat gestohlen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1103.577" end="x">Gestohlen zu Essen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1104.833" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1105.575" end="x">Was haben Sie gestohlen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1106.951" end="x">Brot, Butter, Zucker, eh, hat gestohlen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1111.919" end="x">Von wo haben Sie das gestohlen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1112.269" end="x">Und seh-, und zu Hause von die Deutschen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1114.460" end="x">Wo die—wo die Deutschen weg waren, wo die nicht zu Hause waren?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1116.168" end="x">Ja, ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1117.303" end="x">Haben Sie nicht getroffen Amerikaner, haben Sie nicht getroffen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1120.158" end="x">Und dann nach drei Wochen, wir hat ge—wir hat gekommen Seite wo die Amerikanisch, und schnell die amerikanisch Kreuz, wir habt gegeben zu Essen, wir habt gegeben zu viel . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1129.502" end="x">Ja, aber die drei Wochen, das Sie gelaufen sind, waren Sie an der russischen Seite?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1133.927" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1134.458" end="x">Und die Russen haben Sie lassen gehen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1136.408" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1136.849" end="x">Aha. Und dann sind Sie durchgekommen zu die russische Seite und sind rüber gekommen zu die Amerikaner und dort hat das Rote Kreuz . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1142.119" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1142.469" end="x">Und die haben Sie ausgeholfen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1143.604" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1145.101" end="x">Nun, warum und wieso sind Sie nach Paris gekommen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1149.918" end="x">Ich hab nich, ich hab nicht gewollt nach Griechenland gehen, warum, ich hab nicht Familie . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1154.705" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1155.508" end="x">Und ich mach ganz alleine in . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1157.126" end="x">Ja—nun?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1159.015" end="x">In Griechenland . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1160.271" end="x">Ja.—und so?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1161.557" end="x">Ich gehn in Griechenland, ich sehn meine Hause ohne meine Mutter, ohne Vater, ich kann nicht das sehen . . . Ich hab schnell, eh, er hat, ich hab gehabt zwei Freunde, Französe . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1172.984" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1173.757" end="x">Er hat mir gesagt wollst du nach Paris gekommen? Ich hab gesagt: ja. Ich hab gekommen Paris.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1178.423" end="x">Wer waren die zwei Freunde?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1180.735" end="x">Zwei Französe.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1181.749" end="x">Mensch, eh, Männer oder Frauen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1183.427" end="x">Frauen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1183.988" end="x">Französische Frauen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1185.455" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1185.926" end="x">Und die waren mit Ihnen gelaufen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1187.483" end="x">Ja, ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1188.769" end="x">Aha, und so sind Sie nach Paris gekommen, haben die Franzosen Sie rein gelassen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1192.741" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1193.755" end="x">Eh, sprechen Sie -, die Franzosen haben Sie reingelassen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1195.976" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1196.266" end="x">Und wenn, sind Sie auf ein Zug gekommen, das Sie fahren konnten schon?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1199.815" end="x">Von Zug gekommen, ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1201.010" end="x">Wer, von wo haben, von der amerikanischen Seite?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1202.356" end="x">. . . von die amerikanische Seite.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1203.974" end="x">Dann sind Sie reingestiegen in einen Zug, um wegzufahren—Wieviel Menschen zusammen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1208.399" end="x">Es war 150 Mensch.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1211.073" end="x">Ein spezieller Zug?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1212.540" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1213.946" end="x">Mit Flüchtlinge?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1214.900" end="x">Mit Flüchtlinge.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1215.341" end="x">Und man hat Ihnen zu Essen gegeben und so?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1216.687" end="x">Ja, die amerikanisch viel zu Essen gegeben.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1219.663" end="x">Und dann sind Sie gekommen nach Paris?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1221.764" end="x">Nach Paris.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1222.476" end="x">Und wen haben Sie hier aufgesucht, wen haben Sie getroffen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1225.361" end="x">Ich hab niemand getroffen, ich hab zwei Griechen, zwei Freunde Griechen, wir hab eine groß, mmh, Griechenkreuz gekommen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1234.584" end="x">. . . ein rotes Kreuz?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1236.141" end="x">. . . Rotes Kreuz gekommen . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1237.185" end="x">Von Griechenland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1237.716" end="x">Von Griechenland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1238.821" end="x">Ja, und?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1239.775" end="x">Und er hat mir gegebt ein Kleid, ein Mantel und zu Essen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1244.471" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1244.652" end="x">Und dann die jüdische Organisation, er hat mir gegebt eine Hause zu wohn.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1249.421" end="x">Ja, eine—ja, und Sie wohnen hier jetzt?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1251.099" end="x">Und ich wohnt hier.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1252.143" end="x">Nun, und, eh, was tun Sie jetzt—was tun Sie jetzt hier [Ina ?]—was, wohin wollen Sie gehen, was wollen Sie tun?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1260.370" end="x">Ich geh nach Amerika.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1261.565" end="x">Oh, Sie gehn nach Amerika?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1262.911" end="x">Ich hab eine Onkel ge- . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1265.313" end="x">Wer hat Ihnen die Verwandte gefunden oder haben Sie gesucht?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1267.233" end="x">Ich hab gefunden eine Soldat . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1270.209" end="x">Eine . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1270.438" end="x">. . . eine griechisch Soldat, amerikanisch . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1272.750" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1273.130" end="x">Ja. Ich hab gesagt, vielleicht er kann meine Onkle—ich hab gegebt meine Adree, eh, die Adress ich hab nicht gewusst—ich hab gegebt die Name von mein Onkle, er hat gefunden.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1283.711" end="x">Der Soldat . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1284.604" end="x">Nur mit Name . . . die Soldat.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1286.131" end="x">Nun, wer ist Ihr Onkel?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1286.572" end="x">Und der Soldat hat schnell geschickt an meine Onkle und meine Onkle hat mi geschickt ein Brief.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1291.419" end="x">Ein, eh, einen Brief?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1292.463" end="x">Ein Brief.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1292.904" end="x">Hat man geschickt ein Affidavit?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1293.978" end="x">Ein Affidavit, er hat mir alle Papiere geschickt.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1296.954" end="x">So, warum gehen Sie nicht nach Amerika?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1298.602" end="x">Weil um die Quota für Griechen ist zu, ich kann nicht fahren.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1302.815" end="x">Und so, jetzt warten Sie hier, was tun Sie hier?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1305.700" end="x">Jetzt ich wart, bis wann die Quota is offen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1308.947" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1309.629" end="x">Ich geh nach Amerika zu mein Onkel.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1311.579" end="x">Aha—und sind Sie hier ganz allein?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1314.344" end="x">Ganz allein.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1315.449" end="x">Und Ihr Bruder ist wo?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1316.584" end="x">Mein Bruder ist in Palästina.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1319.047" end="x">Palästina? Nun und nun jetzt sagen Sie mal, sie leben im selben Zimmer mit Frau, eh, Bottom . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1324.166" end="x">Bottom . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1324.848" end="x">Ja, und warum waren Sie in solch einer Eile heute morgen, zu arbeiten, was haben Sie gearbeitet?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1331.083" end="x">Ich geh in Arbeit—jede, eh, . . . Vakanz . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1334.512" end="x">Mmh.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1334.953" end="x">Alle . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1336.118" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1336.800" end="x">Alle Deko [?] ich kann nicht arbeit. Nach Moan, nach die Monat Septembre, wir gehn nach Arbeit.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1344.182" end="x">Was können Sie arbeiten?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1346.041" end="x">Ich kann etwas nähen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1346.904" end="x">Sie können nähen, Sie wollen nicht Schuhe machen wieder?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1350.151" end="x">Nein.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1350.833" end="x">Warum nicht?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1351.123" end="x">Das war vom Lager.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1351.624" end="x">Und sie wollen nicht mehr?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1353.725" end="x">Nein.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1354.769" end="x">Aber Sie verstehen es noch?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1356.900" end="x">Ich kann.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1359.242" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1364.361" end="x">Und, eh, lernen Sie hier ein neues Fach oder Sie können nähen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1369.148" end="x">Na, ich kann nähen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1370.192" end="x">Ja, eh—wieviel sind Sie zur Schule gegangen in Griech-, in Saloniki—sind Sie zur Schule gegangen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1377.363" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1377.955" end="x">Wieviel Jahre sind Sie zur Schule gegangen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1379.603" end="x">Mit 16 Jahre ich war in griechische Schule . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1382.247" end="x">Ja, eh—sagen Sie mal, eh, man sagt, dass da waren in Auschwitz Lieder, die die Mädchen gesungen haben—erinnern Sie sich, welche, welche Gedichte, die man da gemacht hat in Auschwitz?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1395.484" end="x">Nein.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1396.377" end="x">Keine Lieder auch nicht? Sie kennen keine Lager, Lagerlieder . . . -wa?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1401.405" end="x">Nein.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1401.906" end="x">Sie kennen keine Lagerlieder. Und, eh, wo ist Ihr Onkel in Amerika?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1407.417" end="x">In Hartford.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1409.065" end="x">In Hartfort, Connecticut? Was tut er dort [plenty] ?, was für Beschäftigung, was macht er dort?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1416.659" end="x">Die ein, ich habe zwei Onkel, die eine arbeit in die Fabrik, ich weiß nicht, was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1421.023" end="x">Ja. Ja, und der andere?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1424.301" end="x">Der andere, ich weiß nicht, ich kann mich nicht . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1426.854" end="x">Sie wissen nicht, was der arbeitet? Nun, eh . . . aber Sie denken, Sie werden, eh, in, eh, in Jahr oder so ein Affidavit bekommen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1437.586" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1438.298" end="x">Ja, und so lange werden Sie hier in Paris bleiben?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1441.606" end="x">Schon ein Jahr ich bin in Paris.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1444.129" end="x">Und Sie werden warten, bis das . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1445.022" end="x">Ich warte, wann die Quota von die Griechen ist auf . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1447.877" end="x">Was hat man Ihnen gesagt, wenn kann es offen sein?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1451.155" end="x">Ich, eh, die, die amerikanisch Konsulat, der weiß auch nicht . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1454.674" end="x">Der weiß es auch nicht—nun, es wird schon wahrscheinlich irgendetwas getan werden. Sehen Sie, dass Sie sich was hier auslernen können. Wenn nicht—im Ort irgendwas—ein schönes Fach auslernen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1467.670" end="x">Ich wolln gern lernen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1469.318" end="x">Ja, sie wollen—nun?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1471.056" end="x">Jeder—alle, hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1473.066" end="x">Alle sind in Vakanzen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1474.261" end="x">Muss im Monat Septembre . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1476.603" end="x">Im Monat September werden Sie anfangen. Nun, ich danke Ihnen sehr, Fräulein Benmayor.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1479.277" end="x">[In Spanish] ¿Usted habla español?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1484.516" end="x">Sí.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1485.711" end="x">Y, eh . . . ¿qué otros . . . eh qué otros idiomas habla?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1491.162" end="x">En Italiano . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1492.870" end="x">¿De dónde aprendió el italiano?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1494.397" end="x">De la scuola.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1495.441" end="x">De la escuela . . . Y . . . eh . . . ¿ya habla usted francés ahora?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1500.077" end="x">Sí.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1500.850" end="x">¿Puede leer francés?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1502.407" end="x">Poco.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1504.206" end="x">Bueno, sería bueno que al final [ininteligible] este libro entonces.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1506.669" end="x">Sí.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1508.226" end="x">Bueno. Muchisimas gracias señorita.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Rita Benmayor</span>:
+            </span>
+            <span class="utterance" who="#benmayorR" start="1510.357" end="x" lang="en">[In English] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1511.099" end="x" lang="en">This concludes . . . this concludes the spool of the Illinois Institute of Technology, Spool 27, taken from Rita Benmayor, age twenty, tattoo 38758, and the triangle. Eh, she is a husky looking young woman, and eh, has her affidavit from America, but the quota is not yet open. The spool is, eh, of, eh, about twenty-six minutes length.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Stefan Meuser</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English translation
+                            </i>: 
+            <span class="Translation">
+                <name>Stefan Meuser</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Eben E. English</name>, <name>Elliot Lefkovitz</name>, <name>Stefan Meuser</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_1 = 50.033300;
+                        var lon_1 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC95">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC95" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Ravensbr&#195;ck
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Ravensbr&#195;ck, Germany<br />
+                            </p>
+                            <div>
+                Concentration camp for female prisoners. By 1944, Ravensbr&#195;ck and its 34 subcamps had a prisoner population of more than 80,000. Tens of thousands perished there from malnutrition, disease, shootings, phenol injections to the heart, and medical experiments. Six thousand died in its gas chambers.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC95 = new OpenLayers.Map('map_vothC95', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC95.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC95.addLayer(markers);
+map_id_vothC95.zoomToMaxExtent();
+
+                        var lat_2 = 53.200000;
+                        var lon_2 = 13.166700;
+                        var vothC95 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC95_icon = new OpenLayers.Marker(vothC95);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC95);
+markers.addMarker(vothC95_icon);
+    addMarker(vothC95, popupClass, "", true, false, false);
+    map_id_vothC95.setCenter(vothC95, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC127">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC127" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Retzow
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Ravensbr&#195;ck
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Retzow, Germany<br />
+                            </p>
+                            <div>
+                This sub-camp held over 1000 prisoners.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC127 = new OpenLayers.Map('map_vothC127', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC127.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC127.addLayer(markers);
+map_id_vothC127.zoomToMaxExtent();
+
+                        var lat_3 = 52.633300;
+                        var lon_3 = 12.683300;
+                        var vothC127 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC127_icon = new OpenLayers.Marker(vothC127);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC127);
+markers.addMarker(vothC127_icon);
+    addMarker(vothC127, popupClass, "", true, false, false);
+    map_id_vothC127.setCenter(vothC127, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC70">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC70" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Malchow
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Ravensbr&#195;ck
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Malchow, Germany<br />
+                            </p>
+                            <div>
+                Opened in 1943, Malchow consisted of ten barracks, each  meant for 100 women. But by 1945 the camp population had grown to 5000 women.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC70 = new OpenLayers.Map('map_vothC70', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC70.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC70.addLayer(markers);
+map_id_vothC70.zoomToMaxExtent();
+
+                        var lat_4 = 53.483300;
+                        var lon_4 = 12.416700;
+                        var vothC70 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothC70_icon = new OpenLayers.Marker(vothC70);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC70);
+markers.addMarker(vothC70_icon);
+    addMarker(vothC70, popupClass, "", true, false, false);
+    map_id_vothC70.setCenter(vothC70, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL14">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL14" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL14 = new OpenLayers.Map('map_vothL14', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL14.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL14.addLayer(markers);
+map_id_vothL14.zoomToMaxExtent();
+
+                        var lat_5 = 48.866700;
+                        var lon_5 = 2.333300;
+                        var vothL14 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL14_icon = new OpenLayers.Marker(vothL14);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL14);
+markers.addMarker(vothL14_icon);
+    addMarker(vothL14, popupClass, "", true, false, false);
+    map_id_vothL14.setCenter(vothL14, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL68">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL68" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Thessalon&#195;ki, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL68 = new OpenLayers.Map('map_vothL68', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL68.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL68.addLayer(markers);
+map_id_vothL68.zoomToMaxExtent();
+
+                        var lat_6 = 40.633300;
+                        var lon_6 = 22.933300;
+                        var vothL68 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL68_icon = new OpenLayers.Marker(vothL68);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL68);
+markers.addMarker(vothL68_icon);
+    addMarker(vothL68, popupClass, "", true, false, false);
+    map_id_vothL68.setCenter(vothL68, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_7 = 48.866700;
+                        var lon_7 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL255">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL255" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Hartford, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL255 = new OpenLayers.Map('map_vothL255', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL255.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL255.addLayer(markers);
+map_id_vothL255.zoomToMaxExtent();
+
+                        var lat_8 = 41.750000;
+                        var lon_8 = -72.683300;
+                        var vothL255 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL255_icon = new OpenLayers.Marker(vothL255);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL255);
+markers.addMarker(vothL255_icon);
+    addMarker(vothL255, popupClass, "", true, false, false);
+    map_id_vothL255.setCenter(vothL255, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_ss">
+                <a name="vothG_ss"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    SS.
+                </span>
+                <span class="definition">
+                    Acronym for the German Schutzstaffel (“Protective Echelon”), a major Nazi organization. It grew from a small paramilitary unit to a powerful force that served as Hitler's "Praetorian Guard," the Nazi Party's "Shield Squadron" and a force that, fielding almost a million men (both on the front lines and as political police), managed to exert as much political influence as the German Army. Built upon the Nazi racial ideology, the SS, under Heinrich Himmler's command, was responsible for many (and most of the worst) of the crimes against humanity perpetrated by the Nazis during World War II.
+                </span>
+            </li>
+                        <li class="vothG_block">
+                <a name="vothG_block"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    block.
+                </span>
+                <span class="definition">
+                    A single concentration camp barrack.
+                </span>
+            </li>
+                        <li class="vothG_mussulman">
+                <a name="vothG_mussulman"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    mussulman.
+                </span>
+                <span class="definition">
+                    The German term meaning “Muslim.” The term applied to prisoners in camps close to dying from starvation and exhaustion. Their skeletal faces were devoid of expression, and they seemed to have been overcome by despair and by the absence of the will to live. The origin of the term has not been definitively established, though it has been attributed to a certain similarity to a prostrate Muslim in prayer.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

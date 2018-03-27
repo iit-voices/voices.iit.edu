@@ -1,0 +1,3078 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Joseph Ferber; September 8, 1946; Bellevue, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-joseph-ferber-september-8-1946-bellevue-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Joseph Ferber; September 8, 1946; Bellevue, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=ferberJ">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=ferberJ&display=ferberJ_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=ferberJ">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=ferberJ">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.423" end="x">[In English:] Spool 117. <a class="placename" href="#vothL12">Bellevue</a>, a suburb of <a class="placename" href="#vothL13">Paris</a>. A home of displaced children. September 7, 1946. [Incorrect date -- should be Spetember 8]. We are going to interview Mr. Joseph Ferber, 33 years old, a teacher of sports and a general instructor at the school for displaced children under the direction of Miss Lena Kuechler. </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="33.451" end="x">[In Yiddish:] And so, Mr. Ferber, would you tell me again where you are from and where you were when the war began?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="43.500" end="x">I was born in <a class="placename" href="#vothL121">Brody</a>,<note n="1"><span class="note">Brody (Yid. Brod) was in the Tarnopol district of Poland (then southeastern Poland, now northwestern Ukraine). The town was a center of nineteenth century Jewish progressive thinking and had a strong Zionist movement. In September, 1939, the Soviets occupied the city, but the Germans took over shortly after the beginning of their invasion of the Soviet Union on June, 22, 1941. During the German occupation, the Jews of Brody were terrorized, persecuted, ghettoized and then murdered. Only about 250 of the 9,000 Jews in Brody on the eve of World War II survived.</span><sup><a href="#note_1">1</a></sup></note> on the former Austro-Russian border. Later the town belonged to Poland. There I went to school, gymnasium [middle-level schools] and then I went to <a class="placename" href="#vothL135">Cracow</a>, where I was working until the year 1939.<note n="2"><span class="note">Located in southern Poland, the historic city was for several centuries the capital of the early Polish kingdom. Jewish settlement in Kraków dates from at least the early fourteenth century. During the German occupation, the city became the seat of the Nazi General Government run by the notorious Hans Frank.</span><sup><a href="#note_2">2</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="66.717" end="x">At what were you working?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="68.061" end="x">As a bookkeeper.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="69.514" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="70.311" end="x">When the German-Polish war began I returned to <a class="placename" href="#vothL121">Brody</a>. There I...the Soviets had come there on the seventeenth of September, 1939. Under them I also worked as a teller in a bank, as inspector, and then also as a bookkeeper.<note n="3"><span class="note">Mr. Ferber is referring to the outbreak of World War II which began with the German invasion of Poland on September 1, 1939. Two days later France and Great Britain declared war on Germany.</span><sup><a href="#note_3">3</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="93.670" end="x">And so tell me, Mr. Ferber, how did that suddenly change from the Polish government to the Soviet? Did they immediately install in your place the whole Soviet regime?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="111.560" end="x">No. Following the escape in September, during the war, of the Polish government to Rumania, the Soviet government declared that all political and diplomatic relations between them are terminated. On the 17th of September the Red Army received an order to march into West Ukraine and West White Russia in order to liberate the people who were living there as a part of the people of Great Ukraine and of White Russia. After the Soviets were there a month they made a plebiscite, elections. The elections took place in all cities, towns, and villages. Then in <a class="placename" href="#vothL123">Lemberg</a>, during the assembly of all the elected deputies, it was decided to turn to the highest council of Soviet Russia with the request that these countries should be recognized as a part of Soviet Russia. And by this procedure these countries were accepted into the Soviet Union, and they became recognized as part of the country. [Pause.]<note n="4"><span class="note">In fact, the Soviet Union occupied eastern Poland in accordance with a secret protocol in the Nazi Soviet pact signed on August 23, 1939 between the foreign ministers of the two totalitarian powers. The protocol called for the division of Poland between them by force of arms.</span><sup><a href="#note_4">4</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="148.808" end="x">Go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="149.511" end="x">Well, [the conditions] there were quite good. One cannot say that it was not good. Social justice was established. Everybody had to work. Large private fortunes, factories, and large estates became nationalized; that means were transferred as property of the state. Everybody had to go to work. Everyone had a right to work, everyone had a right to an education. The Jews had every right, not like it was before under the Polish government where Jewish students in the universities used to be beaten with sticks and pummeled, where there were many victims. Now everyone had equal rights and equal chances for a life. <note n="5"><span class="note">Treatment of the Jewish population under Soviet rule was certainly better than under the German occupation. However, in the part of Poland under their control, the Soviets nationalized large Jewish businesses and factories, confiscated and collectivized land, ended any semblance of Jewish political and social autonomy, and deported the "hostile class element" to Siberia. These policies impacted the general population as well.</span><sup><a href="#note_5">5</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="225.059" end="x">The Poles, however, still remained there in Poland. Did they express any anti-Semitism?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="234.918" end="x">The majority of such rabid Poles who had been planted there by the Polish government that they should polonize the land were taken out deep into Russia. And the rest had to sit quietly. They waited until the war started on June 22, 1941.<note n="6"><span class="note">Eastern Poland during the interwar period was home to many Ukrainians as well as Jews. This accounted for the efforts of the Polish government to "polonize" the area.</span><sup><a href="#note_6">6</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="256.026" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="256.745" end="x">At that time, on the first day, I was drafted into the Red Army. At that time, one can say, emerged anew all those Polish anti-Soviet elements which, in the first days of the war, carried out sabotage, who had shot [sniped] from the windows and from the roofs at the...at our...at the Red army, so that there was a great chaos and the Red Army had to retreat. Retreated far, until, until Stalingrad. I, too, went with the Red army as far as <a class="placename" href="#vothL294">Stalingrad</a>, and there I have been during the whole time . During all that time I took part in the heavy battles, for which I also received a medal, for the defense of <a class="placename" href="#vothL294">Stalingrad</a>.<note n="7"><span class="note">The Soviets drafted a number of Jews from Brody into the Red army. In total, about half a million Jews served in the Red army during World War II, and approximately 200,000 fell in battle. Some 160,000, including Mr. Ferber, were awarded medals for bravery. The German invasion of the Soviet Union came as a great shock to Stalin, who believed that Hitler would honor the August 1939 non-aggression treaty signed between the two countries. News of German atrocities against Jews in their zone of occupation from 1939-1941 was deliberately withheld from Soviet Jewry who were unprepared for the Nazi onslaught, as was the Red army which was overwhelmed in the early phase of the brutal war. The battle of Stalingrad, lasting from late summer 1942 until the German surrender on February 2, 1943, marked the turning point of the war on the eastern front.</span><sup><a href="#note_7">7</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="298.400" end="x">How long were you in the Red army?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="302.916" end="x">I was in the Red army close to four and a half years, since the first day of the war until at this time a year ago when I was released as a former Polish citizen. I was discharged and I went back to <a class="placename" href="#vothL135">Cracow</a>, but before that I had gone through with the Red army, taking part in the offensive. From <a class="placename" href="#vothL294">Stalingrad</a>, we went through all Russia, the Ukraine, and together with the Second Ukrainian front of Marshal Ross... Rokossovsky, no...pardon, Malinovski, I came to...we went through Hungary, through Rumania, through Czechoslavakia and finally Austria. There, on the 9th of May, 1945, we finished the war.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="345.217" end="x">Hm. There you were demobilized?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="347.106" end="x">No, I was demobilized still later, when I returned to Soviet Russia, to <a class="placename" href="#vothL136">Chernovtsy</a>.<note n="9"><span class="note">Chernevtsky was a town located in western Ukraine. It was occupied by Romania, Germany's World War II ally. During the Romanian occupation, the Jews of Chernevtsky were persecuted and ghettoized, and their population was decimated.</span><sup><a href="#note_9">9</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="352.997" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="353.685" end="x">There I was freed. From there I went back to Poland, to <a class="placename" href="#vothL135">Cracow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="358.278" end="x">Did they permit anyone to leave who wanted to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="360.620" end="x">Yes. All former Polish citizens had a right to be set free according to the treaty which was effected by the Soviet and Polish governments, of the 6th of July, 1945.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="373.266" end="x">'45.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="374.579" end="x">Had a right to return to Poland. On this ground many, many former Polish citizens are even today returning from Soviet Russia to Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="383.329" end="x">They are still returning now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="384.907" end="x">Even now there is going on...which is called repatriation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="388.626" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="389.079" end="x">The great repatriation which is going on even today.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="391.719" end="x">They are returning from Siberia and from...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="393.453" end="x">From Siberia...and from whole Russia. All those who were...who had escaped during the war to Soviet Russia and were in the defense deep in the country, all those have remained alive. In contrast, when we were advancing with the offensive, in all the countries, in all the towns where we had passed, where once had lived Jewish masses, we found nobody, only destruction and graves. Often, not even graves, because the majority of the Jews, nearly all without exceptions, also my whole family, all had been taken away either to <a class="placename" href="#vothC7" type="camp">Belzec</a>, or to <a class="placename" href="#vothC112" type="camp">Treblinka</a>, or to <a class="placename" href="#vothC4" type="camp">Auschwitz</a> and to other <a class="term" href="#vothG_lager">lagers</a>, where they were burned in the crematories. So that returning home -- I was in my native town -- I did not find anybody.<note n="10"><span class="note">About 165,000 Polish Jews were repatriated under the Polish/Soviet repatriation agreement of July 1945. Some 20,000 went back to Poland under a subsequent agreement. About seven percent of the prewar Polish Jewish population was saved within the Soviet Union. Belzec and Treblinka were Nazi extermination camps designed to annihilate the Jews of the General Government. Auschwitz was the largest of the extermination camps and also a concentration camp. It had some forty subcamps. Like Mr. Ferber, many survivors experienced the loss of their entire families. </span><sup><a href="#note_10">10</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="436.858" end="x">Your native town was what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="437.945" end="x"><a class="placename" href="#vothL121">Brody</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="438.664" end="x"><a class="placename" href="#vothL121">Brody</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="439.320" end="x">Yes, I did not find anyone there .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="440.399" end="x">You found no one there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="441.117" end="x">Even of the house not a trace had remained. A desert. Everything destroyed, everything burned.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="446.839" end="x">Was there...was it burned by the war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="450.672" end="x">Partly by the war and partly through...during the occupation. The Germans simply destroyed everything that carried a Jewish mark. Besides that the front had stood there four months, from spring...the entire spring of 1944, and everything...everything was destroyed there, all the houses. The Germans went systematically from house to house and blasted everything. In many cases it happened that in these houses there were Jews hidden deep underground in bunkers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="481.935" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="482.591" end="x">And the Germans were not able to drag them out from there. They would toss in grenades or burning strew. Or even with mines they would demolish these houses. In this way many...hundreds of people were entombed [burned] and lie there to this day.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="498.062" end="x">Who told you that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="498.984" end="x">This was told to me by a few...a small number of Jews who had remained alive there in the town, Jews who, in an extraordinary manner, had hidden among Christians, but very few. There were altogether about ten of these people. </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="511.166" end="x">And...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="511.854" end="x">People who were in the woods as <a class="term" href="#vothG_partisans">partisans</a>, they have told me that. Besides that, I saw it with my own eyes, I saw the whole town devastated, destroyed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="524.253" end="x">Nu, what did you do then, when you returned to <a class="placename" href="#vothL121">Brody</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="527.590" end="x">Nu, from <a class="placename" href="#vothL121">Brody</a>...in <a class="placename" href="#vothL121">Brody</a> I stopped over only for a few days , because I had nowhere to stay there. The whole town was a cemetery. From there I returned there where I worked before the war. I came to <a class="placename" href="#vothL135">Cracow</a>, but also...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="538.835" end="x"> To <a class="placename" href="#vothL135">Cracow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="539.804" end="x">To <a class="placename" href="#vothL135">Cracow</a>, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="540.428" end="x">Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="541.022" end="x">Also in <a class="placename" href="#vothL135">Cracow</a> I found nobody. Then soon I was engaged to work in a children's home for Jewish orphans in <a class="placename" href="#vothL155">Zakopane</a> as commander of the self-defense [a type of private local underground organization which, dating from the time of the Czar, would emerge in Jewish communities of Eastern Europe, for the purpose of armed resistance against <a class="term" href="#vothG_pogrom">pogroms</a> or other anti-Semitic mob violence. These organizations became quasi-legal during the first year or so after World War II/, because there was a threat of an attack of the anti-Semitic elements against the Jewish children. There we had to stand day and night, I as commander with a number of other soldiers who were demobilized. We got weapons , automatics, grenades, rifles...<note n="11"><span class="note">Zakopane was located in the Kraków district of Poland. It was a Carpathian mountain community with a Jewish population of several hundred. During the 1930's, there were a number of anti-Semitic incidents in the town. Polish anti-Semitism also manifested itself after the war despite the small number of Jewish survivors. Some three million Polish Jews perished during the Holocaust, and about 300,000 survived.</span><sup><a href="#note_11">11</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="570.061" end="x">Who gave you the weapons?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="571.467" end="x">These were given to us by the Polish Defense Authority.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="573.920" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="574.529" end="x">There we had to stand day and night and guard the lives of the Jewish orphans, because there was a threat of great danger. But since this danger increased from day to day and the Poles were throwing down on us leaflets in which they threatened that they will kill us all like they had killed not far from us in <a class="placename" href="#vothL155">Zakopane</a>, in <a class="placename" href="#vothL297">Nowy Targ</a>, the chairman of the Jewish Committee [Community Council]....And they wrote that this same fate will meet all the other Jews who live there. Therefore, we had to flee from there. We...<note n="12"><span class="note">Nowy Targ had a pre war Jewish population of over a thousand, which also suffered from anti-Semitism in the interwar period in the form of economic boycotts and occasional violence. Anti-Semitic agitation revived after the war, directed at the handful of survivors.</span><sup><a href="#note_12">12</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="603.345" end="x">How is that? The Polish government was a...a pro-Soviet government.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="608.615" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="609.209" end="x">They were liberal? They were socialists?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="611.381" end="x">The government was and is to this day a very good one. It is a loyal...it is liberal government and a truly democratic one, but, unfortunately, many elements, wild elements, of the people, who are infected by the anti-Semitic disciples of Hitler's school...<note n="13"><span class="note">In the immediate postwar period, the communist regime in the People's Republic of Poland allowed the Jewish survivors a degree of social and cultural autonomy. Those Jews with communist sympathies had hopes for full assimilation, and Jewish communists occupied some posts in the new government. The new regime, under the control of the Stalinist Soviet Union, was anything but democratic.</span><sup><a href="#note_13">13</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="641.237" end="x">Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="641.831" end="x">...who are supported, as it had been proven with documents, by [General] Anders and by the so called government...Polish government in <a class="placename" href="#vothL293">London</a>, these are carrying out to this day an ugly, loaths-...loathsome <a class="term" href="#vothG_action">action</a> [against] the Jews. [They] attack, make <a class="term" href="#vothG_pogrom">pogroms</a>, kill Jews, so that barely a day passes in Poland when there is not a Jewish burnt offering. This is, alas the ugly spot on the body of the new democratic Poland. Naturally the Polish government fights against them, but it is too weak to control these wild beasts. <note n="14"><span class="note">General Anders headed an army of Polish exiles formed in the Soviet Union following the Nazi invasion. Eventually this army made its way out of the Soviet Union via Iran and fought with the Allies against the Germans. After the fall of France, the Polish government-in-exile moved to London where it remained for the duration of the war. This government did not have the welfare of Polish Jewry as its highest priority. Nevertheless, it transmitted funds contributed by Jewish organizations to Polish Jewry, and its public pronouncements eventually played a significant role in dispelling doubts in western countries about Nazi genocide.</span><sup><a href="#note_14">14</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="668.547" end="x">Nu, you were in <a class="placename" href="#vothL155">Zakopane</a> with the children's home?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="672.531" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="673.109" end="x"> So what was decided to do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="674.578" end="x">It was decided to flee from there as soon as possible. We turned to the Vaad Hatzala. They...<note n="15"><span class="note">The Vaad ha-Hatzlaha was a body originally established by the American Orthodox Jewish community to rescue rabbis and yeshiva students during World War II. Following the revelation of the Final Solution, it expanded its activities to assist all European Jewry.</span><sup><a href="#note_15">15</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="681.025" end="x">What is that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="682.118" end="x">The Vaad Hatzala is such an organization which rescues Jewish souls. This organization made it possible for the children together with the personnel to leave as former Greek citizens...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="696.789" end="x">Greek citizens?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="699.147" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="699.819" end="x">[Chuckle.] Are they Greek?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="700.882" end="x">No, but it was made up so [presented that way. We wrote that once there were other refugees which the Germans had dragged off, and that they are returning now to their homes. On the border, on the Polish-Czech border, they created difficulties for us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="713.606" end="x">Who, the Poles of the Czechs?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="715.074" end="x">The Czechs.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="715.871" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="716.621" end="x">They wanted to send [us] back to Poland, but we succeeded. We pleaded with them and they permitted [us] to enter <a class="placename" href="#vothL298">Prague</a>. From <a class="placename" href="#vothL298">Prague</a> we journeyed already in good style as far as France. Here we received a house, and here we carry on our work of pedagogical leadership with the children, with the children who are demonstrating very good fruits of the work. </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="737.917" end="x">What will become of the children? What will become of all of you? [Pause.] I mean, what will you all do? Will you remain in France?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="742.776" end="x">No, our aim is to come to <a class="term" href="#vothG_eretzY">Eretz Yisroeil</a>, [?] to Palestine, because we are convinced that we have no other place on this earth except in our own homeland. There we hope we will not be looked upon as foreign citizens. There it will not be said that we are homeless Jews. So we, too, have to our own home. That is the basis of the school.<note n="16"><span class="note">The sentiments expressed here by Mr. Ferber were shared by many European Jews who wanted to make their way to Palestine and establish an independent Jewish homeland.</span><sup><a href="#note_16">16</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="x" end="x">Nu, Mr. Ferber, you are, of course, an intelligent person and you are of course reading the papers and all that. You know what is [in English:] going...[in Yiddish:] what is happening in Palestine. Do you think that it will remain our country? The Arabs, neither, want that we should come in there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="791.800" end="x">Our standpoint is as follows: We hold that, as all the people in the world have their own piece of ground in the world, so the Jews must have their own piece of ground. We cannot count [depend] on anybody, just as no one wanted to concern himself with us when our brothers, sisters, mothers, and fathers were being burned in the crematories. We do not want to displace the Arabs from "<a class="term" href="#vothG_eretzY">Eretz Yisroeil</a>." We want to live with them in peace; but the muftis and the effendis are leading a campaign against us. We know who they were. They were also good friends, good disciples of Hitler. England, too, has her interests there and does not want to turn over to us <a class="term" href="#vothG_eretzY">Eretz Yisroeil</a>. All that does not scare us. We know that we must wage a struggle so as not to permit that the tragedy which we have gone through during this war, when six million Jews were burned...and that this must never happen again. For that we must also go into battle so as to get our own little piece of ground in the world. We hope that, having survived Haman and Hitler, we shall survive various other [sarcastically:] English gentlemen who do not want to recognize our right to live.<note n="17"><span class="note">The mufti (Islamic religious head) most associated with anti Jewish activities was Haj Amin Al Husseini, the grand mufti of Jerusalem. During the interwar period, he became the head of the Palestinian Arabs. The mufti had an uncompromisingly negative attitude towards Jewish settlement in Palestine and agreed with Nazi ideological goals aimed at the destruction of "world Jewry." During World War II, he pursued Arab national political goals and gave active support to the Nazi genocide against European Jewry.</span><sup><a href="#note_17">17</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="870.374" end="x">What does it mean 'we have survived Haman and Hitler'? Millions of people did not survive Hitler.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="877.327" end="x">Millions did not survive, but the people as such has remained and will remain. Because a people is immortal. Individual persons may die. Haman, too, as well as Hitler have disappeared. Even Churchill had...had to step aside, and we hope that Attlee and Bevin, too, will step aside, and England will have to recognize our right, as the whole world has to recognize our right, to <a class="term" href="#vothG_eretzY">Eretz Yisroeil</a>. <note n="18"><span class="note">Soon after the end of the Second World War, Churchill's Conservative party was defeated in general elections and was succeeded by Clement Atlee's Labour party. At the time, Great Britain continued to control Palestine and enforce the terms of its May 1939 White Paper which greatly restricted Jewish emigration. Ernest Bevin was Foreign Secretary in the Labour government. He pursued an oppressive policy towards the Palestinian Jewish community and deported would-be Jewish immigrants to detention camps in Cyprus. After his proposals for the solution of the conflict between Arabs and Jews failed, he referred the entire matter to the United Nations. In January, 1949, eight months after the proclamation of the State of Israel, he granted it Britain's de facto recognition.</span><sup><a href="#note_18">18</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="903.484" end="x">Nu, and what does one do here all day?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="905.984" end="x">An intensive job is being done here. From morning till night we work with the children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="913.432" end="x">How many children are there here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="915.072" end="x">Now we have sixty children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="916.743" end="x">What are their ages?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="917.931" end="x">The children are from four up to fifteen, sixteen years.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="921.603" end="x">Tell me one thing. If so many have been annihilated, and women have been annihilated, from where did you get small children? You are already how long from <a class="placename" href="#vothL155">Zakopane</a>? How old is the children's home in <a class="placename" href="#vothL155">Zakopane</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="935.846" end="x">It is already over a year since our children's home was established.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="939.565" end="x">And so, from where did the small children come?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="942.611" end="x">Many children have survived for the reason that good [kind] Christians had taken them in and have not minded that they themselves were in danger of being killed if such a child were found with them. They would hide these children, would hide the children under the beds, under [in] cupboards, on roofs [attics], in cellars. Many children remained alive for the reason that they had escaped to the forests and fields, and there they hid. Many children did not admit to being Jewish children. They had that much intelligence, and they were admitted by the Poles into various children's homes and monastaries [also convents/. There they were brought up.<note n="19"><span class="note">More than 6,000 Poles have been honored with the award, Righteous Among the Nations, for their efforts in rescuing Jews during the Holocaust by Yad Vashem, Israel's official Holocaust memorial and museum. In risking their lives, they embodied the truth of the saying that "Whoever Saves One Life Saves the Entire World."</span><sup><a href="#note_19">19</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="981.771" end="x">And so, do you think that the monastaries and convents hid children who [because they] said they were not Jewish? [Pause.] Do you think that the monastaries would not have hidden Jewish children if they knew it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="994.923" end="x">No. If they would have known that they are Jewish children, perhaps they would not have hidden them.<note n="20"><span class="note">In fact, some Polish monasteries, primarily Franciscan, did save Jewish children.</span><sup><a href="#note_20">20</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="998.579" end="x">But with boys it was possible to know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1001.236" end="x">No, they were not too strongly controlled. They were not too strongly controlled. They would see a child, so it was admitted. The child would not say anything. It did not want to say that it has Jewish parents, so they would think that perhaps it is a Christian child. For the most part, little girls hid in this way. The boys, there were even such who were <a class="term" href="#vothG_partisans">partisans</a>. Besides that, we have such children who had been carried out from the burning <a class="term" href="#vothG_ghetto">ghetto</a> during the uprising in <a class="placename" href="#vothC117" type="camp">Warsaw</a>. They had been carried out and carried out to the Christian side, to the <a class="term" href="#vothG_aryan">Aryan</a> side, and there they would hide out. Only a few days before we left <a class="placename" href="#vothL155">Zakopane</a> we found out by accident that these children...there were five such Jewish children who were in <a class="placename" href="#vothL155">Zakopane</a> in a Polish children's home. So we brought them back from there and the children returned to our fold, to our national fold.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1051.626" end="x">What is an Ochronka? [We had used this term, hence the question.] </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1053.470" end="x">An Ochronka is a children's home, in Polish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1056.205" end="x">They were in a Polish children's home.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1058.830" end="x">Yes, in a Polish children's home.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1060.049" end="x">And so, you had found out...what does it mean, 'they were bought back'?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1064.896" end="x">We simply had to pay a price for them, to pay money for them, a certain sum of money, a very large one even, and besides that, to give a lot of products [food] and things, foodstuffs and victuals for that, that the children had been feed [by them] for three, four years, or two years. So we paid it back in kind [merchandise].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1087.446" end="x">Oh, and who gave it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1089.962" end="x">Our head mistress, Madame Kuechler.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1092.337" end="x">And where did she get it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1093.743" end="x">She got it all from the Jewish Committee and also from the Vaad Hatzala which used to subsidize us.<note n="21"><span class="note">The "committee" Mr. Ferber is referring to is the American Jewish Joint Distribution Committee, the American Jewry's chief overseas relief and rehabilitation agency before, during, and after the Holocaust.</span><sup><a href="#note_21">21</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1101.195" end="x">Hm. Vaad Hatzala?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1103.726" end="x">Vaad Hatzala.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1105.663" end="x">Vaad Hatzala.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1107.069" end="x">Hatzala.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1107.632" end="x">How do you spell it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1108.351" end="x">In Yiddish or in...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1109.617" end="x">How do you spell it with Latin letters, with German letters?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1113.717" end="x">V - A...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1114.655" end="x">V - A...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1116.890" end="x">...A...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1117.812" end="x">...two/A's/...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1118.843" end="x">Two.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1119.499" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1119.937" end="x">...D...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1120.562" end="x">...D...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1121.218" end="x">...H - A - T - Z - A - L - A.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1127.186" end="x">Hm, and what does Vaad Hatzala mean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1129.530" end="x">The Committee for Rescue...the Rescue Committee.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1133.998" end="x">Who...when were these Vaad Hatzala's established?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1137.138" end="x">During the war.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1139.669" end="x">Hm. Already since the war.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1142.360" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1142.922" end="x">Nu, and...what did you say before? You said they were Greek children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1149.968" end="x">Yes. We had to fabricate false papers [proving] that they are Greek.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1154.469" end="x">For whom, for the Poles?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1155.813" end="x">Yes, for everbody. For the Polish border as well as for the Czech [border].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1160.969" end="x">But from <a class="placename" href="#vothL298">Prague</a> you already traveled with Polish...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1164.337" end="x">We did not say either what nationals we were. We had made out already such papers that we are going to France.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1169.649" end="x">And France let you in?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1171.540" end="x">Yes. France is a very liberal country, a truly democratic [country] where every man has a genuine right to live. They are giving facilities The French...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1181.458" end="x">Nu, what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1182.021" end="x">...looks...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1182.396" end="x">Well what....Who gave you the busses?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1184.365" end="x">Also from the Committee.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1187.255" end="x">You went through Germany?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1189.942" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1190.442" end="x">You were permitted to go through.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1191.286" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1191.723" end="x">And then when you arrived at the French...French border, what...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1197.174" end="x">We were also permitted to go through. They looked at the papers and nothing was said.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1200.314" end="x">And you arrived in <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1201.564" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1201.939" end="x">And where did you stop after you...you arrived [??]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1205.033" end="x">No, we were sent at once to a house. At first...it is called...the town is called <a class="placename" href="#vothL299">Barbizon</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1210.251" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1211.017" end="x">And then we were transferred to another locality, <a class="placename" href="#vothL300">Courbevoie</a>, also not far from <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1215.329" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1216.032" end="x">And lately, a few weeks ago, we came to a new house, to <a class="placename" href="#vothL12">Bellevue</a> where we are now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1221.110" end="x">Nu, it is said that many children are arriving from Poland, from Hungary, and from elsewhere. Who brings them over? How are they found?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1230.864" end="x">All that is being done through Vaad Hatzala. There are a whole series of committees which devote themselves to this thing, which work very actively...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1239.536" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1239.911" end="x">...and carry out all the...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1241.270" end="x">They are not the American committees.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1243.035" end="x">The American committees support it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1247.066" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1247.519" end="x">But the initiative does not lie in their hands.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1250.003" end="x">And what is the fundamental aim of the Vaad Hatzala?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1253.956" end="x">To rescue Jewish souls [lives].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1256.065" end="x">Are they <a class="term" href="#vothG_zionist">Zionists</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1259.236" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1260.315" end="x">They are <a class="term" href="#vothG_zionist">Zionists</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1261.627" end="x">Yes. It is tied in with <a class="term" href="#vothG_eretzY">Eretz Yisroeil</a>, interconnected with <a class="term" href="#vothG_eretzY">Eretz Yieroeil</a>. The initiative emanates from Palestine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1267.189" end="x">Oh, the initiative is from Palestine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1269.439" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1270.001" end="x">Tell me, here were today such...such young people from Palestine. Who are they?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1274.517" end="x">These are messengers from <a class="term" href="#vothG_eretzY">Eretz Yisroeil</a>, people who are being sent from there to work in Galuth [Diaspora], to sustain the spirit of the Jewish people, to work in the Aliyah, that means, in the immigration of the Jews to <a class="term" href="#vothG_eretzY">Eretz Yisroeil</a>, and they have perhaps various other tasks which are not too well known to us.<note n="22"><span class="note">Palestinian Jewry worked throughout Europe in Aliyah Bet, the dedicated effort to bring European Jewish Holocaust survivors to Palestine in spite of British immigration restrictions. Thus it may defined as "illegal" immigration. France became a key center for directing these immigration operations, which became a unifying force in the Jewish world and came to enjoy widespread sympathy in the world at large.</span><sup><a href="#note_22">22</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1299.324" end="x">So how is...the man who came today is from <a class="term" href="#vothG_eretzY">Eretz Yisroeil</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1303.636" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1304.089" end="x">How did he get together with the children which you have brought over?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1306.979" end="x">Nu, he...he must have contacts already. To him there are already given...he is informed that there and there are located such and such children with whom he should work and whom he should prepare for a future life in <a class="term" href="#vothG_eretzY">Eretz Yisroeil</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1318.979" end="x">That is not any more the Vaad Hatzala.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1321.541" end="x">No, I do not think so. It is already simply from the governm-...<a class="term" href="#vothG_zionist">Zionist</a> Executive.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1326.650" end="x">In Palestine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1327.650" end="x">In Palestine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1328.400" end="x">Tell me something about your service in Russia. Can you explain to me why the Jews, who had entered...saved themselves in Russia, don't want ...why don't they want to remain there? </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1345.601" end="x">Every Jew hopes that he will still find someone at home, that he will perhaps find his house, his belongings, or something else. And this, in fact, is the quintessence, that everyone is drawn to the place where he was born. Because in fact, from my own experience, in Russia the Jews have it, indeed very good. On the whole one cannot complain. The concept of anti-Semitism does not exist there. But every man is drawn to the place where he was born. This is simply such a sentiment. And besides that, this has to be taken into account. Every man...I had many friends from <a class="placename" href="#vothL135">Cracow</a> who returned, because they owned homes there, they had large possessions. And occasionally they also succeed in getting it back, but on the other side, it sometimes leads again to [becoming] victims, for the reason that the Poles, seeing a Jew returning who says,'This was my house. This was my dwelling. These are my possessions'...so they go and kill such a Jew because they do not want to return his possessions which they had grabbed at the time when the Germans were there.<note n="23"><span class="note">In fact, especially by the late 1930's, anti-Semitic attitudes had become widespread among the Soviet elite and were held by many in the general population. Throughout the war, the Jews were not recognized as special victims of Nazi genocide, and this concealment continued after the war. From 1948 to 1953, the Black Years of Soviet Jewry, anti-Semitism became one of the chief policies of the Stalinist regime. </span><sup><a href="#note_23">23</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1415.416" end="x">Nu, you say that in Poland the government is, more or less, liberal. Would it not be sensible to remain there and to combat the anti-Semitism, and to settle there and build there Jewish communities until the situation in Palestine will clear up?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1439.447" end="x">Something else is to be considered here. On the ruins which we find we do not want to build any more. When we come and find a burned home, a destroyed workshop, seeing that we have lost everything, everything that was dear was killed, we do not want to build any more on these ruins. And because of that the Jew thinks, if to start building, it is better to build in his own homeland, in one's own land. This is one [reason]. And the second -- it is the unceasing danger which threatens. This is the peril to one's life. Because in Poland, as I have said before, exists a strong reactionary force which is committing murder and acts of death on every Jew that they chase in the street or even in his own home. An example of this is the <a class="term" href="#vothG_pogrom">pogrom</a> which took place at this time a year ago in <a class="placename" href="#vothL135">Cracow</a> and a month ago in <a class="placename" href="#vothL84">Kielce</a>,<note n="24"><span class="note">The Polish perpetrators of the Kielce pogrom on July 4, 1946 massacred forty-two Jews in the town of Kielce in southeastern Poland and wounded fifty more. The pogrom was sparked by a rumor that Jews were killing Polish children and drinking their blood. This event sparked a mass exodus of tens of thousands of Jews from Poland and other countries of eastern Europe who despaired of rebuilding productive and secure lives there.</span><sup><a href="#note_24">24</a></sup></note> where from the Shaarith Hapleta [that is, from a few hundred remaining Jews] ...<note n="25"><span class="note">She'erit ha-Peletah ("surviving remnant") is a term taken from First Chronicles 4:43. This was the Hebrew name given to the organization of Holocaust survivors, most in displaced persons' camps, following the war. The organization's primary goals were emigration of Jews from Europe primarily to settle in Palestine. It existed from 1945 until December, 1950 when its Central Committee ceased to exist.</span><sup><a href="#note_25">25</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1512.598" end="x">How did you call it? The...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1515.025" end="x">Shaarith Hapleta</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1516.756" end="x">How do you spell it? [Pause]. What is the Shaarith Hapleta?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1520.852" end="x">By the name of Shaarith Hapleta are called all these Jews who have remained alive from the terrible holocaust, from the six million who were killed. This is the small number...this is such...it means simply those who have...the tiny remnant which has remained alive.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1541.098" end="x">What do the two words Shaarith Hapleta mean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1543.872" end="x">Shaarith means the remaining, and Hapleta, the escaped, who have escaped from death.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1549.667" end="x">Oh, that's what it means.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1551.168" end="x">A term which is found very often in the press.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1557.779" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1558.466" end="x">In the Jewish as well as in the non-Jewish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1559.436" end="x">Yes, I know the term, but I did not know the particulars. And how do you, as a teacher, imagine? These children here are all [in Hebrew] orphans...[repeats in German:] orphans?<note n="26"><span class="note">A number of biblical commandments stress the importance of providing for orphans and treating them with justice and compassion. These commandments were reinforced in the Talmud and translated into Jewish communal care for orphans throughout the centuries.</span><sup><a href="#note_26">26</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1578.298" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1578.986" end="x">Some, I understand, have relatives in America. Would it not be better for them to get their affidavits and go to America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1589.365" end="x">We want, since we have lived with the children during this year very close together...and the children address us in no other manner than mother, father, and we all regard ourselves as one big family, all of us who have lost everything, and only here have found the goal of our lives. And we are working for an idea [ideal], to raise again children in order that they grow up to be good, fine people. These children love us very much, as much as one loves his own father and his own mother. We have a case where relatives of these children who live in America have contacted the children. They sent them papers and asked that the children should come to them, and the children decline it. The children say there where our head mistress will go, where our teachers will go, where our upbringers will be, there we want to be together with them, and all of us together have only one thought and one idea, to go to <a class="term" href="#vothG_eretzY">Eretz Yisroeil</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1654.506" end="x">Nu, when you will come to <a class="term" href="#vothG_eretzY">Eretz Yisroeil</a>, will you distribute the children to families, or will you keep them again together?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1662.431" end="x">We will strive to live again in <a class="term" href="#vothG_eretzY">Eretz Yisroeil</a> again in one community, which goes under the name of <a class="term" href="#vothG_kibbutz">Kibbutz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1668.078" end="x"><a class="term" href="#vothG_kibbutz">Kibbutz</a>, nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1669.610" end="x">But, children, we know, always go their own way. Those children who will show abilities to learn and study [get a higher education], those will go to study. Other children who will want to go to work, these will work. But we hope that the children will be good people, people who will be useful to all mankind.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1692.458" end="x">Do you think that it is possible to raise good people in such -- I understand good people -- but is it the best thing to do, to raise children in such groups, instead of giving them...of distributing them among families?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1711.267" end="x"> [Pause.] Yes. Because the facts show that a private life has many more faults than a collective life. We see, for instance, that to our children the concept of egoism is completely alien. In them egoism became completely discarded. We never see an instance when a child should....If a child gets something, something from a friend, a toy or something to eat, the child always shares with all the other children. There never happen incidents that one child should want more, or another child should want less. The children are living under truly just, social ideals. This is the great plus [asset] in our work. This, indeed, raises our courage for our further work, to go on raising these children in a social and democratic spirit. [Pause.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1769.331" end="x">What would you want to say to the American Jews or to the American workers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Ferber</span>:
+            </span>
+            <span class="utterance" who="#ferberJ" start="1778.427" end="x">To the American Jews and to the American workers, as our brothers, we have only one message. When we hear the name Jew, or when we happen to meet on the street a Jew, there awakens in our [hearts] a great mass of really deep feelings. And for this reason, too, our sentiments for Jewry are much greater than previously. And today, when we hear that in America lives a large number of Jews who work and earn and have a free life, we would wish them to remember us, too, that they should always remember that we, today, when we have nothing -- we only have good martyrs, good...a strong will and good strivings -- that these brothers of ours in America should help us, be it morally and be it materially. And our work will be for them our best gratitude.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1842.395" end="x">Well, I thank you very much Mr. Ferber. It was very interesting and very important. It gives us a better understanding of these groups of children about which still very little has been said and very little written. So, it will be very interesting to follow up the study of these groups. I thank you very much. </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1866.996" end="x">[In English:] This concludes the interview with Mr. Joseph Ferber on Spool 117, twenty-six [ indicator] minutes of the spool. <a class="placename" href="#vothL12">Bellevue</a> near <a class="placename" href="#vothL13">Paris</a>. September 7, 1946. [Incorrect date -- should be Spetember 8]. Illinois Institute of Technology wire recording.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            Brody (Yid. Brod) was in the Tarnopol district of Poland (then southeastern Poland, now northwestern Ukraine). The town was a center of nineteenth century Jewish progressive thinking and had a strong Zionist movement. In September, 1939, the Soviets occupied the city, but the Germans took over shortly after the beginning of their invasion of the Soviet Union on June, 22, 1941. During the German occupation, the Jews of Brody were terrorized, persecuted, ghettoized and then murdered. Only about 250 of the 9,000 Jews in Brody on the eve of World War II survived.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            Located in southern Poland, the historic city was for several centuries the capital of the early Polish kingdom. Jewish settlement in Kraków dates from at least the early fourteenth century. During the German occupation, the city became the seat of the Nazi General Government run by the notorious Hans Frank.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            Mr. Ferber is referring to the outbreak of World War II which began with the German invasion of Poland on September 1, 1939. Two days later France and Great Britain declared war on Germany.
+        </li>
+                <li>
+            <a name="note_4"></a>
+            In fact, the Soviet Union occupied eastern Poland in accordance with a secret protocol in the Nazi Soviet pact signed on August 23, 1939 between the foreign ministers of the two totalitarian powers. The protocol called for the division of Poland between them by force of arms.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            Treatment of the Jewish population under Soviet rule was certainly better than under the German occupation. However, in the part of Poland under their control, the Soviets nationalized large Jewish businesses and factories, confiscated and collectivized land, ended any semblance of Jewish political and social autonomy, and deported the "hostile class element" to Siberia. These policies impacted the general population as well.
+        </li>
+                <li>
+            <a name="note_6"></a>
+            Eastern Poland during the interwar period was home to many Ukrainians as well as Jews. This accounted for the efforts of the Polish government to "polonize" the area.
+        </li>
+                <li>
+            <a name="note_7"></a>
+            The Soviets drafted a number of Jews from Brody into the Red army. In total, about half a million Jews served in the Red army during World War II, and approximately 200,000 fell in battle. Some 160,000, including Mr. Ferber, were awarded medals for bravery. The German invasion of the Soviet Union came as a great shock to Stalin, who believed that Hitler would honor the August 1939 non-aggression treaty signed between the two countries. News of German atrocities against Jews in their zone of occupation from 1939-1941 was deliberately withheld from Soviet Jewry who were unprepared for the Nazi onslaught, as was the Red army which was overwhelmed in the early phase of the brutal war. The battle of Stalingrad, lasting from late summer 1942 until the German surrender on February 2, 1943, marked the turning point of the war on the eastern front.
+        </li>
+                <li>
+            <a name="note_8"></a>
+            Chernevtsky was a town located in western Ukraine. It was occupied by Romania, Germany's World War II ally. During the Romanian occupation, the Jews of Chernevtsky were persecuted and ghettoized, and their population was decimated.
+        </li>
+                <li>
+            <a name="note_9"></a>
+            About 165,000 Polish Jews were repatriated under the Polish/Soviet repatriation agreement of July 1945. Some 20,000 went back to Poland under a subsequent agreement. About seven percent of the prewar Polish Jewish population was saved within the Soviet Union. Belzec and Treblinka were Nazi extermination camps designed to annihilate the Jews of the General Government. Auschwitz was the largest of the extermination camps and also a concentration camp. It had some forty subcamps. Like Mr. Ferber, many survivors experienced the loss of their entire families. 
+        </li>
+                <li>
+            <a name="note_10"></a>
+            Zakopane was located in the Kraków district of Poland. It was a Carpathian mountain community with a Jewish population of several hundred. During the 1930's, there were a number of anti-Semitic incidents in the town. Polish anti-Semitism also manifested itself after the war despite the small number of Jewish survivors. Some three million Polish Jews perished during the Holocaust, and about 300,000 survived.
+        </li>
+                <li>
+            <a name="note_11"></a>
+            Nowy Targ had a pre war Jewish population of over a thousand, which also suffered from anti-Semitism in the interwar period in the form of economic boycotts and occasional violence. Anti-Semitic agitation revived after the war, directed at the handful of survivors.
+        </li>
+                <li>
+            <a name="note_12"></a>
+            In the immediate postwar period, the communist regime in the People's Republic of Poland allowed the Jewish survivors a degree of social and cultural autonomy. Those Jews with communist sympathies had hopes for full assimilation, and Jewish communists occupied some posts in the new government. The new regime, under the control of the Stalinist Soviet Union, was anything but democratic.
+        </li>
+                <li>
+            <a name="note_13"></a>
+            General Anders headed an army of Polish exiles formed in the Soviet Union following the Nazi invasion. Eventually this army made its way out of the Soviet Union via Iran and fought with the Allies against the Germans. After the fall of France, the Polish government-in-exile moved to London where it remained for the duration of the war. This government did not have the welfare of Polish Jewry as its highest priority. Nevertheless, it transmitted funds contributed by Jewish organizations to Polish Jewry, and its public pronouncements eventually played a significant role in dispelling doubts in western countries about Nazi genocide.
+        </li>
+                <li>
+            <a name="note_14"></a>
+            The Vaad ha-Hatzlaha was a body originally established by the American Orthodox Jewish community to rescue rabbis and yeshiva students during World War II. Following the revelation of the Final Solution, it expanded its activities to assist all European Jewry.
+        </li>
+                <li>
+            <a name="note_15"></a>
+            The sentiments expressed here by Mr. Ferber were shared by many European Jews who wanted to make their way to Palestine and establish an independent Jewish homeland.
+        </li>
+                <li>
+            <a name="note_16"></a>
+            The mufti (Islamic religious head) most associated with anti Jewish activities was Haj Amin Al Husseini, the grand mufti of Jerusalem. During the interwar period, he became the head of the Palestinian Arabs. The mufti had an uncompromisingly negative attitude towards Jewish settlement in Palestine and agreed with Nazi ideological goals aimed at the destruction of "world Jewry." During World War II, he pursued Arab national political goals and gave active support to the Nazi genocide against European Jewry.
+        </li>
+                <li>
+            <a name="note_17"></a>
+            Soon after the end of the Second World War, Churchill's Conservative party was defeated in general elections and was succeeded by Clement Atlee's Labour party. At the time, Great Britain continued to control Palestine and enforce the terms of its May 1939 White Paper which greatly restricted Jewish emigration. Ernest Bevin was Foreign Secretary in the Labour government. He pursued an oppressive policy towards the Palestinian Jewish community and deported would-be Jewish immigrants to detention camps in Cyprus. After his proposals for the solution of the conflict between Arabs and Jews failed, he referred the entire matter to the United Nations. In January, 1949, eight months after the proclamation of the State of Israel, he granted it Britain's de facto recognition.
+        </li>
+                <li>
+            <a name="note_18"></a>
+            More than 6,000 Poles have been honored with the award, Righteous Among the Nations, for their efforts in rescuing Jews during the Holocaust by Yad Vashem, Israel's official Holocaust memorial and museum. In risking their lives, they embodied the truth of the saying that "Whoever Saves One Life Saves the Entire World."
+        </li>
+                <li>
+            <a name="note_19"></a>
+            In fact, some Polish monasteries, primarily Franciscan, did save Jewish children.
+        </li>
+                <li>
+            <a name="note_20"></a>
+            The "committee" Mr. Ferber is referring to is the American Jewish Joint Distribution Committee, the American Jewry's chief overseas relief and rehabilitation agency before, during, and after the Holocaust.
+        </li>
+                <li>
+            <a name="note_21"></a>
+            Palestinian Jewry worked throughout Europe in Aliyah Bet, the dedicated effort to bring European Jewish Holocaust survivors to Palestine in spite of British immigration restrictions. Thus it may defined as "illegal" immigration. France became a key center for directing these immigration operations, which became a unifying force in the Jewish world and came to enjoy widespread sympathy in the world at large.
+        </li>
+                <li>
+            <a name="note_22"></a>
+            In fact, especially by the late 1930's, anti-Semitic attitudes had become widespread among the Soviet elite and were held by many in the general population. Throughout the war, the Jews were not recognized as special victims of Nazi genocide, and this concealment continued after the war. From 1948 to 1953, the Black Years of Soviet Jewry, anti-Semitism became one of the chief policies of the Stalinist regime. 
+        </li>
+                <li>
+            <a name="note_23"></a>
+            The Polish perpetrators of the Kielce pogrom on July 4, 1946 massacred forty-two Jews in the town of Kielce in southeastern Poland and wounded fifty more. The pogrom was sparked by a rumor that Jews were killing Polish children and drinking their blood. This event sparked a mass exodus of tens of thousands of Jews from Poland and other countries of eastern Europe who despaired of rebuilding productive and secure lives there.
+        </li>
+                <li>
+            <a name="note_24"></a>
+            She'erit ha-Peletah ("surviving remnant") is a term taken from First Chronicles 4:43. This was the Hebrew name given to the organization of Holocaust survivors, most in displaced persons' camps, following the war. The organization's primary goals were emigration of Jews from Europe primarily to settle in Palestine. It existed from 1945 until December, 1950 when its Central Committee ceased to exist.
+        </li>
+                <li>
+            <a name="note_25"></a>
+            A number of biblical commandments stress the importance of providing for orphans and treating them with justice and compassion. These commandments were reinforced in the Talmud and translated into Jewish communal care for orphans throughout the centuries.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                English translation
+                            </i>: 
+            <span class="Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC7">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC7" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Belzec
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Bełżec, Poland<br />
+                            </p>
+                            <div>
+                Created to to murder the Jews of the Lublin district of Poland, Belzec was the first of the three so called &#34;Aktion Reinhard&#34; extermination camps. Belzec began operation in March 1942, and by December, when operations ceased, the total number of deaths had reached about 434,000.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC7 = new OpenLayers.Map('map_vothC7', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC7.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC7.addLayer(markers);
+map_id_vothC7.zoomToMaxExtent();
+
+                        var lat_1 = 50.350000;
+                        var lon_1 = 23.466700;
+                        var vothC7 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC7_icon = new OpenLayers.Marker(vothC7);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC7);
+markers.addMarker(vothC7_icon);
+    addMarker(vothC7, popupClass, "", true, false, false);
+    map_id_vothC7.setCenter(vothC7, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC112">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC112" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Treblinka<br /><span class="alt">(Treblinka I, <br /><span class="alt">(Trenlinka II)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Treblinka, Poland<br />
+                            </p>
+                            <div>
+                The largest of the &#34;Aktion Reinhard&#34; camps, this extermination camp was created to murder the Jews of the Warsaw ghetto and other ghettos in central Poland. From July 1942 to October 1943, more than 800,000 Jews and several thousand Roma were killed there.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC112 = new OpenLayers.Map('map_vothC112', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC112.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC112.addLayer(markers);
+map_id_vothC112.zoomToMaxExtent();
+
+                        var lat_2 = 52.666700;
+                        var lon_2 = 22.033300;
+                        var vothC112 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC112_icon = new OpenLayers.Marker(vothC112);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC112);
+markers.addMarker(vothC112_icon);
+    addMarker(vothC112, popupClass, "", true, false, false);
+    map_id_vothC112.setCenter(vothC112, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_3 = 50.033300;
+                        var lon_3 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC117">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC117" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Warsaw Ghetto
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Warsaw, Poland<br />
+                            </p>
+                            <div>
+                Established on October 16, 1940 with around 400,000 people (about 30% of the population of Warsaw but housed in an area covering only 2.4% of the city).  Fighting broke out in January 1943 and ended on April 23; survivors were either killed or deported to concentration and death camps.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC117 = new OpenLayers.Map('map_vothC117', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC117.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC117.addLayer(markers);
+map_id_vothC117.zoomToMaxExtent();
+
+                        var lat_4 = 52.250000;
+                        var lon_4 = 21.000000;
+                        var vothC117 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothC117_icon = new OpenLayers.Marker(vothC117);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC117);
+markers.addMarker(vothC117_icon);
+    addMarker(vothC117, popupClass, "", true, false, false);
+    map_id_vothC117.setCenter(vothC117, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL12">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL12" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Bellevue, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL12 = new OpenLayers.Map('map_vothL12', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL12.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL12.addLayer(markers);
+map_id_vothL12.zoomToMaxExtent();
+
+                        var lat_5 = 48.818350;
+                        var lon_5 = 2.229561;
+                        var vothL12 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL12_icon = new OpenLayers.Marker(vothL12);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL12);
+markers.addMarker(vothL12_icon);
+    addMarker(vothL12, popupClass, "", true, false, false);
+    map_id_vothL12.setCenter(vothL12, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_6 = 48.866700;
+                        var lon_6 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL121">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL121" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Brody, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL121 = new OpenLayers.Map('map_vothL121', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL121.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL121.addLayer(markers);
+map_id_vothL121.zoomToMaxExtent();
+
+                        var lat_7 = 50.083300;
+                        var lon_7 = 25.133300;
+                        var vothL121 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL121_icon = new OpenLayers.Marker(vothL121);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL121);
+markers.addMarker(vothL121_icon);
+    addMarker(vothL121, popupClass, "", true, false, false);
+    map_id_vothL121.setCenter(vothL121, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL135">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL135" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Krak&#195;w, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL135 = new OpenLayers.Map('map_vothL135', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL135.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL135.addLayer(markers);
+map_id_vothL135.zoomToMaxExtent();
+
+                        var lat_8 = 50.050000;
+                        var lon_8 = 19.916700;
+                        var vothL135 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL135_icon = new OpenLayers.Marker(vothL135);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL135);
+markers.addMarker(vothL135_icon);
+    addMarker(vothL135, popupClass, "", true, false, false);
+    map_id_vothL135.setCenter(vothL135, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL123">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL123" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            L&#39;viv, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL123 = new OpenLayers.Map('map_vothL123', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL123.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL123.addLayer(markers);
+map_id_vothL123.zoomToMaxExtent();
+
+                        var lat_9 = 49.833300;
+                        var lon_9 = 24.000000;
+                        var vothL123 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL123_icon = new OpenLayers.Marker(vothL123);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL123);
+markers.addMarker(vothL123_icon);
+    addMarker(vothL123, popupClass, "", true, false, false);
+    map_id_vothL123.setCenter(vothL123, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL294">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL294" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Volgograd, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL294 = new OpenLayers.Map('map_vothL294', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL294.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL294.addLayer(markers);
+map_id_vothL294.zoomToMaxExtent();
+
+                        var lat_10 = 48.750000;
+                        var lon_10 = 44.500000;
+                        var vothL294 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL294_icon = new OpenLayers.Marker(vothL294);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL294);
+markers.addMarker(vothL294_icon);
+    addMarker(vothL294, popupClass, "", true, false, false);
+    map_id_vothL294.setCenter(vothL294, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL136">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL136" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chernivtsi, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL136 = new OpenLayers.Map('map_vothL136', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL136.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL136.addLayer(markers);
+map_id_vothL136.zoomToMaxExtent();
+
+                        var lat_11 = 48.300000;
+                        var lon_11 = 25.933300;
+                        var vothL136 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL136_icon = new OpenLayers.Marker(vothL136);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL136);
+markers.addMarker(vothL136_icon);
+    addMarker(vothL136, popupClass, "", true, false, false);
+    map_id_vothL136.setCenter(vothL136, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL155">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL155" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Zakopane, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL155 = new OpenLayers.Map('map_vothL155', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL155.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL155.addLayer(markers);
+map_id_vothL155.zoomToMaxExtent();
+
+                        var lat_12 = 49.283300;
+                        var lon_12 = 19.900000;
+                        var vothL155 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL155_icon = new OpenLayers.Marker(vothL155);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL155);
+markers.addMarker(vothL155_icon);
+    addMarker(vothL155, popupClass, "", true, false, false);
+    map_id_vothL155.setCenter(vothL155, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL297">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL297" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Nowy Targ, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL297 = new OpenLayers.Map('map_vothL297', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL297.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL297.addLayer(markers);
+map_id_vothL297.zoomToMaxExtent();
+
+                        var lat_13 = 49.483300;
+                        var lon_13 = 20.033300;
+                        var vothL297 = new OpenLayers.LonLat(lon_13, lat_13);
+            vothL297_icon = new OpenLayers.Marker(vothL297);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL297);
+markers.addMarker(vothL297_icon);
+    addMarker(vothL297, popupClass, "", true, false, false);
+    map_id_vothL297.setCenter(vothL297, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL293">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL293" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            London, United Kingdom
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL293 = new OpenLayers.Map('map_vothL293', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL293.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL293.addLayer(markers);
+map_id_vothL293.zoomToMaxExtent();
+
+                        var lat_14 = 51.500000;
+                        var lon_14 = -0.166700;
+                        var vothL293 = new OpenLayers.LonLat(lon_14, lat_14);
+            vothL293_icon = new OpenLayers.Marker(vothL293);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL293);
+markers.addMarker(vothL293_icon);
+    addMarker(vothL293, popupClass, "", true, false, false);
+    map_id_vothL293.setCenter(vothL293, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL298">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL298" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Praha, Czechoslovakia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL298 = new OpenLayers.Map('map_vothL298', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL298.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL298.addLayer(markers);
+map_id_vothL298.zoomToMaxExtent();
+
+                        var lat_15 = 50.100000;
+                        var lon_15 = 14.433300;
+                        var vothL298 = new OpenLayers.LonLat(lon_15, lat_15);
+            vothL298_icon = new OpenLayers.Marker(vothL298);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL298);
+markers.addMarker(vothL298_icon);
+    addMarker(vothL298, popupClass, "", true, false, false);
+    map_id_vothL298.setCenter(vothL298, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL299">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL299" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Barbizon, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL299 = new OpenLayers.Map('map_vothL299', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL299.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL299.addLayer(markers);
+map_id_vothL299.zoomToMaxExtent();
+
+                        var lat_16 = 48.433300;
+                        var lon_16 = 2.600000;
+                        var vothL299 = new OpenLayers.LonLat(lon_16, lat_16);
+            vothL299_icon = new OpenLayers.Marker(vothL299);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL299);
+markers.addMarker(vothL299_icon);
+    addMarker(vothL299, popupClass, "", true, false, false);
+    map_id_vothL299.setCenter(vothL299, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL300">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL300" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Courbevoie, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL300 = new OpenLayers.Map('map_vothL300', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL300.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL300.addLayer(markers);
+map_id_vothL300.zoomToMaxExtent();
+
+                        var lat_17 = 48.900000;
+                        var lon_17 = 2.250000;
+                        var vothL300 = new OpenLayers.LonLat(lon_17, lat_17);
+            vothL300_icon = new OpenLayers.Marker(vothL300);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL300);
+markers.addMarker(vothL300_icon);
+    addMarker(vothL300, popupClass, "", true, false, false);
+    map_id_vothL300.setCenter(vothL300, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL84">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL84" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kielce, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL84 = new OpenLayers.Map('map_vothL84', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL84.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL84.addLayer(markers);
+map_id_vothL84.zoomToMaxExtent();
+
+                        var lat_18 = 50.850000;
+                        var lon_18 = 20.650000;
+                        var vothL84 = new OpenLayers.LonLat(lon_18, lat_18);
+            vothL84_icon = new OpenLayers.Marker(vothL84);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL84);
+markers.addMarker(vothL84_icon);
+    addMarker(vothL84, popupClass, "", true, false, false);
+    map_id_vothL84.setCenter(vothL84, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_partisans">
+                <a name="vothG_partisans"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    partisans.
+                </span>
+                <span class="definition">
+                    Paramilitary forces engaged behind the front lines during World War II.
+                </span>
+            </li>
+                        <li class="vothG_pogrom">
+                <a name="vothG_pogrom"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    pogrom.
+                </span>
+                <span class="definition">
+                    A form of riot or mob violence directed against a particular group, whether ethnic, religious, or other, and characterized by the killing and destruction of their homes, businesses, and religious centers. The term was originally used to denote extensive violence against Jews.
+                </span>
+            </li>
+                        <li class="vothG_action">
+                <a name="vothG_action"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    action.
+                </span>
+                <span class="definition">
+                    Episodes of coordinated violence against Jewish communities, including the rounding up of Jews for deportation to ghettos, concentration camps, or killing centers.
+                </span>
+            </li>
+                        <li class="vothG_eretzY">
+                <a name="vothG_eretzY"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Eretz Yisroeil.
+                </span>
+                <span class="definition">
+                    Hebrew for the Land of Israel.
+                </span>
+            </li>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                        <li class="vothG_aryan">
+                <a name="vothG_aryan"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Aryan.
+                </span>
+                <span class="definition">
+                    Derived from a Sanskrit word meaning “noble,” the term was used in Nazi pseudo-scientific jargon to denote a race which had supposedly superior blood and culture. During the Holocaust, “Aryan” came to mean anyone who was not Jewish or Roma (Gypsy).
+                </span>
+            </li>
+                        <li class="vothG_zionist">
+                <a name="vothG_zionist"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Zionist.
+                </span>
+                <span class="definition">
+                    Having to do with the international political movement known as Zionism that supports a homeland for the Jewish people in the Land of Israel. The word "Zionism" is derived from the word "Zion"—one of the names of Jerusalem and the Land of Israel as mentioned in the Bible.
+                </span>
+            </li>
+                        <li class="vothG_kibbutz">
+                <a name="vothG_kibbutz"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    kibbutz.
+                </span>
+                <span class="definition">
+                    A collective farm or settlement in modern Israel. (Plural Kibbutzim.)
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Brody (Yid. Brod) was in the Tarnopol district of Poland (then southeastern Poland, now northwestern Ukraine). The town was a center of nineteenth century Jewish progressive thinking and had a strong Zionist movement. In September, 1939, the Soviets occupied the city, but the Germans took over shortly after the beginning of their invasion of the Soviet Union on June, 22, 1941. During the German occupation, the Jews of Brody were terrorized, persecuted, ghettoized and then murdered. Only about 250 of the 9,000 Jews in Brody on the eve of World War II survived.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Located in southern Poland, the historic city was for several centuries the capital of the early Polish kingdom. Jewish settlement in Kraków dates from at least the early fourteenth century. During the German occupation, the city became the seat of the Nazi General Government run by the notorious Hans Frank.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Ferber is referring to the outbreak of World War II which began with the German invasion of Poland on September 1, 1939. Two days later France and Great Britain declared war on Germany.
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            In fact, the Soviet Union occupied eastern Poland in accordance with a secret protocol in the Nazi Soviet pact signed on August 23, 1939 between the foreign ministers of the two totalitarian powers. The protocol called for the division of Poland between them by force of arms.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Treatment of the Jewish population under Soviet rule was certainly better than under the German occupation. However, in the part of Poland under their control, the Soviets nationalized large Jewish businesses and factories, confiscated and collectivized land, ended any semblance of Jewish political and social autonomy, and deported the "hostile class element" to Siberia. These policies impacted the general population as well.
+        </li>
+                <li class="note_6">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Eastern Poland during the interwar period was home to many Ukrainians as well as Jews. This accounted for the efforts of the Polish government to "polonize" the area.
+        </li>
+                <li class="note_7">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Soviets drafted a number of Jews from Brody into the Red army. In total, about half a million Jews served in the Red army during World War II, and approximately 200,000 fell in battle. Some 160,000, including Mr. Ferber, were awarded medals for bravery. The German invasion of the Soviet Union came as a great shock to Stalin, who believed that Hitler would honor the August 1939 non-aggression treaty signed between the two countries. News of German atrocities against Jews in their zone of occupation from 1939-1941 was deliberately withheld from Soviet Jewry who were unprepared for the Nazi onslaught, as was the Red army which was overwhelmed in the early phase of the brutal war. The battle of Stalingrad, lasting from late summer 1942 until the German surrender on February 2, 1943, marked the turning point of the war on the eastern front.
+        </li>
+                <li class="note_8">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Chernevtsky was a town located in western Ukraine. It was occupied by Romania, Germany's World War II ally. During the Romanian occupation, the Jews of Chernevtsky were persecuted and ghettoized, and their population was decimated.
+        </li>
+                <li class="note_9">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            About 165,000 Polish Jews were repatriated under the Polish/Soviet repatriation agreement of July 1945. Some 20,000 went back to Poland under a subsequent agreement. About seven percent of the prewar Polish Jewish population was saved within the Soviet Union. Belzec and Treblinka were Nazi extermination camps designed to annihilate the Jews of the General Government. Auschwitz was the largest of the extermination camps and also a concentration camp. It had some forty subcamps. Like Mr. Ferber, many survivors experienced the loss of their entire families. 
+        </li>
+                <li class="note_10">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Zakopane was located in the Kraków district of Poland. It was a Carpathian mountain community with a Jewish population of several hundred. During the 1930's, there were a number of anti-Semitic incidents in the town. Polish anti-Semitism also manifested itself after the war despite the small number of Jewish survivors. Some three million Polish Jews perished during the Holocaust, and about 300,000 survived.
+        </li>
+                <li class="note_11">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Nowy Targ had a pre war Jewish population of over a thousand, which also suffered from anti-Semitism in the interwar period in the form of economic boycotts and occasional violence. Anti-Semitic agitation revived after the war, directed at the handful of survivors.
+        </li>
+                <li class="note_12">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            In the immediate postwar period, the communist regime in the People's Republic of Poland allowed the Jewish survivors a degree of social and cultural autonomy. Those Jews with communist sympathies had hopes for full assimilation, and Jewish communists occupied some posts in the new government. The new regime, under the control of the Stalinist Soviet Union, was anything but democratic.
+        </li>
+                <li class="note_13">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            General Anders headed an army of Polish exiles formed in the Soviet Union following the Nazi invasion. Eventually this army made its way out of the Soviet Union via Iran and fought with the Allies against the Germans. After the fall of France, the Polish government-in-exile moved to London where it remained for the duration of the war. This government did not have the welfare of Polish Jewry as its highest priority. Nevertheless, it transmitted funds contributed by Jewish organizations to Polish Jewry, and its public pronouncements eventually played a significant role in dispelling doubts in western countries about Nazi genocide.
+        </li>
+                <li class="note_14">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Vaad ha-Hatzlaha was a body originally established by the American Orthodox Jewish community to rescue rabbis and yeshiva students during World War II. Following the revelation of the Final Solution, it expanded its activities to assist all European Jewry.
+        </li>
+                <li class="note_15">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The sentiments expressed here by Mr. Ferber were shared by many European Jews who wanted to make their way to Palestine and establish an independent Jewish homeland.
+        </li>
+                <li class="note_16">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The mufti (Islamic religious head) most associated with anti Jewish activities was Haj Amin Al Husseini, the grand mufti of Jerusalem. During the interwar period, he became the head of the Palestinian Arabs. The mufti had an uncompromisingly negative attitude towards Jewish settlement in Palestine and agreed with Nazi ideological goals aimed at the destruction of "world Jewry." During World War II, he pursued Arab national political goals and gave active support to the Nazi genocide against European Jewry.
+        </li>
+                <li class="note_17">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Soon after the end of the Second World War, Churchill's Conservative party was defeated in general elections and was succeeded by Clement Atlee's Labour party. At the time, Great Britain continued to control Palestine and enforce the terms of its May 1939 White Paper which greatly restricted Jewish emigration. Ernest Bevin was Foreign Secretary in the Labour government. He pursued an oppressive policy towards the Palestinian Jewish community and deported would-be Jewish immigrants to detention camps in Cyprus. After his proposals for the solution of the conflict between Arabs and Jews failed, he referred the entire matter to the United Nations. In January, 1949, eight months after the proclamation of the State of Israel, he granted it Britain's de facto recognition.
+        </li>
+                <li class="note_18">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            More than 6,000 Poles have been honored with the award, Righteous Among the Nations, for their efforts in rescuing Jews during the Holocaust by Yad Vashem, Israel's official Holocaust memorial and museum. In risking their lives, they embodied the truth of the saying that "Whoever Saves One Life Saves the Entire World."
+        </li>
+                <li class="note_19">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            In fact, some Polish monasteries, primarily Franciscan, did save Jewish children.
+        </li>
+                <li class="note_20">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The "committee" Mr. Ferber is referring to is the American Jewish Joint Distribution Committee, the American Jewry's chief overseas relief and rehabilitation agency before, during, and after the Holocaust.
+        </li>
+                <li class="note_21">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Palestinian Jewry worked throughout Europe in Aliyah Bet, the dedicated effort to bring European Jewish Holocaust survivors to Palestine in spite of British immigration restrictions. Thus it may defined as "illegal" immigration. France became a key center for directing these immigration operations, which became a unifying force in the Jewish world and came to enjoy widespread sympathy in the world at large.
+        </li>
+                <li class="note_22">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            In fact, especially by the late 1930's, anti-Semitic attitudes had become widespread among the Soviet elite and were held by many in the general population. Throughout the war, the Jews were not recognized as special victims of Nazi genocide, and this concealment continued after the war. From 1948 to 1953, the Black Years of Soviet Jewry, anti-Semitism became one of the chief policies of the Stalinist regime. 
+        </li>
+                <li class="note_23">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Polish perpetrators of the Kielce pogrom on July 4, 1946 massacred forty-two Jews in the town of Kielce in southeastern Poland and wounded fifty more. The pogrom was sparked by a rumor that Jews were killing Polish children and drinking their blood. This event sparked a mass exodus of tens of thousands of Jews from Poland and other countries of eastern Europe who despaired of rebuilding productive and secure lives there.
+        </li>
+                <li class="note_24">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            She'erit ha-Peletah ("surviving remnant") is a term taken from First Chronicles 4:43. This was the Hebrew name given to the organization of Holocaust survivors, most in displaced persons' camps, following the war. The organization's primary goals were emigration of Jews from Europe primarily to settle in Palestine. It existed from 1945 until December, 1950 when its Central Committee ceased to exist.
+        </li>
+                <li class="note_25">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            A number of biblical commandments stress the importance of providing for orphans and treating them with justice and compassion. These commandments were reinforced in the Talmud and translated into Jewish communal care for orphans throughout the centuries.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

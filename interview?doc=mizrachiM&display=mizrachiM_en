@@ -1,0 +1,3202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Manis Mizrachi; August 12, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-manis-mizrachi-august-12-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Manis Mizrachi; August 12, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=mizrachiM">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=mizrachiM&display=mizrachiM_en">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=mizrachiM">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=mizrachiM">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.782" end="x">[In English] This is Spool 9-43B. The interviewee is Mr. Mizrachi and he speaks English. November the 21st 1950. Boder.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="43.085" end="x">This is Spool 43 continued. The interviewee is Señor Manis Mizrachi or Mr. Manis Mizrachi. Born in Greece, how old are you Mr. Mizrachi?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="59.025" end="x">I am twenty-four years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="60.508" end="x">He's twenty-four years old. He speaks good English and we will have his report in English. Also Mr. Mizrachi would you tell us again what is your full name where were you born?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="73.516" end="x">My name is Mizrachi Mimi I have been born in <a class="placename" href="#vothL68">Salonika</a>.<note n="1"><span class="note">Salonika, the largest city in northern Greece, is also known as Thessalonika. It was second to Athens in population and as a seaport to Piraeus. Salonikia had a culturally  and religiously vibrant Sephardic Jewish community. It was the heart of the Sephardic world.</span><sup><a href="#note_1">1</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="79.573" end="x">Yes. Your last name is really Mizrachi so we . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="82.350" end="x">. . . Mizrachi, yes.<note n="2"><span class="note">Mizrachi is derived from the Hebrew word, "mizrach", which means east.</span><sup><a href="#note_2">2</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="82.840" end="x">. . . call you in America "Minis Mizrachi."<note n="3"><span class="note">Mr. Mizrachi at first inverted his first and last names. Boder then corrected him but used "Minis" instead of "Manis."</span><sup><a href="#note_3">3</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="85.286" end="x">. . . Mizrachi, yes</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="85.867" end="x">You were born where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="87.982" end="x">In <a class="placename" href="#vothL68">Salonika</a>, 1922.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="92.474" end="x">In 1922, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="94.168" end="x">The 17th of January.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="95.802" end="x">Yeah, and tell me, who were your parents and what was their business.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="101.528" end="x">My parents - my father was Oscar Mizrachi and he was . . . he sold articles which he brought from every country and he was a representative of several firms.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="117.233" end="x">Ah! He was an importer?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="119.198" end="x">importer yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="119.989" end="x">Yes, for instance what kind of articles was he selling?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="123.398" end="x">He was selling clothing and paper, he brought paper and several other things what he could make.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="131.858" end="x">Now tell me how many people were in your family?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="134.665" end="x">We're three people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="136.118" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="136.849" end="x">My father, mother and me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="138.332" end="x">You were the only son?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="139.545" end="x">The only son.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="140.517" end="x">Yes, and now tell me where were you and what happened to your family when the Germans came to Greece?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="149.162" end="x">Before the Germans came to Greece since my father was a Freemason,<note n="4"><span class="note">The Freemasons were a secretive, liberal, humanitarian fraternal order. The Nazis persecuted the Freemasons in the belief that Masonic lodges were used by Jews in their quest for world domination and as such were a part of the Jewish world conspiracy.</span><sup><a href="#note_4">4</a></sup></note> we . . . were afraid for the Germans, them not to take him away from us. That for we made it up to go to <a class="placename" href="#vothL126">Athens</a>, the capital of Greece, since it is a very big country so we could . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="171.008" end="x">[speaking over each other] Big city you mean . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="173.003" end="x">Big city, yes,</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="173.554" end="x">So you could be better protected . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="175.459" end="x">Better protected.<note n="5"><span class="note">Some Jews from Salonika did flee to Athens which came under Italian control after the German conquest of Greece on June 2, 1941. The Italians treated the Jews humanely.</span><sup><a href="#note_5">5</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="176.220" end="x">Tell me what citizenship did your father have? Greece or Spanish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="180.351" end="x">My father was Spanish</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="182.045" end="x">And your mother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="182.866" end="x">My mother was Turkish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="185.282" end="x">Turkish? And you were considered what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="187.518" end="x">I have been considered Spanish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="190.476" end="x">Because your father was Spanish. Have you lived in Spain?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="194.577" end="x">Never, I have never in Spain.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="196.632" end="x">Yes, all right, and so you went to <a class="placename" href="#vothL126">Athens</a></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="199.780" end="x">And so we went to <a class="placename" href="#vothL126">Athens</a> but anyhow the Germans took us because although the Consul of Spain has certifies us that we have no reason to be afraid that the Germans will take us and but for this obliged us not to leave and not to hide ourselves and so the Germans came one night at two o'clock and got us [the whole family, they beat us firstly] and afterwards they put us into the Greek jail.<note n="6"><span class="note">Mr. Mizrachi's family spent some eighteen months of relative peace and quiet in Athens before the German occupation of that city in September 1943. Subsequently, Dieter Wisliceny, Adolph Eichmann's deputy, arrived in Athens with detailed plans for the destruction of the Jewish community of that city.</span><sup><a href="#note_6">6</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="231.002" end="x">All right, now . . . Tell me this . . . [mutters] All right, tell me this: Were other Jews then arrested already and deported?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="244.271" end="x">A lot of Jews, Spanish Jews, were arrested and [spread?] with our family together.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="251.592" end="x">Yes, and what was it a kind of a raid at that time or what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="256.175" end="x">It was a raid, it was a raid for whole Spanish in order not to leave them the time to hide themselves because one day before they arrested all Greek citizens, Jews of course.<note n="7"><span class="note">Although the German raids were to prevent Jews going into hiding, many Athenian Jews did manage to hide with their Greek Christian neighbors despite the German penalty of death  for Greeks providing shelter. The Greek Orthodox Church and the Greek underground helped to hide a number of Jews.</span><sup><a href="#note_7">7</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="269.122" end="x">They arrested the Greeks citizens that were Jews. And now they began to arrest the Spanish citizens . . . well didn't you show your papers from the Consul?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="279.264" end="x">We showed our papers from the Consul but it [laughing a little] helped nothing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="283.817" end="x">All right, so then what did they do with the family, go slowly step-by-step.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="287.978" end="x">Then they put us in cars and brought us in the Greek jail where we were obliged to sleep down without any help . . . they give us no things to eat, nothing. We're made whole day without any thing . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="304.889" end="x">[interrupting] Was the family together?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="306.914" end="x">The family was together firstly; afterwards, they ordered us the men to go separately and the women from the other side. So we remained there in the jail about fifteen days and the first of April we were obliged to leave the jail and they put us into trains . . . of beasts.<note n="8"><span class="note">The German roundup of the Jews of Athens began in March 1944.</span><sup><a href="#note_8">8</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="334.165" end="x">Why do you call it "trains of beasts?" They were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="337.364" end="x">Because they were closed trains were they are putting the [laughing a little] . . . horses and . . . the pigs</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="344.595" end="x">. . . the trains with the openings? Because animals they transport . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="349.328" end="x">No, they were closed but they were with wires.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="353.911" end="x">[Talking over each other] Where were the wires?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="355.665" end="x">The wires were at the windows. Little window was there, very high, although they were afraid us not to look from what happened around and so they put us there and they locked us, the door so we couldn't get out for any necessary . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="375.754" end="x">For any necessary? Were you men and women together . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="377.960" end="x">We were men and women together. Sixty-four people in a wagon, it was very difficult to take air and to eat, we had nothing to eat.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="388.796" end="x">Didn't they tell you to take your things?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="391.182" end="x">No, they didn't give - they gave us only some carrots and bottle of water and place . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="400.850" end="x">What do you mean a bottle of water for all or what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="403.296" end="x">It was . . . two big bottles</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="406.916" end="x">Two big bottles of water.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="407.828" end="x">. . . bottles of water.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="408.318" end="x">What do you think? How many liters was there in each one?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="412.179" end="x">Twenty-five liters about.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="414.505" end="x">You mean twenty-five liters to the bottle?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="417.072" end="x">Yes, and it was very hard we couldn't have water enough because we had children with us and we couldn't wash ourselves we were very dirty . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="427.974" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="428.344" end="x">. . . and after the tenth day of traveling</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="430.369" end="x">[astonished] . . . wait you mean you were ten days, ten days in the car?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="433.447" end="x">In all we were fourteen days but after the tenth day they opened - they got out the wires so we could look outwards but we were without shaving ourselves and were like beasts.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="449.717" end="x">Now tell me what kind of toilet facilities did you have?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="453.668" end="x">No one. Every two days they opened us the doors in order to get out things that . . . we couldn't keep anymore in our leavings[?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="464.630" end="x">Did you have a pocket for it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="466.234" end="x">No, it was in a piece of papers what they gave us specially for that.<note n="9"><span class="note">This exchange between Boder and Mr. Mizrachi is not entirely clear. Perhaps "pocket" meant "bucket" for waste which was then placed in the "piece of paper" and thrown out of the train every two days.</span><sup><a href="#note_9">9</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="470.817" end="x">And women and men together in this . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="473.624" end="x">Women and men together . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="475.198" end="x">. . . and children</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="475.448" end="x">. . . it was awful</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="477.383" end="x">And so?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="478.295" end="x">And so, until we arrived at six in the morning—six o'clock in the morning and the town of <a class="placename" href="#vothL287">Celle</a> which is some kilometers far from the camp, real camp of <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>. And so we went there, we were obliged to go—to step seven or eight kilometers.<note n="10"><span class="note">Bergen Belsen concentration camp was named for the nearby town of Bergen. It was established in July 1943 and was originally intended for Jews whom the German government wished to exchange for Germans in Allied territory.</span><sup><a href="#note_10">10</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="500.658" end="x">To walk?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="501.600" end="x">To walk there with our grandfathers, with our fathers, sisters, sick women, with our children and however it was very difficult for us and this one who couldn't walk he was beaten by the Germans, soldiers, by the <a class="term" href="#vothG_capo">capos</a> . . . were the leaders.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="523.883" end="x">What is <a class="term" href="#vothG_capo">capos</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="525.487" end="x"><a class="term" href="#vothG_capo">Capos</a> were the leaders.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="526.579" end="x">Were they prisoners?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="528.484" end="x">They were prisoners but who . . . somewhere . . . collaborated with the Germans together. And they beat us awfully we were not accustomed to this kind of manner and they were laughing at us when we made strange figures.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="545.187" end="x">Strange faces you mean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="546.339" end="x">Strange faces, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="547.853" end="x">And well, and so how long did it last to walk these eight kilometers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="552.315" end="x">This eight kilometers took us about . . . one hour and a half.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="557.379" end="x">[after a pause] That's very fast walking.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="560.066" end="x">Yes! We were obliged to run.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="563.626" end="x">Well you had no things to carry</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="566.163" end="x">No things to carry, nothing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="567.195" end="x">Well then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="568.137" end="x">Because we had some things we could keep with us but we were obliged to leave it in the way in order to go very fast because it was a Polish <a class="term" href="#vothG_capo">capo</a> behind and he was beating you.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="579.550" end="x">A Polish <a class="term" href="#vothG_capo">capo</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="580.492" end="x">A Polish, yes.<note n="11"><span class="note">Later on in the interview, Mr. Mizrachi identified the capos as Polish Jews.</span><sup><a href="#note_11">11</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="581.344" end="x">All right, but you were together with your father and mother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="584.783" end="x">No I wasn't even with my father, and my mother had been put in another range [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="588.764" end="x">Oh, your mother was put in another what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="591.511" end="x">In other file.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="592.724" end="x">In another file, all right. But she was marching the same way with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="598.450" end="x">Yes, much in the same way.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="599.663" end="x">All right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="601.929" end="x">Afterwards we went to the camp they . . . were obliged to stay there for l'appel.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="606.482" end="x">What is the name of the camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="608.056" end="x">The camp <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="609.359" end="x">Yes</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="609.789" end="x">We were obliged to stay there about two hours waiting until the German come and ask our names . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="616.448" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="617.360" end="x">. . . conforming to the list that he could have in <a class="placename" href="#vothL126">Athens</a> when he put us into the train</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="624.350" end="x">Do you have a tattoo number?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="625.412" end="x">No, in <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a> there was no tattoo number.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="628.581" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="629.944" end="x">My account number was one thousand four hundred sixty two.<note n="12"><span class="note">This was presumably the number under which Mr. Mizrachi was registered in Athens before boarding the deportation train.</span><sup><a href="#note_12">12</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="633.835" end="x">Uh-huh, all right</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="637.124" end="x">. . . It was my account number</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="638.638" end="x">One thousand . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="640.121" end="x">One thousand four hundred sixty two.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="642.146" end="x">..sixty two. And so . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="645.044" end="x">And so we have been put in big barrack . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="649.506" end="x">You with your father?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="650.749" end="x">With my father and with my mother in separate barrack. And around us was the wires—electric . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="659.936" end="x">Oh, electric wires. Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="661.961" end="x">. . . have been charged. And we couldn't go out firstly until the doctor came in order to see whether we're ill or not.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="672.141" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="673.564" end="x">And afterwards we could be with our mother and with every friend and so on because of our citizenship.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="683.082" end="x">Oh, because you were Spanish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="683.843" end="x">Spanish, yes. The only thing which we had. As Spanish people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="690.382" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="691.685" end="x">Of course, firstly we couldn't eat what they gave us. It were carrots in boiled water. This was our eating. And we gave it to other brothers of us—other Jews—of Greece. And Polish people too who were with us in the camp.<note n="13"><span class="note">These were Polish Jews who had papers in their possession issued mostly by South American countries.</span><sup><a href="#note_13">13</a></sup></note> And we were obliged after one week to eat because we starved. And so we carried everything—everything green that we saw on the earth we took it out from there and we started to eat it without caring if it was dirty or clean.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="733.995" end="x">Uh-huh, without cooking?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="735.960" end="x">Without cooking . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="736.902" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="737.693" end="x">. . . like beasts.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="738.876" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="739.607" end="x">And so they started to put us in this category of prisoners that starved to eat and wore closed and we had no rights to go out - to work - we were obliged to stay.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="755.492" end="x">Well, because the Spanish . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="757.487" end="x">Because Spanish citizenship.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="759.121" end="x">. . . we were not supposed to work</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="760.665" end="x">We were not supposed to work but this was bad because the others who were out they were working at the transport of food, of legumes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="772.199" end="x">Of vegetables.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="772.810" end="x">Of vegetables. And they could have some profit in taking some of them. But for us it was impossible. And so we were obliged to live on only those things that we received from Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="785.931" end="x">Did the Red Cross help in any way.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="788.407" end="x">We had no help of the Red Cross. Never we got help from the Red Cross. Only our <a class="term" href="#vothG_capo">capos</a> they had . . . many profits who unfortunately they put only for themselves and they never helped the others</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="807.602" end="x">Were the <a class="term" href="#vothG_capo">capos</a> Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="809.266" end="x">They were the Jews with us from Greece they came with us. And they started making friendship with the Polish <a class="term" href="#vothG_capo">capos</a>, the old ones who were there and so they had a lot of . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="823.015" end="x">Polish Jewish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="823.716" end="x">Polish Jewish. I speak always from Jewish</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="826.854" end="x">And so?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="828.037" end="x">And so they made friendship with them and so they had everything for their own families. They had special room to live and they ate separately. We were not to see what they were eating, we smelled only the meat and everything else that they got . . . from the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="850.743" end="x">From the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="851.203" end="x">From the Germans. And, unfortunately, our people—the people who didn't want to beat and to collaborate with the Germans—starved and had only his home in back.<note n="14"><span class="note">Mr. Mizrachi probably means that those who were not capos lived collectively in the barracks behind the capos' rooms.</span><sup><a href="#note_14">14</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="864.331" end="x">Yes</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="865.032" end="x">This is all [slightly laughing].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="866.064" end="x">Well, and that was in . . . <a class="placename" href="#vothC4" type="camp">Auschwitz</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="870.225" end="x">That was in <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="871.287" end="x">In <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="871.988" end="x"><a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="872.818" end="x">Well . . . did you hear about . . . All right, so how long were you in <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="878.063" end="x">I have been there about eighteen months—one year and six months.<note n="15"><span class="note">Since Mr. Mizrachi was deported to Bergen Belsen in April of 1944, he would have been incarcerated there for twelve months, not eighteen months. He and his family were deported from the camp in April, 1945 just prior to its liberation by the British army.</span><sup><a href="#note_15">15</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="881.713" end="x">And then, where were you taken from?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="884.551" end="x">Then I have been taken—we have been put into a big train in order to be transported to <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>.<note n="16"><span class="note">Theresienstadt was the so-called "luxury camp" or "model ghetto" in which Jews, mainly from Bohemia and Moravia, Germany and Austria were not actually exterminated but died from hunger, torture, disease and beatings. Some 88,000 Jews were deported from Theresienstadt to extermination camps in Poland, notably Auschwitz. Towards the end of April 1945, the Germans brought thousands of prisoners to Theresienstandt who had been evacuated from other concentration camps in danger of being overrun by Allied forces. Mr. Mizrarchi and his family could have been among these evacuees had they not been liberated from their deportation train.</span><sup><a href="#note_16">16</a></sup></note> In the last days—two days before the English came, the British troops came in <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="899.816" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="900.276" end="x">Um, this train was a big train of sixty-four wagons.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="904.979" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="905.650" end="x">And have been put in, again in . . . beasts-cars . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="911.045" end="x">Cattle-wagons?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="911.535" end="x">Cattle-wagons. Sixty-four to seventy people in a car and started of course many 'spense [?] . . . many sick . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="923.731" end="x">Many sick people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="924.522" end="x">. . . many sick people. We started then with the Typhus.<note n="17"><span class="note">Typhus is an acute infectious disease which in its epidemic form is spread from person to person by the body louse. As tens of thousands of prisoners poured into Bergen Belsen from camps in the east, a typhus epidemic raged in the early months of 1945 which claimed many thousands of lives, among them Anne Frank and her sister Margot.</span><sup><a href="#note_17">17</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="927.360" end="x">Oh yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="929.445" end="x">It was then when I lost my two parents. Unfortunately, at the last days. I lost them—my father . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="934.630" end="x">What do you mean—in <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="936.926" end="x">In the train—the big train—they caught there Typhus</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="940.215" end="x">Oh, in the train. About how many days before liberation?<note n="18"><span class="note">Bergen Belsen was liberated on April 15, 1945.</span><sup><a href="#note_18">18</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="946.724" end="x">The first died . . . at just at the same . . . at the moment of the liberation and my mother which was looking for [after] my father died ten days afterwards . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="958.829" end="x">After the liberation</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="960.282" end="x">And I got it too . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="961.465" end="x">You got it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="961.925" end="x">. . . because I was obliged to see . . . to look for [after] for my mother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="965.094" end="x">You had to look for your mother, yes? And?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="967.029" end="x">And so I got it also—"I meant thirty in one days"[?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="971.431" end="x">What typhus was it? Ricket . . . Ricket . . . Spotted typhus?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="977.338" end="x">Spotted typhus, yes.<note n="19"><span class="note">Spotted typhus is spread by mites and causes red spotting on the skin. With lice borne typhus, a characteristic rash appears over most of the body. It the latter variety of typhus, not "spotted typhus", with which Mr. Mizrachi and his parents were infected.</span><sup><a href="#note_19">19</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="979.574" end="x">So then you lost your parents.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="981.870" end="x">[speaking over each other] .. of liberation. And you remained alone.<note n="20"><span class="note">Mr. Mizrachi was an only child who "remained alone" since both his parents died of typhus, and he was an orphan.</span><sup><a href="#note_20">20</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="985.490" end="x">I remained quite alone without any help. Quite alone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="988.448" end="x">All right, so where did you go then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="990.955" end="x">I was student and then the American troops were very kind with us—they helped us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="996.471" end="x">Well, which camp were you freed or were you freed from the train?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1001.264" end="x">From the train directly because it was an air attack.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1005.546" end="x">Oh, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1006.187" end="x">Attack of the air force.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1007.610" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1008.221" end="x">British Air force.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1008.501" end="x">And so?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1009.744" end="x">And so the machine . . . had been in damage.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1014.477" end="x">The, yes, the machine was damaged.<note n="21"><span class="note">The "machine" Mr. Mizrachi refers to was the train engine. According to testimony of American liberators of the train, the reason that the train was stopped and that the prisoners were able to capture some SS guards is that the train crew and other SS abandoned their posts as overwhelming American forces closed in.</span><sup><a href="#note_21">21</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1016.291" end="x">. . . was damaged.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1017.233" end="x">Yes, and the train couldn't continue.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1019.860" end="x">. . . couldn't continue. And . . . we made some activity there we got prisoners, the Germans, the <a class="term" href="#vothG_ss">SS</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1026.489" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1027.461" end="x">. . . and we waited until the American tanks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1029.937" end="x">. . . came.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1030.247" end="x">Came. Yes, it was ninth army. The ninth American army.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1033.837" end="x">Uh-huh.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1034.267" end="x">. . . Which liberated us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1035.570" end="x">Yes, so then you took the <a class="term" href="#vothG_ss">SS</a> prisoners? Why didn't you kill them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1040.811" end="x">[slightly laughing] We had no right to kill them . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1043.474" end="x">Why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1044.450" end="x">Because the <a class="term" href="#vothG_capo">capos</a>—the chiefs . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1046.299" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1046.751" end="x">. . . who directed this movement told us not to do anything until the American troops arrived.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1052.143" end="x">Yes</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1052.998" end="x">And then what did the Americans do with them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1054.896" end="x">The Americans took their arms and they took them away, we don't know what happened.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1060.167" end="x">They took them prisoners?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1061.553" end="x">Prisoners, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1062.920" end="x">All right, and then you were in the train,</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1065.210" end="x">And then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1066.035" end="x">. . . where were you taken from there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1067.451" end="x">And at once, the officers, the American officers went to the village—the German village of <a class="placename" href="#vothL382">Farsleben</a>.<note n="22"><span class="note">Farsleben is a village located just north of the city of Magdeburg in north central Germany in the state of Saxony-Anhalt. U.S. troops of the 743rd tank battalion and 119th regiment of the Ninth Army freed the more than 2,500 prisoners on the Mizrachi family's deportation train from Bergen Belsen on April 13th, 1945.</span><sup><a href="#note_22">22</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1074.752" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1075.776" end="x">There. And he gave the order to every person to take us in, to take several families into his house.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1084.692" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1085.457" end="x">And so, we got the place for some days.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1088.680" end="x">Uh-huh, and who was feeding you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1090.680" end="x">The Germans were obliged to feed us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1092.999" end="x">Uh-huh.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1093.963" end="x">They had a lot to feed us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1096.132" end="x">And what did the Germans then say?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1099.186" end="x">The Germans said that they never knew every- . . . something that happened to Jews and out of Germany and that they behaved something so ill with the Jews in the concentration camps that they let them starve and that they killed them. They didn't know anything about those things. And whenever they knew, of course, they wouldn't leave it . . . let the Germans . . .<note n="23"><span class="note">This was the typical response on the part of German civilians. They expended a great deal of energy denying Nazi crimes and engaging in willful ignorance.</span><sup><a href="#note_23">23</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1124.476" end="x">[finishing the thought] . . . they wouldn't have let them do such things.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1126.054" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1126.837" end="x">Uh-huh and then, where did you go and how did you go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1131.024" end="x">Then I was where, I got ill and I went at <a class="placename" href="#vothL66">Hillersleben</a>.<note n="24"><span class="note">The town of Hillersleben, also close to Magdeburg, was the site during the war of a large German air force (Luftwaffe) base. it was also the site of a large German weapons research center. It was most probably due to these reasons that there were hospitals in Hillersleben.</span><sup><a href="#note_24">24</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1136.476" end="x">Yes</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1137.078" end="x"><a class="placename" href="#vothL66">Hillersleben</a> is not far from them, some ten kilometers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1142.018" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1142.741" end="x">And then I meant the hospital, hospital El Melwani [?] there were three hospitals.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1149.380" end="x">Did you get typhus too?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1150.627" end="x">I got Typhus too.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1151.482" end="x">So when they took you from the train did you have typhus already?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1156.121" end="x">No I didn't have.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1157.428" end="x">Oh, you didn't have . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1157.820" end="x">I was looking for [after] my mother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1159.248" end="x">You were taking care of your mother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1160.465" end="x">Yes, taking care of her until she died.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1163.549x" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1165.085" end="x">Afterwards . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1165.718" end="x">Did you see your father dying?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1167.706" end="x">I . . . . My father died on my hands.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1170.248" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1170.911" end="x">I buried him with two other Jewish comrades.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1173.664" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1174.809" end="x">. . . in <a class="placename" href="#vothL382">Farsleben</a>. And my mother died in <a class="placename" href="#vothL66">Hillersleben</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1178.676" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1179.369" end="x">They are seven kilometers away. I didn't see my mother died - dead - because I was very ill at this moment. I was with 41.4 Centigrade . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1191.267" end="x">Temperature. Already with typhus?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1193.327" end="x">With Typhus yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1194.291" end="x">And so when the freedom came . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1197.875" end="x">When the freedom came, I was quite alone I remained quite alone . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1202.243" end="x">Did they take you to a hospital?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1204.153" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1205.039" end="x">You were taken to a hospital?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1206.166" end="x">I have been taken to a hospital.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1207.865" end="x">. . . and nurse to help?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1209.534" end="x">Nurse help, German nurse. And they were not bad but they always tried to make sabotage.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1217.920" end="x">The Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1218.745" end="x">The Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1219.528" end="x">In what way?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1220.432" end="x">In what way . . . because they were throwing away the medicaments and whenever we were calling them but they didn't come—only when the Brit- [corrects] an American soldier was present.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1231.998" end="x">. . . and then he would take . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1232.781" end="x">. . . but not, they never took care of us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1234.800" end="x">All right, and when you got well what happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1237.914" end="x">Then I took some days in order to get . . . stronger then because I couldn't walk. I had forty-two kilograms.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1249.481" end="x">And where did you spend those days—in the hospital?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1251.692" end="x">In the hospital.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1252.758" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1253.331" end="x">And afterwards I have been taken by the American army and I said that I had parents in France. And that for they brought . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1262.951" end="x">You said that you had parents in France?<note n="25"><span class="note">The French word "parent" is the word for relative.</span><sup><a href="#note_25">25</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1264.006" end="x">Yes, I had. I had.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1265.946" end="x">Relatives you mean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1267.103" end="x">I have relatives, yes. Relatives.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1268.711" end="x">Apart from your father and mother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1269.946" end="x">Relatives, yes. Relatives in France.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1272.838" end="x">And so they took you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1273.784" end="x">So they took me here and . . . unfortunately they had been displaced too. Deported and they didn't come back.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1281.145" end="x">They did come back?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1282.170" end="x">They did not come back.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1283.357" end="x">So you didn't find relatives?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1285.056" end="x">I did find. And I remained here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1288.442" end="x">Yes. And for what are you working now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1290.894" end="x">Now I am working for the <a class="term" href="#vothG_ajdc">AJDC</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1293.014" end="x">For the American join . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1295.033" end="x">[finishing] . . . distribution committee.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1296.190" end="x">What are you doing?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1297.045" end="x">I am in the accounting department.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1299.877" end="x">Where did you learn English?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1301.335" end="x">I learned English alone because I finished the German school . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1305.443" end="x">Where? Greece?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1306.437" end="x">In <a class="placename" href="#vothL68">Salonika</a>, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1308.064" end="x">You finished the German school where you learned Greek [corrects] where you learned English?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1312.022" end="x">German. German and French and since I liked very much to learn English I learned it quite alone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1321.793" end="x">with . . . [speaking over each other]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1323.191" end="x">Just alone, myself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1324.709" end="x">By which method? Shocked that haven't got a better [ununintelligible] that you had to go to school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1328.143" end="x">No, I learned it quite alone. There was a friend of mine who went to the school . . . and I learned . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1332.854" end="x">And learned it alone. Now what do you plan to do in the future?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1336.420" end="x">I am studying now; I am studying radio.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1339.432" end="x">Where, at the <a class="term" href="#vothG_ort">ORT</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1340.727" end="x">No, quite alone, I am training myself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1344.011" end="x">All right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1344.475" end="x">You are studying radio and then you want to do what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1348.403" end="x">Then I hope to work in radio..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1351.246" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1352.933" end="x">I don't know yet, perhaps I can go to the country I would be very satisfied.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1359.560" end="x">Which country?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1361.018" end="x">I don't know where to . . . the States? [Break in tape]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1364.072" end="x">. . . relatives in America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1364.946" end="x">. . . unfortunately, I have no one.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1367.006" end="x">You have no one.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Manis Mizrachi</span>:
+            </span>
+            <span class="utterance" who="#mizrachiM" start="1368.030" end="x">No one.<note n="26"><span class="note">The forlorn note on which the interview concludes is symbolic of the loneliness of so many survivors at the time who had lost so much of their previous lives and had to endure the large void which these losses created.</span><sup><a href="#note_26">26</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1370.319" end="x">. . . Well this concludes Mr. .Mizrachi's report. Taken on the- . . . on August the 12th at the offices of the <a class="term" href="#vothG_ajdc">American Joint Distribution Committee</a> . . . recording of the Illinois Institute of Technology.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            Salonika, the largest city in northern Greece, is also known as Thessalonika. It was second to Athens in population and as a seaport to Piraeus. Salonikia had a culturally  and religiously vibrant Sephardic Jewish community. It was the heart of the Sephardic world.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            Mizrachi is derived from the Hebrew word, "mizrach", which means east.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            Mr. Mizrachi at first inverted his first and last names. Boder then corrected him but used "Minis" instead of "Manis."
+        </li>
+                <li>
+            <a name="note_4"></a>
+            The Freemasons were a secretive, liberal, humanitarian fraternal order. The Nazis persecuted the Freemasons in the belief that Masonic lodges were used by Jews in their quest for world domination and as such were a part of the Jewish world conspiracy.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            Some Jews from Salonika did flee to Athens which came under Italian control after the German conquest of Greece on June 2, 1941. The Italians treated the Jews humanely.
+        </li>
+                <li>
+            <a name="note_6"></a>
+            Mr. Mizrachi's family spent some eighteen months of relative peace and quiet in Athens before the German occupation of that city in September 1943. Subsequently, Dieter Wisliceny, Adolph Eichmann's deputy, arrived in Athens with detailed plans for the destruction of the Jewish community of that city.
+        </li>
+                <li>
+            <a name="note_7"></a>
+            Although the German raids were to prevent Jews going into hiding, many Athenian Jews did manage to hide with their Greek Christian neighbors despite the German penalty of death  for Greeks providing shelter. The Greek Orthodox Church and the Greek underground helped to hide a number of Jews.
+        </li>
+                <li>
+            <a name="note_8"></a>
+            The German roundup of the Jews of Athens began in March 1944.
+        </li>
+                <li>
+            <a name="note_9"></a>
+            This exchange between Boder and Mr. Mizrachi is not entirely clear. Perhaps "pocket" meant "bucket" for waste which was then placed in the "piece of paper" and thrown out of the train every two days.
+        </li>
+                <li>
+            <a name="note_10"></a>
+            Bergen Belsen concentration camp was named for the nearby town of Bergen. It was established in July 1943 and was originally intended for Jews whom the German government wished to exchange for Germans in Allied territory.
+        </li>
+                <li>
+            <a name="note_11"></a>
+            Later on in the interview, Mr. Mizrachi identified the capos as Polish Jews.
+        </li>
+                <li>
+            <a name="note_12"></a>
+            This was presumably the number under which Mr. Mizrachi was registered in Athens before boarding the deportation train.
+        </li>
+                <li>
+            <a name="note_13"></a>
+            These were Polish Jews who had papers in their possession issued mostly by South American countries.
+        </li>
+                <li>
+            <a name="note_14"></a>
+            Mr. Mizrachi probably means that those who were not capos lived collectively in the barracks behind the capos' rooms.
+        </li>
+                <li>
+            <a name="note_15"></a>
+            Since Mr. Mizrachi was deported to Bergen Belsen in April of 1944, he would have been incarcerated there for twelve months, not eighteen months. He and his family were deported from the camp in April, 1945 just prior to its liberation by the British army.
+        </li>
+                <li>
+            <a name="note_16"></a>
+            Theresienstadt was the so-called "luxury camp" or "model ghetto" in which Jews, mainly from Bohemia and Moravia, Germany and Austria were not actually exterminated but died from hunger, torture, disease and beatings. Some 88,000 Jews were deported from Theresienstadt to extermination camps in Poland, notably Auschwitz. Towards the end of April 1945, the Germans brought thousands of prisoners to Theresienstandt who had been evacuated from other concentration camps in danger of being overrun by Allied forces. Mr. Mizrarchi and his family could have been among these evacuees had they not been liberated from their deportation train.
+        </li>
+                <li>
+            <a name="note_17"></a>
+            Typhus is an acute infectious disease which in its epidemic form is spread from person to person by the body louse. As tens of thousands of prisoners poured into Bergen Belsen from camps in the east, a typhus epidemic raged in the early months of 1945 which claimed many thousands of lives, among them Anne Frank and her sister Margot.
+        </li>
+                <li>
+            <a name="note_18"></a>
+            Bergen Belsen was liberated on April 15, 1945.
+        </li>
+                <li>
+            <a name="note_19"></a>
+            Spotted typhus is spread by mites and causes red spotting on the skin. With lice borne typhus, a characteristic rash appears over most of the body. It the latter variety of typhus, not "spotted typhus", with which Mr. Mizrachi and his parents were infected.
+        </li>
+                <li>
+            <a name="note_20"></a>
+            Mr. Mizrachi was an only child who "remained alone" since both his parents died of typhus, and he was an orphan.
+        </li>
+                <li>
+            <a name="note_21"></a>
+            The "machine" Mr. Mizrachi refers to was the train engine. According to testimony of American liberators of the train, the reason that the train was stopped and that the prisoners were able to capture some SS guards is that the train crew and other SS abandoned their posts as overwhelming American forces closed in.
+        </li>
+                <li>
+            <a name="note_22"></a>
+            Farsleben is a village located just north of the city of Magdeburg in north central Germany in the state of Saxony-Anhalt. U.S. troops of the 743rd tank battalion and 119th regiment of the Ninth Army freed the more than 2,500 prisoners on the Mizrachi family's deportation train from Bergen Belsen on April 13th, 1945.
+        </li>
+                <li>
+            <a name="note_23"></a>
+            This was the typical response on the part of German civilians. They expended a great deal of energy denying Nazi crimes and engaging in willful ignorance.
+        </li>
+                <li>
+            <a name="note_24"></a>
+            The town of Hillersleben, also close to Magdeburg, was the site during the war of a large German air force (Luftwaffe) base. it was also the site of a large German weapons research center. It was most probably due to these reasons that there were hospitals in Hillersleben.
+        </li>
+                <li>
+            <a name="note_25"></a>
+            The French word "parent" is the word for relative.
+        </li>
+                <li>
+            <a name="note_26"></a>
+            The forlorn note on which the interview concludes is symbolic of the loneliness of so many survivors at the time who had lost so much of their previous lives and had to endure the large void which these losses created.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>David Palmer</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC8">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC8" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Bergen-Belsen
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Bergen, Germany<br />
+                            </p>
+                            <div>
+                Established in the spring of 1943 and initially intended as a transit camp, it soon was integrated into the concentration camp network.  Its population swelled late in the war as inmates from other camps further east were moved into it--from around 15,000 in late 1944 to 41,250 in March 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC8 = new OpenLayers.Map('map_vothC8', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC8.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC8.addLayer(markers);
+map_id_vothC8.zoomToMaxExtent();
+
+                        var lat_1 = 52.766700;
+                        var lon_1 = 9.916700;
+                        var vothC8 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC8_icon = new OpenLayers.Marker(vothC8);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC8);
+markers.addMarker(vothC8_icon);
+    addMarker(vothC8, popupClass, "", true, false, false);
+    map_id_vothC8.setCenter(vothC8, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_2 = 50.033300;
+                        var lon_2 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC110">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC110" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Theresienstadt<br /><span class="alt">(Terezín)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Flossenb&#195;rg
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Terez&#195;n, Czechoslovakia<br />
+                            </p>
+                            <div>
+                By November 24, 1941 the heart of Theresienstadt was turned into a walled ghetto. To the outside it was presented by the Nazis as a model Jewish settlement, but in reality it was a concentration camp. Theresienstadt was also used as a transit camp for European Jews en route to Auschwitz.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC110 = new OpenLayers.Map('map_vothC110', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC110.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC110.addLayer(markers);
+map_id_vothC110.zoomToMaxExtent();
+
+                        var lat_3 = 50.500000;
+                        var lon_3 = 14.150000;
+                        var vothC110 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC110_icon = new OpenLayers.Marker(vothC110);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC110);
+markers.addMarker(vothC110_icon);
+    addMarker(vothC110, popupClass, "", true, false, false);
+    map_id_vothC110.setCenter(vothC110, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL68">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL68" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Thessalon&#195;ki, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL68 = new OpenLayers.Map('map_vothL68', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL68.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL68.addLayer(markers);
+map_id_vothL68.zoomToMaxExtent();
+
+                        var lat_4 = 40.633300;
+                        var lon_4 = 22.933300;
+                        var vothL68 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL68_icon = new OpenLayers.Marker(vothL68);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL68);
+markers.addMarker(vothL68_icon);
+    addMarker(vothL68, popupClass, "", true, false, false);
+    map_id_vothL68.setCenter(vothL68, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL126">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL126" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Ath&#195;nai, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL126 = new OpenLayers.Map('map_vothL126', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL126.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL126.addLayer(markers);
+map_id_vothL126.zoomToMaxExtent();
+
+                        var lat_5 = 38.000000;
+                        var lon_5 = 23.733300;
+                        var vothL126 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL126_icon = new OpenLayers.Marker(vothL126);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL126);
+markers.addMarker(vothL126_icon);
+    addMarker(vothL126, popupClass, "", true, false, false);
+    map_id_vothL126.setCenter(vothL126, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL287">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL287" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Celle, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL287 = new OpenLayers.Map('map_vothL287', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL287.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL287.addLayer(markers);
+map_id_vothL287.zoomToMaxExtent();
+
+                        var lat_6 = 52.616700;
+                        var lon_6 = 10.083300;
+                        var vothL287 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL287_icon = new OpenLayers.Marker(vothL287);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL287);
+markers.addMarker(vothL287_icon);
+    addMarker(vothL287, popupClass, "", true, false, false);
+    map_id_vothL287.setCenter(vothL287, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL382">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL382" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Farsleben, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL382 = new OpenLayers.Map('map_vothL382', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL382.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL382.addLayer(markers);
+map_id_vothL382.zoomToMaxExtent();
+
+                        var lat_7 = 52.266667;
+                        var lon_7 = 11.650000;
+                        var vothL382 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL382_icon = new OpenLayers.Marker(vothL382);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL382);
+markers.addMarker(vothL382_icon);
+    addMarker(vothL382, popupClass, "", true, false, false);
+    map_id_vothL382.setCenter(vothL382, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL66">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL66" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Hillersleben, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL66 = new OpenLayers.Map('map_vothL66', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL66.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL66.addLayer(markers);
+map_id_vothL66.zoomToMaxExtent();
+
+                        var lat_8 = 52.266667;
+                        var lon_8 = 11.483056;
+                        var vothL66 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL66_icon = new OpenLayers.Marker(vothL66);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL66);
+markers.addMarker(vothL66_icon);
+    addMarker(vothL66, popupClass, "", true, false, false);
+    map_id_vothL66.setCenter(vothL66, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_capo">
+                <a name="vothG_capo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    capo.
+                </span>
+                <span class="definition">
+                    A term used for certain prisoners inside Nazi concentration camps during World War II in various lower administrative positions. Capos received more privileges than normal prisoners. They were often convicts who were offered this work in exchange for a reduced sentence or parole.
+                </span>
+            </li>
+                        <li class="vothG_ss">
+                <a name="vothG_ss"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    SS.
+                </span>
+                <span class="definition">
+                    Acronym for the German Schutzstaffel (“Protective Echelon”), a major Nazi organization. It grew from a small paramilitary unit to a powerful force that served as Hitler's "Praetorian Guard," the Nazi Party's "Shield Squadron" and a force that, fielding almost a million men (both on the front lines and as political police), managed to exert as much political influence as the German Army. Built upon the Nazi racial ideology, the SS, under Heinrich Himmler's command, was responsible for many (and most of the worst) of the crimes against humanity perpetrated by the Nazis during World War II.
+                </span>
+            </li>
+                        <li class="vothG_ajdc">
+                <a name="vothG_ajdc"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    American Joint Distribution Committee.
+                </span>
+                <span class="definition">
+                    Founded in 1914, the American Jewish Joint Distribution Committee, often referred to as the “Joint,” was a major relief and rehabilitation agency before, during, and after the Holocaust. The JDC’s operations were the main manner in which American Jewry provided aid to its fellow European Jews.
+                </span>
+            </li>
+                        <li class="vothG_ort">
+                <a name="vothG_ort"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ORT.
+                </span>
+                <span class="definition">
+                    Acronym for the Russian, Society for Handicrafts and Agricultural Work. Founded in 1880 by Russian Jews, its goal was to promote and develop vocational training in skilled trades and agriculture among Jews. Following the Holocaust, ORT ran programs in Displaced Persons camps and in western European countries, especially in France.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Salonika, the largest city in northern Greece, is also known as Thessalonika. It was second to Athens in population and as a seaport to Piraeus. Salonikia had a culturally  and religiously vibrant Sephardic Jewish community. It was the heart of the Sephardic world.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mizrachi is derived from the Hebrew word, "mizrach", which means east.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Mizrachi at first inverted his first and last names. Boder then corrected him but used "Minis" instead of "Manis."
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Freemasons were a secretive, liberal, humanitarian fraternal order. The Nazis persecuted the Freemasons in the belief that Masonic lodges were used by Jews in their quest for world domination and as such were a part of the Jewish world conspiracy.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Some Jews from Salonika did flee to Athens which came under Italian control after the German conquest of Greece on June 2, 1941. The Italians treated the Jews humanely.
+        </li>
+                <li class="note_6">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Mizrachi's family spent some eighteen months of relative peace and quiet in Athens before the German occupation of that city in September 1943. Subsequently, Dieter Wisliceny, Adolph Eichmann's deputy, arrived in Athens with detailed plans for the destruction of the Jewish community of that city.
+        </li>
+                <li class="note_7">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Although the German raids were to prevent Jews going into hiding, many Athenian Jews did manage to hide with their Greek Christian neighbors despite the German penalty of death  for Greeks providing shelter. The Greek Orthodox Church and the Greek underground helped to hide a number of Jews.
+        </li>
+                <li class="note_8">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The German roundup of the Jews of Athens began in March 1944.
+        </li>
+                <li class="note_9">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            This exchange between Boder and Mr. Mizrachi is not entirely clear. Perhaps "pocket" meant "bucket" for waste which was then placed in the "piece of paper" and thrown out of the train every two days.
+        </li>
+                <li class="note_10">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Bergen Belsen concentration camp was named for the nearby town of Bergen. It was established in July 1943 and was originally intended for Jews whom the German government wished to exchange for Germans in Allied territory.
+        </li>
+                <li class="note_11">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Later on in the interview, Mr. Mizrachi identified the capos as Polish Jews.
+        </li>
+                <li class="note_12">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            This was presumably the number under which Mr. Mizrachi was registered in Athens before boarding the deportation train.
+        </li>
+                <li class="note_13">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            These were Polish Jews who had papers in their possession issued mostly by South American countries.
+        </li>
+                <li class="note_14">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Mizrachi probably means that those who were not capos lived collectively in the barracks behind the capos' rooms.
+        </li>
+                <li class="note_15">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Since Mr. Mizrachi was deported to Bergen Belsen in April of 1944, he would have been incarcerated there for twelve months, not eighteen months. He and his family were deported from the camp in April, 1945 just prior to its liberation by the British army.
+        </li>
+                <li class="note_16">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Theresienstadt was the so-called "luxury camp" or "model ghetto" in which Jews, mainly from Bohemia and Moravia, Germany and Austria were not actually exterminated but died from hunger, torture, disease and beatings. Some 88,000 Jews were deported from Theresienstadt to extermination camps in Poland, notably Auschwitz. Towards the end of April 1945, the Germans brought thousands of prisoners to Theresienstandt who had been evacuated from other concentration camps in danger of being overrun by Allied forces. Mr. Mizrarchi and his family could have been among these evacuees had they not been liberated from their deportation train.
+        </li>
+                <li class="note_17">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Typhus is an acute infectious disease which in its epidemic form is spread from person to person by the body louse. As tens of thousands of prisoners poured into Bergen Belsen from camps in the east, a typhus epidemic raged in the early months of 1945 which claimed many thousands of lives, among them Anne Frank and her sister Margot.
+        </li>
+                <li class="note_18">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Bergen Belsen was liberated on April 15, 1945.
+        </li>
+                <li class="note_19">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Spotted typhus is spread by mites and causes red spotting on the skin. With lice borne typhus, a characteristic rash appears over most of the body. It the latter variety of typhus, not "spotted typhus", with which Mr. Mizrachi and his parents were infected.
+        </li>
+                <li class="note_20">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Mizrachi was an only child who "remained alone" since both his parents died of typhus, and he was an orphan.
+        </li>
+                <li class="note_21">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The "machine" Mr. Mizrachi refers to was the train engine. According to testimony of American liberators of the train, the reason that the train was stopped and that the prisoners were able to capture some SS guards is that the train crew and other SS abandoned their posts as overwhelming American forces closed in.
+        </li>
+                <li class="note_22">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Farsleben is a village located just north of the city of Magdeburg in north central Germany in the state of Saxony-Anhalt. U.S. troops of the 743rd tank battalion and 119th regiment of the Ninth Army freed the more than 2,500 prisoners on the Mizrachi family's deportation train from Bergen Belsen on April 13th, 1945.
+        </li>
+                <li class="note_23">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            This was the typical response on the part of German civilians. They expended a great deal of energy denying Nazi crimes and engaging in willful ignorance.
+        </li>
+                <li class="note_24">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The town of Hillersleben, also close to Magdeburg, was the site during the war of a large German air force (Luftwaffe) base. it was also the site of a large German weapons research center. It was most probably due to these reasons that there were hospitals in Hillersleben.
+        </li>
+                <li class="note_25">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The French word "parent" is the word for relative.
+        </li>
+                <li class="note_26">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The forlorn note on which the interview concludes is symbolic of the loneliness of so many survivors at the time who had lost so much of their previous lives and had to endure the large void which these losses created.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

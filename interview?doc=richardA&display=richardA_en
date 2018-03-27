@@ -1,0 +1,1322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews André Richard; August 5, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-andr-richard-august-5-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews André Richard; August 5, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=richardA">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=richardA&display=richardA_fr_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=richardA&display=richardA_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=richardA">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=richardA">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2.291" end="x">[In English] This is spool number 28. An interview with Lieutenant André Richard from <a class="placename" href="#vothL13">Paris</a>, by means of an interpreter, Miss Bertha Goldwasser . . . Miss Bertha Goldwasser . . . now . . . a . . . eh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="26.472" end="x">[In German] Now, I would like to ask him to tell us his name, how old he is and what he does now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="37.208" end="x">[In French] Mr. Richard, could you please say your name, address, occupation and age?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="46.344" end="x">André Richard, 2 Cité Condorcet, <a class="placename" href="#vothL13">Paris</a> 9th arrondissement. I am an artist at the Théâtre National de l'Opéra in <a class="placename" href="#vothL13">Paris</a>.<note n="1"><span class="note">The Theatre Nationale de l'Opera in Paris was at the time the premier location for outstanding opera and dance in the city. The world's great operatic singers, ballets and symphonies performed there. As Mr. Richard later indicates, he sang in such operatic master works as Rigoletto, Faust and Romeo and Juliet. He was truly an accomplished artist, and yet he was willing to risk his career and, indeed, his life for the cause in which he believed.</span><sup><a href="#note_1">1</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="61.374" end="x">[In German] Please ask him what he was doing and where he was when the Germans came to <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="70.088" end="x">[In French] Could you please be so kind as to tell us what you did during the Occupation here in <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="78.998" end="x">Here is what I did during the Occupation: I joined the Resistance movement under Major Bordé and Colonel Goisé's command. Major Bordé created La Marseillaise group.<note n="2"><span class="note">The Marseillaise is the French national anthem, and during the occupation was sung as a sign of resistance; hence the naming of a resistance group for the anthem.</span><sup><a href="#note_2">2</a></sup></note> La Marseillaise group was comprised of three sections, that is three groups. And each La Marseillaise group was under the command of a First Lieutenant, and Major Bordé was our leader. A number of Francs-tireurs came to join us in these La Marseillaise groups, right, volunteer <a class="term" href="#vothG_partisans">partisans</a> who wanted to be free and not to belong, not to obey any leader.<note n="3"><span class="note">Mr. Richard is using the term franc tireur (lit. free rifleman), generically for volunteer partisans. The term designated a republican, anti-Fascist independent fighter and harked back to the irregular army of volunteer soldiers that had formed spontaneously during the Franco-Prussian war of 1870-71 when all hope for victory seemed gone. During the occupation, the nationwide Communist-led Fran-Tireurs et Partisans Francais (FTPF) became one of the major French resistance organizations. The Franc-Tireurs was also the name of the democratic resistance movement operating mainly in the southern zone of the country.</span><sup><a href="#note_3">3</a></sup></note> They would readily accept the assignments they were entrusted with and, at their own risk, would report to us and complete these . . . the said assignments which, for that matter, were sometimes very dangerous . . . for I have never known any assignment that was not a dangerous one during the Occupation. Besides, in my opinion, this is what makes the true Resistance fighters so valuable, as they remained in direct contact with the enemy throughout the Occupation. These are what I call true Resistance fighters. Now, I take the liberty of pointing something out here: one day, as I went to visit one of my companions, who was to provide us with time schedules for a number of trains loaded with German soldiers going on leave, I had the idea . . . I had the idea to put, before the said train's departure, I had the idea to put, with the help of people from my group, men and women, to put leaflets and tracts on the trains so as to dishearten the Germans. I talked to Major Bordé and to Colonel Goisé about . . . my idea, my little invention, so to speak, and they both agreed with it. Then, I began to do this by myself, with a haversack, I walked around the station, right, and in the said haversack there was a bottle of wine, a piece of bread and the tracts were underneath. I walked around the station and on the trains, I covered every corner of the trains, in the toilets, every place the Germans could go. And, of course, the results came fast since, on the following day, the <a class="term" href="#vothG_gestapo">Gestapo</a> began to search the stations. Then we had to wait for about two weeks, and we did it again in various stations, in various stations we started disseminating tracts everywhere again. This is when I gave tracts to various companions, right, who, as a result, successfully accomplished the mission I had assigned to them.<note n="4"><span class="note">Such non-violent acts of resistance as those described here by Mr. Richard occurred in the early months of the movement when outside aid was negligible and resistance took the form of distributing leaflets, tracts, and especially underground newspapers.</span><sup><a href="#note_4">4</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="271.911" end="x">[In German] Now, er, what were the beginnings of the French Resistance movement? Who formed the Resistance movement? Were there certain groups who got together to resist even before the Germans came?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="291.087" end="x">[In French] Mr. Professor asks, Mr. Richard, if the resistance groups existed before the Occupation here in <a class="placename" href="#vothL13">Paris</a>, where and how did the Resistance movement develop itself and what was its general nature?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="307.896" end="x">Well, in my opinion, the resistance groups were not formed before the Occupation because . . . we . . . to me, in my personal opinion, we have been betrayed in all respects, from top to bottom. Now the resistance developed because we were a group of companions, all of us with a heavy heart, and I saw, and just as I did, many companions saw the Germans come into <a class="placename" href="#vothL13">Paris</a> with tears in our eyes.<note n="5"><span class="note">The battle for France lasted barely four weeks. On the morning of June 14, 1940, the swastika was raised over the Arc de Triomphe and the Tour Eiffel. German troops led by mounted officers paraded down the Champs-Élysées as Parisians stood in shocked and humiliated silence, many with tears in their eyes. The vast majority remained passive in the early months of the occupation, but a strong-willed, determined patriotic minority, among them Mr. Richard, defiantly decided to fight back.</span><sup><a href="#note_5">5</a></sup></note> I mean that we had tears in our eyes when we saw the Germans come into <a class="placename" href="#vothL13">Paris</a>. Well, we remembered . . . the war of 1870<note n="6"><span class="note">The Franco-Prussian war of 1870-71 ended in a crushing defeat for France, a veritable debacle, resulting in the end of the Second Empire under Napoleon III. It brought about the unification of the German states spearheaded by Prussia and the creation of the Second German Reich that made Germany the strongest continental European power.</span><sup><a href="#note_6">6</a></sup></note> when the Germans, right, walked into <a class="placename" href="#vothL13">Paris</a> and, of course, we remembered this very day, thinking that our grandfathers had known the same suffering as we did, and this is when many of us had the idea, right, to say: but why don't we organize groups to meet and pull down everything the Germans might do, to make ourselves useful. This is when they began . . . the resistance groups began to form, but nothing existed before then, well, as far as I know, because I worked in the Turenne<note n="7"><span class="note">Marc Turenne was one of the earliest organizers of a resistance group in Paris. In late June 1940, he and others collected civilian clothing to smuggle to French prisoners of war to be used to cover their prison uniforms when escaping.</span><sup><a href="#note_7">7</a></sup></note> group led by Colonel Goisé, a valuable man, I would say a highly valuable man because Colonel Goisé took risks . . . and to my knowledge and eyes, as I was there several times, he was one of the greatest leaders I have ever had, and for that matter, I am surprised Colonel Goisé has not been awarded the Legion of Honor yet. All my fellow officers and even myself think this is outragous because Colonel Goisé has set his life aside on many occasions; well, he managed to pull through and I am very glad about that, as are my companions . . . but, however, as quite often is the case in very perilous circumstances, Colonel Goisé would go before us and by the time we arrived, the work was almost done already. I here, pay public tribute to Colonel Goisé, since he never was rewarded, as many others like him. But, to go back to the Resistance groups, well, I stand by my opinion, in my opinion, nothing was organized. And the fervor, the fervor so to speak, of all the Resistance groups was born the day we heard our supreme leader, General De Gaulle, calling.<note n="8"><span class="note">On June 18, 1940 at 6:00 pm General Charles de Gaulle broadcast a call to resistance to his fellow Frenchmen and women on the French service of the BBC. He ended his appeal not to accept the armistice or defeat with the words, "Whatever happens, the flame of French resistance must not die and will not die." This marked the first use of the term "resistance" and remains a memorable date in French history.</span><sup><a href="#note_8">8</a></sup></note> This is when it came . . . came the idea to spread the Resistance through groups, through <a class="term" href="#vothG_partisans">partisan</a> Francs-tireurs, through volunteer Irregular forces, people . . . people, right, who were . . . whom we called in secret . . . well whom we called, whom the Germans called in secret, right, well in . . . during the Occupation who were sometimes called terrorists, these people were called terrorists, right, but actually they were no terrorists, to us they were only heroes. And quite often, quite often, these people . . . indeed, to my knowledge, those I have worked with, few of them returned alive. I can even say that when the <a class="placename" href="#vothL567">Maintenon</a> tunnel . . . blew up in <a class="placename" href="#vothL566">Rouen</a> with the trains . . . blew up, and also in <a class="placename" href="#vothL566">Rouen</a> with the ammunition loaded trains, well none of them returned, not anyone, not anyone<note n="9"><span class="note">Rouen, where the French national heroine Joan of Arc was burned at the stake in 1431, is the capital of Normandy and an important port (on the Seine) and commercial center. In 1942, it became a deportation center for Jews to Nazi extermination camps. The costly act of sabotage described by Mr. Richard was one of many carried out by the resistance, resulting in loss of war matériel and disrupting rail communication.</span><sup><a href="#note_9">9</a></sup></note> . . . and I had to come home by myself and report to my leaders, right, report to Colonel Goisé and to Roger Bordé, right, Major Bordé, I had to come back by myself and tell him, right, what . . . what I had learned and how it had happened, well the information I had been given, and very often did I come back alone, while twenty of us had gone, and I came back alone from these assignments, which were really perilous.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="555.729" end="x">[In German] I'll move on to another question: Much has been said in America about the war being lost from the beginning, because the workers were against it and sabotaged the war effort.<note n="10"><span class="note">What Boder is alluding to here is the insinuation that the influence the Communist party had on French workers helped to undermine their support for the war effort. This stemmed from the Nazi-Soviet non-aggression pact of August 1939 that was still in effect at the time of the German invasion of France. The official policy of the French Communist party, as mandated from Moscow, was that communists had to honor that pact. Only after Nazi Germany invaded the Soviet Union on June 22, 1941, did French communists call for resistance to the Germans.</span><sup><a href="#note_10">10</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="575.474" end="x">[In French] Mr. Professor tells me to ask you . . . he asks me to tell you the American opinion, because in America, people don't [inaudible] such an opinion . . . that the war here in France was dreadful [inaudible] because the workmen did not want, er . . . did not want to join forces and go to war and then, they sabotaged the factory [inaudible], is that true?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="602.744" end="x">Well, I would tell him that workmen, right . . . as far as I know, the workmen did their duty . . . workmen always do their duty.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="613.538" end="x">[In German] [He said something in the background - unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="615.468" end="x">Mr. Richard says that the workers in France did not sabotage the war effort. He stayed in his job, he stayed where he was, he was involved. But France and the entire war . . . [unintelligible] about the Government, and because the war had already started in 1938. Thus the worker in France was only reserved as a soldier he didn't . . . [unintelligible]. But because he saw, that he . . . [unintelligible] . . . spiritedly as a prisoner in the hands of the enemy. Then he withdrew. In my opinion, any one of us would have done exactly the same.<note n="11"><span class="note">Due to the unintelligible portions of Mr. Richard's response here, it is difficult to decipher exactly what he wishes to communicate.</span><sup><a href="#note_11">11</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="659.035" end="x">Yes. Now, does he want to say any more about, er, how and when the Resistance movement developed. Which groups mainly wanted the Resistance?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="674.005" end="x">[In French] The Professor would like to know now, when the Resistance formed into groups, if you can name the groups that . . . began to help the Resistance movement.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="685.598" end="x">The groups, right, the groups in themselves formed the Resistance movement, the Resistance movement was not only made of groups, which were called, right, either for example the Turenne network, right, the Turenne group, La Marseillaise network, La Marseillaise group, there was Libération Nord, there were . . . the Haute-Savoie <a class="term" href="#vothG_maquis">maquis</a>, there were the Brittany <a class="term" href="#vothG_maquis">maquis</a>, there was the Normandy <a class="term" href="#vothG_maquis">maquis</a>, right.<note n="12"><span class="note">1943 was the decisive year for the growth of the maquis throughout France, though they were especially active in the mountainous areas of the country. Prior to the D-Day invasion there were some 100,000 in the active resistance. After the invasion the number grew. Immediately after the liberation the new French government estimated that there were several hundred thousand active resisters.</span><sup><a href="#note_12">12</a></sup></note> The Normandy <a class="term" href="#vothG_maquis">maquis</a> was created by a Russian First Lieutenant who had managed to escape and with whom I got in contact, as I am myself from Normandy, right, well this Russian First Lieutenant, right, is now back in Russia. I have met with him many times in <a class="placename" href="#vothL13">Paris</a>, we became friends, he is First Lieutenant . . . er . . . Dadachov. Well, First Lieutenant Dadachov, right, is the one who had the idea, he had the very idea to create the . . . the first <a class="term" href="#vothG_maquis">maquis</a> in Normandy. I got in touch with him because Dadachov, right, was . . . had fled to Normandy, was hiding in Normandy and had created the Normandy <a class="term" href="#vothG_maquis">maquis</a>.<note n="13"><span class="note">The French resistance in Normandy provided valuable information to the Allies regarding the German "Atlantic wall" prior to D-Day. Following the landings, the resistance harassed the Germans in various ways and attempted to disrupt their communications network.</span><sup><a href="#note_13">13</a></sup></note> I got in contact with him because, I am from Normandy and because . . . I introduced myself to him and he felt he could trust me, and from then on, we met again in <a class="placename" href="#vothL13">Paris</a> and . . . we remained in touch with Major Bordé, and often got in contact again to . . . do . . . do things, right, to . . . to perform assignments, mutual assignments, that is to fully sabotage the enemy, either by blowing up trains or, right, by . . . by stealing, by . . . by stealing supplies from the enemy, or by burning down . . . by burning down the . . . the trucks parked on the roads, or by unbolting rail tracks,<note n="14"><span class="note">General de Gaulle continued to broadcast from London on the BBC, inspiring Mr. Richard and others to resistance against the occupier and its collaborators. For many, he came to be the incarnation of the struggle for French freedom, and eventually he was able to forge some degree of unity among the various factions of resisters—communists, socialists and Catholics—when Jean Moulin, de Gaulle's personal envoy, succeeded in establishing the National Resistance Council in 1943. After the war, the communists claimed that they had led the resistance, and ironically enough there were those who had supported the Vichy government who claimed that Marshal Pétain, the head of the government and those around him were the true resisters because they had not fled from France but stayed to try and defend their countrymen. Even de Gaulle himself downplayed the role of the internal resistance in favor of that of the Free French forces outside of France.</span><sup><a href="#note_14">14</a></sup></note> well by doing a thousand things, a thousand actions of sabotage, that even, right . . . I wonder whether I would do this again, right, since the enemy is gone now, and if I were requested to do that kind of thing, I wonder if really . . . in the Resistance, the things we did were unbelievable, we really had to be carried along by patriotic fervor to save, by any means, our beautiful France and to obey the . . . the . . . the, how can I put it, the solemn command from our supreme leader General De Gaulle, right, and then, led by him, by his voice, by his . . . how can I say, by his statements, right, which we would listen to, in secret, as we had to be careful when hearing the . . . the English radio, right, we had to be careful, well . . . at that time we were capable, because we were so electrified by our supreme leader Charles de Gaulle, to do anything, anything.<note n="15"><span class="note">The acts of sabotage described here by Mr. Richard picked up markedly in 1943 with the rapid growth of the resistance due in part to the adoption by the Vichy regime in February 1943 of the detested policy of conscription for labor service that sent thousands of French workers to Germany.</span><sup><a href="#note_15">15</a></sup></note> And we had leaders, one must say, whether it be Colonel Goisé, Major Bordé or Captain Allard, well we were led by people who would motivate us and who . . . would tell us that the future of France was at stake. Yet, you were talking about workmen just before, well the workmen, right, the French workmen, in my opinion, have done their duty, right, because . . . they did everything for France, and I am . . . I am certain that tomorrow, they will still be willing to do anything for France.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="882.080" end="x">[In German] What was the, er, what was the relationship of the university lecturers to the Resistance mainly?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="893.974" end="x">[In French] Teachers . . . How did teachers from universities, intellectual people in general, behave with regard to the Resistance movement? Did intellectuals also take part in the Resistance movement?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="907.859" end="x">Yes, some . . . some teachers were part of the Resistance movement . . . but not all of them, not all because . . . of course, there were the collaborationists. Indeed, you can't, even among intellectuals there were . . . I had in my group, and I saw in other groups, well, intellectuals, even among the <a class="term" href="#vothG_partisans">partisan</a> Francs-tireurs, I have known great intellectual people, right, even professors who did their duty and who were not collaborators like others were, now of course everyone had an opinion, ideas of one's own . . . I have known people, I . . . as I said before, people, teachers and intellectuals who were part of the Resistance movement and who did their complete duty.<note n="16"><span class="note">Mr. Richard is correct in noting that it is not possible to generalize about any one group, whether it be intellectuals or artists, insofar as resistance was concerned. There was a minority in each group that supported the collaborationist government, while the majority attempted to manage their daily lives "in peace and quiet" as best they could under what was, as time went on, a more repressive and fearsome occupation. Another minority in each group actively engaged in resistance.</span><sup><a href="#note_16">16</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="954.161" end="x">[In German] And the same question, er, how did the thespians, the theatre and writers of literature behave towards the Germans and the Resistance movement?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="971.241" end="x">[In French] How did French artists as well as . . . the . . . members of literary circles, writers, dancers, several er . . . all the people from this body of crafts, behave?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="987.055" end="x">Well in such body of crafts, of course, there were numerous collaborationists but, some people did not collaborate. Of course . . . I can say that there was approximately about . . . about . . . from 60% to 80% . . . of people who collaborated among artists, as well as among literary people, journalists; besides, you must have noticed, right, that some artists, writers and even some, well, people from literary circles and even some teachers, as well, were blacklisted; and it was the same for dancers, in the dancing community there was about, right, from 50% to 60% collaborationism. That doesn't take anything away from the talent of those . . . of those artists, dancers, writers, however it is still a pity, and . . . we deplore that kind of thing, it is . . . right, literature . . . the . . . artists, dance, all this, well oh, what was French should have remained French and should never have become imbued with German material. Now, I hope that . . . we will strive to forget all this and that all . . . all will make a fresh start.<note n="17"><span class="note">Unfortunately, it was not that easy "to make a fresh start" in the immediate post-war years when so many were homeless, when there were great shortages of all sorts of goods, when the prisoners of war and the workers conscripted for the German war effort had to be re-integrated into society, when political infighting resumed and the weak Fourth Republic was proclaimed, and when France attempted at great cost (but in vain) to re-establish its colonial empire.</span><sup><a href="#note_17">17</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1074.705" end="x">[In German] I would now like to know whether a lot of military personnel collaborated actively with the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="1088.710" end="x">[In French] Mr. Professor asks you if many . . . servicemen, soldiers, even . . . even non-commissioned officers, were on the German side? . . . Were there many servicemen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1102.270" end="x">[In German] [The interviewer interrupts interpreter here] [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="1102.406" end="x">[In French] . . . servicemen, and . . . and non-commissioned officers, did they directly collaborate with the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="1110.411" end="x">Oh well, to my knowledge, right . . . well, yes there were many officers who, regrettably, did collaborate, for that matter, you just need to refer to the judgments adjudicated to date by French courts to get an idea of how the officers, some French officers, collaborated, regrettably . . . I would even be surprised to learn that they truly were . . . were . . . what we call truly French. Because true French people, in my opinion, do not collaborate with an enemy. This . . . to me, is, this is almost the essential form of psychiatry, they are simply insane . . .<note n="18"><span class="note">Mr. Richard errs in attributing support by some French officers for the Vichy regime to mental illness. At least at the outset of the occupation, these military supporters believed in the conservative ideals advanced by Vichy, were receptive to its anti-Semitic measures, and thought that collaboration was necessary to save France in the face of overwhelming German military dominance.</span><sup><a href="#note_18">18</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="1148.772" end="x">[In German] Mr. Richard says that we should see through the critical legislation and even the in the war . . . [unintelligible] negotiations. Then we will see how many military personnel from France were pressed into service and collaborated with the Germans. And kept in touch.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1184.664" end="x">. . . Now, what does he think, how will all this develop now in France, until things return to normal?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="1196.604" end="x">[In French] How do you think, Mr. Richard, things will organize from now on . . . here in France, life, how is it going to be, and in which . . . what kind of future are we heading to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="1212.106" end="x">To me, you know, our future is that, nowadays, politics, right, is something I do not understand, and that I am not trying to understand because, you know, people involved in politics are already almost insane people and are only interested in one thing, their own benefit, before seeking the benefit of the country as a whole. If there were men capable of developing politics with a view to actually rebuild France with dignity, then France would be a country which can not collapse, it is too beautiful, and this country has truly shown, by any means, in any area, this country has truly shown it could not collapse as it is too great and too powerful a country, it has too great a history. But France should be led by men fit for running it . . . up to the level it deserves. And such men, they should be people like Gambetta, like Jaurès,<note n="19"><span class="note">Leon Gambetta was a renowned anti-clerical republican progressive political figure who helped found the Third Republic that was definitively constituted in 1875. Jean Jaures was the great leader and orator of the French socialist party assassinated on July 31, 1914, on the eve of World War I. Jaures preached a non-doctrinaire humanist socialism with a strong emphasis on social justice.</span><sup><a href="#note_19">19</a></sup></note> indeed, people who would set everything aside, some kind of saints but, in my opinion, such men no longer exist . . . they no longer exist because people today are too superficial. To want, right, to want is . . . to lead France to the level, as I said before, right, to the level it deserves, and well this is something that does not suit current men.<note n="20"><span class="note">Given Mr. Richard's political sentiments and loyalty to General de Gaulle, it is quite likely that he applauded de Gaulle's rise to power in 1958 and the creation of the Fifth Republic.</span><sup><a href="#note_20">20</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1312.410" end="x">[In German] Er, does he want to tell us what the most dangerous moment was in his activity?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="1323.865" end="x">[In French] Could you please relate the moment you had . . . during your mission which was the most dangerous?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="1337.418" end="x">The most dangerous event in my assignments, well, was when I went . . . when I went, right, to wake up all the poor chaps who had to go and blow up, right, the . . . German constructions. Well, I carried in my haversack, and in a small suitcase, at least in a small bag, I carried explosives and, I rubbed shoulders, on the boulevards, on the streets, with loads of Germans. The most disturbing thing for me was the day I brought explosives to some of my companions and when I got caught in a raid. Well, I was saved thanks to a nice policeman I knew, right, whose name is Thomas, Sergeant Thomas, from . . . who is in . . . at the <a class="placename" href="#vothL13">Paris</a> 9th arrondissement hall police station, Sergeant Thomas was precisely my group's second-in-command. And it was precisely this nice fellow Thomas who, with me, jabbed the French flag at the Kommandantur which we attacked at place de l'Opéra. Well . . . which we took by storm at the Liberation.<note n="21"><span class="note">The French resistance rose against the Germans in Paris on August 19, 1944, a battle in which Mr. Richard participated. Given his profession, it was quite fitting that he took part in attacking a German installation on the Place de l'Opera.</span><sup><a href="#note_21">21</a></sup></note> Well, this nice fellow Thomas is precisely the one, thanks to whom I could . . . he helped me go through, he got me out of the raid, and therefore, I could get away from the hands and questions, right, of the . . . of the German Feldgendarmerie. And this was thanks to him, yes I can truly say so, he saved my life. Well . . . Thomas, precisely, who was one of the most active resistant fighters, well the most, in my opinion, from the police force, the most splendid, well . . . he also was kept in the background.<note n="22"><span class="note">Though the active involvement of Sergeant Thomas, the French policeman, in the resistance was exceptional, as time went on the Germans found that they could rely less and less on the cooperation of the French police.</span><sup><a href="#note_22">22</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1466.193" end="x">[In German] Er, were there any comical moments, er, in this, er, in er, while, er, the Germans were in occupation here? Are there any stories you can tell us about them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="1488.845" end="x">[In French] Er, Mr. Professor asks if there also are funny moments that you can relate, from the past, when Germans were here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="1500.416" end="x">Well, yes there are a few, because really . . . sometimes the Germans could be very funny. And one day, in fact, as I left my place on boulevard Barbès, I came across, right, a . . . a bunch of little Jewish kids who were led, right, poor kids who were wearing the yellow badge . . . who were wearing the yellow badge on their chest . . . and these poor little kids were led by two women who were also wearing the badge. One day, one of the kids fell down and started to cry. I could not help bending down and lifting him up on his feet. I wiped tears away from his face and kissed him. And I kissed him all the more eagerly and warmly as this boy was wearing the badge. And I realized that he himself was, despite his young age, how old was he, dear God? Seven, eight . . . not even that old, he was . . . five, six years old. And he was wearing the badge, and he . . . what could he have done to deserve to suffer the German martyrdom? Nothing. So I did kiss him, put him on his feet and he met up with all his little friends. At that very moment, two German soldiers passed by and looked at me as if they meant to, right, approve of my lifting up and kissing the kid. But when they saw the yellow badge on the boy's chest, they glanced at me with contempt and looked at each other and, felt disappointed to have approved my lifting up the kid, they went away like two smart-asses.<note n="23"><span class="note">It is possible that these children might have been among the some 3,500 Jewish children under the age of fourteen arrested in the infamous July 16-17 roundup of Jews in Paris, who two weeks later were later forcibly separated from their mothers and eventually sent to the Drancy transit camp located in a Paris suburb. From Drancy they were forced into sealed boxcars which carried them to Auschwitz where they died in the gas chambers immediately upon arrival.</span><sup><a href="#note_23">23</a></sup></note> Now, there is another story. There is another story and, regrettably, right . . . these are true stories. A German officer was following a very beautiful girl, in mourning. And this woman was in mourning because one of her relatives had died, also killed by the Germans. But the woman was followed by a German officer, who was eyeing her greedily, right, flattering her and eventually asked her for information, and each time the woman would side-step to avoid answering to the German officer. Furious, the German officer bluntly walked and stood in front of the woman, who was, as I said before, very beautiful, and asked her: "Madam, could you please tell me the name of that street?". Then, the woman bravely looked at him in the eye, opened her mourning veil and showed her badge to the German officer, saying "judische [inaudible]".<note n="24"><span class="note">She most probably said in German, "Jewish woman" or "Jewish widow."</span><sup><a href="#note_24">24</a></sup></note> Immediately the German turned on his heel and walked away very pretentiously, although he said goodbye to her, but I don't need to tell you, of course, the deception the German suffered.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1695.089" end="x">[In German] A question. Does he think that the anti-Semitism which the Nazis promoted here is still very much alive, that even after the war this is still around?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="1709.727" end="x">[In French] Do you think the Germans will be liked here in France? Will there still be . . . will there still be anti-Semitism . . . will the French let themselves be brainwashed, as we say, by the Germans who say that only the Jews are guilty in the war and that the Jews caused it, which is their motto to conquer the world. What do you think about that?<note n="25"><span class="note">The interpreter here is embellishing the question posed by Boder, but indeed the Germans did propagandize a lethal anti-Semitsm that blamed the supposedly all-powerful, rapacious, nefarious Jewish world conspiracy for all of humanity's ills, including, absurdly enough, starting World War II.</span><sup><a href="#note_25">25</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="1743.396" end="x">Well, in my opinion, unfortunately yes. Regrettably, yes, germs will remain in France. And . . . you know, I think we should use our best efforts to get rid of those germs because, still, right, such germs will manage to grow in secret and . . . to do great harm. Then, in my opinion, we need to show these people that they were wrong. And that a man, whether he is Jewish, Catholic, Protestant, Orthodox or anything else, well, all men are entitled to a sunny spot and to the right to lead a life. And all men must join hands and help each other . . . and love each other. And set all religions aside since, in my opinion, they divide people. Get rid of religions and you will . . . make a giant leap for the protection of freedom.<note n="26"><span class="note">Here Mr. Richard articulates the anti-clerical viewpoint held by a number of supporters of French Revolutionary ideals. Insofar as French anti-Semitism is concerned, his hope for its disappearance, while well taken, did not entirely come to pass. There was a deeply rooted anti-Semitic tradition in France stemming from Christian anti-Jewish teachings and images. Though secularism did something to mitigate this religious-based anti-Semitism, racist, pseudo scientific anti-Semitism gained some ground in France in the late 19th and early 20th centuries. During the 1930s, French anti-Semitism was exacerbated by the effects of the Great Depression and by Nazi propaganda that scapegoated the Jews for all the world's woes. The Vichy regime capitalized on these feelings to pass anti-Jewish legislation and enlist cooperation in deportations. Despite the Holocaust and the deaths of some 77,000 French Jews, anti-Semitism was not fully extinguished after the war.</span><sup><a href="#note_26">26</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1811.726" end="x">[In German] Monsieur Richard, thank you very much, it was a . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1821.691" end="x">[In English] . . . I think that the Frenchmen in <a class="placename" href="#vothL256">Chicago</a> and the</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1827.37" end="x">[In German] . . . our students will listen to this work with great interest.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bertha Goldwasser</span>:
+            </span>
+            <span class="utterance" who="#goldwasserB" start="1834.852" end="x">[In French] Mr. Professor is very grateful. He hopes the students and French people living in <a class="placename" href="#vothL256">Chicago</a> will listen to the tapes with great pleasure.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1845.088" end="x">[In German] Many thanks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1852.083" end="x">[In English] This concludes spool 28 taken from André [inaudible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="1856.274" end="x">[In French] Well, at the Opera, I sing Rigoletto, I sing Faust, I sing Romeo and Juliet.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1867.283" end="x">What part do you play in Faust?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="1868.700" end="x">Er, Mephisto.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1870.479" end="x">Oh, Mephisto! Don't you sing Boris Godunov?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">André Richard</span>:
+            </span>
+            <span class="utterance" who="#richardA" start="1875.001" end="x">Well, later, I hope I will be able to sing it, it's under consideration.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            The Theatre Nationale de l'Opera in Paris was at the time the premier location for outstanding opera and dance in the city. The world's great operatic singers, ballets and symphonies performed there. As Mr. Richard later indicates, he sang in such operatic master works as Rigoletto, Faust and Romeo and Juliet. He was truly an accomplished artist, and yet he was willing to risk his career and, indeed, his life for the cause in which he believed.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            The Marseillaise is the French national anthem, and during the occupation was sung as a sign of resistance; hence the naming of a resistance group for the anthem.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            Mr. Richard is using the term franc tireur (lit. free rifleman), generically for volunteer partisans. The term designated a republican, anti-Fascist independent fighter and harked back to the irregular army of volunteer soldiers that had formed spontaneously during the Franco-Prussian war of 1870-71 when all hope for victory seemed gone. During the occupation, the nationwide Communist-led Fran-Tireurs et Partisans Francais (FTPF) became one of the major French resistance organizations. The Franc-Tireurs was also the name of the democratic resistance movement operating mainly in the southern zone of the country.
+        </li>
+                <li>
+            <a name="note_4"></a>
+            Such non-violent acts of resistance as those described here by Mr. Richard occurred in the early months of the movement when outside aid was negligible and resistance took the form of distributing leaflets, tracts, and especially underground newspapers.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            The battle for France lasted barely four weeks. On the morning of June 14, 1940, the swastika was raised over the Arc de Triomphe and the Tour Eiffel. German troops led by mounted officers paraded down the Champs-Élysées as Parisians stood in shocked and humiliated silence, many with tears in their eyes. The vast majority remained passive in the early months of the occupation, but a strong-willed, determined patriotic minority, among them Mr. Richard, defiantly decided to fight back.
+        </li>
+                <li>
+            <a name="note_6"></a>
+            The Franco-Prussian war of 1870-71 ended in a crushing defeat for France, a veritable debacle, resulting in the end of the Second Empire under Napoleon III. It brought about the unification of the German states spearheaded by Prussia and the creation of the Second German Reich that made Germany the strongest continental European power.
+        </li>
+                <li>
+            <a name="note_7"></a>
+            Marc Turenne was one of the earliest organizers of a resistance group in Paris. In late June 1940, he and others collected civilian clothing to smuggle to French prisoners of war to be used to cover their prison uniforms when escaping.
+        </li>
+                <li>
+            <a name="note_8"></a>
+            On June 18, 1940 at 6:00 pm General Charles de Gaulle broadcast a call to resistance to his fellow Frenchmen and women on the French service of the BBC. He ended his appeal not to accept the armistice or defeat with the words, "Whatever happens, the flame of French resistance must not die and will not die." This marked the first use of the term "resistance" and remains a memorable date in French history.
+        </li>
+                <li>
+            <a name="note_9"></a>
+            Rouen, where the French national heroine Joan of Arc was burned at the stake in 1431, is the capital of Normandy and an important port (on the Seine) and commercial center. In 1942, it became a deportation center for Jews to Nazi extermination camps. The costly act of sabotage described by Mr. Richard was one of many carried out by the resistance, resulting in loss of war matériel and disrupting rail communication.
+        </li>
+                <li>
+            <a name="note_10"></a>
+            What Boder is alluding to here is the insinuation that the influence the Communist party had on French workers helped to undermine their support for the war effort. This stemmed from the Nazi-Soviet non-aggression pact of August 1939 that was still in effect at the time of the German invasion of France. The official policy of the French Communist party, as mandated from Moscow, was that communists had to honor that pact. Only after Nazi Germany invaded the Soviet Union on June 22, 1941, did French communists call for resistance to the Germans.
+        </li>
+                <li>
+            <a name="note_11"></a>
+            Due to the unintelligible portions of Mr. Richard's response here, it is difficult to decipher exactly what he wishes to communicate.
+        </li>
+                <li>
+            <a name="note_12"></a>
+            1943 was the decisive year for the growth of the maquis throughout France, though they were especially active in the mountainous areas of the country. Prior to the D-Day invasion there were some 100,000 in the active resistance. After the invasion the number grew. Immediately after the liberation the new French government estimated that there were several hundred thousand active resisters.
+        </li>
+                <li>
+            <a name="note_13"></a>
+            The French resistance in Normandy provided valuable information to the Allies regarding the German "Atlantic wall" prior to D-Day. Following the landings, the resistance harassed the Germans in various ways and attempted to disrupt their communications network.
+        </li>
+                <li>
+            <a name="note_14"></a>
+            General de Gaulle continued to broadcast from London on the BBC, inspiring Mr. Richard and others to resistance against the occupier and its collaborators. For many, he came to be the incarnation of the struggle for French freedom, and eventually he was able to forge some degree of unity among the various factions of resisters—communists, socialists and Catholics—when Jean Moulin, de Gaulle's personal envoy, succeeded in establishing the National Resistance Council in 1943. After the war, the communists claimed that they had led the resistance, and ironically enough there were those who had supported the Vichy government who claimed that Marshal Pétain, the head of the government and those around him were the true resisters because they had not fled from France but stayed to try and defend their countrymen. Even de Gaulle himself downplayed the role of the internal resistance in favor of that of the Free French forces outside of France.
+        </li>
+                <li>
+            <a name="note_15"></a>
+            The acts of sabotage described here by Mr. Richard picked up markedly in 1943 with the rapid growth of the resistance due in part to the adoption by the Vichy regime in February 1943 of the detested policy of conscription for labor service that sent thousands of French workers to Germany.
+        </li>
+                <li>
+            <a name="note_16"></a>
+            Mr. Richard is correct in noting that it is not possible to generalize about any one group, whether it be intellectuals or artists, insofar as resistance was concerned. There was a minority in each group that supported the collaborationist government, while the majority attempted to manage their daily lives "in peace and quiet" as best they could under what was, as time went on, a more repressive and fearsome occupation. Another minority in each group actively engaged in resistance.
+        </li>
+                <li>
+            <a name="note_17"></a>
+            Unfortunately, it was not that easy "to make a fresh start" in the immediate post-war years when so many were homeless, when there were great shortages of all sorts of goods, when the prisoners of war and the workers conscripted for the German war effort had to be re-integrated into society, when political infighting resumed and the weak Fourth Republic was proclaimed, and when France attempted at great cost (but in vain) to re-establish its colonial empire.
+        </li>
+                <li>
+            <a name="note_18"></a>
+            Mr. Richard errs in attributing support by some French officers for the Vichy regime to mental illness. At least at the outset of the occupation, these military supporters believed in the conservative ideals advanced by Vichy, were receptive to its anti-Semitic measures, and thought that collaboration was necessary to save France in the face of overwhelming German military dominance.
+        </li>
+                <li>
+            <a name="note_19"></a>
+            Leon Gambetta was a renowned anti-clerical republican progressive political figure who helped found the Third Republic that was definitively constituted in 1875. Jean Jaures was the great leader and orator of the French socialist party assassinated on July 31, 1914, on the eve of World War I. Jaures preached a non-doctrinaire humanist socialism with a strong emphasis on social justice.
+        </li>
+                <li>
+            <a name="note_20"></a>
+            Given Mr. Richard's political sentiments and loyalty to General de Gaulle, it is quite likely that he applauded de Gaulle's rise to power in 1958 and the creation of the Fifth Republic.
+        </li>
+                <li>
+            <a name="note_21"></a>
+            The French resistance rose against the Germans in Paris on August 19, 1944, a battle in which Mr. Richard participated. Given his profession, it was quite fitting that he took part in attacking a German installation on the Place de l'Opera.
+        </li>
+                <li>
+            <a name="note_22"></a>
+            Though the active involvement of Sergeant Thomas, the French policeman, in the resistance was exceptional, as time went on the Germans found that they could rely less and less on the cooperation of the French police.
+        </li>
+                <li>
+            <a name="note_23"></a>
+            It is possible that these children might have been among the some 3,500 Jewish children under the age of fourteen arrested in the infamous July 16-17 roundup of Jews in Paris, who two weeks later were later forcibly separated from their mothers and eventually sent to the Drancy transit camp located in a Paris suburb. From Drancy they were forced into sealed boxcars which carried them to Auschwitz where they died in the gas chambers immediately upon arrival.
+        </li>
+                <li>
+            <a name="note_24"></a>
+            She most probably said in German, "Jewish woman" or "Jewish widow."
+        </li>
+                <li>
+            <a name="note_25"></a>
+            The interpreter here is embellishing the question posed by Boder, but indeed the Germans did propagandize a lethal anti-Semitsm that blamed the supposedly all-powerful, rapacious, nefarious Jewish world conspiracy for all of humanity's ills, including, absurdly enough, starting World War II.
+        </li>
+                <li>
+            <a name="note_26"></a>
+            Here Mr. Richard articulates the anti-clerical viewpoint held by a number of supporters of French Revolutionary ideals. Insofar as French anti-Semitism is concerned, his hope for its disappearance, while well taken, did not entirely come to pass. There was a deeply rooted anti-Semitic tradition in France stemming from Christian anti-Jewish teachings and images. Though secularism did something to mitigate this religious-based anti-Semitism, racist, pseudo scientific anti-Semitism gained some ground in France in the late 19th and early 20th centuries. During the 1930s, French anti-Semitism was exacerbated by the effects of the Great Depression and by Nazi propaganda that scapegoated the Jews for all the world's woes. The Vichy regime capitalized on these feelings to pass anti-Jewish legislation and enlist cooperation in deportations. Despite the Holocaust and the deaths of some 77,000 French Jews, anti-Semitism was not fully extinguished after the war.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription (German)
+                            </i>: 
+            <span class="Transcription (German)">
+                <name>S. Peters</name>, <name>P. Gaensicke</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Transcription (French)
+                            </i>: 
+            <span class="Transcription (French)">
+                <name>A. Leclerc</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation (German)
+                            </i>: 
+            <span class="English Translation (German)">
+                <name>S. Peters</name>, <name>P. Gaensicke</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation (French)
+                            </i>: 
+            <span class="English Translation (French)">
+                <name>A. Leclerc</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_1 = 48.866700;
+                        var lon_1 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL567">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL567" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Maintenon, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL567 = new OpenLayers.Map('map_vothL567', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL567.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL567.addLayer(markers);
+map_id_vothL567.zoomToMaxExtent();
+
+                        var lat_2 = 48.583300;
+                        var lon_2 = 1.583300;
+                        var vothL567 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL567_icon = new OpenLayers.Marker(vothL567);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL567);
+markers.addMarker(vothL567_icon);
+    addMarker(vothL567, popupClass, "", true, false, false);
+    map_id_vothL567.setCenter(vothL567, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL566">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL566" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Rouen, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL566 = new OpenLayers.Map('map_vothL566', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL566.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL566.addLayer(markers);
+map_id_vothL566.zoomToMaxExtent();
+
+                        var lat_3 = 49.433300;
+                        var lon_3 = 1.083300;
+                        var vothL566 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL566_icon = new OpenLayers.Marker(vothL566);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL566);
+markers.addMarker(vothL566_icon);
+    addMarker(vothL566, popupClass, "", true, false, false);
+    map_id_vothL566.setCenter(vothL566, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL256">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL256" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chicago, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL256 = new OpenLayers.Map('map_vothL256', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL256.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL256.addLayer(markers);
+map_id_vothL256.zoomToMaxExtent();
+
+                        var lat_4 = 41.850000;
+                        var lon_4 = -87.650000;
+                        var vothL256 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL256_icon = new OpenLayers.Marker(vothL256);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL256);
+markers.addMarker(vothL256_icon);
+    addMarker(vothL256, popupClass, "", true, false, false);
+    map_id_vothL256.setCenter(vothL256, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_partisans">
+                <a name="vothG_partisans"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    partisans.
+                </span>
+                <span class="definition">
+                    Paramilitary forces engaged behind the front lines during World War II.
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_maquis">
+                <a name="vothG_maquis"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Maquis.
+                </span>
+                <span class="definition">
+                    The predominantly rural guerrilla bands of the French Resistance.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Theatre Nationale de l'Opera in Paris was at the time the premier location for outstanding opera and dance in the city. The world's great operatic singers, ballets and symphonies performed there. As Mr. Richard later indicates, he sang in such operatic master works as Rigoletto, Faust and Romeo and Juliet. He was truly an accomplished artist, and yet he was willing to risk his career and, indeed, his life for the cause in which he believed.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Marseillaise is the French national anthem, and during the occupation was sung as a sign of resistance; hence the naming of a resistance group for the anthem.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Richard is using the term franc tireur (lit. free rifleman), generically for volunteer partisans. The term designated a republican, anti-Fascist independent fighter and harked back to the irregular army of volunteer soldiers that had formed spontaneously during the Franco-Prussian war of 1870-71 when all hope for victory seemed gone. During the occupation, the nationwide Communist-led Fran-Tireurs et Partisans Francais (FTPF) became one of the major French resistance organizations. The Franc-Tireurs was also the name of the democratic resistance movement operating mainly in the southern zone of the country.
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Such non-violent acts of resistance as those described here by Mr. Richard occurred in the early months of the movement when outside aid was negligible and resistance took the form of distributing leaflets, tracts, and especially underground newspapers.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The battle for France lasted barely four weeks. On the morning of June 14, 1940, the swastika was raised over the Arc de Triomphe and the Tour Eiffel. German troops led by mounted officers paraded down the Champs-Élysées as Parisians stood in shocked and humiliated silence, many with tears in their eyes. The vast majority remained passive in the early months of the occupation, but a strong-willed, determined patriotic minority, among them Mr. Richard, defiantly decided to fight back.
+        </li>
+                <li class="note_6">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Franco-Prussian war of 1870-71 ended in a crushing defeat for France, a veritable debacle, resulting in the end of the Second Empire under Napoleon III. It brought about the unification of the German states spearheaded by Prussia and the creation of the Second German Reich that made Germany the strongest continental European power.
+        </li>
+                <li class="note_7">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Marc Turenne was one of the earliest organizers of a resistance group in Paris. In late June 1940, he and others collected civilian clothing to smuggle to French prisoners of war to be used to cover their prison uniforms when escaping.
+        </li>
+                <li class="note_8">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            On June 18, 1940 at 6:00 pm General Charles de Gaulle broadcast a call to resistance to his fellow Frenchmen and women on the French service of the BBC. He ended his appeal not to accept the armistice or defeat with the words, "Whatever happens, the flame of French resistance must not die and will not die." This marked the first use of the term "resistance" and remains a memorable date in French history.
+        </li>
+                <li class="note_9">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Rouen, where the French national heroine Joan of Arc was burned at the stake in 1431, is the capital of Normandy and an important port (on the Seine) and commercial center. In 1942, it became a deportation center for Jews to Nazi extermination camps. The costly act of sabotage described by Mr. Richard was one of many carried out by the resistance, resulting in loss of war matériel and disrupting rail communication.
+        </li>
+                <li class="note_10">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            What Boder is alluding to here is the insinuation that the influence the Communist party had on French workers helped to undermine their support for the war effort. This stemmed from the Nazi-Soviet non-aggression pact of August 1939 that was still in effect at the time of the German invasion of France. The official policy of the French Communist party, as mandated from Moscow, was that communists had to honor that pact. Only after Nazi Germany invaded the Soviet Union on June 22, 1941, did French communists call for resistance to the Germans.
+        </li>
+                <li class="note_11">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Due to the unintelligible portions of Mr. Richard's response here, it is difficult to decipher exactly what he wishes to communicate.
+        </li>
+                <li class="note_12">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            1943 was the decisive year for the growth of the maquis throughout France, though they were especially active in the mountainous areas of the country. Prior to the D-Day invasion there were some 100,000 in the active resistance. After the invasion the number grew. Immediately after the liberation the new French government estimated that there were several hundred thousand active resisters.
+        </li>
+                <li class="note_13">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The French resistance in Normandy provided valuable information to the Allies regarding the German "Atlantic wall" prior to D-Day. Following the landings, the resistance harassed the Germans in various ways and attempted to disrupt their communications network.
+        </li>
+                <li class="note_14">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            General de Gaulle continued to broadcast from London on the BBC, inspiring Mr. Richard and others to resistance against the occupier and its collaborators. For many, he came to be the incarnation of the struggle for French freedom, and eventually he was able to forge some degree of unity among the various factions of resisters—communists, socialists and Catholics—when Jean Moulin, de Gaulle's personal envoy, succeeded in establishing the National Resistance Council in 1943. After the war, the communists claimed that they had led the resistance, and ironically enough there were those who had supported the Vichy government who claimed that Marshal Pétain, the head of the government and those around him were the true resisters because they had not fled from France but stayed to try and defend their countrymen. Even de Gaulle himself downplayed the role of the internal resistance in favor of that of the Free French forces outside of France.
+        </li>
+                <li class="note_15">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The acts of sabotage described here by Mr. Richard picked up markedly in 1943 with the rapid growth of the resistance due in part to the adoption by the Vichy regime in February 1943 of the detested policy of conscription for labor service that sent thousands of French workers to Germany.
+        </li>
+                <li class="note_16">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Richard is correct in noting that it is not possible to generalize about any one group, whether it be intellectuals or artists, insofar as resistance was concerned. There was a minority in each group that supported the collaborationist government, while the majority attempted to manage their daily lives "in peace and quiet" as best they could under what was, as time went on, a more repressive and fearsome occupation. Another minority in each group actively engaged in resistance.
+        </li>
+                <li class="note_17">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Unfortunately, it was not that easy "to make a fresh start" in the immediate post-war years when so many were homeless, when there were great shortages of all sorts of goods, when the prisoners of war and the workers conscripted for the German war effort had to be re-integrated into society, when political infighting resumed and the weak Fourth Republic was proclaimed, and when France attempted at great cost (but in vain) to re-establish its colonial empire.
+        </li>
+                <li class="note_18">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Richard errs in attributing support by some French officers for the Vichy regime to mental illness. At least at the outset of the occupation, these military supporters believed in the conservative ideals advanced by Vichy, were receptive to its anti-Semitic measures, and thought that collaboration was necessary to save France in the face of overwhelming German military dominance.
+        </li>
+                <li class="note_19">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Leon Gambetta was a renowned anti-clerical republican progressive political figure who helped found the Third Republic that was definitively constituted in 1875. Jean Jaures was the great leader and orator of the French socialist party assassinated on July 31, 1914, on the eve of World War I. Jaures preached a non-doctrinaire humanist socialism with a strong emphasis on social justice.
+        </li>
+                <li class="note_20">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Given Mr. Richard's political sentiments and loyalty to General de Gaulle, it is quite likely that he applauded de Gaulle's rise to power in 1958 and the creation of the Fifth Republic.
+        </li>
+                <li class="note_21">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The French resistance rose against the Germans in Paris on August 19, 1944, a battle in which Mr. Richard participated. Given his profession, it was quite fitting that he took part in attacking a German installation on the Place de l'Opera.
+        </li>
+                <li class="note_22">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Though the active involvement of Sergeant Thomas, the French policeman, in the resistance was exceptional, as time went on the Germans found that they could rely less and less on the cooperation of the French police.
+        </li>
+                <li class="note_23">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            It is possible that these children might have been among the some 3,500 Jewish children under the age of fourteen arrested in the infamous July 16-17 roundup of Jews in Paris, who two weeks later were later forcibly separated from their mothers and eventually sent to the Drancy transit camp located in a Paris suburb. From Drancy they were forced into sealed boxcars which carried them to Auschwitz where they died in the gas chambers immediately upon arrival.
+        </li>
+                <li class="note_24">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            She most probably said in German, "Jewish woman" or "Jewish widow."
+        </li>
+                <li class="note_25">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The interpreter here is embellishing the question posed by Boder, but indeed the Germans did propagandize a lethal anti-Semitsm that blamed the supposedly all-powerful, rapacious, nefarious Jewish world conspiracy for all of humanity's ills, including, absurdly enough, starting World War II.
+        </li>
+                <li class="note_26">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Here Mr. Richard articulates the anti-clerical viewpoint held by a number of supporters of French Revolutionary ideals. Insofar as French anti-Semitism is concerned, his hope for its disappearance, while well taken, did not entirely come to pass. There was a deeply rooted anti-Semitic tradition in France stemming from Christian anti-Jewish teachings and images. Though secularism did something to mitigate this religious-based anti-Semitism, racist, pseudo scientific anti-Semitism gained some ground in France in the late 19th and early 20th centuries. During the 1930s, French anti-Semitism was exacerbated by the effects of the Great Depression and by Nazi propaganda that scapegoated the Jews for all the world's woes. The Vichy regime capitalized on these feelings to pass anti-Jewish legislation and enlist cooperation in deportations. Despite the Holocaust and the deaths of some 77,000 French Jews, anti-Semitism was not fully extinguished after the war.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

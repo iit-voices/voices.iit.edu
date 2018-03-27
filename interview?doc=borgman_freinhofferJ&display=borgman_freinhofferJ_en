@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Joseph Freinhoffer and [first name unknown] Borgman; August 28, 1946; Genève, Switzerland : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-joseph-freinhoffer-and-first-name-unknown-borgman-august-28-1946-genve-switzerland interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Joseph Freinhoffer and [first name unknown] Borgman; August 28, 1946; Genève, Switzerland</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=borgman_freinhofferJ">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=borgman_freinhofferJ&display=borgman_freinhofferJ_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=borgman_freinhofferJ&display=borgman_freinhofferJ_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=borgman_freinhofferJ">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4.980" end="x">[In English] August 28, 1946. <a class="placename" href="#vothL117">Geneva</a>, at the school of the <a class="term" href="#vothG_ort">ORT</a>. I shall try now to interview two instructors. [Unintelligible] . . . a good Russian name, that makes one homesick, and Mr. Joseph Freinhoffer. Eh, Mrs. Borgman is, eh, Mrs. Borgman is the secretary of the, eh, place and Mr. Freinhoffer is the chief of the, eh, shop.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="61.167" end="x">[In German] So, Mr., eh, Freinhoffer. Can you tell me how long you've been working here at the <a class="term" href="#vothG_ort">ORT</a> school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="69.243" end="x">Since the beginning of May 1944.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="73.590" end="x">You are Swiss, Mr. Freinhoffer?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="75.389" end="x">That's right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="76.735" end="x">And what was your job before you began your work here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="80.357" end="x">I was a technical instructor at the vocational school, <a class="placename" href="#vothL116">Zurich</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="84.570" end="x">You are a trained technical instructor, then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="89.067" end="x">A trained, eh, professional, that is, who further qualified himself as a technical instructor.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="94.470" end="x">I see. Are these two different things in Switzerland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="99.468" end="x">No, basically not. A technical instructor is made out of a good professional.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="106.005" end="x">I see. Now, tell me, eh, and, eh, Mrs. Borgman, how long have you been with the school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">[first name unknown] Borgman</span>:
+            </span>
+            <span class="utterance" who="#borgman" start="114.064" end="x">I have been here since August 15, 1944.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="118.096" end="x">I see. How old is your school, then, altogether?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="121.144" end="x">The school opened its doors at the end of 1944.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="124.223" end="x">I see. And it is an <a class="term" href="#vothG_ort">ORT</a> school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="127.259" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="128.587" end="x">Now, tell me Mr. Freinhoffer, how many boys do you have?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="133.718" end="x">We have thirty-six boys now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="136.211" end="x">Yes. You were also a teacher before you came here, weren't you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="140.424" end="x">That is, yes, at the vocational school <a class="placename" href="#vothL116">Zurich</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="142.809" end="x">At the vocational school, <a class="placename" href="#vothL116">Zurich</a>. Tell me, do you find a difference between the students you had at the vocational school and the boys that you have here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="154.326" end="x">I can only say that when it comes to effort, the stu—, the eh, students here, who have come out of the camps, work harder than those I have taught in <a class="placename" href="#vothL116">Zurich</a>, than those students who live with their parents and grew up in, eh, comfortable circumstances.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="174.958" end="x">But tell me then, the boys were in circumstances that were entirely adverse. What idea do you have, what impact, what general impact did the concentration camp have on the character of the boys?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="199.181" end="x">These boys largely find that they have lost many years. That is why they see to it that they can progress quickly and, eh, learn a trade in order to become free men, in order to be able to earn their own bread and not be further dependent on, eh, organizations.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="224.934" end="x">Now tell me then, they really feel that they have lost time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="230.448" end="x">That's right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="232.941" end="x">What's the situation regarding the education of these boys? Are they able to read, to write? Have they nevertheless learned something in the camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="242.859" end="x">Most of them had to leave school at age eleven to twelve and have not had a theoretical education since. As to on-the-job training, that was also very [unintelligible], since they only performed handy-man work at the machines and, eh, outside.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="268.549" end="x">Tell me this, eh, what is your observation [unintelligible]? Some of the boys spent two, three years in Germany in several camps. Do they speak German?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="283.446" end="x">They all speak German but, eh, always bad German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="287.611" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="288.517" end="x">One can communicate with them, that is.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="292.338" end="x">Yes, but you wouldn't really call that German, would you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="295.646" end="x">No, it is not good German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="297.837" end="x">Yes. For, you see, if some other young boy was in Germany, say, for two or three years he would have learned the language, wouldn't he?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="305.956" end="x">Of course. He had, eh, they only had the opportunity to learn, eh, the language because they simply had to talk. They had to be able to talk and learned it in the process. Nobody helped them, though.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="320.642" end="x">What do you say, Mrs. Borgman?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">[first name unknown] Borgman</span>:
+            </span>
+            <span class="utterance" who="#borgman" start="322.332" end="x">In the camp, they were only among Jews, I think . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="326.256" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">[first name unknown] Borgman</span>:
+            </span>
+            <span class="utterance" who="#borgman" start="326.757" end="x">. . . and spoke Jewish. And Jewish actually is their native language, whether they are from Poland or Czechoslovakia or Romania . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="335.721" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">[first name unknown] Borgman</span>:
+            </span>
+            <span class="utterance" who="#borgman" start="336.222" end="x">. . . and so it developed into a kind of Jewish-German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="339.331" end="x">I see. Well, the "<a class="term" href="#vothG_capo">capos</a>" were also [unintelligible]. Yes, and then, they never spoke much anyway.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">[first name unknown] Borgman</span>:
+            </span>
+            <span class="utterance" who="#borgman" start="346.291" end="x">They weren't to talk to the Germans at all. They only had to receive orders and answer with "yes" or "no." You cannot learn German like that.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="353.613" end="x">I see. Well, tell me this. I will ask you a question that I, to which I already know the answer. But anyways; eh, the boys that you have, how did they choose their subjects? Why did they come to your department and not, say, to the joinery?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="378.167" end="x">Well, a majority have already worked in factories. In Germany somewhere in the concentration camps and in ordnance factories, of course. But more than le—, more or less as handy-men.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="393.698" end="x">Yes</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="394.453" end="x">Of course they saw, eh, how the metal was worked with and that gave them [unintelligible] to work as free people and be able to learn, the job will be interesting.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="407.117" end="x">I see. Do they have a talent for mechanics?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="411.300" end="x">The majority have a talent for mechanics. Those who work less precisely will [unintelligible], and they can still become good fitters, building fitters.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="422.497" end="x">And, eh, how are the people here at school? Yesterday morning, I observed a class for the last few minutes. It was very interesting. How much theoretical education do the boys get here, then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="439.105" end="x">As regards theoretical education the boys are educated in drawing, arithmetic and occupational studies. Apart from occupational studies, which they have, eh, two hours a week, they have workshop studies. That is, on-the-job education they are given while they work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="460.898" end="x">I see. What do you understand by occupational studies?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="463.584" end="x">That is the theoretical knowledge that, eh, is related to the job.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="470.363" end="x">But tell me, when the boys finish their training, will they be able to take a drawing and construct something according to that drawing? We call it "blueprint" [he uses the English word] in America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="480.039" end="x">From the very beginning the boys have to learn to read a drawing and to work according to drawings. The small, eh, the simplest tasks of the basic curriculum are dictated and from this sketch, they are asked to work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="498.396" end="x">Tell me, at least in the beginning, how did you find the boys? [unintelligible] Were they quiet, were they friendly, and how are they now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="511.012" end="x">They were, of course, different, depending on how they had been, eh, treated. Some were shy as deer. They didn't dare come near anyone or talk. There were others that were more open. It was [unintelligible]. [Unintelligible] I cannot say that someone was. But they were simply very different in their, eh, freedom of movement and speech.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="543.175" end="x">Tell me, are the boys honest?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="547.841" end="x">I believe they are honest. They have access to all tools . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="554.469" end="x">Yes</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="554.940" end="x">. . . without strict control, that is, they're only checked on from time to time. And I have to sa—, to say that nothing of ours and none of the tools that are in the, eh, workshop have disappeared so far.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="572.976" end="x">Are the boys generally healthy?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="576.688" end="x">You, eh, they are, generally, you can say yes. But you can see the consequences of the concentration camps. One suffers from this, the other from that. Illnesses that boys who have grown up in a normal, a normal life don't suffer from or less often.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="600.533" end="x">Well, tell me, when the boys are done here, they will be, eh, what in this department?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="610.662" end="x">Those who are more talented will be machine fitters and the others building fitters.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="618.618" end="x">I see.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="619.028" end="x">Both groups can also learn how to weld. Gas fusion and electric welding, which is a great advantage. It is an advantage for machine fitters that they don't enjoy anywhere else in another apprenticeship, and for building fitters it is, of course, an absolute necessity.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="641.151" end="x">Tell me, if such a boy were to go to Brazil or to Argentina or wherever, could he set up a small workshop or would he have to work in a factory?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="655.960" end="x">When a student leaves school, then he is of course a young worker who is, of course, eh, not as independent as an experienced worker who has already gained a few years of practical experience. Vocational school education is not quite the same as vocational training in a workshop.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="684.541" end="x">And most boys think that they will make it through these two-and-a-half years in [unintelligible], don't they?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="692.768" end="x">That's right, the majority.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="694.730" end="x">Are there any who have given up, who began here and went away?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph Freinhoffer</span>:
+            </span>
+            <span class="utterance" who="#freinhofferJ" start="699.348" end="x">Previously, this used to be the case, because, eh, those were boys who had their parents and mostly didn't go through the concentration camps. Who had their parents here in Switzerland or somewhere else or found them in the meantime and then drove off with them to other countries where the parents established themselves again. The boys that are here now are mostly without parents and, eh, have set their minds on learning the trade to be able to stand on their own two feet.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="739.615" end="x">So, tell me, Mrs. Borgman, what would you add to this conver—, to this interview? How do you have with the boys, in what way do you come in contact with the boys?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">[first name unknown] Borgman</span>:
+            </span>
+            <span class="utterance" who="#borgman" start="755.058" end="x">I see the boys here in my office when they have injured themselves. Then they come to me for treatment, when they need anything or if they desire anything, they come to me first and then I inform Mr. Freinhoffer. I also see the boys, because I give them lessons in French.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="775.431" end="x">I see. How do they learn French?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">[first name unknown] Borgman</span>:
+            </span>
+            <span class="utterance" who="#borgman" start="778.920" end="x">Most of them are extraordinarily talented. They learn very quickly. But, I don't know whether it's because they, eh, suffered in the camp. They learn very quickly and they forget very quickly. They no longer have the memory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="797.107" end="x">And you've observed that they have no memory, no good memory?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">[first name unknown] Borgman</span>:
+            </span>
+            <span class="utterance" who="#borgman" start="802.117" end="x">Not all but some of them . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="804.092" end="x">[<i>interrupts</i>] Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">[first name unknown] Borgman</span>:
+            </span>
+            <span class="utterance" who="#borgman" start="804.484" end="x">. . . regarding practical work</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="806.114" end="x">[<i>interrupts</i>] But this could also occur at other schools, couldn't it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">[first name unknown] Borgman</span>:
+            </span>
+            <span class="utterance" who="#borgman" start="809.132" end="x">Of course, I also have boys here who've gone to other schools . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="812.965" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">[first name unknown] Borgman</span>:
+            </span>
+            <span class="utterance" who="#borgman" start="813.931" end="x">. . . and I didn't observe anything similar with them. These boys, on the other hand, are especially talented to do practical work. There are boys who arrived here four months ago and have already exceeded some students, regarding practical competence.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="828.086" end="x">Yes, and? [The spool ends abruptly.]</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Claudia Deetjen</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English translation
+                            </i>: 
+            <span class="Translation">
+                <name>Claudia Deetjen</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL117">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL117" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Gen&#195;ve, Switzerland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL117 = new OpenLayers.Map('map_vothL117', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL117.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL117.addLayer(markers);
+map_id_vothL117.zoomToMaxExtent();
+
+                        var lat_1 = 46.216700;
+                        var lon_1 = 6.150000;
+                        var vothL117 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL117_icon = new OpenLayers.Marker(vothL117);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL117);
+markers.addMarker(vothL117_icon);
+    addMarker(vothL117, popupClass, "", true, false, false);
+    map_id_vothL117.setCenter(vothL117, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL116">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL116" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Zurich, Switzerland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL116 = new OpenLayers.Map('map_vothL116', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL116.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL116.addLayer(markers);
+map_id_vothL116.zoomToMaxExtent();
+
+                        var lat_2 = 47.383300;
+                        var lon_2 = 8.550000;
+                        var vothL116 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL116_icon = new OpenLayers.Marker(vothL116);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL116);
+markers.addMarker(vothL116_icon);
+    addMarker(vothL116, popupClass, "", true, false, false);
+    map_id_vothL116.setCenter(vothL116, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ort">
+                <a name="vothG_ort"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ORT.
+                </span>
+                <span class="definition">
+                    Acronym for the Russian, Society for Handicrafts and Agricultural Work. Founded in 1880 by Russian Jews, its goal was to promote and develop vocational training in skilled trades and agriculture among Jews. Following the Holocaust, ORT ran programs in Displaced Persons camps and in western European countries, especially in France.
+                </span>
+            </li>
+                        <li class="vothG_capo">
+                <a name="vothG_capo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    capo.
+                </span>
+                <span class="definition">
+                    A term used for certain prisoners inside Nazi concentration camps during World War II in various lower administrative positions. Capos received more privileges than normal prisoners. They were often convicts who were offered this work in exchange for a reduced sentence or parole.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

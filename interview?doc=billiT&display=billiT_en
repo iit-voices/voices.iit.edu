@@ -1,0 +1,2092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Tomas Billi; September 21, 1946; München, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-tomas-billi-september-21-1946-mnchen-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Tomas Billi; September 21, 1946; München, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=billiT">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=billiT&display=billiT_ru">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=billiT&display=billiT_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=billiT">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.783" end="x">[In English] September the 21st, 1946, a displaced persons' camp for Baltics—Latvians, Lithuanians and Estonians—near, in the environment of <a class="placename" href="#vothL29">Munich</a>, Camp Lohengrinstrasse. The interviewee is Tomas Billi, a Estonian, similar to the woman who, ah, a compatriot of the woman, Mrs. Anna Paul, which we heard before.<note n="1"><span class="note">Anna Paul was also interviewed by Boder on September 21st at Lohengrinstrasse, on Spools 9-140B and 9-141A.</span><sup><a href="#note_1">1</a></sup></note> Only he prefers to speak Russian, and so Russian we speak.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="38.469" end="x">[In Russian] Well, Mr. Billi, tell us what is your full name, how old you are and where you were born? [Some weak instructions from Boder, most likely about use of microphone.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="53.722" end="x">My name is Tomas Billi and I was born in the city of <a class="placename" href="#vothL156">Wittenberg</a> in Estonia in 1888.<note n="2"><span class="note">It is unclear exactly what location Billi is referring to. The most likely location is Wittenberg, which was the German name for the city of Nivenskoye, about sixteen kilometers south of Kaliningrad. This territory is currently within the Kaliningrad Oblast, a Russian exclave between Poland and Lithuania on the Baltic Sea, but at the time of Billi's birth it was part of Prussia.</span><sup><a href="#note_2">2</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="65.275" end="x">Yes. So that means you are fifty-eight years old now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="67.534" end="x">I am fifty-eight.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="69.101" end="x">So. What was your profession?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="72.185" end="x">I was a textile person by profession.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="78.179" end="x">A textile worker.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="79.143" end="x">A worker.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="79.956" end="x">So. Well, tell me what and where you were and what happened to you when the Russians returned to Estonia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="90.649" end="x">I was working in the city of <a class="placename" href="#vothL128">Narva</a>. The city is located right on the Russian border . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="97.922" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="99.127" end="x">. . . in a textile factory when the Russians arrived in Estonia in 1940.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="107.621" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="108.163" end="x">They started [basing?] in our factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="112.742" end="x">[<i>interrupts</i>] They started [basing?], right?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="113.989" end="x">Yes. As with all the other plants. But I still stayed there working under the Soviet authorities.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="126.501" end="x">So. And to whom did the plant belong originally?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="129.905" end="x">It was a joint stock company. It belonged to the Estonians</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="134.194" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="136.032" end="x">There, and . . . I also was included there in this factory. I also had a small number of shares.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="146.436" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="147.713" end="x">But, anyhow, the Bolsheviks left me working there, too, because they didn't have any, how do you say it . . . ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="159.791" end="x">Specialists.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="160.454" end="x">. . . specialists.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="162.502" end="x">So . . . And then, what else happened?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="167.502" end="x">I was working there almost until they left, when they already, when the Germans arrived.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="177.383" end="x">So . . . So. Well, what was it like for you under the Bolsheviks? What kind of changes occurred in your personal life? Were there any kind of changes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="186.190" end="x">There were huge changes. They began to take various people out of Estonia. For any, to Russia, for backbreaking work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="201.908" end="x">Why for backbreaking work? [Unintelligible] [there had to be?] public work, didn't there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="206.848" end="x">So, it was said that they were sending [them] to Siberia—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="209.709" end="x">[<i>interrupts</i>] Well, okay. And so?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="211.637" end="x">Vehicles came through our border city with villagers from all over Estonia because they had to be right on the border.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="226.487" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="228.638" end="x">And they also began arresting people all the time at night in our city.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="237.536" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="237.849" end="x">and taking [them] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="241.403" end="x">to Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="242.277" end="x">to Russia, right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="243.283" end="x">And did they take them with their families or alone? How was it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="246.175" end="x">[All of them?] the women were special, they took the children from the parents and they [unintelligible] the men onto special [rail] cars.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="256.127" end="x">Hm-mmm. So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="257.525" end="x">So, and this all happened all night.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="262.145" end="x">Hm-mmm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="262.597" end="x">. . . they organized one street every night.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="266.091" end="x">Hm-mmm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="266.694" end="x">Well, then we were afraid and all the people began to look for other apartments for themselves, and we people had several apartments there. I, for example, had 3 apartments for myself in the city. One night I would sleep in this apartment, the next night I went again to another, because I was afraid to spend the night in my room.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="293.741" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="294.133" end="x">And this, we heard via these drivers which street they would be taking captive at night, for example.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="305.711" end="x">How did the drivers learn this?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="307.609" end="x">They would tell them that they were supposed to assemble on such-and-so a street at twelve o'clock.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="315.452" end="x">And the drivers were Estonians?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="317.199" end="x">They were Estonians, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="318.404" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="318.826" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="319.651" end="x">Well, it means that [unintelligible] you, and you had a family.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="323.868" end="x">A family was the same.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="325.465" end="x">Well, how many people were in your family?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="327.495" end="x">Four people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="328.851" end="x">Who? Wife and who else?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="330.098" end="x">My wife, daughter and son-in-law and, and also grandmother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="336.164" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="336.646" end="x">Well, my son-in-law, anyhow, during work . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="339.688" end="x">They took him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="340.441" end="x">. . . they took him and sent him away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="341.917" end="x">And his wife?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="342.971" end="x">His wife, his wife was working elsewhere, they didn't capture his wife this time.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="348.694" end="x">So. And where is your son-in-law now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="351.044" end="x">Well, it is unknown now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="353.164" end="x">And his wife?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="354.640" end="x">His wife is here in Germany right now. She works here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="358.255" end="x">So. Well, now tell me what it was like when the Germans arrived.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="362.996" end="x">Then the Germans arrived, and anyhow at first we were glad that our saviors were coming. But then they behaved just like the Soviets, too.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="380.147" end="x">So. And tell me, your factory that the Soviets had taken, did they give it back to—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="386.213" end="x">[<i>interrupts</i>] Well. They didn't give anything back.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="387.990" end="x">Did the Germans [leave?], too—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="389.135" end="x">[<i>interrupts</i>] It was the same, they designated their own [unintelligible] command there and, and, and [took away?] everything with their own hands.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="398.876" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="400.153" end="x">Well, we were supposed to work there some more.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="403.045" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="404.985" end="x">And we worked for a while there until they destroyed the whole city.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="411.021" end="x">Who destroyed it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="412.136" end="x">A, it was the Soviets, with airplanes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="415.341" end="x">They destroyed everything with airplanes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="416.166" end="x">The Soviet assault [began in Russia?] for the reason it was supposed to be by order of the Germans to go on [the attack?].<note n="3"><span class="note">Possibly he means that the Soviets were preempting a German attack.</span><sup><a href="#note_3">3</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="426.196" end="x">And to be evacuated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="428.124" end="x">To be evacuated, right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="428.968" end="x">Okay. But here, no one wanted to evacuate?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="431.540" end="x">Well, they compelled us using force [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="434.685" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="435.167" end="x">And through these, ah, Estonian police and German police, everyone to the last man soon had to leave for <a class="placename" href="#vothL128">Narva</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="446.884" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="447.378" end="x">Whence, at first there was an order, where everyone wants . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="451.607" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="452.108" end="x">. . . to go.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="452.764" end="x">And afterwards?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="453.710" end="x">And afterwards we ended up right—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="456.975" end="x">[<i>interrupts</i>] You left FROM <a class="placename" href="#vothL128">Narva</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="458.632" end="x">From <a class="placename" href="#vothL128">Narva</a>, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="459.487" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="459.939" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="460.120" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="460.433" end="x">Well, afterwards it happened that I ended up in field work seventy kilometers from [<a class="placename" href="#vothL259">Toila</a>?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="468.506" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="469.030" end="x">The Germans again had huge Estonian skills under their, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="475.247" end="x">Control.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="476.000" end="x">. . . control, right. Well, they compelled us there, they put us into field work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="482.024" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="482.717" end="x">There were all nationalities there, there were both Russians and Estonians and prisoners-of-war, and we worked there for the time being . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="493.169" end="x">And were there Jews there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="494.597" end="x">There were no Jews in this region. There were not [even rumors?], but there were Jews in <a class="placename" href="#vothL128">Narva</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="503.284" end="x">[Unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="503.959" end="x">They forced the Jews to dig trenches.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="508.579" end="x">So . . . So . . . And what did the [do with them?] afterwards?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="512.345" end="x">They [drove (as captives)?] them ahead of them along the road like also, well, more importantly the Jews [went away to?] [unintelligible]. They had driven them along the road earlier, [and] we met [them] on the road as they were driving them all on foot [away from <a class="placename" href="#vothL259">Toila</a>?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="529.797" end="x">Aha. Well, and you then were working on the land. How long did this continue?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="536.767" end="x">This continued from, ah, to . . . for a long time . . . almost to the month of September.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="546.297" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="546.689" end="x">Then they gave a new order, [unintelligible] for this work, that we must once more go somewhere else.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="554.502" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="555.105" end="x">There were Russian people, too, and they sent them somewhere to a German district.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="563.009" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="563.985" end="x">They told us that in my family, that we must go to <a class="placename" href="#vothL148">Revel</a>, our capital, the city.<note n="4"><span class="note">Revel ("Rewel" in Polish or German) was the old name for Tallin, the capital of Estonia</span><sup><a href="#note_4">4</a></sup></note> Well, and we packed our small things and went to Sudetenland again [unintelligible].<note n="5"><span class="note">The term "Sudentenland" refers to the western regions of Czechoslovakia, at that time inhabited by many ethnic Germans, or "Volksdeutsche."</span><sup><a href="#note_5">5</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="599.816" end="x">On what did they take [you] away?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="603.009" end="x">We [got onto?] a steamship in <a class="placename" href="#vothL148">Revel</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="605.087" end="x">Yes, so.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="606.774" end="x">And they sent us to the Sudetenland to a textile factory again, because we already were acquainted with textile firms.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="615.633" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="616.006" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="617.061" end="x">How many people did you have who reached—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="618.579" end="x">[<i>interrupts</i>] Four [<i>stammers</i>] to a hundred.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="621.471" end="x">So. And what else?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="624.073" end="x">Well, we worked there in the Sudetenland again until they started to evacuate there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="630.429" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="631.194" end="x">Then I started [from scratch?] again to here to <a class="placename" href="#vothL29">Munich</a>, and I was assigned to work with a farm worker.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="640.290" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="640.652" end="x">[Also?] the whole family, both my daughter and wife, we worked until the Americans arrived with the same German farm worker.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="651.779" end="x">Did [he pay you for?] the work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="653.448" end="x">He only paid a little.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="656.081" end="x">And did he feed you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="656.997" end="x">There was only a little to eat, too; we received German [ration] cards and they gave us a little additional.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="663.786" end="x">And what did you do with the German cards, did you buy food?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="666.768" end="x">Yes, we bought it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="667.913" end="x">Where did the money come from for the food?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="669.521" end="x">Well, so much, he [gave?] us [unintelligible] a little anyhow.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="673.106" end="x">So. So, you bought it with the cards and he increased it a little.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="677.124" end="x">He increased it, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="678.208" end="x">And was he a good man?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="679.654" end="x">Well, not so special. He reproached [us] a lot.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="683.479" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="683.931" end="x">My wife was supposed to work and clean everything from morning to evening [from the cattle care and?] [unintelligible], and my daughter was doing manual labor again, and old grandma, forty, ah, seventy-four years old, she was spinning yarn [again?] for the farmer.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="704.720" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="705.425" end="x">. . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="705.979" end="x">[<i>interrupts</i>] Well, why weren't you able to leave him and go somewhere else?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="709.473" end="x">There was nowhere for us to go [because of the clothes?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="711.582" end="x">Aha . . . So, you were not able to leave your wife. And what about this farmer, was he a Nazi?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="719.365" end="x">No, he wasn't a Nazi.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="720.781" end="x">Aga . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="721.667" end="x">He was a young man and he had many children and so he was [at home?]. [Unintelligible] [five?] small children and a total of 8 people were in the family.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="731.980" end="x">So, all his—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="732.824" end="x">[<i>interrupts</i>] A job in the house. In the house.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="734.583" end="x">So . . . Well, and you, ah, what happened then when the Germans, ah, the Germans lost the war? Did you have a radio, did you find out what was going on?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="744.312" end="x">There was nothing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="745.589" end="x">There was nothing?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="746.523" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="747.047" end="x">Well, and how did it all happen when . . . and who, who liberated you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="751.264" end="x">It was the Americans [who] [suddenly?] arrived here with a car at the village . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="757.360" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="757.752" end="x">and then we went to meet them happily and we told them that they [departure? sounds like German "aus"]. [<i>Mumbles</i>] Well, the Germans [<i>correcting himself</i>] the foreigners, not to work any more with the Germans, and the Germans were supposed to feed us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="780.113" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="780.746" end="x">Well, [we?] [unintelligible] he wasn't such a bad boss, so we worked [more?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="786.511" end="x">Aha. Well, you didn't work so much?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="789.312" end="x">Well, for the time being we started [locally?] to demand bet[ter], more food.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="794.132" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="794.825" end="x">[We demanded milk?] one [handful?] more and so that the family would be able to eat. Well, they [can?] then [have added?] for us, too.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="804.132" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="805.541" end="x">In the meantime there was an order to come here, ah, to the camp.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="809.577" end="x">And there was an order for you to come here to the camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="811.655" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="812.107" end="x">Well, and what do you do here in the camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="814.517" end="x">My family [and I were here?], I will be in Germany, I was working, [at the] factory there [everyone] has a [wasting?] disease.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="823.746" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="824.391" end="x">And considering the disease, I worked for the farmer [even more?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="829.463" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="830.036" end="x">And here now, up to now I am not doing such [difficult?] work, only suddenly [it] is involved with gardening, I will be in charge.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="839.536" end="x">Mm-mmm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="840.078" end="x">And we have a camp field here and [in this?] field I have also been in charge [and] we put in potatoes for the camp. And I always was [in charge?] of this business.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="849.295" end="x">Aha. [You?] were in charge as the boss?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="850.753" end="x">As the boss, right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="851.759" end="x">Well, and what do you think? Where will you go? [Unintelligible] it will end [for you?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="856.036" end="x">Well, it's difficult to say.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="860.494" end="x">What do you want to do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="862.133" end="x">Yes. We all think that if we cannot go home then we will have to start work here in Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="869.404" end="x">Ah, you . . . Why can't you go home?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="872.567" end="x">Ah, because of . . . because of the bad regime we don't want to go back [any more?]. We have suffered from these two regimes twice already.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="884.507" end="x">I don't want to—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="884.941" end="x">[<i>interrupts</i>] No . . . There is no way I want to go home . . . We had a good democratic government—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="893.959" end="x">[<i>interrupts</i>] Well, there wasn't a democratic regime. Of your . . . the president was already such a dictator as [Ulman?], as Stalin . . . as . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="900.827" end="x">No, no . . . No, we had a democratic—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="904.905" end="x">[<i>interrupts</i>] What do you have? Was the parliament yours?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="906.231" end="x">The parliament [was] ours?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="908.050" end="x">Well, and why didn't they put the communists into [prison?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="911.665" end="x">Well, if they, how do you say [to death already?] correctly, to require order in Estonia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="921.767" end="x">Aha. So. Eh, well, and you think that it may be possible for you to remain in Germany?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="930.864" end="x">Well, if . . . I think, that there will be a possibility.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="933.948" end="x">Don't you have any relatives in America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="935.635" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="936.629" end="x">And in South America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="937.683" end="x">Also no.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="938.527" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="939.202" end="x">[We wrote?] that to go [to America since?] I am already old and they think that [unintelligible] for difficult work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="945.057" end="x">How old are you, Mr. Tomas?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="947.015" end="x">Ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="949.244" end="x">[All understood?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="949.786" end="x">Ah, fifty-eight— [<i>stops before finishing</i>]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="951.429" end="x">[<i>interrupts</i>] Well, yes, you told me that you were born in 1888. Well, you aren't so old if you rest a little and [recover?] from [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="959.154" end="x">I understand the farming business okay.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="962.027" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="962.419" end="x">I [little age?] all has happened with the subsequent changes and I studied field husbandry.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="966.244" end="x">Hm-mmm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="966.666" end="x">And I am interested in everything about field husbandry.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="968.534" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="968.938" end="x">[I will teach myself?] anyhow [to stand?] a piece of land somewhere.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="972.565" end="x">Mm-mmm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="973.631" end="x">And to set up something else raising cattle and raising pigs or poultry breeding, I understand all this.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="987.366" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="987.607" end="x">And I would live out my years to the end.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="989.987" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="991.897" end="x">Well, these [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="994.861" end="x">Yes. [I gave?] something [to be lifted up already?] to develop [and even to give?] people to disappear.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Tomas Billi</span>:
+            </span>
+            <span class="utterance" who="#billiT" start="999.753" end="x">Yes, that's true.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1003.771" end="x">Well. thank you, Mr. Billi. I think that what you told me was very important and very interesting.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1011.964" end="x">[In English] This concludes a short interview with Tomas Billi . . . at firty minutes of the spool. He is an Estonian, fifty-eight years old and is now in the displaced center at Lohengrin . . . Lohengrinstrasse near, or in <a class="placename" href="#vothL29">Munich</a>. Illinois Institute of Technology wire recording.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            Anna Paul was also interviewed by Boder on September 21st at Lohengrinstrasse, on Spools 9-140B and 9-141A.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            It is unclear exactly what location Billi is referring to. The most likely location is Wittenberg, which was the German name for the city of Nivenskoye, about sixteen kilometers south of Kaliningrad. This territory is currently within the Kaliningrad Oblast, a Russian exclave between Poland and Lithuania on the Baltic Sea, but at the time of Billi's birth it was part of Prussia.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            Possibly he means that the Soviets were preempting a German attack.
+        </li>
+                <li>
+            <a name="note_4"></a>
+            Revel ("Rewel" in Polish or German) was the old name for Tallin, the capital of Estonia
+        </li>
+                <li>
+            <a name="note_5"></a>
+            The term "Sudentenland" refers to the western regions of Czechoslovakia, at that time inhabited by many ethnic Germans, or "Volksdeutsche."
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Roy Cochrun</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English translation
+                            </i>: 
+            <span class="Translation">
+                <name>Roy Cochrun</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Roy Cochrun</name>, <name>Eben E. English</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_1 = 48.133300;
+                        var lon_1 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL156">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL156" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Nivenskoye, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL156 = new OpenLayers.Map('map_vothL156', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL156.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL156.addLayer(markers);
+map_id_vothL156.zoomToMaxExtent();
+
+                        var lat_2 = 54.585908;
+                        var lon_2 = 20.567475;
+                        var vothL156 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL156_icon = new OpenLayers.Marker(vothL156);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL156);
+markers.addMarker(vothL156_icon);
+    addMarker(vothL156, popupClass, "", true, false, false);
+    map_id_vothL156.setCenter(vothL156, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL128">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL128" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Narva, Estonia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL128 = new OpenLayers.Map('map_vothL128', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL128.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL128.addLayer(markers);
+map_id_vothL128.zoomToMaxExtent();
+
+                        var lat_3 = 59.366700;
+                        var lon_3 = 28.283300;
+                        var vothL128 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL128_icon = new OpenLayers.Marker(vothL128);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL128);
+markers.addMarker(vothL128_icon);
+    addMarker(vothL128, popupClass, "", true, false, false);
+    map_id_vothL128.setCenter(vothL128, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL259">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL259" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Toila, Estonia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL259 = new OpenLayers.Map('map_vothL259', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL259.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL259.addLayer(markers);
+map_id_vothL259.zoomToMaxExtent();
+
+                        var lat_4 = 59.416667;
+                        var lon_4 = 27.516667;
+                        var vothL259 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL259_icon = new OpenLayers.Marker(vothL259);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL259);
+markers.addMarker(vothL259_icon);
+    addMarker(vothL259, popupClass, "", true, false, false);
+    map_id_vothL259.setCenter(vothL259, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL148">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL148" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Tallinn, Estonia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL148 = new OpenLayers.Map('map_vothL148', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL148.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL148.addLayer(markers);
+map_id_vothL148.zoomToMaxExtent();
+
+                        var lat_5 = 59.433000;
+                        var lon_5 = 24.728000;
+                        var vothL148 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL148_icon = new OpenLayers.Marker(vothL148);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL148);
+markers.addMarker(vothL148_icon);
+    addMarker(vothL148, popupClass, "", true, false, false);
+    map_id_vothL148.setCenter(vothL148, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Anna Paul was also interviewed by Boder on September 21st at Lohengrinstrasse, on Spools 9-140B and 9-141A.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            It is unclear exactly what location Billi is referring to. The most likely location is Wittenberg, which was the German name for the city of Nivenskoye, about sixteen kilometers south of Kaliningrad. This territory is currently within the Kaliningrad Oblast, a Russian exclave between Poland and Lithuania on the Baltic Sea, but at the time of Billi's birth it was part of Prussia.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Possibly he means that the Soviets were preempting a German attack.
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Revel ("Rewel" in Polish or German) was the old name for Tallin, the capital of Estonia
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The term "Sudentenland" refers to the western regions of Czechoslovakia, at that time inhabited by many ethnic Germans, or "Volksdeutsche."
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

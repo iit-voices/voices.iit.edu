@@ -1,0 +1,1834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Julius Klüver; September 19, 1946; München, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-julius-klver-september-19-1946-mnchen-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Julius Klüver; September 19, 1946; München, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=kluverJ">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=kluverJ&display=kluverJ_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=kluverJ&display=kluverJ_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=kluverJ">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1.417" end="x">[In English] September 19, 1946 in a large refugee center in the Funkkasernen we are interviewing Mr. Julius Klüver, a leader of the Mennonite Group, which moved gradually from [Name] Russia up to the American Zone in Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="24.086" end="x">[In German]Now tell me again, Mr. Klver, what is your name, how old are you and where were you born?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="31.353" end="x">My name is Julius Klver. I am 43 years old. I was born in the province of <a class="placename" href="#vothL122">Ekaterinoslav</a> in the district of <a class="placename" href="#vothL533">Dniprovs'ke</a>, in the Ukraine on the farm of my father, Alexandrovka.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="49.257" end="x">Now tell me, Mr. Klver, where were you and what happened to you when the war started?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="58.094" end="x">At the beginning of the war I was in the Ukraine in the city of <a class="placename" href="#vothL120">Zaporoje</a>. I worked in a factory as a bookkeeper.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="77.347" end="x">So what happened when the war started?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="92.722" end="x">When the war started I continued working at the plant until the arrival of the Germans. When the Germans arrived it became the goal of the Mennonites as well as my own to get away west as far as possible and from there to join the Mennonites of <a class="term" href="#vothG_canada">Canada</a>, of U.S.A., or of Paraguay. That was our bold aim since 1920, and now we decided to endeavor to reach this goal.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="130.767" end="x">Now tell me, how many Mennonites were there altogether [In Russia]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="136.201" end="x">By the year 1930, there were about 80,000 Mennonites.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="147.207" end="x">Where did they all live?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="149.237" end="x">Most of them lived in southern Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="152.972" end="x">Tell me, were most of the Mennonites German?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="156.677" end="x">The Mennonites are Dutch. They are of Dutch origin. They migrated from the Low Countries to southern Russia upon an invitation from the Empress Catherine the Second and her successors. They came to Russia to colonize the southern Ukraine. They left the low countries, the shores of the northern sea, on account of their religion and their refusal to bear arms. We were promised in Russia that we should be able to obey by our faith which precludes the bearing of arms.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="200.512" end="x">And that means what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="201.898" end="x">Not to be compelled to serve as soldiers, which is against our religious beliefs.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="208.055" end="x">Did the Russians keep their promise?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="211.260" end="x">The Russians kept their promise up to the year of 1920.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="216.272" end="x">Did the Tzars never draft the Mennonites?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="219.567" end="x">During the epoch of the Tzars we were not compelled to bear arms but we were drafted for labor service under the department of forestry.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="228.935" end="x">So when were the Mennonites drafted into the army for the first time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="234.037" end="x">Since the formation of the Soviet Republic.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="237.543" end="x">So it was then when it started? What did the Mennonites do about it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="246.260" end="x">The Mennonites refused, and were taken to the courts. I too was hailed before the courts in 1923 and it took a long time before I was released on the grounds of my religious beliefs.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="269.352" end="x">How did they happen to release you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="271.081" end="x">It was possible to be released by order of the Soviet Courts.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="280.009" end="x">Was everybody taken separately before the courts?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="285.081" end="x">A large number of our young men were tried at that time. Many were released; many were not.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="294.250" end="x">And what did they do to those who were not released?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="297.545" end="x">A few were drafted, but most of them were sentenced to labor service in Siberia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="303.780" end="x">So. Well, what happened when the Germans came into Russia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="309.623" end="x">As soon as the Germans arrived in Russia part of the Mennonites moved immediately west.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="316.554" end="x">You mean they went to meet the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="319.668" end="x">No, but they moved westward. To us it was immaterial. If there would have come a French army, a Dutch army, a Turkish army, we had only one goal. To get away from the East.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="336.325" end="x">Why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="337.831" end="x">Because of our parents, our sisters and our brothers. Nearly all were exiled to Siberia. We were deprived of all our belongings.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="348.412" end="x">When did that happen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="350.069" end="x">That happened between 1920 and 1935. Take for example, my case. My father was rich. He owned a farm. My father was shot in 1920 because he was a rich man. I, then a youngster of 17, had to go for years in hiding so that I should not be shot. I had one aim, to get away to our brothers in <a class="term" href="#vothG_canada">Canada</a>. I have in <a class="term" href="#vothG_canada">Canada</a> three sisters. I have neither brothers or sisters here. My wife has four sisters in <a class="term" href="#vothG_canada">Canada</a> and all we were longing for was back to our Mennonites. For example, from my ten uncles that I had here, nine of them are gone. Five died in Siberia, four died in prison, and the sole reason for their arrest was that they were rich people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="413.014" end="x">Well, so when did that movement westward start? Were you in <a class="placename" href="#vothL113">Saratov</a> when the war started.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="420.767" end="x">No, I lived in <a class="placename" href="#vothL120">Zaporoje</a>. The Germans arrived in the winter of '41 and part of us went already in 1942 to Poland. I went to Poland at the beginning of 1943.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="439.785" end="x">Was that with permission of the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="441.532" end="x">Yes, that was with the permission of the Germans. We were permitted to go west. I went to Poland and stayed in Poland nearly three years. But when the front approached towards Poland I went forward from Poland to Germany and so I arrived in <a class="placename" href="#vothL182">Chemnitz</a>. I stayed in <a class="placename" href="#vothL182">Chemnitz</a> only two weeks. Then there came that big air attack. I was bombed out and I fled with my family westward and so I arrived in <a class="placename" href="#vothL29">Munich</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="472.792" end="x">When did you get to <a class="placename" href="#vothL29">Munich</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="474.491" end="x">I arrived in <a class="placename" href="#vothL29">Munich</a> in January, 1945.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="480.949" end="x">Didn't the Germans demand from the Mennonites any labor service?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="486.292" end="x">A few of the Mennonites were compelled to work. A few even were drafted or were about to be drafted but not many. Most of them stuck to their religious faith which prohibits bearing arms and were working on various jobs and in this way they escaped service in the armed forces.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="511.636" end="x">And how many of you Mennonites are now here in this <a class="term" href="#vothG_lager">lager</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="517.491" end="x">We are in this <a class="term" href="#vothG_lager">lager</a> 552 Mennonites. Most of them want to go to Paraguay. A certain number want to go to <a class="term" href="#vothG_canada">Canada</a> where their relatives are, who have sent them already the affidavits.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="533.015" end="x">Tell me, were the Mennonites in <a class="term" href="#vothG_canada">Canada</a> permitted not to join the services?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="538.117" end="x">To the best of my knowledge the Canadians have rendered in this war mostly labor service. Only a few joined the army or navy.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="550.286" end="x">What do you mean, the Canadians in general or the Canadian Mennonites?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="553.943" end="x">The Canadian Mennonites.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="556.184" end="x">Tell me, how were these 500 Mennonites gathered together? With how many did you leave Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="565.804" end="x">I left only with my family.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="568.335" end="x">How many people were you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="569.672" end="x">We were four people. So we were gathered together from the whole American zone. One by one. Nearly all women and children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="579.672" end="x">Where are the men?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="580.847" end="x">Most of the men are in Siberia. They were all rounded up in 1936 and 1937. Before the war in Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="591.491" end="x">Are they permitted in Siberia to follow their Mennonite faith?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="596.834" end="x">They are prisoners in various camps. In labor service. We have no word from them and we have no word whether they are still alive or not!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="609.105" end="x">How many grown up men are there among these 500 people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="616.587" end="x">About one-third are men.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="622.593" end="x">The others are women and children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="624.804" end="x">Women and children. We have about 250 children here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="630.117" end="x">Do you expect the Canadians to let you in?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="634.696" end="x">We are quite sure of that. We have already the permission to come to Paraguay and we expect that the first transport of 430 Mennonites will depart for Paraguay. There are large Mennonite colonies in that country. And the people from here go to their relatives or to their friends in these Mennonite colonies.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="658.204" end="x">Now tell me, for how many generations did your family live in Russia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="666.168" end="x">My grandfather came to Russia as a little child.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="673.379" end="x">How long ago about was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="675.740" end="x">That must have been eighty or ninety years ago, about ninety years ago.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="679.848" end="x">Now tell me, how did it happen that the Mennonites still preserved in Russia the German language?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="686.547" end="x">You see, we talk among ourselves still Dutch, the Frisian Platt. Only our hymn book, our Bibles, and our school books were in German. Originally we used a Dutch dialect, but since the Mennonite colonies in southern Russia were surrounded by a large number of German colonies and since years ago there was a better supply of German books the language of our schools and of our religion has become German. But up to now, we still talk among ourselves at home the Dutch language.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="733.604" end="x">Tell me, Mr. Klver, what other differences besides the refusal to bear arms is there between the Mennonite religion and the other Protestant religions?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="748.827" end="x">First of all, we have no infant baptism, but adult baptism.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="758.086" end="x">What do you mean by adult baptism?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="759.441" end="x">Our people are baptized at the age of 17, 18, 19 years. Not as children, but when they reach the age between 17 and 19. Second, the refusal to bear arms. Third we do not swear. We say yes, yes, or no, no, but we do not make any vows.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="786.492" end="x">Not even to your country, to your fatherland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="790.209" end="x">Never.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="792.631" end="x">But otherwise you are Protestants?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="799.300" end="x">Of Protestant faith.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="802.462" end="x">Now tell me where were you at the end, during the last year of the war? When Germany was gradually losing the war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="816.480" end="x">From the beginning of 1943 until the end of 1945 I lived in Poland. I lived near Lesmanstadt as a bookkeeper at a factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="828.799" end="x">In Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="829.594" end="x">In Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="830.317" end="x">When did you get to the American zone?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="832.950" end="x">I arrived at the American zone in January, 1945.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="836.878" end="x">And before that you were in Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="838.788" end="x">In Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="839.613" end="x">So where were you when the Russians came to Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="843.300" end="x">When the front came near Poland I moved towards Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="853.884" end="x">Farther west? Did the Germans permit it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="855.180" end="x">Yes. They permitted it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="857.150" end="x">Were you in any districts that were severely bombed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="861.650" end="x">From Poland I came to <a class="placename" href="#vothL182">Chemnitz</a>. There I stayed two weeks and intended to look for work. I already rented there a room but in two weeks the house was entirely bombed out and to save the life of my family I fled on foot with a single trunk to the city. I escaped to <a class="placename" href="#vothL29">Munich</a>. Here lived a cousin of mine and I joined him.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="891.574" end="x">Did he always live in <a class="placename" href="#vothL29">Munich</a>? Or was he too a refugee?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="894.176" end="x">He too was a refugee, and he came here from Russia in 1942.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="900.381" end="x">And so you all gathered here gradually and you now are ready to travel further?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="907.291" end="x">When we arrived in <a class="placename" href="#vothL29">Munich</a> we couldn't find lodging in the city. We went to the peasants and I found a place 40 kilometers from <a class="placename" href="#vothL29">Munich</a>. Here I worked for a peasant for more than a year as a hired man [his calendaric dates are apparently confused].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="923.809" end="x">And where was your family?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="925.297" end="x">My family was with me too, on the farm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="927.627" end="x">Who was with you? Your wife and two children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="929.646" end="x">My wife and two daughters. We all worked for the peasant without pay. We had to live on our ration cards and now and then we got a little bit of milk from him.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="943.381" end="x">What do you mean you lived on your ration cards. Didn't the peasant feed you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="947.369" end="x">No. We got our ration cards and we had to work. We just got a supplement of a little bit of milk.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="957.773" end="x">And for your other food you had to pay?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="960.315" end="x">That I paid for.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="961.731" end="x">How did you pay?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="963.189" end="x">I still had some money from my previous earnings. One didn't need too much money in order to buy the supplies that one was allowed to get on his card.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="977.418" end="x">You say you still had some money. What kind of currency was it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="984.810" end="x">That were Germen marks, reichmarks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="989.250" end="x">How could you get them in exchange for Russian rubles?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="993.358" end="x">That wasn't saved in Russian rubles. These were my earnings from Poland. There we were paid already in reichmarks. I had no more currency in Russian rubles.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1008.400" end="x">Now let us clear that up. You and your family worked for the peasant. Isn't that so?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1013.713" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1015.129" end="x">And he did not give you the food free of charge?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1018.906" end="x">That was against the law. If one had a ration card he had no right to eat with the peasant, that is, if one kept house for himself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1029.659" end="x">Then why did you take out the ration cards?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1033.466" end="x">That was the rule that all the refugees had to take out ration cards. That was because I had my family with me. Had I been alone I would not have been given a ration card and I would have to eat with the peasant. But since I had my family I took my meals with my family. My wife did her own cooking.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1052.854" end="x">And you paid for the food, and gave him your ration stamps except for some milk now and then? And he did not pay you anything?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1062.243" end="x">No, he didn't pay me any money. He told me that I am working for our lodging and the few things that he gave me. I had a table and a few chairs and in exchange for that I had to work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1073.044" end="x">What does that mean he had given them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1074.540" end="x">He placed them into my room.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1076.776" end="x">Oh, he had given them to you!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1077.976" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1080.267" end="x">Was this peasant a Nazi?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1083.436" end="x">He was a Nazi up to 1936. And then he left the party because he was afraid that in time he would lose his farm. He was a rich peasant and that is why he did not agree with the Nazis. He was afraid that in time they will organize some farm cooperative.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1108.225" end="x">Something like the Russian collective farms?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1109.020" end="x">Something of that kind, and that is why in time he became aroused against the Nazis. At the beginning he had joined them and was a member of the party up to 1936.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1121.942" end="x">And you believe that such a peasant was uninformed either through relatives or friends about the goings-on in concentration camps?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1132.496" end="x">I think he might not have known it. Moreover he had very little interest for such things. And he wasn't getting together with the people too much. Here in Bavaria the peasants do not mingle very much.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1147.026" end="x">Now tell me, you had to opportunity to observe the Germans. What did such a peasant think about the war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1157.430" end="x">Many of them thought that Germany will win. But many also predicted that Germany will never win the war because the superiority of the enemy was too great.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1171.960" end="x">And where were you on the date of Germany's surrender?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1175.725" end="x">In the same village with the peasant.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1178.478" end="x">And what did the people say then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1181.623" end="x">Many of the Germans were very glad that the war was over and their sons will return home. And the peasants turned to their work. They said, 'It will be bad at the beginning, but in time we will get on our feet again as good peasants.' They all had hope for a better future.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1207.718" end="x">Tell me, did the peasants eat well during the war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1211.784" end="x">Most of them did. They found ways not to surrender everything and they took good care of themselves and ate very well. Most of them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1224.025" end="x">Now as an observer—what do you think of the present German situation?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1235.091" end="x">How can I tell you? I have so little interest in the situation right here. My interests, my thoughts are all overseas. To get away from here as soon as possible so that finally I should have a homeland. Since 1920 I had not a single night in peace. And to have a little, little land of my own. As I observe the Germans here, soon times will be better for them. That I heard in the villages. They think it may be bad for three, four, five years, but eventually they will have a better life, a freer life, better than they had under the Nazis.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1290.294" end="x">Now tell me, what was the attitude of the peasant with whom you lived and of his kind, what was their attitude toward the Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1306.571" end="x">Their attitude toward the Jews was bad. One could feel that also among the peasants. They did not love the Jewish people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1317.950" end="x">And what was the attitude of the Mennonites of Russia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1321.546" end="x">The Mennonites despise no nation. On the contrary the Mennonites feel that they are persecuted for their religion just as the Jews. We often compared ourselves with the Jews. Only we are a small, poor, little people, while the Jews are richer, larger in number, and have a stronger organization. We are too few and weak, but the religious persecutions of the last four hundred years are the same for us as for the Jews. We have no homeland, we have no country that we may call our own. We were once in Holland, we were near <a class="placename" href="#vothC26" type="camp">Danzig</a> in the region of the Polish corridor, we were in southern Russia and nowhere did we find a homeland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1370.775" end="x">Now tell me, do you think that one can have a homeland if he is not ready to defend it with arms?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1377.534" end="x">According to our convictions—yes. In accordance with our faith one can have a homeland even if one does not defend it with arms.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1391.389" end="x">In all other respects the Mennonites recognize the authority of the state, I mean do you pay taxes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1400.773" end="x">Yes. In all other respects the Mennonites . . . they recognize the state.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1406.478" end="x">Did you ever hear of a sect in the United States, the Jehovah's Witnesses?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1411.972" end="x">That is a different sect. No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1417.888" end="x">Or take the Dukhobors. They refuse to pay taxes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1423.159" end="x">No, I never heard of them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1424.677" end="x">So the Mennonites pay their taxes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1426.755" end="x">Very readily. To the best of my knowledge it was so before, and it is so now. We are not greedy. We pay, we want to work, we want to keep up our religion and we are ready to fulfill all our duties to any state.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1440.622" end="x">You were telling me that you worked as a bookkeeper. Are there many Mennonites who do not work on the land?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1446.598" end="x">Very few. Most of them are farmers, peasants.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1453.146" end="x">Are there any Mennonites in Mexico?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1455.899" end="x">Yes, there are Mennonites in Mexico.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1458.429" end="x">Where do they live there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1460.507" end="x">That I can't tell you exactly but I know there are Mennonites in Mexico.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1465.056" end="x">Do you know by any chance whether these came from <a class="term" href="#vothG_canada">Canada</a> or did they come directly from Russia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1472.207" end="x">This I couldn't tell you either.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1474.267" end="x">How did they get to Paraguay?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1477.562" end="x">There is already an order since April from the government of Paraguay that all Mennonites may come to that country unconditionally. There is even no control of health conditions. Only come to Paraguay. Our Mennonites have built their colonies in that large Chaco region which was formerly impassable and our colonies have flourished there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1510.901" end="x">Now tell me, are there more women than men in your group?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1515.642" end="x">Many more women than men.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1517.491" end="x">Now what will become of these women? Many of them do not know if they are widows or not. May a Mennonite woman marry a non-Mennonite?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1528.919" end="x">According to our laws a woman may marry only among Mennonites.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1536.521" end="x">May that not lead to some difficulties?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1541.521" end="x">So far it did not. [He apparently has turned away from the microphone on purpose while making an additional remark].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1549.907" end="x">Oh no. I do not refer to promiscuity. I simply mean that the situation may become difficult for a large number of women to find suitable men.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1563.311" end="x">That certainly will be a problem, but so far we had very few mixed marriages in our colony. Lately it has become more frequent because so many of our men are away and that is why some Mennonite women have married non-Mennonites.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1589.044" end="x">Tell me, Mr. Klver, do Mennonites convert into their religion people of other faiths?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1596.345" end="x">No. We remain in our own community.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1601.375" end="x">If somebody wants to join the Mennonites would you accept him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1607.942" end="x">No. He must be born a Mennonite. We are not only a religion. We consider ourself a people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1616.328" end="x">Now let us suppose a Spaniard, an Uruguayan sees your way of life and likes it. Will he still be unable to become a Mennonite.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julius Klüver</span>:
+            </span>
+            <span class="utterance" who="#kluverJ" start="1629.081" end="x">No. There are some very rare exceptions. If such a Spaniard or a person of another nationality happens to live in our colony in our village, and takes on our religion, learns our language and continues to live among our people, an exception can be made. Then he must be baptised.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1656.913" end="x">[In English] This concludes Spool 132 - an interview with Mr. Julius Klüver - a so-called Leader of the Germanic Group of the Funkkasernen Camp in, hm, near <a class="placename" href="#vothL29">München</a>. This is the first case that we have interviewed a displaced person, who took – so to say - advantage of the situation in Russia to move west and to get to a country where their reluctance to carry arms because of religious principles should be respected. September 19, 1956 in <a class="placename" href="#vothL29">Munich</a>, Germany at the UNRA Detention Camp, a Illinois Institute of Technology wire recording. The machine is not at – in the best order, one condenser is broken, seems to be broken of, because the machine got a very rough ride. But nevertheless we took the record, because we hope that the transcription will be satisfactory. September 19, 1946 – Illinois Institute of Technology wire recording. </span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Dagmar Platt</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC26">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC26" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Danzig<br /><span class="alt">(Danzig-Burggraben)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Stutthof
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Gdańsk, Poland<br />
+                            </p>
+                            <div>
+                Concentration camp located in the Kokoszki quarter of the city of Danzig.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC26 = new OpenLayers.Map('map_vothC26', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC26.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC26.addLayer(markers);
+map_id_vothC26.zoomToMaxExtent();
+
+                        var lat_1 = 54.366700;
+                        var lon_1 = 18.683300;
+                        var vothC26 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC26_icon = new OpenLayers.Marker(vothC26);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC26);
+markers.addMarker(vothC26_icon);
+    addMarker(vothC26, popupClass, "", true, false, false);
+    map_id_vothC26.setCenter(vothC26, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL122">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL122" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Dnepropetrovsk, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL122 = new OpenLayers.Map('map_vothL122', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL122.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL122.addLayer(markers);
+map_id_vothL122.zoomToMaxExtent();
+
+                        var lat_2 = 48.450000;
+                        var lon_2 = 34.983300;
+                        var vothL122 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL122_icon = new OpenLayers.Marker(vothL122);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL122);
+markers.addMarker(vothL122_icon);
+    addMarker(vothL122, popupClass, "", true, false, false);
+    map_id_vothL122.setCenter(vothL122, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL533">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL533" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Dniprovs&#39;ke, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL533 = new OpenLayers.Map('map_vothL533', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL533.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL533.addLayer(markers);
+map_id_vothL533.zoomToMaxExtent();
+
+                        var lat_3 = 48.600000;
+                        var lon_3 = 34.430000;
+                        var vothL533 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL533_icon = new OpenLayers.Marker(vothL533);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL533);
+markers.addMarker(vothL533_icon);
+    addMarker(vothL533, popupClass, "", true, false, false);
+    map_id_vothL533.setCenter(vothL533, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL120">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL120" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Zaporozhye, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL120 = new OpenLayers.Map('map_vothL120', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL120.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL120.addLayer(markers);
+map_id_vothL120.zoomToMaxExtent();
+
+                        var lat_4 = 47.833300;
+                        var lon_4 = 35.166700;
+                        var vothL120 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL120_icon = new OpenLayers.Marker(vothL120);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL120);
+markers.addMarker(vothL120_icon);
+    addMarker(vothL120, popupClass, "", true, false, false);
+    map_id_vothL120.setCenter(vothL120, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL113">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL113" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Saratov, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL113 = new OpenLayers.Map('map_vothL113', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL113.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL113.addLayer(markers);
+map_id_vothL113.zoomToMaxExtent();
+
+                        var lat_5 = 51.566700;
+                        var lon_5 = 46.033300;
+                        var vothL113 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL113_icon = new OpenLayers.Marker(vothL113);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL113);
+markers.addMarker(vothL113_icon);
+    addMarker(vothL113, popupClass, "", true, false, false);
+    map_id_vothL113.setCenter(vothL113, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL182">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL182" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chemnitz, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL182 = new OpenLayers.Map('map_vothL182', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL182.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL182.addLayer(markers);
+map_id_vothL182.zoomToMaxExtent();
+
+                        var lat_6 = 50.833300;
+                        var lon_6 = 12.916700;
+                        var vothL182 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL182_icon = new OpenLayers.Marker(vothL182);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL182);
+markers.addMarker(vothL182_icon);
+    addMarker(vothL182, popupClass, "", true, false, false);
+    map_id_vothL182.setCenter(vothL182, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_7 = 48.133300;
+                        var lon_7 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_canada">
+                <a name="vothG_canada"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Canada.
+                </span>
+                <span class="definition">
+                    An area of Birkenau where the possessions of newly arrived inmates were stored. It was so named because Canada was thought to be a country of great riches. The items were sorted and sent back to Germany, although some were stolen by SS guards.
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

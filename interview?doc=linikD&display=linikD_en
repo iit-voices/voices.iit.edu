@@ -1,0 +1,2838 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Dina, Sophia, and Wanda Linik; September 13, 1946; Hénonville, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-dina-sophia-and-wanda-linik-september-13-1946-hnonville-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Dina, Sophia, and Wanda Linik; September 13, 1946; Hénonville, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=linikD">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=linikD&display=linikD_ru_yi">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=linikD&display=linikD_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=linikD">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.724" end="x">[In English] Spool 9-130A. Dina and Wanda Linik, L-I-N-I-K. In Russian. November the 7th, 1950. Boder.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="72.380" end="x"><a class="placename" href="#vothL13">Paris</a>, September the 13th, in eh . . . France, September the 13th, 1946. <a class="placename" href="#vothL19">Hénonville</a>, fifty kilometers from <a class="placename" href="#vothL13">Paris</a> in a home for displaced Jews, eh, eh, which is occupied by a <a class="term" href="#vothG_kibbutz">kibbutz</a> and also by a <a class="term" href="#vothG_yeshiva">yeshiva</a>. The interviewee is a Mrs. Dina Linik, em which is withholding her husband's name, and she is going to report on her experiences, during the war in, which she had in, which she passed in Russia and then in [unintelligible] Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="122.596" end="x">[In Russian] Well, yes . . . [Unintelligible]. Madam Linik, could you please tell me where you were when the war began, what happened to you during the war and, and how you got here? Well . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="136.015" end="x">When the war with the Germans began in 1941 . . . I was in <a class="placename" href="#vothL240">Kiev</a> with my family, and . . . including my husband and two daughters, Sofia and Wanda. In July 1941, when the Germans were approaching <a class="placename" href="#vothL240">Kiev</a>, I fled to, eh . . . the Northern Caucasus, eh . . . together with my husband and children.<note n="1"><span class="note">The Caucasus is a region located between the Black Sea and the Caspian Sea, at the intersection of Europe, Asia, and the Middle East.</span><sup><a href="#note_1">1</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="168.811" end="x">From <a class="placename" href="#vothL240">Kiev</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="169.505" end="x">From <a class="placename" href="#vothL240">Kiev</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="170.169" end="x">Did the Russian government evacuate people . . . freely?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="173.701" end="x">Evacuated with children . . . evacuated to the Northern Caucasus.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="178.397" end="x">What about your husband, did they take him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="180.238" end="x">Please wait, I will explain it later [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="181.898" end="x">Okay.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="183.709" end="x">We were living there for two and half months . . . before, eh . . . my husband . . . was recruited to the army. In September, 1941, my husband went to the front, leaving me with my two daughters. Should I tell you their age?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="205.955" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="207.615" end="x">The older, Sofia, was thirteen, while the younger, Wanda, was six.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="213.289" end="x">When did it happen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="213.984" end="x">[Short pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="214.304" end="x">[Unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="218.185" end="x">Five years. We were staying at the Northern Caucasus for four months, when Hitler's troops approached again. They took <a class="placename" href="#vothL357">Rostov</a>, and were approaching the Caucasus. I had a hard time trying to evacuate from the Northern Caucasus with my children. Evacuate, since the local authorities caused much, very much trouble . . . and very much . . . very much, you know, they were creating obstacles to prevent us from evacuating and leaving this . . . Caucasus.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="259.720" end="x">So, how did the people evacuate then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="261.398" end="x">The only way to leave the Caucasus was to go to the Caspian Sea.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="268.038" end="x">How do you mean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="269.324" end="x">In . . . to Central Asia, to Central Asia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="271.455" end="x">So where . . . well, what happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="280.829" end="x">You ask what happened? We arrived in <a class="placename" href="#vothL368">Makhanchakala</a>, a port on the Caspian Sea.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="287.560" end="x">Okay.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="289.661" end="x">Dozens of thousands of people were lying around at the docks, on the streets.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="301.057" end="x">Okay.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="302.687" end="x">That was a terrible sight, terrible sight, of the Jewish disaster. People were lying for six-seven weeks at the docks under the rain . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="313.281" end="x">It is important for us to know who those people were.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="314.989" end="x">Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="315.683" end="x">Why Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="317.042" end="x">Because Hitler was after them, perfectly clear, they massacred all Jews . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="322.432" end="x">Okay, so the Jews wanted to evacuate.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="324.605" end="x">Therefore, the Jews wanted to evacuate. Each and every place, all docks, all havens, were filled up by Jewish families and children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="333.569" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="336.316" end="x">After going through much trouble, I got on board . . . a ship, well, not exactly a ship, but some transportation . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="348.920" end="x">. . . barge . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="349.813" end="x">. . . transportation barge, which was extremely full of people, tighter then herring in a barrel, people were everywhere, in the hold, on the deck.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="362.791" end="x">Okay.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="365.417" end="x">The barge wasn't de— . . . how do you call it . . . well, wasn't designed . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="375.033" end="x">. . . for carrying any passengers . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="375.745" end="x">Yes . . . for the passengers, this type of cargo . . . also . . . I should add that the planes were attacking us all the time . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="386.067" end="x">From where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="386.641" end="x">They tried . . . The planes were German, they tried to bomb us, bomb us along the way. This [unintelligible] was damaged slightly . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="392.212" end="x">Okay.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="393.178" end="x">. . . after that, a strong, six-degree storm began. The storm was tossing the ship like a toy. A few times, we thought that we were going to die. Various . . . confined space, this emotional stress . . . made . . . many people . . . many people died on this ship.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="423.564" end="x">What, this [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="424.850" end="x">Yes. Many people died from cardiac arrest. They couldn't withstand the stress, you know . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="432.564" end="x">How long [unintelligible] were you on that ship?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="434.737" end="x">We . . . that ship was supposed to take us to the destination in sixteen hours, we had been at sea . . . for two and half days, open sea, before we arrived to <a class="placename" href="#vothL369">Krasnovodsk</a>. In <a class="placename" href="#vothL369">Krasnovodsk</a>, they put us on the railway carriages, various vehicles, to take us to different . . . different parts of Central Asia. We ended up in a kolkhoz [a form of collective farming in the Soviet Union] near <a class="placename" href="#vothL559">Alma-Ata</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="460.817" end="x">Okay.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="462.175" end="x">I lived with my children for nine months there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="465.405" end="x">Okay. What did you do there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="466.449" end="x">I was working at the kolkhoz.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="469.467" end="x">What did you do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="470.222" end="x">I was working in the field at the kolkhoz, harvesting wheat for bread, then worked at the canning factory, and I went through much trouble, much stress during this time.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="480.532" end="x">And did you get any payment?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="482.723" end="x">Payment . . . Naturally, they paid me with bread. They gave me the norm [unintelligible], we were equal to the kolkhoz workers in this sense. Then in 1942, I went back . . . yes, in 1942, 1943, and 1944, all this time I was in Central Asia. Then, in 1944, when <a class="placename" href="#vothL240">Kiev</a> was liberated from occupation, I went through [unintelligible] used help, you know, of the authorities to obtain permission to return to my home country.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="521.602" end="x">To <a class="placename" href="#vothL240">Kiev</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="522.357" end="x">To <a class="placename" href="#vothL240">Kiev</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="523.371" end="x">And what were your children doing at the kolkhoz?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="527.053" end="x">My older daughter was working and studying, while the younger was just studying at school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="531.550" end="x">Okay. What were the life conditions at the kolkhoz?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="537.315" end="x">What kind of general conditions would you expect from a kolkhoz? The same for everyone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="541.468" end="x">Yes. What kind of conditions were you living in? Were they good or bad?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="547.160" end="x">They were good, staying away from Hitler was already good enough. We believed “good" was to be anywhere but around Hitler. I escaped Hitler four times, and each time he caught up with us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="561.496" end="x">Which four times are those? From <a class="placename" href="#vothL240">Kiev</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="562.884" end="x">He caught up with us in <a class="placename" href="#vothL240">Kiev</a>, in the Northern Caucasus, then after the Northern Caucasus, I forgot to add, I was in Georgia too, he came close there too, and then I was in Central Asia, when I returned, as you may remember, from <a class="placename" href="#vothL367">Rostov</a>, he began his . . . their successful victories, and caught up with us on the road in this . . . in <a class="placename" href="#vothL367">Rostov</a>, I had hard time escaping from Hitler there too.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="589.880" end="x">Well, okay.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="591.709" end="x">And then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="592.270" end="x">Did you hear from your husband, get any letters?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="594.262" end="x">And from my husband . . . from husband, he left on September 3, I received five letters from him, and then he disappeared. I only know that he was near <a class="placename" href="#vothL370">Poltava</a>, where . . . their division was surrounded by the Germans. I don't know what happened to him afterwards. I wrote to the government more than once, but they replied that he had disappeared without a trace. I believe that he would have returned, if he had been alive. I assume that he perished.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="628.541" end="x">Do you think that he could find you if he was alive now? Is there anyone in Russia who knows where you live?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="635.543" end="x">I waited for him in <a class="placename" href="#vothL240">Kiev</a> for a year and a half . . . in vain. I think that a year and a half is enough to hear any news about him or for him to find any news about us, he also had many friends and relatives who could have told him where we had been, if he had been alive.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="655.422" end="x">So, they know where you are.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="656.750" end="x">Yes. This is true now. I lived in <a class="placename" href="#vothL240">Kiev</a> for a year and a half.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="663.813" end="x">In <a class="placename" href="#vothL240">Kiev</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="664.676" end="x">In <a class="placename" href="#vothL240">Kiev</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="665.280" end="x">Was the war over by that time or was it still in progress?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="668.286" end="x">The war was over.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="669.554" end="x">Oh! In which year did you return to <a class="placename" href="#vothL240">Kiev</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="671.987" end="x">In 1944.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="673.484" end="x">Were the Germans ousted from <a class="placename" href="#vothL240">Kiev</a> in 1944? The war was over in 1945, and you still lived in <a class="placename" href="#vothL240">Kiev</a>. But how did you live in <a class="placename" href="#vothL240">Kiev</a>, how did you make your living?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="682.496" end="x">I was working in <a class="placename" href="#vothL240">Kiev</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="683.673" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="685.152" end="x">I was working, working at the factories, at a plant . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="688.804" end="x">What were the conditions there? You worked at the factory, and what did they pay you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="699.325" end="x">What did they pay me? They paid me a salary.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="701.921" end="x">Yes. [Unintelligible] was it enough for you and two children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="705.108" end="x">No. I was poor and went through much trouble. I couldn't make enough money for my children by myself. My children got sick after all this trouble, stress. My children got sick and weren't able to withstand hunger, these hardships anymore. After that, I was included in the general list of, well, repatriated Polish citizens and left <a class="placename" href="#vothL240">Kiev</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="737.434" end="x">As a Pole?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="738.219" end="x">As a Pole.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="739.052" end="x">Were you born in Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="740.398" end="x">I was born in Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="743.175" end="x">Okay.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="743.736" end="x">I left with my children . . . ended up in <a class="placename" href="#vothL135">Krakow</a>, where I lived for a short period of time, then based on . . . the message from my relatives in the U.S., Palestine . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="770.237" end="x">Who do you have in Palestine?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="771.251" end="x">My mother lives in Palestine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="772.730" end="x">Oh! Okay.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="774.318" end="x">I have a sister and a brother in Palestine who were lucky to go there in 1922. I now want to go to Palestine, to my relatives, very much, but evidently I cannot do so due to the current political environment. I hope that in the near future I will be able to join my relatives . . . friends, my family, and provide a better living for my children, so that it is better than I had myself . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="810.933" end="x">How do you mean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="812.189" end="x">I mean my childrens' lives, I want them to live a better life . . . than I did.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="821.080" end="x">Okay, you say that you want . . . And your sisters in <a class="placename" href="#vothL256">Chicago</a> speak Russian, don't they?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="827.962" end="x">My sisters left, when I was very y— . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="830.666" end="x">Young.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="830.998" end="x">Young.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="831.813" end="x">And you don't know if they speak it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="832.719" end="x">I remember them well. I doubt if they know Russian, because one of the sisters, Rachel, [unintelligible] has been living in <a class="placename" href="#vothL256">Chicago</a> for thirty-four years. The second sister has been living in <a class="placename" href="#vothL256">Chicago</a> since 1922.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="847.224" end="x">[In German] . . . Please, we would like now to speak Yiddish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="849.276" end="x">. . . Yes, we would like to speak Yiddish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="850.997" end="x">[In Yiddish] . . . Well then, let's speak Yiddish now . . . let's speak Yiddish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="855.422" end="x">Eh, where did you go in Poland, after you left <a class="placename" href="#vothL240">Kiev</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="855.422" end="x">In, eh, we came to a Polish . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="859.333" end="x">Where, where did you go, to which town?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="861.959" end="x">To <a class="placename" href="#vothL135">Krakow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="863.396" end="x">You came to <a class="placename" href="#vothL135">Krakow</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="864.440" end="x">Yes, later we lived in <a class="placename" href="#vothL82">Lodz</a>, in <a class="placename" href="#vothL135">Krakow</a>, in <a class="placename" href="#vothL81">Katowice</a>, in <a class="placename" href="#vothL98">Sosnowiec</a>, traveled through all of Poland and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="872.589" end="x">And how did you make a living?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="873.736" end="x">And, and one made a living on all of the support given by the American, eh, state.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="880.074" end="x">Yes, all. And your women and girls were with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="883.817" end="x">Yes. Later we came, also all thanks to the American state, [who] gave us such support, so that one could travel from Poland to Czechoslovakia, because also in Poland, as one knows, the general situation for the Jews was not very good. It happened that many Jews were killed in Poland while we were there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="906.048" end="x">Did you see it yourself?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="907.588" end="x">One has seen everything. Yes. It happened before me, four Jewish kibbutzniks were killed in <a class="placename" href="#vothL82">Lodz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="914.065" end="x">Yes, why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="915.381" end="x">For nothing. For being Jewish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="917.391" end="x">I see.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="917.693" end="x">Nothing else. Only because they have Jewish names. Thus, one could see, that also in Poland there is no life for us; because they don't leave the Jews alone, they don't let them live in Poland, we were helped, and later we came to Czechoslovakia</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="933.556" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="934.281" end="x">And in Czechoslovakia the French Government gave permission to travel into the country as passengers in transit, who continue to travel, transit.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="942.146" end="x">I see.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="943.535" end="x">Now we are in [unintelligible] That means we are in <a class="term" href="#vothG_kibbutz">kibbutz</a> Israel Agudath Poeli.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="950.465" end="x">Agudath what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="951.328" end="x">Agudath Poeli Israel.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="953.199" end="x">Poeli Israel.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="954.044" end="x">Poeli Israel, named Netzach Israel.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="957.063" end="x">I see.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="957.473" end="x">We have been here already for four months, hoping to leave for <a class="term" href="#vothG_eretzY">Erez Israel</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="964.053" end="x">I see.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="964.524" end="x">I wanted, I have very much wanted to see my two sisters, who live in America, but I don't know how this can happen, if they can help me travel to America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="978.093" end="x">I see, did they write to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="980.840" end="x">I received a letter from them, they asked me, maybe, maybe I need something, but since then they didn't, they know that I have a sister with a younger brother in <a class="term" href="#vothG_eretzY">Erez Israel</a>, as well as a mother in <a class="term" href="#vothG_eretzY">Erez Israel</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="995.925" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="996.245" end="x">[Unintelligible] but consequently I had wanted [it] so much.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="998.829" end="x">I see. Here, maybe when you go to <a class="term" href="#vothG_eretzY">Erez Israel</a>, for an American it would be easier for them to go there for a visit.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1005.849" end="x">To America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1006.845" end="x">No, from America to Palestine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1009.290" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1009.821" end="x">Yet one travels, [unintelligible] it will calm down, and they will know the entire family is in Palestine. Will they come afterwards?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1017.759" end="x">To Palestine?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1018.924" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1019.214" end="x">From America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1020.107" end="x">Yes. People travel very often. People travel a lot.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1022.371" end="x">One can travel from Palestine to America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1025.286" end="x">Ah, here. From America to Palestine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1027.248" end="x">No, and from Palestine to America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1029.814" end="x">That is, yes, of course one can travel, but American citizens are usually free to travel to Palestine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1038.917" end="x">I mean, I don't know if they can travel, they are two elderly people, not eighteen years old anymore, and to leave their own families, and they are very busy with their businesses, business-wise.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1051.008" end="x">I see. And are both of your daughters here with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1054.708" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1055.734" end="x">Where did you join the <a class="term" href="#vothG_kibbutz">kibbutz</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1058.541" end="x">We have, we came to Poland and registered with the <a class="term" href="#vothG_agudah">Agudah</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1065.272" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1065.743" end="x">In the <a class="term" href="#vothG_agudah">Agudah</a>, and the entire time we are very close to the <a class="term" href="#vothG_agudah">Agudah</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1071.073" end="x">And they brought you over?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1072.811" end="x">Yes. The <a class="term" href="#vothG_agudah">Agudah</a> has brought us over from Poland to France, and until now they have seen to support us, until we can go to <a class="term" href="#vothG_eretzY">Erez Israel</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1085.337" end="x">I see, how do I say that, you, you, and what do you do here the whole day? And what do the children do? How old are the children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1092.900" end="x">Yes. In, in the <a class="term" href="#vothG_kibbutz">kibbutz</a> Netzach Israel [they] learn things, in economy, in the tailor shop.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1103.705" end="x">With the, the village work-force?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1106.482" end="x">Yes. Village work-force in tailor shop, among them, and the teacher is Madam, eh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1113.804" end="x">Lackstein.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1114.305" end="x">Ah, à la Lackstein, she is very nice, a Jewish polite person, a good teacher for us and she sees as the Jew should, that each Jewish child should get some subjects and be able to work all over the world.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1132.474" end="x">I see. And the children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1133.138" end="x">And my children. One daughter is still small, Wanda, she is ten years old, and she studies Ivrit [modern Hebrew], so when she comes to <a class="term" href="#vothG_eretzY">Erez Israel</a> she can communicate with all people, and the older daughter studies also Ivrit and gardening.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1153.368" end="x">I see, and she will, she will work in, in <a class="term" href="#vothG_eretzY">Erez Israel</a> in a colony.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1159.314" end="x">I can't say what will happen, what one will give to us when we come to <a class="term" href="#vothG_eretzY">Erez Israel</a>. But we hope that we will get to <a class="term" href="#vothG_eretzY">Erez Israel</a> and one can do gardening, one can sew, is able to get by, there will be something that one will be able to do, one should become useful.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1176.415" end="x">And where do you live here? Do you have a room for yourself?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1178.938" end="x">Yes, in <a class="term" href="#vothG_agudah">Agudah</a>, in Netzach Israel, in the <a class="term" href="#vothG_kibbutz">kibbutz</a>, I have a room for myself and my two daughters, and bed linen, bed, food, and heating are provided for, and everything that is needed the <a class="term" href="#vothG_agudah">Agudah</a> cares for.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1202.105" end="x">And so far, your sisters have not sent you any support? No money?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1206.650" end="x">I didn't ask for it, because we are not hungry here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1210.031" end="x">I see.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1210.804" end="x">One doesn't live very great, how do I say that . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1214.353" end="x">In luxury.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1215.168" end="x">In luxury. We are not hungry, we have suffered very much from the Germans before the war, as one knows now, as it is said, how do I say, that one can already sleep calmly and no quarrel with arms, and, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1231.255" end="x">With arms?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1231.997" end="x">With arms. Yes, and no one, and they know when you are asleep at night that you are not risking your life, and you get up in the morning and you have a glass of tea before you, it is already, one is already with . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1240.418" end="x">And where the work is in the kolkhoz have people behaved well? Behaved friendly?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1246.744" end="x">How can they? What does it mean to behave friendly? How can they be friendly? Since they can come and take away from the Jews, I am asking you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1254.458" end="x">I am asking you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1255.816" end="x">One can not say friendly. But they accepted everything that their state did as right; they had a bit of a feeling of fear. But for the Jew or against the Jew they couldn't do anything, because the state was on them, but friendly no, they said that Jews could go and look for <a class="term" href="#vothG_eretzY">Erez Israel</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1272.942" end="x">The kolkhoz said that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1273.818" end="x">Yes. That Jews should look for a land.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1279.691" end="x">I see. And what is, your elder daughter, eh, you say, do you want me to see her?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1285.909" end="x">Yes, and I wanted you to send my regards to my sister.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1288.251" end="x">Here, let's bring both girls inside.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1292.054" end="x">[In Russian] What is your name, young woman?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1294.366" end="x">Sophia Linik.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1296.406" end="x">And what is your age?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1298.791" end="x">Nineteen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1300.318" end="x">Do you have any aunts in <a class="placename" href="#vothL13">Paris</a> or <a class="placename" href="#vothL256">Chicago</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1303.306" end="x">Yes, my two aunts live in <a class="placename" href="#vothL256">Chicago</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1304.876" end="x">What are their names?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1306.101" end="x">Rachel and Gitu.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1309.361" end="x">Do you know their last names?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1311.039" end="x">I do.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1311.945" end="x">What are they, what is Rachel's name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1313.472" end="x">Rachel Braver . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1314.559" end="x">Okay, and Gitu . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1316.297" end="x">Gitu . . . Buchenler.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1319.678" end="x">Gitu Buchenler. Did you send letters to them . . . letters?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1324.435" end="x">We sent letters to them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1326.023" end="x">[In Yiddish] [Unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1330.780" end="x">[In Russian] Speak Russian, if you can't say it otherwise. What did they write to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1346.985" end="x">They say that they are happy to hear from us, because they didn't know anything about us for a long time . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1352.901" end="x">Okay.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1354.157" end="x">. . . they didn't know anything about us for a long time . . . and they want to see us very much.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1359.155" end="x">Okay. And what about your sister Wanda, what is her age?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1363.036" end="x">Our Wanda is eleven.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1366.326" end="x">[Unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1367.503" end="x">[Unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1368.318" end="x">Alright. Okay, she is ten. She is pretty grown-up.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1371.554" end="x">Well, Wanda, how do you like it here in France?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Wanda Linik</span>:
+            </span>
+            <span class="utterance" who="#linikW" start="1374.349" end="x">Good.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1375.122" end="x">Very well. Who is this girl that is with you all the time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Wanda Linik</span>:
+            </span>
+            <span class="utterance" who="#linikW" start="1378.762" end="x">This is my girlfriend.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1380.440" end="x">[Unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Wanda Linik</span>:
+            </span>
+            <span class="utterance" who="#linikW" start="1382.764" end="x">My girlfriend.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1383.428" end="x">Your girlfriend. What have you been doing here all day?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Wanda Linik</span>:
+            </span>
+            <span class="utterance" who="#linikW" start="1385.891" end="x">I have been playing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1387.237" end="x">Playing? Can you read Russian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Wanda Linik</span>:
+            </span>
+            <span class="utterance" who="#linikW" start="1390.726" end="x">Yes, I can.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1391.342" end="x">And can you write in Russian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Wanda Linik</span>:
+            </span>
+            <span class="utterance" who="#linikW" start="1392.839" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1393.702" end="x">What do you want to say to your aunt? Do you want to go to the U.S.?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Wanda Linik</span>:
+            </span>
+            <span class="utterance" who="#linikW" start="1397.837" end="x">I want her to come to me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1400.662" end="x">Okay. And where are you going to go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Wanda Linik</span>:
+            </span>
+            <span class="utterance" who="#linikW" start="1403.155" end="x">To Palestine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1404.320" end="x">Okay then. Now sing a song.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1407.004" end="x">Come on, sing it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1409.982" end="x">Don't you want to go to the U.S.?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1411.751" end="x">Well . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1414.365" end="x">Well, say what you think.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Wanda Linik</span>:
+            </span>
+            <span class="utterance" who="#linikW" start="1416.586" end="x">[laughing]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1417.884" end="x">No, this . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dina Linik</span>:
+            </span>
+            <span class="utterance" who="#linikD" start="1418.759" end="x">[<i>possibly speaking for Wanda or Sophia</i>] My mother wants to go to Palestine, and I want to go to the U.S.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1422.864" end="x">She knows that my mother wants to go to Palestine very much and nowhere else, and I want to go to the U.S.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1429.280" end="x">And what can you do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1431.423" end="x">What can I do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1432.721" end="x">Yes. Do you know any . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1433.959" end="x">For instance?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1434.339" end="x">. . . profession?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1435.637" end="x">Well . . . I studied.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1437.478" end="x">Studied what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1438.190" end="x">I studied at a medical college.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1440.152" end="x">Which college?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1440.997" end="x">Medical college. Medical institute.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1443.291" end="x">And what did you learn there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1444.637" end="x">Well, I didn't graduate from it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1445.995" end="x">And how long did you study there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1447.233" end="x">I was studying the first year . . . and I had to . . . yes . . . I was planning to become a dentist . . . dentist.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1453.608" end="x">Did you finish school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1454.894" end="x">I finished school and entered the first year of medical college . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1461.371" end="x">Okay.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1461.812" end="x">And I was studying the first year at the dentist faculty, which I had to quit eventually.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1467.866" end="x">In which city did you study at the dentist faculty?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1469.587" end="x">In <a class="placename" href="#vothL240">Kiev</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1470.903" end="x">In <a class="placename" href="#vothL240">Kiev</a>. Was it when you returned from Central Asia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1474.060" end="x">Yes, from Central Asia, because I only finished school in <a class="placename" href="#vothL240">Kiev</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1477.971" end="x">Okay . . . Did you write to your aunt about this?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1483.917" end="x">I sent a small letter to her [unintelligible] sent, because I can't write in English, and also in Jewish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1490.406" end="x">Also? Can or can't you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Linik</span>:
+            </span>
+            <span class="utterance" who="#linikS" start="1492.277" end="x">I can't. I wrote in Jewish a little, because I can't really express everything I want to say.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1498.675" end="x">Okay.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1502.448" end="x">[In Yiddish] [Unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Wanda Linik</span>:
+            </span>
+            <span class="utterance" who="#linikW" start="1525.658" end="x">[Unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1540.833" end="x">[In English] This is Spool 9-130A. Covering the interview with a whole family, Dina, Sophia, and Wanda Linik. At <a class="placename" href="#vothL19">Hénonville</a>, near <a class="placename" href="#vothL13">Paris</a>. November 7th, 1950, Boder. The other half of this spool is eh . . . Pinkhus Rosenfeld.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            The Caucasus is a region located between the Black Sea and the Caspian Sea, at the intersection of Europe, Asia, and the Middle East.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English translation
+                            </i>: 
+            <span class="Translation">
+                
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Eben E. English</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_1 = 48.866700;
+                        var lon_1 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL19">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL19" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            H&#195;nonville, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL19 = new OpenLayers.Map('map_vothL19', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL19.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL19.addLayer(markers);
+map_id_vothL19.zoomToMaxExtent();
+
+                        var lat_2 = 49.200000;
+                        var lon_2 = 2.050000;
+                        var vothL19 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL19_icon = new OpenLayers.Marker(vothL19);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL19);
+markers.addMarker(vothL19_icon);
+    addMarker(vothL19, popupClass, "", true, false, false);
+    map_id_vothL19.setCenter(vothL19, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL240">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL240" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kiyev, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL240 = new OpenLayers.Map('map_vothL240', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL240.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL240.addLayer(markers);
+map_id_vothL240.zoomToMaxExtent();
+
+                        var lat_3 = 50.433300;
+                        var lon_3 = 30.516700;
+                        var vothL240 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL240_icon = new OpenLayers.Marker(vothL240);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL240);
+markers.addMarker(vothL240_icon);
+    addMarker(vothL240, popupClass, "", true, false, false);
+    map_id_vothL240.setCenter(vothL240, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL357">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL357" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Stephanskirchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL357 = new OpenLayers.Map('map_vothL357', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL357.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL357.addLayer(markers);
+map_id_vothL357.zoomToMaxExtent();
+
+                        var lat_4 = 47.850000;
+                        var lon_4 = 12.166700;
+                        var vothL357 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL357_icon = new OpenLayers.Marker(vothL357);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL357);
+markers.addMarker(vothL357_icon);
+    addMarker(vothL357, popupClass, "", true, false, false);
+    map_id_vothL357.setCenter(vothL357, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL368">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL368" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Makhachkala, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL368 = new OpenLayers.Map('map_vothL368', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL368.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL368.addLayer(markers);
+map_id_vothL368.zoomToMaxExtent();
+
+                        var lat_5 = 42.966667;
+                        var lon_5 = 47.500000;
+                        var vothL368 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL368_icon = new OpenLayers.Marker(vothL368);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL368);
+markers.addMarker(vothL368_icon);
+    addMarker(vothL368, popupClass, "", true, false, false);
+    map_id_vothL368.setCenter(vothL368, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL369">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL369" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Krasnovodsk, Turkmenistan
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL369 = new OpenLayers.Map('map_vothL369', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL369.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL369.addLayer(markers);
+map_id_vothL369.zoomToMaxExtent();
+
+                        var lat_6 = 40.016667;
+                        var lon_6 = 52.966667;
+                        var vothL369 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL369_icon = new OpenLayers.Marker(vothL369);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL369);
+markers.addMarker(vothL369_icon);
+    addMarker(vothL369, popupClass, "", true, false, false);
+    map_id_vothL369.setCenter(vothL369, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL559">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL559" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Almaty, Kazakhstan
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL559 = new OpenLayers.Map('map_vothL559', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL559.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL559.addLayer(markers);
+map_id_vothL559.zoomToMaxExtent();
+
+                        var lat_7 = 43.250000;
+                        var lon_7 = 76.950000;
+                        var vothL559 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL559_icon = new OpenLayers.Marker(vothL559);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL559);
+markers.addMarker(vothL559_icon);
+    addMarker(vothL559, popupClass, "", true, false, false);
+    map_id_vothL559.setCenter(vothL559, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL367">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL367" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Rostov, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL367 = new OpenLayers.Map('map_vothL367', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL367.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL367.addLayer(markers);
+map_id_vothL367.zoomToMaxExtent();
+
+                        var lat_8 = 57.200000;
+                        var lon_8 = 39.416667;
+                        var vothL367 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL367_icon = new OpenLayers.Marker(vothL367);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL367);
+markers.addMarker(vothL367_icon);
+    addMarker(vothL367, popupClass, "", true, false, false);
+    map_id_vothL367.setCenter(vothL367, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL370">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL370" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Poltava, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL370 = new OpenLayers.Map('map_vothL370', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL370.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL370.addLayer(markers);
+map_id_vothL370.zoomToMaxExtent();
+
+                        var lat_9 = 49.589444;
+                        var lon_9 = 34.551389;
+                        var vothL370 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL370_icon = new OpenLayers.Marker(vothL370);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL370);
+markers.addMarker(vothL370_icon);
+    addMarker(vothL370, popupClass, "", true, false, false);
+    map_id_vothL370.setCenter(vothL370, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL135">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL135" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Krak&#195;w, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL135 = new OpenLayers.Map('map_vothL135', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL135.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL135.addLayer(markers);
+map_id_vothL135.zoomToMaxExtent();
+
+                        var lat_10 = 50.050000;
+                        var lon_10 = 19.916700;
+                        var vothL135 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL135_icon = new OpenLayers.Marker(vothL135);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL135);
+markers.addMarker(vothL135_icon);
+    addMarker(vothL135, popupClass, "", true, false, false);
+    map_id_vothL135.setCenter(vothL135, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL256">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL256" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chicago, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL256 = new OpenLayers.Map('map_vothL256', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL256.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL256.addLayer(markers);
+map_id_vothL256.zoomToMaxExtent();
+
+                        var lat_11 = 41.850000;
+                        var lon_11 = -87.650000;
+                        var vothL256 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL256_icon = new OpenLayers.Marker(vothL256);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL256);
+markers.addMarker(vothL256_icon);
+    addMarker(vothL256, popupClass, "", true, false, false);
+    map_id_vothL256.setCenter(vothL256, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL82">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL82" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            L&#195;dź, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL82 = new OpenLayers.Map('map_vothL82', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL82.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL82.addLayer(markers);
+map_id_vothL82.zoomToMaxExtent();
+
+                        var lat_12 = 51.816700;
+                        var lon_12 = 19.466700;
+                        var vothL82 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL82_icon = new OpenLayers.Marker(vothL82);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL82);
+markers.addMarker(vothL82_icon);
+    addMarker(vothL82, popupClass, "", true, false, false);
+    map_id_vothL82.setCenter(vothL82, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL81">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL81" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Katowice, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL81 = new OpenLayers.Map('map_vothL81', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL81.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL81.addLayer(markers);
+map_id_vothL81.zoomToMaxExtent();
+
+                        var lat_13 = 50.266700;
+                        var lon_13 = 19.016700;
+                        var vothL81 = new OpenLayers.LonLat(lon_13, lat_13);
+            vothL81_icon = new OpenLayers.Marker(vothL81);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL81);
+markers.addMarker(vothL81_icon);
+    addMarker(vothL81, popupClass, "", true, false, false);
+    map_id_vothL81.setCenter(vothL81, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL98">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL98" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Sosnowiec, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL98 = new OpenLayers.Map('map_vothL98', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL98.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL98.addLayer(markers);
+map_id_vothL98.zoomToMaxExtent();
+
+                        var lat_14 = 50.266700;
+                        var lon_14 = 19.116700;
+                        var vothL98 = new OpenLayers.LonLat(lon_14, lat_14);
+            vothL98_icon = new OpenLayers.Marker(vothL98);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL98);
+markers.addMarker(vothL98_icon);
+    addMarker(vothL98, popupClass, "", true, false, false);
+    map_id_vothL98.setCenter(vothL98, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_kibbutz">
+                <a name="vothG_kibbutz"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    kibbutz.
+                </span>
+                <span class="definition">
+                    A collective farm or settlement in modern Israel. (Plural Kibbutzim.)
+                </span>
+            </li>
+                        <li class="vothG_yeshiva">
+                <a name="vothG_yeshiva"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    yeshiva.
+                </span>
+                <span class="definition">
+                    An institution unique to classical Judaism for study of its traditional, central texts. These comprise Torah study, the study of Rabbinic literature (especially the Talmud), Responsa for Jewish observance, and alternatively ethical (Mussar) or mystical (Hasidic philosophy) texts.
+                </span>
+            </li>
+                        <li class="vothG_eretzY">
+                <a name="vothG_eretzY"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Eretz Yisroeil.
+                </span>
+                <span class="definition">
+                    Hebrew for the Land of Israel.
+                </span>
+            </li>
+                        <li class="vothG_agudah">
+                <a name="vothG_agudah"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Agudah.
+                </span>
+                <span class="definition">
+                    Literally, a Hebrew term for "union" or "organization." Also may refer to the "World Agudath Israel" (Hebrew: אגודת ישראל), usually known as the Agudah, which was established in the early twentieth century as the political arm of Ashkenazi Torah Judaism and was especially active in Eastern Europe.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Caucasus is a region located between the Black Sea and the Caspian Sea, at the intersection of Europe, Asia, and the Middle East.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

@@ -1,0 +1,2738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Julian Weinberg; August 17, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-julian-weinberg-august-17-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Julian Weinberg; August 17, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=weinbergJ">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=weinbergJ&display=weinbergJ_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=weinbergJ&display=weinbergJ_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=weinbergJ">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=weinbergJ">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.271" end="x">[In German] You can speak Yiddish or German, as you wish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="2.377" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2.678" end="x">Where are you from?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="5.361" end="x">I come from . . . from <a class="placename" href="#vothL82">Lodz</a></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="8.193" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="8.735" end="x">Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="9.458" end="x">Poland. What is your full name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="15.542" end="x">[In English] August 17, 1946. <a class="placename" href="#vothL13">Paris</a>, Grand Hotel . . . Hotel, Spool Number 49. An Illinois Institute of Technology recording. The interviewee is the engineer Julian Weinberg, from <a class="placename" href="#vothL82">Lodz</a>, Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="33.918" end="x">[In German] Now then, Mr. Weinberg, will you please tell us again, what is your name, and where you are from?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="41.490" end="x">My name is Julian Weinberg, from <a class="placename" href="#vothL82">Lodz</a>, Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="49.773" end="x">What are you doing now in <a class="placename" href="#vothL82">Lodz</a>, Mr. Weinberg?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="52.364" end="x">I am now the managing director of the Electric Works, <a class="placename" href="#vothL82">Lodz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="61.051" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="61.696" end="x">One of the larger electric plants.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="67.973" end="x">Yes. Now tell me, were you also before the war connected with these works?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="73.967" end="x">Yes. I worked before the war too, in this plant since 1911 . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="80.985" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="81.588" end="x">. . . and in the year . . . this year, 1946, I have celebrated the thirty-fifth Jubilee of my services in these electric plants.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="100.516" end="x">Yes. But you look like a very young man, Mr. Weinberg. How old are you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="105.859" end="x">I was born in 1890 . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="109.444" end="x">Aha . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="110.028" end="x">I am fifty-six years old . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="112.197" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="113.492" end="x">And as a twenty year old man I already took over the post of engineer in the Electrical Works of <a class="placename" href="#vothL82">Lodz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="127.498" end="x">So that was still when . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="128.673" end="x">Right after . . . that was in 1911—that means, short after my graduation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="137.028" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="137.450" end="x">I studied in <a class="placename" href="#vothL13">Paris</a>. I was . . . I studied mathematics at the Sorbonne and then I graduated from the Politechnicum in <a class="placename" href="#vothL444">Nancy</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="151.908" end="x">So, then, you were an engineer during the time Poland was [part of] Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="156.649" end="x">Sure.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="157.836" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="158.119" end="x">Exactly!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="158.782" end="x">You were employed in spite of being a Jew?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="161.716" end="x">Yes . . . when Poland still belonged to Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="166.638" end="x">Now tell me then, Mr. Weinberg . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="168.277" end="x">That was 'Congress Poland.'</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="170.217" end="x">Yes. I am a bit nervous [uneasy] because you don't want to give me more than half an hour. And I know that you have to tell a great deal. I therefore should like to ask you . . . to ask you the following things. Answer a few questions. Where were you when the Germans marched into Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="193.271" end="x">In the last war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="195.128" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="196.014" end="x">I was then in <a class="placename" href="#vothL82">Lodz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="197.562" end="x">You were in <a class="placename" href="#vothL82">Lodz</a> at you job.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="199.369" end="x">At my job. Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="202.261" end="x">For how long did the Germans leave you alone [did not bother you]? [Pause.] How long did you continue working after the arrival of the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="211.731" end="x">After the arrival of the Germans I worked . . . [pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="216.201" end="x">Nu . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="220.430" end="x">. . . Two months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="222.219" end="x">Two months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="222.791" end="x">Two months . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="223.876" end="x">What have . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="224.490" end="x">. . . And then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="225.243" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="225.665" end="x">. . . our plant was taken over by an <a class="term" href="#vothG_ss">SS</a> man . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="230.123" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="231.701" end="x">And I, as a Jew, had to leave my post. And so . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="246.069" end="x">And what did you do then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="249.906" end="x">Then an order came that all Jews were to leave the city, in order . . . to the <a class="placename" href="#vothC65" type="camp">ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="262.587" end="x">. . . to move?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="263.491" end="x">To move . . . Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="264.497" end="x">[Aside:] Do you talk Yiddish better?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="266.455" end="x">Makes no difference. [Footnote 1: His language difficulty may be due to two factors. (1) Long <a class="term" href="#vothG_ghetto">ghetto</a> experience. (2) The strict adoption of the official Polish language after the liberation of Poland. —D.P.B.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="267.521" end="x">Now then. Describe to us, as an intelligent person [educated person], as an engineer . . . describe to us the <a class="placename" href="#vothC65" type="camp">ghetto of Lodz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="274.961" end="x">Even before we moved to the <a class="placename" href="#vothC65" type="camp">Ghetto</a> we received such . . . [word not clear] marks of discrimination [??] as the armband, the yellow armband, so that we would be recognized on the streets as Jews. And then that appeared not enough to them, so they pasted [on us] such yellow stars from the front and on the back, so that from all sides it would be recognizable that here walks a Jew. Naturally the going about town was almost impossible for the Jews, because they were grabbed by the Germans on the streets. The Jews were [then] taken for most common labor. Regardless of who it was, whether he was a laborer or an intellectual, he had to perform the hardest forms of labor.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="332.717" end="x">What kind of work were you compelled to do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="336.344" end="x">I, for example, was compelled one day to scrub floors . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="344.579" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="345.404" end="x">I also had an experience, when my mother had died on the fifth of March and I had to bury her. I was then the only one at the cemetery. Nobody was permitted to accompany the body to the grave, and when I was returning from the cemetery, I was grabbed on the street by a young <a class="term" href="#vothG_folk">Folk-German</a>, dragged through a gate; and in the yard I was compelled to carry coal from a cart to the cellar . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="390.504" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="392.263" end="x">And that lasted several hours.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="394.793" end="x">And [word not clear]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="395.094" end="x">That was precisely when I was about to return home from the cemetery.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="400.727" end="x">Now then, Mr. Weinberg, let us have that straight. Simply a boy, not an officer—not an official . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="408.992" end="x">No . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="411.023" end="x">That was a boy—a young man of about twenty years of age . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="415.347" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="415.890" end="x">With a whip.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="417.709" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="418.643" end="x">He grabbed me on the street and dragged me through the gate of a building.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="424.155" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="424.908" end="x">And there were many other Jews. About fifteen people were assembled there and all of them had to carry coal.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="436.354" end="x">For whom was the coal carried? Was it a government office, or was it a private . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="440.432" end="x">That was for the National Socialist Peoples' Union [Nazy Party]; it was NSV.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="450.191" end="x">Yes . . . And they simply . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="451.577" end="x">NSV.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="451.890" end="x">. . . were detaining people on the streets . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="453.649" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="454.011" end="x">. . . to make them work:</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="454.746" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="455.451" end="x">Now then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="457.240" end="x">As the work was completed . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="459.108" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="459.903" end="x">. . . several were released to go home; but I, when they learned that I was an engineer—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="468.036" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="468.560" end="x">I was detained, and I had to remain for two hours longer, because they considered me an intellectual and I was compelled for another two hours to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="486.331" end="x">drag . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="486.753" end="x">. . . to drag the coal. Yes. From one cellar to the other, I had to perform a perfectly useless task.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="493.753" end="x">Oh, that was simply chicanery.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="495.801" end="x">That was pure chicanery . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="498.633" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="498.946" end="x">And then, only at [late] hours, in the evening, was I able to go home.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="505.061" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="505.465" end="x">In general, it was dangerous for the Jews in the streets, because everybody could do with us as he pleased. That was but a small episode which I experienced shortly before my entrance into the <a class="placename" href="#vothC65" type="camp">Ghetto</a> . . . Then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="527.314" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="527.857" end="x">It was decided that we should go to the <a class="placename" href="#vothC65" type="camp">Ghetto of Lodz</a> in an organized manner. For instance, every day a certain section of the city should be resettled.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="545.490" end="x">By the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="546.315" end="x">By the Germans, yes. Where I lived . . . about . . . this section was to go first. And so . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="560.863" end="x">Was that a better section.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="562.603" end="x">And at 17 hours sharp [5 p.m.] our home was by the <a class="term" href="#vothG_ss">SS</a> men . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="577.133" end="x">surrounded?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="577.916" end="x">. . . surrounded, and all the Jews had to abandon the city. The <a class="term" href="#vothG_ss">SS</a> men entered the apartments directly, occupied by the Jews; have . . . have . . . gave us only five minutes time to leave the apartments instantly. And so everyone could take with him . . . only the least trifle of his possessions in a knapsack, and then step out into the yard. I had a peculiar incident happen with my son. He has a kind of an '<a class="term" href="#vothG_aryan">Aryan</a>' look. So he was struck with a whip because he wanted to go with his father. The <a class="term" href="#vothG_ss">SS</a> man did not believe that he was Jewish. And he thought that he wanted to smuggle himself away with the Jews. I had first to prove that . . . that he was my son, and so he was taken with us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="651.537" end="x">Now for what 'lucky' purpose would one want to smuggle himself away with the Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="655.043" end="x">Because he wanted to go with his parents.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="657.091" end="x">That's true. But how could an <a class="term" href="#vothG_ss">SS</a> man think that anybody would intentionally [voluntarily] go to the <a class="placename" href="#vothC65" type="camp">Ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="662.646" end="x">[His language becomes rather erratic] He [the <a class="term" href="#vothG_ss">SS</a>] did not know. He might have thought that he was an '<a class="term" href="#vothG_aryan">Aryan</a>,' you see? That by chance that was a boy—He was that time . . . about . . . about fifteen years old, you see?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="678.863" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="679.146" end="x">He was still young . . . young boy, you see? So he thought he may be up to some mischief. [Footnote 2: The <a class="term" href="#vothG_ss">SS</a> often had trouble with children, Jewish and Christian alike. The 'transports' often looked like enticing adventures and young boys, not yet assigned for deportation, would join them not to be separated from a parent or, as if intending to become mascots in the <a class="term" href="#vothG_lager">lagers</a>, which were pictured, at times, to the deportees, as most attractive installations. —D.P.B.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="685.411" end="x">Aha. Now . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="687.218" end="x">Now, that was in the winter. It was freezing. We were again assembled in a yard.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="697.550" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="698.225" end="x">All the Jews from the various houses of this region, this section . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="704.532" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="705.105" end="x">. . . were assembled, and we did not know exactly where they would lead . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="714.816" end="x">. . . lead you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="715.521" end="x">lead us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="716.105" end="x">All right. Now tell me, Mr. Weinberg, I am, of course, eager to hear anything you say. But you have promised to give me only a half hour.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="724.720" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="725.184" end="x">And that is why I should like to come to other questions. How long were you in the <a class="placename" href="#vothC65" type="camp">Ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="733.750" end="x">I was in the <a class="placename" href="#vothC65" type="camp">Ghetto</a> over five years. That is all the time [of the German occupation]. I only wanted to tell you briefly . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="739.082" end="x">Yes. Please tell everything . . . [a few words not clear]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="740.359" end="x">Afterwards . . . afterwards . . . how we went to the <a class="placename" href="#vothC65" type="camp">Ghetto</a>. We learned . . . the same day . . . the same <a class="term" href="#vothG_ss">SS</a> men . . . if they were not instantly admitted to an apartment . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="753.733" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="754.076" end="x">They would break down the doors . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="756.125" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="756.468" end="x">. . . and where there were sick who could not go with them . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="760.535" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="760.878" end="x">. . . they shot the sick people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="763.740" end="x">Now how come [not clear—both talk together]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="764.324" end="x">After we learned . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="768.752" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="768.993" end="x">. . . that they intended to drive people to the <a class="placename" href="#vothC65" type="camp">Ghetto</a> by such means. So the following days all the Jews went to the <a class="placename" href="#vothC65" type="camp">Ghetto</a> on their own.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="780.379" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="780.783" end="x">So, although it [the resettlement] was to last a week, all the Jews left the town on their own, because they have seen the inhuman methods with which the Jews were treated. And so we were taken to the <a class="placename" href="#vothC65" type="camp">Ghetto</a> on foot; among us were many young girls, old women in bedslippers. Some were running even barefooted on the snow. En route we had to throw away the rucksacks because the burden was too heavy to carry.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="827.147" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="828.352" end="x">And so we arrived in the <a class="placename" href="#vothC65" type="camp">Ghetto</a>. The <a class="placename" href="#vothC65" type="camp">Ghetto of Lodz</a> was completely isolated from the city.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="841.008" end="x">What was it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="842.014" end="x">There was absolutely no communication. It was surrounded with wire . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="848.580" end="x">But it was in the city?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="849.996" end="x">It was on the outskirts of the city.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="853.080" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="853.412" end="x">They selected the suburb.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="855.743" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="857.039" end="x">A section . . . the worse section of the city.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="861.991" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="862.726" end="x">That was assigned to the Jews. It was surrounded with barbed wire, and strictly guarded by police guards; so that nobody may leave the <a class="placename" href="#vothC65" type="camp">Ghetto</a>, and there were to be no communication with the city whatsoever . . . Yes . . . [Pause] at the beginning it was said . . . that . . . at the beginning people still lived . . . Everybody still had some money which he took with him . . . and some people had taken some food also, provisions. And one could manage the first few days. Afterwards there was formed a so-called <a class="placename" href="#vothC65" type="camp">Ghetto</a> Council. This <a class="placename" href="#vothC65" type="camp">Ghetto</a> Council was actually an outgrowth of the . . . of the City Council.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="945.001" end="x">Yes. What did you say, a . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="949.019" end="x">. . . a branch . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="950.284" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="950.495" end="x">. . . a branch of the City Council.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="953.519" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="955.115" end="x">At the head of the <a class="placename" href="#vothC65" type="camp">Ghetto</a> Council stood the famous Bieburg.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="961.200" end="x">Riebuck?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="962.206" end="x">Bie-burg [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="963.441" end="x">A Jew?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="964.236" end="x">No. That was a German from <a class="placename" href="#vothL175">Bremen</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="968.845" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="970.303" end="x">A businessman [ a merchant].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="971.460" end="x">How do you spell his name? [The enunciation of the name still appeared indistinct]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="972.587" end="x">B . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="974.888" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="975.310" end="x">i—e—b—o—w</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="979.328" end="x">Bielow [pronounced Bee-loff]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="980.726" end="x">Bielow.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="981.461" end="x">Yes. Now then, he was a merchant from <a class="placename" href="#vothL175">Bremen</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="986.353" end="x">Yes. And he took over the whole management [council]. Now it was proclaimed that the Jews in the <a class="placename" href="#vothC65" type="camp">Ghetto</a> had to work, otherwise they shall be unable to live. They were to earn their existence.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1001.847" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1003.937" end="x">Well, then there were created various shops [?], various outfits where the Jews were compelled to work. Let us say, a clothing shop . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1020.443" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1022.311" end="x">. . . where all kind of clothing was produced . . . the tailoring details. Then there were metal details, and electrical details, a rug detail, various . . . The people who had no . . . had no trade, had to reeducate themselves in order to do something. Naturally the Jews did not wish to work for the German power [state]. They were doing only a little bit in order to give an impression as if they were working. Otherwise we would have gotten no provisions from the Germans. However, Jewish labor was the cheapest as it was worthwhile for the people—the Germans—to create these various shops although the interestive work was not very interestive.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1091.609" end="x">Although the work was not very intensive?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1093.717" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1093.989" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1094.814" end="x">And it was not intensive because our Jews actually did not wish to work for the germans. It was a kind . . . a kind of silent sabotage against the Germans [Pause]. However, the <a class="placename" href="#vothC65" type="camp">Ghetto</a> Council did good business in spite of that, because they were selling . . . They were selling the products that were manufactured in the <a class="placename" href="#vothC65" type="camp">Ghetto</a> on the 'Left' market. For example . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1133.664" end="x">On the black market?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1134.971" end="x">. . . on the black market.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1135.784" end="x">What did you call it, the 'Left' . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1138.044" end="x">. . . the black market, it was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1139.954" end="x">But what was the other word for it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1141.653" end="x">'Left' market.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1142.840" end="x">Did they use that expression?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1144.057" end="x">Yes. Some were [called it] 'Left.'</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1146.177" end="x">Yes. That is all right, I just want to know it. Now then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1149.551" end="x">They sold on the 'black' without ration certificates,you see? Without certificates . . . [may also mean 'purchase permits'].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1155.949" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1156.473" end="x">For instance . . . our wood detail.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1165.901" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1166.817" end="x">We constructed, for instance, very many pieces of furniture . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1171.528" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1172.444" end="x">. . . and little beds for children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1174.704" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1175.198" end="x">These they could sell without [purchase] certificates, and that is why it was [one word not clear] worthwhile for me to manage these works for us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1183.390" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1188.312" end="x">To be sure. We were not getting any money, but only provisions, and very little. The best proof of it is that thousands of people were compelled to starve.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1204.605" end="x">Now . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1205.930" end="x">Through the <a class="placename" href="#vothC65" type="camp">Lodz[?] Ghetto</a> in excess of two hundred thousand people have passed. These were mostly Polish Jews; but there were also Jews from Germany, from Austria, and from Czechoslovakia brought also to the <a class="placename" href="#vothC65" type="camp">Lodz Ghetto</a>, about fifteen thousand Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1240.306" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1242.626" end="x">And these people were precisely the ones who were unable to adjust rapidly to the hard living conditions in the <a class="placename" href="#vothC65" type="camp">Ghetto</a>. And it is possible to say that 90% of these Jews . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1260.078" end="x">. . . who have come from abroad?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1260.692" end="x">. . . who have come from the West were among those who were driven to death by starvation. Also the Polish Jews, especially the women, were neither able to stand the hard conditions, and many perished from hunger and various epidemic illnesses, such as spotted fever, intestinal typhus, and the like. Besides, these 'normal' [natural] cases of death, if that could be . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1308.406" end="x">. . . called . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1309.382" end="x">. . . called 'normal' . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1310.069" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1312.581" end="x">. . . There were these many deportations. It simply was said that the Germans were in need of people for various kinds of work. And so many people who were feeling bad in our <a class="placename" href="#vothC65" type="camp">Ghetto</a> applied [for such work]. They thought that 'outside' it would be better. So they departed for work . . . but they never returned. Many deportations took place from our <a class="placename" href="#vothC65" type="camp">Ghetto</a>, managed by the [word not clear], particularly by the <a class="term" href="#vothG_gestapo">Gestapo</a> in coordination with the [name—word not clear] authority. These orders which were imparted to us arrived from <a class="placename" href="#vothL134">Berlin</a>. And so it was proclaimed that ten thousand people are to be deported—always it was said for work. But the people never returned. One 'nice' day they established in our <a class="placename" href="#vothC65" type="camp">Ghetto</a> a so-called 'passage [?] blockade!' . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1393.726" end="x">Passage [?] blockade . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1394.389" end="x">Passage [?] blockade.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1395.293" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1395.757" end="x">. . . was established. And the <a class="term" href="#vothG_ss">SS</a> men came . . . [word not clear]. All Jews had to assemble. They made a selection—who was to be evacuated and who was to remain. And so women and men who looked bad were embarked on carts and on trucks, and taken to assembly points. There came the so-called 'roll-commando' [transportation detail], 'roll commando.'</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1439.290" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1439.953" end="x">Those were <a class="term" href="#vothG_ss">SS</a> men on heavy, large freight autos, with trailers. There all the Jews . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1449.031" end="x">[A check on the German word] Anhänger means trailers, a second vehicle . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1451.471" end="x">Yes, a second vehicle. There the people crowded into these autos and were removed. Also the hospitals were cleared of the gravely ill. The children were removed from the hospitals and from the homes, the childrens' homes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1482.659" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1483.394" end="x">Some of them were actually thrown on the autos, you see?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1489.370" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1490.105" end="x">And in this manner all that was carted away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1494.966" end="x">Have you seen it yourself?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1496.472" end="x">This I have seen myself. Yes . . . It is interesting that . . . that afterwards the clothes of these unfortunate people who were shipped away . . . these same old clothes were returned to the <a class="placename" href="#vothC65" type="camp">Ghetto</a>. And so as later . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1521.085" end="x">For what purpose?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1523.646" end="x">These old pieces of clothing should be used by the Jews who had still remained, because . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1530.194" end="x">[word not clear]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1530.706" end="x">. . . We remained in the <a class="placename" href="#vothC65" type="camp">Ghetto</a> for more than five years. Of these old pieces of clothing, of these old shoes which came back torn, because they were searching for various valuable . . . valuable objects [hidden] in the clothes; so the clothes were torn up, altered. The shoes as well. In our <a class="placename" href="#vothC65" type="camp">Ghetto</a> the better things were repaired, and then partly distributed among the remaining population in the Ghetto, and partly it was also shipped out by the Germans for the bombed-out German population. [Pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1588.483" end="x">Now then . . . And you spent five full years in the <a class="placename" href="#vothC65" type="camp">Ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1593.845" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1595.453" end="x">Did you participate in community [affairs/?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1599.068" end="x">I participated but little in the community [affairs], because we had one elder of the Jews . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1609.682" end="x">What was his name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1610.225" end="x">. . . He was very much on his own [overbearing] . . . Rumkowski. [Footnote 3: This name appears in several interviews, always in an unfavorable light. His role appears especially precarious in the deportation and alleged subsequent annihilation of several thousand Jewish children from the <a class="placename" href="#vothC65" type="camp">Lodz Ghetto</a>. —D.P.B.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1613.611" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1614.316" end="x">Rumkowski.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1615.443" end="x">Yes. I have heard already that name from others.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1617.323" end="x">Certainly. He received the orders directly . . . the orders from the <a class="placename" href="#vothC65" type="camp">Ghetto</a> management, and he afterwards executed the orders . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1629.155" end="x">Oh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1629.468" end="x">. . . as far as it was in his power. I did not want to participate directly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1635.733" end="x">Is he presently alive?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1638.143" end="x">In these things, because I was opposed to the whole politics and I had to keep away from that whole business. Here . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1651.559" end="x">Is Rumkowski still alive?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1653.649" end="x">No, Rumkowski is not alive anymore.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1656.210" end="x">Who . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1656.734" end="x">He was annihilated by the Germans in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. And so the last evacuation took place in the month of August, 1944. At that time the Oberburgermeister of the city came and also the functionaries of the <a class="placename" href="#vothC65" type="camp">Ghetto</a> management. They made speeches, they told us that now the whole [trend of] politics has changed in Germany. Germany needs workers by the hundreds; Germany was bombarded, many German cities have been annihilated. These cities must be rebuilt and therefore, also the Jewish labor must . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1708.210" end="x">. . . be used?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1708.734" end="x">. . . be made use of. Then there was a commission of generals, all of . . . a military commission, and they have decided that <a class="placename" href="#vothC65" type="camp">Lodz</a> is located near the front . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1728.855" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1730.253" end="x">. . . and it would not be right to keep so many Jews near the front. That was not right. They wanted to help the Jews . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1743.699" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1744.524" end="x">. . . so that they may not remain in the front zone, and therefore they have arranged [?] that we should leave, and we shall have better work, good living conditions and that they . . . have . . . with such . . . [he is here completely confused in search of the proper words]. Oh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1771.039" end="x">[Trying to guess the meaning] With such [apparent] frankmess</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1777.738" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1778.473" end="x">[In English] sincerity?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1779.600" end="x">. . . frankness presented [the proper word would have been cunning, slyness] that the people . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1783.407" end="x">. . . conviction?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1784.281" end="x">Yes . . . That . . . they actually wanted to convince the people that . . . that they would have better work and better conditions. But what revealed itself [what actually happened ?], all the Jews were evacuated, not to the bombed-out cities, but everything [this pronoun refers, of course, to people; but like in so many other instances reflects the helplessness, the doom, the humiliation of the people concerned] went through <a class="placename" href="#vothC4" type="camp">Auschwitz</a>—through the famous extermination camp. And there in <a class="placename" href="#vothC4" type="camp">Auschwitz</a> the people were subjected again to a selection and most of them were compelled to pass through the crematories and there they ended their lives.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1830.721" end="x">Were you in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1832.360" end="x">I was not in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. I was . . . I remained among eight hundred and sixty people who were compelled to remain in the <a class="placename" href="#vothC65" type="camp">Ghetto of Lodz</a>. That was a detail assembled by the Germans who were supposed to put the <a class="placename" href="#vothC65" type="camp">Ghetto</a> in order.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1861.360" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1862.336" end="x">Put in order [straighten up]; that means to assemble the pieces of furniture that have remained, the . . . all the pieces of clothing, pillows [?] [He badly searches for words]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1880.907" end="x">. . . pillows and [In English:] bedding, [the confusion of the language by the interviewee obviously affects also the interviewer; like in the case of a normal individual talking to a stutterer—again in German] bedclothes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1886.316" end="x">. . . The bed . . . Yes, all the bedding.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1890.063" end="x">Nu . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1890.949" end="x">That lasted a few months. We . . . as the last seventy thousand people were taken to <a class="placename" href="#vothC4" type="camp">Auschwitz</a> the <a class="placename" href="#vothC65" type="camp">Ghetto</a> became greatly reduced, and we, the remaining eight hundred and sixty men and women . . . we were in two factory buildings [search for words] billetted?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1941.364" end="x">. . . housed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1944.237" end="x">Yes. The men in one . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1947.009" end="x">[Words not clear]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1947.172" end="x">. . . in one factory building, and the women in another factory building.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1950.437" end="x">Where was your son? [?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1951.039" end="x">That was . . . my son was with me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1954.383" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1954.980" end="x">And my wife and my daughter were . . . were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1960.323" end="x">On the other side . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1962.643" end="x">. . . on the other side. And so . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1963.920" end="x">Are they with you now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="1965.065" end="x">Yes. We were housed directly in these two buildings—which have become some kind of <a class="term" href="#vothG_lager">lager</a>, and from this instant we were regarded as a <a class="term" href="#vothG_lager">lager</a>, like in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, <a class="placename" href="#vothC25" type="camp">Dachau</a> or the kind. We were subject to all disciplinary . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1999.290" end="x">All discipline . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="2002.073" end="x">. . . all discipline . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2004.272" end="x">. . . and rules . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="2005.639" end="x">. . . and rules of the <a class="term" href="#vothG_lager">lagers</a>. That meant, every morning we had to assemble on the yard for <a class="term" href="#vothG_appell">appell</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2020.399" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="2021.164" end="x">Then the <a class="term" href="#vothG_ss">SS</a> men would come. They assigned the people to various labor tasks. So this business dragged on until the 19th of September . . . January . . . until the 19th of January, 1945, on which date our city was . . . was liberated by the Russians and the then onmarching Polish armies. Now, during the last days, as we saw that the Russian offensive approached from <a class="placename" href="#vothL79">Warsaw</a> . . . You must know that we had a concealed radio also in the <a class="term" href="#vothG_lager">lager</a>. We knew, therefore, approximately how the events stood. And so three days before the liberation of the city we all hid ourselves. We abandoned our <a class="term" href="#vothG_lager">lager</a> and we hid ourselves within the <a class="placename" href="#vothC65" type="camp">Ghetto</a> because it was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2121.379" end="x">guarded . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="2122.234" end="x">. . . occupied by a police guard.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2123.018" end="x">Was that not the <a class="term" href="#vothG_lager">lager</a> police?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="2124.355" end="x">No [He uses the word 'only']. The <a class="term" href="#vothG_lager">lager</a> proper had no German police guard, only the <a class="placename" href="#vothC65" type="camp">Ghetto</a> as a whole. We got out of the <a class="term" href="#vothG_lager">lager</a> at night and hid in various bunkers, in various buildings, in cellars, and in the attics of the buildings. I, personally, hid myself in a transformer station. That was a high tension room, where I have [hidden] my family. Altogether I hid there thirteen persons. And for that reason I remained alive. The Germans, as we learned later, had come into our yard and there they found, instead of eight hundred and sixty persons, only twenty-three individuals. They made a big 'to-do,' 'Where are the others?' The people were unable to give a reply. And they said, 'Yes, they got out of the <a class="term" href="#vothG_lager">lager</a>.' And they arrested the twenty-three persons. They did not shoot them, only arrested them. And they decided to drag out of the apartments the rest of the eight hundred people who had hidden themselves, and then proceed with a general . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2229.343x" end="x">Execution.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="2229.855" end="x">. . . execution . . . [We know that] because they had dug with Jewish labor nine mass graves on the cemetery. We knew about that. And they intended to get us all out there and to annihilate us in these mass graves. [Footnote 4: The preposition in should stand although it is not sure whether it is correct in this particular case. During the occupation of Siberia by the Czechs it was reported that in one case (Omsk) they made the condemned men—about fifteen persons—first step into a shallow grave, fired a few random salvos, and then shoveled the earth over them without individual examination of the bodies for signs of life or coup de grace. —D.P.B.] And so the first day after they had arrested these twenty-three persons—there were about a hundred and twenty <a class="term" href="#vothG_ss">SS</a> men with arms—they wanted to find us . . . The first day they were indeed able to find about seventy people, about seventy persons. They did not shoot them yet. They arrested them also, like the first twenty-three persons. And they came the next day . . . the next day they wanted to find the rest. Now they brought dogs with them. They wanted to find the people by means of dogs. The next day they found a few people again. All [were] arrested again. Another night went by and then they were compelled to abandon the city on the sly. And so the saved . . . the remaining people, who had stayed over in the <a class="placename" href="#vothC65" type="camp">Ghetto</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2358.581" end="x">[Not clear]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Julian Weinberg</span>:
+            </span>
+            <span class="utterance" who="#weinbergJ" start="2360.340" end="x">. . . have saved themselves in this manner, and also the people who were arrested were later set free by us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2373.232" end="x">One moment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2375.842" end="x">[In English] This ends Spool 49, a report by the engi— . . . [ends abruptly]</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Dagmar Platt</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC65">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC65" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                L&#195;dź Ghetto<br /><span class="alt">(Litzmannstadt Ghetto)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                L&#195;dź, Poland<br />
+                            </p>
+                            <div>
+                Created on May 1, 1940 to intern the 164,000 original Jewish inhabitants of Ł&#195;dź, most of whom were killed at Chelmno or sent to labor camps. During the war, some 43,000 people died there from starvation and disease. When the Russian army occupied Ł&#195;dź in January 1945, only 877 Jews remained.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC65 = new OpenLayers.Map('map_vothC65', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC65.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC65.addLayer(markers);
+map_id_vothC65.zoomToMaxExtent();
+
+                        var lat_1 = 51.816700;
+                        var lon_1 = 19.466700;
+                        var vothC65 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC65_icon = new OpenLayers.Marker(vothC65);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC65);
+markers.addMarker(vothC65_icon);
+    addMarker(vothC65, popupClass, "", true, false, false);
+    map_id_vothC65.setCenter(vothC65, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_2 = 50.033300;
+                        var lon_2 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC25">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC25" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Dachau
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Dachau, Germany<br />
+                            </p>
+                            <div>
+                The first concentration camp opened in Germany (March 1933), located on the grounds of an abandoned munitions factory near the medieval town of Dachau, about 16 km (10 miles) northwest of Munich. In total, over 200,000 prisoners from more than 30 countries were housed in Dachau.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC25 = new OpenLayers.Map('map_vothC25', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC25.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC25.addLayer(markers);
+map_id_vothC25.zoomToMaxExtent();
+
+                        var lat_3 = 48.250000;
+                        var lon_3 = 11.433300;
+                        var vothC25 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC25_icon = new OpenLayers.Marker(vothC25);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC25);
+markers.addMarker(vothC25_icon);
+    addMarker(vothC25, popupClass, "", true, false, false);
+    map_id_vothC25.setCenter(vothC25, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL82">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL82" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            L&#195;dź, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL82 = new OpenLayers.Map('map_vothL82', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL82.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL82.addLayer(markers);
+map_id_vothL82.zoomToMaxExtent();
+
+                        var lat_4 = 51.816700;
+                        var lon_4 = 19.466700;
+                        var vothL82 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL82_icon = new OpenLayers.Marker(vothL82);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL82);
+markers.addMarker(vothL82_icon);
+    addMarker(vothL82, popupClass, "", true, false, false);
+    map_id_vothL82.setCenter(vothL82, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_5 = 48.866700;
+                        var lon_5 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL444">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL444" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Nancy, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL444 = new OpenLayers.Map('map_vothL444', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL444.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL444.addLayer(markers);
+map_id_vothL444.zoomToMaxExtent();
+
+                        var lat_6 = 48.690278;
+                        var lon_6 = 6.183333;
+                        var vothL444 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL444_icon = new OpenLayers.Marker(vothL444);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL444);
+markers.addMarker(vothL444_icon);
+    addMarker(vothL444, popupClass, "", true, false, false);
+    map_id_vothL444.setCenter(vothL444, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL175">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL175" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Bremen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL175 = new OpenLayers.Map('map_vothL175', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL175.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL175.addLayer(markers);
+map_id_vothL175.zoomToMaxExtent();
+
+                        var lat_7 = 53.083300;
+                        var lon_7 = 8.800000;
+                        var vothL175 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL175_icon = new OpenLayers.Marker(vothL175);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL175);
+markers.addMarker(vothL175_icon);
+    addMarker(vothL175, popupClass, "", true, false, false);
+    map_id_vothL175.setCenter(vothL175, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL134">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL134" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Berlin, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL134 = new OpenLayers.Map('map_vothL134', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL134.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL134.addLayer(markers);
+map_id_vothL134.zoomToMaxExtent();
+
+                        var lat_8 = 52.533300;
+                        var lon_8 = 13.416700;
+                        var vothL134 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL134_icon = new OpenLayers.Marker(vothL134);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL134);
+markers.addMarker(vothL134_icon);
+    addMarker(vothL134, popupClass, "", true, false, false);
+    map_id_vothL134.setCenter(vothL134, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL79">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL79" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Warsaw, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL79 = new OpenLayers.Map('map_vothL79', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL79.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL79.addLayer(markers);
+map_id_vothL79.zoomToMaxExtent();
+
+                        var lat_9 = 52.250000;
+                        var lon_9 = 21.000000;
+                        var vothL79 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL79_icon = new OpenLayers.Marker(vothL79);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL79);
+markers.addMarker(vothL79_icon);
+    addMarker(vothL79, popupClass, "", true, false, false);
+    map_id_vothL79.setCenter(vothL79, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ss">
+                <a name="vothG_ss"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    SS.
+                </span>
+                <span class="definition">
+                    Acronym for the German Schutzstaffel (“Protective Echelon”), a major Nazi organization. It grew from a small paramilitary unit to a powerful force that served as Hitler's "Praetorian Guard," the Nazi Party's "Shield Squadron" and a force that, fielding almost a million men (both on the front lines and as political police), managed to exert as much political influence as the German Army. Built upon the Nazi racial ideology, the SS, under Heinrich Himmler's command, was responsible for many (and most of the worst) of the crimes against humanity perpetrated by the Nazis during World War II.
+                </span>
+            </li>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                        <li class="vothG_folk">
+                <a name="vothG_folk"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    folk-german (Volkdeutsche).
+                </span>
+                <span class="definition">
+                    The Nazi term for ethnic Germans living outside of Germany. The Nazis made every effort to win the support of these German minorities.
+                </span>
+            </li>
+                        <li class="vothG_aryan">
+                <a name="vothG_aryan"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Aryan.
+                </span>
+                <span class="definition">
+                    Derived from a Sanskrit word meaning “noble,” the term was used in Nazi pseudo-scientific jargon to denote a race which had supposedly superior blood and culture. During the Holocaust, “Aryan” came to mean anyone who was not Jewish or Roma (Gypsy).
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_appell">
+                <a name="vothG_appell"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    appell.
+                </span>
+                <span class="definition">
+                    The appell was a camp roll call. Its purpose was not merely to count the prisoners but also to weaken, humiliate and intimidate them.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

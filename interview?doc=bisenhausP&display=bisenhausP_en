@@ -1,0 +1,3784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Polia Bisenhaus; July 29, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-polia-bisenhaus-july-29-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Polia Bisenhaus; July 29, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=bisenhausP">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=bisenhausP&display=bisenhausP_yi_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=bisenhausP&display=bisenhausP_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=bisenhausP">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=bisenhausP">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.517" end="x">[In German] Now you talk into this.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="3.404" end="x">Now what shall I talk.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4.826" end="x">I shall tell you. Now tell me Polia, what is your full name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="9.279" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="10.352" end="x">What is your name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="11.961" end="x">[In English] What's your name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="12.518" end="x">[In German] My name? Polia Bisenhaus.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="15.162" end="x">Say it again . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="16.880" end="x">[In English] Polia what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="17.630" end="x">[In German] Polia Bisenhaus.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="19.036" end="x">Bisenhaus?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="19.849" end="x">Bisenhaus.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="20.821" end="x">Bisenhaus.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="21.515" end="x">[In French] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="22.047" end="x">[In Yiddish] Where are you from?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="23.422" end="x">I? - from Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="24.670" end="x">You are from Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="25.986" end="x">[In French] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="26.517" end="x">[In German/Yiddish] From what city in Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="27.861" end="x"><a class="placename" href="#vothL77">Stashu</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="28.908" end="x"><a class="placename" href="#vothL77">Stashu</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="30.283" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="30.718" end="x">What is that [In English] Russian? [In German/Yiddish] Russian-Poland, or.....?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="33.736" end="x">It was in Poland....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="36.533" end="x">Come nearer a bit. Was it Russian Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="40.743" end="x">Russian Poland. Before the war [a few words not clear] it was Russian Poland.<note n="1"><span class="note">Polia here is most probably referring to World War I, since prior to that Staszów was part of Russian-controlled Poland. The Russians were not in Staszów at the start of World War II—it was occupied from the very beginning by the Germans.</span><sup><a href="#note_1">1</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="46.375" end="x">Yes. But during the war, were the Russians there or....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="50.266" end="x">The Russians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="51.217" end="x">The Russians were there. All right now, tell me, and then when the Russians had left - when did the Germans come? Tell me the whole story.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="62.707" end="x">Well I was not there when the Russians arrived I was already in a <a class="term" href="#vothG_lager">lager</a> with the Germans [She apparently refers to the end of the war]. I was not in Stashu.<note n="2"><span class="note">This is in reference to the Russian conquest of Staszów in the winter of 1944.</span><sup><a href="#note_2">2</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="72.078" end="x">How did you get to Germany?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="74.421" end="x">I was in <a class="placename" href="#vothC52" type="camp">Kielce</a> in [locality not clear] in a labor....in an ammunition <a class="term" href="#vothG_lager">lager</a>, in a work <a class="term" href="#vothG_lager">lager</a>; I worked at ammunitions, and afterwards in the year '44 I was evacuated to Germany.<note n="3"><span class="note">Kielce was the name of both a district and a town within the district.</span><sup><a href="#note_3">3</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="93.029" end="x">So. But where did you live when the Russians came?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="99.201" end="x">Well I was not under the Russians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="100.882" end="x">You were not under the Russians?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="101.992" end="x">I was liberated by the Americans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="104.539" end="x">And you were not under the Russians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="106.289" end="x">No, I was not under the Russians, I was liberated by the Americans.<note n="4"><span class="note">This refers to Polia's liberation from Dachau on April 29, 1945 by American troops.</span><sup><a href="#note_4">4</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="110.423" end="x">Yes. Now then in what kind of a <a class="term" href="#vothG_lager">lager</a> were you? Where were you in a <a class="term" href="#vothG_lager">lager</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="115.347" end="x">In Poland I was in a <a class="term" href="#vothG_lager">lager</a>, a labor <a class="term" href="#vothG_lager">lager</a>; and in Germany I was in an annihilation <a class="term" href="#vothG_lager">lager</a>.<note n="5"><span class="note">By this, Polia means Bergen-Belsen.</span><sup><a href="#note_5">5</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="122.125" end="x">An annihilation camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="123.562" end="x">[In French] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="124.015" end="x">[In German/English] Alright. Tell me about that labor camp.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="127.155" end="x">[In German/Yiddish] Well we were working twelve hours a day. One week during the day, one week during the night.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="136.313" end="x">What work did you do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="137.595" end="x">Ammunitions. That is....ammunitions....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="143.061" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="143.624" end="x">/a few words not clear]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="144.302" end="x">Oh. That was a factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="146.161" end="x">....a factory. [In French] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="146.880" end="x">[In German/Yiddish] Now then, and what did they give you to eat?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="151.677" end="x">In Poland it was not bad. In Poland the food was fair, some days there was meat, but in Germany it was very bad.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="164.513" end="x">Aha. But that was in Poland. And how long did you work in Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="169.928" end="x">In Poland? Three years.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="171.488" end="x">Three years. And why were you moved from there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="174.993" end="x">When the Russians approached <a class="placename" href="#vothC52" type="camp">Kielce</a> we were sent to <a class="placename" href="#vothC24" type="camp">Częstochowa</a>. And afterwards, when they approached <a class="placename" href="#vothC24" type="camp">Częstochowa</a> we were sent to Germany. [two or three words not clear]<note n="6"><span class="note">Częstochowa is known for the Jasna Gora monastery that houses the painting of the Black Madonna, making it the most famous Catholic pilgrimage site in Poland.</span><sup><a href="#note_6">6</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="187.008" end="x">Aha. Why did you tell me that you were in an annihilation camp? Which camp was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="192.501" end="x"><a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="193.750" end="x"><a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="195.286" end="x">[In French] Oui.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="195.860" end="x">[In German/Yiddish] Ohhh! What were you doing there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="201.350" end="x">There we did nothing. We were sitting around and we got no food. We got ten deca of bread [about three ounces] per day, but on certain days there was no bread either. They would say.... the bread did not arrive [??] and they gave us no food. And when the <a class="term" href="#vothG_ss">SS</a> would come, and ask "why were you not given food today", so they said, the <a class="term" href="#vothG_ss">SS</a> told us to say that we had stolen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="232.246" end="x">You should say that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="233.713" end="x">Yes, that we should say that we had stolen and that is why we don't get any, we have food punishment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="239.571" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="240.008" end="x">And that is why we got no food.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="242.874" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="243.218" end="x">And that happened many times during the week.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="245.328" end="x">Aha. And how did you sleep. Tell me about that.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="249.714" end="x">We slept on the ground, and it was....all day we were sitting on the ground, on the same straw, and afterwards at night we slept on the same place. It was very dirty there. Many died from the dirt that was there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="266.675" end="x">What did the Germans say? Why were you held there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="270.909" end="x">They told us nothing about why they held us there. They did not tell us but we knew, that they held us because they wanted to annihilate us, but they did not succeed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="283.067" end="x">All right. Did they annihilate there other people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="286.411" end="x">[two words not clear] When the people were weak, and were becoming weaker from day to day because they were not given any food, so they annihilated them. There was....well a chamber where they gassed [gas-killed] them, and afterwards they burned....well that all is known what the Germans have done.<note n="7"><span class="note">There was a crematorium in Bergen-Belsen, but there was not a gas chamber. Inmates died primarily from disease and starvation.</span><sup><a href="#note_7">7</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="311.280" end="x">How come you say it is well known? In America they know very little.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="314.574" end="x">Oh, they know in America. The periodicals have written a lot. Don't they know?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="323.180" end="x">Oh yes, some people know, some people don't. That's why I want....do you have relatives in America?<note n="8"><span class="note">Boder here might have been beginning to articulate a key motive for conducting his interviews, namely, to make the world aware of Nazi crimes.</span><sup><a href="#note_8">8</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="330.703" end="x">Oui, I have relatives in America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="332.824" end="x">Where are your relatives?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="333.933" end="x">One uncle is in <a class="placename" href="#vothL257">New York</a> and one is in <a class="placename" href="#vothL256">Chicago</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="338.209" end="x">You have an uncle in <a class="placename" href="#vothL256">Chicago</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="340.579" end="x">[In French] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="341.115" end="x">[In German/Yiddish] I am from <a class="placename" href="#vothL256">Chicago</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="342.247" end="x">Bisenhaus. It is the same name.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="345.417" end="x">Bisenhaus?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="346.095" end="x">Bisenhaus. He is an uncle of my father.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="350.390" end="x">Do you wish that I should see your uncle?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="352.861" end="x">[In French] Yes! [In German/Yiddish] I should like to see him very much. But I should like....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="355.688" end="x">Do you want me to see your uncle, that I should talk to him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="359.466" end="x">[rather indifferent] Yes, why not?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="360.804" end="x">Do you want to come to America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="362.880" end="x">I don't know. I would very much like to go to Palestine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="366.064" end="x">You want very much....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="366.651" end="x">Because I have there two aunts, and I would like better to go to Palestine. Yes, I think, for me it will be better than in America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="378.970" end="x">Do you want to say something to your uncle?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="381.675" end="x">To my uncle?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="383.407" end="x">Yes. I shall call him to my house and have him listen to the machine. [There ensuses a conversation. It was apparently not clear to her that the conversation is being recorded] He will hear what you are saying.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="386.304" end="x">What I am saying, he will hear?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="390.021" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="391.033" end="x">And what he says I would not hear? Oh, that is no good. I want to hear him too.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="400.647" end="x">[In English] No, no, no. [In German] No, no. Here you may simply say something, just like on a radio.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="404.395" end="x">But I don't know his address.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="406.253" end="x">Oh, I will find him.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="409.450" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="410.231" end="x">Yes. I shall find him. You will later give me his address. I shall take it down and I will find him.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="417.028" end="x">Right now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="419.195" end="x">No, no. You just say now what you want to tell to your uncle, and when I shall return to <a class="placename" href="#vothL256">Chicago</a>, I shall have this machine, and I shall ask him to my house and I shall let him hear what you are saying.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="431.151" end="x">So, and when will you be home?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="434.260" end="x">In five weeks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="434.759" end="x">Five weeks?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="435.821" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="436.445" end="x">Well, that is good [She apparently was unable to grasp the situation].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="438.156" end="x">Now say something.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="439.746" end="x">Now can I say anything? If I could talk to him I would have a lot to say.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="445.561" end="x">Now for example, what would you like to tell to your uncle?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="447.850" end="x">What I would like....how he was, how he feels, what is he doing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="452.175" end="x">So. Do you want him to do something for you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="454.798" end="x">For you? [She is apparently bewildered by the German second person plural].<note n="9"><span class="note">Apparently, "Sie".</span><sup><a href="#note_9">9</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="455.797" end="x">Do you want him to do something for you? Has he sent you money?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="459.592" end="x">Well he sends me....yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="461.115" end="x">He sends you....?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="461.708" end="x">Yes, but I am learning a trade so that I may earn something myself. It is not nice that the uncle should have to send me [money]. He may send it once, twice, three times, but it is not proper.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="469.255" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="469.724" end="x">I am not sick, one does not have to support me, I want to become independent, I want to earn [something] myself.<note n="10"><span class="note">Polia's sentiments here are indicative of those of many survivors who wished to rebuild their lives and reassert their humanity after the trials and tribulations they had been through.</span><sup><a href="#note_10">10</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="479.863" end="x">Speak louder. Is he a rich man, your uncle?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="484.484" end="x">Yes, he is not poor.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="486.528" end="x">How many weeks, how many months were you in <a class="placename" href="#vothC8" type="camp">Belsen</a>, in <a class="placename" href="#vothC8" type="camp">Belsen</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="490.602" end="x">I was three months in <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="495.505" end="x">Three months?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="496.994" end="x">Three months.<note n="11"><span class="note">Most probably January, February and part of March, 1945.</span><sup><a href="#note_11">11</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="497.930" end="x">Were many people exterminated there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="503.034" end="x">Yes. Many people died. Because at the <a class="term" href="#vothG_appell">appell</a>.....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="507.331" end="x">Um.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="508.009" end="x">Do you know what an <a class="term" href="#vothG_appell">appell</a> is?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="508.535" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="508.910" end="x">They would call out people, they were going completely naked, with nothing on....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="514.117" end="x">Why had they nothing on?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="515.818" end="x">They have taken away everything that we had yet from home. All their clothes. They have given such stripes.<note n="12"><span class="note">The striped uniforms of concentration camp survivors.</span><sup><a href="#note_12">12</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="522.818" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="523.349" end="x">[a few words not clear]....without shoes or stockings we were going around in the greatest....January, in the greatest cold, January, February, these are the greatest colds, and we were going around almost naked, all shorn [?] without food, without sleep, without washing, so many of course died.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="542.963" end="x">Did the Nazie molest the woman, did they.....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="549.933" end="x">....beat them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="551.088" end="x">No, I mean were they indescent with the woman?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="554.975" end="x">That of course is understood. [She apparently did not understand the allusion to sex]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="557.660" end="x">[In English] What do you mean, "it is understood?"</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="559.127" end="x">[In Yiddish/German] They behaved very badly towards the women. They have beaten us frequently. When one did not stand straight at the <a class="term" href="#vothG_appell">appell</a>, when in the cold one would cuddle up next to the other, and they would beat [us] over the head, and otherwise drag us around.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="577.365" end="x">Now tell me for example, what were people doing all day in <a class="placename" href="#vothC8" type="camp">Belsen</a>. Say you got up in the morning - at what time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="586.201" end="x">In the morning there was an <a class="term" href="#vothG_appell">appell</a> to get up say at four o'clock, three o'clock, five o'clock.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="592.623" end="x">Nu.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="592.623" end="x">So we went to wash. For washing there was a room a very small one; cold water very cold, and we would go in there completely naked, and many of us caught cold.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="604.892" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="605.578" end="x">And the organism [She uses the word organ with a slurred ending] is weak, one did not eat; one washes himself with cold water.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="609.543" end="x">Were there men or women who.....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="611.589" end="x">Women, these were.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="613.604" end="x">I mean the Nazis.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="615.415" end="x">The Nazis? There were women and men. But the women were much worse to us. They were much worse to us than the men.<note n="13"><span class="note">There were a number of German female SS guards at Belsen who oversaw and tortured the thousands of Jewish female inmates there. Their behavior might have been made worse in part by their desire to impress their male counterparts.</span><sup><a href="#note_13">13</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="622.632" end="x">How come?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="623.631" end="x">Well, the women were beating us terribly, they were beating us. There were many Jews [women] Turkish and Romanian [Jews] who were the <a class="term" href="#vothG_lager">lager</a> leaders, <a class="term" href="#vothG_lager">lager</a>                        <a class="term" href="#vothG_trusty">trusties</a> and they were much worse than the Nazis.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="641.938" end="x">You mean to say there were Jewish <a class="term" href="#vothG_lager">lager</a> leaders?<note n="14"><span class="note">In early December, 1944, Josef Kramer became camp commandant, a post formerly held by Adolf Haas. Under Kramer, Bergen-Belsen became a concentration camp. The internal management of the camp was placed in the hands of prisoner overseers as was done in other concentration camps. In order to retain their posts or from sheer sadism, a number felt compelled to demonstrate their ruthlessness. Polia's description of the brutal Jewish female functionaries as "Turkish or Romanian" is highly dubious, especially since Turkey was neutral during World War II. It should be noted that after the war Kramer and other SS administrators of the camp, including sixteen women, were tried for their crimes at Belsen. Kramer and eleven others were condemned to death and executed. Nineteen were imprisoned and fourteen were acquitted.</span><sup><a href="#note_14">14</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="644.950" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="645.684" end="x">And....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="646.787" end="x">And they were very mean to us, very mean.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="650.192" end="x">There were Jewish <a class="term" href="#vothG_lager">lager</a> leaders and they have.....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="653.119" end="x">Yes, yes, they behaved very mean.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="656.554" end="x">Towards the other Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="657.834" end="x">Yes, yes. Very mean.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="660.269" end="x">Now tell me then. You would get up at three, four in the morning, and you went to wash, then what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="669.228" end="x">Yes, afterwards they have gave us coffee, black coffee; many times we would not get that either, and without bread.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="678.112" end="x">Without bread. [In English] All right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="678.861" end="x">[In Yiddish/German] Yes. And afterwards at twelve o'clock, half past eleven, eleven, however it would happen, it was dinner time. At dinner time there was a bit of soup, three-quarters of a liter, sometimes half a liter, sometimes not even a half a liter, that was with turnips. If one would find three pieces of turnips in a soup that was considered already very good. That was already a good soup.<note n="15"><span class="note">No doubt she means "lunch" time.</span><sup><a href="#note_15">15</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="704.765" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="705.296" end="x">And afterwards at five o'clock at four o'clock, sometimes at six o'clock there was bread, a little piece of bread, divided among ten people, twelve people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="716.802" end="x">Hm....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="717.442" end="x">It would come out maybe eight deca of bread, ten deca of bread a piece. That was the meal.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="723.165" end="x">And then in the evening. And then what were you doing after the meal?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="727.442" end="x">Afterwards we kept on sitting like all of the day. During the <a class="term" href="#vothG_appell">appell</a> we got our dinner.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="733.864" end="x">Oh.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="734.301" end="x">The <a class="term" href="#vothG_appell">appell</a> took place every day.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="737.330" end="x">What do you call the <a class="term" href="#vothG_appell">appell</a>? What was the <a class="term" href="#vothG_appell">appell</a>? </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="739.952" end="x">The <a class="term" href="#vothG_appell">appell</a> is the count, whether somebody had escaped, whether somebody had died, so they would know exactly how many are to be handed over to the [next]shift, how many there were in the <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="760.822" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="751.261" end="x">How many women, men....[?] It happened many times that the <a class="term" href="#vothG_appell">appell</a> lasted four, five hours. And many people collapsed at the <a class="term" href="#vothG_appell">appell</a>, from the cold and from fatigue, from hunger.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="764.279" end="x">And what was done with them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="765.824" end="x">[She apparently did not get the question]. Well afterwards we went....often they made an <a class="term" href="#vothG_appell">appell</a> - not to stand outdoors [??] but they took us to work. The work consisted in carrying sticks, all kinds of lumber from one yard into the other. That was the work.....was nothing, but they beat us many times when we could not run so fast and [word not clear].<note n="16"><span class="note">This routine was part of the senseless labor in Bergen-Belsen and other camps, designed to weaken and inflict pain on the prisoners and minimize any chance of revolt.</span><sup><a href="#note_16">16</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="789.719" end="x">Hm....now tell me was there a doctor?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="794.183" end="x">Yes, there was a doctor, a dentist.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="797.804" end="x">A dentist, did he do anything for the prisoners? Did he do something for them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="803.892" end="x">Well, he pulled teeth. He pulled them out if one had a toothache, he took out teeth.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="810.982" end="x">[In English/Yiddish] Was it a German doctor?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="812.899" end="x">[In Yiddish/German] No. [??] There was a German doctor, there was a Jewish doctor.<note n="17"><span class="note">Despite Polia's mention of a dentist and a doctor, there was no real medical care for Bergen-Belsen detainees at the time.</span><sup><a href="#note_17">17</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="816.515" end="x">A Jewish doctor....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="817.899" end="x">A Jewish doctor.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="819.116" end="x">Aha. And [a pause] tell me and then how were you liberated?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="829.762" end="x">Liberated I was from <a class="placename" href="#vothC25" type="camp">Dachau</a> by the Americans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="833.814" end="x">Now come, were you sent from <a class="placename" href="#vothC8" type="camp">Belsen</a>....?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="835.799" end="x">From <a class="placename" href="#vothC8" type="camp">Belsen</a> there were afterwards still three <a class="term" href="#vothG_lager">lagers</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="838.671" end="x">Tell me about them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="840.625" end="x">After <a class="placename" href="#vothC8" type="camp">Belsen</a> we were in <a class="placename" href="#vothC19" type="camp">Burgau</a>, and afterwards in <a class="placename" href="#vothC128" type="camp">Turkenheim</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="844.527" end="x">[In English] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="845.276" end="x">[In Yiddish/German] In <a class="placename" href="#vothC19" type="camp">Burgau</a> we were three weeks, or four weeks. Afterwards, in <a class="placename" href="#vothC128" type="camp">Turkenheim</a> I was two weeks. Afterwards when [one word not clear] the Americans approached we were led to <a class="placename" href="#vothC25" type="camp">Dachau</a> and there we were liberated, the 30-th of ....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="863.347" end="x">Now were you transported from one <a class="term" href="#vothG_lager">lager</a> to the other, by train, by truck, how?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="869.999" end="x">From <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a> to <a class="placename" href="#vothC19" type="camp">Burgau</a> we traveled in wagons [RR cars].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="877.163" end="x">In wagons?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="878.006" end="x">In wagons.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="878.755" end="x">And how long did that last?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="880.784" end="x">It lasted a whole eight days. Eight days it lasted - the trip.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="886.355" end="x">And...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="886.792" end="x">And we did not get any food on the way, and there were bombardments, and many were killed by bombs.<note n="18"><span class="note">During the final months of the war, the Allies, with complete air supremacy, bombed Germany relentlessly—often with dire consequences for both German combatants and non-combatants and prisoners.</span><sup><a href="#note_18">18</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="894.886" end="x">Were also your people killed, how come?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="896.719" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="897.733" end="x">How, did the bombs fall....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="899.169" end="x">The bombs fell</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="899.877" end="x">On the train?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="900.626" end="x">On the train, one could not run away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="904.962" end="x">How could you run away if you were in the train?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="907.667" end="x">Well, on the other side...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="910.646" end="x">Oh, the train was standing?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="912.269" end="x">When they bombarded the train would stand.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="916.640" end="x">And the Nazis too?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="919.106" end="x">The Nazis have run away. They hid. They were shooting, they shot at the planes and ...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="926.442" end="x">Did they permit you to hide?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="930.203" end="x">They did not see it. They themselves were in a mix-up, because they themselves wanted to run away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="937.355" end="x">Well then....and then you marched eight days, where from?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="941.285" end="x">And then we marched eight days from <a class="placename" href="#vothC128" type="camp">Turkenheim</a> to <a class="placename" href="#vothC25" type="camp">Dachau</a>.<note n="19"><span class="note">Dachau was established on March 10, 1933. It was the first concentration camp organized by the SS and the model and training ground for all other SS-operated camps. At least 32,000 human beings perished at Dachau during the twelve years of its existence, including inmates subjected to barbarous pseudo-medical experiments conducted there.</span><sup><a href="#note_19">19</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="946.404" end="x"><a class="placename" href="#vothC128" type="camp">Turkenheim</a> to <a class="placename" href="#vothC25" type="camp">Dachau</a>. Now tell me you came to <a class="placename" href="#vothC25" type="camp">Dachau</a>. What were you doing there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="951.711" end="x">In <a class="placename" href="#vothC25" type="camp">Dachau</a> it was already a few days before liberation. We arrived, and the <a class="term" href="#vothG_ss">SS</a> said to the leaders, who brought us: 'Why did you bring these people, I don't need them;' So they said, 'we don't know, because they wanted to hide [save themselves], what shall we do with these people?' And the <a class="term" href="#vothG_ss">SS</a> leader said: 'Oh I know well what to do with these people.' He lined us up, and we thought that they were going to shoot us, because there was a rumor [??] that so will be done with all Jews. Afterwards there came an order, and they ran away, and when the <a class="term" href="#vothG_gestapo">gestapo</a> saw this they ran away. And afterwards we were led into a <a class="term" href="#vothG_block">block</a>, already there were....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="994.582" end="x">What do you mean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="995.581" end="x">The <a class="term" href="#vothG_ss">SS</a> already behaved themselves with the Jews, the Jews already started taking over. They saw that liberation was near, they took us into a <a class="term" href="#vothG_block">block</a> [she speaks with excitement]. The people were tired, eight days walking on foot, and in the morning when we came out we saw no more <a class="term" href="#vothG_ss">SS</a>. They were all gone. And in the air up high were people standing and they showed white flags [??] and there were standing already Jewish prisoners.<note n="20"><span class="note">Jews were among the inmates who were attempting to assume control of the camp after most of the SS guards had fled, leaving a garrison of about two hundred to defend the camp.</span><sup><a href="#note_20">20</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1027.929" end="x">Jewish prisoners?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1028.616" end="x">Jewish prisoners, with guns, and they have taken over the service from the Nazis.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1029.051" end="x">Yes. Now....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1029.385" end="x">One saw that things have changed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1034.376" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1035.571" end="x">Afterwards the Nazis tried to get out of the <a class="term" href="#vothG_lager">lager</a>, they still wanted to kill the few Jews, but they failed, because the Americans had come.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1047.647" end="x">They failed. So how many days were you in <a class="placename" href="#vothC25" type="camp">Dachau</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1051.050" end="x">In <a class="placename" href="#vothC25" type="camp">Dachau</a> I was three weeks already after liberation. Afterwards..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1056.074" end="x">But before liberation? How long were you....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1058.697" end="x">Well I was there two days.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1060.414" end="x">Two days only, in <a class="placename" href="#vothC25" type="camp">Dachau</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1061.397" end="x">Yes, two days.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1062.592" end="x">And then came liberation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1063.981" end="x">Then came liberation. And we were liberated by the Americans, and that was already good.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1069.075" end="x">Yes. Were many <a class="term" href="#vothG_ss">SS</a> arrested when the Americans came?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1074.085" end="x">Yes, many were arrested, but the Americans did not do anything. They [the prisoners] recognized an <a class="term" href="#vothG_ss">SS</a> who did much evil to the Jews[??], but the Americans did not permit to do anything to him.<note n="21"><span class="note">American soldiers did in fact kill the SS troops manning the guard towers. Several others were killed by Americans who were incensed and sickened by the gruesome sights they encountered upon entering the camp. Some inmates also took retribution against their SS tormentors. However, as Polia indicates, the vast majority of the remaining SS guards were imprisoned.</span><sup><a href="#note_21">21</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1086.830" end="x">What did the Americans do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1087.923" end="x">They did not want to do anything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1089.530" end="x">They did not permit....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1091.075" end="x">No, they did not permit</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1091.855" end="x">....to do anything to him.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1093.036" end="x">[In English] No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1093.723" end="x">[In German/Yiddish] So where did the Jewish men get the rifles....?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1099.124" end="x">They did not get them, they took them from the Nazis, when they threw away their rifles.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1103.562" end="x">Oh.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1104.361" end="x">And they took them right away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1105.616" end="x">Aha. And now how did you happen to come to <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1111.126" end="x">To <a class="placename" href="#vothL13">Paris</a> I was taken by an uncle and an aunt.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1115.434" end="x">Where from? From <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1116.948" end="x">Yes, they were already here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1118.872" end="x">Oh, they have lived already in <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1120.464" end="x">Yes, they lived in <a class="placename" href="#vothL13">Paris</a> [??]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1121.697" end="x">Did you have the address?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1122.758" end="x">No, I had no address, but they found out from a [word not clear] from a list.<note n="22"><span class="note">Following the war, survivors and various tracing services posted their names on lists to facilitate searching for relatives. It was no doubt by perusing these lists that Polia's relatives discovered that she was alive. Between the time of her liberation from Dachau and the time she arrived in Paris at the beginning of 1946, there is no indication as to where Polia was recuperating.</span><sup><a href="#note_22">22</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1128.158" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1128.985" end="x">It was sent out from the <a class="term" href="#vothG_lager">lager</a>, so it became known in America. The uncle made inquiries in <a class="placename" href="#vothL13">Paris</a>, who....that was the Bisenhaus from Labush [??]. The first did not know, and they did not know me, because I was still very fatigued [??], afterwards they found out they took me over here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1148.842" end="x">They took you over to <a class="placename" href="#vothL13">Paris</a>. And how long are you now in <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1152.088" end="x">In <a class="placename" href="#vothL13">Paris</a> I am six months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1153.727" end="x">Six months. And you plan to go to Palestine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1157.957" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1158.706" end="x">Better than to go to America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1160.345" end="x">Better than to go to America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1161.672" end="x">Who do you know. Who do you have in Palestine?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1164.295" end="x">In Palestine I have two aunts.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1165.918" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1167.135" end="x">[words not clear] in <a class="placename" href="#vothL260">Hadera</a> [??]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1169.835" end="x">And you think that they can take you over.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1174.924" end="x">They don't know me but I have to go there through a <a class="term" href="#vothG_kibbutz">Kibbutz</a> a <a class="term" href="#vothG_hachshara">Hachshara</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1179.149" end="x">Through what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1180.638" end="x">I can go through a <a class="term" href="#vothG_hachshara">Hachshara</a>, through a <a class="term" href="#vothG_kibbutz">Kibbutz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1183.375" end="x">Do you understand Hebrew?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1184.868" end="x">No, I don't know. The little I knew I have forgotten, because I study now French.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1189.767" end="x">You study French here, and your uncle and aunt live here already a long time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1195.786" end="x">Yes. They are here already seventeen years.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1198.379" end="x">Aha. I wish to ask you for something.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1203.202" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1203.732" end="x">I am a professor who studies these things you understand. But I shall see, if you give me the address of your uncle....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1215.157" end="x">I have the address at home.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1221.127" end="x">I shall be here tomorrow and after tomorrow.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1223.870" end="x">Yes, yes. Will you come here . . . in the morning too?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1226.699" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1227.146" end="x">Well I will bring the address . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1228.439" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1228.655" end="x">. . . for my uncle, yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1230.044" end="x">Yes. And I will visit your uncle then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1231.435" end="x">Yes, he will be very interested . . . you will tell him you have seen me at ORT . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1237.954" end="x">Yes. He will be very happy.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1239.858" end="x">Well, yes. Naturally!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1241.271" end="x">[In German/Yiddish/English] [unintelligible] [Here I showed her one of the TAT cards. —D.P.B.] This is a picture by a prominent artist. From the last three years of your experiences, what do you think does this picture mean?<note n="23"><span class="note">These were most probably cards with various images designed to evoke emotional and psychological responses from subjects. Polia's responses indicate that she was projecting her own feelings and experiences onto the images.</span><sup><a href="#note_23">23</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1260.304" end="x">[In Yiddish/German] Well this picture is of a woman, I believe she has lost everything, who is worried about what to do, she has no way out.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1273.839" end="x">And what do you think is this picture about?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1277.283" end="x">This picture is about the war, this is about the war.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1285.073" end="x">Yes, go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1286.751" end="x">That is [word not clear]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1292.170" end="x">Yes, what do you think happened to him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1295.401" end="x">Well he has lost everything. The whole family, he has remained alone. [word not clear] I too have remained alone of the whole family.<note n="24"><span class="note">The supremely tragic losses endured by Polia and other survivors included loss of family, loss of home, loss of friends and acquaintances, loss of culture, loss of possessions, loss of dignity, and often loss of faith.</span><sup><a href="#note_24">24</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1312.393" end="x">And what is this?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1313.805" end="x">And this. I don't know. It is a [word not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1318.404" end="x">But what do you think?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1320.655" end="x">I think he is thinking about his wife, who has died. And this is his daughter. I don't know [word not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1330.571" end="x">And what do you think is this?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1333.166" end="x">This? [a pause, she says only a few words which are not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1350.520" end="x">And what do think is this?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1352.162" end="x">[a few words not clear]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1362.931" end="x">And what do you think is this?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1364.025" end="x">Is it not Palestine?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1368.247" end="x">Maybe.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1378.045" end="x">Maybe. He works, he works in the field, and that is very nice.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1382.369" end="x">Tell me, do you have a father and mother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1385.539" end="x">No. my father and mother were deported with the whole family.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1389.004" end="x">When were they deported?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1390.191" end="x">Five or six years ago [??]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1392.353" end="x">When you were still in <a class="placename" href="#vothL84">Kielce</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1394.243" end="x">Yes, when I still was in <a class="placename" href="#vothL84">Kielce</a>. I was still home. I was sent from <a class="placename" href="#vothL84">Kielce</a>, we were taken to the city where there was a .....shop [She uses the English word - like so many <a class="term" href="#vothG_dp">DPs</a>] for all kinds of trades. And I went to the shop, money was paid [apparently a bribe to gain occupational deferment from deportation] and I was accepted, and afterwards I was eight [eighteen??] days I was in the shop and then I was sent to <a class="placename" href="#vothC52" type="camp">Kielce</a>. And the family was deported and I don't know where they are.<note n="25"><span class="note">For many survivors the ultimate fate of their families remained unknown. Polia was among the lucky and plucky few Polish Jews who survived for five years under German occupation. Some three million other Polish Jews were liquidated.</span><sup><a href="#note_25">25</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1425.826" end="x">When was the family deported?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1427.841" end="x">'42.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1432.256" end="x">I mean how long after the Nazis came was the family deported?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1437.264" end="x">Oh, the Germans had come in '39. In '39....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1441.994" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1442.837" end="x">....and the parents were deported in '42.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1445.825" end="x">The parents were deported in '42.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1447.384" end="x">Yes, in '42.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1448.539" end="x">Were you home when they were deported?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1451.304" end="x">No I was not home.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1453.715" end="x">You were in <a class="placename" href="#vothL84">Kielce</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1454.590" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1455.025" end="x">Do you have brothers and sisters?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1457.665" end="x">I had[word not clear] but I am alone of the six of the whole family [there is a great deal of noise, the last sentence may be incorrect].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1462.294" end="x">How many brothers and sisters did you have?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1465.215" end="x">I had two brothers, and three sisters.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1468.069" end="x">And where are they?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1469.203" end="x">Deported. My brothers were in <a class="placename" href="#vothC102" type="camp">Skarżysko</a> and they are no more. Maybe they were murdered in <a class="placename" href="#vothC102" type="camp">Skarżysko</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1478.495" end="x">Now what shall I tell your uncle in <a class="placename" href="#vothL256">Chicago</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1484.739" end="x">Now whatever you want to tell him. That you have....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1487.775" end="x">Are you all right here</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1489.352" end="x">Yes. I have it good here, with my aunt, with my uncle.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1493.191" end="x">And you study here, you learn....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1495.996" end="x">I learn at the <a class="term" href="#vothG_ort">ORT</a> to make soutien gorge [brassiers]<note n="26"><span class="note">"Soutien gorge" is a French expression for "brassiere." Polia was being trained in brassiere making in the ORT school.</span><sup><a href="#note_26">26</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1499.370" end="x">What is that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1500.150" end="x">Soutien gorge I learn....</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1501.284" end="x">What is that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1501.939" end="x">These are corsets well, soutien gorge.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1509.591" end="x">And what are you doing in the day time? [The interview took place at an <a class="term" href="#vothG_ort">ORT</a> night school.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1511.605" end="x">During the day I do nothing. Now I do nothing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1515.336" end="x">Don't you work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Polia Bisenhaus</span>:
+            </span>
+            <span class="utterance" who="#bisenhausP" start="1516.522" end="x">No I do not work during the day. [It was hard for <a class="term" href="#vothG_dp">DPs</a> to get work permits in <a class="placename" href="#vothL13">Paris</a>.]<note n="27"><span class="note">Though stateless, Polia was more fortunate than many DPs at the time who were languishing in refugee camps in Germany, Austria and Italy. Most wished to emigrate to Palestine but were denied entry by the British.</span><sup><a href="#note_27">27</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1523.816" end="x">[In English] This is a record of Polia Bisenhaus taken at the <a class="term" href="#vothG_ort">ORT</a> school, evening course, on July 29th, in <a class="placename" href="#vothL13">Paris</a>, 1946.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            Polia here is most probably referring to World War I, since prior to that Staszów was part of Russian-controlled Poland. The Russians were not in Staszów at the start of World War II—it was occupied from the very beginning by the Germans.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            This is in reference to the Russian conquest of Staszów in the winter of 1944.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            Kielce was the name of both a district and a town within the district.
+        </li>
+                <li>
+            <a name="note_4"></a>
+            This refers to Polia's liberation from Dachau on April 29, 1945 by American troops.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            By this, Polia means Bergen-Belsen.
+        </li>
+                <li>
+            <a name="note_6"></a>
+            Częstochowa is known for the Jasna Gora monastery that houses the painting of the Black Madonna, making it the most famous Catholic pilgrimage site in Poland.
+        </li>
+                <li>
+            <a name="note_7"></a>
+            There was a crematorium in Bergen-Belsen, but there was not a gas chamber. Inmates died primarily from disease and starvation.
+        </li>
+                <li>
+            <a name="note_8"></a>
+            Boder here might have been beginning to articulate a key motive for conducting his interviews, namely, to make the world aware of Nazi crimes.
+        </li>
+                <li>
+            <a name="note_9"></a>
+            Apparently, "Sie".
+        </li>
+                <li>
+            <a name="note_10"></a>
+            Polia's sentiments here are indicative of those of many survivors who wished to rebuild their lives and reassert their humanity after the trials and tribulations they had been through.
+        </li>
+                <li>
+            <a name="note_11"></a>
+            Most probably January, February and part of March, 1945.
+        </li>
+                <li>
+            <a name="note_12"></a>
+            The striped uniforms of concentration camp survivors.
+        </li>
+                <li>
+            <a name="note_13"></a>
+            There were a number of German female SS guards at Belsen who oversaw and tortured the thousands of Jewish female inmates there. Their behavior might have been made worse in part by their desire to impress their male counterparts.
+        </li>
+                <li>
+            <a name="note_14"></a>
+            In early December, 1944, Josef Kramer became camp commandant, a post formerly held by Adolf Haas. Under Kramer, Bergen-Belsen became a concentration camp. The internal management of the camp was placed in the hands of prisoner overseers as was done in other concentration camps. In order to retain their posts or from sheer sadism, a number felt compelled to demonstrate their ruthlessness. Polia's description of the brutal Jewish female functionaries as "Turkish or Romanian" is highly dubious, especially since Turkey was neutral during World War II. It should be noted that after the war Kramer and other SS administrators of the camp, including sixteen women, were tried for their crimes at Belsen. Kramer and eleven others were condemned to death and executed. Nineteen were imprisoned and fourteen were acquitted.
+        </li>
+                <li>
+            <a name="note_15"></a>
+            No doubt she means "lunch" time.
+        </li>
+                <li>
+            <a name="note_16"></a>
+            This routine was part of the senseless labor in Bergen-Belsen and other camps, designed to weaken and inflict pain on the prisoners and minimize any chance of revolt.
+        </li>
+                <li>
+            <a name="note_17"></a>
+            Despite Polia's mention of a dentist and a doctor, there was no real medical care for Bergen-Belsen detainees at the time.
+        </li>
+                <li>
+            <a name="note_18"></a>
+            During the final months of the war, the Allies, with complete air supremacy, bombed Germany relentlessly—often with dire consequences for both German combatants and non-combatants and prisoners.
+        </li>
+                <li>
+            <a name="note_19"></a>
+            Dachau was established on March 10, 1933. It was the first concentration camp organized by the SS and the model and training ground for all other SS-operated camps. At least 32,000 human beings perished at Dachau during the twelve years of its existence, including inmates subjected to barbarous pseudo-medical experiments conducted there.
+        </li>
+                <li>
+            <a name="note_20"></a>
+            Jews were among the inmates who were attempting to assume control of the camp after most of the SS guards had fled, leaving a garrison of about two hundred to defend the camp.
+        </li>
+                <li>
+            <a name="note_21"></a>
+            American soldiers did in fact kill the SS troops manning the guard towers. Several others were killed by Americans who were incensed and sickened by the gruesome sights they encountered upon entering the camp. Some inmates also took retribution against their SS tormentors. However, as Polia indicates, the vast majority of the remaining SS guards were imprisoned.
+        </li>
+                <li>
+            <a name="note_22"></a>
+            Following the war, survivors and various tracing services posted their names on lists to facilitate searching for relatives. It was no doubt by perusing these lists that Polia's relatives discovered that she was alive. Between the time of her liberation from Dachau and the time she arrived in Paris at the beginning of 1946, there is no indication as to where Polia was recuperating.
+        </li>
+                <li>
+            <a name="note_23"></a>
+            These were most probably cards with various images designed to evoke emotional and psychological responses from subjects. Polia's responses indicate that she was projecting her own feelings and experiences onto the images.
+        </li>
+                <li>
+            <a name="note_24"></a>
+            The supremely tragic losses endured by Polia and other survivors included loss of family, loss of home, loss of friends and acquaintances, loss of culture, loss of possessions, loss of dignity, and often loss of faith.
+        </li>
+                <li>
+            <a name="note_25"></a>
+            For many survivors the ultimate fate of their families remained unknown. Polia was among the lucky and plucky few Polish Jews who survived for five years under German occupation. Some three million other Polish Jews were liquidated.
+        </li>
+                <li>
+            <a name="note_26"></a>
+            "Soutien gorge" is a French expression for "brassiere." Polia was being trained in brassiere making in the ORT school.
+        </li>
+                <li>
+            <a name="note_27"></a>
+            Though stateless, Polia was more fortunate than many DPs at the time who were languishing in refugee camps in Germany, Austria and Italy. Most wished to emigrate to Palestine but were denied entry by the British.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Janina Wurbs</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English translation
+                            </i>: 
+            <span class="Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC52">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC52" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Kielce Ghetto
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Kielce, Poland<br />
+                            </p>
+                            <div>
+                Established on March 31, 1941 for area Jews, this ghetto was largely liquidated in August 1942 when 20,000-21,000 inhabitants were sent to the extermination camp at Treblinka.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC52 = new OpenLayers.Map('map_vothC52', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC52.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC52.addLayer(markers);
+map_id_vothC52.zoomToMaxExtent();
+
+                        var lat_1 = 50.850000;
+                        var lon_1 = 20.650000;
+                        var vothC52 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC52_icon = new OpenLayers.Marker(vothC52);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC52);
+markers.addMarker(vothC52_icon);
+    addMarker(vothC52, popupClass, "", true, false, false);
+    map_id_vothC52.setCenter(vothC52, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC24">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC24" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Częstochowa
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Częstochowa, Poland<br />
+                            </p>
+                            <div>
+                Established in April 1941, it was largely liquidated in September-October 1942 and the survivors sent to the Treblinka concentration camp.  A &#34;Small Ghetto&#34; of around 5000 remained of the strongest and best-educated, but these were dispersed or liquidated as well by July 1943.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC24 = new OpenLayers.Map('map_vothC24', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC24.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC24.addLayer(markers);
+map_id_vothC24.zoomToMaxExtent();
+
+                        var lat_2 = 50.800000;
+                        var lon_2 = 19.116700;
+                        var vothC24 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC24_icon = new OpenLayers.Marker(vothC24);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC24);
+markers.addMarker(vothC24_icon);
+    addMarker(vothC24, popupClass, "", true, false, false);
+    map_id_vothC24.setCenter(vothC24, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC8">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC8" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Bergen-Belsen
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Bergen, Germany<br />
+                            </p>
+                            <div>
+                Established in the spring of 1943 and initially intended as a transit camp, it soon was integrated into the concentration camp network.  Its population swelled late in the war as inmates from other camps further east were moved into it--from around 15,000 in late 1944 to 41,250 in March 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC8 = new OpenLayers.Map('map_vothC8', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC8.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC8.addLayer(markers);
+map_id_vothC8.zoomToMaxExtent();
+
+                        var lat_3 = 52.766700;
+                        var lon_3 = 9.916700;
+                        var vothC8 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC8_icon = new OpenLayers.Marker(vothC8);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC8);
+markers.addMarker(vothC8_icon);
+    addMarker(vothC8, popupClass, "", true, false, false);
+    map_id_vothC8.setCenter(vothC8, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC25">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC25" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Dachau
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Dachau, Germany<br />
+                            </p>
+                            <div>
+                The first concentration camp opened in Germany (March 1933), located on the grounds of an abandoned munitions factory near the medieval town of Dachau, about 16 km (10 miles) northwest of Munich. In total, over 200,000 prisoners from more than 30 countries were housed in Dachau.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC25 = new OpenLayers.Map('map_vothC25', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC25.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC25.addLayer(markers);
+map_id_vothC25.zoomToMaxExtent();
+
+                        var lat_4 = 48.250000;
+                        var lon_4 = 11.433300;
+                        var vothC25 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothC25_icon = new OpenLayers.Marker(vothC25);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC25);
+markers.addMarker(vothC25_icon);
+    addMarker(vothC25, popupClass, "", true, false, false);
+    map_id_vothC25.setCenter(vothC25, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC19">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC19" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Burgau
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Dachau
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Burgau, Germany<br />
+                            </p>
+                            <div>
+                Camp in operation from January-April 1945. Some 1,000 inmates were incarcerated there.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC19 = new OpenLayers.Map('map_vothC19', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC19.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC19.addLayer(markers);
+map_id_vothC19.zoomToMaxExtent();
+
+                        var lat_5 = 48.416700;
+                        var lon_5 = 10.416700;
+                        var vothC19 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothC19_icon = new OpenLayers.Marker(vothC19);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC19);
+markers.addMarker(vothC19_icon);
+    addMarker(vothC19, popupClass, "", true, false, false);
+    map_id_vothC19.setCenter(vothC19, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC128">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC128" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                T&#195;rkheim
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Dachau
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                T&#195;rkheim, Germany<br />
+                            </p>
+                            <div>
+                Camp in operation from October 1944 to April 1945. It held some 2,500 prisoners.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC128 = new OpenLayers.Map('map_vothC128', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC128.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC128.addLayer(markers);
+map_id_vothC128.zoomToMaxExtent();
+
+                        var lat_6 = 48.066700;
+                        var lon_6 = 10.633300;
+                        var vothC128 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothC128_icon = new OpenLayers.Marker(vothC128);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC128);
+markers.addMarker(vothC128_icon);
+    addMarker(vothC128, popupClass, "", true, false, false);
+    map_id_vothC128.setCenter(vothC128, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC102">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC102" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Skarżysko-Kamienna
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Dachau
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Skarżysko-Kamienna, Poland<br />
+                            </p>
+                            <div>
+                This forced labor camp produced munitions.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC102 = new OpenLayers.Map('map_vothC102', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC102.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC102.addLayer(markers);
+map_id_vothC102.zoomToMaxExtent();
+
+                        var lat_7 = 51.116700;
+                        var lon_7 = 20.866700;
+                        var vothC102 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothC102_icon = new OpenLayers.Marker(vothC102);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC102);
+markers.addMarker(vothC102_icon);
+    addMarker(vothC102, popupClass, "", true, false, false);
+    map_id_vothC102.setCenter(vothC102, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_8 = 48.866700;
+                        var lon_8 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL77">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL77" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Stasz&#195;w, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL77 = new OpenLayers.Map('map_vothL77', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL77.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL77.addLayer(markers);
+map_id_vothL77.zoomToMaxExtent();
+
+                        var lat_9 = 50.550000;
+                        var lon_9 = 21.116700;
+                        var vothL77 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL77_icon = new OpenLayers.Marker(vothL77);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL77);
+markers.addMarker(vothL77_icon);
+    addMarker(vothL77, popupClass, "", true, false, false);
+    map_id_vothL77.setCenter(vothL77, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL257">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL257" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            New York, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL257 = new OpenLayers.Map('map_vothL257', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL257.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL257.addLayer(markers);
+map_id_vothL257.zoomToMaxExtent();
+
+                        var lat_10 = 40.700000;
+                        var lon_10 = -74.000000;
+                        var vothL257 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL257_icon = new OpenLayers.Marker(vothL257);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL257);
+markers.addMarker(vothL257_icon);
+    addMarker(vothL257, popupClass, "", true, false, false);
+    map_id_vothL257.setCenter(vothL257, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL256">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL256" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chicago, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL256 = new OpenLayers.Map('map_vothL256', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL256.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL256.addLayer(markers);
+map_id_vothL256.zoomToMaxExtent();
+
+                        var lat_11 = 41.850000;
+                        var lon_11 = -87.650000;
+                        var vothL256 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL256_icon = new OpenLayers.Marker(vothL256);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL256);
+markers.addMarker(vothL256_icon);
+    addMarker(vothL256, popupClass, "", true, false, false);
+    map_id_vothL256.setCenter(vothL256, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL260">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL260" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Hadera, Palestinian Territory
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL260 = new OpenLayers.Map('map_vothL260', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL260.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL260.addLayer(markers);
+map_id_vothL260.zoomToMaxExtent();
+
+                        var lat_12 = 32.433300;
+                        var lon_12 = 34.916700;
+                        var vothL260 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL260_icon = new OpenLayers.Marker(vothL260);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL260);
+markers.addMarker(vothL260_icon);
+    addMarker(vothL260, popupClass, "", true, false, false);
+    map_id_vothL260.setCenter(vothL260, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL84">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL84" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kielce, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL84 = new OpenLayers.Map('map_vothL84', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL84.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL84.addLayer(markers);
+map_id_vothL84.zoomToMaxExtent();
+
+                        var lat_13 = 50.850000;
+                        var lon_13 = 20.650000;
+                        var vothL84 = new OpenLayers.LonLat(lon_13, lat_13);
+            vothL84_icon = new OpenLayers.Marker(vothL84);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL84);
+markers.addMarker(vothL84_icon);
+    addMarker(vothL84, popupClass, "", true, false, false);
+    map_id_vothL84.setCenter(vothL84, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ort">
+                <a name="vothG_ort"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ORT.
+                </span>
+                <span class="definition">
+                    Acronym for the Russian, Society for Handicrafts and Agricultural Work. Founded in 1880 by Russian Jews, its goal was to promote and develop vocational training in skilled trades and agriculture among Jews. Following the Holocaust, ORT ran programs in Displaced Persons camps and in western European countries, especially in France.
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_ss">
+                <a name="vothG_ss"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    SS.
+                </span>
+                <span class="definition">
+                    Acronym for the German Schutzstaffel (“Protective Echelon”), a major Nazi organization. It grew from a small paramilitary unit to a powerful force that served as Hitler's "Praetorian Guard," the Nazi Party's "Shield Squadron" and a force that, fielding almost a million men (both on the front lines and as political police), managed to exert as much political influence as the German Army. Built upon the Nazi racial ideology, the SS, under Heinrich Himmler's command, was responsible for many (and most of the worst) of the crimes against humanity perpetrated by the Nazis during World War II.
+                </span>
+            </li>
+                        <li class="vothG_appell">
+                <a name="vothG_appell"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    appell.
+                </span>
+                <span class="definition">
+                    The appell was a camp roll call. Its purpose was not merely to count the prisoners but also to weaken, humiliate and intimidate them.
+                </span>
+            </li>
+                        <li class="vothG_trusty">
+                <a name="vothG_trusty"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    trusty.
+                </span>
+                <span class="definition">
+                    Similar to a capo or blockälteste. A prisoner in the camps who held some authority over other prisoners, and in return received special treatment. These were often convicts.
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_block">
+                <a name="vothG_block"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    block.
+                </span>
+                <span class="definition">
+                    A single concentration camp barrack.
+                </span>
+            </li>
+                        <li class="vothG_kibbutz">
+                <a name="vothG_kibbutz"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    kibbutz.
+                </span>
+                <span class="definition">
+                    A collective farm or settlement in modern Israel. (Plural Kibbutzim.)
+                </span>
+            </li>
+                        <li class="vothG_hachshara">
+                <a name="vothG_hachshara"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Hachshara.
+                </span>
+                <span class="definition">
+                    A training course for would-be immigrants to Palestine, usually conducted in Europe but sometimes upon arrival in Palestine. The course prepared its students for life in a Kibbutz (a communal agricultural settlement) and would have involved forging bonds of group solidarity via instruction in Hebrew and agricultural training.
+                </span>
+            </li>
+                        <li class="vothG_dp">
+                <a name="vothG_dp"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    DP.
+                </span>
+                <span class="definition">
+                    Displaced Person, or refugee.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Polia here is most probably referring to World War I, since prior to that Staszów was part of Russian-controlled Poland. The Russians were not in Staszów at the start of World War II—it was occupied from the very beginning by the Germans.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            This is in reference to the Russian conquest of Staszów in the winter of 1944.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Kielce was the name of both a district and a town within the district.
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            This refers to Polia's liberation from Dachau on April 29, 1945 by American troops.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            By this, Polia means Bergen-Belsen.
+        </li>
+                <li class="note_6">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Częstochowa is known for the Jasna Gora monastery that houses the painting of the Black Madonna, making it the most famous Catholic pilgrimage site in Poland.
+        </li>
+                <li class="note_7">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            There was a crematorium in Bergen-Belsen, but there was not a gas chamber. Inmates died primarily from disease and starvation.
+        </li>
+                <li class="note_8">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Boder here might have been beginning to articulate a key motive for conducting his interviews, namely, to make the world aware of Nazi crimes.
+        </li>
+                <li class="note_9">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Apparently, "Sie".
+        </li>
+                <li class="note_10">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Polia's sentiments here are indicative of those of many survivors who wished to rebuild their lives and reassert their humanity after the trials and tribulations they had been through.
+        </li>
+                <li class="note_11">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Most probably January, February and part of March, 1945.
+        </li>
+                <li class="note_12">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The striped uniforms of concentration camp survivors.
+        </li>
+                <li class="note_13">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            There were a number of German female SS guards at Belsen who oversaw and tortured the thousands of Jewish female inmates there. Their behavior might have been made worse in part by their desire to impress their male counterparts.
+        </li>
+                <li class="note_14">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            In early December, 1944, Josef Kramer became camp commandant, a post formerly held by Adolf Haas. Under Kramer, Bergen-Belsen became a concentration camp. The internal management of the camp was placed in the hands of prisoner overseers as was done in other concentration camps. In order to retain their posts or from sheer sadism, a number felt compelled to demonstrate their ruthlessness. Polia's description of the brutal Jewish female functionaries as "Turkish or Romanian" is highly dubious, especially since Turkey was neutral during World War II. It should be noted that after the war Kramer and other SS administrators of the camp, including sixteen women, were tried for their crimes at Belsen. Kramer and eleven others were condemned to death and executed. Nineteen were imprisoned and fourteen were acquitted.
+        </li>
+                <li class="note_15">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            No doubt she means "lunch" time.
+        </li>
+                <li class="note_16">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            This routine was part of the senseless labor in Bergen-Belsen and other camps, designed to weaken and inflict pain on the prisoners and minimize any chance of revolt.
+        </li>
+                <li class="note_17">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Despite Polia's mention of a dentist and a doctor, there was no real medical care for Bergen-Belsen detainees at the time.
+        </li>
+                <li class="note_18">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            During the final months of the war, the Allies, with complete air supremacy, bombed Germany relentlessly—often with dire consequences for both German combatants and non-combatants and prisoners.
+        </li>
+                <li class="note_19">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Dachau was established on March 10, 1933. It was the first concentration camp organized by the SS and the model and training ground for all other SS-operated camps. At least 32,000 human beings perished at Dachau during the twelve years of its existence, including inmates subjected to barbarous pseudo-medical experiments conducted there.
+        </li>
+                <li class="note_20">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Jews were among the inmates who were attempting to assume control of the camp after most of the SS guards had fled, leaving a garrison of about two hundred to defend the camp.
+        </li>
+                <li class="note_21">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            American soldiers did in fact kill the SS troops manning the guard towers. Several others were killed by Americans who were incensed and sickened by the gruesome sights they encountered upon entering the camp. Some inmates also took retribution against their SS tormentors. However, as Polia indicates, the vast majority of the remaining SS guards were imprisoned.
+        </li>
+                <li class="note_22">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Following the war, survivors and various tracing services posted their names on lists to facilitate searching for relatives. It was no doubt by perusing these lists that Polia's relatives discovered that she was alive. Between the time of her liberation from Dachau and the time she arrived in Paris at the beginning of 1946, there is no indication as to where Polia was recuperating.
+        </li>
+                <li class="note_23">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            These were most probably cards with various images designed to evoke emotional and psychological responses from subjects. Polia's responses indicate that she was projecting her own feelings and experiences onto the images.
+        </li>
+                <li class="note_24">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The supremely tragic losses endured by Polia and other survivors included loss of family, loss of home, loss of friends and acquaintances, loss of culture, loss of possessions, loss of dignity, and often loss of faith.
+        </li>
+                <li class="note_25">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            For many survivors the ultimate fate of their families remained unknown. Polia was among the lucky and plucky few Polish Jews who survived for five years under German occupation. Some three million other Polish Jews were liquidated.
+        </li>
+                <li class="note_26">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            "Soutien gorge" is a French expression for "brassiere." Polia was being trained in brassiere making in the ORT school.
+        </li>
+                <li class="note_27">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Though stateless, Polia was more fortunate than many DPs at the time who were languishing in refugee camps in Germany, Austria and Italy. Most wished to emigrate to Palestine but were denied entry by the British.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

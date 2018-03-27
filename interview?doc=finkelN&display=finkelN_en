@@ -1,0 +1,1858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Nathan Finkel; September 24, 1946; Munich, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-nathan-finkel-september-24-1946-munich-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Nathan Finkel; September 24, 1946; Munich, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=finkelN">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=finkelN&display=finkelN_ru">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=finkelN&display=finkelN_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=finkelN">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=finkelN">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.416" end="x">[In English] <a class="placename" href="#vothL29">Munich</a>, September the 24th, 193—, 1946, at the UNRRA University for displaced persons at the Deutsches Museum. The interviewee is now Nathan Finkel from <a class="placename" href="#vothL137">Rovno</a>, a Jewish student at the university. He will speak Russian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="21.128" end="x">[In Russian] Ah, how . . . How old are you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="23.625" end="x">I am 26 years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="25.414" end="x">So. Well, [sit down and?] [unintelligible] and speak like so, that [unintelligible]. Tell me please where you were when the war began.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="37.641" end="x">When the war began, I was in <a class="placename" href="#vothL137">Rovno</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="39.747" end="x">So. And were the Russians in <a class="placename" href="#vothL137">Rovno</a> before the war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="43.702" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="46.628" end="x">No, no, no. I am thinking [unintelligible] when <a class="placename" href="#vothL137">Rovno</a> was in Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="51.370" end="x">Yes. It was in Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="52.355" end="x">Well, so. When the Germans entered [<i>stutters</i>] western Poland. Did the Russians enter, ah, did the Germans enter <a class="placename" href="#vothL137">Rovno</a> or did the Russians enter <a class="placename" href="#vothL137">Rovno</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="63.308" end="x">The Germans entered western Poland in 1939.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="65.751" end="x">No, they got . . . they got to eastern Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="71.583" end="x">To eastern [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="72.952" end="x">So, therefore, I am also saying: The Russians entered eastern Poland. Well, okay. You [unintelligible] of this time and continue then, tell me what happened to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="84.196" end="x">I was working in <a class="placename" href="#vothL137">Rovno</a> from 1939, then I left in 1940 for [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="89.559" end="x">Well, wait a bit. When did the Russians enter <a class="placename" href="#vothL137">Rovno</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="94.276" end="x">In September 1939.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="95.962" end="x">Stop! What happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="100.132" end="x">Then I [unintelligible] from [my] family. We all stayed put.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="106.149" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="107.130" end="x">I got work again. I left for <a class="placename" href="#vothL123">L'vov</a> to get a job. I studied at the Polytechnical in <a class="placename" href="#vothL123">L'vov</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="115.845" end="x">And did the Russian also capture <a class="placename" href="#vothL123">L'vov</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="117.928" end="x">Also. And also western Ukraine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="120.077" end="x">So. [<i>both talking at once</i>] Western Ukraine and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="122.894" end="x">[<i>interrupting</i>] Western Ukraine and eastern Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="124.660" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="124.971" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="125.956" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="127.576" end="x">In 1941, in June when the war had begun between Germany and Russian, I [unintelligible] after the start of the war, I went to <a class="placename" href="#vothL137">Rovno</a>. I was in <a class="placename" href="#vothL137">Rovno</a> three months in all, because very great persecutions had begun [unintelligible] by the Germans . . . By the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="150.527" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="151.922" end="x">Everyone was taken for work as soon as six months after the start of the war. Ah. In the month of December they already had killed seventeen thousand Jews in [about one week?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="166.495" end="x">How did they kill them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="168.274" end="x">They [divided?] from the morning all to gather in the square with [unintelligible] and it was forbidden to bring anything larger with themselves.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="177.043" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="177.645" end="x">And after everyone [unintelligible] [he only left?], it was those who didn't work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="181.833" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="182.494" end="x">And [unintelligible] to leave, that is from the <a class="term" href="#vothG_ss">SS</a>, the <a class="term" href="#vothG_ss">SS</a> [they got off?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="189.400" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="190.081" end="x">They were taken six kilometers outside of town. A place was already prepared there for them and they shot [them] for three days and they threw them already [into a hole?], into holes there and buried [them].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="203.642" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="205.432" end="x">I . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="205.739" end="x">[<i>interrupting</i>] Who dug these holes and who . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="207.865" end="x">[<i>interrupting</i>] It is evident the Ukrainians did the digging.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="209.536" end="x">So . . . Well, go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="210.891" end="x">Only the Ukrainians were involved [with them?], and the Germans only [did the shooting?]. [That it, the Germans?] gave the orders. The Germans had [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="219.714" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="220.024" end="x">The only gave the orders. The Germans [so?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="223.266" end="x">So. Well, go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="224.755" end="x">Well, I was no longer in <a class="placename" href="#vothL137">Rovno</a> then.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="226.505" end="x">And where were you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="227.257" end="x">I had fled them and again a month after this I fled to western Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="232.725" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="233.091" end="x">There it was a little better with the Jews, that . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="236.127" end="x">[<i>interrupting</i>] To western Poland [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="237.186" end="x">To western Poland. I fled to the city of <a class="placename" href="#vothL98">Sosnowiec</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="241.230" end="x">[unintelligible]. So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="242.328" end="x">Yes, to Silesia. There was already a <a class="term" href="#vothG_ghetto">ghetto</a> there, and I was in the <a class="term" href="#vothG_ghetto">ghetto</a> a year and a half. I was working in [Skopje?], this is how they called it in German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="253.225" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="254.164" end="x">It was very hard from morning to evening and it was especially bad for us with the food.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="260.067" end="x">Well . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="261.006" end="x">So. Because the Germans left very little for the <a class="term" href="#vothG_ghetto">ghettos</a>. As early as [<i>stammers</i>] at this time they began [to take us?] to concentration camps. They [were bringing?] these places arbeitslagers [forced labor camps], that means we worked there. [For me?] my brother and I gathered and I was in the <a class="placename" href="#vothC39" type="camp">Gross-Rosen</a> camp in Silesia. I worked all the time. I worked very hard. Of course [in the village?] [unintelligible] [we already had gotten bad?] only perhaps two men. We live in barracks. The food was very bad, we got ill and hundreds died there. A hundred men can be located in one room, and at the plant, at the factory, where we work there were such squares [we formed anxiety?]. It was very hard. The Germans treated us very badly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="324.563" end="x">I was working [of everything I didn't have?] The last two months before the end of the war, I already was thinking that it would be my end, because I got sick several times, only [because of their?] [unintelligible] from too difficult work. I worked in the square.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="349.559" end="x">What does it mean, "in the square"?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="350.261" end="x">In the square of this construction area. A military plant construction area. Several comrades were with me and they all died because I was somewhat [unintelligible], I managed to survive. We supplied kava. there was a lot of kava there, it was [camp?] kava. I got considerably ill [unintelligible] from it . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="372.217" end="x">[<i>interrupting</i>] [unintelligible] you think?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="372.524" end="x">Coffee, coffee. Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="374.245" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="374.828" end="x">And very many died before it. [And hemorrhoids interfered?], and after the operation they did not [do?] and they died. At the other, in Silesia there were very many camps.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="386.047" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="388.766" end="x">The girls worked there. The majority, they worked in the factories . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="394.214" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="401.205" end="x">I was in this camp in <placeName type="camp" ref="#vothC39">Gross-Rosen</a> until March 1945. The Germans started to [unintelligible] us in March.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="413.492" end="x">[How long?] were you in <placeName type="camp" ref="#vothC39">Gross-Rosen</a> this time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="415.598" end="x">This time I was in <placeName type="camp" ref="#vothC39">Rosen</a> a year and a half.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="417.922" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="419.316" end="x">[They evacuated?] us to the west. I ended up in <a class="placename" href="#vothC15" type="camp">Buchenwald</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="424.843" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="425.585" end="x">It was horrible in <a class="placename" href="#vothC15" type="camp">Buchenwald</a>. There were hundreds, thousands of people, and all were in horrible conditions there because then there were being transferred and no one in the camp was healthy, the other [was] because the Germans were running before the Russians. Everyone was afraid. We were under [the fire of the sky?] in <a class="placename" href="#vothC15" type="camp">Buchenwald</a> almost day and night, because there were no facilities for us. So I myself [successfully?] [unintelligible] worse. [Had to wait to the time?] until March 1945, many were spared [their lives?]. So, the final month, especially in the final days, [thousands?] died [a day], because [unintelligible] they didn't take us [we went with it?], and we walked. So, on the road, who only showed weakness [unintelligible], they killed immediately. They killed [them]. So, there were fewer and fewer left on the road . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="487.273" end="x">So, well, ah, ah, you were in <a class="placename" href="#vothC15" type="camp">Buchenwald</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="490.606" end="x">Yes. I was there only a month and a half.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="492.376" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="492.742" end="x">[I was there at the end of the war?]. [Quality of recording suddenly gets much worse here.] Well, then they liberated us and I of course was here in the American zone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="501.187" end="x">So. Well right now [weak and unintelligible] in the American zone [too weak and unintelligible], tell [me] in detail [weak and unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="513.468" end="x">From the very beginning of liberation I was in the <a class="placename" href="#vothL37">Feldafing</a> camp. It was a special camp for Jews. There were [six thousand?] [unintelligible]. Conditions were [unintelligible] [poor?]. [Unintelligible]. The American endeavored [in any?] [unintelligible] [with me?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="533.271" end="x">Who founded <a class="placename" href="#vothL37">Feldafing</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="535.278" end="x">The Americans founded <a class="placename" href="#vothL37">Feldafing</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="537.819" end="x">You know [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="540.459" end="x">No, I don't.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="541.467" end="x">So, [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="544.720" end="x">[unintelligible]. Well, because I arrived [later?], I [did not avoid the very beginning?] and [also?] then it wasn't.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="550.386" end="x">So. Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="550.851" end="x">I was in this very camp until January 1946. In January 1946, I found out that [unintelligible] university here. I decided to come here to <a class="placename" href="#vothL29">Munich</a> to get involved. I got an apartment and in March [<i>both talking at once</i>]. I got a private apartment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="576.857" end="x">Did the German assign [it] to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="578.034" end="x">Yes, the Germans assigned [it] to me, a private apartment. A good room.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="582.058" end="x">You are what, a bachelor?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="583.571" end="x">I'm a bachelor. I have a brother here. I have no one else from the family.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="587.734" end="x">From where did [he take?] [your] brother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="589.682" end="x">My brother has been with me all the time, in the camp, too. We have been together since <a class="placename" href="#vothL303">Szczecin</a>. And here [unintelligible] all the time . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="597.127" end="x">[<i>interrupting</i>]What does your brother do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="598.472" end="x">My brother is also here at the university [unintelligible] [on the second?] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="602.538" end="x">[<i>interrupting</i>] Ah, what are you studying?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="604.011" end="x">I am studying architecture.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="605.659" end="x">So . . . okay . . . That means your brother [unintelligible] [you went after?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="613.966" end="x">To be involved.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="618.261" end="x">So . . . Well, and how are [these?] conditions at the university, you, ah, what . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="623.267" end="x">Conditions at the university are not so very good, now [unintelligible], but earlier it wasn't so good [with the food?]. What touches on the lessons, that's the main thing. We have a total of about seventy students in architecture. Only several professors are good, the rest do not [teach us very much?] to the exclusion of several.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="650.420" end="x">And how is the relationship between the students?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="653.409" end="x">The relationship is rather correct between the students. Although I am a Jew, [and I feel?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="662.492" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="664.907" end="x">And I feel that here are very many of my worst ah, enemies, very [inspired?] enemies, well, nonetheless, I never feel it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="675.939" end="x">You how? Do you feel it or not feel it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="677.490" end="x">I feel it because I know that they [unintelligible], nor this [they do not show?] relationship toward me. [Outwardly?] it isn't seen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="685.410" end="x">So . . . Perhaps this is just your suspiciousness?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="688.317" end="x">It is . . . Maybe all my suspiciousness, but since I know that there are Ukrainians here, that there are Lithuanians here. They were our killers, because the Germans didn't kill us, but only the Ukrainians and the Lithuanians, and all.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="699.016" end="x">But the Lithuanians are also refugees?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="703.342" end="x">Not all of them are refugees.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="707.297" end="x">Well, I understand . . . go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="709.799" end="x">Well, and what do you expect from this university? Don you have any relatives in America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="714.080" end="x">I have relatives, but I know very little about them. And how [<i>corrects himself</i>] I still haven't gotten in touch with them. I think being involved, for the time being the conditions are better here than [those somewhere in the country?], so I want to study here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="727.370" end="x">Aha, and why won't you go [to a local?] university?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="730.099" end="x">I am dealing with that now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="731.572" end="x">Which one?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="732.393" end="x">With the Germans [now <a class="placename" href="#vothL29">Munich</a>?] after the second semester.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="735.147" end="x">In architecture?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="736.007" end="x">In architecture, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="736.749" end="x">And who will pay this for you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="738.519" end="x">[We?] have been exempted [of payment for us?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="740.835" end="x">And . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="741.102" end="x">[<i>interrupting</i>] All Jewish students [are exempt from?] payment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="744.187" end="x">Who exempted you from it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="745.364" end="x">Our student alliance that is here exempted us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="749.401" end="x">[This alliance?] is Jewish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="750.874" end="x">It is a special Jewish alliance located here of two hundred and ten Jewish students. Earlier almost everyone was here at the UNRRA University. Now the majority [will transfer?] to a German university. Since oneself and the conditions at [stops], the conditions are better.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="766.075" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="768.058" end="x">Not all the devices are needed here because this university [is forming the rest here?] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="771.725" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="772.180" end="x">. . . they will swap. And there already [everyone?] for the local professors [firstly is better?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="777.126" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="777.445" end="x">On the other hand, there [unintelligible] [to study?] since we [are located in contact?] the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="783.330" end="x">And do you think that the German students are just as bad as they were during Hitler's time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="789.372" end="x">They have been left nonetheless [these sour things?] , because [they?] clearly don't address it, but it is felt their [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="798.342" end="x">[Who?] expresses [this?]? Perhaps you are simply suspicious people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="802.147" end="x">It is expressed [in the fact?] that very often it is even noted as one indicates to the other that there are too many [living?] Jews here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="812.642" end="x">And by the way, this exemption from payment that the [student alliance?] to pay or the Germans exempted the payment?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="818.281" end="x">The Germans, the Bavarian government . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="820.801" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="821.339" end="x">. . . it exempted us. It is [unintelligible] [Bundes-?] minister exempted . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="825.891" end="x">[<i>interrupting</i>] And the Ukrainians have not been exempted from payment?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="829.121" end="x">Not all. [Not how?] we [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="831.375" end="x">Or the Poles?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="832.643" end="x">Also [they, but not all?], but the Jewish exempted.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="836.077" end="x">So, what do you think about relocating to a <a class="placename" href="#vothL29">Munich</a> university?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="838.568" end="x">Yes. I have already [signed up?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="839.946" end="x">Is there something you would like to say to American or Jewish students in America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="846.208" end="x">There is.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="847.038" end="x">Tell me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="847.941" end="x">We really need [unintelligible] help. We especially don't have any books. If there is the possibility for American students to [send?] us these books. Moreover, we want [run?] relationships with them [to write them?] so that also write us. [To exchange experience?]. We are very much behind of course, since we have not been involved for six years and [generally we have left?] culture and want to do all this now. We have relationships [and conditions?] are very, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="882.985" end="x">Emotional.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="883.304" end="x">. . . emotional. [They have been occupying?] for a very long time.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="885.576" end="x">Tell me. Do you know what the Hillel Foundation is?<note n="1"><span class="note">Hillel: The Foundation for Jewish Campus Life was founded in 1923 in the United States, and is the world's largest Jewish campus organization.</span><sup><a href="#note_1">1</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="889.198" end="x">I know very well what the Hillel Foundation is, because here with [unintelligible] <a class="placename" href="#vothL29">Munich</a>. This representative was Mr. [Deslo?]. He [unintelligible] very much for himself the Jewish students and told them about the Hillel Foundation. Some have signed up, especially those who know English well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="914.991" end="x">And perhaps [they in that?] [unintelligible] to be signed up [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="916.807" end="x">[<i>interrupting</i>] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="917.090" end="x">[<i>continuing</i>] . . . so the Hiller Foundation may have been something to do for all of you.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="921.524" end="x">So far they have done very little, with the exception that Mr., Mr. [Deslo?] told us about it and the students signed up. Up to now still nothing . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="932.125" end="x">[<i>interrupting</i>] They haven't built any organization here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Finkel</span>:
+            </span>
+            <span class="utterance" who="#finkelN" start="934.087" end="x">They haven't built anything. But for us [unintelligible] it is necessary to help us very much because there almost are no [unintelligible] conditions. Now the UNRRA people are helping us. Everything will be after this . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="950.451" end="x">[<i>interrupting</i>] Well, I think that this is like a [student interview?]. I would like to talk with you significantly further. Well, time . . . [recording ends abruptly]</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            Hillel: The Foundation for Jewish Campus Life was founded in 1923 in the United States, and is the world's largest Jewish campus organization.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Roy Cochrun</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English translation
+                            </i>: 
+            <span class="Translation">
+                <name>Roy Cochrun</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Eben E. English</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC39">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC39" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Gross-Rosen
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Rogoźnica, Poland<br />
+                            </p>
+                            <div>
+                Established in Silesia in 1940 as a satellite camp to Sachsenhausen, it became an independent camp in 1941. Work centered on a huge stone quarry and many sub-camps were established (reaching 60 in 1944).
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC39 = new OpenLayers.Map('map_vothC39', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC39.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC39.addLayer(markers);
+map_id_vothC39.zoomToMaxExtent();
+
+                        var lat_1 = 51.016700;
+                        var lon_1 = 16.300000;
+                        var vothC39 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC39_icon = new OpenLayers.Marker(vothC39);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC39);
+markers.addMarker(vothC39_icon);
+    addMarker(vothC39, popupClass, "", true, false, false);
+    map_id_vothC39.setCenter(vothC39, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC15">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC15" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Buchenwald
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Weimar, Germany<br />
+                            </p>
+                            <div>
+                Established in July 1937 near the city of Weimar for prisoners from central Germany, who were put to work making bricks at a nearby clay pit.  Around 9000 were normally housed there, but the population reached around 48,000 by April 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC15 = new OpenLayers.Map('map_vothC15', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC15.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC15.addLayer(markers);
+map_id_vothC15.zoomToMaxExtent();
+
+                        var lat_2 = 50.983300;
+                        var lon_2 = 11.316700;
+                        var vothC15 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC15_icon = new OpenLayers.Marker(vothC15);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC15);
+markers.addMarker(vothC15_icon);
+    addMarker(vothC15, popupClass, "", true, false, false);
+    map_id_vothC15.setCenter(vothC15, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_3 = 48.133300;
+                        var lon_3 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL137">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL137" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Rovno, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL137 = new OpenLayers.Map('map_vothL137', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL137.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL137.addLayer(markers);
+map_id_vothL137.zoomToMaxExtent();
+
+                        var lat_4 = 50.650000;
+                        var lon_4 = 26.166700;
+                        var vothL137 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL137_icon = new OpenLayers.Marker(vothL137);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL137);
+markers.addMarker(vothL137_icon);
+    addMarker(vothL137, popupClass, "", true, false, false);
+    map_id_vothL137.setCenter(vothL137, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL123">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL123" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            L&#39;viv, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL123 = new OpenLayers.Map('map_vothL123', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL123.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL123.addLayer(markers);
+map_id_vothL123.zoomToMaxExtent();
+
+                        var lat_5 = 49.833300;
+                        var lon_5 = 24.000000;
+                        var vothL123 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL123_icon = new OpenLayers.Marker(vothL123);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL123);
+markers.addMarker(vothL123_icon);
+    addMarker(vothL123, popupClass, "", true, false, false);
+    map_id_vothL123.setCenter(vothL123, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL98">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL98" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Sosnowiec, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL98 = new OpenLayers.Map('map_vothL98', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL98.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL98.addLayer(markers);
+map_id_vothL98.zoomToMaxExtent();
+
+                        var lat_6 = 50.266700;
+                        var lon_6 = 19.116700;
+                        var vothL98 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL98_icon = new OpenLayers.Marker(vothL98);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL98);
+markers.addMarker(vothL98_icon);
+    addMarker(vothL98, popupClass, "", true, false, false);
+    map_id_vothL98.setCenter(vothL98, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL37">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL37" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Feldafing, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL37 = new OpenLayers.Map('map_vothL37', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL37.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL37.addLayer(markers);
+map_id_vothL37.zoomToMaxExtent();
+
+                        var lat_7 = 47.933300;
+                        var lon_7 = 11.300000;
+                        var vothL37 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL37_icon = new OpenLayers.Marker(vothL37);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL37);
+markers.addMarker(vothL37_icon);
+    addMarker(vothL37, popupClass, "", true, false, false);
+    map_id_vothL37.setCenter(vothL37, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL303">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL303" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Szczecin, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL303 = new OpenLayers.Map('map_vothL303', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL303.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL303.addLayer(markers);
+map_id_vothL303.zoomToMaxExtent();
+
+                        var lat_8 = 53.416667;
+                        var lon_8 = 14.583333;
+                        var vothL303 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL303_icon = new OpenLayers.Marker(vothL303);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL303);
+markers.addMarker(vothL303_icon);
+    addMarker(vothL303, popupClass, "", true, false, false);
+    map_id_vothL303.setCenter(vothL303, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ss">
+                <a name="vothG_ss"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    SS.
+                </span>
+                <span class="definition">
+                    Acronym for the German Schutzstaffel (“Protective Echelon”), a major Nazi organization. It grew from a small paramilitary unit to a powerful force that served as Hitler's "Praetorian Guard," the Nazi Party's "Shield Squadron" and a force that, fielding almost a million men (both on the front lines and as political police), managed to exert as much political influence as the German Army. Built upon the Nazi racial ideology, the SS, under Heinrich Himmler's command, was responsible for many (and most of the worst) of the crimes against humanity perpetrated by the Nazis during World War II.
+                </span>
+            </li>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Hillel: The Foundation for Jewish Campus Life was founded in 1923 in the United States, and is the world's largest Jewish campus organization.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

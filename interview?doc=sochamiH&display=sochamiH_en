@@ -1,0 +1,1854 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Henry Sochami; August 12, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-henry-sochami-august-12-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Henry Sochami; August 12, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=sochamiH">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=sochamiH&display=sochamiH_es">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=sochamiH&display=sochamiH_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=sochamiH">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1.087" end="x">[In English] This is Spool 43 taken from Mr. Henry Sochami, 38 years old, tattoo number 109752 triangle, meaning Jewish, a tattoo of the camp of <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. He will speak Spanish, he can speak German but it's rather . . . slow, and we prefer to use the language he can speak most fluently.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="36.16" end="x">[In Spanish] Er . . . Mr. Sochami, tell me where you were born, and what your nationality is.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="44.492" end="x">I am Greek.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="50.335" end="x">Right. And where were you born?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="53.504" end="x">In <a class="placename" href="#vothL68">Salonica</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="54.682" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="55.485x" end="x">We were later deported . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="57.676" end="x">Er . . . I would like you to tell me where you were when the Germans arrived, er . . . in the city where you resided.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="71.982" end="x">Before the arrival of the Germans, I was in Albany, acting as a Greek soldier.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="77.282" end="x">So you were in the Greek Army. And who were you fighting against?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="83.759" end="x">Against Italy.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="85.347" end="x">All right. Greece joined forces with England and the United States . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="90.224" end="x">The United States, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="91.311" end="x">So you were fighting against Italy. And, what happened?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="96.007" end="x">I was eight months in combat.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="100.112" end="x">In what force were you enlisted?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="104.959" end="x">I was in class 19 . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="106.770" end="x">No, no. What force did you belong to? Infantry . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="109.384" end="x">Oh, the name was [unintelligible] télégraphiqué?.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="115.831" end="x">Oh! You were in . . . [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="118.928" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="119.278" end="x">And you know [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="120.968" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="121.451" end="x">You don’t?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="121.904" end="x">I played the clairon.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="123.944" end="x">Oh, good</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="124.880" end="x">I played the bugle.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="125.290" end="x">So, You were the . . . er . . . clarinetist in . . . er . . . a telegraphic station.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="136.186" end="x">Yes. Télégraphiqué?.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="138.739" end="x">So, could we say you are a musician?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="140.478" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="140.858" end="x">Er . . . What instruments do you play?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="143.001" end="x">The bugle.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="144.057" end="x">So you play the bugle.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="146.261" end="x">Then. When the Germans declared the war against Greece.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="152.949" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="153.704" end="x">I was fighting in Albany against Italians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="158.038" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="159.275" end="x">Then, when my city . . . <a class="placename" href="#vothL68">Salonica</a>, was occupied by Germans, we fought in <a class="placename" href="#vothL126">Athens</a>, and all the places of the Old Greece. Later, we were forced to surrender to the German forces, and Germans escorted us to our houses.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="180.716" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="182.225" end="x">I went to my house and took my three children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="185.817" end="x">What was the name of the city?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="186.982" end="x">It was <a class="placename" href="#vothL68">Salonica</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="187.845" end="x"><a class="placename" href="#vothL68">Salonica</a>. And were you with your wife?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="190.441" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="190.851" end="x">Your wife and three children. How old were they?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="194.141" end="x">One was 13 years old, [unintelligible name] Sochami; the second one was 10 years old, [unintelligible name] Sochami; and the third one, Dora Sochami, was only 3 years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="204.644" end="x">OK.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="205.761" end="x">Then, when the Germans arrived, they took all the Jews and sent us to a camp . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="213.083" end="x">Yes. To <a class="placename" href="#vothC4" type="camp">Auschwitz</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="214.580" end="x">No, no. Before that. We were taken to a labor camp. Those of us between 17 and 45 years of age.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="225.802" end="x">Men and Women?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="227.178" end="x">No, just men. Our names were written down, and we were given some signs. We were called by [unintelligible]. 3:50</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="234.277" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="234.639" end="x">Shared. And we had to work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="238.442" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="239.227" end="x">After working there, we were taken to . . . er . . . some railways . . . to guard them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="246.398" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="247.364" end="x">After that, we were taken to a <a class="term" href="#vothG_ghetto">ghetto</a> in [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="252.392" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="253.599" end="x">In [unintelligible], in Greece. The train station.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="256.624" end="x">OK.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="256.956" end="x">We were locked in the <a class="term" href="#vothG_ghetto">ghetto</a> and we remained there for eight days.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="260.789" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="261.363" end="x">After those eight days, three thousand five hundred people were sent . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="267.297" end="x">Men and women?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="268.915" end="x">Men, women, and children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="270.563" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="271.275" end="x">We were sent in closed railway cars.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="273.388" end="x">So. As you were saying, you worked only with men . . . So where were your wife and the girls?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="281.694" end="x">When we left <a class="placename" href="#vothL68">Salonica</a>, it was March 15, 1943.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="288.093" end="x">Who were you with?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="289.318" end="x">We were with the [unintelligible family name].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="292.004" end="x">So you knew this family, right?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="292.789" end="x">Yes. We arrived in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. We got to the station on March 21.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="294.962" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="296.006" end="x">There was a selection there . . . er . . . some German officers separated children, women and old people from those who could work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="314.502" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="315.214" end="x">Children, women and old people were placed in trucks and sent to <a class="placename" href="#vothC10" type="camp">Birkenau</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="322.277" end="x">To <a class="placename" href="#vothC10" type="camp">Birkenau</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="322.796" end="x">Yes, <a class="placename" href="#vothC10" type="camp">Birkenau</a>. Once there, they were sent to the gas chamber, directly . . . almost with no difficulties. The following morning, none of them were alive.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="335.328" end="x">Did this happen to your family?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="337.308" end="x">Yes. To all my family: three children and my wife.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="342.849" end="x">Oh.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="343.453" end="x">We were then sent to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. Once in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, we were left in the bathrooms all night long.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="349.266" end="x">Oh.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="349.797" end="x">We were washed, our clothes were taken away, we were given prisoner’s clothes, and we were placed under quarantine for forty days.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="359.002" end="x">What did you do while you were in quarantine?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="360.994" end="x">During the quarantine period, we were taken outside to do some physical exercise . . . and that was it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="365.733" end="x">OK.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="366.807" end="x">After the forty days had passed, some officers came to see us. They selected all those men who were strong and working men, and sent them out of <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, to other labor camps. I stayed in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="380.570" end="x">What happened to those who could not work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="383.377" end="x">Those who could not work were taken to a hospital . . . er . . . from the hospital, they were taken to <a class="placename" href="#vothC10" type="camp">Birkenau</a>, to the crematorium.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="391.303" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="391.834" end="x">And as for those of us who could work, we were sent to labor camps or commands nearby.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="398.263" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="398.945" end="x">In the commands . . . we were left aside, beaten . . . And our food was a piece of bread with a liter of water.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="409.768" end="x">What command did you work in?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="411.971" end="x">In the [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="413.843" end="x">And what did you do there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="415.521" end="x">There, we practiced masonry.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="418.516" end="x">Oh, you cut stone blocks?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="421.009" end="x">Yes. Stones . . . with civilians who worked with us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="430.263" end="x">There was a little interruption.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="435.985" end="x">A month before the Russians' arrival, the camp was evacuated and we were sent to a camp in [unintelligible name]. In [unintelligible name], there were only forty Jews, and the rest of the prisoners were Christian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="447.726" end="x">Could you please speak a little bit slower?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="449.887" end="x">Christians battered us because they could not stand the mere sight of us. They would walk away from us, they would beat us, and they would even take our bread which was our only food. From there, before the Russians came, we were taken to <a class="placename" href="#vothC15" type="camp">Buchenwald</a>. We were forced in cattle railcars and we were locked there for three days and three nights, with no food and nothing to drink. Nothing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="475.608" end="x">Do you remember what month it was?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="477.962" end="x">Er . . . It was February of 1945.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="483.033" end="x">February of 1945. All right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="487.035" end="x">We were taken to <a class="placename" href="#vothC15" type="camp">Buchenwald</a>. There were sixty five to seventy thousand people under the same roof, from all nationalities, French, Italians . . . all the nationalities in the world. We were in a building for some time, and then there was a selection and all those who were strong enough were taken to camps all around Germany for forced labors. I would always hid under beds, or anywhere to avoid being taken to labor camps.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="518.126" end="x">Oh! So it was possible to hide sometimes, wasn’t it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="528.195" end="x">It was sometimes possible. From there, I was taken to a small camp. In that small camp, I was in a barrack hut with 1,200-1,300 people. There were 7 or 8 people per square meter. At ten in the morning, we were given a liter of water and a piece of bread. Three months later, Americans were approaching and every afternoon Jews were gathered to be taken away. Christians were not taken away, but Jews were. I would hide anywhere, and I even lived among Christians and they did not know I was a Jew.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="572.930" end="x">Did you carry anything that distinguished you as Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="578.001" end="x">In <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, we carried a sign as Jews, but when we were in <a class="placename" href="#vothC15" type="camp">Buchenwald</a> we did not have anything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="583.784" end="x">OK.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="584.677" end="x">There were no differences among us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="585.673" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="586.699" end="x">Jews that were taken away from this place, were killed down the road with submachine guns. I was able to hid for three days under ground, in a barrack, together with many Russian Christians, who did not know I was a Jew.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="609.831" end="x">They didn’t know you.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="610.875" end="x">They didn’t know if I was a Jew. I always told them I was Greek and Christian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="615.704" end="x">Greek and Christian, I see.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="617.757" end="x">Then, a couple of days before the Germans left, the Americans arrived. It was about four in the afternoon, in April; April 11, 1945.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="634.526" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="635.268" end="x">When I saw the Russians coming out, because we had been hiding, I did not want to go out because I was scared.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="641.456" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="642.229" end="x">Then I saw they were all kissing and embracing each other outside. I looked and I saw everybody was dancing because the Americans were coming, so I went out. I weighted only 38 kg because of the famine, and though I was falling down, I started singing and dancing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="665.969" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="667.200" end="x">Once the Americans arrived, we started eating and drinking well, and I was with the Americans for two months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="674.866" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="675.681" end="x">In <a class="placename" href="#vothC15" type="camp">Buchenwald</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="677.009" end="x"><a class="placename" href="#vothC15" type="camp">Buchenwald</a>. I see.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="678.790" end="x">After two months, we were sent to <a class="placename" href="#vothL13">Paris</a> to be taken to Greece.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="683.184" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="683.999" end="x">By plane.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="685.418" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="687.006" end="x">[Unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="687.899" end="x">How many people were there on the plane?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="689.710" end="x">Only 53 Greek.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="692.185" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="693.060" end="x">And 10 from <a class="placename" href="#vothL68">Salonica</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="694.388" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="695.294" end="x">We were taken to <a class="placename" href="#vothL13">Paris</a>, and the rest were sent to Greece. And since I had served in the French Légion Étrangère from 1920 to 1925, in Morocco . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="707.626" end="x">Oh. Right. Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="709.063" end="x">I had the chance of staying in France.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="713.367" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="714.683" end="x">And so I stayed like this for a year because I was really thin.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="723.242" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="723.725" end="x">And now, I have started to work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="726.351" end="x">And who do you work for now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="728.977" end="x">For an American journal.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="730.504" end="x">OK. And what are you planning to do in the future?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="736.239" end="x">I don’t know . . . For the time being, I am working here, and as soon as I can find another job to earn my living.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="746.941" end="x">Aha. But, are you planning to stay in France?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="750.140" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="750.774" end="x">And . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="751.167" end="x">May be I will go to Palestine later.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="754.746" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="755.350" end="x">And . . . as soon as the situation improves.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="758.519" end="x">Aha. And what do you do here for the journal? What are you doing now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="763.590" end="x">I work here in the [unintelligible], Where they receive heavy boxes. I carry them, I close envelopes . . . er . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="771.817" end="x">So you do manual work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="773.719" end="x">Yes. Manual work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="774.854" end="x">Do you have family here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="778.252" end="x">Unfortunately, there were 27 members in my family: 3 brothers, one sister with their own families. And they all ended up in [crematories?], and I am the only one left in my whole family.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="793.554" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="793.886" end="x">Out of 27, I am alone in the world.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="796.240" end="x">And have you written to Greece?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="800.827" end="x">Yes. I have written to Greece, but [unintelligible] told me that my brother’s oldest son is alive.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="809.127" end="x">Pardon me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="809.688" end="x">My brother’s oldest son is still alive.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="814.578" end="x">So, he is alive.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="815.743" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="816.365" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="816.655" end="x">And one of my sister’s daughters . . . people say they saw her alive with other girls . . . but she left with some Belgians, and I have no idea whether she is dead or alive . . . I don't know where she is . . . I was told she was sent to Belgium.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="833.786" end="x">Oh. Right. She went to Belgium but you are not sure.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Henry Sochami</span>:
+            </span>
+            <span class="utterance" who="sochamiH" start="835.977" end="x">Yes. I don’t know where [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="838.965" end="x">Well, monsieur . . . Sochami. This has been an interesting conversation. I found all you said very interesting. Thank you very much.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="848.683" end="x">[In English] That ends the report of Henry Sochami. Taking about . . . taking about twelve minutes of Spool number 43. We will leave the rest for another interviewee. Thank you very much.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="870.213" end="x"><a class="placename" href="#vothL256">Chicago</a>, November the 21st, 1950. This concludes Spool 9-43A of Henry Sochami, it is a spool in Spanish. The next Spool 9-43B is by a Mr. Mizrahi and seems to be in English. Boder.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Roberta Hopson</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English translation
+                            </i>: 
+            <span class="Translation">
+                <name>Patricia Sanner</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Reviewer
+                            </i>: 
+            <span class="Reviewer">
+                <name>Adriana Barrós Tomé</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_1 = 50.033300;
+                        var lon_1 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC10">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC10" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Birkenau<br /><span class="alt">(Auschwitz II, <br /><span class="alt">(Brzezinka)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Auschwitz
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Brzezinka, Poland<br />
+                            </p>
+                            <div>
+                An extension of Auschwitz consisting of crematoria, barracks, and workshops.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC10 = new OpenLayers.Map('map_vothC10', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC10.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC10.addLayer(markers);
+map_id_vothC10.zoomToMaxExtent();
+
+                        var lat_2 = 50.044722;
+                        var lon_2 = 19.181389;
+                        var vothC10 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC10_icon = new OpenLayers.Marker(vothC10);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC10);
+markers.addMarker(vothC10_icon);
+    addMarker(vothC10, popupClass, "", true, false, false);
+    map_id_vothC10.setCenter(vothC10, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC15">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC15" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Buchenwald
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Auschwitz
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Weimar, Germany<br />
+                            </p>
+                            <div>
+                Established in July 1937 near the city of Weimar for prisoners from central Germany, who were put to work making bricks at a nearby clay pit.  Around 9000 were normally housed there, but the population reached around 48,000 by April 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC15 = new OpenLayers.Map('map_vothC15', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC15.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC15.addLayer(markers);
+map_id_vothC15.zoomToMaxExtent();
+
+                        var lat_3 = 50.983300;
+                        var lon_3 = 11.316700;
+                        var vothC15 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC15_icon = new OpenLayers.Marker(vothC15);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC15);
+markers.addMarker(vothC15_icon);
+    addMarker(vothC15, popupClass, "", true, false, false);
+    map_id_vothC15.setCenter(vothC15, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL68">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL68" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Thessalon&#195;ki, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL68 = new OpenLayers.Map('map_vothL68', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL68.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL68.addLayer(markers);
+map_id_vothL68.zoomToMaxExtent();
+
+                        var lat_4 = 40.633300;
+                        var lon_4 = 22.933300;
+                        var vothL68 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL68_icon = new OpenLayers.Marker(vothL68);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL68);
+markers.addMarker(vothL68_icon);
+    addMarker(vothL68, popupClass, "", true, false, false);
+    map_id_vothL68.setCenter(vothL68, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL126">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL126" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Ath&#195;nai, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL126 = new OpenLayers.Map('map_vothL126', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL126.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL126.addLayer(markers);
+map_id_vothL126.zoomToMaxExtent();
+
+                        var lat_5 = 38.000000;
+                        var lon_5 = 23.733300;
+                        var vothL126 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL126_icon = new OpenLayers.Marker(vothL126);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL126);
+markers.addMarker(vothL126_icon);
+    addMarker(vothL126, popupClass, "", true, false, false);
+    map_id_vothL126.setCenter(vothL126, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_6 = 48.866700;
+                        var lon_6 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL256">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL256" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chicago, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL256 = new OpenLayers.Map('map_vothL256', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL256.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL256.addLayer(markers);
+map_id_vothL256.zoomToMaxExtent();
+
+                        var lat_7 = 41.850000;
+                        var lon_7 = -87.650000;
+                        var vothL256 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL256_icon = new OpenLayers.Marker(vothL256);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL256);
+markers.addMarker(vothL256_icon);
+    addMarker(vothL256, popupClass, "", true, false, false);
+    map_id_vothL256.setCenter(vothL256, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

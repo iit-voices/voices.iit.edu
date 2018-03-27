@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Abraham Schrameck; August 21, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-abraham-schrameck-august-21-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Abraham Schrameck; August 21, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=schrameckA">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=schrameckA&display=schrameckA_fr_en">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=schrameckA&display=schrameck_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=schrameckA">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=schrameckA">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="22.545" end="x">[In English] Yes, introduce yourself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="26.831" end="x">[In French] Alors, donne ton nom et quelques détails de ta carrière.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="73.059" end="x">Je compte actuellement cinquante ans de vie publique dans mon pays. Vingt-cinq ans de carrière administrative et pendant le même temps, de mandat législatif. Je n'avais jamais songé dans mon tout jeune âge, fils de modeste négociant dans un département du Centre à Saint-Etienne Loire, à faire une carrière d'homme publique. La circonstance en a, en son temps, décidé. Il s'est trouvé que j'ai été invité par le Préfet du département dont je suis originaire, à occuper l'emploi de chef à son cabinet. Il s'agissait de Monsieur Lépine, avec lequel je suis revenu ensuite à Paris, où il a occupé les fonctions de Préfet de Police et laissé un souvenir que les Parisiens aiment encore à se rappeler, car je ne crois pas qu'il y ait quoi que ce soit, quelque soit le mérite de ses successeurs, qu'aucun d'eux ne peut le faire oublier. En quittant la Préfecture de Police, lorsque mon chef devint chef du gouverneur général de l'Algérie, ou gouverneur général de l'Algérie, j'ai débuté pour mon compte à Marseille, en qualité de secrétaire général de la Préfecture. Je suis restée quelques années. Je suis allé dans deux autres départements. Je suis revenu à Paris au Ministère de l'Intérieur occuper une Direction, et je suis revenu à Marseille à la Préfecture même. J'y suis resté . . . . quoique n'être préfet à aucun moment, pendant sept ou huit ans où j'exerçais mes fonctions, de telle sorte que j'ai été par Monsieur Clémenceau envoyé ensuite au gouvernement général de Madagascar. Et comme mes concitoyens de Marseille m'offraient, deux ans après, de me confier un mandat pour les représenter au Sénat, j'ai accepté cette marque de leur . . . j'ai répondu à cette marque de leur confiance. Et c'est de là que, quelque temps après, les circonstances ont fait que Monsieur Painlevé, Chef du gouvernement, m'a demandé d'être Ministre de l'Intérieur. J'étais Ministre de l'Intérieur pendant la durée de son ministère, non sans difficultés quelque fois dans Paris avec les éléments de désordre d'extrême droite qui manifestaient un peu trop publiquement déjà leur haine des institutions républicaines. Et lorsque le gouvernement a retiré, j'ai repris donc mon mandat.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="380.187" end="x">Faisant partie au Sénat des commissions des finances et de la commission de l'aviation, qui me permettait de me rendre compte de la situation dans laquelle nous nous trouvions au point de vue de notre défense contre les attaques éventuelles de l'Allemagne qu'on pouvait déjà prévoir, nous nous sommes pas fait faute, dans des commissions auxquelles j'appartenais au Sénat, d'appeler souvent l'attention du gouvernement sur l'insuffisance de ses préparatifs en présence de la . . . de ce . . . en présence . . . . ah . . . [longue pause] de l'accumulation des moyens d'attaque à laquelle l'Allemagne se livrait déjà et qui, dans les commissions parlementaires, étaient déjà connues. Nous n'avons malheureusement pas toujours trouvé, auprès ni du gouvernement ni de l'ensemble même de l'opinion publique, le crédit, l'accueil que nos observations auraient dû . . . [pause] . . . huh?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="474.725" end="x">. . . justifier, oui. ["pas le mot, mais enfin ça ne fait rien . . . " parle loin de mic] et que malheureusement, l'évènement a démontré que nous étions encore au-dessous de la vérité. Nous n'avions jamais cessé de signaler, en particulier pour ce qui concernait l'aviation, d'état d'infériorité réellement excessif dans lequel nous nous trouvions par rapport à nos belliqueux voisins. [long pause] La guerre éclatant, nous en étions fiés jusqu'à un certain point, ne pouvant faire autrement, aux témoignages que nous apportaient les chefs de nos armées. La guerre éclatant et le désastre ayant pris des proportions excessives, tous ceux qui, comme moi, appartenaient à la confession israélite, devaient s'attendre à ce que . . . ils soient de la part des vainqueurs l'objet de . . . de persécutions qui n'ont pas manqué de suivre. Et ils ne devaient pas s'attendre non plus, étant donné les conditions dans lesquelles le Maréchal Pétain et son chef de gouvernement sous Laval avaient pris le pouvoir, parce que ceux-ci ne feraient quoi que ce soit pour les leur épargner. Pour ce qui me concerne, je n'ai pas eu longtemps à attendre. Dès le mois de septembre, j'étais envoyé en détention administrative à Pellevoisin. Les commissaires . . . un commissaire de police venait me chercher chez moi à Marseille et m'emmener dans cet établissement où je me suis trouvé avec d'autres personnalités et qui avaient également attiré l'attention en raison de leur indépendance d'opinion, comme Mandel, malheureusement a disparu du fait . . . heu . . . des . . . du fait des agents sous Laval, comme Marx Dormoy, également ancien Ministre de l'Intérieur, et comme un certain nombre d'autres . . . heuh, [parle loin de mic: "je ne sais pas comment j'ai commencé ma phrase, je vais essayer de la finir . . . "] Je suis resté dans cet établissement pendant quelques mois. De là, j'étais envoyé au début de '40 en . . . [quelqu'un interrompt loin de mic: "41"] oui, dans ce . . . surveillé. Mais continuellement, euh . . . sous les . . . euh . . . ma correspondance ouverte, mes visites contrôlées, et . . . je ne . . . nous ne devons pas pouvoir quitter cette résidence qu'avec une autorisation administrative. Il n'en est pas moins vrai que lorsque les Allemands reparlent de devoir rouvr[ir] la ligne de démarcation qu'ils avaient accepté au moment de l'Armistice, je quittais cette résidence quoi qu'il en soit. Je suis revenu chez moi à Marseille que je . . . dont on ne me voulait pas trop éloigner. Et allant de temps en temps dans un département voisin, où la Gestapo venait me chercher, je n'ai pu éviter d'être mis en état d'arrestation par elle que grâce à la bonne volonté et au dévouement de certains employés municipaux qui m'ont prévenu qu'elle m'attendait. Je rentrais à Marseille, et là, du fait de nos amis américains, j'étais dans un rôle où il y va de ma vie, puisque un bombardement auquel ils se sont livrés sur Marseille le 27 mai, toutes les vitres de ma maison, la maison dans laquelle j'habitais, ont sauté. La fumée a envahi et j'ai dû retourner dans mon pied-à-terre personnel jusqu'au moment où j'ai vu débarquer ou j'ai vu descendre dans la ville des Marocains ou des troupes marocaines qui quelques jours auparavant avaient débarqué en Méditerranée sous les ordres du Général de Lattre de Tassigny. Telles ont été les tribulations latines, par lesquelles j'ai donc passé cette période de guerre, sachant, heureusement prévenu pendant la période où j'étais à Marseille, sachant que j'étais recherché, mais sans me douter de graves périls que je courais si par hasard j'étais tombé entre leurs mains. Je dois le dire, car mené [inintelligible] de la façon dont mes concitoyens marseillais ont fait ce qu'ils pouvaient pour éviter . . . m'éviter cette cruelle extrémité, me provenant bien même des hauts fonctionnaires me faisant savoir qu'au besoin je pourrais me réfugier, si je le jugeais à propos, à la Préfecture même que j'avais occupée en tant que chef du département pendant un certain nombre d'années, si je croyais que mon séjour là-bas pendant quelques heures pourrait m'abriter des recherches dont j'étais l'objet. Enfin, de différents autres côtés, des amis politiques eh . . . . pris rendez-vous avec un ou deux amis mêmes . . . émus par le risque que l'on courrait, des personnes que quelquefois je n'ai même pas à peine connues de nom autrefois, sont mis à ma disposition pour me faciliter éventuellement les . . . des possibilités d'existence.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="912.694" end="x">Ca suffit. J'ai répondu à votre question?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="919.787" end="x">[In English] Yes. I'm thinking of something.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="924.513" end="x">[In French] Pendant ce temps, à Paris où j'avais un appartement, il va sans dire que les Allemands ont fait place nette. Il n'y a rien resté de tout ce que j'avais, ni d'une bibliothèque, ni de tout ce que j'avais de mes parents, depuis plus d'une centaine d'années. Tout a été emporté, et je me suis trouvé dénué de tous moyens de recommencer ou de continuer mon ancienne existence.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="958.124" end="x">[In English] [To interpreter] I want to know if there were many of your father's friends collaborating with Vichy and the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="984.529" end="x">[In French] Des amis politiques?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="996.620" end="x">Je n'en vois pas. Ils sont très rares. Il n'y en a même pas. Et voici pourquoi. C'est parce que Monsieur Laval, auparavant au Parlement, ne jouissait pas déjà d'une très bonne réputation. Il était déjà considéré comme, depuis pas mal d'années, comme faisant au Parlement ce qui pouvait être agréable à l'Allemagne. On se souvenait qu'à la guerre précédente, il était allé . . . où c'était?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="1035.753" end="x">. . . à Quintal pour essayer d'obtenir en faveur des Allemands une paix blanche, n'est-ce pas? Et chaque fois que des débats de politique étrangère s'établissent . . . s'instituaient au Parlement, eh bien, il se manifestait anti-britannique, anti-américain, et pro-allemand. Par conséquent, on ne lui était généralement pas favorable. Et il . . . je crois bien que, si les Parlementaires qui ont donné leur confiance au Maréchal Pétain à Vichy, s'étaient doutés que le Maréchal Pétain, bien éclairé sur ce qu'était Laval, continuerait cependant à lui confier le gouvernement, eh bien, ils n'auraient pas voté comme ils ont eu voté. Pour mon compte, je connais des parlementaires d'opinion très modérée qui pendant le court séjour que j'ai fait à Vichy, sont allés voir le Maréchal et lui ont dit ce qu'ils pensaient de Laval. Ils avaient des raisons de croire que, étant donné la confiance que le Maréchal devait avoir en leurs paroles, le Maréchal ne se fierait pas à Laval, et puis il s'en débarrasserait aussi promptement qu'il le pourrait. Au lieu de ça, il semble qu'il soit laissé complètement . . . euh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="1151.519" end="x">. . . guidé, inspiré par ce mauvais génie, et . . . il est bien certain que ça n'a pas permis . . . que ça écartait beaucoup de ceux que connaissait le Maréchal, du gouvernement, du Maréchal lui-même et de Vichy. D'ailleurs, ce qui le prouve, c'est que le Maréchal a cru [inintelligible] conseiller Laval, qui était malgré tout un habile politicien, qu'il avait intérêt à créer une sorte d'assemblée, euh . . . consultative de son gouvernement à Vichy même. Il l'a créée, il a essayé d'y mettre, en recrutant dans tous les partis, des personnalités diverses qui avaient même appartenues trop pas mal pour une fraction même importante aux deux anciennes chambres, à l'ancienne chambre des députés et à l'ancien sénat. Eh bien, tout de suite, il s'y est manifesté un tel esprit contre les dispositions que lui-même prônait qu'il n'a pas osé la réunir une seconde fois. Et que les commissions qu'il avait nommées ne se sont même pas réunies et n'ont aucune fait face aux objectifs que le Maréchal Pétain s'était proposé de leur dernière [inintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1259.882" end="x">[In English] What I wanted to know is when France was split so to speak in two, to what extent were all [Schrameck interrupts with a sneeze] personally good or bad to each other? Now for instance, your father was in prison for three months. Where did your friends from before, that would have done something to get him out and not . . . [inaudible]? That's what I mean.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="1294.882" end="x">[In French] Le professeur Boder voudrait savoir si, à la suite de la division de la France en deux zones, les Français ont eux-mêmes été divisés entre eux. Et si en particulier, du fait qu'on vous étiez mis en prison, vos amis se détournaient de vous.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="1320.375" end="x">Je ne peux pas dire qu'ils se détournaient de moi. Mais il est certain que pour la plupart, à quelques exceptions intéressantes près d'ailleurs, ils prenaient beaucoup de précautions et que s'il y a quelques-uns qui sont venus me voir, ben, il y en a d'autres qui en sont quelquefois pas très loin et qui auraient pu faire un petit détour pour venir voir ce que j'étais. Bon, en d'autres temps, ils l'auraient fait, et à ce moment-là, par précaution pour eux-mêmes, eh ben, ils n'ont pas osé le faire. Je reconnais que je n'ai pas le droit de leur en vouloir, parce qu'ils auraient couru des risques personnels qu'il était inutile qu'ils courent. Et c'est ainsi que les gens qui m'ont prêté leurs concours dans la dernière période quand j'ai été à Marseille, incontestablement couraient beaucoup de risques. Je couvais [?] chez des amis. Si on m'avait trouvé avec ces amis, il n'est pas sûr, il est même possible que j'eusse eu à répondre de l'hospitalité qu'ils me donnaient, et qu'on aurait pris contre eux aussi des mesures auxquelles ils devaient, évidemment pour un certain nombre, peut-être pas à s'exposer. Ils [inintelligible] cependant, vous voyez, parce que c'est grâce à eux que je suis sorti indemne de toutes ces tribulations. Eh bien, il s'en est trouvé tout de même qui ont eu ce courage. Et en nombre relativement sérieux.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1449.959" end="x">[In English] Well, Monsieur Schrameck, I did not understand everything you said, but you said it so interestingly that I think that the people in America and our students would listen to your story with very great interest. Would you tell me how old you are?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="1475.349" end="x">[In French] Eh bien, j'ai maintenant soixante dix-huit ans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1481.473" end="x">[In English] Seventy-eight. Well, looks still like a young man.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="1493.761" end="x">When my father was in prison in Pellevoisin, his birthday was celebrated with a cake, his seventy-fourth birthday was celebrated with Marx Dormoy, with Mandel who has been killed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="1546.349" end="x">[In French] L'administrateur, le Président de la chambre, comment il s'appelle? Vincent Auriol?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="1551.243" end="x">Vincent Auriol.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1558.101" end="x">[In English] Well, it takes great courage to celebrate it.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Deborah Joyce</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>Deborah Joyce</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL524">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL524" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Saint-&#195;tienne, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL524 = new OpenLayers.Map('map_vothL524', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL524.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL524.addLayer(markers);
+map_id_vothL524.zoomToMaxExtent();
+
+                        var lat_1 = 45.433300;
+                        var lon_1 = 4.383300;
+                        var vothL524 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL524_icon = new OpenLayers.Marker(vothL524);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL524);
+markers.addMarker(vothL524_icon);
+    addMarker(vothL524, popupClass, "", true, false, false);
+    map_id_vothL524.setCenter(vothL524, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_2 = 48.866700;
+                        var lon_2 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL236">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL236" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Marseille, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL236 = new OpenLayers.Map('map_vothL236', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL236.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL236.addLayer(markers);
+map_id_vothL236.zoomToMaxExtent();
+
+                        var lat_3 = 43.300000;
+                        var lon_3 = 5.366700;
+                        var vothL236 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL236_icon = new OpenLayers.Marker(vothL236);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL236);
+markers.addMarker(vothL236_icon);
+    addMarker(vothL236, popupClass, "", true, false, false);
+    map_id_vothL236.setCenter(vothL236, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL574">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL574" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Pellevoisin, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL574 = new OpenLayers.Map('map_vothL574', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL574.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL574.addLayer(markers);
+map_id_vothL574.zoomToMaxExtent();
+
+                        var lat_4 = 46.983333;
+                        var lon_4 = 1.416667;
+                        var vothL574 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL574_icon = new OpenLayers.Marker(vothL574);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL574);
+markers.addMarker(vothL574_icon);
+    addMarker(vothL574, popupClass, "", true, false, false);
+    map_id_vothL574.setCenter(vothL574, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL575">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL575" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Quintal, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL575 = new OpenLayers.Map('map_vothL575', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL575.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL575.addLayer(markers);
+map_id_vothL575.zoomToMaxExtent();
+
+                        var lat_5 = 45.833300;
+                        var lon_5 = 6.083300;
+                        var vothL575 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL575_icon = new OpenLayers.Marker(vothL575);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL575);
+markers.addMarker(vothL575_icon);
+    addMarker(vothL575, popupClass, "", true, false, false);
+    map_id_vothL575.setCenter(vothL575, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_vichy">
+                <a name="vothG_vichy"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Vichy Government.
+                </span>
+                <span class="definition">
+                    The right-wing government of unoccupied France after the country's defeat by the Germans in June 1940, named after the spa town of Vichy, France, where the national assembly was based under Prime Minister Pétain until liberation in 1944. Vichy France was that part of France not occupied by German troops until November 1942. Authoritarian and collaborationist, the Vichy regime cooperated with the Germans even after they had moved to the unoccupied zone in November 1942. It imprisoned some 135,000 people, interned another 70,000, deported some 76,000 Jews, and sent 650,000 French workers to Germany.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

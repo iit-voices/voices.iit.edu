@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Malfis Marson; July 30, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-malfis-marson-july-30-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Malfis Marson; July 30, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=marsonM">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=marsonM&display=marsonM_fr_de_ru">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=marsonM&display=marsonM_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=marsonM">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.513" end="x">[In English] This begins a short interview with Monsieur Malfis Marson, a French-Jewish citizen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="11.680" end="x">[In German] Monsieur Marson, er, where were you born?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Malfis Marson</span>:
+            </span>
+            <span class="utterance" who="#marsonM" start="15.815" end="x">[In French] I was born in <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="19.316" end="x">[In German] Er, please would you tell me, for the benefit of our American friends, er, what you did during the war and the German occupation?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Malfis Marson</span>:
+            </span>
+            <span class="utterance" who="#marsonM" start="33.651" end="x">[In French] During the war, like every other Frenchmen, I was mobilized. I did the Occupa— . . . I spent . . . some part of the war in the Unofficial Forces. Then, by accident, I was moved to the centre of France; until the day the large German offensive was launched, when I ended up in a hospital in the Limousin region, in <a class="placename" href="#vothL20">Périgueux</a> to be more specific. Then, I spent some time recovering. And by the month of . . . by early June, then I returned to my station in the Mayenne county. As the German army progressed, I was moved away from this station, with the other men from the station of course, and we headed towards Brittany, where we were arrested on June 18th, to be precise. Later, I escaped in September 1940. To reach the free zone, since I was . . . first a prisoner of war and second a Jew, I could not stay in <a class="placename" href="#vothL13">Paris</a> during the Occupation. I am . . . should I go on?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="98.583" end="x">Go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Malfis Marson</span>:
+            </span>
+            <span class="utterance" who="#marsonM" start="99.549" end="x">Once I had reached the free zone after a number of incidents, I tried, right, to find something to do. I resumed my former job . . . my former occupation. I was a cutter, before the war, and I worked . . . in <a class="placename" href="#vothL20">Périgueux</a>. I stayed there until 1943. I can tell you that, in the meantime, I had gotten in contact with the Resistance organizations, in 1942, the southern zone Francs-tireurs organization, where I would take part in a lot of propaganda and dissemination actions. By early 1943, I was contacted by the Combat movement, and this is when I started to run the local county liaisons. As the <a class="term" href="#vothG_gestapo">Gestapo</a> had eventually . . . tracked us down, in May 1943 . . . I managed to narrowly get away from them and took refuge in the <a class="term" href="#vothG_maquis">Maquis</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="155.006" end="x">[In English] What I want to know . . . how did the Resistance movement form itself? Was that the old French radical party . . . How did the Resistance movement come about? How did it organize?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="172.597" end="x">[In German] How did the entire [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Interpreter </span>:
+            </span>
+            <span class="utterance" who="#interpreter" start="175.977" end="x">[In French] Which political movements contributed to the creation of this [inaudible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="184.398" end="x">[In German] Yes, how was the French Resistance movement formed? Who were the original parties? Yes, yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Malfis Marson</span>:
+            </span>
+            <span class="utterance" who="#marsonM" start="194.509" end="x">[In French] In my opinion, the Resistance movement, from my own experience, was mainly formed by highly developed trade unions and political movements. By political movements, which were acutely, remarkably anti-Naz— . . . anti . . . anti-fascist. Which were . . . others were nationalist movements, but they were anti-German because they had suffered from the Occupation and known the Germans during the 1914-1918 war. And with people whose interest was . . . directed towards . . . the idea of freedom only. As far as I am concerned, I was first contacted by men, who had been looked down upon, in their opinions, in their origins, who had . . . suffered, as a result of a number of humiliations. And who, as a consequence, believed that the primary duty, of every Frenchmen since we were in France, I would say of every man, was to fight against the invader. But I can tell you one thing, that . . . those who contacted us were honest men, men who believed that the Resistance movement could first, help set us free from the Occupation, and second, help us become better men and, above all, free men.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="287.046" end="x">[In English] Now, how was it . . . What elements of the population . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Malfis Marson</span>:
+            </span>
+            <span class="utterance" who="#marsonM" start="295.346" end="x">[In French] I don't understand . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="296.825" end="x">[In German] What elements of the population started to collaborate, and who collaborated closest with the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Malfis Marson</span>:
+            </span>
+            <span class="utterance" who="#marsonM" start="310.870" end="x">[In French] As I see it, the first collaborationists were failures. Men who then thought that their time had come, very jealous men, men who did not have a great future ahead of them, imagining that their brutal feelings, not their feelings but their appetite, their instincts, would get satisfied and that they would, just like Hitler, manage to rule, I would not say the world, but France and maybe Europe with the help of Hitler. Later, other people got disheartened by the lack of . . . I would not say resistance but, well . . . we realized that the allied countries were not prepared enough at that time, and some got disheartened, they really thought that Germany would end up ruling the world, and they devoted themselves, out of weakness and cowardice, to this . . . they agreed to collaborate in this way. And there were others who, out of self-interest, strictly speaking, out of . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="379.032" end="x">[In Russian] Uh . . . and . . . uh . . . mister . . . uh . . . sir [unintelligible] . . . uh . . . could you ask him about . . . uh . . . what . . . was the opinion of the military about this station?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Interpreter </span>:
+            </span>
+            <span class="utterance" who="#interpreter" start="399.768" end="x">[In French] What was the opinion of the military circles, and how did they contribute to the resistance movements?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Malfis Marson</span>:
+            </span>
+            <span class="utterance" who="#marsonM" start="415.070" end="x">They, so to speak, did not contribute at all in the beginning, because servicemen were, in my opinion, right, servicemen were obedient, except for a few rare French career officers who followed de Gaulle, I would not say from the beginning, but in the months following his June 18th 1940 speech, they were all subservient to the <a class="term" href="#vothG_vichy">Vichy</a> regime because a serviceman, in essence, is an obedient being who is compelled . . . who obeys his superior, and to them Marshal Pétain was the supreme leader of the French forces. Later, they . . . grew up . . . some of them did understand quite well, since the first founders of the resistance movements, especially the fighting movements, were career officers who had escaped and started an action . . . who took . . . who did . . . who . . . who performed rather strong action. in France. But, until . . . the landings in Algeria, it can be said that French career officers had not done anything within the resistance movements. And that the resistance movements were set up only by civilians, by political party members and mostly by the French trade unions and workers' organizations.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="491.617" end="x">[In Russian] Uh . . . could you ask him whether . . . he knows about the intellectuals such as university professors and . . . uh . . . just professionals in general such as lawyers, doctors . . . and . . . uh . . . these . . . uh . . . judges, etc.?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Interpreter </span>:
+            </span>
+            <span class="utterance" who="#interpreter" start="512.800" end="x">[In French] What was the relationship between the resistance movements, and what kind of resistance action was taken by French intellectuals, such as simple university teachers, lawyers, physicians, well, all the representatives from liberal professions?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Malfis Marson</span>:
+            </span>
+            <span class="utterance" who="#marsonM" start="538.268" end="x">Well . . . young French students . . . at the beginning of the Occupation, reacted very strongly. There were some demonstrations on November 11th, 1940, to be more specific, during which there were quite a number of fights between the French occupying forces . . . and the . . . the Latin Quarter, I think, do you remember this? On Boulevard, er . . . on Boulevard Saint-Michel. We can say that, later, a large number of French students were among the leaders and among the most active men in the French Resistance movement. In regards to intellectuals, I believe they were divided between both sides, and at the beginning, many of them collaborated, regrettably . . . Oh, some teachers . . . some teachers, and this can be said to their credit, were part of the most active men in the Collab . . . in the . . . in the Resistance movement. And others, very few of them, collaborated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="605.694" end="x">[In Russian] Uh . . . [unintelligible] . . . and farmers . . . uh . . . the agricultural population, what was their opinion of this station?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Interpreter </span>:
+            </span>
+            <span class="utterance" who="#interpreter" start="619.547" end="x">[In French] What stand did the rural population take . . . [inaudible] . . . on the Resistance movement?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Malfis Marson</span>:
+            </span>
+            <span class="utterance" who="#marsonM" start="626.881" end="x">On the Resistance movement? The rural stance, with regard to the Resistance movement, generally remained rather good. One thing should be said here, that French peasants are of an individualistic and selfish nature, they are only interested in their own profit; however, I believe that they are mostly patriots, and that what they did not like was to be compelled to do things, right. But, in the end, I think that . . . despite the plan developed by Pétain and the <a class="term" href="#vothG_vichy">Vichy</a> regime in their favor, they helped as much as they could the men from the Resistance movement asking for their support.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="683.202" end="x">[In English] How does he think will the situation now clear up in France, and how will life become organized, and what he expects . . . when will France be back to normal?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="697.294" end="x">[In Russian] Does he expect, does he think now that this situation will ever be normal again and when will it get normal?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Interpreter </span>:
+            </span>
+            <span class="utterance" who="#interpreter" start="709.035" end="x">[In French] What is your opinion about the current situation? When do you think the current situation will be back to normal, and how?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Malfis Marson</span>:
+            </span>
+            <span class="utterance" who="#marsonM" start="724.499" end="x">In the aftermath of the war, of course, there is a lot of . . . of disorganization, in the trade and production resources in France. I think that, in my opinion, until a complete agreement is reached between . . . the workers on one side and the employers on the other side, by means of trade productions, and in order to mitigate the black market and . . . to stabilize, right, the distribution of all staples and goods that are essential . . . to . . . to live, we will see no return . . . we shall not return, right, to the days we knew in 1938 and 1939. As far as I am concerned, I think we need to build up a fruitful collaboration, I would not say not only with the United States, but mainly with Europe as it is.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="785.417" end="x">Thank you very much Mr. Marson.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="792.788" end="x">[In English] This finishes the brief interview with Monsieur Malfis Marson of the French Resistance Movement taken at the Schools of <a class="term" href="#vothG_ort">ORT</a> on July 30, 1946. Eh . . . how old is he? [Ends abruptly].</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription (German)
+                            </i>: 
+            <span class="Transcription (German)">
+                <name>S. Peters</name>, <name>P. Gaensicke</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Transcription (French)
+                            </i>: 
+            <span class="Transcription (French)">
+                <name>A. Leclerc</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Transcription (Russian)
+                            </i>: 
+            <span class="Transcription (Russian)">
+                
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation (German)
+                            </i>: 
+            <span class="English Translation (German)">
+                <name>S. Peters</name>, <name>P. Gaensicke</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation (French)
+                            </i>: 
+            <span class="English Translation (French)">
+                <name>A. Leclerc</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation (Russian)
+                            </i>: 
+            <span class="English Translation (Russian)">
+                
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_1 = 48.866700;
+                        var lon_1 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL20">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL20" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            P&#195;rigueux, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL20 = new OpenLayers.Map('map_vothL20', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL20.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL20.addLayer(markers);
+map_id_vothL20.zoomToMaxExtent();
+
+                        var lat_2 = 45.200000;
+                        var lon_2 = 0.733300;
+                        var vothL20 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL20_icon = new OpenLayers.Marker(vothL20);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL20);
+markers.addMarker(vothL20_icon);
+    addMarker(vothL20, popupClass, "", true, false, false);
+    map_id_vothL20.setCenter(vothL20, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_maquis">
+                <a name="vothG_maquis"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Maquis.
+                </span>
+                <span class="definition">
+                    The predominantly rural guerrilla bands of the French Resistance.
+                </span>
+            </li>
+                        <li class="vothG_vichy">
+                <a name="vothG_vichy"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Vichy Government.
+                </span>
+                <span class="definition">
+                    The right-wing government of unoccupied France after the country's defeat by the Germans in June 1940, named after the spa town of Vichy, France, where the national assembly was based under Prime Minister Pétain until liberation in 1944. Vichy France was that part of France not occupied by German troops until November 1942. Authoritarian and collaborationist, the Vichy regime cooperated with the Germans even after they had moved to the unoccupied zone in November 1942. It imprisoned some 135,000 people, interned another 70,000, deported some 76,000 Jews, and sent 650,000 French workers to Germany.
+                </span>
+            </li>
+                        <li class="vothG_ort">
+                <a name="vothG_ort"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ORT.
+                </span>
+                <span class="definition">
+                    Acronym for the Russian, Society for Handicrafts and Agricultural Work. Founded in 1880 by Russian Jews, its goal was to promote and develop vocational training in skilled trades and agriculture among Jews. Following the Holocaust, ORT ran programs in Displaced Persons camps and in western European countries, especially in France.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

@@ -1,0 +1,1645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Andrius Suvalkaitis; September 21, 1946; München, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-andrius-suvalkaitis-september-21-1946-mnchen-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Andrius Suvalkaitis; September 21, 1946; München, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=suvalkaitisA">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=suvalkaitisA&display=suvalkaitisA_de_lt_ru">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=suvalkaitisA&display=suvalkaitisA_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=suvalkaitisA">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.000" end="x">[In English] Spool 9-143A and 9-143B. Mr. Suvalkaitis and Mrs. Bronė Skudaikienė, respectively. October 7th 1950, <a class="placename" href="#vothL256">Chicago</a>, Boder. 143A in Lithuanian, 143B partly in Lithuanian, partly German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="61.197" end="x">Spool 143. Spool 143. <a class="placename" href="#vothL29">Munich</a>, September the 21st 1946 at Lohengrinstrasse, in a camp for displaced Baltics—Lithuanians, Latvians and Estonians. The interviewee is Mr. Andrius Suvalkaitis, 41 years old [incorrect], Lithuanian. He will speak German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="89.211" end="x">[In German] You are going to speak German, aren't you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="90.195" end="x">[In English] Of course it is not his language, but we will do the best we can.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="94.952" end="x">[In German] So, Mr. Suvalkaitis, would you please tell me your name, where you were born and how old you are?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="100.614" end="x">I was born in <a class="placename" href="#vothL153">Vilkaviškis</a>, at the beginning of 1915, as the first child.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="108.147" end="x">In which month?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="109.421" end="x">On the 1st of April.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="110.278" end="x">On the 1st of April?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="112.016" end="x">Yeah.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="113.573" end="x">And where had you been, Mr. Suvalkaitis, when the war began?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="117.756" end="x">When the war started, I was in <a class="placename" href="#vothL76">Kaunas</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="121.366" end="x">So, isn't it true that first the Soviets came to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="126.636" end="x">When the Soviets came to us in Lithuania, I was in <a class="placename" href="#vothL76">Kaunas</a> as well. I was on duty in an office—as a clerk.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="133.354" end="x">So, what was this duty like? What did you do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="136.051" end="x">I worked as a—department manager.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="141.871" end="x">In which kind of office?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="143.338" end="x">It was for the Lithuanian Army in the Kauno komendantūra.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="146.344" end="x">You were a soldier?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="147.569" end="x">I was a sergeant major.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="151.299" end="x">You were a sergeant major?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="152.977" end="x">Yeah.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="153.538" end="x">And then the Soviets came. What happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="156.876" end="x">When the Soviets came, all of our—all our Colonels established a corps, and all the commanders of this corps were sent to Ireland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="167.367" end="x">The Russians established a corps?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="168.713" end="x">The Russians established a corps, as the Lithuanians hadn't been in the Army at all. And our commanders waited in <a class="placename" href="#vothL76">Kaunas</a> for a liquidation committee. In the beginning, I worked for this committee as well—until the 23rd of February.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="187.051" end="x">So, the 23rd of February? Which year?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="190.872" end="x">In the year 41.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="194.240" end="x">And how did you live when the Russians were in Lithuania? <a class="placename" href="#vothL74">Vilnius</a> belonged to Poland, didn't it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="200.656" end="x">Yeah, it was Polish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="202.576" end="x">But I thought that <a class="placename" href="#vothL74">Vilnius</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="204.314" end="x">Yeah, it was a Lithuanian town.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="205.841" end="x">But before the Russians came, it belonged the Polish, didn't it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="208.877" end="x">Yeah, first it belonged to the Polish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="210.133" end="x">And then the Russians passed <a class="placename" href="#vothL74">Vilnius</a> back to the Lithuanians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="213.682" end="x">Yeah, that's right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="214.485" end="x">And is <a class="placename" href="#vothL74">Vilnius</a> now a part of Lithuania?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="216.646" end="x">Yeah, it is in Lithuania. But all of Lithuania is now a Soviet . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="220.376" end="x">Soviet.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="220.756" end="x">Yeah.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="221.468" end="x">But the Polish don't have <a class="placename" href="#vothL74">Vilnius</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="223.689" end="x">No, they don't have.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="224.281" end="x">So, what happened further?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="227.046" end="x">That's right. And then the commanders cancelled—at the Army—the committee first arranged everything—and then, on the 25th of February, the first ones were brought to jail—the Bolshevists.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="242.064" end="x">For what reason?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="244.195" end="x">For what reason? I have no idea. I didn't do anything. For the commanders I just was a leading office-clerk—nothing more. And then the first ones were arrested—the first ones were sent to <a class="placename" href="#vothL76">Kaunas</a>—the third ones captured in <a class="placename" href="#vothL76">Kaunas</a>—and then, he didn't do anything for me—the court—he did not enough—at all.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="267.627" end="x">Mr. Suvalkaitis, please speak Lithuanian. Do you speak Lithuanian or Polish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="273.983" end="x">Lithuanian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="274.575" end="x">[In English] Okay, go ahead.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="276.615" end="x">[In Lithuanian] They arrested me on February 25, put me in a prison in <a class="placename" href="#vothL76">Kaunas</a>. I was being kept there, but since they did not have enough evidence, they could not bring me to trial, too little evidence, so they interrogated me for quite a long time—they would take me out for interrogation once in two, three nights. First, the interrogator was Russian, then a Jew, and finally a Lithuanian. But none of them could get anything serious out of me. Since they did not have sufficient testi— . . . evidence, seeing that they would not be able to bring me to court, they took me and sent me away to <a class="placename" href="#vothL74">Vilnius</a> prison on June 3, 1941. And finally, having kept me in <a class="placename" href="#vothL74">Vilnius</a> prison for three days, they sent me to <a class="placename" href="#vothL433">Minsk</a>. Once in <a class="placename" href="#vothL433">Minsk</a> prison, I was expecting, just like every suspect or arrestee, who could not be brought to trial, that a decision would be made in absentia, and I would be sentenced to fifteen, ten, more or less years of servitude and sent to the Siberian taiga. But lucky for me, the war began on June 21, 1941, and on the 24th of June, German airplanes bombed <a class="placename" href="#vothL433">Minsk</a>, and a bomb hit the prison building. Since the bomb fell on a corner of the prison building, huge panic started inside the prison.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="374.054" end="x">[In Russian] Was it a German bomb?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="376.245" end="x">A German bomb.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="378.436" end="x">[In Lithuanian] Huge panic started inside the prison. All the guards, overseers, started running around, drove all the inmates out into the courtyard. Those who had been sentenced, and those who had not been tried yet—every prisoner was taken outside. Once outside, we could hear gunfire in the corridors. Everyone who was sentenced to death or to a long term of imprisonment was executed in the courtyard, on the other side of it. We were put face against the wall, with our hands up, and various guards from the NKVD were walking around, shouting. We thought they would execute us in that courtyard as well, but then what we figured from their count, they counted around twelve hundred people—most of us were Lithuanians, but there were also Poles, some Latvians—and we were all herded deep into Russ— . . . to Russia on foot. We walked for three full days, three days and three nights, with little to eat and almost no sleep. We would get to eat only any scraps the NKVD men would throw out of the cars, having eaten themselves. We were being followed by cars with NKVD men, they would do shifts—when some of them got tired, they would get into the cars, others would walk. After a good length of the march, we sort of camped in some forest—I cannot remember its name now. They only allowed us to rest when a lot of people had fallen, unable to go on—when more than one-half would fall, then we would be allowed some rest. Finally, quite a lot of people were executed in that forest, and the rest were pushed on. Then, in the evening of the third day, after we had passed <a class="placename" href="#vothL434">Cherven</a>, (by a forest and a river that looked like the Lithuanian Nevėžis, depth- and stream-wise) we were allowed some sort of rest. And during that break—and two of us—me and a friend of mine—were carrying Colonel Petruitis, and we put our feet into that stream, to regain some . . . to revive the blood, as we were tired, hungry and going mad from the interrogation. My own legs were so beaten up they could hardly fit in my pants. At that time, a second friend who was standing, slapped me on a shoulder and said, "Look, Andrius, behind you." When I looked around, I saw machine-guns set all around. And then the chief of the NKVD men commanded us to stand up and then lie down. After that, the shooting began. The whole lot of us were gunned down, whatever was left of us. Lucky for me, dead bodies fell on me right away. Apparently, that was a lucky moment, destiny—the three of us laid in some trench. We all lay, and lucky for us, dead bodies were falling onto us, that execution continued for around three hours. After three hours, everything fell quiet, the machine-gun fire ceased, we could hear footsteps, Russian swears from the NKVD men, and those who were still alive had their heads skewered with bayonets or cracked open with trowels. Then, after they all had quieted down, when silence had fallen, I
+                        started to wriggle because I had some twelve corpses on top of me and was all drenched in blood. Other people's blood was all that surrounded me. Then I moved, moved the first few bodies off my head, raised my head and took a look around—there was nobody around, only an empty field with bodies. At that time, after I raised my head I sat up, started yelling and heard a muffled voice. And then a friend of mine got up, we both got up, started walking around the field of bodies, heard a muffled voice. We ran to it and rescued Colonel Petruitis. Petruitis got up. We (hoping that as we had survived there would be more survivors as well) were yelling and walking around, around this field of corpses. But then three more Lithuanians and two Poles got up at the other end. Of the twelve hundred people, a total of eight survived—six Lithuanians and two Poles. Then we were walking in hopes of find more survivors, but unfortunately, the NKVD men had driven down behind bushes, watching us. Having spotted people walking around, they started up the engine and were coming at us, firing the machine-guns, hoping to get us. But then we . . . when they started shooting, the forest was about two hundred meters away, and on that side—on the left of the road, was a rye field. Under gunfire, we escaped, cutting through the rye to the woods. What would the NKVD men have done—of course, they would have looked for us, but at that time German airplanes came and started firing at their cars.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="695.530" end="x">[In German] I would like you to tell me, with your own words, what happened to you—personally—when the Germans came to Lithuania.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="705.518" end="x">Yeah, that I come to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="x" end="706.601">Speak Lithuanian. But you personally—you don't need to tell the whole story—what happened to you? Yeah, speak German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="717.765" end="x">German. I can tell you. We came back to my place—I had been arrested. Then I can further tell you—I could tell you how I came back—from imprisonment—and what I did or which job I had—in German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="734.925" end="x">Speak Lithuanian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="736.165" end="x">Okay, I will speak Lithuanian again.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="739.345" end="x">[In Lithuanian] When we returned to Lithuania from <a class="placename" href="#vothL434">Cherven</a>, I found Germans in Lithuania. At the start, the Germans did nothing in particular to us. As I returned, I immediately got a job as a bakery director. I worked at the bakery, then moved to a mill hub. I worked as an auditor at the mill hub. And there I served until the 15th of May, 1944. On May 15th, the Bolsheviks were catching people in churches and taking them away. I was caught too, and taken to Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="775.301" end="x">[In German] Slowly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="776.778" end="x">[In Lithuanian] I was brought to Germany and had to work all the time at trenches, digging them. I worked in Eastern Prussia and ended up in <a class="placename" href="#vothL584">Karaliaučiaus</a>. Once in <a class="placename" href="#vothL584">Karaliaučiaus</a>, I ran away from the trenches, came to <a class="placename" href="#vothL134">Berlin</a>, having crossed to this side from <a class="placename" href="#vothL134">Berlin</a>—that was the beginning of March, April—after hi— . . . hiding at some farm for a month, the Americans came at the end of one working day. When they came, I was successfully put into the Eastern camp, where I live to this day.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="x" end="815.629">[In German] So, where had you been when the Americans came?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="819.055" end="x">When the first Americans came . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="820.572" end="x">Lithuanian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="821.812" end="x">[In Lithuanian] When the American came, I was in Austria.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="x" end="826.220">[In German] And how did you get from Austria to <a class="placename" href="#vothL29">Munich</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="829.955" end="x">[In Lithuanian] Once in Austria, I immediately went to the <a class="placename" href="#vothL426">Salzburg</a> Militėrvojiniment, reported there and they ordered me to go . . . to go to the <a class="placename" href="#vothL426">Salzburg</a> general displaced persons camp of <a class="placename" href="#vothL585">Glasenbach</a>. I went there, but only to find out that that camp was only for repatriating persons, and I did not want to go back home as long as there was a Bolshevik dictatorship in Lithuania, so I picked up and went to <a class="placename" href="#vothL29">Munich</a>. I came to <a class="placename" href="#vothL29">Munich</a> and have been living at the Didi camp since June 29 of last year.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="868.394" end="x">[In Russian] Do you think you have a family here . . . at the camp, or are you here by yourself?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="875.673" end="x">[In German] Please speak German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="876.635" end="x">Yeah, yeah.. Do you have a family in the camp or are you by yourself?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="879.705" end="x">No, my family is in Lithuania. I don't have a family. I am married. My wife and two children are in Lithuania.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="886.489" end="x">Did they write to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="887.768" end="x">No, she didn't write. Nobody wrote to me. My brother from America wrote a letter to Lithuania, but didn't get any reply.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="895.087" end="x">He didn't get an answer?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="896.042" end="x">I didn't get an answer.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="897.084" end="x">And what do you think will happen now? What are you going to do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="900.541" end="x">Now . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="901.294" end="x">You have a brother in America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="903.009" end="x">I have a brother and a sister in America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="904.478" end="x">Will they take you over there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="906.019" end="x">Yeah, I now got an affidavit, but I don't know, maybe I won't be able to go to America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="910.677" end="x">Uh. But since you got an affidavit you will soon be leaving, maybe as quickly as in a few months. On Tuesday, about 400 people are leaving—from the other camp.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="920.942" end="x">So, the first ones leave. But I am on duty. Besides. there are holidays in the camp right now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="925.141" end="x">And what do you do here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="926.662" end="x">I am now . . . I am now a fire fighter.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="929.105" end="x">You are a fire fighter.And what profession did you learn? How did you earn your living?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="933.528" end="x">I am an economist . . . I am a bookkeeper.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="936.794" end="x">What does this mean? Economist?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="938.315" end="x">[In Lithuanian] Economics.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="939.875" end="x">[In German] Lithuanian—bookkeeper.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="941.984" end="x">Aha, you studied business economics?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="943.933" end="x">Yeah.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="944.280" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="944.845" end="x">In <a class="placename" href="#vothL76">Kaunas</a></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="945.532" end="x">In <a class="placename" href="#vothL76">Kaunas</a>. At the university. Uhm. How many Lithuanians are living here in this camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="954.076" end="x">Here? About eight hundred.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="956.079" end="x">Eight hundred Lithuanians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="956.967" end="x">Yeah.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="957.289" end="x">Men, woman, and children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="958.689" end="x">Right, all together.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="959.705" end="x">Do you have a school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="961.105" end="x">Yeah, we have a school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="962.523" end="x">A Lithuanian school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="963.320" end="x">A Lithuanian school. And a Lithuanian secondary school. And that is . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="968.685" end="x">And where did you get books from?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="970.615" end="x">Books? So . . . we got a few from our own people, and now they are sent from America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="978.392" end="x">And did you get books from Lithuania?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="979.455" end="x">No, not from Lithuania, we didn't get anything from Lithuania.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="982.938" end="x">So, thank you, Mr. Suvalkaitis, that was a very good report, and we will have it translated. I think it will be very interesting, we will find it very interesting.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Andrius Suvalkaitis</span>:
+            </span>
+            <span class="utterance" who="#suvalkaitisA" start="992.048" end="x">Thank you.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="992.398" end="x">[In English] This concludes the report of Mr. Andrius Suvalkaitis, given mostly in Lithuanian, at <a class="placename" href="#vothL29">Munich</a> Baltic Center, at Lohengrinstrasse, September the 21st, 1946.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription (German)
+                            </i>: 
+            <span class="Transcription (German)">
+                <name>S. Peters</name>, <name>P. Gaensicke</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Transcription (Lithuanian)
+                            </i>: 
+            <span class="Transcription (Lithuanian)">
+                <name>L. Paulauskaite</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Transcription (Russian)
+                            </i>: 
+            <span class="Transcription (Russian)">
+                
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation (German)
+                            </i>: 
+            <span class="English Translation (German)">
+                <name>S. Peters</name>, <name>P. Gaensicke</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation (Lithuanian)
+                            </i>: 
+            <span class="English Translation (Lithuanian)">
+                <name>L. Paulauskaite</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation (Russian)
+                            </i>: 
+            <span class="English Translation (Russian)">
+                
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL256">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL256" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chicago, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL256 = new OpenLayers.Map('map_vothL256', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL256.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL256.addLayer(markers);
+map_id_vothL256.zoomToMaxExtent();
+
+                        var lat_1 = 41.850000;
+                        var lon_1 = -87.650000;
+                        var vothL256 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL256_icon = new OpenLayers.Marker(vothL256);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL256);
+markers.addMarker(vothL256_icon);
+    addMarker(vothL256, popupClass, "", true, false, false);
+    map_id_vothL256.setCenter(vothL256, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_2 = 48.133300;
+                        var lon_2 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL153">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL153" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Vilkavi&#197;kis, Lithuania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL153 = new OpenLayers.Map('map_vothL153', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL153.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL153.addLayer(markers);
+map_id_vothL153.zoomToMaxExtent();
+
+                        var lat_3 = 54.650000;
+                        var lon_3 = 23.033300;
+                        var vothL153 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL153_icon = new OpenLayers.Marker(vothL153);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL153);
+markers.addMarker(vothL153_icon);
+    addMarker(vothL153, popupClass, "", true, false, false);
+    map_id_vothL153.setCenter(vothL153, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL76">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL76" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kaunas, Lithuania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL76 = new OpenLayers.Map('map_vothL76', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL76.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL76.addLayer(markers);
+map_id_vothL76.zoomToMaxExtent();
+
+                        var lat_4 = 54.866700;
+                        var lon_4 = 23.916700;
+                        var vothL76 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL76_icon = new OpenLayers.Marker(vothL76);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL76);
+markers.addMarker(vothL76_icon);
+    addMarker(vothL76, popupClass, "", true, false, false);
+    map_id_vothL76.setCenter(vothL76, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL74">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL74" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Vilnius, Lithuania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL74 = new OpenLayers.Map('map_vothL74', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL74.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL74.addLayer(markers);
+map_id_vothL74.zoomToMaxExtent();
+
+                        var lat_5 = 54.683300;
+                        var lon_5 = 25.316700;
+                        var vothL74 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL74_icon = new OpenLayers.Marker(vothL74);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL74);
+markers.addMarker(vothL74_icon);
+    addMarker(vothL74, popupClass, "", true, false, false);
+    map_id_vothL74.setCenter(vothL74, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL433">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL433" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Minsk, Belarus
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL433 = new OpenLayers.Map('map_vothL433', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL433.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL433.addLayer(markers);
+map_id_vothL433.zoomToMaxExtent();
+
+                        var lat_6 = 53.900000;
+                        var lon_6 = 27.566667;
+                        var vothL433 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL433_icon = new OpenLayers.Marker(vothL433);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL433);
+markers.addMarker(vothL433_icon);
+    addMarker(vothL433, popupClass, "", true, false, false);
+    map_id_vothL433.setCenter(vothL433, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL434">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL434" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Cherven, Belarus
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL434 = new OpenLayers.Map('map_vothL434', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL434.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL434.addLayer(markers);
+map_id_vothL434.zoomToMaxExtent();
+
+                        var lat_7 = 53.707778;
+                        var lon_7 = 28.432222;
+                        var vothL434 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL434_icon = new OpenLayers.Marker(vothL434);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL434);
+markers.addMarker(vothL434_icon);
+    addMarker(vothL434, popupClass, "", true, false, false);
+    map_id_vothL434.setCenter(vothL434, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL584">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL584" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kaliningrad, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL584 = new OpenLayers.Map('map_vothL584', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL584.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL584.addLayer(markers);
+map_id_vothL584.zoomToMaxExtent();
+
+                        var lat_8 = 54.666700;
+                        var lon_8 = 20.500000;
+                        var vothL584 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL584_icon = new OpenLayers.Marker(vothL584);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL584);
+markers.addMarker(vothL584_icon);
+    addMarker(vothL584, popupClass, "", true, false, false);
+    map_id_vothL584.setCenter(vothL584, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL134">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL134" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Berlin, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL134 = new OpenLayers.Map('map_vothL134', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL134.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL134.addLayer(markers);
+map_id_vothL134.zoomToMaxExtent();
+
+                        var lat_9 = 52.533300;
+                        var lon_9 = 13.416700;
+                        var vothL134 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL134_icon = new OpenLayers.Marker(vothL134);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL134);
+markers.addMarker(vothL134_icon);
+    addMarker(vothL134, popupClass, "", true, false, false);
+    map_id_vothL134.setCenter(vothL134, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL426">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL426" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Salzburg, Austria
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL426 = new OpenLayers.Map('map_vothL426', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL426.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL426.addLayer(markers);
+map_id_vothL426.zoomToMaxExtent();
+
+                        var lat_10 = 47.800000;
+                        var lon_10 = 13.033333;
+                        var vothL426 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL426_icon = new OpenLayers.Marker(vothL426);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL426);
+markers.addMarker(vothL426_icon);
+    addMarker(vothL426, popupClass, "", true, false, false);
+    map_id_vothL426.setCenter(vothL426, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL585">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL585" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Glasenbach, Austria
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL585 = new OpenLayers.Map('map_vothL585', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL585.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL585.addLayer(markers);
+map_id_vothL585.zoomToMaxExtent();
+
+                        var lat_11 = 47.770103;
+                        var lon_11 = 13.088494;
+                        var vothL585 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL585_icon = new OpenLayers.Marker(vothL585);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL585);
+markers.addMarker(vothL585_icon);
+    addMarker(vothL585, popupClass, "", true, false, false);
+    map_id_vothL585.setCenter(vothL585, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

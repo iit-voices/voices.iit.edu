@@ -1,0 +1,3302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Nathan Schacht; September 8, 1946; Bellevue, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-nathan-schacht-september-8-1946-bellevue-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Nathan Schacht; September 8, 1946; Bellevue, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=schachtN">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=schachtN&display=schachtN_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=schachtN">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=schachtN">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="12.116" end="x">[In English] September 8th, 1946. <a class="placename" href="#vothL12">Bellevue</a> under <a class="placename" href="#vothL13">Paris</a>, in a home for displaced children under the direction of the <a class="term" href="#vothG_opej">OPEJ</a>, the society for the care of Jewish children. The interviewee is Nathan Schacht, a fifteen year old boy. His face is all in scars, and part of one ear is missing. He will tell us the story [of] what has happened to him.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="45.010" end="x">[In Yiddish] And so, Nathan, come over here. Move over. Tell me your name again.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="52.455" end="x">Schacht, Nathan.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="53.646" end="x">Nathan Schacht. How old are you, Nathan?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="56.435" end="x">Fifteen years.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="57.536" end="x">You are fifteen years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="58.697" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="59.104" end="x">And how long have you been in <a class="placename" href="#vothL13">Paris</a>? In France?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="62.134" end="x">I have been in France threee months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="63.807" end="x">You have been in France three months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="64.712" end="x">Three . . . four months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="65.632" end="x">Four months. And how long have you been in this place?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="68.240" end="x">Here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="68.843" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="69.205" end="x">One month.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="70.788" end="x">Here you have been one month.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="72.069" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="72.431" end="x">Well, tell me, Nathan, what has happened, as you remember it, when the war began . . . when the war began? Speak in here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="83.180" end="x">In '41, when the mother and the father were taken away by the Germans . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="88.079" end="x">The Germans took away your father and mother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="90.989" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="91.517" end="x">Tell me, how did it happen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="93.492" end="x">When they took them away at night [?] I ran away from <a class="placename" href="#vothL123">Lemberg</a>. I didn't have anywhere to stay, so I ran from <a class="placename" href="#vothL123">Lemberg</a>. [Words not clear.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="100.924" end="x">Well, wait a moment. Where did you live?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="104.135" end="x">In <a class="placename" href="#vothL123">Lemberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="105.190" end="x">Oh! In '41 you lived in <a class="placename" href="#vothL123">Lemberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="107.557" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="108.235" end="x">What language did you speak at home?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="110.542" end="x">I?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="111.160" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="111.989" end="x">Russian, Polish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="113.316" end="x">Russian, too?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="114.326" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="114.869" end="x">Can you still speak Russian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="115.939" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="116.663" end="x">[In Russian] Do you speak Russian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="117.733" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="118.367" end="x">You do speak Russian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="119.226" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="119.618" end="x">[In Yiddish] Would you like to speak Russian or Yiddish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="121.955" end="x">Hm? No. Yiddish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="123.267" end="x">You will speak Yiddish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="124.277" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="124.669" end="x">Well. How many people were in your family? The father, the mother . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="132.644" end="x">Two brothers and a sister.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="134.378" end="x">Were the brothers older or younger than you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="136.715" end="x">One brother was older than m- . . . than I.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="140.499" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="140.695" end="x">The other one was younger.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="142.037" end="x">And the sister?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="143.409" end="x">Older.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="144.389" end="x">And the sister was older than you.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="146.183" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="146.500" end="x">And where are they now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="148.264" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="148.912" end="x">Where are your brothers and sisters?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="150.540" end="x">I don't know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="151.264" end="x">You don't know where they are.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="152.561" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="152.968" end="x">Did you try to find them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="155.486" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="156.345" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="157.898" end="x">I don't know. I gave it to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="161.501" end="x">You don't know where they are.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="163.039" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="163.928" end="x">Well, what happened in '41?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="167.788" end="x">The moment the Germans came they took away the father . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="171.512" end="x">Were you at home when they took your father and mother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="173.849" end="x">Yes. They took me, too, but I ran away from the auto. And they took them away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="177.844" end="x">What did you run away from?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="179.095" end="x">From the auto.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="179.954" end="x">From the truck.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="181.221" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="181.658" end="x">Yes. And the father and mother were with whom?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="186.935" end="x">With the brothers and the sister together.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="188.729" end="x">Yes. And you ran away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="190.131" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="190.628" end="x">Why did you run away?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="191.849" end="x">They told me to run away, so I ran away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="193.553" end="x">Who told you to run away?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="195.257" end="x">The mother. She was taken away separately with the father.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="199.131" end="x">Oh!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="199.403" end="x">[Words not clear.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="199.961" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="200.187" end="x">On another truck.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="201.137" end="x">Yes? Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="202.358" end="x">And I remained with the brothers and sister. I told them to escape, too. They did not want to. They were afraid. So I escaped by myself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="210.484" end="x">Who told you to escape?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="212.368" end="x">I escaped by myself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="213.574" end="x">Oh, by yourself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="214.690" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="215.097" end="x">Nu, and they . . . Where did you escape from, from the truck?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="217.976" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="218.670" end="x">From the camion.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="219.982" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="220.570" end="x">All right. And where did you go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="222.967" end="x">So I went to a gentile. I did not have anywhere to stay there, so I went to a gentile, to work. The gentile . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="230.610" end="x">Wait a moment. [Adjusting the equipment.] And so what kind of work did you do with this gentile?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="235.677" end="x">I worked in the field. I worked everywhere, whatever he asked me to do. I worked in the forest. And then the gentile did not want to hide me. I had nothing to give him. He wanted me to give him something for hiding me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="248.295" end="x">Oh.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="248.597" end="x">I had nothing. I had no papers to show whether I am a Pole or a Russian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="253.285" end="x">Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="253.798" end="x">He did not want to keep me, so I left. So I ran away into the forest. I went to the <a class="term" href="#vothG_partisans">partisans</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="259.421" end="x">Well, tell me, did the gentle know that you were a Jew?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="263.069" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="263.883" end="x">No?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="264.306" end="x">He did not know. If I had told him that I am a Jew he would have handed me over to the police.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="269.628" end="x">Yes? But you had no papers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="272.236" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="273.035" end="x">So the gentile told you that he cannot keep you without any papers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="275.432" end="x">Of course.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="276.261" end="x">Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="276.427" end="x">He told me that if I had no papers he would not keep me. I had no papers. I must leave. He did not want to keep me. He was afraid.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="286.060" end="x">Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="287.960" end="x">Nu, so I ran away to the <a class="term" href="#vothG_partisans">partisans</a>. When I came there I did not see anybody, but one night I saw that there . . . <a class="term" href="#vothG_partisans">partisans</a> were there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="298.347" end="x">In the forest.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="298.935" end="x">Yes, I saw them there. Afterwards I went there, but I did not see anyone. I walked towards the river, about two kilometers. I noticed a Russian <a class="term" href="#vothG_partisans">partisan</a>. I saw him.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="308.538" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="308.870" end="x">He asked me where I was going. So I said, 'I am going to earn something. I have no place to go.' He asked me who I was and what . . . He questioned me about everything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="319.197" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="319.680" end="x">And then he took me to the captain.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="322.559" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="322.801" end="x">He introduced me. He accepted me. He gave me food, everything he gave me. I was there eighteen months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="329.298" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="329.690" end="x">Over a year and a half I was there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="331.635" end="x">A year.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="332.555" end="x">A year and a half.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="333.384" end="x">Half a year?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="334.243" end="x">A year and a half.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="334.982" end="x">A year and a half. And how old were you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="337.017" end="x">I was then ten . . . eleven years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="339.701" end="x">Eleven years.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="340.289" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="341.178" end="x">What did you do there with the <a class="term" href="#vothG_partisans">partisans</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="343.424" end="x">I went scouting. I went . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="345.851" end="x">Alone?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="346.680" end="x">No. With . . . with the Russians. I went scouting. I went for food to the gentiles.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="354.384" end="x">Yes? What does it mean, 'you went for food'?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="356.148" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="356.615" end="x">What does it mean, 'you went for food to the gentiles'?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="359.223" end="x">For all . . . for all Russians I brought food.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="362.434" end="x">You brought food.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="363.384" end="x">Food, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="363.912" end="x">How did you get it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="365.163" end="x">I went to the gentiles. I went with other Russians, not by myself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="368.434" end="x">Did you pay for the food?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="369.806" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="370.364" end="x">What did you do, take it away?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="371.796" end="x">Of course. We had nothing to eat, so we went and took.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="374.600" end="x">Aha. So you took [it] and ran away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="376.756" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="377.073" end="x">And the gentile, what would he do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="377.962" end="x">They would do nothing. We would take everything. But it was reported [?]. One day the Germans made an offensive . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="383.917" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="384.264" end="x">They made an offensive on the Russians there in the forest.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="387.174" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="387.611" end="x">They started shooting. They mined the whole forest with mines. But . . . we had . . . had nothing to eat any more.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="395.993" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="396.265" end="x">So I went for food.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="397.727" end="x">Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="398.134" end="x">We went there for food. I went and two other Russians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="402.702" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="403.712" end="x">We went near the German trenches.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="407.014" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="407.511" end="x">We jumped over the trenches. We were going to a gentile for food. There were mines there. I was wounded. The other two were killed. [The spool here is very weak.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="416.360" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="416.556" end="x">The other two.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="417.385" end="x">Where were you wounded?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="419.224" end="x">Huh?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="419.948" end="x">Show me. Where were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="421.199" end="x">Here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="422.013" end="x">In the arm?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="422.902" end="x">Huh?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="423.294" end="x">Where were you wounded? In the arm, and where else?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="426.204" end="x">All over. In the legs, in the arms, all over.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="429.204" end="x">In the legs and in the arms?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="429.626" end="x">Yes. Here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="430.395" end="x">What do you have on your face?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="431.676" end="x">Here? From a mine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="432.988" end="x">By . . . by fragments?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="434.300" end="x">By fragments.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="435.612" end="x">With fragments of what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="436.803" end="x">From the mine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="438.084" end="x">From a mine!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="438.896" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="439.122" end="x">Oh, the mine . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="440.464" end="x">Burst.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="440.660" end="x">. . . had exploded, burst.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="441.519" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="441.911" end="x">And when was part of your ear torn off? At the same time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="446.298" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="447.007" end="x">[In English] He is all rather mutilated. One half ear is missing, and he has shrapnel wounds, or wounds of . . . eh . . . shrapnel, or pieces of mines all over his body.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="464.510" end="x">[In Yiddish] Well, go on. Tell me, how many <a class="term" href="#vothG_partisans">partisans</a> were you . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="468.835" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="469.001" end="x">. . . in that forest?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="469.423" end="x">In the forest? There were a thousand men, an entire company.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="472.725" end="x">Thousand <a class="term" href="#vothG_partisans">partisans</a>? An entire company.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="475.484" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="476.042" end="x">What did one do there all day?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="477.504" end="x">We made mines. Put mines under trains. Put mines under . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="483.926" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="484.137" end="x">. . . the . . . everything, whatever we could. The front [lines] were not far from our forest.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="489.368" end="x">Which front?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="490.273" end="x">The German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="491.404" end="x">The German front.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="492.444" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="492.685" end="x">And the Russian front?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="494.268" end="x">On the other side.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="495.459" end="x">On the other side.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="496.409" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="496.726" end="x">And you were in the middle?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="498.188" end="x">Yes, we were in the middle.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="499.907" end="x">You were in the middle.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="501.008" end="x">Yes. Here are the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="503.526" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="503.812" end="x">Here are the Russians, and here we were.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="505.093" end="x">Did it not happen that the Russians shot at you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="509.254" end="x">No. The Germans were shooting at us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="510.762" end="x">Yes. But the Russians did not shoot.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="512.224" end="x">No. The Russians, of course, knew that we were there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="514.878" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="515.496" end="x">Afterwards, when I already was wounded . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="517.682" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="518.089" end="x">. . . the Russians came and took me away to a hospital.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="522.174" end="x">To a Russian hospital.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="523.471" end="x">Yes. I lay there about two days, and then the whole army came.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="528.310" end="x">The Russian army.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="529.004" end="x">Yes. They came and handed me over to a doctor.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="531.491" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="532.079" end="x">[Words not clear.] I lay in a hospital eight months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="536.044" end="x">Eight months?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="536.813" end="x">Eight months I lay in the hospital.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="538.637" end="x">Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="539.150" end="x">I was supposed to be operated on. I still have a piece of shrapnel.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="542.994" end="x">Do you still have a piece of shrapnel? Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="544.622" end="x">Here in the side.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="546.145" end="x">In the left side?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="546.974" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="547.276" end="x">[In English] He has a shrapnel wound and a piece of shrapnel right near the heart.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="552.036" end="x">[In Yiddish] Nu, were you operated on?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="554.105" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="554.874" end="x">Why not?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="555.191" end="x">I could not be operated on, because there were no . . . no . . . there was no . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="562.352" end="x">Facilities.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="563.061" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="563.311" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="563.507" end="x">They could not. It was in the front lines. I had to go farther, so I lay in the hospital. I lay there eight months. Then I was healed already.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="573.532" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="573.803" end="x">Except this shrapnel wound. Then I left the hospital.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="577.195" end="x">Where to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="577.662" end="x">To a home in <a class="placename" href="#vothL135">Cracow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="580.330" end="x">The Russians let you go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="581.853" end="x">Huh?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="582.501" end="x">They left . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="582.787" end="x">They did not let me. They did not want to let me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="584.551" end="x">Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="584.717" end="x">But there came Jews, and they took me away. [They said,] 'Oh yes, you will go back there. Do you need more shrapnel fragments?' So I went to Poland. So I was in Poland . . . [ Here the recording greatly improves.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="595.436" end="x">So you went to Poland. What happened there? To which city in Poland did you go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="599.823" end="x">To <a class="placename" href="#vothL135">Cracow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="600.742" end="x">Yes. Speak slowly and loud. You understand?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="603.139" end="x">Yes. I was in <a class="placename" href="#vothL135">Cracow</a> in a children's home. Then I went to <a class="placename" href="#vothL155">Zakopane</a>. There we were in a children's home, too. We could not stay there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="614.129" end="x">Why not?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="614.838" end="x">Bandits came at night, and we could not remain there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="617.657" end="x">Tell me, where was that, in <a class="placename" href="#vothL155">Zakopane</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="619.918" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="620.461" end="x">Tell me, how did you get to <a class="placename" href="#vothL155">Zakopane</a>? Did you go there by train?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="623.823" end="x">Yes. I came there by . . . by auto.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="626.642" end="x">By auto. With many other children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="629.597" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="630.185" end="x">Who brought you there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="631.557" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="632.266" end="x">Who brought you there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="633.517" end="x">The woman director who is here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="635.145" end="x">Oh! The woman teacher from here! Mrs. Kuechler . . . Kuechler? [See Mrs. Kuechler, Chapter 58.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="639.080" end="x">Kuechler, yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="640.060" end="x">She . . . she found you where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="642.668" end="x">In <a class="placename" href="#vothL135">Cracow</a>. And she brought me to <a class="placename" href="#vothL155">Zakopane</a> to the children's home.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="645.653" end="x">Were you in <a class="placename" href="#vothL135">Cracow</a> with her in the children's home?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="648.321" end="x">No. I don't know. She just came for the children. [Words not clear.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="650.537" end="x">Oh! She came to Cra- . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="652.210" end="x">Yes. And took away . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="652.663" end="x">. . . and took away the children's home.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="654.005" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="654.352" end="x">To <a class="placename" href="#vothL155">Zakopane</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="655.151" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="655.407" end="x">Well, tell me, what happened in <a class="placename" href="#vothL155">Zakopane</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="657.774" end="x">It was all right there, but we could not stay there any more.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="660.472" end="x">Why not?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="661.256" end="x">They threw . . . on the house . . . The house had to be guarded by soldiers. We could not stay there any more.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="668.990" end="x">Why not?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="669.789" end="x">Because there . . . eh . . . eh . . . because in <a class="placename" href="#vothL155">Zakopane</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="674.055" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="674.387" end="x">there were bandits.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="676.060" end="x">Who? Polish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="676.965" end="x">Polish</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="677.704" end="x">Nu, what did they do to you. They . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="679.257" end="x">They killed Jews there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="680.870" end="x">Oh! They were killing Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="681.835" end="x">Yes. So we could not stay there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="684.232" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="684.971" end="x">So she . . . so we went to France.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="688.906" end="x">Oh. How . . . tell me, how did you travel from <a class="placename" href="#vothL155">Zakopane</a>? Did you go by train, or by auto?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="694.167" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="695.072" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="695.660" end="x">From <a class="placename" href="#vothL155">Zakopane</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="696.549" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="696.670" end="x">. . . to France? We went . . . we went by auto as far . . . as far as Czechoslo- . . . -slo- . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="704.132" end="x">Across the border.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="705.459" end="x">Across the boder. Then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="705.461" end="x">All the children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="706.137" end="x">Yes, all the children from <a class="placename" href="#vothL155">Zakopane</a> [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="707.177" end="x">And were there grown-up people, too?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="709.212" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="709.725" end="x">Who?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="710.132" end="x">Mr. Zeeman [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="711.489" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="711.986" end="x">And Madame Kuechler, the director.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="714.413" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="714.775" end="x">And another . . . another two.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="716.991" end="x">Aha. And the very small children also?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="719.041" end="x">Also. Everybody, everybody.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="719.961" end="x">Also.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="720.398" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="720.519" end="x">Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="721.228" end="x">Then from Czechoslovakia we went by automobiles to France.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="725.705" end="x">[Words not clear.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="725.916" end="x">To <a class="placename" href="#vothL299">Barbizon</a> [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="727.288" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="727.725" end="x">In <a class="placename" href="#vothL299">Barbizon</a> [?] we were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="729.489" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="729.685" end="x">. . . in the house.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="730.394" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="730.771" end="x">We could not stay in <a class="placename" href="#vothL299">Barbizon</a> [?]. The house was too small.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="735.188" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="735.429" end="x">We could not stay, so we went to [name not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="737.253" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="737.659" end="x">And from [name not clear] we came here to <a class="placename" href="#vothL12">Bellevue</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="741.172" end="x">And what do you do here all day?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="743.659" end="x">Here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="744.082" end="x">Here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="744.851" end="x">Well, we are divided into groups here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="750.052" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="750.595" end="x">One group has . . . they do work in the kitchen, another group in the house.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="759.685" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="760.439" end="x">Another group keep the yard clean. [Words not clear.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="764.645" end="x">Aha. Are you learning something?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="767.072" end="x">Yes. We study here [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="769.710" end="x">Aha. Do they feed you well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="772.454" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="773.494" end="x">And do you know anything about your brothers, sister?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="775.514" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="776.057" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="776.585" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="777.098" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="777.324" end="x">They all were taken away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="778.304" end="x">What do you think of doing? What do you want to be?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="781.515" end="x">I want to . . . I want to go for a . . . for a . . . to learn . . . I want to learn . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="787.455" end="x">What do you want to learn?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="787.922" end="x">Locksmith [mechanic?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="788.721" end="x">A locksmith [mechanic]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="789.580" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="790.017" end="x">Aha. And where do you want to go to live?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="793.213" end="x">I do not know yet.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="794.675" end="x">You do not know yet.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="795.489" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="795.791" end="x">You have no relatives in America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="797.766" end="x">I had. I do not know. I had some in Argentina . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="800.826" end="x">In Argentina.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="801.671" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="801.897" end="x">Do you have relatives in <a class="term" href="#vothG_eretzY">Eretz</a> [Israel]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="804.189" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="805.169" end="x">The others want to go to <a class="term" href="#vothG_eretzY">Eretz</a>. Do you want to go to <a class="term" href="#vothG_eretzY">Eretz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="809.194" end="x">Of course.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="810.038" end="x">Of course.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="810.641" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="811.229" end="x">Nu, and so let us hope everything will be all right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="816.008" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="817.199" end="x">Can you tell me some special story from your <a class="term" href="#vothG_partisans">partisan</a> life?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="822.279" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="822.551" end="x">When you were in a special . . . in an especially frightful situation? In an especially dangerous situation. When . . . what was the worst moment in your <a class="term" href="#vothG_partisans">partisan</a> life?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="835.290" end="x">The worst moment was when the offensive came.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="840.702" end="x">By the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="841.124" end="x">On the 21st of July . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="843.717" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="844.169" end="x">The 21st of July the offensive came, in '43.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="848.254" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="849.008" end="x">When the Germans made an offensive. They bombed the forest terribly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="854.571" end="x">The forest.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="855.521" end="x">Bombed so that the trees flew in the air.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="859.516" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="860.255" end="x">We could not stand it any more.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="861.265" end="x">Were many killed [?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="862.863" end="x">Many.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="863.451" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="863.948" end="x">Many. [Words not clear.] And in three days the Soviets made an offensive. It was the same way.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="870.280" end="x">Aha. Tell me, did you carry a rifle? Did you shoot people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="874.064" end="x">No, no. I threw grenades.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="876.190" end="x">You threw grenades?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="877.260" end="x">I planted mines.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="878.617" end="x">And you planted mines.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="879.929" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="880.999" end="x">Did you yourself threw grenades, or other people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="884.256" end="x">Well, on a bridge.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="886.351" end="x">On a bridge.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="887.150" end="x">On a bridge.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="888.100" end="x">And it exploded.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="889.472" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="890.452" end="x">Did the <a class="term" href="#vothG_partisans">partisans</a> like you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="892.728" end="x">Of course.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="893.663" end="x">Were these <a class="term" href="#vothG_partisans">partisans</a> also gentiles?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="896.512" end="x">Yes. Russians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="897.914" end="x">Russians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="898.612" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="898.803" end="x">And Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="900.235" end="x">Jews, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="901.074" end="x">Did you get along well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="902.592" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="903.079" end="x">You were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="903.818" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="905.099" end="x">Did you have enough food?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="905.898" end="x">Yes, food I had, clothing. I had everything. In the summer [?] I had everything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="911.220" end="x">Did you wear a Cossack uniform?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="913.617" end="x">No, I did not have it. I wore civilian [clothes].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="916.828" end="x">Civilian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="917.624" end="x">Of course.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="918.333" end="x">What kind of rifle did you have?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="920.428" end="x">What . . . whatever I could lay my hands on I had.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="922.780" end="x">[Chuckle.] All right, Nathan Schacht. Would you send in the girl that you said . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nathan Schacht</span>:
+            </span>
+            <span class="utterance" who="#schachtN" start="930.182" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="930.755" end="x">Send her in.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="933.048" end="x">[In English] This concludes at fourteen [?] minutes [of the indicator, which does not necessarily mean duration of the interview] the report of Nathan Schacht. September 8th, 1946. In <a class="placename" href="#vothL12">Bellevue</a> near <a class="placename" href="#vothL13">Paris</a>. A home for displaced children which [who], under the direction of their teacher Lena Kuechler and a staff of about ten instructors and medical assistants, are living here in expectation of transfer to Palestine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="959.879" end="x">The record of Nathan [unintelligible] concludes at fourteen minutes of the spool.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL12">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL12" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Bellevue, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL12 = new OpenLayers.Map('map_vothL12', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL12.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL12.addLayer(markers);
+map_id_vothL12.zoomToMaxExtent();
+
+                        var lat_1 = 48.818350;
+                        var lon_1 = 2.229561;
+                        var vothL12 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL12_icon = new OpenLayers.Marker(vothL12);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL12);
+markers.addMarker(vothL12_icon);
+    addMarker(vothL12, popupClass, "", true, false, false);
+    map_id_vothL12.setCenter(vothL12, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_2 = 48.866700;
+                        var lon_2 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL123">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL123" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            L&#39;viv, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL123 = new OpenLayers.Map('map_vothL123', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL123.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL123.addLayer(markers);
+map_id_vothL123.zoomToMaxExtent();
+
+                        var lat_3 = 49.833300;
+                        var lon_3 = 24.000000;
+                        var vothL123 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL123_icon = new OpenLayers.Marker(vothL123);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL123);
+markers.addMarker(vothL123_icon);
+    addMarker(vothL123, popupClass, "", true, false, false);
+    map_id_vothL123.setCenter(vothL123, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL135">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL135" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Krak&#195;w, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL135 = new OpenLayers.Map('map_vothL135', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL135.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL135.addLayer(markers);
+map_id_vothL135.zoomToMaxExtent();
+
+                        var lat_4 = 50.050000;
+                        var lon_4 = 19.916700;
+                        var vothL135 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL135_icon = new OpenLayers.Marker(vothL135);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL135);
+markers.addMarker(vothL135_icon);
+    addMarker(vothL135, popupClass, "", true, false, false);
+    map_id_vothL135.setCenter(vothL135, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL155">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL155" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Zakopane, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL155 = new OpenLayers.Map('map_vothL155', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL155.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL155.addLayer(markers);
+map_id_vothL155.zoomToMaxExtent();
+
+                        var lat_5 = 49.283300;
+                        var lon_5 = 19.900000;
+                        var vothL155 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL155_icon = new OpenLayers.Marker(vothL155);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL155);
+markers.addMarker(vothL155_icon);
+    addMarker(vothL155, popupClass, "", true, false, false);
+    map_id_vothL155.setCenter(vothL155, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL299">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL299" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Barbizon, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL299 = new OpenLayers.Map('map_vothL299', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL299.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL299.addLayer(markers);
+map_id_vothL299.zoomToMaxExtent();
+
+                        var lat_6 = 48.433300;
+                        var lon_6 = 2.600000;
+                        var vothL299 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL299_icon = new OpenLayers.Marker(vothL299);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL299);
+markers.addMarker(vothL299_icon);
+    addMarker(vothL299, popupClass, "", true, false, false);
+    map_id_vothL299.setCenter(vothL299, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_opej">
+                <a name="vothG_opej"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    OPEJ.
+                </span>
+                <span class="definition">
+                    Acronym for the Oeuvre de Protection des Enfants Juifs, a French organization that cared for Jewish orphans following World War II.
+                </span>
+            </li>
+                        <li class="vothG_partisans">
+                <a name="vothG_partisans"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    partisans.
+                </span>
+                <span class="definition">
+                    Paramilitary forces engaged behind the front lines during World War II.
+                </span>
+            </li>
+                        <li class="vothG_eretzY">
+                <a name="vothG_eretzY"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Eretz Yisroeil.
+                </span>
+                <span class="definition">
+                    Hebrew for the Land of Israel.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

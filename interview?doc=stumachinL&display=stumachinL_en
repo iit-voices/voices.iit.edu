@@ -1,0 +1,2185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Lina Stumachin; September 8, 1946; Bellevue, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-lina-stumachin-september-8-1946-bellevue-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Lina Stumachin; September 8, 1946; Bellevue, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=stumachinL">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=stumachinL&display=stumachinL_pl_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=stumachinL&display=stumachinL_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=stumachinL">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.995" end="x">[In English] <a class="placename" href="#vothL13">Paris</a>, <a class="placename" href="#vothL13">Paris</a> September . . . <a class="placename" href="#vothL13">Paris</a> . . . <a class="placename" href="#vothL13">Paris</a> . . . <a class="placename" href="#vothL13">Paris</a>, September the 8th, 1946. <a class="placename" href="#vothL12">Bellevue</a>, a home for displaced children. The interview is Ms. Lina Stumachin, 36 years old, a tattoo number from <a class="placename" href="#vothC4" type="camp">Auschwitz</a>: 26569.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="23.608" end="x">[In German] Now, Ms. Stumachin, would you mind beginning again. There was something wrong with the recorder. Would you like to tell us where you were when war broke out?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="33.783" end="x">Well, I am—I was in <a class="placename" href="#vothL155">Zakopane</a>. I was there with my family, and my husband, and my child.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="43.356" end="x">So, how old was the child?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="44.607" end="x">The child was thirteen [unintelligible] years old, that was the sixth year of age.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="49.522" end="x">In what year was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="52.070" end="x">In 1939.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="53.382" end="x">In the year 1939.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="54.633" end="x">Yes, 1939.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="55.628" end="x">And what was your occupation?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="57.437" end="x">I had a photoshop and a photographic business in <a class="placename" href="#vothL155">Zakopane</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="62.292" end="x">And your husband?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="63.483" end="x">My husband was also in this line of work, at the time.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="67.930" end="x">Aha. Where did you learn photography?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="71.398" end="x">I was, I mean, I learned from my husband. 15 years.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="77.926" end="x">Aha. Have you been married for 15 years?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="79.780" end="x">Yes, I have been married for 15 years.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="82.162" end="x">Aha. Now then, is your husband here now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="86.323" end="x">No. Nor do I know where he is. I do know that . . . [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="90.951" end="x">Aha, now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="92.489" end="x">Now in 1939—no, I mean in 1940, the Germans came to <a class="placename" href="#vothL155">Zakopane</a> and we had to leave.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="104.353" end="x">Where did you go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="104.956" end="x">We went to <a class="placename" href="#vothL135">Cracow</a>. Er, in a village. We worked a little in the village and later we had to move into the <a class="placename" href="#vothC55" type="camp">ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="117.809" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="118.306" end="x">And we were in the <a class="placename" href="#vothC55" type="camp">ghetto</a> for about a year.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="123.462" end="x">Who do you mean by "we"?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="125.271" end="x">Er, my husband, my child, my father, and my brother. All of us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="130.457" end="x">Now, the <a class="placename" href="#vothC55" type="camp">ghetto</a> was in <a class="placename" href="#vothC55" type="camp">Cracow</a>. Could you give a brief description of the <a class="placename" href="#vothC55" type="camp">ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="134.317" end="x">Well, there were, er, roughly seven streets surrounded by a wall.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="141.960" end="x">A wall or a fence?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="143.649" end="x">A wall.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="144.961" end="x">Was the wall built from bricks and stones?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="147.599" end="x">From bricks and stones.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="148.685" end="x">Who built the wall?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="150.298" end="x">The inhabitants built it themselves.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="152.348" end="x">Built it together.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="154.157" end="x">And we lived there in such a tiny apartment. And then, even our children were under a death sentence [unintelligible] in the <a class="placename" href="#vothC55" type="camp">ghetto</a>, we were frightened, but we couldn't do much about it—there was no possibility of leaving.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="178.421" end="x">Tell us, how did it come about that you . . . [unintelligible] understand?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="182.099" end="x">In <a class="placename" href="#vothL155">Zakopane</a>, we did not have a single language that we all used.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="186.049" end="x">Now, <a class="placename" href="#vothL155">Zakopane</a> is in the Ukraine?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="189.215" end="x">No, it is a Polish spa town.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="194.597" end="x">Aha. Where is it in relation to the nearest large city?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="197.959" end="x">It is 115 kilometres from <a class="placename" href="#vothL135">Cracow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="202.587" end="x">115. How far is it from <a class="placename" href="#vothL81">Katowice</a> or <a class="placename" href="#vothL98">Sosnowice</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="206.235" end="x">About 140 kilometres from <a class="placename" href="#vothL81">Katowice</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="209.070" end="x">140 kilometres. And what sort of spa town is it? What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="213.909" end="x">It was a spa town in the mountains. A sport . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="217.588" end="x">A sports resort. Yes. And how [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="225.533" end="x">Now, later on we were taken to the camp from, from er, from . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="237.397" end="x">Would it be better for you if we spoke Polish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="239.237" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="239.373" end="x">Please speak in Polish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="242.222" end="x">[In Polish] We were in the <a class="placename" href="#vothC55" type="camp">ghetto</a>, later, from the <a class="placename" href="#vothC55" type="camp">ghetto</a>, we were sent to a camp. I worked at a post [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="251.599" end="x">[In German] Can I start in Polish and then everything . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="255.398" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="259.348" end="x">I have, I have already . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="260.298" end="x">Don't worry, that's not a problem. Now, let's begin, but you, let's begin. We don't need to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="266.886" end="x">Ah, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="267.806" end="x">[In Russian] Speak Polish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="269.449" end="x">[German] From <a class="placename" href="#vothL155">Zakopane</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="270.565" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="272.329" end="x">[In Polish] So I lived in <a class="placename" href="#vothL155">Zakopane</a> and I owned a photoshop, with my husband and my child. We lived in our own house. In 1940, the Germans established, in <a class="placename" href="#vothL155">Zakopane</a>, a health resort, and they ordered all the Jews to leave <a class="placename" href="#vothL155">Zakopane</a>. They allowed us to take some of our things and we had to leave our city. We went to <a class="placename" href="#vothL135">Cracow</a>. Near <a class="placename" href="#vothL135">Cracow</a>, in a small town, we lived for almost a year. Next, we had to go to the <a class="placename" href="#vothC55" type="camp">ghetto</a>, since everyone . . . there was no other place. The Jews were not allowed to live in any other cities besides <a class="term" href="#vothG_ghetto">ghettos</a>. In the <a class="placename" href="#vothC55" type="camp">ghetto</a>, we lived about a year. During that time, there were several groups who were sent away, which, due to the fact that we were working, we were able to avoid. We were forced to accept shifts of mandatory work. Because those that did not work, got sent elsewhere. And to stay with our child, we accepted work at different companies. My husband in one company, and I at a different company. Next, our posts were eliminated, so we were moved to a camp and we were forced, forced to leave our child at home in the <a class="placename" href="#vothC55" type="camp">ghetto</a>. We had the opportunity to visit our child once a week. Next, the <a class="placename" href="#vothC55" type="camp">ghetto</a> was shut down, when we arrived on the day before the liquidation, we found our home empty, our child was taken away [unintelligible] . . . it was said that there were camps for children, that the children are in the same kind of camps as we were, and that there would be a possibility of seeing them, when the war ends shortly. We cheered each other by saying that we would all be together soon. But our high hopes did not last long, we saw, how they were continuing to treat the children, constantly taking them to the camps away from the <a class="placename" href="#vothC55" type="camp">ghetto</a>. So our continued experiences became sad. In the camp at <a class="placename" href="#vothC89" type="camp">Plaszow</a>, we stayed a year and a half, no, about a year, together with my husband.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="468.846" end="x">[In German] I didn't understand you fully at one point. Where did your daughter stay?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="476.233" end="x">[In Polish] I continued to go to my forced job in the city, this was a benefit for us, because, from the city, we could bring home food to eat, and at the camp it was very hard, very difficult, to obtain any nourishment, we would get a pitiful soup, and it was hard to work with that kind of nourishment. So, with what I brought from the city, I could help my husband, as well as other people around us. But this did not last long, the <a class="placename" href="#vothC55" type="camp">ghetto</a> was closed, the camp was closed and Jews were no longer allowed into the city. We were sure that we would stay in that camp and wait until the end of the war, but it played out differently. In 1944 . . . they took <a class="term" href="#vothG_action">action</a> on us, we didn't know, what, in fact, was to happen with the people, who were taken. It turned out that the people who were left, were taken from Poland to work in Germany. Among others, I was taken at this time, but because I didn't want to go, and leave my husband at the camp, I escaped from there. When I arrived back at the camp, I found my husband, who was very happy to see me, that I was able to return from the round-up. The next day, I wanted to visit my husband, turns out, that overnight, he was caught and sent away. From that time, I never saw my husband, to this day. From <a class="placename" href="#vothC89" type="camp">Plaszow</a>, I was taken to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. I stayed in <a class="placename" href="#vothC4" type="camp">Auschwitz</a> for three months, in horrible misery. Next, from there, we went on foot until the 18th, 18th of January, during the coldest part of winter we walked to Ravensbricken. I lived in <a class="placename" href="#vothC95" type="camp">Ravensbrück</a>, I was there for 8 weeks. The misery is indescribable, corpses at every step, the experience was hugely overwhelming. We didn't get any food at all. Everyone had to get their own. They came, they brought a cauldron, everyone would throw themselves at the cauldron and whoever got some was able to eat. When we went to . . . tell the Camp <a class="term" href="#vothG_commandant">Commandant</a> they told us [unintelligible] and that's where it ended. After 8 weeks we were taken to Malhoff [<a class="placename" href="#vothC70" type="camp">Malchow</a>?]. There, we were left to starve, that was obvious, that they wanted to starve us to death. In 8 weeks, I lost 15 kilos. I weighed 39 kilos, when I left Malhoff [<a class="placename" href="#vothC70" type="camp">Malchow</a>?]. Besides me, there were others who looked much worse than I did. From Malhoff [<a class="placename" href="#vothC70" type="camp">Malchow</a>?], they took us by train; we traveled for about 3 days, totally without food, until we got to <a class="placename" href="#vothC58" type="camp">Leipzig</a>. We arrived in <a class="placename" href="#vothC58" type="camp">Leipzig</a> during the worst bombings, and we were there for several days. It turned out, that, that it was almost the end of the war and, in truth, we did not work, but we also did not get any food. There was very, very little food, so little; that we thought that, there, we would surely die. After several days, we were taken out into the street and were forced to march like that for 6 weeks. There we walked in circles. Where ever we would get to, on one side were the Russians, on the other the Americans, and the Germans would escape from one front to another. On the way, we gathered greens, so we could eat, this was in April, nothing was growing in the fields yet. We survived on grass and dug up potatoes, which were just planted. On the way, we came across a lot of people who died of hunger, corpses, lying on the road. We were killed if we got the courage to wander away, so we could find something to eat. Regardless of this, none of us were scared and each of us went, because we were faced with death from hunger. We thought that we would never stop, that our road was leading into endlessness. Until one day, a lot of us escaped on the way, but we didn't know . . . we were scared that they would shoot, because that had been our prior experience. Whoever strayed from the group was shot. Regardless of this, many people decided to break away from the march. And one day, I, with two of my girlfriends, broke away, and at one farm, we found work. We worked there for 4 weeks. The Germans were now more or less nice to us, because they were scared, because the front was getting closer and closer. [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="936.948" end="x">[In German] [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="946.853" end="x">[In Polish] [unintelligible] In Saxony, I was freed by the Russians. I was sick, my legs were swollen. I decided that I would rest, but homesickness wouldn't let me rest. In my imagination, I saw my house, and those that I had lost would come back to me. [unintelligible] We had to go on foot. A hundred and fifty kilometers we went on foot, and pulled with us a wagon with food and some tattered rags. We passed cities in ruins, we met people on the way, who were the same as us, on their way home, they sang happy songs of hope and we were also happy. On the 8th of May I arrived in <a class="placename" href="#vothL135">Cracow</a> and there I was met with my first disappointment. Out of my family who lived in <a class="placename" href="#vothL135">Cracow</a>, I couldn't find anyone. For eight days I wondered around <a class="placename" href="#vothL135">Cracow</a>, looking everywhere, where we lived, I searched the homes we had in the <a class="placename" href="#vothC55" type="camp">ghetto</a>, where I left my child. I thought, maybe someone left an address, maybe someone had already been there before me, but it turned out that no one had been there yet. I decided to go to <a class="placename" href="#vothL155">Zakopane</a>, but everyone advised me against it, they said that it was not safe, that Jews should not return to small towns, that there were many incidences. In a word, if I survived the war, then I should wait in a larger city, until our people return, and that they would be able to find us. But I was anxious, I wanted to be there already. I thought that maybe they went there, that maybe they are waiting for me. I decided I was going to go. On the eighth of June, I arrived at my home, and unfortunately I was astonished. There, were my house once stood, was just a field. There was no sign of my house. Some goats were grazing in the pasture. I stayed with my neighbor, and day after day I waited for someone to return. I waited for long days and weeks for nothing. I waited . . . until I was forced by necessity, because I didn't have, because I didn't know, what I should do, I didn't have anything to do . . . I left to find work. For 8 weeks, in a variety of different ways, I earned enough to take care of myself. I didn't want to be taken care of by strangers. Constantly, I would return home with a longing feeling; that maybe someone was waiting there for me, maybe someone would return. Meanwhile, an orphanage was formed in <a class="placename" href="#vothL155">Zakopane</a>, I decided that I would dedicate myself to work with the children, hoping to fill the void in my life. I've been working with the children for a year now, and with them going forth in the world, so that maybe somewhere in our native land I would find peace. They threw us from place to place, maybe finally we will find some place to call our own, where we can live peacefully . . . freely . . . not ridiculed . . . not tormented . . .
+                        somewhere where I can look forward to a happier future, children, that will be raised under my care.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1420.038" end="x">[In German] I didn't understand you fully at one point. Where did your daughter stay?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1425.556" end="x">The children were [unintelligible] <a class="placename" href="#vothC4" type="camp">Auschwitz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1431.933" end="x">The children were taken away?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1433.908" end="x">That's right. We worked.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1437.782" end="x">Speak up!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1438.958" end="x">We worked in, er, at</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1449.074" end="x">In a factory?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1449.858" end="x">No, work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1455.692" end="x">What sort of work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1459.371" end="x">Nothing. We worked in the German barracks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1466.140" end="x">Aha, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1468.115" end="x">What did you do in the barracks?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1470.723" end="x">All sorts of work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1471.808" end="x">Cleaning?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1472.864" end="x">Cleaning, housework, work in the fields.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1476.769" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1477.719" end="x">We now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1482.618" end="x">Yes. Now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1484.910" end="x">Yes we were at work. When we returned home in the evening, we found that our apartment was empty.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1499.217" end="x">Oh. Un.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1500.529" end="x">And we didn't know where the children were, where they were staying, what had become of them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1507.298" end="x">What were people saying?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1508.730" end="x">They said that the children [had been taken away] to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1512.047" end="x">Yes, but what then? Did the police come to take the children away?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1515.710" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1516.796" end="x">What happened, then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1517.685" end="x">I can only tell you that in Polish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1521.092" end="x">Yes, please tell me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1525.706" end="x">[In Polish] And when we returned home . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1527.982" end="x">[In Russian] Who do you mean by "you"?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1529.279" end="x">[In Polish] My husband and I.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1530.380" end="x">[In German] [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1532.234" end="x">[In Polish] We were both forced to work . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1535.491" end="x">[In German] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1536.471" end="x">[In Polish] . . . away from the <a class="placename" href="#vothC55" type="camp">ghetto</a>. When we returned home, it turned out that the children were taken away. We were told that the children were told to pack their suitcases . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1552.828" end="x">The children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1553.717" end="x">. . . the children, pack their suitcases and write the addresses of where their parents are, so they could take them to their parents.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1567.315" end="x">[In German] [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1570.994" end="x">[In Polish] . . . and they loaded them into cars and took them away, and to this day we don't know what happened to them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1580.175" end="x">. . . with them, the children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1581.667" end="x">. . . with the children, what happened with those children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1583.688" end="x">[In German] [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1585.211" end="x">[In Polish] . . . I had one. But there were a lot of children, in truth, in the <a class="placename" href="#vothC55" type="camp">ghetto</a> there were a lot of children, when they took us away. It was a city of children, because they took all the adults to work, and later, they moved the children to a camp . . . eh . . . they moved all the adults to the camps, and the children stayed in the ghetto, there was a kind of "kinderhin" [crèche] formed there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1611.081" end="x">[In English] There was a "kinderhin" in the <a class="placename" href="#vothC55" type="camp">ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1613.282" end="x">[In German] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1613.976" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1615.529" end="x">[In Polish] . . . But my child wasn't in the "kinderhin", my child was at home, in my apartment, where I used to live.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1624.469" end="x">[In German] [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1625.750" end="x">[In Polish] They put them onto trucks and took them away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1630.213" end="x">[In German] [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1632.791" end="x">[In Polish] And I worked at the camp with my husband . . . and . . . they sent us to Germany to perform forced labor, because they were thinking that the end of the war was near . . . so . . . they started to close the camps in Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1649.962" end="x">[In German] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1650.520" end="x">[In Polish] . . . and they started to move people from camps in Poland to camps in Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1655.299" end="x">[In German] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1655.947" end="x">[In Polish] . . . That's how my husband worked. Later, after a year, I found out that he was working in a factory in . . . <a class="placename" href="#vothL580">Pionki</a>, in an ammunition factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1667.796" end="x">[In Russian] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1668.761" end="x">[In Polish] . . . and I stayed in <a class="placename" href="#vothC89" type="camp">Plaszow</a>. And after, after a year they took us all to <a class="placename" href="#vothL303">Stettin</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1682.979" end="x">[In German] Ah, what are you going to do now, what do you want to do now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1689.507" end="x">[In Polish] My desires are not specific, but I would most like to stay, in fact, with the children going forward, because the loneliness is horrible, at least this fills the emptiness, the children's' voices, and you forget, in this work, that you once had your own home, your own family, that you once had your own child.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1722.356" end="x">[In German] And you want to go to Palestine?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1724.497" end="x">[In Polish] Yes. I would go with these children that are here, to Palestine, so that we could live together.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1732.532" end="x">[In Russian] And what do you think about Palestine [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1736.512" end="x">[In German] Palestine would also take all the children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1741.819" end="x">[In Polish] It would be my wish that we all stay together, because this is a kind of adopted family now. And I even have hope, that these months, that we are together, have tied us together, that all of us will try to stay together, that they will strive to form a kind of family with each other. These children are also lonely; they also lost their parents and have a desire to have someone close to them. So I would like to stay with them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1783.564" end="x">[In German] Ah, how old is the youngest child now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1788.222" end="x">[In Polish] The youngest child here is three years old. We took them before our departure from <a class="placename" href="#vothL155">Zakopane</a>. There were five of them who were three years old. They are developing nicely, they are very smart and sweet.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1810.539" end="x">[In German] And, er, are these the children that you call Bobolaki?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1816.298" end="x">[In Polish] Yes. Those are the youngest, those Bobolaki, which we took from the Convent Boboli, in <a class="placename" href="#vothL155">Zakopane</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1823.007" end="x">[In German] Aha. Er. Who told you that the children were there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1830.319" end="x">[In Polish] Our director found out about this, someone told her that there were five Jewish children, who were saved in <a class="placename" href="#vothL79">Warsaw</a> from a fire.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1842.364" end="x">And who saved them . . . [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1845.681" end="x">[German] Would you like . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1846.390" end="x">[In Polish] Supposedly, some policeman pulled them out of there and took them to the convent.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1852.104" end="x">[In Russian] Why the police did [unintelligible] to them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1854.471" end="x">[In Polish] We, we don't know all the details. Maybe the director . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1859.099" end="x">[In German] What then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1859.943" end="x">[In Polish] Maybe the director . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1861.180" end="x">[In German] What does that mean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1862.069" end="x">The people, they were bad.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1864.150" end="x">Aha, I mean the police officers. People say that the police officers were not the best of human beings.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1870.436" end="x">Not all, but some. But some were kind.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1873.331" end="x">What did you do? Did you take the children out and go away?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Lina Stumachin</span>:
+            </span>
+            <span class="utterance" who="#stumachinL" start="1877.085" end="x">They were taken into this convent.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="x" end="x">Taken in. But you alleged.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1881.412" end="x">Ms. Stumachin, I do so hope that everything will now start to improve. Thank you very much. I am sorry that my understanding of Polish is not very good.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1899.276" end="x">[In English] This concludes Spool 118 . . . at 29 min, the report of Ms. Lina Stumachin, 36 years old, a tattoo number: 26569. She spoke in Polish.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription (German)
+                            </i>: 
+            <span class="Transcription (German)">
+                <name>S. Peters</name>, <name>P. Gaensicke</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Transcription (Polish)
+                            </i>: 
+            <span class="Transcription (Polish)">
+                <name>M. Holiday</name>, <name>I. Laskawiec</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Engish Translation (German)
+                            </i>: 
+            <span class="Engish Translation (German)">
+                <name>S. Peters</name>, <name>P. Gaensicke</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation (Polish)
+                            </i>: 
+            <span class="English Translation (Polish)">
+                <name>M. Holiday</name>, <name>I. Laskawiec</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_1 = 50.033300;
+                        var lon_1 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC55">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC55" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Krakow Ghetto<br /><span class="alt">(Cracow)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Krak&#195;w, Poland<br />
+                            </p>
+                            <div>
+                This ghetto was established in March 1941 and liquidated in March 1943.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC55 = new OpenLayers.Map('map_vothC55', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC55.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC55.addLayer(markers);
+map_id_vothC55.zoomToMaxExtent();
+
+                        var lat_2 = 50.050000;
+                        var lon_2 = 19.916700;
+                        var vothC55 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC55_icon = new OpenLayers.Marker(vothC55);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC55);
+markers.addMarker(vothC55_icon);
+    addMarker(vothC55, popupClass, "", true, false, false);
+    map_id_vothC55.setCenter(vothC55, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC89">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC89" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Plaszow<br /><span class="alt">(Kraków-Plaszów)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Majdanek
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Krak&#195;w, Poland<br />
+                            </p>
+                            <div>
+                This slave labor camp near Krak&#195;w was headed by Amon Goeth, a psychopathic killer. Of some 150,000 Jews who passed through its gates, about 80,000 perished.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC89 = new OpenLayers.Map('map_vothC89', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC89.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC89.addLayer(markers);
+map_id_vothC89.zoomToMaxExtent();
+
+                        var lat_3 = 50.050000;
+                        var lon_3 = 19.916700;
+                        var vothC89 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC89_icon = new OpenLayers.Marker(vothC89);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC89);
+markers.addMarker(vothC89_icon);
+    addMarker(vothC89, popupClass, "", true, false, false);
+    map_id_vothC89.setCenter(vothC89, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC95">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC95" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Ravensbr&#195;ck
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Majdanek
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Ravensbr&#195;ck, Germany<br />
+                            </p>
+                            <div>
+                Concentration camp for female prisoners. By 1944, Ravensbr&#195;ck and its 34 subcamps had a prisoner population of more than 80,000. Tens of thousands perished there from malnutrition, disease, shootings, phenol injections to the heart, and medical experiments. Six thousand died in its gas chambers.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC95 = new OpenLayers.Map('map_vothC95', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC95.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC95.addLayer(markers);
+map_id_vothC95.zoomToMaxExtent();
+
+                        var lat_4 = 53.200000;
+                        var lon_4 = 13.166700;
+                        var vothC95 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothC95_icon = new OpenLayers.Marker(vothC95);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC95);
+markers.addMarker(vothC95_icon);
+    addMarker(vothC95, popupClass, "", true, false, false);
+    map_id_vothC95.setCenter(vothC95, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC70">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC70" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Malchow
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Ravensbr&#195;ck
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Malchow, Germany<br />
+                            </p>
+                            <div>
+                Opened in 1943, Malchow consisted of ten barracks, each  meant for 100 women. But by 1945 the camp population had grown to 5000 women.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC70 = new OpenLayers.Map('map_vothC70', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC70.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC70.addLayer(markers);
+map_id_vothC70.zoomToMaxExtent();
+
+                        var lat_5 = 53.483300;
+                        var lon_5 = 12.416700;
+                        var vothC70 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothC70_icon = new OpenLayers.Marker(vothC70);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC70);
+markers.addMarker(vothC70_icon);
+    addMarker(vothC70, popupClass, "", true, false, false);
+    map_id_vothC70.setCenter(vothC70, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC58">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC58" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Leipzig
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Buchenwald
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Leipzig, Germany<br />
+                            </p>
+                            <div>
+                Located in an industrial suburb of Leipzig; many political prisoners held there.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC58 = new OpenLayers.Map('map_vothC58', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC58.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC58.addLayer(markers);
+map_id_vothC58.zoomToMaxExtent();
+
+                        var lat_6 = 51.333300;
+                        var lon_6 = 12.333300;
+                        var vothC58 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothC58_icon = new OpenLayers.Marker(vothC58);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC58);
+markers.addMarker(vothC58_icon);
+    addMarker(vothC58, popupClass, "", true, false, false);
+    map_id_vothC58.setCenter(vothC58, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_7 = 48.866700;
+                        var lon_7 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL12">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL12" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Bellevue, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL12 = new OpenLayers.Map('map_vothL12', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL12.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL12.addLayer(markers);
+map_id_vothL12.zoomToMaxExtent();
+
+                        var lat_8 = 48.818350;
+                        var lon_8 = 2.229561;
+                        var vothL12 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL12_icon = new OpenLayers.Marker(vothL12);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL12);
+markers.addMarker(vothL12_icon);
+    addMarker(vothL12, popupClass, "", true, false, false);
+    map_id_vothL12.setCenter(vothL12, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL155">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL155" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Zakopane, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL155 = new OpenLayers.Map('map_vothL155', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL155.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL155.addLayer(markers);
+map_id_vothL155.zoomToMaxExtent();
+
+                        var lat_9 = 49.283300;
+                        var lon_9 = 19.900000;
+                        var vothL155 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL155_icon = new OpenLayers.Marker(vothL155);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL155);
+markers.addMarker(vothL155_icon);
+    addMarker(vothL155, popupClass, "", true, false, false);
+    map_id_vothL155.setCenter(vothL155, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL135">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL135" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Krak&#195;w, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL135 = new OpenLayers.Map('map_vothL135', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL135.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL135.addLayer(markers);
+map_id_vothL135.zoomToMaxExtent();
+
+                        var lat_10 = 50.050000;
+                        var lon_10 = 19.916700;
+                        var vothL135 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL135_icon = new OpenLayers.Marker(vothL135);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL135);
+markers.addMarker(vothL135_icon);
+    addMarker(vothL135, popupClass, "", true, false, false);
+    map_id_vothL135.setCenter(vothL135, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL81">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL81" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Katowice, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL81 = new OpenLayers.Map('map_vothL81', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL81.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL81.addLayer(markers);
+map_id_vothL81.zoomToMaxExtent();
+
+                        var lat_11 = 50.266700;
+                        var lon_11 = 19.016700;
+                        var vothL81 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL81_icon = new OpenLayers.Marker(vothL81);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL81);
+markers.addMarker(vothL81_icon);
+    addMarker(vothL81, popupClass, "", true, false, false);
+    map_id_vothL81.setCenter(vothL81, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL98">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL98" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Sosnowiec, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL98 = new OpenLayers.Map('map_vothL98', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL98.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL98.addLayer(markers);
+map_id_vothL98.zoomToMaxExtent();
+
+                        var lat_12 = 50.266700;
+                        var lon_12 = 19.116700;
+                        var vothL98 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL98_icon = new OpenLayers.Marker(vothL98);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL98);
+markers.addMarker(vothL98_icon);
+    addMarker(vothL98, popupClass, "", true, false, false);
+    map_id_vothL98.setCenter(vothL98, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL580">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL580" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Pionki, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL580 = new OpenLayers.Map('map_vothL580', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL580.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL580.addLayer(markers);
+map_id_vothL580.zoomToMaxExtent();
+
+                        var lat_13 = 51.483300;
+                        var lon_13 = 21.450000;
+                        var vothL580 = new OpenLayers.LonLat(lon_13, lat_13);
+            vothL580_icon = new OpenLayers.Marker(vothL580);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL580);
+markers.addMarker(vothL580_icon);
+    addMarker(vothL580, popupClass, "", true, false, false);
+    map_id_vothL580.setCenter(vothL580, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL303">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL303" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Szczecin, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL303 = new OpenLayers.Map('map_vothL303', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL303.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL303.addLayer(markers);
+map_id_vothL303.zoomToMaxExtent();
+
+                        var lat_14 = 53.416667;
+                        var lon_14 = 14.583333;
+                        var vothL303 = new OpenLayers.LonLat(lon_14, lat_14);
+            vothL303_icon = new OpenLayers.Marker(vothL303);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL303);
+markers.addMarker(vothL303_icon);
+    addMarker(vothL303, popupClass, "", true, false, false);
+    map_id_vothL303.setCenter(vothL303, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL79">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL79" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Warsaw, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL79 = new OpenLayers.Map('map_vothL79', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL79.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL79.addLayer(markers);
+map_id_vothL79.zoomToMaxExtent();
+
+                        var lat_15 = 52.250000;
+                        var lon_15 = 21.000000;
+                        var vothL79 = new OpenLayers.LonLat(lon_15, lat_15);
+            vothL79_icon = new OpenLayers.Marker(vothL79);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL79);
+markers.addMarker(vothL79_icon);
+    addMarker(vothL79, popupClass, "", true, false, false);
+    map_id_vothL79.setCenter(vothL79, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                        <li class="vothG_action">
+                <a name="vothG_action"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    action.
+                </span>
+                <span class="definition">
+                    Episodes of coordinated violence against Jewish communities, including the rounding up of Jews for deportation to ghettos, concentration camps, or killing centers.
+                </span>
+            </li>
+                        <li class="vothG_commandant">
+                <a name="vothG_commandant"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    commandant.
+                </span>
+                <span class="definition">
+                    A commander of a Nazi camp. In the death camps the commandant was required to witness every gassing carried out through a peephole, and supervise both the preparations and the aftermath.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

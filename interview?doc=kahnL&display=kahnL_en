@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Louis Kahn; August 21, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-louis-kahn-august-21-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Louis Kahn; August 21, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=kahnL">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=kahnL&display=kahnL_fr_en">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=kahnL&display=kahnL_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=kahnL">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=kahnL">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="7.658" end="x">[In English] We are asking now, the Admiral, to conclude this nice family and household report. Will you tell us, when did you return to France?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="21.965" end="x">[In French] Well, Sir, since, thanks to Professor Boder, you are able to take part in this family evening in <a class="placename" href="#vothL13">Paris</a>, I would be happy to provide the closing remarks. You have seen how a French family, whose members were separated, was reunited because they were confident there would be a victory, from the very first day, and they never gave up hope for the fate of their country. In the end, it was their determination that brought them together, just as the determination of all of you overcame the invader and the tyrants on the continent.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="73.750" end="x">[In English] What do you think, Admiral? When will it be possible for . . . that the French ships will begin to carry American guests and tourists again to France? We are all very eager to start it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="88.571" end="x">[In French] Well, I think that day is coming soon. I myself, with the aid of Engineering and the workers in the French navy, I succeeded in refitting three hundred thousand tons of battleships that, among the Allied fleets, contributed to the Normandy landings.<note n="1"><span class="note">The D-Day landings of Allied forces on June 6, 1944.</span><sup><a href="#note_1">1</a></sup></note> And since we returned to France, we have started working on our ports which were destroyed and we succeeded in getting our shipyards active so that, currently, we are hopeful that very soon we will see French ships resuming their former routes, which will enable you to come see us, with the help of your magnificent commercial fleet. I hope a great many of you will come and see the work my country has done in its effort to resume its former activity.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="160.420" end="x">[In English] Now let me ask you a more serious question that was so much on the mind of Americans. I hope you can answer it, if you can. In America, there has been a tremendous propaganda from certain quarters that the war at the beginning has ended so badly for France because the workers were not working. They were striking and were not cooperating for national defense.<note n="2"><span class="note">In fact, a large part of the blame for France's defeat rests with the outmoded strategic and tactical thinking of the French military, which proved incapable of responding effectively to the Nazi blitzkrieg ("lightning war") techniques, which placed an emphasis on speed and mobility thereby seeking to avoid the trench warfare stalemate of World War I.</span><sup><a href="#note_2">2</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="202.765" end="x">[In French] This is a very important question, in fact, and I would like to respond. I believe that the big problem that caused the difficulties of the war in the beginning and which for years so gravely compromised the world's development, cannot be analyzed simply with the framework of what happened in France. It is unfortunately true that the world community left too large of a burden on the shoulders of the French, in the period between the two wars. When the war ended, everyone went back home and we, the French, we were left face to face with the strength of Germany which was being built up again.<note n="3"><span class="note">Admiral Kahn is alluding to the post World War I isolationist policy pursued by the United States.</span><sup><a href="#note_3">3</a></sup></note> And which was being reconstituted sometimes with the help of its former adversaries.<note n="4"><span class="note">This remark might refer to the 1922 Treaty of Rapallo between Germany and the Soviet Union, which brought about a notable expansion of trade between the two nations but also provided training areas and factories for German armed forces in return for German technical education.</span><sup><a href="#note_4">4</a></sup></note> However, we were much nearer to them, much more exposed. We tried to make the voice of reason be heard. And it wasn't until later that this voice of reason was heard in a useful way, when the danger became a threat for the entire world. This is the real reason for the failures that, through France, the whole world experienced in the first part of the war. And it isn't accurate to place responsibility for them on all or part of the French population. Everyone did the best that they could, in a growing economic crisis, precisely because of the threats of war that, at any given time, would interrupt [corrects himself from saying "political"] the practical work being done.<note n="5"><span class="note">The economic crisis mentioned here is the Great Depression, which struck France with devastating impact in the early 1930s. The Depression helped bring about political instability which was exacerbated by the actions of both right wing and left wing anti-democratic parties and by the growing threat of European fascism.</span><sup><a href="#note_5">5</a></sup></note> And because of constant attempted attacks that the Germans and their agents in France were trying to spread around in order to make things easier for themselves when the time was right. So I'm not surprised that you encountered this propaganda. France was represented as weakened in order to discourage all the powers who would have aligned with her from the very first day, by representing her cause as insufficiently defended by the country herself. And as I meant to say at the beginning, it shouldn't have been France's responsibility alone to carry all the growing weight of the German threat. A peaceful country will always be victimized by a country of murderers. Because the peaceful country will be involved in its peaceful endeavors, while the other freely prepares itself for the business of war, picking the most favorable time to attack, choosing both the most favorable general political circumstances as well as the military circumstances which are particularly favorable to the country who wants to make the first strike. So that is the true cause of the difficulties that the whole world experienced, and we must hope that, enlightened once more by this new threat of a catastrophe, that the world will understand that these catastrophes don't wait until the last minute to give any warning. They can be seen early on by men in positions of authority and they have to have the courage to tell their people the truth so that they can prepare for the crucial moments.<note n="6"><span class="note">Such advice is contrary to the policy of appeasement pursued by Great Britain and France in the crucial years prior to the outbreak of World War II.</span><sup><a href="#note_6">6</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="452.396" end="x">[In English] [aside] As I said before, I have to translate. I did not get the full statement, but I will have that translated. Could you think . . . ? Here is another question. Do you have a large number of refugees? Among them, Jewish refugees. Do you think they will be absorbed and given the opportunity to stay in France if they want to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="492.446" end="x">[In French] That is, in fact, a very important issue that you bring up. You know that, in France, we have always very liberally welcomed refugees into our country. And it should be acknowledged that if other countries showed themselves to be much more reserved in this type of philanthropic action, France, on the other hand, always considered that it was her duty, as well as her tradition, to be openly welcoming. You should know that the first children who were taken out of the German camps, after much hesitation from other countries, it was France that was first to take them in. France managed to do it despite the extreme difficulties in which she found her economy immediately after Liberation,<note n="7"><span class="note">Indeed, France was very much in need of aid in the wake of World War II. Many of its bridges and railroad facilities had been systematically bombed by the Allies and a number of its ports, such as Brest, Le Havre, Saint-Nazaire, and Toulon had suffered grave damage. Its population had been worn down both physically and psychologically.  Some 2.5 million French men and women had been in captivity in Germany as prisoners of war, forced laborers or concentration camp inmates. More than 200,000 had perished due to the hardships they endured or, in the case of French Jews, were systematically murdered. A number of those incarcerated in Germany who returned home suffered from physical and psychological maladies.</span><sup><a href="#note_7">7</a></sup></note> not only through her own help, but also thanks to the very generous financial aid from numerous countries, among which we must recognize the very generous aid from the United States of America at the top of the list. Never will we forget in France the action taken by the American representatives. The supplies, money and materials that they sent. The devotion with which the representatives of the American armed forces, the <a class="term" href="#vothG_unrra">UNRRA</a> representatives, the representatives of the <a class="term" href="#vothG_ajdc">Joint</a> Committee and of numerous other associations freely put together by the good will of your country. No, never will that be forgotten in France. The American generosity, associated with French liberalism, in reality did everything possible in the face of the frightening circumstances the world had never known before, experienced because of veritable forced migrations of men, women and children. And this work is still far from being accomplished. We hope that with your help and our strong determination, we will succeed in overcoming this inconceivable misery suffered by innocent humans who are powerless to help themselves. But we are absolutely sure that when we will have returned to them, with their dignity, the chance to work, they will become not a dead weight for humanity but, on the contrary, an active, intelligent group, molded by the misery they themselves suffered and their own insight, to completely fulfill their human destinies.<note n="8"><span class="note">Though approximately 77,000 French Jews were murdered during the Holocaust, some 250,000 did survive. Thus, the French Jewish community was able to reconstitute itself after the war. This reconstituted community was augmented by roughly 40,000 Holocaust survivors who sought refuge in France after their liberation. Such French Jewish organizations as the Comité juif d'aide sociale et de reconstruction (Jewish Committee for Social Action and Reconstruction) and Oeuvre de Protection des Enfants Juifs (Society for the Protection of Jewish Children) worked assiduously to aid the victims of the Holocaust so that—in the words of Admiral Kahn—they would be able "to completely fulfill their human destinies."</span><sup><a href="#note_8">8</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="691.034" end="x">[In English] Now going from this to a more general question. Give us a little picture . . . you know, we know in America very little about it and only from the interviews here, I get the idea that the peaceful population in France has suffered a great deal from the Germans. Now can you tell me, how was this done? This completion of people, this selection of people for forced labor to Germany. How were they taken? How were they selected? Were they paid for their work? And are they repatriated now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="748.571" end="x">[In French] Well, to give you a very simple idea . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="751.327" end="x">[In English] [interrupts] Think of the French people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="752.881" end="x">[In French] Yes. To give you an idea of the hardships endured by the French, I would like to give you a figure. Among my friends, there are sixty-seven individuals who were either relatives or people in whose homes I would spend an evening, or who came and sat at my table, who were deported by the Germans and that I never saw again because they killed them. To give you an idea of German prcedures, I'll tell you about another admiral with the naval engineers who was deported with his wife, with his mother-in-law and with his fifteen year old son. When the Germans arrested them . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="815.124" end="x">[interrupts off mic]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="816.669" end="x">[In French] They were Jewish, yes.<note n="9"><span class="note">This further illustrates the reality that a number of native-born French Jews perished in the Holocaust.</span><sup><a href="#note_9">9</a></sup></note> When the Germans arrested them, some friends from the same Corps, I mean what you call the Construction Corps, what we call in France the Naval Engineers, made the courageous attempt to go ask the <a class="term" href="#vothG_gestapo">Gestapo</a> not to deport them. And they came upon the head of the <a class="term" href="#vothG_gestapo">Gestapo</a> in <a class="placename" href="#vothL13">Paris</a>, who was a man who looked like any other, and who appeared even more well-mannered than one would expect from someone in charge of this cruel work.<note n="10"><span class="note">It is possible that Admiral Kahn is referring to Theodore Dannecker, a vicious anti-Semite and one of Adolph Eichmann's key subordinates, who coordinated the activities of the Gestapo in France.</span><sup><a href="#note_10">10</a></sup></note> When they saw that he was refusing to free these prisoners, they told him "Well, since you want to take the admiral, and since we can't go to anyone higher to override your decision, wouldn't you be able to free this old eighty-four year old woman that you captured with him, along with this fifteen year old child that you pulled out of high school?" And the German smiled his sweetest smile and answered them with: "you see, at this time, there is a lot of serious propaganda against the Germans. They're claiming that the Germans are separating women and children. Well, we will not separate the women, the children, from their father and their husband. The four of them will leave together." And indeed, they killed all four of them.<note n="11"><span class="note">This statement is similar to a callous and cynical response given by Dr. Joseph Mengele in Auschwitz when asked why he could not spare Jewish children whose mothers had been sent to the gas chambers. He replied that he could not bear to see the children separated from their mothers.</span><sup><a href="#note_11">11</a></sup></note> This is a depiction, that can be proven by all the evidence, of what the Germans were like in France. How did they take these people? Well, they had already sent many agents to France before the war. And they knew which individuals would oppose their actions. And by any means available, confiscating lists of residents, phone books, using paid traitors. They often used government lists from which they gradually eliminated people using these horrifying procedures of which I only described one small part. As for labor, it was really simple. To have forced labor, they first tried propaganda. They made the French believe that if workers were to leave for Germany, they would be exchanged for prisoners, and thereby the charges and the sentences would be more equally divided between all segments of the population. And in the beginning, with the help of Laval's speech, they were somewhat successful. But very quickly, the French people realized that they had been made to play a frightening role, by purely and simply aiding their horrifying enemy in its war effort. And out of that came the organized resistance to forced labor.<note n="12"><span class="note">Obligatory German labor service was first introduced in France in February 1943 due to growing German labor shortages. More than anything else, the introduction of this compulsory labor service ignited a spirit of rebellion among the French population at large and strengthened the French resistance movement.</span><sup><a href="#note_12">12</a></sup></note> From there also came this whole organization to hide people which enabled [speaker corrects himself], which kept the Germans from succeeding in their business. So, when they saw that happening, they organized the raids. This meant that they would target a neighborhood and then would indiscriminately take as prisoners any persons they could get their hands on. They would load them up in trucks and send them off by force to Germany. That is how those terrible operations were carried out.<note n="13"><span class="note">Dissatisfaction with the forced labor policy, shortages of food, fuel, and clothing, and clear indications that the Germans were losing the war contributed to greater reluctance on the part of the French population to cooperate with the German occupiers, forcing them to carry out ever more repressive measures such as those described by Admiral Kahn.</span><sup><a href="#note_13">13</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1114.702" end="x">[In English] Well, it's late. I could be listening and listening in spite of the fact that I don't understand now. First of all, it's in beautiful French and everything seems to be spoken with very great sentiment. Thank you very much for your hospitality and for your cooperation and I hope to be able through you to contact other people here in France, big and small ones whose stories have to be preserved. If I can get a larger amount of people here, maybe children, I think I will send the spools later to the Sorbonne to your French psychologists, Dr. [unintelligible] and others. And let them use it as a start and maybe start their own study which they certainly could do better than I can.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="1188.187" end="x">[In French] Well, I am delighted to have heard you, Professor Boder, and to have the possibility, through you, to communicate with . . . [ends abruptly]</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            The D-Day landings of Allied forces on June 6, 1944.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            In fact, a large part of the blame for France's defeat rests with the outmoded strategic and tactical thinking of the French military, which proved incapable of responding effectively to the Nazi blitzkrieg ("lightning war") techniques, which placed an emphasis on speed and mobility thereby seeking to avoid the trench warfare stalemate of World War I.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            Admiral Kahn is alluding to the post World War I isolationist policy pursued by the United States.
+        </li>
+                <li>
+            <a name="note_4"></a>
+            This remark might refer to the 1922 Treaty of Rapallo between Germany and the Soviet Union, which brought about a notable expansion of trade between the two nations but also provided training areas and factories for German armed forces in return for German technical education.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            The economic crisis mentioned here is the Great Depression, which struck France with devastating impact in the early 1930s. The Depression helped bring about political instability which was exacerbated by the actions of both right wing and left wing anti-democratic parties and by the growing threat of European fascism.
+        </li>
+                <li>
+            <a name="note_6"></a>
+            Such advice is contrary to the policy of appeasement pursued by Great Britain and France in the crucial years prior to the outbreak of World War II.
+        </li>
+                <li>
+            <a name="note_7"></a>
+            Indeed, France was very much in need of aid in the wake of World War II. Many of its bridges and railroad facilities had been systematically bombed by the Allies and a number of its ports, such as Brest, Le Havre, Saint-Nazaire, and Toulon had suffered grave damage. Its population had been worn down both physically and psychologically.  Some 2.5 million French men and women had been in captivity in Germany as prisoners of war, forced laborers or concentration camp inmates. More than 200,000 had perished due to the hardships they endured or, in the case of French Jews, were systematically murdered. A number of those incarcerated in Germany who returned home suffered from physical and psychological maladies.
+        </li>
+                <li>
+            <a name="note_8"></a>
+            Though approximately 77,000 French Jews were murdered during the Holocaust, some 250,000 did survive. Thus, the French Jewish community was able to reconstitute itself after the war. This reconstituted community was augmented by roughly 40,000 Holocaust survivors who sought refuge in France after their liberation. Such French Jewish organizations as the Comité juif d'aide sociale et de reconstruction (Jewish Committee for Social Action and Reconstruction) and Oeuvre de Protection des Enfants Juifs (Society for the Protection of Jewish Children) worked assiduously to aid the victims of the Holocaust so that—in the words of Admiral Kahn—they would be able "to completely fulfill their human destinies."
+        </li>
+                <li>
+            <a name="note_9"></a>
+            This further illustrates the reality that a number of native-born French Jews perished in the Holocaust.
+        </li>
+                <li>
+            <a name="note_10"></a>
+            It is possible that Admiral Kahn is referring to Theodore Dannecker, a vicious anti-Semite and one of Adolph Eichmann's key subordinates, who coordinated the activities of the Gestapo in France.
+        </li>
+                <li>
+            <a name="note_11"></a>
+            This statement is similar to a callous and cynical response given by Dr. Joseph Mengele in Auschwitz when asked why he could not spare Jewish children whose mothers had been sent to the gas chambers. He replied that he could not bear to see the children separated from their mothers.
+        </li>
+                <li>
+            <a name="note_12"></a>
+            Obligatory German labor service was first introduced in France in February 1943 due to growing German labor shortages. More than anything else, the introduction of this compulsory labor service ignited a spirit of rebellion among the French population at large and strengthened the French resistance movement.
+        </li>
+                <li>
+            <a name="note_13"></a>
+            Dissatisfaction with the forced labor policy, shortages of food, fuel, and clothing, and clear indications that the Germans were losing the war contributed to greater reluctance on the part of the French population to cooperate with the German occupiers, forcing them to carry out ever more repressive measures such as those described by Admiral Kahn.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Deborah Joyce</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>Deborah Joyce</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_1 = 48.866700;
+                        var lon_1 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_unrra">
+                <a name="vothG_unrra"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    UNRRA.
+                </span>
+                <span class="definition">
+                    Acronym for the United Nations Relief and Rehabilitation Administration. Established in 1943, its principal executive post was held by a representative of the United States, which supplied forty percent of its budget. Among its chief duties was the repatriation of displaced persons—when the war ended, UNRRA had to cope with the task of caring for millions of displaced persons and refugees.
+                </span>
+            </li>
+                        <li class="vothG_ajdc">
+                <a name="vothG_ajdc"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    American Joint Distribution Committee.
+                </span>
+                <span class="definition">
+                    Founded in 1914, the American Jewish Joint Distribution Committee, often referred to as the “Joint,” was a major relief and rehabilitation agency before, during, and after the Holocaust. The JDC’s operations were the main manner in which American Jewry provided aid to its fellow European Jews.
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The D-Day landings of Allied forces on June 6, 1944.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            In fact, a large part of the blame for France's defeat rests with the outmoded strategic and tactical thinking of the French military, which proved incapable of responding effectively to the Nazi blitzkrieg ("lightning war") techniques, which placed an emphasis on speed and mobility thereby seeking to avoid the trench warfare stalemate of World War I.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Admiral Kahn is alluding to the post World War I isolationist policy pursued by the United States.
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            This remark might refer to the 1922 Treaty of Rapallo between Germany and the Soviet Union, which brought about a notable expansion of trade between the two nations but also provided training areas and factories for German armed forces in return for German technical education.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The economic crisis mentioned here is the Great Depression, which struck France with devastating impact in the early 1930s. The Depression helped bring about political instability which was exacerbated by the actions of both right wing and left wing anti-democratic parties and by the growing threat of European fascism.
+        </li>
+                <li class="note_6">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Such advice is contrary to the policy of appeasement pursued by Great Britain and France in the crucial years prior to the outbreak of World War II.
+        </li>
+                <li class="note_7">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Indeed, France was very much in need of aid in the wake of World War II. Many of its bridges and railroad facilities had been systematically bombed by the Allies and a number of its ports, such as Brest, Le Havre, Saint-Nazaire, and Toulon had suffered grave damage. Its population had been worn down both physically and psychologically.  Some 2.5 million French men and women had been in captivity in Germany as prisoners of war, forced laborers or concentration camp inmates. More than 200,000 had perished due to the hardships they endured or, in the case of French Jews, were systematically murdered. A number of those incarcerated in Germany who returned home suffered from physical and psychological maladies.
+        </li>
+                <li class="note_8">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Though approximately 77,000 French Jews were murdered during the Holocaust, some 250,000 did survive. Thus, the French Jewish community was able to reconstitute itself after the war. This reconstituted community was augmented by roughly 40,000 Holocaust survivors who sought refuge in France after their liberation. Such French Jewish organizations as the Comité juif d'aide sociale et de reconstruction (Jewish Committee for Social Action and Reconstruction) and Oeuvre de Protection des Enfants Juifs (Society for the Protection of Jewish Children) worked assiduously to aid the victims of the Holocaust so that—in the words of Admiral Kahn—they would be able "to completely fulfill their human destinies."
+        </li>
+                <li class="note_9">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            This further illustrates the reality that a number of native-born French Jews perished in the Holocaust.
+        </li>
+                <li class="note_10">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            It is possible that Admiral Kahn is referring to Theodore Dannecker, a vicious anti-Semite and one of Adolph Eichmann's key subordinates, who coordinated the activities of the Gestapo in France.
+        </li>
+                <li class="note_11">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            This statement is similar to a callous and cynical response given by Dr. Joseph Mengele in Auschwitz when asked why he could not spare Jewish children whose mothers had been sent to the gas chambers. He replied that he could not bear to see the children separated from their mothers.
+        </li>
+                <li class="note_12">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Obligatory German labor service was first introduced in France in February 1943 due to growing German labor shortages. More than anything else, the introduction of this compulsory labor service ignited a spirit of rebellion among the French population at large and strengthened the French resistance movement.
+        </li>
+                <li class="note_13">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Dissatisfaction with the forced labor policy, shortages of food, fuel, and clothing, and clear indications that the Germans were losing the war contributed to greater reluctance on the part of the French population to cooperate with the German occupiers, forcing them to carry out ever more repressive measures such as those described by Admiral Kahn.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

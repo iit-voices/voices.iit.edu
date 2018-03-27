@@ -1,0 +1,1578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Jean Kahn; August 21, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-jean-kahn-august-21-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Jean Kahn; August 21, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=kahnJ">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=kahnJ&display=kahnJ_fr_en">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=kahnJ&display=kahnJ_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=kahnJ">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=kahnJ">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4.006" end="x">[In English] Now, will you speak in English? And if you can't, you speak in French. All right. I will ask you the questions in English and you can answer them. [aside] All right. I am here at the home of Admiral Kahn, in the presence of three generations. There's the grandfather, the father of Mrs. Kahn, who spoke to us before, and the Admiral, his wife and here now with me on the sofa is his young son. Now tell me, what's your name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="54.340" end="x">Jean.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="55.533" end="x">Your name is John. John what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="57.612" end="x">Jean Kahn.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="58.498" end="x">John Kahn. And how old are you, John?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="62.064" end="x">I am fifteen now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="63.510" end="x">You are fifteen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="64.474" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="64.938" end="x">Now, that's nice English. And any time you are look for words, just speak French. You are now fifteen. And how old were you when the war started?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="75.914" end="x">It was in 1940.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="78.697" end="x">So how old were you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="80.625" end="x">I was ten.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="82.173" end="x">You were ten, yes. Now, start talking French. And tell me what do you remember about the start of the war. Go ahead in French.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="97.836" end="x">[In French] Eh bien, tout d'abord j'ai vu beaucoup de monde courir dans les rues, allant à l'encontre des nouvelles, car à la radio beaucoup de speakers, ne sachant pas eux-mêmes les nouvelles, avaient livré la radio à des spectacles de musique et de chansons. Et la première chose que je vis le matin en m'éveillant, ce sont des cars de troupes qui montaient au front par le Nord à l'approchée de Sedan . . . et tout le monde était affolé, entourant la radio.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="174.273" end="x">[In English] Now tell me. What month was it? Were you in school then? What month was it when the war started?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="183.351" end="x">[In French] [Interpreter intervenes] Quel mois c'était?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="188.833" end="x">[In English] Do you remember?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="190.309" end="x">[In French] C'était en juin. En juin.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="191.936" end="x">[In English] Were you in school then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="193.996" end="x">[In French] Oui, j'étais en classe, au lycée de Lorient.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="198.544" end="x">[In English] And what did you think about the war? What did you think it would be? Did you like it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="203.605" end="x">[In French] Je ne pensais pas que cela durerait très longtemps.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="206.659" end="x">[In English] Uh huh. Now, tell me what then happened?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="212.051" end="x">[In French] Eh bien, nous avons été obligés de nous enfuir devant les Allemands qui avaient réussi à faire une percée dans l'Est et à ce temps-là, nous ne pensions pas qu'ils allaient avancer rapidement. Et alors, dès le 18 juin 1940, nous avons été forcés de parcourir la France du Nord au Sud et de l'orient d'arriver à Marseille.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="246.488" end="x">[In English] Bon. Who was with you in Marseille?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="252.163" end="x">My grandfather, my mother and my brother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="258.229" end="x">And where was your father?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="262.175" end="x">He was at the war.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="263.440" end="x">Your father was in the war. All right. Now, what happened then in Marseille? Speak French.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="271.271" end="x">[In French] [conversation with interpreter] C'est à Marseille que j'ai appris que l'armistice avait été signé.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="281.585" end="x">[In English] All right. And where did you go from Marseille? Tell me. [aside to someone else: "It was a great pleasure and thank you very much."]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="295.917" end="x">[In French] [conversation with interpreter] A Marseille, c'était en décembre 1942, nous avons entendu un message à la radio de Londres, message qui avait été convenu avec mon père à son départ: le canari est bien arrivé et il attend ses petits. C'était le signal que nous attendions pour partir pour aller le rejoindre. En octobre 1943, nous avons pris le train pour Perpignan, et c'est de là que nous passions faire toutes nos recherches et prévoir tous les embarras que nous aurions en traversant la frontière. Et de la fin d'octobre 1943 nous avons pris le train, sans les papiers qu'il fallait pour traverser la zone interdite, longeant la frontière espagnole. Et . . . mon frère et moi avons cherché le passage dans différents petits villages qui se trouvaient sur des sommets.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="385.816" end="x">Et votre mère?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="387.485" end="x">[In English] And where was your mother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="389.395" end="x">[In French] Et ma mère attendait à Perpignan les résultats de notre enquête . . . Pour les enfants, il ne fallait pas de papiers spéciaux pour entrer dans la zone interdite. Et nous avions tous les deux moins de dix-sept ans à ce moment-là et nous pouvions passer assez facilement à travers les haies de police allemande qui contrôlaient les papiers des autres personnes. Voyant que tout était impossible devant le refus de tout le monde de nous aider, mêmes des guides qui avaient été questionnés, sans idées totalement de voir seulement ce que nous pourrions faire, nous sommes retournés à Perpignan décidés à partir seuls, sans guide, avec l'aide de personne. Mon frère acheta une boussole et une carte d'état-major de la région, et vers midi, nous sommes partis de Perpignan, pour une petite ville qui s'appelle Osséja, située à combien d'altitude? située à 1200 mètres d'altitude. Nous n'avions évidemment réussi à avoir aucun papier permettant le passage de la zone interdite, et cependant, dans le village d'Osséja, nous étions déjà dans la zone interdite. Par conséquent, à tout contrôle, les Allemands auraient pu découvrir que nous n'avions pas de papiers et nous empêcher d'aller plus loin. Ceci ne s'est pas passé heureusement, mais à la sortie de la gare d'Osséja, nous avons remarqué qu'il y avait deux agents allemands qui demandaient les papiers permettant l'entrée en zone interdite. Nous sommes restés quelques instants sur la voie, et lorsque nous avons vu les deux agents partir, nous avons franchi la gare, et nous sommes sortis. Nous avions laissé deux sacs de montagne assez lourds et une valise à la consigne en vue de pouvoir plus librement faire nos recherches, nos dernières recherches et explorations du pays.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="574.139" end="x">Et puis?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="575.085" end="x">Et puis nous sommes partis d'après . . . en suivant un trajet qui nous avait été vaguement indiqué par quelques personnes dans le petit village même. L'ascension commença vers la fin de l'après-midi, et la pluie tombait en faisant des mottes de gadoue. Nous étions enfoncés dans la boue, traînants, glissants, nous n'en pouvions plus et n'avancions pas. [Question off mic from interpreter] On n'osait pas sortir la carte d'état-major de peur de la tremper et de la perdre. De temps en temps nous regardions la boussole pour voir si nous étions dans la bonne direction, et nous entendions les chiens des policiers allemands. Nous ne savions pas s'ils étaient à nos trousses ou aux trousses de quelqu'un d'autre, mais on se taisait pour nous faire rater. Mon frère cependant nous exhortait et nous poussait comme il pouvait, car nous étions les deux plus fatigués, ma mère et moi. Et enfin, c'est lui qui remontait le moral du trio, et qui nous a toujours tenus dans la bonne voie avec sa boussole. A la sortie du village, nous avons vu une caserne allemande, qui . . . dans laquelle logeaient des douaniers, et nous avions vu un de leurs gros chiens policiers qui servent à dépister les gens qui essayent de passer la frontière. Enfin, après avoir marché pendant environ 5 heures, nous sommes tombés à pic sur une voie de chemin de fer au fond d'une vallée et nous avons aperçu une petite gare très semblable à nos gares françaises, et nous nous demandions si nous étions déjà en Espagne et non pas toujours en France. Il commençait à faire nuit, et nous n'osions pas nous découvrir et aller demander des renseignements, même approcher de la gare. En descendant, nous sommes tombés . . . comment s'appelle? un remblai . . . sur un remblai et nous avons été obligés de passer au dessous d'un tunnel, de contourner la voie et nous sommes descendus enfin sur une route qui semblait une route d'assez grande importance, malgré qu'il n'y ait pas beaucoup de circulation dessus. Enfin nous nous sommes approchés de la gare, et nous avons vu une inscription qui semblait bien ne pas être française. C'était [Filbas?], équivalent de [biffure?] en espagnol. Et puis peu à peu nous nous approchions sans nous en douter de la gare et nous avons entendu des jeunes filles chanter. Elles ne chantaient pas en français, mais en espagnol. Aussitôt, nous nous sommes approchés. Elles sont montées peut-être un peu effrayées chercher leur père. Leur père a tout de suite compris. Beaucoup de gens nous ont aidé, nous ont essuyé les pieds, nous ont donné à manger dans cette petite gare. Et le lendemain matin - ils nous avaient évidemment donné leurs lits pour passer la nuit—le lendemain matin, nous sommes partis de très bonne heure pour gagner la province de Barcelone, qui nous avait-on dit était moins dangereuse, et de là, on ne pouvait pas nous renvoyer en France. De l'aube même, nous avons marché certainement toute la matinée, et une bonne partie de l'après-midi, et nous allions prendre un car dans un petit village situé encore dans la montagne, lorsque nous avons vu deux carabineros habillés d'uniformes kaki et entourés de ceintures jaunes, avec de bas chapeaux [? de cire]. Ils sont venus vers nous, nous demander les papiers d'identité, documentation, et nous n'avons évidemment rien pu fournir. Ils nous ont fait monter dans un hôtel qui avait été réquisitionné entièrement par eux, et là a commencé l'interrogatoire, ainsi que la fouille. L'interrogatoire s'est prolongé toute l'après-midi. Ils posaient de temps en temps une question, nous ont présenté quelques fiches, nous ont confisqués tout ce que nous avions. On ramassait une part ou tout des choses qui étaient restées dans nos poches, et que nous avions essayé en vain de cacher. Et enfin, le soir, on nous a apporté un dîner très copieux, avec . . . pour la somme modique de 25.000 francs qui avaient été confisqués pendant l'interrogatoire. La nuit, ils nous ont fait passer dans une chambre dont les fenêtres avaient été grillagées, et avant de se coucher, ils nous ont enlevé nos chaussures.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1023.643" end="x">[In English] Were you all together?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1025.974" end="x">Yes, we were all together in the room.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1031.577" end="x">[In French] Et alors, ils ont enlevé nos chaussures, et le lendemain matin, ils ont frappé, ils nous ont réveillés, et ont de nouveau procédé à un interrogatoire plus détaillé.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1046.107" end="x">[aside, unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1056.434" end="x">Le surlendemain, nous avons été sortis de cette chambre et emmenés à Barcelone au quartier général de la police espagnole. Nous sommes restés là pas même cinq minutes. Nous avons été ramenés au poste de police, puis de nouveau à l'hôtel où nous avions passé les deux nuits précédentes, et enfin, deux carabineros nous ont emmenés en prison à Barcelone. Là, bref interrogatoire, et puis nous avons été jetés en prison, un peu comme des bêtes, dans de grandes cages dans les sous-sols de la préfecture de Barcelone. Le surlendemain, nous sommes sortis miraculeusement et avons réussi à faire partie d'un convoi qui devait gagner l'Afrique du nord, et nous mener enfin en terre libre. Nous avons atteint Casablanca au bout de deux jours et enfin nous avons su sur le bateau qui nous menait à Casablanca que mon père était à Alger. Et alors, au bout d'une semaine, passé des difficultés de transport entre Casablanca et Alger, nous avons rejoint mon père.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1174.660" end="x">[In English] Well, were you afraid during this whole trip?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1179.600" end="x">A little bit, yes, but I really didn't know the danger we could . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1185.594" end="x">that you were in.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1186.889" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1187.462" end="x">You didn't know the danger.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1189.040" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1189.643" end="x">What were you afraid of?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1192.547" end="x">Of being arrested by the Germans, in the mountains.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1197.830" end="x">Yes. What month were you in the mountains? What month was it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1203.463" end="x">October.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1204.590" end="x">Was it cold in the mountains?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1207.704" end="x">Not really cold, but the rain . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1210.988" end="x">It was raining.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1212.687" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1213.934" end="x">Did you have good clothes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1216.205" end="x">No, we didn't have good clothes. Only very bad shoes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1224.518" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1225.362" end="x">[In French] Et des vêtements décousus, des chaussettes déchirées par les ronces et trempées dans la boue. Et pour toute nourriture, nous n'avions qu'un kilo de sucre, qui fondait dans nos poches, et une gourde de rhum.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1257.887" end="x">[In English] Oh, did you drink rum?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1259.977" end="x">No, I didn't drink rum. Only with a piece of sugar.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1268.863" end="x">[laughing] Now, where did you get from Spain then? From Spain you came where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1276.375" end="x">In North Africa.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1277.490" end="x">To North Africa. All right. And when did you see your father again?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1285.363" end="x">Just a month after our departure.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1288.104" end="x">From Marseille.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1289.400" end="x">From Perpignan, from France.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1292.424" end="x">Just a month after your departure from Perpignan, you saw your father.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1296.189" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1296.822" end="x">Well, did he look well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1298.159" end="x">Yes, just a little bit tired.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1302.527" end="x">Well, and then what were you doing in Africa?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1308.413" end="x">I went to school there with all the little Arabs.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1313.395" end="x">Little Arabs.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1314.461" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1315.425" end="x">And did you learn French or Arabian? What did you learn?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1319.762" end="x">I learned French, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1321.600" end="x">You studied in French.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1323.329" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1323.974" end="x">All right. And are you now in school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1326.426" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1327.191" end="x">In what grade are you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1330.173" end="x">I'm in the second degree.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1331.902" end="x">Is that the lycée?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1334.233" end="x">Lycée, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1336.161" end="x">So how many years do you need to be through?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1340.016" end="x">[In French] Quatre ans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1344.384" end="x">[In English] Three years.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1344.968" end="x">Three years more, and then you will be . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1347.498" end="x">Three years of lycée.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1348.643" end="x">Yes. And what will you do after that? What do you want to study?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1354.968" end="x">I don't know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1356.113" end="x">You don't know. Well, that is good. You are young. Do you want to be an Admiral?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1362.450" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1363.113" end="x">No? [laughing] You don't want to go to sea? Well, and now, do you feel good at school? Do you have a lot of friends?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1371.637" end="x">Yes. A lot of friends. I had a lot of friends in England.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1376.486" end="x">Oh? Where were you in England?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1385.263" end="x">At the French Lycée of London.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1387.745" end="x">At the French Lycée of London. Well, uh huh. Did you speak there more French or did you speak English there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1395.829" end="x">I spoke much French.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1398.751" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1399.444" end="x">And some English in the evening.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1403.703" end="x">What subjects are you taking in school? Are you taking Latin?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1408.251" end="x">Latin.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1408.974" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1410.058" end="x">And math.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1411.896" end="x">Mathematics.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1412.872" end="x">Mathematics.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1413.486" end="x">What do you have in mathematics now? [aside to interpreter] Algebra, geometry?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1426.258" end="x">[In French] Géométrie et algèbre.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1428.830" end="x">[In English] Uh huh. And you take French literature?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1433.559" end="x">French literature, history, geography, physics.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1437.927" end="x">Physics.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1438.873" end="x">Chemistry.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1442.078" end="x">Do you have much to study when you go to school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1444.951" end="x">Yes, I have much. Too much!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1448.295" end="x">Too much. Well, John, you are an awfully good boy, and it was really a pleasure to have met you. And I think you told us a good story. And I think the children there, if we translate it, will have a lot of fun in listening to your story. We will translate it into English and have another little boy read it for us, make a record. Will you write to me sometimes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1475.436" end="x">Yes. Certainly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1477.093" end="x">All right. I'll write you a letter, then you will know my address. And then if I can, we make another wire and we send you one and then when you have a machine, then you can listen to it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jean Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnJ" start="1490.075" end="x">Thank you.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1490.948" end="x">Well, it was awfully good . . . [ends abruptly]</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Deborah Joyce</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>Deborah Joyce</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL516">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL516" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Sedan, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL516 = new OpenLayers.Map('map_vothL516', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL516.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL516.addLayer(markers);
+map_id_vothL516.zoomToMaxExtent();
+
+                        var lat_1 = 49.700000;
+                        var lon_1 = 4.950000;
+                        var vothL516 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL516_icon = new OpenLayers.Marker(vothL516);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL516);
+markers.addMarker(vothL516_icon);
+    addMarker(vothL516, popupClass, "", true, false, false);
+    map_id_vothL516.setCenter(vothL516, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL522">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL522" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Lorient, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL522 = new OpenLayers.Map('map_vothL522', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL522.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL522.addLayer(markers);
+map_id_vothL522.zoomToMaxExtent();
+
+                        var lat_2 = 47.750000;
+                        var lon_2 = -3.350000;
+                        var vothL522 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL522_icon = new OpenLayers.Marker(vothL522);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL522);
+markers.addMarker(vothL522_icon);
+    addMarker(vothL522, popupClass, "", true, false, false);
+    map_id_vothL522.setCenter(vothL522, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL236">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL236" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Marseille, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL236 = new OpenLayers.Map('map_vothL236', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL236.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL236.addLayer(markers);
+map_id_vothL236.zoomToMaxExtent();
+
+                        var lat_3 = 43.300000;
+                        var lon_3 = 5.366700;
+                        var vothL236 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL236_icon = new OpenLayers.Marker(vothL236);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL236);
+markers.addMarker(vothL236_icon);
+    addMarker(vothL236, popupClass, "", true, false, false);
+    map_id_vothL236.setCenter(vothL236, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL293">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL293" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            London, United Kingdom
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL293 = new OpenLayers.Map('map_vothL293', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL293.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL293.addLayer(markers);
+map_id_vothL293.zoomToMaxExtent();
+
+                        var lat_4 = 51.500000;
+                        var lon_4 = -0.166700;
+                        var vothL293 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL293_icon = new OpenLayers.Marker(vothL293);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL293);
+markers.addMarker(vothL293_icon);
+    addMarker(vothL293, popupClass, "", true, false, false);
+    map_id_vothL293.setCenter(vothL293, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL334">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL334" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Perpignan, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL334 = new OpenLayers.Map('map_vothL334', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL334.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL334.addLayer(markers);
+map_id_vothL334.zoomToMaxExtent();
+
+                        var lat_5 = 42.698610;
+                        var lon_5 = 2.895560;
+                        var vothL334 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL334_icon = new OpenLayers.Marker(vothL334);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL334);
+markers.addMarker(vothL334_icon);
+    addMarker(vothL334, popupClass, "", true, false, false);
+    map_id_vothL334.setCenter(vothL334, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL335">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL335" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Osseja, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL335 = new OpenLayers.Map('map_vothL335', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL335.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL335.addLayer(markers);
+map_id_vothL335.zoomToMaxExtent();
+
+                        var lat_6 = 42.416667;
+                        var lon_6 = 1.983333;
+                        var vothL335 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL335_icon = new OpenLayers.Marker(vothL335);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL335);
+markers.addMarker(vothL335_icon);
+    addMarker(vothL335, popupClass, "", true, false, false);
+    map_id_vothL335.setCenter(vothL335, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL282">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL282" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Barcelona, Spain
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL282 = new OpenLayers.Map('map_vothL282', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL282.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL282.addLayer(markers);
+map_id_vothL282.zoomToMaxExtent();
+
+                        var lat_7 = 41.416700;
+                        var lon_7 = 2.166700;
+                        var vothL282 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL282_icon = new OpenLayers.Marker(vothL282);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL282);
+markers.addMarker(vothL282_icon);
+    addMarker(vothL282, popupClass, "", true, false, false);
+    map_id_vothL282.setCenter(vothL282, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL271">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL271" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Casablanca, Morocco
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL271 = new OpenLayers.Map('map_vothL271', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL271.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL271.addLayer(markers);
+map_id_vothL271.zoomToMaxExtent();
+
+                        var lat_8 = 33.650000;
+                        var lon_8 = -7.583300;
+                        var vothL271 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL271_icon = new OpenLayers.Marker(vothL271);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL271);
+markers.addMarker(vothL271_icon);
+    addMarker(vothL271, popupClass, "", true, false, false);
+    map_id_vothL271.setCenter(vothL271, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL336">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL336" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Alger, Algeria
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL336 = new OpenLayers.Map('map_vothL336', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL336.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL336.addLayer(markers);
+map_id_vothL336.zoomToMaxExtent();
+
+                        var lat_9 = 36.776300;
+                        var lon_9 = 3.058500;
+                        var vothL336 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL336_icon = new OpenLayers.Marker(vothL336);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL336);
+markers.addMarker(vothL336_icon);
+    addMarker(vothL336, popupClass, "", true, false, false);
+    map_id_vothL336.setCenter(vothL336, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

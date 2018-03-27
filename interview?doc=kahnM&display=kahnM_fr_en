@@ -1,0 +1,1080 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Marcelle Kahn; August 21, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-marcelle-kahn-august-21-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Marcelle Kahn; August 21, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=kahnM">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=kahnM&display=kahnM_fr_en">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=kahnM&display=kahnM_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=kahnM">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=kahnM">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2.259" end="x">[In English] We have now at the microphone Mrs. Kahn, the wife of Admiral Kahn, in Paris, and she was present while her father and then her little son gave us the story, so clearly she would not exactly try to repeat it. We want to get some other moments. First of all, Mrs. Kahn, will you tell us in French what is your full name? And what education do you have?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="44.057" end="x">[In French] Mon nom est Marcelle Schrameck, femme d'Ingénieur Général Louis Kahn. Pendant la dernière guerre, j'ai fait mes études d'ingénieur des mines. Et j'ai travaillé dans des usines de produits chimiques Kuhlman pendant un certain temps avant mon mariage. Et depuis, j'ai travaillé un peu avec mon mari, je m'occupais de mes enfants . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="78.799" end="x">[In English] In what kind of mines did you work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="82.390" end="x">[In French] J'ai travaillé vers l'Ecole des mines de St. Etienne. Nous descendions très souvent dans les mines des centres de la France. Mais mon travail après, j'ai . . . je suis engagée dans les usines des produits chimiques Kuhlman.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="101.107" end="x">[In English] Now, will you be good enough to tell us, what happened to you after the Armistice was concluded?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="114.462" end="x">[In French] Après la conclusion d'Armistice, nous nous . . . nous sommes partis, mes enfants et moi, en zone libre où nous ne voulons pas avoir de contact avec les Allemands. Et nous avons vécu à Marseille, jusqu'à ce que les Allemands rouvrent l'Armistice en novembre ‘42. Mon mari était déjà parti pour l'Angleterre, je restais avec mes deux fils à Marseille. Et dès que les Allemands ont franchi la ligne, les émeutes se sont produites, dans la Zone Sud. Il y a eu des attentats à Marseille, dès le mois de décembre. Les Allemands avaient organisé un arbre de Noël dans un des grands hôtels de Marseille, avec les, le consul . . . les consuls allemands. Il y a eu une bombe, c'était le 24 décembre, le jour de Noël, il y a eu une bombe, la femme du consul allemand a eu les deux jambes coupées. Elle est morte quelques jours après, un enterrement en grande pompe. La circulation a été interrompue dans toutes les rues de Marseille. Et c'est à partir de ce moment qu'ont commencé les représailles sur les Marseillais. Naturellement, nous savions tous que la guerre n'était pas terminée, que c'était seulement un fait de guerre. Mais . . . à partir de ce moment, la vie est devenue extrêmement difficile. Les gens étaient arrêtés dans les rues. Leurs papiers étaient examinés et si les papiers n'était pas en bonne règle, naturellement on était arrêté et déporté.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="217.474" end="x">C'est ainsi qu'un camarade de mon fils, un garçon de seize ans, a été arrêté en descendant de la gare, ses parents n'ont plus eu des nouvelles de lui et qu'il est revenu peut-être un an après, et s'étant échappé d'un wagon qui l'emmenait en Allemagne en soulevant une . . . le plancher du wagon, il était arrivé à s'évader, et un camarade . . . mais un camarade qui l'avait suivi a eu les jambes coupées dans le [?]. C'est à partir de ce moment-là que j'ai essayé de quitter Marseille. Mais mon . . . ma volonté n'est devenue définitive qu'au moment où le Vieux . . . le moment où les Allemands ont détruit le Vieux Port. Les Allemands prétendaient que des . . . les terroristes, comme ils les appelaient, se cachaient en le Vieux Port. Ils ont essayé de faire sauter ces vieux quartiers dans lesquels il y avait évidemment des ruelles et de . . . des terrains où ils . . . qu'ils redoutaient beaucoup. Là, ce n'est.. nous . . . un jour . . . nous naturellement nous n'étions pas avertis de ce qui se tramait. Et c'est un jour en descendant dans le centre de Marseille, nous habitions dans une rue de . . . assez éloignée du Vieux Port, en descendant dans le centre de Marseille, nous avons entendu la . . . la sonnerie d'alarme. Nous avons vu les gens se précipiter hors de chez eux avec leurs maigres bagages, ou quelques-uns emportaient des enfants malades, et ils hissaient ce qu'ils pouvaient dans des charrettes à bras . . . ont été toujours arrêtés et je n'ai su que ces jours-ci que cinq mille personnes parmi ces trente ou quarante milles qui ont dû évacuer en un quart d'heure leurs logis . . . cinq milles de ces personnes ont été conduites et déportées en Allemagne. Ce jour-là, nous avons vu arrêter, on mettait des gens du . . . nous avons vu des gens hissés dans des voitures cellulaires. Nous avons vu de malheureuses femmes se tendre les bras et essayer d'accrocher aux barreaux. C'est un spectacle qui nous a fendu l'âme en pensant à ce que pouvait évidemment arriver à mes enfants. Je n'ai qu'une idée, c'est de quitter Marseille.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="366.103" end="x">A ce moment-là, nous sommes allés dans les Alpes aux environs de Grenoble. Mes enfants sont allés en pension en montagne, et à partir de ce moment, j'ai . . . à ce moment-là, que j'ai entendu le message, « je suis arrivé », de mon mari, en Angleterre. Réellement il avait mis pas mal de temps avant de pouvoir faire passer le message. C'est ce message . . . le message par lequel [il nous disait] qu'il nous attendait. Et à partir de ce moment, j'ai commencé mes recherches pour essayer de le rejoindre. Et j'avais naturellement pas mal de relations dans toute cette vieille existence. Privilégiée, j'ai constamment eu des amis qui m'ont prévenue qu'il me . . . déjà quand j'étais à Marseille et ils m'avaient dit que ce soir-là, il y aura des perquisitions de votre quartier, allez coucher chez des amis. Cela m'était arrivé plusieurs fois. Mais naturellement, c'était extrêmement dangereux pour ces amis. Et je suis très . . . alors, à ce moment-là, quand j'avais quitté Marseille, je préférais avoir des cartes à un autre nom. Il a fallu des . . . que je cherche l'homme pour faire d'autres cartes. C'était assez difficile parce que la Résistance imprimait des cartes pour les travailleurs et pas pour les femmes et des enfants en général. Alors il était très difficile de se procurer des cartes d'alimentation de femme et d'enfants. Et alors j'en ai . . . j'ai trouvé le meilleur accueil chez des gens de la Résistance que je connaissais absolument pas qui pourtant m'avaient donné simplement un mot. On avait même pas donné le mot, on avait donné leur nom, une adresse, et donc on était présenté de la part d'un tel, et je ne savais même pas le nom exact. Ce sont des gens qui m'ont reçue, qui m'ont donné les clés de leur maison, chez qui j'ai vécu pendant huit à dix jours, le temps qu'on me fabrique de fausses cartes. Je ne sortais pas parce que je n'avais pas de carte. J'avais peur à chaque instant d'être interpellée. Mais je suis restée chez eux huit jours, je restais chez eux huit jours, où j'étais nourrie, j'ai . . . on m'avait donné leur meilleure chambre et les clés. A partir du moment où j'ai eu ces fausses cartes, j'ai pu voyager.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="495.767" end="x">J'étais avant tout à côté de Perpignan, où j'ai dû retrouver les guides qui avaient fait passer mon mari, mais malheureusement, ils étaient tous . . . la plupart était arrêtée et je n'ai pas pu retrouver leurs traces. Enfin j'en ai trouvé d'autres . . . lorsqu'ils me proposaient évidemment de nous faire passer . . . mais à chaque fois que je leur parlais de mon plus jeune fils qui avait à ce moment-là l'âge . . . il n'avait que dix ans, ils refusaient énergiquement de le faire passer en me disant "ce garçon ne marchera pas jusqu'au bout, il ne pourrait pas passer dans la montagne, il nous fera prendre, etc." . . . Enfin, j'ai mis . . . j'ai pas mal de contacts avec des gens très courageux, et qui m'ont découragée beaucoup, qu'ils me disaient de ne pas fuir, vous serez à l'abri . . . c'est une chose que je ne voulais pas faire, nous voulions partir retrouver mon mari et pour nous battre . . . battre avec notre pays, rester en contact avec notre pays. Et c'est, heu . . . un an après, seulement vers le mois d'octobre 1943, que nous avons décidé devant toutes les difficultés de passer seuls. Devant la . . . l'énergie de mon fils aîné qui a tout préparé, il avait choisi avec soin un itinéraire, lequel il a choisi avec au moins sa boussole parce que c'est un instrument extrêmement difficile à trouver en ce moment-là. Nous avions trouvé des boussoles de Scout qui étaient toutes plus ou moins bonnes. On en a essayé une grande quantité avant d'en trouver une qui indiquait véritablement le Nord. On avait énormément . . . on avait beaucoup de peine à trouver des cartes d'état-major naturellement aussi, qui est . . . nous étions . . . tout le monde se croyait surveillé, suivi naturellement, quand on allait acheter une carte de la frontière espagnole. Il l'a fait . . . avec beaucoup d'énergie des décisions d'autant plus méritoires venant d'un garçon qui avait à l'époque quinze ans. Et qui n'était, qui n'avait jamais fait de grands entraînements physiques, et c'est lui qui dans la montagne, nous a guidés, nous a tirés, poussés et nous a jamais perdus, simplement avec la boussole et la carte que nous n'osons pas sortir en vue du mauvais temps. Nous avons toujours été dans le droit chemin. Et nous pouvons dire que nous avons passé peut-être avec moins d'incidents qu'avec un passeur de profession, nous avons pris une route probablement plus aisée, plus facile. Et nous avons eu le courage peut-être de l'inconscience. Et nous avons franchi les Pyrénées de Perpignan à Casa, en neuf jours, nous sommes arrivés de Perpignan à Casa en neuf jours, avec trois jours de prison en Espagne. Ce qui a été . . . ce qu'était [unintelligible] à Casablanca.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="703.139" end="x">[In English] [break in sound] How did you get out of prison? Did they give you free passage to Casablanca? [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="710.500" end="x">[In French] Euh, nous étions, nous avons été pris dans un convoi de Français, ils évacuaient des Français. Naturellement, nous ne sommes pas restés longtemps en prison en raison du fait que nous n'étions pas des combattants. Une femme et des enfants de moins de 17 ans n'étaient pas considérés comme une prise importante pour les Espagnols. Des hommes restaient longtemps en camps de concentration que nous ne connaissions pas.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="736.960" end="x">[In English] How old was your oldest boy then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="739.020" end="x">My oldest boy . . . Pierre?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="743.448" end="x">[In French] Oui, mon fils aîné, avait quinze ans et demi. Et il faut dire que sur toutes les fausses cartes, je l'avais rajeuni encore d'un an pour être plus tranquille. Alors même les papiers qu'ont pris les Espagnols, nous avons fait les papiers français-espagnol, il avait quatorze ans sur les papiers que nous avons pris en espagnol et ce qui fait que nous étions donc garantis d'être des non-combattants.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="780.732" end="x">[In English] [unintelligible] Well, Madame Kahn, can you tell me then, how long were you crossing the Pyrenees? How long did it take you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="792.298" end="x">[In French] Bien, deux jours seulement. Nous avons marché le premier jour cinq heures et le second jour six ou sept heures.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="804.847" end="x">[In English] And did you have things with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="806.998" end="x">[In French] Nous n'avions absolument rien sur nous. Nous étions nu tête, nous étions comme des promeneurs pour ne pas attirer l'attention sur nous, et en passant nous avons déchiré nos chaussures qui n'étaient pas très solides, nos vêtements. En Espagne, évidemment nous avons vite été reconnus comme des passagers clandestins. Nous étions en loques, nous n'avions rien à manger, nous nous étions arrêtés dans des fermes où nous avait gentiment donné du lait.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="840.606" end="x">[In English] And did the children manage to come through well and came through all right?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="845.847" end="x">[In French] Les garçons sont arrivés en très bon état. [Boder interrupts] Bien sûr qu'en arrivant, si bien que . . . nous avons pris avec plaisir que le premier dîner qui nous a été offert par les carabiniers, avec l'argent qu'ils m'avaient pris.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="862.990" end="x">[In English] How many kilometers did you walk?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="865.942" end="x">[In French] Eh bien, nous ne savions pas exactement. Nous ne savions pas exactement, parce que nous avions la carte du côté français mais les cartes d'état-major n'indiquent rien en delà de la frontière, qui fait que nous n'avons jamais su le chemin exact que nous avons fait en Espagne, on a dû faire quarante à cinquante kilomètres.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="884.297" end="x">[In English] Uh huh.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="885.201" end="x">[In French] Oui. Evidemment beaucoup moins que la plupart des guides ont fait faire.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="892.270" end="x">[In English] And were there a lot of Germans in Spain?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="895.252" end="x">[In French] Or, en Espagne, nous n'avons pas vu d'Allemands, n'est-ce pas?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="898.114" end="x">Pas d'Allemands?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="899.150" end="x">Non, on n'en a pas vu. On a vu des policiers espagnols.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="903.518" end="x">[In English] Do you speak Spanish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="904.885" end="x">[In French] Non, pas du tout.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="906.512" end="x">[In English] But then on the border they spoke French with you.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="909.325" end="x">[In French] Non, non, ils parlaient espagnol, nous avons . . . justement le premier jour où nous avons été arrêtés, il nous est tombé un état-major espagnol qui essayait de nous interroger. C'était un Général qui me posait des questions en espagnol, comme je ne les comprenais pas, il y a renoncé. Pour ça que nous avons été raccompagnés une nuit à notre hôtel où nous avons encore couché sous clé et le lendemain, on nous a emmenés à Barcelone, où il y avait là des . . . où on parlait français.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="934.759" end="x">[In English] And when did you [both speaking at once] Where did you get the first notice from the Admiral? When did you hear from him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="944.307" end="x">[In French] Ah, nous avons reçu dans le bateau qui nous a ramenés d'Espagne au Maroc, il y avait un . . . c'était un convoi organisé qui ramenait des Français, il y avait un officier de la marine, un Français. Je lui ai demandé s'il avait . . . s'il savait où se trouvait Ingénieur Kahn, Ingénieur en Chef Kahn. Il m'a dit qu'il l'avait vu deux soirs avant à Alger. Il y avait à peu près huit mois que je n'avais eu aucune nouvelle de mon mari.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="975.915" end="x">[In English] And how long were you in Africa before you returned to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="979.752" end="x">[In French] Juste un an en Afrique. Juste un an. Nous sommes arrivés . . . le 22 octobre 1943 à Casa et je suis repartie d'Alger pour la France le 17 octobre 1944.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1007.469" end="x">[In English] Well, how did you find Paris when you came back?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anne Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="1010.180" end="x">[In French] Paris me paraissait magnifique! Bon, je n'ai jamais vu Paris avec les Allemands.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1018.253" end="x">[In English] Well, I thank you very much. How really good of you to let me spend the evening with you and to have these interesting reports from three generations. Now, I would like to have . . . recording ends abruptly</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Deborah Joyce</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>Deborah Joyce</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_1 = 48.866700;
+                        var lon_1 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL524">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL524" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Saint-&#195;tienne, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL524 = new OpenLayers.Map('map_vothL524', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL524.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL524.addLayer(markers);
+map_id_vothL524.zoomToMaxExtent();
+
+                        var lat_2 = 45.433300;
+                        var lon_2 = 4.383300;
+                        var vothL524 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL524_icon = new OpenLayers.Marker(vothL524);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL524);
+markers.addMarker(vothL524_icon);
+    addMarker(vothL524, popupClass, "", true, false, false);
+    map_id_vothL524.setCenter(vothL524, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL236">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL236" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Marseille, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL236 = new OpenLayers.Map('map_vothL236', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL236.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL236.addLayer(markers);
+map_id_vothL236.zoomToMaxExtent();
+
+                        var lat_3 = 43.300000;
+                        var lon_3 = 5.366700;
+                        var vothL236 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL236_icon = new OpenLayers.Marker(vothL236);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL236);
+markers.addMarker(vothL236_icon);
+    addMarker(vothL236, popupClass, "", true, false, false);
+    map_id_vothL236.setCenter(vothL236, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL339">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL339" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Grenoble, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL339 = new OpenLayers.Map('map_vothL339', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL339.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL339.addLayer(markers);
+map_id_vothL339.zoomToMaxExtent();
+
+                        var lat_4 = 45.187778;
+                        var lon_4 = 5.726945;
+                        var vothL339 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL339_icon = new OpenLayers.Marker(vothL339);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL339);
+markers.addMarker(vothL339_icon);
+    addMarker(vothL339, popupClass, "", true, false, false);
+    map_id_vothL339.setCenter(vothL339, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL334">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL334" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Perpignan, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL334 = new OpenLayers.Map('map_vothL334', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL334.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL334.addLayer(markers);
+map_id_vothL334.zoomToMaxExtent();
+
+                        var lat_5 = 42.698610;
+                        var lon_5 = 2.895560;
+                        var vothL334 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL334_icon = new OpenLayers.Marker(vothL334);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL334);
+markers.addMarker(vothL334_icon);
+    addMarker(vothL334, popupClass, "", true, false, false);
+    map_id_vothL334.setCenter(vothL334, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL341">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL341" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Pyrenees, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL341 = new OpenLayers.Map('map_vothL341', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL341.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL341.addLayer(markers);
+map_id_vothL341.zoomToMaxExtent();
+
+                        var lat_6 = 42.666667;
+                        var lon_6 = 1.000000;
+                        var vothL341 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL341_icon = new OpenLayers.Marker(vothL341);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL341);
+markers.addMarker(vothL341_icon);
+    addMarker(vothL341, popupClass, "", true, false, false);
+    map_id_vothL341.setCenter(vothL341, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL271">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL271" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Casablanca, Morocco
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL271 = new OpenLayers.Map('map_vothL271', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL271.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL271.addLayer(markers);
+map_id_vothL271.zoomToMaxExtent();
+
+                        var lat_7 = 33.650000;
+                        var lon_7 = -7.583300;
+                        var vothL271 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL271_icon = new OpenLayers.Marker(vothL271);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL271);
+markers.addMarker(vothL271_icon);
+    addMarker(vothL271, popupClass, "", true, false, false);
+    map_id_vothL271.setCenter(vothL271, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL282">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL282" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Barcelona, Spain
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL282 = new OpenLayers.Map('map_vothL282', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL282.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL282.addLayer(markers);
+map_id_vothL282.zoomToMaxExtent();
+
+                        var lat_8 = 41.416700;
+                        var lon_8 = 2.166700;
+                        var vothL282 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL282_icon = new OpenLayers.Marker(vothL282);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL282);
+markers.addMarker(vothL282_icon);
+    addMarker(vothL282, popupClass, "", true, false, false);
+    map_id_vothL282.setCenter(vothL282, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL336">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL336" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Alger, Algeria
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL336 = new OpenLayers.Map('map_vothL336', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL336.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL336.addLayer(markers);
+map_id_vothL336.zoomToMaxExtent();
+
+                        var lat_9 = 36.776300;
+                        var lon_9 = 3.058500;
+                        var vothL336 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL336_icon = new OpenLayers.Marker(vothL336);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL336);
+markers.addMarker(vothL336_icon);
+    addMarker(vothL336, popupClass, "", true, false, false);
+    map_id_vothL336.setCenter(vothL336, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

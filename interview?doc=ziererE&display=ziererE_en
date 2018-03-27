@@ -1,0 +1,4078 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Edith Zierer; September 8, 1946; Bellevue, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-edith-zierer-september-8-1946-bellevue-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Edith Zierer; September 8, 1946; Bellevue, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=ziererE">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=ziererE&display=ziererE_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=ziererE&display=ziererE_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=ziererE">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=ziererE">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2.922" end="x">[In English] <a class="placename" href="#vothL256">Chicago</a>, November the 14, 1950. This is reproduction Spool 116B. The interviewee is Edith Zierer. Boder.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="48.506" end="x">We have now another young girl.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="50.928" end="x">[In German] What is your name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="51.904" end="x">Edith Zierer [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="53.181" end="x">Edij . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="54.085" end="x">Edith.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="55.784" end="x">Edith. And the first name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="59.230" end="x">Zierer.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="60.085" end="x">Zierer. You spell your name C . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="63.610" end="x">No. Z-I-E . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="65.128" end="x">Z . . . Please write it down. Your first name is Edith, true? You simply are accustomed to give the first name at the end?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="71.514" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="72.008" end="x">You speak German, true? Now, Edith, how old are you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="81.159" end="x">[She speaks in a very low voice] Fifteen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="82.376" end="x">Fifteen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="85.156" end="x">[In English] We are starting at the . . . we are starting at the fifteen minute of the Spool number 116 an interview with Edith Kira [incorrect], age fifteen, at <a class="placename" href="#vothL12">Bellevue</a>, near <a class="placename" href="#vothL13">Paris</a>, a home for displaced children, who are here with a group of teachers which [who have] removed them from Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="108.132" end="x">[In German] And so tell me, Edith, where were you when the war started?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="116.374" end="x">When the war started I went from <a class="placename" href="#vothL81">Katowice</a> in Silesia, no?—to <a class="placename" href="#vothL135">Cracow</a>, and then [I went] together with the parents to <a class="placename" href="#vothL123">Lemberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="124.308" end="x">Aha. Tell me, how old were you then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="128.597" end="x">Nine years.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="129.712" end="x">You were nine years old. And of whom did your family consist? The father . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="134.814" end="x">There were the father, the mother, and one sister, a younger sister.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="137.766" end="x">A younger sister.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="138.790" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="139.272" end="x">How old about was your father then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="141.592" end="x">The father? Then? Forty-one years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="144.255" end="x">Yes. Do you know where your father is?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="146.64" end="x">[Barely audible voice] No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="147.111" end="x">No. And where your mother is?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="148.780" end="x">Neither. They went away with a transport in '42 to <a class="placename" href="#vothC25" type="camp">Dachau</a> [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="152.376" end="x">Both together? Father and mother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="153.852" end="x">No. First the father.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="155.208" end="x">Aha. Now then, will you please tell me the whole story. What happened, as you remember it, when the Germans arrived in <a class="placename" href="#vothL81">Katowice</a>. Nu.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="163.925" end="x">I was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="165.082" end="x">When the war started.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="165.847" end="x">Yes. When the war started I went with my parents to <a class="placename" href="#vothL135">Cracow</a>, and from <a class="placename" href="#vothL135">Cracow</a> to <a class="placename" href="#vothL123">Lemberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="172.594" end="x">Why so fast. Now how long were you in <a class="placename" href="#vothL135">Cracow</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="175.395" end="x">Two days.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="176.540" end="x">Why did you go to <a class="placename" href="#vothL135">Cracow</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="178.299" end="x">Why? Because <a class="placename" href="#vothL81">Katowice</a> is near the border, near the German border. And there is . . . were a lot of troops [apparently Polish].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="184.233" end="x">Troops. So you simply left.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="186.143" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="186.396" end="x">What was the occupation of your father?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="188.896" end="x">He had a business.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="190.703" end="x">What kind of business?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="191.968" end="x">Of leather. Leather.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="193.836" end="x">A leather business. Did he sell leather, or things of leather?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="198.336" end="x">Things of leather. Leather and rugs. All kinds of merchandise.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="202.703" end="x">It was a big store in <a class="placename" href="#vothL81">Katowice</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="204.330" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="205.457" end="x">Now then, from <a class="placename" href="#vothL81">Katowice</a> you went to <a class="placename" href="#vothL135">Cracow</a>. And what did your parents do there? How long were you in <a class="placename" href="#vothL81">Katowice</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="213.963" end="x">A few days [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="214.626" end="x">Why so little?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="215.903" end="x">We left the 28th of September, and then the war started.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="220.602" end="x">Oh. You left before the war.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="222.692" end="x">Yes, a few days [before].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="223.867" end="x">And then, afterwards . . . why did you remain in <a class="placename" href="#vothL123">Lemberg</a> only a few days?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="228.024" end="x">No. We were in <a class="placename" href="#vothL123">Lemberg</a> one year, a whole year.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="230.777" end="x">So where then were you a few days?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="232.735" end="x">In <a class="placename" href="#vothL135">Cracow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="233.783" end="x">In <a class="placename" href="#vothL135">Cracow</a> you spent a few days.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="234.898" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="235.844" end="x">And then you went to <a class="placename" href="#vothL123">Lemberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="237.422" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="237.693" end="x">And in <a class="placename" href="#vothL123">Lemberg</a> you spent the whole year.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="239.079" end="x">A whole year.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="239.513" end="x">Nu. And what happened there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="241.543" end="x">There was very little food. There was a [great] scarcity. We ate very badly. And when we returned to <a class="placename" href="#vothL135">Cracow</a>, because <a class="placename" href="#vothL123">Lemberg</a> was under the Russians. No [you see?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="252.911" end="x">Oh, <a class="placename" href="#vothL123">Lemberg</a>, still was . . . That was still when the Russians and Germans were not at war.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="257.260" end="x">No. Before the war.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="258.556" end="x">Before the war, the Germans-Russian war.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="260.676" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="261.008" end="x">So you went from <a class="placename" href="#vothL123">Lemberg</a> back to <a class="placename" href="#vothL298">Prague</a> [<a class="placename" href="#vothL135">Cracow</a>?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="263.339" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="263.580" end="x">Well. Was there . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="264.514" end="x">At the station . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="264.755" end="x">. . . more to eat?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="265.339" end="x">There was more to eat. We had relatives there. They helped us, no?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="269.014" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="269.466" end="x">And then we . . . in '41 the <a class="term" href="#vothG_ghetto">Ghetto</a> was established in <a class="placename" href="#vothL135">Cracow</a>, so we left from <a class="placename" href="#vothL85">Wieliczka</a> [words not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="278.153" end="x">For <a class="placename" href="#vothL85">Wieliczka</a>. Is that the same place where Miss Kuechler was?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="282.472" end="x">Yes. Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="283.316" end="x">Yes. So you left for <a class="placename" href="#vothL85">Wieliczka</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="285.406" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="285.677" end="x">And . . . now then, what happened there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="288.689" end="x">There we remained for a year and a half. And again an expulsion, a real expulsion, and we left for <a class="placename" href="#vothL135">Cracow</a>, and then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="295.798" end="x">What does it mean, an expulsion?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="297.316" end="x">An expulsion, a total expulsion, a Jew-clean [procedure—an ordinance to 'free a locality of its Jews].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="299.937" end="x">Oh. The city was to be made Jew-clean. And you left for <a class="placename" href="#vothL135">Cracow</a> alone or with a transport?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="307.130" end="x">No. With the parents. We were fifteen [?] kilometers from <a class="placename" href="#vothL135">Cracow</a>, so we went on foot.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="311.708" end="x">Oh. You went with the parents on foot to <a class="placename" href="#vothL135">Cracow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="316.178" end="x">To <a class="placename" href="#vothL135">Cracow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="316.389" end="x">You did not want . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="317.052" end="x">To the <a class="term" href="#vothG_aryan">Aryan</a> side. Because there was already a <a class="term" href="#vothG_ghetto">Ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="319.293" end="x">In <a class="placename" href="#vothL135">Cracow</a> [there] was a <a class="term" href="#vothG_ghetto">Ghetto</a>. Did you . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="320.811" end="x">In <a class="placename" href="#vothL135">Cracow</a> [there] was a <a class="term" href="#vothG_ghetto">Ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="322.136" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="322.709" end="x">But we went to the <a class="term" href="#vothG_aryan">Aryan</a> side.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="324.348" end="x">How were you admitted to the <a class="term" href="#vothG_aryan">Aryan</a> side?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="327.191" end="x">We had not [words not clear]. We came [?] in on <a class="term" href="#vothG_aryan">Aryan</a> papers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="331.950" end="x">Did you have <a class="term" href="#vothG_aryan">Aryan</a> papers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="333.878" end="x">The mother had <a class="term" href="#vothG_aryan">Aryan</a> papers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="336.589" end="x">Oh. And you [?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="337.444" end="x">We were still very small. We did not need any [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="341.029" end="x">And the father?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="341.854" end="x">The father was hiding. He had a very Semitic appearance, so he had to hide.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="346.613" end="x">What kind of an appearance?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="347.698" end="x">Very, very Semitic . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="349.608" end="x">Semitic. He was . . . he looked Jewish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="351.668" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="352.210" end="x">So he hid himself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="353.536" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="353.940" end="x">And the mother with the children took the risk . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="356.422" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="356.765" end="x">. . . to pass over . . . to the <a class="term" href="#vothG_aryan">Aryan</a> side.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="357.609" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="358.013" end="x">And what happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="359.411" end="x">And then we were . . . we were in <a class="placename" href="#vothL135">Cracow</a> a few days, on the <a class="term" href="#vothG_aryan">Aryan</a> side. And then somebody reported on the mama, no? A German, he did . . . he did . . . about her. He knew her.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="369.212" end="x">He denounced her . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="370.266" end="x">Yes. He knew her, and he reported on her, and she was [taken] to the police, to the <a class="term" href="#vothG_gestapo">Gestapo</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="376.050" end="x">And where did you remain?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="377.869" end="x">We . . . we remained in the city, with my sister, all alone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="381.574" end="x">That means the two children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="382.869" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="383.562" end="x">You . . . you were nine years old, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="386.273" end="x">I was then already ten.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="387.580" end="x">Ten years old. And the sister, how old was she?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="389.809" end="x">Eight.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="390.140" end="x">And they took . . . they took away the mother without you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="393.665" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="394.279" end="x">How did that . . . how did that come about?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="395.725" end="x">Because we remained home, and the mama went out on the street [?] and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="399.520" end="x">She was taken on the street?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="400.695" end="x">Yes. And she did not return.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="403.346" end="x">And your mama did not return any more?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="405.256" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="406.443" end="x">Did you know what happened to her?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="408.232" end="x">No. We knew nothing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="410.324" end="x">Did you find out later?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="411.743" end="x">Yes. After four weeks we learned that she was held in the [name not clear]. That was a prison, a German prison.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="418.099" end="x">Yes. And then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="419.487" end="x">Well, then we went to the <a class="term" href="#vothG_ghetto">Ghetto</a> by ourselves, because we had no other way out.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="423.200" end="x">What does that mean? The two children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="424.576" end="x">Yes. And in the <a class="placename" href="#vothC55" type="camp">Ghetto</a> we found the father, and together with him we went to Bieżanów [district of <a class="placename" href="#vothL135">Cracow</a>], because in <a class="placename" href="#vothL135">Cracow</a> there began a resettlement [expulsion of the Jews]. And we left.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="434.826" end="x">Now then, you say your father had hid himself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="437.410" end="x">Yes, but he returned to the <a class="placename" href="#vothC55" type="camp">Ghetto</a>, because he could not remain there for a long.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="440.959" end="x">Where he hid himself?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="442.167" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="442.427" end="x">So he returned to the <a class="placename" href="#vothC55" type="camp">Ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="443.192" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="443.594" end="x">And you found the father.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="444.799" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="445.222" end="x">How did you find him? [Chuckle.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="445.995" end="x">[Laughter.] On the street. The <a class="term" href="#vothG_ghetto">Ghetto</a> was very small, only a few streets. No?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="450.178" end="x">You did not know that your father was there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="451.687" end="x">No, I did not know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="452.925" end="x">How was it? You went out on the street and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="454.965" end="x">No. I came to the <a class="placename" href="#vothC55" type="camp">Ghetto</a>, and on the corner there stood the father.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="459.130" end="x">Well, what did he say?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="461.183" end="x">He was very glad, but when he heard that the Mama was gone, then he already [her voice fades into silence].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="470.346" end="x">[Pause. Slowly] Yes. [Pause.] Now then . . . and then you were with your father in the <a class="term" href="#vothG_ghetto">Ghetto</a>. And what happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="474.227" end="x">Then we went to a <a class="term" href="#vothG_lager">lager</a>, to Bieżanów [district of <a class="placename" href="#vothL135">Cracow</a>] near <a class="placename" href="#vothL135">Cracow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="478.241" end="x">You were sent away?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="479.358" end="x">Yes. We went by ourselves to the <a class="term" href="#vothG_lager">lager</a>, because it was a work <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="482.587" end="x">Your father with the children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="484.278" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="484.568" end="x">And what work could you do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="486.717" end="x">No. I could not work. They wanted to throw me out of the <a class="term" href="#vothG_lager">lager</a>, because they accepted in the <a class="term" href="#vothG_lager">lager</a> only [those] from the age of fifteen and up . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="493.267" end="x">Nu.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="493.587" end="x">. . . for work. And I could not work yet. So we were thrown out, I and my sister.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="498.585" end="x">What does that mean, 'thrown out'?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="499.509" end="x">We were thrown out. The Germans came in, made a check-up. So they threw out.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="505.080" end="x">They told you to leave?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="506.378" end="x">Yes. They did not tell us. We were thrown out over the wires [fence].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="510.211" end="x">What does that mean? They lifted you up and threw you out?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="512.475" end="x">Yes. There were such wires [fences], so they threw us out. The father did not happen to be present at the moment. He was at work, and we were alone in the <a class="term" href="#vothG_lager">lager</a> [apparently factory grounds].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="518.952" end="x">Aha. And the sister, too?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="520.872" end="x">Too. And so we went to the Pole [the words for Poland and Pole in the dative case are the same: Polen].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="523.305" end="x">To Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="524.017" end="x">To a Pole, to a peasant.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="525.768" end="x">You went to a peasant. And then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="527.235" end="x">Yes. And there we stayed for some time. And I . . . she wanted to get some pay, so the sister remained, and I went to <a class="placename" href="#vothL135">Cracow</a> to the <a class="term" href="#vothG_ghetto">Ghetto</a> and brought from there some money, paid up for the sister . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="540.563" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="541.004x" end="x">And I myself remained in the <a class="term" href="#vothG_ghetto">Ghetto</a>, because I . . . I worked here [in the Ghetto] a bit. I helped out, and I lived on it. I helped out [did some chores].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="549.382" end="x">Aha. Your Papa was still in the Ghetto?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="551.495" end="x">In the <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="552.026" end="x">In the <a class="term" href="#vothG_lager">lager</a>. And you had returned to the <a class="term" href="#vothG_lager">lager</a>. [Correction] Oh, you lived in the <a class="term" href="#vothG_ghetto">Ghetto</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="556.614" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="557.055" end="x">. . . and helped out your papa [with your earnings].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="558.129" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="558.401" end="x">And what became of your sister?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="561.449" end="x">Of my sister. Well, she was with a peasant. And then a deportation occurred from the <a class="term" href="#vothG_lager">lager</a> to a large concentration camp, so I with papa [?] fetched the sister. The papa himself [did it], because he wanted that we should all be together.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="574.940" end="x">Nu.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="575.152" end="x">So we all together went to a concentration camp in <a class="placename" href="#vothC89" type="camp">Plaszow</a>. That is a large <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="580.150" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="581.285" end="x">There I stayed for five weeks. And after five weeks I, all alone, was taken to <a class="placename" href="#vothC102" type="camp">Skarzysko</a>, to a munitions factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="589.271" end="x">How old were you then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="590.677" end="x">Eleven years. Going into my twelfth.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="592.005" end="x">Eleven years old. Now then, you went to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="599.098" end="x"><a class="placename" href="#vothC102" type="camp">Skarzysko</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="600.082" end="x">Pla- . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="600.402" end="x"><a class="placename" href="#vothC89" type="camp">Plaszow</a>. To <a class="placename" href="#vothC89" type="camp">Plaszow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="601.295" end="x">You went to <a class="placename" href="#vothC89" type="camp">Plaszow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="602.412" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="602.835" end="x">Did you go together with you father . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="604.392" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="604.755" end="x">. . . and your sister?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="605.407" end="x">Yes, yes, together.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="606.451" end="x">Was that permitted, men and children in one . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="608.353" end="x">No. That was a separate <a class="term" href="#vothG_lager">lager</a>, but they saw each other every day.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="612.114" end="x">That was a separate <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="613.551" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="613.871" end="x">Now tell me, when you were in the <a class="term" href="#vothG_lager">lager</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="616.334" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="616.895" end="x">. . . were there many other children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="619.340" end="x">There were . . . there was a children's home, but I did not . . . I did not want to be there, because I wanted to do some work so that I could help out the papa, because the papa was very weak. He felt bad [he did not feel good]. No?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="630.658" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="631.159" end="x">The sister was in a children's home, and I was not in the children's home. I worked.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="635.747" end="x">A children's home in the <a class="term" href="#vothG_lager">lager</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="637.576" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="638.469" end="x">And who managed the children's home?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="642.151" end="x">The Germans didn't know [did not care?] anything about it, but the Jews . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="645.984" end="x">What do you mean? The Germans did not know that there existed a children's home?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="649.576" end="x">They knew, yes. They knew, but they permitted it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="652.081" end="x">They permitted it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="653.318" end="x">At the beginning.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="654.194" end="x">Aha. And then you alone were taken. Where to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="657.230" end="x"><a class="placename" href="#vothC102" type="camp">Skarzysko-Kamienna</a>, to an ammunition factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="660.007" end="x">How come? Were you . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="662.017" end="x">There was a selection at night, so I was taken. I did not want to tell anything to the father and the sister. Not to take leave . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="668.295" end="x">Where were you? Not in the children's home?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="670.154" end="x">No, I was not. I worked.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="672.086" end="x">You were with the women?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="673.643" end="x">And the papa worked somewhere else, and I [worked] somewhere else. No?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="676.843" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="677.344" end="x">And at night . . . It was during a night shift.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="679.728" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="680.090" end="x">And at night we were taken . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="681.660" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="682.463" end="x">. . . to <a class="placename" href="#vothC102" type="camp">Skarzysko</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="683.296" end="x">Now tell me, how did you travel to <a class="placename" href="#vothC102" type="camp">Skarzysko</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="686.453" end="x">To <a class="placename" href="#vothC102" type="camp">Skarzysko</a>? There were a hundred people to a wagon [RR-car]. No?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="691.572" end="x">Men and women?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="692.646" end="x">Hm. Only women. The women separately, the men separately.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="695.755" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="696.208" end="x">And we got a slice of bread. No? We drank a little water and traveled to <a class="placename" href="#vothC102" type="camp">Skarzysko</a>. We did not know that we traveled to <a class="placename" href="#vothC102" type="camp">Skarzysko</a>. We thought [we were going] to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. And . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="706.971" end="x">You did not know that you . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="708.227" end="x">No. We thought that we were going to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="711.263" end="x">Did you know what was going on in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="713.527" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="714.088" end="x">Now . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="715.386" end="x">And then in <a class="placename" href="#vothC102" type="camp">Skarzysko</a> we were disembarked, there nine hundred people, no? So they took seventy people . . . There were three shops.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="724.893" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="725.316" end="x">A [somewhat] better shop, a bad one, and one very bad, no?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="728.684" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="729.197" end="x">They did . . . where one just could die at once. So I was [taken] to the first shop . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="734.811" end="x">To the best one?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="735.403" end="x">Yes, I was taken to the best, and since I knew German I got work, no?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="741.759" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="742.031" end="x">They did not consider that I was a child, a box under my feet, because I was too small.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="749.021" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="749.401" end="x">And I worked.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="750.699" end="x">What kind of work did you do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="751.876" end="x">At munitions.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="753.355" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="753.898" end="x">Shells.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="755.800" end="x">Yes. And how did they behave themselves? How did they behave themselves towards you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="760.285" end="x">Towards me they behaved very well, no?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="764.408" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="765.030" end="x">Because I was small, but still it depended on his moods. He was [?] a good man. At the beginning he behaved himself well, and then it became worse from day to day.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="776.094" end="x">What was it about? What did he do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="777.603" end="x">Not he. He left and other foreman came in his place. And then it was already very bad.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="784.213" end="x">Why [?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="784.636" end="x">I went hungry. I worked a lot. It was an enormous . . . a three times increase . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="790.449" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="790.980" end="x">Three times as much of the same work had to be done.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="794.602" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="795.435" end="x">And so they beat us . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="798.350" end="x">Who beat you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="799.467" end="x">The Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="800.795" end="x">Yes. Who?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="802.214" end="x">The foremen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="803.379" end="x">The foremen themselves, or were there <a class="term" href="#vothG_capo">capos</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="805.902" end="x">No, there were no <a class="term" href="#vothG_capo">capos</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="807.592" end="x">The masters themselves beat you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="809.192" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="809.693" end="x">Now . . . [go on].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="810.327" end="x">If one made a smelt, no? [See below.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="811.915" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="812.235" end="x">One would get twenty with a rubber cudgel. [Her voice practically fades for the next section dealing with the beatings.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="816.660" end="x">What does it mean, 'when one made a smelt'?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="818.338" end="x">Smelt, that means a bad shell, no? [Rejected shell to be remelted.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="821.235" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="821.567" end="x">When they . . . there was an inspection [control].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="823.740" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="823.982" end="x">A continuous German control. If somebody made it wrong, a smelt—that was called a smelt—then he would get a beating.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="833.236" end="x">With a rubber cudgel.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="834.582" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="835.397" end="x">Nu.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="836.381" end="x">And then in '43 we went away to the third <a class="term" href="#vothG_lager">lager</a> . . . [corrects herself] the fourth <a class="term" href="#vothG_lager">lager</a> already, to <a class="placename" href="#vothC24" type="camp">Czestochowa</a>. And in <a class="placename" href="#vothC24" type="camp">Czestochowa</a> we were for a year and a half, and there the Russians . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="850.433" end="x">You were for a year and a half in <a class="placename" href="#vothC24" type="camp">Czestochowa</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="852.395" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="852.715" end="x">And there the Russians liberated you.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="854.194" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="854.828" end="x">And there you were all alone?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="855.854" end="x">All alone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="856.488" end="x">Didn't you since then, while you were in the other factory . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="860.623" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="861.064" end="x">Didn't you hear anything from the father, your sister?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="862.772" end="x">No, no, nothing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="864.764" end="x">And you don't know where your sister is now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="866.515" end="x">No, nothing. She probably went to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, and there the children, too, were [voice fades] done away with.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="874.410" end="x">In <a class="placename" href="#vothC4" type="camp">Auschwitz</a> [in subdued tone like an echo] the children were done away with? [In normal voice] Now then the Russian had liberated you. And what happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="881.865" end="x">Then I returned to <a class="placename" href="#vothL81">Katowice</a>, because I thought that the parents were there. So I . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="886.241" end="x">What does it mean, 'you returned'? How did you return to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="888.535" end="x">The Russians were not any more in <a class="placename" href="#vothL91">Chenstokhov</a>, so I returned [retreated?] together with the Russians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="891.998" end="x">What does that mean, 'with the Russians'?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="893.404" end="x">Together with the army.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="894.944" end="x">By train or how?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="896.411" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="897.063" end="x">By train? Did they admit you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="898.983" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="899.907" end="x">And you returned. Where to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="901.947" end="x">To <a class="placename" href="#vothL81">Katowice</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="903.305" end="x">Yes, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="904.845" end="x">In <a class="placename" href="#vothL81">Katowice</a> I did not find anybody, no? The parents were there no more. The house was lead-sealed [plumbed], and I could not get in at all. And I spent a few weeks with the Committee [in a shelter], and then I went to <a class="placename" href="#vothL135">Cracow</a>, and they took me with them [her voice fades] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="921.765" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="922.477" end="x">They were with [?] me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="923.763" end="x">Aha?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="923.914" end="x">They helped me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="925.091" end="x">Why was the house lead-sealed? Was this your own house [your property]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="928.291" end="x">Yes, that was our own house. When the Germans left they plumbed it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="934.617" end="x">Oh. Couldn't you tear off the plumb?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="936.657" end="x">No, that was [prohibited] . . . that was not permitted.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="938.589" end="x">But the Russians were already there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="939.935" end="x">Yes, but the Russians did not permit it, because I was not yet eighteen years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="946.001" end="x">You were not yet eighteen, and . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="947.571" end="x">That is what I was told, no? When I shall be eighteen years old I will get the apartment back. Because nobody else from the family had remained, and I was [allegedly] too young to have my own apartment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="957.911" end="x">Aha. And no one else lived there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="960.326" end="x">There were Russians afterwards [?], an officer [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="963.272" end="x">Aha. And he entered the apartment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="965.312" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="966.248" end="x">Did you see? Were your things there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="968.530" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="969.484" end="x">Aha. Talk in this direction [towards the microphone].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="971.494" end="x">No, nothing was there any more.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="973.214" end="x">And to what kind of a woman did you go? A Jewess or a . . . ? [She must have mentioned this woman aside from the microphone.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="977.349" end="x">A Jewess.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="978.617" end="x">And . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="978.967" end="x">She took me in, and I had it very good with her.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="984.852" end="x">Yes. And then? You were five [?] weeks there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="987.991" end="x">And then I was sent to <a class="placename" href="#vothL155">Zakopane</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="991.492" end="x">Who?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="992.337" end="x">The Committee.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="993.786" end="x">Which Committee was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="995.355" end="x">The Committee of <a class="placename" href="#vothL81">Katowice</a>, a Jewish Committee.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="997.347" end="x">Yes. And how far is <a class="placename" href="#vothL155">Zakopane</a> from <a class="placename" href="#vothL81">Katowice</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="999.702" end="x">From <a class="placename" href="#vothL81">Katowice</a>? One hundred and fifty kilometers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1001.984" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1002.998" end="x">That is a children's home, no? That is [words not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1004.115" end="x">Yes. They sent you to a children's home where . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1006.849" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1007.181" end="x">. . . Mrs. Kuechler was?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1007.936" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1008.346" end="x">And . . . what happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1010.550" end="x">I had it very good there. I studied, and then we left for France.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1016.061" end="x">Why did you leave for France? What happened there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1019.773" end="x">The Poles. The Poles were beating up, no?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1023.697" end="x">Whom.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1024.349" end="x">The Jews. We were . . . we were going to school, to the gymnasium [secondary school], and they beat us up, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1030.162" end="x">Who beat you? The children at school, yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1031.387" end="x">Yes, the children at school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1032.927" end="x">Why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1033.971" end="x">[They were] anti-Semitic. Well . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1036.084" end="x">Well, yes. But the war . . . the Poles were liberated. They were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1039.935" end="x">Well, but they did not want . . . In <a class="placename" href="#vothL155">Zakopane</a> there were very many Jews, and they did not want any Jews. They could not look at the Jews. And they . . . the Jews were beaten up. A better seat in the [classroom] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1053.547" end="x">And what did the teachers say? The Police?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1056.493" end="x">The teachers—nothing. The director intervened some. Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1063.562" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1064.395" end="x">The director hollered . . . hollered at them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1067.673" end="x">He scolded them a bit.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1068.627" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1069.098" end="x">But they paid no heed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1071.048" end="x">No, not at all.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1071.851" end="x">Nu, and then what was going on in <a class="placename" href="#vothL155">Zakopane</a>? What happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1076.728" end="x">So we left. The . . . the . . . Mrs. Kuechler has . . . that is, we departed with her.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1082.885" end="x">And where did you go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1085.058" end="x">First to <a class="placename" href="#vothL298">Prague</a>. And from <a class="placename" href="#vothL298">Prague</a>—we were a week in <a class="placename" href="#vothL298">Prague</a>—and then to France.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1091.396" end="x">How did you go to France, by . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1093.690" end="x">By bus.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1094.746" end="x">By bus. [Chuckle.] All sixty children in one . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1097.349" end="x">Two busses.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1098.406" end="x">Two busses. Who provided these busses?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1102.499" end="x">That was an organization who provided . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1104.358" end="x">You don't know what kind of organization? Now, what are you now doing here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1107.950" end="x">Here? We study . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1110.262" end="x">What are you studying?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1112.242" end="x">I attend the second year of Gymnasium.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1114.826" end="x">You are going to school here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1116.323" end="x">No. We have it at home. We have a professor and a woman teacher.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1119.510" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1119.902" end="x">And we study Hebrew, French . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1122.558" end="x">Nu.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1122.890" end="x">And we studied English, but now we can't study three languages at once.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1126.814" end="x">Yes, and one shouldn't.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1128.178" end="x">So we study two languages, geography, history, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1133.611" end="x">. . . et cetera.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1134.414" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1135.006x" end="x">Do you work? Do you help with the chores?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1136.956" end="x">Yes, every child helps here. Every week . . . every week a different child has duty in the kitchen, no? She works. Or a duty [?] in the house, in the garden.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1147.507" end="x">And who attends [takes care of] the little children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1149.771" end="x">There are such two women, no?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1153.381" end="x">Two women take care of the small children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1154.878" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1155.409" end="x">Do you have to help out with it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1157.220" end="x">No, not now any more.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1158.669" end="x">Nu, and what do you think will become of you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1163.184" end="x">I don't know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1164.150" end="x">Oh. [Pause.] What do you want to learn? What would you like to study? What do you like to learn?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1172.287" end="x">I want to study? [Pause.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1174.840" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1176.319" end="x">I don't know [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1178.915" end="x">How much schooling did you have?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1180.865" end="x">Schooling? I have studied . . . four grades, completed, no? And when the war was over I went to <a class="placename" href="#vothL155">Zakopane</a>, to the first grade of the Gymnaisum [apparently high school level]. And then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1191.205" end="x">Now, do you want to learn some trade?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1195.974" end="x">A trade. Maybe [?] no. I enjoy very much to study languages, no?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1200.399" end="x">What languages?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1201.383" end="x">Makes no difference.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1202.940" end="x">Hm. And where do you all intend to go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1205.053" end="x">To Palestine, for sure.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1206.683" end="x">You are for sure to go to Palestine?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1208.240" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1209.357" end="x">Well. There you will mostly work on the land?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1213.009" end="x">Well, maybe.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1214.325" end="x">Do you like it here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1217.482" end="x">Yes, very much.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1220.669" end="x">Well. Could you tell me, if I ask you about all this time, which was the hardest moment in your life?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1229.693" end="x">The hardest moment was when they took away the mama. I remained all alone with the sister. Without a penny, we had no money, no? And we did not know where the father was. We remained all alone on the <a class="term" href="#vothG_aryan">Aryan</a> side. And then when I left, without the parents, without the father and the sister, for <a class="placename" href="#vothC102" type="camp">Skarzysko</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1255.781" end="x">Now . . . When you worked in the munitions factory, where did you sleep?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1263.707" end="x">There were long barracks. I did [words not clear]. The beds [?] were mounted. Hundred fifty people were in a long barracks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1271.361" end="x">Women alone?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1272.556" end="x">Yes, separate. The women were separate, the men separate.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1274.729" end="x">Was your hair . . . hair shorn?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1277.174" end="x">Well, only from the head.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1279.305" end="x">Otherwise not.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1280.470" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1281.152" end="x">Were you able to keep clean there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1283.385" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1284.080" end="x">Did they give soap?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1285.336" end="x">Very little. But we were . . . because in a munitions factory there is a lot of soap, we had . . . and soda. So we washed ourselves with that soda. It was smarting badly, but . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1296.400" end="x">Yes. So you washed yourselves with the soda. What was there soap for in the munitions factory?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1301.441" end="x">So, to wash the shells [?]. The shells [?] were washed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1304.206" end="x">Oh. So you took some soap with you, or what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Edith Zierer</span>:
+            </span>
+            <span class="utterance" who="#ziererE" start="1306.790" end="x">It was not permitted to take [it]. One got beaten for it, but sometimes one would get it from the foreman, when he was in a good mood [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1317.332" end="x">[In English] This concludes the interview with Edith Zierer, a fifteen year old girl who is now in the home for displaced children at <a class="placename" href="#vothL12">Bellevue</a> near <a class="placename" href="#vothL13">Paris</a>. An Illinois Institute of Technology wire recording.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Dagmar Platt</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC25">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC25" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Dachau
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Dachau, Germany<br />
+                            </p>
+                            <div>
+                The first concentration camp opened in Germany (March 1933), located on the grounds of an abandoned munitions factory near the medieval town of Dachau, about 16 km (10 miles) northwest of Munich. In total, over 200,000 prisoners from more than 30 countries were housed in Dachau.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC25 = new OpenLayers.Map('map_vothC25', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC25.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC25.addLayer(markers);
+map_id_vothC25.zoomToMaxExtent();
+
+                        var lat_1 = 48.250000;
+                        var lon_1 = 11.433300;
+                        var vothC25 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC25_icon = new OpenLayers.Marker(vothC25);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC25);
+markers.addMarker(vothC25_icon);
+    addMarker(vothC25, popupClass, "", true, false, false);
+    map_id_vothC25.setCenter(vothC25, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC55">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC55" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Krakow Ghetto<br /><span class="alt">(Cracow)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Krak&#195;w, Poland<br />
+                            </p>
+                            <div>
+                This ghetto was established in March 1941 and liquidated in March 1943.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC55 = new OpenLayers.Map('map_vothC55', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC55.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC55.addLayer(markers);
+map_id_vothC55.zoomToMaxExtent();
+
+                        var lat_2 = 50.050000;
+                        var lon_2 = 19.916700;
+                        var vothC55 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC55_icon = new OpenLayers.Marker(vothC55);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC55);
+markers.addMarker(vothC55_icon);
+    addMarker(vothC55, popupClass, "", true, false, false);
+    map_id_vothC55.setCenter(vothC55, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC89">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC89" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Plaszow<br /><span class="alt">(Kraków-Plaszów)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Majdanek
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Krak&#195;w, Poland<br />
+                            </p>
+                            <div>
+                This slave labor camp near Krak&#195;w was headed by Amon Goeth, a psychopathic killer. Of some 150,000 Jews who passed through its gates, about 80,000 perished.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC89 = new OpenLayers.Map('map_vothC89', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC89.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC89.addLayer(markers);
+map_id_vothC89.zoomToMaxExtent();
+
+                        var lat_3 = 50.050000;
+                        var lon_3 = 19.916700;
+                        var vothC89 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC89_icon = new OpenLayers.Marker(vothC89);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC89);
+markers.addMarker(vothC89_icon);
+    addMarker(vothC89, popupClass, "", true, false, false);
+    map_id_vothC89.setCenter(vothC89, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC102">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC102" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Skarżysko-Kamienna
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Majdanek
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Skarżysko-Kamienna, Poland<br />
+                            </p>
+                            <div>
+                This forced labor camp produced munitions.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC102 = new OpenLayers.Map('map_vothC102', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC102.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC102.addLayer(markers);
+map_id_vothC102.zoomToMaxExtent();
+
+                        var lat_4 = 51.116700;
+                        var lon_4 = 20.866700;
+                        var vothC102 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothC102_icon = new OpenLayers.Marker(vothC102);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC102);
+markers.addMarker(vothC102_icon);
+    addMarker(vothC102, popupClass, "", true, false, false);
+    map_id_vothC102.setCenter(vothC102, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Majdanek
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_5 = 50.033300;
+                        var lon_5 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC24">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC24" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Częstochowa
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Majdanek
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Częstochowa, Poland<br />
+                            </p>
+                            <div>
+                Established in April 1941, it was largely liquidated in September-October 1942 and the survivors sent to the Treblinka concentration camp.  A &#34;Small Ghetto&#34; of around 5000 remained of the strongest and best-educated, but these were dispersed or liquidated as well by July 1943.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC24 = new OpenLayers.Map('map_vothC24', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC24.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC24.addLayer(markers);
+map_id_vothC24.zoomToMaxExtent();
+
+                        var lat_6 = 50.800000;
+                        var lon_6 = 19.116700;
+                        var vothC24 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothC24_icon = new OpenLayers.Marker(vothC24);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC24);
+markers.addMarker(vothC24_icon);
+    addMarker(vothC24, popupClass, "", true, false, false);
+    map_id_vothC24.setCenter(vothC24, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL256">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL256" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chicago, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL256 = new OpenLayers.Map('map_vothL256', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL256.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL256.addLayer(markers);
+map_id_vothL256.zoomToMaxExtent();
+
+                        var lat_7 = 41.850000;
+                        var lon_7 = -87.650000;
+                        var vothL256 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL256_icon = new OpenLayers.Marker(vothL256);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL256);
+markers.addMarker(vothL256_icon);
+    addMarker(vothL256, popupClass, "", true, false, false);
+    map_id_vothL256.setCenter(vothL256, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL12">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL12" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Bellevue, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL12 = new OpenLayers.Map('map_vothL12', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL12.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL12.addLayer(markers);
+map_id_vothL12.zoomToMaxExtent();
+
+                        var lat_8 = 48.818350;
+                        var lon_8 = 2.229561;
+                        var vothL12 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL12_icon = new OpenLayers.Marker(vothL12);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL12);
+markers.addMarker(vothL12_icon);
+    addMarker(vothL12, popupClass, "", true, false, false);
+    map_id_vothL12.setCenter(vothL12, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_9 = 48.866700;
+                        var lon_9 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL81">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL81" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Katowice, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL81 = new OpenLayers.Map('map_vothL81', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL81.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL81.addLayer(markers);
+map_id_vothL81.zoomToMaxExtent();
+
+                        var lat_10 = 50.266700;
+                        var lon_10 = 19.016700;
+                        var vothL81 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL81_icon = new OpenLayers.Marker(vothL81);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL81);
+markers.addMarker(vothL81_icon);
+    addMarker(vothL81, popupClass, "", true, false, false);
+    map_id_vothL81.setCenter(vothL81, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL135">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL135" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Krak&#195;w, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL135 = new OpenLayers.Map('map_vothL135', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL135.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL135.addLayer(markers);
+map_id_vothL135.zoomToMaxExtent();
+
+                        var lat_11 = 50.050000;
+                        var lon_11 = 19.916700;
+                        var vothL135 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL135_icon = new OpenLayers.Marker(vothL135);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL135);
+markers.addMarker(vothL135_icon);
+    addMarker(vothL135, popupClass, "", true, false, false);
+    map_id_vothL135.setCenter(vothL135, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL123">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL123" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            L&#39;viv, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL123 = new OpenLayers.Map('map_vothL123', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL123.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL123.addLayer(markers);
+map_id_vothL123.zoomToMaxExtent();
+
+                        var lat_12 = 49.833300;
+                        var lon_12 = 24.000000;
+                        var vothL123 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL123_icon = new OpenLayers.Marker(vothL123);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL123);
+markers.addMarker(vothL123_icon);
+    addMarker(vothL123, popupClass, "", true, false, false);
+    map_id_vothL123.setCenter(vothL123, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL298">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL298" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Praha, Czechoslovakia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL298 = new OpenLayers.Map('map_vothL298', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL298.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL298.addLayer(markers);
+map_id_vothL298.zoomToMaxExtent();
+
+                        var lat_13 = 50.100000;
+                        var lon_13 = 14.433300;
+                        var vothL298 = new OpenLayers.LonLat(lon_13, lat_13);
+            vothL298_icon = new OpenLayers.Marker(vothL298);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL298);
+markers.addMarker(vothL298_icon);
+    addMarker(vothL298, popupClass, "", true, false, false);
+    map_id_vothL298.setCenter(vothL298, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL85">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL85" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Wieliczka, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL85 = new OpenLayers.Map('map_vothL85', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL85.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL85.addLayer(markers);
+map_id_vothL85.zoomToMaxExtent();
+
+                        var lat_14 = 50.000000;
+                        var lon_14 = 20.033300;
+                        var vothL85 = new OpenLayers.LonLat(lon_14, lat_14);
+            vothL85_icon = new OpenLayers.Marker(vothL85);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL85);
+markers.addMarker(vothL85_icon);
+    addMarker(vothL85, popupClass, "", true, false, false);
+    map_id_vothL85.setCenter(vothL85, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL91">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL91" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Częstochowa, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL91 = new OpenLayers.Map('map_vothL91', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL91.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL91.addLayer(markers);
+map_id_vothL91.zoomToMaxExtent();
+
+                        var lat_15 = 50.800000;
+                        var lon_15 = 19.116700;
+                        var vothL91 = new OpenLayers.LonLat(lon_15, lat_15);
+            vothL91_icon = new OpenLayers.Marker(vothL91);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL91);
+markers.addMarker(vothL91_icon);
+    addMarker(vothL91, popupClass, "", true, false, false);
+    map_id_vothL91.setCenter(vothL91, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL155">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL155" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Zakopane, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL155 = new OpenLayers.Map('map_vothL155', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL155.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL155.addLayer(markers);
+map_id_vothL155.zoomToMaxExtent();
+
+                        var lat_16 = 49.283300;
+                        var lon_16 = 19.900000;
+                        var vothL155 = new OpenLayers.LonLat(lon_16, lat_16);
+            vothL155_icon = new OpenLayers.Marker(vothL155);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL155);
+markers.addMarker(vothL155_icon);
+    addMarker(vothL155, popupClass, "", true, false, false);
+    map_id_vothL155.setCenter(vothL155, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                        <li class="vothG_aryan">
+                <a name="vothG_aryan"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Aryan.
+                </span>
+                <span class="definition">
+                    Derived from a Sanskrit word meaning “noble,” the term was used in Nazi pseudo-scientific jargon to denote a race which had supposedly superior blood and culture. During the Holocaust, “Aryan” came to mean anyone who was not Jewish or Roma (Gypsy).
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_capo">
+                <a name="vothG_capo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    capo.
+                </span>
+                <span class="definition">
+                    A term used for certain prisoners inside Nazi concentration camps during World War II in various lower administrative positions. Capos received more privileges than normal prisoners. They were often convicts who were offered this work in exchange for a reduced sentence or parole.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

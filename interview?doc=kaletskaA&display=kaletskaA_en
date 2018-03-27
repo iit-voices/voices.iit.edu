@@ -1,0 +1,2922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Anna Kaletska; September 26, 1946; Wiesbaden, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-anna-kaletska-september-26-1946-wiesbaden-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Anna Kaletska; September 26, 1946; Wiesbaden, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=kaletskaA">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=kaletskaA&display=kaletskaA_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=kaletskaA">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=kaletskaA">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1.757" end="x">This is reproduction spool 9-164B. The beginning of the interview of Anna Kalestka who in the book appears as Anna Kovitska. November 14 1950, <a class="placename" href="#vothL256">Chicago</a>. Boder.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="31.765" end="x"><a class="placename" href="#vothL35">Wiesbaden</a>, September . . . <a class="placename" href="#vothL35">Wiesbaden</a>, September 26, 1946. Already at three o'clock. I have to leave this town at five to get to Frankfurt and then to <a class="placename" href="#vothL13">Paris</a>. [unintelligible] a bit personal. It is the last day of my work in Germany . . . which to a large extent, I have officially to be thankful to the UNNRA, and unofficially to our friend, Jack Thompson, of the Chicago Tribune, who has done so much to realize, to help me to realize this project.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="69.899" end="x">I have before me a young woman . . . a young woman by the name of Chana or Anna Kaletska, meaning that her husband's name was Kaletski, and she is going to talk to us . . . Are you going to talk in Yiddish? [She apparently nods affirmatively.] She is going to talk to us in Yiddish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="89.571" end="x">[In Yiddish] Now then, Mrs. Kaletski, will you please tell us where you are from and where you were when all the troubles and, so to speak, worries of the war started?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="104.417" end="x">I am from Poland somewhere between . . . and . . . [This part is not clear.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="122.337" end="x">And where were you when the Germans came to Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="127.165" end="x">In 1939, September 1st, I was still with my parents together in <a class="placename" href="#vothL84">Kielce</a>. My father was an important citizen in <a class="placename" href="#vothL84">Kielce</a> for about thirty-five years. Together with us on the night of Friday- from Thursday to Friday it was- there happened to be with us my brother from Potianice and a child of my oldest sister, a grandchild twelve years old. At six o'clock in the morning the first bombs fell over <a class="placename" href="#vothL84">Kielce</a>. I went down with my parents into the cellar, but my father did not want to go. He said: "From this one cannot hide in the cellar." Then he "said" a chapter from the Psalms. My youngest brother was in the war on the Polish side. And with it I thought that the world had come to an end. To lose my youngest brother! I did not want to live any more. So naive I was then, to think that all I would lose in the war was my youngest brother. Once during the first days of September I got up especially early—five o'clock in the morning. There wasn't a single German to be seen on the street. So I said: "Mother, dear, maybe it was only a dream. Maybe they are really not here." Unfortunately, it was not a dream.. They were there, and they were there for a long time. My father had to leave his home to hide somewhere in the suburb. The <a class="term" href="#vothG_gestapo">Gestapo</a> was looking for him. I remained alone with my mother in five rooms, and all through the night I was clinging to the window, running around in search. Where are the people who used to come every night- every evening- to see my father? Where are the grandchildren, who are afraid to cross the street and to come upstairs? Nobody was there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="263.303" end="x">Please tell the facts.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="269.653" end="x">In November I departed with my parents from . . . (name of locality incomprehensible). We were told there was a prisoners' camp—Pshemish. I went across to the Russian side. I was not far from <a class="placename" href="#vothL189">Grodno</a>, and there I found everybody alive, and I looked for a place where I could bring over my parents. But in March it was already too late to bring somebody over, and so I remained in <a class="placename" href="#vothL189">Grodno</a>. Among the Russians the Jews lived just like all the other peoples.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="299.711" end="x">How did you get from <a class="placename" href="#vothL84">Kielce</a> to <a class="placename" href="#vothL189">Grodno</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="302.242" end="x">I just got over there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="310.314" end="x">You alone?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="311.704" end="x">All alone without my folks, without a means to communicate with them. I remained in <a class="placename" href="#vothL189">Grodno</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="320.943" end="x">How old are you now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="322.990" end="x">Thirty-four years. Yesterday was my birthday.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="326.724" end="x">On the eve of the New Year?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="328.786" end="x">In <a class="placename" href="#vothL189">Grodno</a> the Jews lived just like the other people. First there were those who lived in Poland before, and then there were those who came from the zone occupied by the Germans. And they all lived together. Some lived in the synagogues or in the streets, but still they all lived together. Somehow I adjusted myself in <a class="placename" href="#vothL189">Grodno</a>. One has to live. The only thing was the terrible worry about my parents, and the homesickness. And all day and all night fire was pouring over <a class="placename" href="#vothL189">Grodno</a>, and within a single twenty-four hours sixty per-cent of the city was destroyed; and we remained alive. I lived on a street in No. 9; No. 11 burned down. No's. 27,23, and 9- I remained alive. At No. 11 and at one side of No. 9, there fell a bomb, destroying everything. I remained alive- and again there came the Germans. In a monstrous fashion they chased people through the streets, and it soon started all over. This was in the East, with special laws. In a few days I got the idea that my husband was alive.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="425.896" end="x">It occurred to you, or you knew?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="427.442" end="x">I got the idea that my husband was alive and somewhere hiding in a village among the Germans, a prisoner. I wanted to run, but where to run? They didn't threaten me. I had to wait, and in a few days he came.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="446.589" end="x">He returned?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="447.777" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="449.198" end="x">What does it mean- you got an idea'? Somebody has written to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="451.714" end="x">No. At that time there came people who were together with him- with my man. And so they first brought me an idea.. [She apparently has used the Hebrew word "yidie" which means "message".] And my man succeeded in "blacking himself across." *The word "black" is a designation for illegal action, as in "black market" or "black papers," and it has become a verb- to do something illegal is often spoken of as "to black." *, to <a class="placename" href="#vothL528">Wolkowysk</a> and to mingle in with other prisoners. He had an uncle there, and so we got together. During the summer they still let us live in our apartment, although my husband had to work very hard, from six o'clock in the morning until six o'clock at night, together with all the others. And we still had at home some belongings, and we sold them, and we ate, and we hoped that possibly we might survive. The first of November we were driven into the <a class="term" href="#vothG_ghetto">Ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="502.699" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="503.574" end="x">In <a class="placename" href="#vothL189">Grodno</a>, into the <a class="term" href="#vothG_ghetto">ghetto</a>. They arranged two <a class="term" href="#vothG_ghetto">ghetto</a>, one in Slobodka [The name Slobodka often is used to designate the poorer suburbs, or slums.] and one <a class="term" href="#vothG_ghetto">ghetto</a> in the yard of the synagogue. At the beginning, the day when we came to the <a class="term" href="#vothG_ghetto">ghetto</a> the wires were not ready, and it did not make such a terrible impression. But the next day everything was fenced up and there was an inscription on the gate- "From here one does not return." . . . [She is very much upset and for the next two sentences the wire is not clear.] We have learned that the Jew should never give up hope, and his spirit should never falter. But the heart was heavy. It was hard to bear. I was in my ninth month. We used to live like affluent citizens, my father-in-law, my man, and my sister-in-law. Now we were given a room of eight and one-half cubic meters,-- no, squares; I don't know how many cubic meters there were. And there I was to give birth to my child. One day they opened the <a class="placename" href="#vothC38" type="camp">ghetto</a>, and every Jew was permitted to go into his home to fetch some things. Then my father-in-law went back to his home, and he saw the destruction of the home for which he has been working for thirty-years- and he returned gravely ill. He never got well again.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="583.424" end="x">What do you mean- he saw the destruction?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="585.424" end="x">There was his home, and he saw how it was ransacked and ruined.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="588.768" end="x">Who ransacked and ruined it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="590.658" end="x">We left the house just as it was, with only the things on our body and a few bundles in our hands. And everything else had to be left. And the people, of course, who lived around- what did they care about the Jews! They just waited for such a moment. They went inside. The things of value the <a class="term" href="#vothG_gestapo">Gestapo</a> themselves hauled away. My father-in-law had been working hard all his life, and when he saw what had become of his home, he took badly sick, and he remained sick up until the end. The 26th of November I gave birth to my child in the <a class="placename" href="#vothC38" type="camp">ghetto</a> in my room, because there was not yet a Jewish hospital. The doctor- and everybody—tried to comfort me. On the third day after my child was born, we were informed that we would be driven into barracks to <a class="placename" href="#vothC157" type="camp">Kelbasin</a>, six kilometers away from <a class="placename" href="#vothL189">Grodno</a>. There were seventy thousand Russian prisoners, and after six weeks there remained only six thousand. To such a place they wanted to drive us away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="679.203" end="x">What do you mean, there remained only six thousand?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="681.812" end="x">They died off from spotted fever, from various contagious diseases, as well as from starvation. I was not in <a class="placename" href="#vothC157" type="camp">Kelbasin</a>, but a part of the <a class="placename" href="#vothL189">Grodno</a> Jews a year later were in <a class="placename" href="#vothC157" type="camp">Kelbasin</a>, and there they died by the thousands. In the middle of <a class="placename" href="#vothC157" type="camp">Kelbasin</a> there was an open pit, where they would throw the children, and they did not cover it up until it was full. Dead Jewish children. We did not go then to <a class="placename" href="#vothC157" type="camp">Kelbasin</a>. They let us stay in the <a class="placename" href="#vothC38" type="camp">ghetto</a> for a year.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="715.763" end="x">[In English] This concludes spool . . . This concludes Spool 164 which the . . . for 27 minutes was taken by Mr. Jack Matzner and then taken over by Mrs. Anna Kaletska. We are going over with Mrs. Kaletska to Spool 165. We are going over with Mrs. Kaletska to spool . . . <a class="placename" href="#vothL35">Wiesbaden</a>, September the 26th, 1946. My last day of interviewing in Germany—I usually do not mention my name in these spools, but I am finishing a piece of work which I hope will do some good.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="750.882" end="x">[In English] <a class="placename" href="#vothL35">Wiesbaden</a>, September the 26th, 1946. Last day of the project in Germany. I have before me Mrs. Anna Kaletska, 34 years old, who will continue her report from Spool 164 to Spool 165. She's rather emotional and she cannot mobilize [unintelligible] with her voice [unintelligible]. Volume control is a bit high, which may not give a very good reproduction but it will be enough for transcription.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="780.397" end="x">[In Yiddish] And so you had your baby? What was it, a boy or a girl?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="785.381" end="x">A little girl.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="786.162" end="x">And you continued living for a whole year in the <a class="placename" href="#vothC38" type="camp">ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="789.583" end="x">In the <a class="placename" href="#vothC38" type="camp">ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="789.942" end="x">Now go ahead.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="790.848" end="x">At the end of the summer people began to arrive from everywhere. From here, from there, from <a class="placename" href="#vothL508">Brest-Litovak</a>, from <a class="placename" href="#vothL123">Lemberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="802.764" end="x">Did you know anybody in <a class="placename" href="#vothL7">Slonim</a>? Do you remember any name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="806.701" end="x">There was a Jew from <a class="placename" href="#vothL84">Kielce</a> in <a class="placename" href="#vothL7">Slonim</a>, a son of a very prominent, wealthy man from <a class="placename" href="#vothL84">Kielce</a>, Chaim Zagalski, with his daughter; he ran away from <a class="placename" href="#vothL84">Kielce</a>, and they were heard of from <a class="placename" href="#vothL7">Slonim</a>. And we sent a man from <a class="placename" href="#vothL189">Grodno</a> to bring him over. So he found the door nailed shut, the house empty; Chaim Zagalski was not there any more. There were left in <a class="placename" href="#vothL7">Slonim</a> about two hundred Jews, out of a population of nine thousand Jews before the start of the slaughter, or possibly even more- I don't know. There were a lot of refugees from districts previously doomed by the Germans. I did not know the district of <a class="placename" href="#vothL7">Slonim</a>. There was a great <a class="placename" href="#vothL7">Slonim</a> rabbi, whose name I don't know. And these two hundred Jews had numbers hung on them (the Christians made them wear them), and they had to report every day to the square, an place of roll call, and they were sent to work. Work! We too had worries about work! The day my man was working, we had hope to survive that day. But when people came to the gates of the <a class="placename" href="#vothC38" type="camp">ghetto</a> and said, "no more work required," that was a dark day. We knew it was coming. November 1, 1942, the <a class="placename" href="#vothC38" type="camp">ghetto</a> was surrounded. Every few steps stood an armed German, with his gun ready, and at some distance on the hill machine guns. They told us nothing, but they took us "to work." We knew what that meant. And nearby were Russians, Poles; not all but many were waiting for what they could inherit from the Jews. Possibly they had waited so that in case the Germans themselves would not put an end to us, they could step in.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="914.809" end="x">Step in for what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="915.747" end="x">So they could consummate the terrible deed. That is what we were told from <a class="placename" href="#vothL508">Brest-Litovsk</a> and other Ukranian cities. And in Russia, as far as <a class="placename" href="#vothL294">Stalingrad</a> and the Ural [mountains], the Germans did it themselves. They could not relinquish the "sacred labor", and they had their mission. However, it did not start that day, nor later. With a sadistic forethought, they told us: "Have no care, this will become a labor <a class="term" href="#vothG_lager">lager</a>, my word of honor." said Herr Ehrlich, the <a class="term" href="#vothG_gestapo">Gestapo</a> chief, to the Community Council. "Mass murder! Oh, no; that is out of the question- deportation, neither!! It will be converted into a work-<a class="term" href="#vothG_lager">lager</a>, no more loafing. And believe me, my word of honor." Believe his word of honor! In two weeks it started. First we saw them transporting the inhabitants of the smaller towns, from Slobodka,—on horse carts, old, broken down, sick people, and on foot the young ones; towards Bialystok they were led. And when they were through with the small towns, it commenced in Grodne. First came Slobodka. The first street. . . . my father,—that is, my father-in-law,—I must save my child. Possibly we should get away at night to some Poles, old acquaintances, and hide there. My husband, myself, my sister-in-law, and a girl friend who was with us, we shall get away to the <a class="term" href="#vothG_partisans">partisans</a>, and Father with the child should remain with the Poles. But he refused. And so it was. He resigned himself to death. To me he said: "Take the child and save yourselves. Go to the other <a class="term" href="#vothG_ghetto">ghetto</a>. There they are still allowed to remain." I was the first to go over to the second <a class="term" href="#vothG_ghetto">ghetto</a> with the child. In a few days came my man. Father told him: "For the sake of the child, go!" He himself remained there. His younger daughter Zina- he could not abandon her, and they both went off with a transport, most probably to <a class="placename" href="#vothC112" type="camp">Treblinka</a>. Within a week they started the <a class="term" href="#vothG_ghetto">ghetto</a> in the yard of the synagogue. The most horrible was that the Jewish Police (at the beginning we were not told about the horrible role they would have to play) they came and led us, assembled for the slaughter there, to the synagogue, at night. Every few nights we would sit up—I, my man (the child was asleep, all dressed, and we expected the police to come after us. Every night we said Vida (the prayer of those who expect to die) of our own composition, and forgave each other, but they did not come. My man worked then as a carpenter (he is a lumber sorter by trade), and this kept us there. Once my man said: "I can't make peace with them. Our child must be saved even if we two shall die. We have nobody any more. You look like a Christian; get out with the child. Put it next to a Christian orphanage. Orphans also may be lucky sometimes. I can't want her to die." It snowed that night. It was 25 degrees cold. [Below zero centigrade.] Sixteen Jews fell at the gate in the first attempt to escape. I went over the wires in the second attempt, and my man handed me the child, and I carried her away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1152.222" end="x">How did you get over the wires?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1153.753" end="x">My man set up a chair for me. He raised one wire, and I crawled through.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1158.924" end="x">Weren't those electric wires?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1161.564" end="x">No, then they had no electric wires. He handed me the child. And I went out in the street. I removed the yellow patch, and I went down the street. It was eight o'clock. At nine o'clock it was curfew hour. I did not know where to go. All at once I remembered a Christian woman whom I happened to know, and I went to her and said: "This is all that I have got; take the child and carry it to an orphanage. Say, you have found it in the street. I am returning to my man, and we shall perish together." She started to wring her hands, a Christian woman whom I had possibly seen only twice before. And she said: "I am afraid (the Poles were threatened with death for such things); put her in the street. I will come out of the house with a neighbor woman; we shall come out as if by accident. I will pick up the child and take her tomorrow to the orphanage, but you go away immediately." And so she has taken my child. I went with her down to the door, and there I stood across the street, hidden in the gate, and I saw how my child was lying on the snow. And here, I could not pick her up, the child that I had brought into the world! I knew that that will save her life. That is what I hoped. [A few words in this sentence are not clear. She is sobbing, and even by slowing down the wire and listening to this section over and over, I have been able to understand only about three words. I do not think that the translation of the phrase "the child I brought into the world" is entirely correct.] In a few minutes she came out of the house and picked up the child. I ran away through the streets of <a class="placename" href="#vothL189">Grodno</a>, and I didn't think of the curfew—that I might be caught,—and I didn't know how to get back to the <a class="term" href="#vothG_ghetto">ghetto</a>, as it was such a late hour. There was a Christian woman in the city, with whom I had once worked during the time of the Soviets. I stepped in to her, and a girl friend of mine was hiding there. I entered the house, and I said, "Panuvka *This is a respectful and at the same time endearing name for a Polish woman. *, I don't have my child any more. How light my hands feel!" Then she said, "Twenty-six hours you have suffered to bring her into the world, and now you will suffer as long as you live." I didn't ask her for much—just to keep me over night. She couldn't help me for much longer, because on Sunday no one could show himself in the city. The Germans were grabbing the people and dragging them to work in Germany. I wanted to return to the <a class="placename" href="#vothC38" type="camp">ghetto</a>. Then thousand Jews were deported that day. The <a class="placename" href="#vothC38" type="camp">ghetto</a> was surrounded. One couldn't get in, nor could one get out. Part were going to <a class="placename" href="#vothC112" type="camp">Treblinka</a>, and to get in one also didn't know how. I ran into a Christian—he was a working man. [Recording not clear.] I told him I am a Jewess—"I can't get into the <a class="term" href="#vothG_ghetto">ghetto</a>." And he said, "Get out of the city. You do not look Jewish. Go where ever you can, but don't remain here. You see here it burns." And so I departed alone, without papers, into the woods. I did not know the roads. Through the woods, into a Russian village. I entered. "Give me some water." If one is alive, one has to drink water. And sometimes one has to eat. Everybody gave me something. I did not look Jewish, but they knew—what else could be driving me in the snow through the woods? Everyone kept me for one night.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1376.760" end="x">The Christians?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1377.401" end="x">The Christians—I can't complain. Everybody gave me warm water to wash myself. They gave me food, so that I should have strength to wander farther. And there was a preacher—A Christian, a Catholic. He hid me "for strength" for eight days. But it drove me back to <a class="placename" href="#vothC38" type="camp">Grodno</a> to find out what was going on. The priest encountered some Jews that were going to work. She he asked them: "Do you know whether Jack Kovitzki is there?" So they said: "He is there, he has remained alive." Three thousand Jews were still in <a class="placename" href="#vothC38" type="camp">Grodno</a>. So he said, "Tell him that his wife is alive—that she does not want to remain among us. She wants to go back, and in a few days she will be back." The next week he took me out part of the way in a cart—to go further, he was afraid. And I went alone towards <a class="placename" href="#vothL189">Grodno</a>—I can't remember how many kilometers. I arrived in <a class="placename" href="#vothL189">Grodno</a>. It's the same story again—how does one get in—into the <a class="placename" href="#vothC38" type="camp">ghetto</a>? And then it occurred to me that my father had a chauffeur, a Christian, a decent man.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1444.894" end="x">He had a what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1445.925" end="x">A chauffeur.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1446.768" end="x">A chauffeur?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1447.627" end="x">A driver.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1448.643" end="x">(hesitantly) Did he have a --?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1449.830" end="x">(interrupting) Yes, my father-in-law, had--</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1451.033" end="x">An automobile?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1452.596" end="x">Yes. He was a good business man; so he had an automobile and a driver—a very decent person. He lives now in the yard of the house that once belonged to my father-in-law. So I went to him. He didn't know me, but I gave the name of Meyer Kovitzki, and he said: "Don't be afraid. You can be with me as long as you want." But he had a wife and a child, and I did not want to cause him anxiety. So I went down to the cellar, and he went to the <a class="placename" href="#vothC38" type="camp">ghetto</a> to find out about things, and Friday morning his own wife went with me through the streets, and she led me to the <a class="placename" href="#vothC38" type="camp">ghetto</a>. Then another Pole helped me to get in. But before I went in, he told me: "You know where you are going?" And I said, "Where is my man, and where is my place?" That was on Friday noon. I was there all night until five o'clock in the morning. At five o'clock in the morning again shooting and screaming. A new transport. And I and my husband went to this transport towards the synagogue. Then the whole night we stayed in the synagogue. In the synagogue it was crowded—heavy and crowded. One could not breathe. The whole night without a drop of water, and outside the shooting. At two o'clock in the morning we were driven out to the train. And my husband said: "No, you are not going to die. Because you have returned to me, is that why you should perish?" And I said, "I cannot be—I am already tired. Maybe I shall rest in the grave." But he did not wish to understand, and just one street away from the train he pushed me into a gate, in spite of the guards, because it was still dark. We remained standing in the gateway until morning. We both took off our [yellow] patches. What to do now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1556.642" end="x">He with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1557.829" end="x">Yes. What to do now? Where to go? A city where everybody knew my husband. Again I went to the suburb, again to an acquaintance, a Christian woman. We washed and got ready to start out at night. We rested up, then wandered on. No arms, no money, nothing. If we only could reach the <a class="term" href="#vothG_partisans">partisans</a>—at least to sell our lives dearly! . . . But where are the <a class="term" href="#vothG_partisans">partisans</a>? They tell us 150 kilometers away, and one had to go in the direction of Stutin.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1593.427" end="x">Stutin?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1595.037" end="x">Stutin. [She apparently refers to <a class="placename" href="#vothL303">Szczecin</a>] One night I had it easy—a woman—I looked like a Christian. I do not know where to spend the night. In Nieman we went into a little house. There lived a widow, A Christian—I don't know her name—with her son. It was dangerous for them—it was hazardous. But they took us in and gave us a place to sleep and watched all night, in case the Germans might come. She had a son whom they wanted to drag away to work, and in the morning they gave my man shaving things, and they gave me plenty of food, and at night we slept in an open shack, and in the morning we marched on. Not all <a class="term" href="#vothG_whiteR">WhiteRussians</a> were that way. Another after giving us food reported us: "Two people have passed by—must be Jews." And we were taken to the <a class="term" href="#vothG_gestapo">Gestapo</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1595.037" end="x">You?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1595.037" end="x">I and my man. [A pause, she weeps convulsively.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1595.037" end="x">In the <a class="term" href="#vothG_gestapo">gestapo</a>—I don't known what happened there. When I saw my man receiving the first blow, something tore apart in me. I don't know what happened. My man was being beaten: "My wife is Polish—you are making a mistake. She wants to die with me together. But this is not true; she is not a Jewess." And then he asked me: "Are you a Jewess?" "Yes, I am Jewish."—"That is nonsense, you do not look Jewish."—"Still I am Jewish." But my man continued repeating that I was a Christian until they were taken by doubts. There was a Polish policeman present. <a class="term" href="#vothG_whiteR">WhiteRussians</a> in dark blue uniforms. "Oh, so you are loving a Jew?" And I replied: "I am Jewish. I am not ashamed." The whole night they kept us locked up, calling us out separately. My husband and then me alone, then both of us together. My husband whispered to me, "I plead with you, go try to live. Go back to <a class="placename" href="#vothL189">Grodno</a>. You will be a mother to the child. Maybe you will tell her some day that she had a father." And I yielded, and I went out to live.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1656.844" end="x">What do you mean, to live?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1657.703" end="x">Then before they led me away, the <a class="term" href="#vothG_gestapo">Gestapo</a> man said, "I give you my word, you will live and your husband will live." Here I was being separated from my man—could one believe them? And still it was a ray of hope. [A prolonged spell of weeping sets in.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1792.073" end="x">(Into the microphone) We are lighting our cigarettes. I can't find any water. [To Anna] Nu?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1795.995" end="x">I was transported away to a <a class="term" href="#vothG_lager">lager</a>. There were <a class="term" href="#vothG_whiteR">WhiteRussians</a>, criminals, Poles. People who have slaughtered a----.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1808.262" end="x">You were not set free?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1809.637" end="x">No, I was sent to the <a class="term" href="#vothG_lager">lager</a>, together with <a class="term" href="#vothG_aryan">Aryans</a>. <a class="term" href="#vothG_whiteR">WhiteRussians</a>. Women who have been peddling liquor. Those who had slaughtered a calf without a permit. And there they held me for observation. The first three weeks I constantly argued that I was a Jewess. "Don't hold me here. My place is with the other Jews." But if one is still alive after three weeks, one adjusts to the idea that one has to stay alive, and now I said nothing And then in time I would myself claim to be a Christian . . . [Here is a short break in the wire, about two words missing.] In a few weeks, I can't remember any more exactly, they shipped me to Germany, together with a transport of Gentiles, to work in East Prussia. I really don't remember what happened to me. Up to the time I was shipped to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, I was like half-conscious. It was the worst—(and then apparently answering a question of Boder's that did not come through the microphone) Tattooed? 257539—correction 82529 and a triangle.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1898.898" end="x">The triangle means Jewish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1901.789" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1908.023" end="x">Go ahead.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1909.085" end="x">All the time I tried to take hold of myself. I had decided that I must live. Now I can tell what was hardest to bear. It was the satisfaction of those Poles and <a class="term" href="#vothG_whiteR">WhiteRussians</a>—not like those that gave me shelter. There were all kinds of them. And they spoke of the extermination of the Jews—with all the details.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1930.670" end="x">Were you taken to <a class="placename" href="#vothC4" type="camp">Auschwitz</a> as a Jew?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1933.170" end="x">Later I reported to the "police" that I was a Jewess. I wanted to die together with the Jews than to live this way. They did not believe me. They thought I must have gone crazy because my husband was taken away. After that they held me for a month in a <a class="placename" href="#vothL364">Koenigsberg</a> prison, and then I was sent to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. By the time of our arrival at <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, I had lost all semblance of a human being. Now when I encountered people who have seen me in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, they tell me . . . [here she begins to sob violently, and the whole sentence sounds incoherent. It is possible that by slowing down the wire we could get the words. We will do that later, but now we are continuing with the next sentence. The last few words seem to sound like: "I saw him everywhere among people."] I believed it was real. In <a class="placename" href="#vothC4" type="camp">Auschwitz</a> I met a girl friend from <a class="placename" href="#vothL84">Kielce</a>, and she told me that the oldest daughter of my brother has remained alive, as well as the wife of my youngest brother. Both are in a working camp in . . . [the name of the city is not clear.] Then I was taken by hope that I would see them. And that gave me some courage, in spite of the fact that in <a class="placename" href="#vothC4" type="camp">Auschwitz</a> I was a complete so-called <a class="term" href="#vothG_mussulman">Mussulman</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1998.221" end="x">You?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="1998.846" end="x">Yes, I was a <a class="term" href="#vothG_mussulman">Mussulman</a>. A kind of people who wouldn't eat. I could not eat. There was food, but I could not eat. I was sick. I was sick at my mouth. I don't know what they called that sickness. A kind of eruption. Then my tongue became completely hard. My legs were covered with boils. Then my illness from before—gall stones—In <a class="placename" href="#vothC4" type="camp">Auschwitz</a>—in <a class="placename" href="#vothC4" type="camp">Auschwitz</a> not to appear to the <a class="term" href="#vothG_appell">appell</a> meant death, and still the supervisers of the barracks had pity on me and let me remain on the cot up to the last moment when already the <a class="term" href="#vothG_ss">SS</a> men had come for roll call. Then they would drag me off the cot and lead me out. In <a class="placename" href="#vothC4" type="camp">Auschwitz</a> I had a change of mind. I decided again to live. There appeared one day in my <a class="term" href="#vothG_block">block</a> a distant cousin of mine, a girl, Nelly Kovitzka, a seventeen-year old girl. Her face was that of my little girl. And I was overcome with hope I should return. Maybe she is alive . . . [three or four words unintelligible]. And I started to fight again, to struggle for life, in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. I became a- I was cleaning the <a class="term" href="#vothG_block">block</a>. A <a class="term" href="#vothG_block">block</a> that housed thirteen hundred people. I cleaned it, I scrubbed it, and for that I would get another helping of soup, and at times I would get a little piece of bread that the blokova would leave uneaten. Then in spite of curfew I dressed up. In <a class="placename" href="#vothC4" type="camp">Auschwitz</a> there was enough to wear. There was the clothing of the dead. They were burning people every day. The whole night the ovens would flame, and the skies red, dark red, just like . . . . [the next word is not clear.] One night I was standing in front of the <a class="term" href="#vothG_block">block</a>. A Christian <a class="term" href="#vothG_block">block</a> <a class="term" href="#vothG_trusty">trusty</a> stood near by. That night they were burning from the Gypsy <a class="term" href="#vothG_lager">Lager</a>. I don't know how many thousands were there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2124.297" end="x">Who were in the Gypsy <a class="term" href="#vothG_lager">Lager</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2126.453" end="x">The Gypsy camp was a camp where there were Gypsies exclusively. They were not tattooed. They were assembled there, and then they all were burned. I don't know. Possibly they were not even gassed, because of the horrible screams coming from there. Moreover one could somehow feel it. And there I was standing, and I mumbled to myself, and I said, "Dante was just a dog. They know it much better." And the Christian woman heard it, and she said to me [and here she imitates a voice of extreme surprise], "You know about Dante? How do you come to know anything about Dante?" She thought that I always must have been looking like that—like in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. And from that night we became friends.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2163.364" end="x">A Christian woman?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2164.036" end="x">A Christian woman. She was a <a class="term" href="#vothG_block">block</a>
+                        <a class="term" href="#vothG_trusty">trusty</a>. And she had the say over life and death. But she was a human being. Only afterwards I realized that she was a human being. In spite of the fact that she would beat us, and in spite of all that, she was fighting for the life of every prisoner. For the Christians she did not have to fight. Christians normally did not go to the ovens, only those who had died. But for the Jews she had to fight. Two years ago [this with some hidden light in her voice] on Rosh Hashona [the interview was taking place on Rosh Hashona of 1946, and she apparently refers to an incident exactly two years before] just two years ago, there was to be a selection. A selection was when they re-sorted the people—who for the ovens and who should stay alive. So she took all the weak and the sick, including myself, and sent them away outside the <a class="term" href="#vothG_lager">lager</a> for work, Aussenkomando, so they should not be present for the "selection." However, there was no selection afterwards. But I became convinced that she was really human, that if she mistreated and beat us, it was only because she herself wanted to survive and wanted us to survive.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2224.750" end="x">She was a Christian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2225.828" end="x">(emphatically) A Christian woman. But she wanted to earn the confidence of the <a class="term" href="#vothG_ss">SS</a> men. She was a political prisoner.. A very intelligent woman, from <a class="placename" href="#vothL79">Warsaw</a>, a colonel's daughter. I stayed on in the <a class="term" href="#vothG_lager">lager</a> for part of a year. I was gravely ill with gallstones. So she herself cooked me some food that I could stand, and she shielded me and reported that I am working for her and that I do not have to go to work. By the end of the summer there passed through <a class="placename" href="#vothC4" type="camp">Auschwitz</a> my brother's daughter and my brothers wife. They again told me that I am the oldest in our family and that I must live.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2265.532" end="x">What does it mean, they passed through?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2267.486" end="x">They were transported through <a class="placename" href="#vothC4" type="camp">Auschwitz</a> to a work <a class="term" href="#vothG_lager">lager</a> in the direction of <a class="placename" href="#vothL531">Hindenburg</a>. They were in <a class="placename" href="#vothC4" type="camp">Auschwitz</a> only a few hours.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2274.852" end="x">Then you have seen them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2276.258" end="x">Yes, somebody came and told me; I went over there and managed to see them. But afterwards I did not believe that they were taken to a work camp, because nobody believes that one can come out alive from <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, although the Red Army was already at the gates of <a class="placename" href="#vothL79">Warsaw</a>. In September more transports were sent away, and we didn't know where to. In October I decided to get away from <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. Be what it may, better come death, but no <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. To have to look on how living human beings stand in line waiting for death, and to say nothing, and they don't even cry. They would not cry. Once the Christian <a class="term" href="#vothG_block">block</a>
+                        <a class="term" href="#vothG_trusty">trustys</a> reproached me: "Why are they going with such indifference to death? Why don't they fight? Why don't they kill somebody?" So I replied, "You haven't been in a <a class="term" href="#vothG_ghetto">ghetto</a>. You have not seen how Jews went away in transports with congealed nerves [verglievert]. A human being can cry himself dry; a human being clings to life, and up to the last moment there is a ray of hope and they are defenseless. And they have no arms. How can you say that? Maybe you just want to soothe your conscience talking that way." And the same day a miracle happened. The Jews seized the oven. They first threw in some forty <a class="term" href="#vothG_ss">SS</a> men, and then, with them one hundred-fifty lost their lives, and a hundred-fifty ran away into the woods to the <a class="term" href="#vothG_partisans">partisans</a>. Of course, it was with help from outside, of <a class="term" href="#vothG_partisans">partisans</a>.- of Poles and other nationalities.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2371.530" end="x">Do you really know that for sure?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2373.717" end="x">[with excitement] I was present and now in . . . there was a girl, Kathe. She now has left for the land of Israel, in . . . [Here she gives a name of a place which I cannot understand. It sounds like Alia Beth]. And it was she personally who threw in the bomb. I was then assigned to outside work, and I have seen it myself, and so shall I see the delivery of all the Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2388.858" end="x">Do you mean to say that they threw the <a class="term" href="#vothG_ss">SS</a> men into the oven?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2392.077" end="x">That was a few kilometers from our <a class="term" href="#vothG_lager">lager</a>, Breginski. The commandos that were doing the burning were Jews. There were about fifty people present . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2405.985" end="x">And you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2406.767" end="x">They were guarded by <a class="term" href="#vothG_ss">SS</a> men, and then they were . . . (pause, and the conversation becomes incoherent), and then I just heard the explosion, and when I came out I saw the oven in flames. And then we heard shooting. The result was that the <a class="term" href="#vothG_ss">SS</a> men were caught unawares, and they threw them into the burning oven, and afterwards -</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2447.150" end="x">How can forty people be thrown into one oven?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2449.916" end="x">Those were such pits—[the recording becomes rather confused; and is not at all clear]. They threw them in, and afterwards they blasted the oven. One hundred-fifty were shot, and one hundred-fifty got away into the woods. And I thought then, maybe we shall still survive. An answer has come to what she had said the about the Jews. If others would be saying it, I wouldn't care; but if such a Christian, who was so valuable to us and respected, [should think that way]—that we cared. Why should she say the Jews have no courage? That hurts. And now this happens. In October they began to assemble transports from <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. I had no hope to get away with the transport, because I looked very sick, but I dressed, and I painted myself for each <a class="term" href="#vothG_appell">appell</a>, to give myself color—they shouldn't see my deadly paleness.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2510.197" end="x">What were you doing?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2511.103" end="x">For each <a class="term" href="#vothG_appell">appell</a> I painted my face, so they shouldn't see how terribly pale I was.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2515.637" end="x">Where did you get the stuff?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2516.887" end="x">Well, there would come transports of Jews from all over the world, and they did not know what their fate would be. So every woman still had these things. And they would lie on the dumps, and those who had access to the dumps would collect it and would give it to everyone who looked bad, to cover it up. And so I was heavily painted. One day they came to our <a class="term" href="#vothG_block">block</a> and told us that we are going to the transport—to lead us to a transport <a class="term" href="#vothG_block">block</a>. And I too was selected during the <a class="term" href="#vothG_appell">appell</a>. And so we went to <a class="term" href="#vothG_block">block</a> 31, the transit <a class="term" href="#vothG_block">block</a>. Here we remained for eight days. Then there was a selection and we were sent to the shower bath. That was a bathing room, where people would bathe, and afterward everyone was looked over. For me that was very dangerous; so a woman, a <a class="term" href="#vothG_block">block</a> servant, told me: "Don't go in there. Simply sneak out through the other side and stand up with those on the right side, because externally you look well." And so I mingled in with three hundred other women, and I went away with a transport to <a class="placename" href="#vothC64" type="camp">Lippstadt</a>. In <a class="placename" href="#vothC64" type="camp">Lippstadt</a> there was work. In <a class="placename" href="#vothC4" type="camp">Auschwitz</a> there was no work. In <a class="placename" href="#vothC64" type="camp">Lippstadt</a> they manufactured ammunition, and there the strength to live returned to me. To work!—I should stamp cartridges for machine guns, with which the Germans would shoot (and these were the last munition factories) the Americans who came to liberate us! And because I looked so [decrepit] they thought that I was such a fool! In a few days I learned the mechanism of my machine, and in a few days I started to work very ardently. The assigned quota was twelve thousand, but I would produce fifteen thousand pieces. But fifteen thousand smaller ones and fifteen thousand larger ones, never the caliber that was prescribed. When they discovered it, there were eighty thousand rejected pieces. My foreman came over to me and said: "If you do it once more, I shall chop off your hand." So I said, "Oh [here her voice becomes ironical, and she speaks in perfect German], you can report that I am doing sabotage? Then they make me altogether kaput." "Oh, for that you are much too dumb!" I don't know, maybe he had noticed what I was doing, but it may have been too late, and he already was responsible along with me. I can't be so naive as to assume that the Germans wanted to cooperate with me against Hitler. Such do not exist. But to the last moment they had fate. In the faces of the Germans I read just like in a newspaper. They were very sad the last days. It was already the year 1945, in March. They still drove us to work, and they would beat us at every air raid alarm. But, thank God! The air raid alarm would last for twenty-four hours. They would run into the air raid shelter, and we would run right out into the yard. We would run out into the yard, and laugh, and the <a class="term" href="#vothG_ss">SS</a> men would say to us: "Aren't you afraid? Do you think that your friends will spare you?" [She continues with laughter in her voice] "You are afraid! Why aren't you in the battlefield? All you are fighting with is eight hundred defenseless and weak women. That is the kind of heroes you are!" The girls thought that I was again insane, like I had been in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. But it was indifferent to me. [Here again the record loses its clearness]. To die in such a fashion may be well worth while. The 27th of March we were driven out of <a class="placename" href="#vothC64" type="camp">Lippstadt</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2710.152" end="x">1945 or 1944?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2713.183" end="x">1945. They drove us out from <a class="placename" href="#vothC64" type="camp">Lippstadt</a>—at night we were evacuated. We were to go to <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a> [ this with irony in her voice]. They couldn't take us any more to <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>, but they didn't know. Driven at night and during the day locked up in shops. [In the midst of her German she uses the English word "shops". That is one of those new words that was adopted into the German language during the war]. They had everything ready to finish us off. But there was no more time.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2733.729" end="x">What do you mean, finish you off?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2735.463" end="x">They had orders not to release us alive. On the third day at dawn we remained standing in a little lane, deep in mud, and the top division leader was frothing at his mouth. We heard already the rumbling American tanks, and we were led into the woods. I don't know how they happened not to hit us. So he says (he still yelled then), "You band of Jew-pigs." And he left us alone with all the <a class="term" href="#vothG_ss">SS</a> men, and he himself ran away. So I said then to one of the girls, "You know, I don't know whether we shall survive, but he will not come back any more." So she says: "I have a half a bread and I give you this half a bread if that should happen the way you say." And I still thought that I would have a chance to eat that half a bread in case he should not return. But it has become very late. And it happened the first of April, 1945, a quarter of nine. Shooting!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2798.717" end="x">In the evening or in the morning?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2799.880" end="x">In the morning. Shooting, [with joy in her voice] Americans! They are shooting at us, and here we are, together with the <a class="term" href="#vothG_ss">SS</a> men, lying under the trees. The bullets whistled. [She uses the expression—bullets burned]. And we laughed—crazy of us. The <a class="term" href="#vothG_ss">SS</a> men stood around. They were no heroes any more. They don't know where to run. Only five minutes before, they wouldn't run away. They could not leave us alone. They still believed in the <a class="term" href="#vothG_fuehrer">Fuehrer</a>. And now they were standing with their arms down. They were still ordering to go to the "shops", but nobody went. We remained lying down right there. The Americans fired three times, and then a silence came over us. An aeroplane came down at low altitude, and a white flag [here she sobs again], and it was spread out.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2848.668" end="x">What do you mean, a white flag?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2850.075" end="x">The Germans raised a white flag. The name of the town is <a class="placename" href="#vothL142">Kaunitz</a>, in Westphalia near <a class="placename" href="#vothC64" type="camp">Lippstadt</a>, twenty-seven kilometers from <a class="placename" href="#vothC64" type="camp">Lippstadt</a>. And here we were, almost crazy. We haven't a strip of a white thing. Somebody had a bandage around a wounded leg, and that bandage was raised at an approaching American tank, and the women prostrated themselves on the ground, kissing the wheels. The Americans thought it was a house of the insane. They looked at us. [I am not sure of the correct translation of the next few sentences.] And how we looked! All in tatters. [Her words are barely audible.] And speaking—nobody could. We were all speechless. And then he understood, and two tears rolled down his face. [Again the text is not clear, she is very upset.] And until the others arrived, he wept with us. Not a Jew—a Christian. And then they began to arrive, the tanks. It was Passover. The last day of it. And matzos [Unleavened bread, eaten by Jews at Easter] fell from the tanks. And chocolate and cigarettes. And they would jump off the tanks and they were kissing us. Us dirty and lousy ones. "Do not weep," they would say. But we wept more and again. And incessantly the tears ran. The Ninth Army had not seen any Jews in Germany, and we thought that we were the only Jewish survivors, and we did not want to live. But they consoled us. They were telling us that there were many other armies that have reached other <a class="term" href="#vothG_lager">lagers</a> which were liberated. That was liberation. We were all dead sick. I was half swollen. Immediately the American army led us into homes. They burned everything we had on us, although we wanted to save the clothing. But it was all infected, and we were afraid to keep it. Dirty. And we changed our clothes, putting on whatever we could. We could take things, good things, from the Germans. We took it from the Germans [with irony in her voice], they gave it to us themselves. They were afraid now. We dressed [here her voice again breaks into sobs]. We washed ourselves, with soap, warm water, a clean towel, pure underwear. [She uses the English word "pure"]. Oh! The Americans themselves were crazy with joy. They now understood—"You are going to liberate human beings." And that army hadn't seen before those who were liberated. We were the first ones, and they were rejoicing like little children. And in the evening one American put on his head a hat, a German hat, a womans hat, and another one played some kind of instrument, and he danced with a little girl from our <a class="term" href="#vothG_lager">lager</a>. I shall not forget it, ever. [She weeps again and speaks in exhaustion.] For the first time we got into the <a class="term" href="#vothG_lager">lager</a> a radio, and we heard the news. <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a> liberated. Thirty thousand hopelessly sick. Thousands and thousands dead. Who knows whether my people were there? Everybody thought so, and their eyes would run out [in tears.] <a class="placename" href="#vothC15" type="camp">Buchenwald</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2887.219" end="x"><a class="term" href="#vothG_lager">Lagers</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="2888.375" end="x">Liberated. Should it be possible that anyone would be found. That anyone should have survived? And I am here already a year. I searched. I found a daughter of my brother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3045.013" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="3045.607" end="x">She was in <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>. The Rabbi Shubow brought her, the daughter and my brother's wife.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3054.278" end="x">An American Rabbi?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="3055.841" end="x">Joseph Shubow from <a class="placename" href="#vothL332">Boston</a>. Joseph Shubow from <a class="placename" href="#vothL332">Boston</a>. He was with us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3060.011" end="x">Where are they now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="3061.323" end="x">My sister-in-law is now in Norway. She has an aunt there. And my brother's daughter [she starts weeping again] returned to Poland to bring her brothers who also remained alive. And with this in <a class="placename" href="#vothL84">Kielce</a>,—I learned the whole story—the whole <a class="term" href="#vothG_pogrom">pogrom</a>, and my eyes ran out [in tears] from horror. The community of my father, it consisted of twenty-four thousand Jews, and only three hundred remained. And lately there were only a hundred Jews, and forty-two were killed in <a class="placename" href="#vothL84">Kielce</a>. And my brother's son was recently in <a class="placename" href="#vothL84">Kielce</a>—about twenty years of age. Now he is in <a class="placename" href="#vothL82">Lodz</a> and has a little baby. His wife recently gave birth to the child, and that is why he can't come yet. I hope every moment that they will arrive. My father had twenty-four grandchildren. My little daughter was the twenty-fifth. I don't have my child. Three weeks before the arrival of the Red Army, the woman was reported, and they took away my child and the woman.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3123.546" end="x">The Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="3124.983" end="x">The Germans. They were in <a class="placename" href="#vothL189">Grodno</a> in 1944. That I know now. And the child was murderously shot. After liberation the woman [she chokes in tears with the next word—one understands it by inference] exhumed the child, and the physician who had delivered the baby was present when she was exhumed from a grave in a Christian cemetery. The Jewish cemetery does not exist any more in <a class="placename" href="#vothL189">Grodno</a>. It was desecrated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3158.541" end="x">[In English] <a class="placename" href="#vothL35">Wiesbaden</a>, September the 26th, 1946. I am struggling with time. Mrs. Kaletska is going over to the third spool and I want to let her finish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3171.575" end="x">[In Yiddish] Let's have it again. What were you telling me about your baby?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="3174.528" end="x">Last year, about the end of the year, I went to Poland with the hope to find my child. I arrived in <a class="placename" href="#vothL82">Lodz</a>, and the wife of the doctor told me the child was not alive, that the Christian woman was thrown in jail because she was reported.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3193.172" end="x">But the Christian woman was in <a class="placename" href="#vothL189">Grodno</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="3195.063" end="x">Yes, she [apparently the doctor's wife] also came from <a class="placename" href="#vothL189">Grodno</a>. She was evacuated from <a class="placename" href="#vothL189">Grodno</a> and came to <a class="placename" href="#vothL82">Lodz</a>. That Christian woman was held in jail with the child. An investigation was made, and it was found out that she had picked up the child on the street. They established then that it was a Jewish child, and they . . . [here she cuts off a word which she started to say and which apparently means "killed it." It is also possible that she did not finish the sentence because the meaning was obvious and because she was interrupted by the interviewer].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3215.026" end="x">How could they establish that the girl was a Jewish child?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="3217.651" end="x">They—I don't know how they established it. Possibly somebody reported to them, because the child looked later very much like my husband. The Kovitzki's were a well-known family, and they all resembled each other very much. It was also suspicious, because the woman was childless, and she had not given away the child to an orphanage.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3241.964" end="x">Oh, she did not place the child in an orphanage?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="3243.370" end="x">Because she loved the child, she kept the child like her own. And she left for me a present—a few pictures. I will show them to you right away. [As I remember it, she looked in her pocketbook.] Oh, no. I don't have them with me. And they buried the child three weeks before the Red Army marched in. When the Red Army arrived the woman interfered, requesting a permit to bury the child. It was said that I apparently was not alive any more; but they wanted to remove the child from the Christian cemetery. The Jewish cemetery was entirely desecrated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3277.224" end="x">Have you seen the woman afterwards?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="3279.146" end="x">No, the woman I haven't seen any more.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3280.334" end="x">So, how did you get the pictures?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Anna Kaletska</span>:
+            </span>
+            <span class="utterance" who="#kaletskaA" start="3281.849" end="x">The pictures she left with a woman friend of mine who was saved. She lived on "<a class="term" href="#vothG_aryan">Aryan</a> papers" near <a class="placename" href="#vothL189">Grodno</a>. About twelve kilometers from there. And this woman friend of mine went to this [Christian] woman and wanted to take my child back. So she gave her the pictures. And so I don't have the child. Then there was a rumor that my husband was alive, Jacob Kovitzki. Somebody wrote from <a class="placename" href="#vothL76">Kovno</a>, but I didn't know where he is, and a year has passed. I was unable to find him. Maybe he went into Russia, but so far there is nothing from him. Now I am working in <a class="placename" href="#vothL540">Pfalzheim</a>, in a kindergarten. There are twenty little Jewish children. And I play with them, and then I forget about all that. Again I have around me Jewish children. But after work, to come alone to my room—today is a holiday. Where are all mine, who used to celebrate the holidays with me? Thank God! There are Jews staying with me on a holiday. Not a holiday in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>. But my people are no more. I am alone. [This whole section on Spool 167 was spoken with sobs, which are clearly heard on the wire. The woman was very much beside herself. I had a hard time to keep her in line with the microphone, and now I don't find a little episode which she told me, apparently after I had stopped the machine. It is not on the wire, but here it is, written from memory: "Last night, and that means on the first evening of Rosh Hashona we, like at home, prepared the holiday meal, and as was customary at home, we invited a soldier to share it with us. But this time it was not a poor soldier, away from home, who had to be fed, but an American Jewish soldier, who, accepting the invitation, brought us an armful of gifts, all kinds of American food and delicacies."]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3368.180" end="x">[In English] We have to conclude, my automobile is waiting. [unintelligible] . . . very valuable material, that I have to cancel another appointment. <a class="placename" href="#vothL35">Wiesbaden</a>, September the 46th, in the synagogue that was desecrated in 1937 or '38, and which had its holiday service for the first time today, although not yet re-dedicated. What we have heard from this woman . . . is about a story what we have heard from everybody. I'm concluding my project in Germany, and I want to thank the <a class="term" href="#vothG_unrra">UNRRA</a>, Jack Thompson from the Chicago Tribune, Paul and Ms. Gurman, Morris Alther, Henry McCarthy and Harriet McCarthy, my daughter Elena Boder and my son in law, Ledewitz, Dave Siegel, and all those who made this project possible. Ben Weintraub, and Eve in <a class="placename" href="#vothL29">Munich</a>. And also Salk. I can't speak, I don't recall, remember the names now because I am just in a trance after this woman's report. I am concluding this project, the automobile is waiting, I am going to <a class="placename" href="#vothL281">Frankfurt</a>. Who is going to sit in judgment of all this, and who is going to judge my work? Illinois Institute of Technology wire recording. I am leaving tonight for <a class="placename" href="#vothL13">Paris</a>, the project is concluded.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC38">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC38" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Grodno Ghetto
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Hrodna, Poland<br />
+                            </p>
+                            <div>
+                Located in the Bialystok district of Poland, this ghetto was created in late 1941 and liquidated in early 1943.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC38 = new OpenLayers.Map('map_vothC38', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC38.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC38.addLayer(markers);
+map_id_vothC38.zoomToMaxExtent();
+
+                        var lat_1 = 53.681000;
+                        var lon_1 = 23.813000;
+                        var vothC38 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC38_icon = new OpenLayers.Marker(vothC38);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC38);
+markers.addMarker(vothC38_icon);
+    addMarker(vothC38, popupClass, "", true, false, false);
+    map_id_vothC38.setCenter(vothC38, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC157">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC157" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Kelbasin
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Hrodna, Poland<br />
+                            </p>
+                            <div>
+                This transit camp was involved in the liquidation of the Hrodna (or Grodno) Ghetto in Belarus in the winter of 1942-43.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC157 = new OpenLayers.Map('map_vothC157', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC157.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC157.addLayer(markers);
+map_id_vothC157.zoomToMaxExtent();
+
+                        var lat_2 = 53.681000;
+                        var lon_2 = 23.813000;
+                        var vothC157 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC157_icon = new OpenLayers.Marker(vothC157);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC157);
+markers.addMarker(vothC157_icon);
+    addMarker(vothC157, popupClass, "", true, false, false);
+    map_id_vothC157.setCenter(vothC157, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC112">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC112" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Treblinka<br /><span class="alt">(Treblinka I, <br /><span class="alt">(Trenlinka II)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Treblinka, Poland<br />
+                            </p>
+                            <div>
+                The largest of the &#34;Aktion Reinhard&#34; camps, this extermination camp was created to murder the Jews of the Warsaw ghetto and other ghettos in central Poland. From July 1942 to October 1943, more than 800,000 Jews and several thousand Roma were killed there.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC112 = new OpenLayers.Map('map_vothC112', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC112.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC112.addLayer(markers);
+map_id_vothC112.zoomToMaxExtent();
+
+                        var lat_3 = 52.666700;
+                        var lon_3 = 22.033300;
+                        var vothC112 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC112_icon = new OpenLayers.Marker(vothC112);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC112);
+markers.addMarker(vothC112_icon);
+    addMarker(vothC112, popupClass, "", true, false, false);
+    map_id_vothC112.setCenter(vothC112, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_4 = 50.033300;
+                        var lon_4 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC64">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC64" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Lippstadt
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Buchenwald
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Lippstadt, Germany<br />
+                            </p>
+                            <div>
+                The Buchenwald sub-camp at Lippstadt held women, predominantly Hungarian Jews, who had been deported from Auschwitz when the sub-camp opened in the summer of 1944. The women were forced to work in the armaments industry as part of the SS Kommando Lippstadt I.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC64 = new OpenLayers.Map('map_vothC64', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC64.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC64.addLayer(markers);
+map_id_vothC64.zoomToMaxExtent();
+
+                        var lat_5 = 51.666700;
+                        var lon_5 = 8.316700;
+                        var vothC64 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothC64_icon = new OpenLayers.Marker(vothC64);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC64);
+markers.addMarker(vothC64_icon);
+    addMarker(vothC64, popupClass, "", true, false, false);
+    map_id_vothC64.setCenter(vothC64, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC8">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC8" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Bergen-Belsen
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Buchenwald
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Bergen, Germany<br />
+                            </p>
+                            <div>
+                Established in the spring of 1943 and initially intended as a transit camp, it soon was integrated into the concentration camp network.  Its population swelled late in the war as inmates from other camps further east were moved into it--from around 15,000 in late 1944 to 41,250 in March 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC8 = new OpenLayers.Map('map_vothC8', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC8.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC8.addLayer(markers);
+map_id_vothC8.zoomToMaxExtent();
+
+                        var lat_6 = 52.766700;
+                        var lon_6 = 9.916700;
+                        var vothC8 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothC8_icon = new OpenLayers.Marker(vothC8);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC8);
+markers.addMarker(vothC8_icon);
+    addMarker(vothC8, popupClass, "", true, false, false);
+    map_id_vothC8.setCenter(vothC8, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC15">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC15" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Buchenwald
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Buchenwald
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Weimar, Germany<br />
+                            </p>
+                            <div>
+                Established in July 1937 near the city of Weimar for prisoners from central Germany, who were put to work making bricks at a nearby clay pit.  Around 9000 were normally housed there, but the population reached around 48,000 by April 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC15 = new OpenLayers.Map('map_vothC15', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC15.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC15.addLayer(markers);
+map_id_vothC15.zoomToMaxExtent();
+
+                        var lat_7 = 50.983300;
+                        var lon_7 = 11.316700;
+                        var vothC15 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothC15_icon = new OpenLayers.Marker(vothC15);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC15);
+markers.addMarker(vothC15_icon);
+    addMarker(vothC15, popupClass, "", true, false, false);
+    map_id_vothC15.setCenter(vothC15, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL256">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL256" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chicago, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL256 = new OpenLayers.Map('map_vothL256', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL256.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL256.addLayer(markers);
+map_id_vothL256.zoomToMaxExtent();
+
+                        var lat_8 = 41.850000;
+                        var lon_8 = -87.650000;
+                        var vothL256 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL256_icon = new OpenLayers.Marker(vothL256);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL256);
+markers.addMarker(vothL256_icon);
+    addMarker(vothL256, popupClass, "", true, false, false);
+    map_id_vothL256.setCenter(vothL256, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL35">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL35" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Wiesbaden, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL35 = new OpenLayers.Map('map_vothL35', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL35.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL35.addLayer(markers);
+map_id_vothL35.zoomToMaxExtent();
+
+                        var lat_9 = 50.083300;
+                        var lon_9 = 8.233300;
+                        var vothL35 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL35_icon = new OpenLayers.Marker(vothL35);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL35);
+markers.addMarker(vothL35_icon);
+    addMarker(vothL35, popupClass, "", true, false, false);
+    map_id_vothL35.setCenter(vothL35, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_10 = 48.866700;
+                        var lon_10 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL84">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL84" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kielce, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL84 = new OpenLayers.Map('map_vothL84', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL84.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL84.addLayer(markers);
+map_id_vothL84.zoomToMaxExtent();
+
+                        var lat_11 = 50.850000;
+                        var lon_11 = 20.650000;
+                        var vothL84 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL84_icon = new OpenLayers.Marker(vothL84);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL84);
+markers.addMarker(vothL84_icon);
+    addMarker(vothL84, popupClass, "", true, false, false);
+    map_id_vothL84.setCenter(vothL84, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL189">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL189" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Hrodna, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL189 = new OpenLayers.Map('map_vothL189', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL189.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL189.addLayer(markers);
+map_id_vothL189.zoomToMaxExtent();
+
+                        var lat_12 = 53.681000;
+                        var lon_12 = 23.813000;
+                        var vothL189 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL189_icon = new OpenLayers.Marker(vothL189);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL189);
+markers.addMarker(vothL189_icon);
+    addMarker(vothL189, popupClass, "", true, false, false);
+    map_id_vothL189.setCenter(vothL189, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL528">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL528" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Vawkavysk, Belarus
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL528 = new OpenLayers.Map('map_vothL528', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL528.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL528.addLayer(markers);
+map_id_vothL528.zoomToMaxExtent();
+
+                        var lat_13 = 53.166667;
+                        var lon_13 = 24.466667;
+                        var vothL528 = new OpenLayers.LonLat(lon_13, lat_13);
+            vothL528_icon = new OpenLayers.Marker(vothL528);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL528);
+markers.addMarker(vothL528_icon);
+    addMarker(vothL528, popupClass, "", true, false, false);
+    map_id_vothL528.setCenter(vothL528, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL508">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL508" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Brest, Belarus
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL508 = new OpenLayers.Map('map_vothL508', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL508.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL508.addLayer(markers);
+map_id_vothL508.zoomToMaxExtent();
+
+                        var lat_14 = 52.133300;
+                        var lon_14 = 23.666700;
+                        var vothL508 = new OpenLayers.LonLat(lon_14, lat_14);
+            vothL508_icon = new OpenLayers.Marker(vothL508);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL508);
+markers.addMarker(vothL508_icon);
+    addMarker(vothL508, popupClass, "", true, false, false);
+    map_id_vothL508.setCenter(vothL508, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL123">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL123" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            L&#39;viv, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL123 = new OpenLayers.Map('map_vothL123', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL123.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL123.addLayer(markers);
+map_id_vothL123.zoomToMaxExtent();
+
+                        var lat_15 = 49.833300;
+                        var lon_15 = 24.000000;
+                        var vothL123 = new OpenLayers.LonLat(lon_15, lat_15);
+            vothL123_icon = new OpenLayers.Marker(vothL123);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL123);
+markers.addMarker(vothL123_icon);
+    addMarker(vothL123, popupClass, "", true, false, false);
+    map_id_vothL123.setCenter(vothL123, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL7">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL7" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Slonim, Belarus
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL7 = new OpenLayers.Map('map_vothL7', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL7.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL7.addLayer(markers);
+map_id_vothL7.zoomToMaxExtent();
+
+                        var lat_16 = 53.083300;
+                        var lon_16 = 25.350000;
+                        var vothL7 = new OpenLayers.LonLat(lon_16, lat_16);
+            vothL7_icon = new OpenLayers.Marker(vothL7);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL7);
+markers.addMarker(vothL7_icon);
+    addMarker(vothL7, popupClass, "", true, false, false);
+    map_id_vothL7.setCenter(vothL7, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL294">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL294" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Volgograd, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL294 = new OpenLayers.Map('map_vothL294', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL294.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL294.addLayer(markers);
+map_id_vothL294.zoomToMaxExtent();
+
+                        var lat_17 = 48.750000;
+                        var lon_17 = 44.500000;
+                        var vothL294 = new OpenLayers.LonLat(lon_17, lat_17);
+            vothL294_icon = new OpenLayers.Marker(vothL294);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL294);
+markers.addMarker(vothL294_icon);
+    addMarker(vothL294, popupClass, "", true, false, false);
+    map_id_vothL294.setCenter(vothL294, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL303">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL303" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Szczecin, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL303 = new OpenLayers.Map('map_vothL303', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL303.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL303.addLayer(markers);
+map_id_vothL303.zoomToMaxExtent();
+
+                        var lat_18 = 53.416667;
+                        var lon_18 = 14.583333;
+                        var vothL303 = new OpenLayers.LonLat(lon_18, lat_18);
+            vothL303_icon = new OpenLayers.Marker(vothL303);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL303);
+markers.addMarker(vothL303_icon);
+    addMarker(vothL303, popupClass, "", true, false, false);
+    map_id_vothL303.setCenter(vothL303, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL364">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL364" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Koenigsberg, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL364 = new OpenLayers.Map('map_vothL364', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL364.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL364.addLayer(markers);
+map_id_vothL364.zoomToMaxExtent();
+
+                        var lat_19 = 54.716667;
+                        var lon_19 = 20.516667;
+                        var vothL364 = new OpenLayers.LonLat(lon_19, lat_19);
+            vothL364_icon = new OpenLayers.Marker(vothL364);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL364);
+markers.addMarker(vothL364_icon);
+    addMarker(vothL364, popupClass, "", true, false, false);
+    map_id_vothL364.setCenter(vothL364, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL79">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL79" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Warsaw, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL79 = new OpenLayers.Map('map_vothL79', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL79.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL79.addLayer(markers);
+map_id_vothL79.zoomToMaxExtent();
+
+                        var lat_20 = 52.250000;
+                        var lon_20 = 21.000000;
+                        var vothL79 = new OpenLayers.LonLat(lon_20, lat_20);
+            vothL79_icon = new OpenLayers.Marker(vothL79);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL79);
+markers.addMarker(vothL79_icon);
+    addMarker(vothL79, popupClass, "", true, false, false);
+    map_id_vothL79.setCenter(vothL79, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL531">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL531" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Zabrze, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL531 = new OpenLayers.Map('map_vothL531', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL531.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL531.addLayer(markers);
+map_id_vothL531.zoomToMaxExtent();
+
+                        var lat_21 = 50.300000;
+                        var lon_21 = 18.783300;
+                        var vothL531 = new OpenLayers.LonLat(lon_21, lat_21);
+            vothL531_icon = new OpenLayers.Marker(vothL531);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL531);
+markers.addMarker(vothL531_icon);
+    addMarker(vothL531, popupClass, "", true, false, false);
+    map_id_vothL531.setCenter(vothL531, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL142">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL142" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kaunitz, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL142 = new OpenLayers.Map('map_vothL142', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL142.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL142.addLayer(markers);
+map_id_vothL142.zoomToMaxExtent();
+
+                        var lat_22 = 51.883300;
+                        var lon_22 = 8.516700;
+                        var vothL142 = new OpenLayers.LonLat(lon_22, lat_22);
+            vothL142_icon = new OpenLayers.Marker(vothL142);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL142);
+markers.addMarker(vothL142_icon);
+    addMarker(vothL142, popupClass, "", true, false, false);
+    map_id_vothL142.setCenter(vothL142, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL332">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL332" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Boston, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL332 = new OpenLayers.Map('map_vothL332', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL332.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL332.addLayer(markers);
+map_id_vothL332.zoomToMaxExtent();
+
+                        var lat_23 = 42.357778;
+                        var lon_23 = -71.061667;
+                        var vothL332 = new OpenLayers.LonLat(lon_23, lat_23);
+            vothL332_icon = new OpenLayers.Marker(vothL332);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL332);
+markers.addMarker(vothL332_icon);
+    addMarker(vothL332, popupClass, "", true, false, false);
+    map_id_vothL332.setCenter(vothL332, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL82">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL82" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            L&#195;dź, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL82 = new OpenLayers.Map('map_vothL82', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL82.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL82.addLayer(markers);
+map_id_vothL82.zoomToMaxExtent();
+
+                        var lat_24 = 51.816700;
+                        var lon_24 = 19.466700;
+                        var vothL82 = new OpenLayers.LonLat(lon_24, lat_24);
+            vothL82_icon = new OpenLayers.Marker(vothL82);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL82);
+markers.addMarker(vothL82_icon);
+    addMarker(vothL82, popupClass, "", true, false, false);
+    map_id_vothL82.setCenter(vothL82, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL76">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL76" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kaunas, Lithuania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL76 = new OpenLayers.Map('map_vothL76', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL76.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL76.addLayer(markers);
+map_id_vothL76.zoomToMaxExtent();
+
+                        var lat_25 = 54.866700;
+                        var lon_25 = 23.916700;
+                        var vothL76 = new OpenLayers.LonLat(lon_25, lat_25);
+            vothL76_icon = new OpenLayers.Marker(vothL76);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL76);
+markers.addMarker(vothL76_icon);
+    addMarker(vothL76, popupClass, "", true, false, false);
+    map_id_vothL76.setCenter(vothL76, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL540">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL540" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Pfalzheim, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL540 = new OpenLayers.Map('map_vothL540', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL540.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL540.addLayer(markers);
+map_id_vothL540.zoomToMaxExtent();
+
+                        var lat_26 = 53.033333;
+                        var lon_26 = 12.666667;
+                        var vothL540 = new OpenLayers.LonLat(lon_26, lat_26);
+            vothL540_icon = new OpenLayers.Marker(vothL540);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL540);
+markers.addMarker(vothL540_icon);
+    addMarker(vothL540, popupClass, "", true, false, false);
+    map_id_vothL540.setCenter(vothL540, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_27 = 48.133300;
+                        var lon_27 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_27, lat_27);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL281">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL281" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Frankfurt am Main, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL281 = new OpenLayers.Map('map_vothL281', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL281.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL281.addLayer(markers);
+map_id_vothL281.zoomToMaxExtent();
+
+                        var lat_28 = 50.100000;
+                        var lon_28 = 8.683300;
+                        var vothL281 = new OpenLayers.LonLat(lon_28, lat_28);
+            vothL281_icon = new OpenLayers.Marker(vothL281);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL281);
+markers.addMarker(vothL281_icon);
+    addMarker(vothL281, popupClass, "", true, false, false);
+    map_id_vothL281.setCenter(vothL281, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_partisans">
+                <a name="vothG_partisans"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    partisans.
+                </span>
+                <span class="definition">
+                    Paramilitary forces engaged behind the front lines during World War II.
+                </span>
+            </li>
+                        <li class="vothG_whiteR">
+                <a name="vothG_whiteR"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    White Russian.
+                </span>
+                <span class="definition">
+                    Russians who were opposed the Bolshevik movement after the October 1917 revolution.
+                </span>
+            </li>
+                        <li class="vothG_aryan">
+                <a name="vothG_aryan"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Aryan.
+                </span>
+                <span class="definition">
+                    Derived from a Sanskrit word meaning “noble,” the term was used in Nazi pseudo-scientific jargon to denote a race which had supposedly superior blood and culture. During the Holocaust, “Aryan” came to mean anyone who was not Jewish or Roma (Gypsy).
+                </span>
+            </li>
+                        <li class="vothG_mussulman">
+                <a name="vothG_mussulman"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    mussulman.
+                </span>
+                <span class="definition">
+                    The German term meaning “Muslim.” The term applied to prisoners in camps close to dying from starvation and exhaustion. Their skeletal faces were devoid of expression, and they seemed to have been overcome by despair and by the absence of the will to live. The origin of the term has not been definitively established, though it has been attributed to a certain similarity to a prostrate Muslim in prayer.
+                </span>
+            </li>
+                        <li class="vothG_appell">
+                <a name="vothG_appell"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    appell.
+                </span>
+                <span class="definition">
+                    The appell was a camp roll call. Its purpose was not merely to count the prisoners but also to weaken, humiliate and intimidate them.
+                </span>
+            </li>
+                        <li class="vothG_ss">
+                <a name="vothG_ss"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    SS.
+                </span>
+                <span class="definition">
+                    Acronym for the German Schutzstaffel (“Protective Echelon”), a major Nazi organization. It grew from a small paramilitary unit to a powerful force that served as Hitler's "Praetorian Guard," the Nazi Party's "Shield Squadron" and a force that, fielding almost a million men (both on the front lines and as political police), managed to exert as much political influence as the German Army. Built upon the Nazi racial ideology, the SS, under Heinrich Himmler's command, was responsible for many (and most of the worst) of the crimes against humanity perpetrated by the Nazis during World War II.
+                </span>
+            </li>
+                        <li class="vothG_block">
+                <a name="vothG_block"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    block.
+                </span>
+                <span class="definition">
+                    A single concentration camp barrack.
+                </span>
+            </li>
+                        <li class="vothG_trusty">
+                <a name="vothG_trusty"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    trusty.
+                </span>
+                <span class="definition">
+                    Similar to a capo or blockälteste. A prisoner in the camps who held some authority over other prisoners, and in return received special treatment. These were often convicts.
+                </span>
+            </li>
+                        <li class="vothG_fuehrer">
+                <a name="vothG_fuehrer"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    fuehrer.
+                </span>
+                <span class="definition">
+                    The German word for “leader.”
+                </span>
+            </li>
+                        <li class="vothG_pogrom">
+                <a name="vothG_pogrom"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    pogrom.
+                </span>
+                <span class="definition">
+                    A form of riot or mob violence directed against a particular group, whether ethnic, religious, or other, and characterized by the killing and destruction of their homes, businesses, and religious centers. The term was originally used to denote extensive violence against Jews.
+                </span>
+            </li>
+                        <li class="vothG_unrra">
+                <a name="vothG_unrra"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    UNRRA.
+                </span>
+                <span class="definition">
+                    Acronym for the United Nations Relief and Rehabilitation Administration. Established in 1943, its principal executive post was held by a representative of the United States, which supplied forty percent of its budget. Among its chief duties was the repatriation of displaced persons—when the war ended, UNRRA had to cope with the task of caring for millions of displaced persons and refugees.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

@@ -1,0 +1,3263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Jacob Wilf; August 17, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-jacob-wilf-august-17-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Jacob Wilf; August 17, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=wilfJ">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=wilfJ&display=wilfJ_de_yi_ru">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=wilfJ&display=wilfJ_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=wilfJ">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.121" end="x">[In English] This is Spool Number 50. The interviewee is Dr. Jacob Wilf. <a class="placename" href="#vothL13">Paris</a>, August 17, 1946. Dr. Wilf is from <a class="placename" href="#vothL81">Katowice</a>, Poland and is now at the conference of the <a class="term" href="#vothG_ort">ORT</a> in <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="17.487" end="x">[In German] And so, Herr Doctor, tell us again what is your name. You speak Yiddish, right?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="21.678" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="22.161" end="x">[In German/Yiddish] What is your name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="24.528" end="x">My name [is] Jacob Wilf.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="27.317" end="x">And what kind of a doctor are you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="29.262" end="x">Jurisprudence.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="30.272" end="x">You are a Doctor of Jurisprudence. How old are you, Doctor?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="33.619" end="x">I am forty years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="35.021" end="x">Oh . . . You are only forty years old. Did you practice as a lawyer?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="39.845" end="x">Yes. I am at present a lawyer in <a class="placename" href="#vothL81">Katowice</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="42.348" end="x">And you are at present a lawyer in <a class="placename" href="#vothL81">Katowice</a>. Now, Doctor, I understand that you were in Russia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="52.614" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="53.187" end="x">Right. Were you deported to Russia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="55.750" end="x">No. I went to Russia voluntarily.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="58.614" end="x">You went from Poland to Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="60.514" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="60.770" end="x">Speak a bit louder. Where . . . When did you go to Russia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="64.810" end="x">I . . . In June of 1941 I left for Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="69.816" end="x">The Germans were not yet in <a class="placename" href="#vothL81">Katowice</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="72.002" end="x">No. The Germans were already in <a class="placename" href="#vothL81">Katowice</a> for a long time. I was in another part—in <a class="placename" href="#vothL123">Lemberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="77.776" end="x">Oh . . . Were the Germans in <a class="placename" href="#vothL123">Lemberg</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="80.294" end="x">They arrived near <a class="placename" href="#vothL123">Lemberg</a>. I was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="82.329" end="x">But they were not yet there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="83.565" end="x">Not yet.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="84.470" end="x">So you . . . The Germans were in <a class="placename" href="#vothL81">Katowice</a> before they were in <a class="placename" href="#vothL123">Lemberg</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="88.978" end="x">They were in <a class="placename" href="#vothL81">Katowice</a> already in '39.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="91.526" end="x">And they came to <a class="placename" href="#vothL123">Lemberg</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="93.742" end="x">The 30th of June, 1941.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="97.179" end="x">Who defended <a class="placename" href="#vothL123">Lemberg</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="99.260" end="x">The Poles [corrects himself], the Russians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="101.175" end="x">The Russians have defended <a class="placename" href="#vothL123">Lemberg</a> and they [the Germans] occupied <a class="placename" href="#vothL123">Lemberg</a> afterwards.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="104.296" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="104.688" end="x">And you were in <a class="placename" href="#vothL123">Lemberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="105.863" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="106.587" end="x">And so you left <a class="placename" href="#vothL123">Lemberg</a> for Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="109.210" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="109.707" end="x">Together with the Russians, or how did that happen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="111.969" end="x">Together with the Russians—with the army.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="113.763" end="x">With the army . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="114.743" end="x">[I was]—drafted.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="115.632" end="x">Did many Jews leave?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="117.110" end="x">Unfortunately, few Jews left [with them].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="118.934" end="x">Unfortunately few Jews have left. What happened to those who remained?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="123.457" end="x">Those who remained . . . Ninety-eight percent were annihilated by the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="129.683" end="x">Did you by any chance know a lawyer, a Doctor Loewenherz from <a class="placename" href="#vothC26" type="camp">Danzig</a>? [A reference to Heirich Loewenherz].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="134.899" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="135.774" end="x">In <a class="placename" href="#vothL123">Lwow</a>? You did not know him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="x" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="138.110" end="x">He was from <a class="placename" href="#vothL258">Gdynia</a>, <a class="placename" href="#vothL186">Danzig</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="141.065" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="142.211" end="x">Now then, tell me what happened when you left with the Russians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="147.080" end="x">The 30th of June, 1941. I was drafted into the Red Army . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="152.688" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="152.960" end="x">And with the Red Army I departed. We retreated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="155.990" end="x">How old were you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="157.377" end="x">I was . . . thirty-four years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="162.352" end="x">Thirty-four . . . What did they make' of you. A common soldier?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="166.377" end="x">A common soldier.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="167.312" end="x">Yes. And you went away with the Red Army . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="169.407" end="x">. . . went away with the Red Army. We retreated as far as the Caucasus.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="173.448" end="x">Yes. Now . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="174.458" end="x">Afterward, I was there demobilized, since I was of Polish origin . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="178.679" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="179.011" end="x">And all who were of Polish origin were then demobilized.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="182.493" end="x">Why . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="183.338" end="x">Because at that time they did not have sufficient confidence in the Polish citizens, that they would actually participate in a struggle against the German forces [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="192.368" end="x">Did they know that you were a Jew?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="195.021" end="x">Yes, they knew.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="196.167" end="x">But they discharged you, too?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="197.825" end="x">Yes, as a Pole . . . [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="199.031" end="x">Well, so what did you do when you were discharged?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="201.866" end="x">After that I retreated deep into Russia, and I came to Turkmania, the Turkmanian Republic.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="208.816" end="x">Did you have a family with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="211.334" end="x">The wife? I took her with me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="212.133" end="x">Your wife. You have no children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="214.108" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="214.605" end="x">No. And the wife followed with the Russian Army?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="216.595" end="x">She followed with the Russian Army . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="218.706" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="218.842" end="x">And in the summer, in.. in August, 1941, we arrived in Turkmania . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="224.224" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="224.541" end="x">There we settled.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="226.335" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="227.044" end="x">I worked there as a lawyer . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="230.165" end="x">They let you work as a Russian lawyer?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="232.080" end="x">The let me . . . I passed a certain examination and they permitted me to be a lawyer, a Russian lawyer.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="239.150" end="x">You speak Russian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="240.115" end="x">I speak Russian very well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="241.623" end="x">You speak Russian well. Where did you study law?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="244.472" end="x">I studied law in <a class="placename" href="#vothL135">Krakow</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="246.553" end="x">Ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="247.563" end="x">..at the University.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="248.920" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="249.478" end="x">In '29 . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="251.121" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="251.483" end="x">In 1929 I graduated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="252.930" end="x">[In Russian] So where did you learn Russian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="255.161" end="x">I learned Russian during the German War, the German-Polish War; when I was in <a class="placename" href="#vothL123">Lwow</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="262.036" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="262.413" end="x">I learned the Russian language.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="263.815" end="x">You studied the Russian language . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="265.262" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="266.830" end="x">[In German/Yiddish] So you . . . So you practiced law, where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="271.805" end="x">[The interviewee reverses to Yiddish. It was my experience that the flow of speech with recently acquired second languages is greatly restrained and the expression of ideas in most cases substantially hampered. —D.P.B.] In <a class="placename" href="#vothL587">Mary</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="273.689" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="274.323" end="x">..Turkmanian Republic.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="276.238" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="277.188" end="x">At the same time, after a few months' time, I lectured on legal science in a school of law.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="x" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="286.920" end="x">A Russian law school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="288.419" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="289.444" end="x">And my wife worked in the largest factory . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="294.223" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="295.082" end="x">..of that factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="299.303" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="299.786" end="x">And we were there until the year '45; and we returned with the 'repatriation'—we returned to Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="308.605" end="x">Didn't the Russians cause you any difficulties about your return?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="311.650" end="x">No. Perfectly voluntarily. Whoever presented himself, received the proper documents, some monetary assistance and provisions for the journey . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="317.982" end="x">Monetary assistance and provisions for the journey?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="319.233" end="x">. . . provisions for the journey; and we returned back to Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="322.037" end="x">You returned, where to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="324.178" end="x">I returned in July, 1945 . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="329.228" end="x">The war was still going on?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="331.158" end="x">The war was still on [??]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="332.892" end="x">Didn't the Russians draft you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="335.229" end="x">No . . . No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="336.239" end="x">No. Now that is a story. It is, of course, very interesting, what was going on in Russia; but that is not our problem. Tell me now, how have you encountered Poland, and what is going on in Poland in general, and what is happening to the Jews in Poland. And explain to me the whole story of the <a class="term" href="#vothG_pogrom">pogrom</a> of <a class="placename" href="#vothL84">Kielce</a>. Start with the general situation. Are you active in Jewish affairs?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="368.179" end="x">Yes. At the present time I am the Vice-Chairman of the Regional Committee of Upper Silesia . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="375.430" end="x">That is what, a general . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="377.089" end="x">A general Jewish Committee.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="378.491" end="x">Oh, a general Jewish . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="379.908" end="x">This is the only representative [body] of the Jews in Poland . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="383.586" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="383.948" end="x">In this committee all parties are represented . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="387.114" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="387.446" end="x">..which are active nowadays in the Jewish street [affairs].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="390.325" end="x">Now tell me, what kind of representation is there necessary? Are [not] all now equal citizens in Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="397.260" end="x">Yes, but the Jews have special interests, which the committees have to represent.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="402.808" end="x">For instance?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="403.697" end="x">First of all, the committees were formed as relief committees. The problem was to render the first urgent assistance to the Jews who were returning from the <a class="term" href="#vothG_lager">lagers</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="412.532" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="412.939" end="x">..as well as to the repatriates from Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="417.612" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="418.517" end="x">That was the first, main taks of the Jewish committees in Poland. Nowadays, the Jewish committee deals with other problems. The first problem which stands before the Jewish committee is to 'productivate' [to turn to, to engage in productive work] the Jewish masses.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="435.175" end="x">Who does that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="435.356" end="x">First of all, the Jews who have lost on account of the war their . . . all their property and belongings, have lost their workshops. The committees are charged with finding the means for the Jews who live or intend to settle in Poland to rebuild their workshops.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="454.950" end="x">Now that is very interesting, Mr. Wilf. Will you speak a bit slower, because what you are telling me is very important. Now . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="463.664" end="x">And so the committees form the only organization which endeavors to return the Jewish masses to productivity. They endeavor that every Jew wherever he may live, should depend on his speciality, on his qualifications, that he may take his part in the reconstruction of the country and do his part in productive labors. That is what the committees which render material assistance are for . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="495.293" end="x">[words not clear]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="495.685" end="x">. . . to incorporate the Jews in production.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="497.507" end="x">Which committees, for instance?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="499.196" end="x">The Jewish committees in every city render material assistance to the Jews, so that they will be able to rebuild their workshops again.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="509.734" end="x">And where do they get the means?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="524.252" end="x">For a long time, just until a few months past, the exclusive help which the committees have received were the funds which they got from the Polish government.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="523.166" end="x">From the Polish government?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="524.252" end="x">Exclusively from the Polish government.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="526.136" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="526.438" end="x">In the year '45, the <a class="term" href="#vothG_ajdc">Joint</a> [JDC] had not yet come to allot proper sums of money for the Jews in Poland. The sole help in 1945, which the Jewish committees had at their disposal to help the Jews, were provisions which they got from the Polish government, and sums of money.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="548.192" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="548.689" end="x">This year we have received already the money allotments from the <a class="term" href="#vothG_ajdc">Joint</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="552.941" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="553.951" end="x">Besides that, we have received provisions which are being distributed among the Jewish population.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="558.956" end="x">Aha . . . Well, and what does the <a class="term" href="#vothG_ort">ORT</a> do there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="563.886" end="x">In addition, in Poland the organization <a class="term" href="#vothG_ort">ORT</a> exists, which organizes, and has already organized in cities where there is a larger Jewish population.. They organize trade schools, especially for the purpose of giving the Jewish youth, who had no opportunity to learn anything on account of the [German] occupation, the opportunity to learn a trade—to give them a proper education. Already we have, for example [two words in Hebrew], in Upper Silesia where I am the President of the <a class="term" href="#vothG_ort">ORT</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="599.154" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="599.350" end="x">. . . We have one of the best textile schools . . . textile schools in <a class="placename" href="#vothL403">Bielsk</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="605.847" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="606.360" end="x">Not far from <a class="placename" href="#vothL81">Katowice</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="607.746" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="608.119" end="x">There we have today about thirty young people . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="611.734" end="x">Men or women?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="613.132" end="x">Mostly men, who have a 'bursa' there. There they live, receiving complete maintenance and study . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="621.518" end="x">What do you call a 'bursa?'</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="623.307" end="x">That is such a home where they live and get their maintenance.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="627.916" end="x">Why is it called a 'bura?'</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="629.344" end="x">That is a Polish name.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="630.471" end="x">A Polish [name]. Yes . . . Nu . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="632.531" end="x">Besides that, in the second center of Upper Silesia, in [the city of] <a class="placename" href="#vothL372">Bytom</a>, a trade school was created for toolmakers. We have obtained a special 'binion;' it has been repaired and in the next few days we shall start the actual work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="648.435" end="x">What is a 'binion?'</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="649.923" end="x">A building.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="650.610" end="x">A building. Now then . . . That is . . . how is life there in general?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="658.905" end="x">The Jews in Poland have all the opportunities to adjust themselves; because, it may be said for the first time in the history of Poland the Jews became citizens with equal rights. In fact, legally and economically. The attempts of the '<a class="term" href="#vothG_action">Action</a>' to create a Jewish problem in Poland are being decisively rejected by the whole democratic population of Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="685.647" end="x">Oh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="686.189" end="x">Only the efforts of the '<a class="term" href="#vothG_action">Action</a>' . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="688.900" end="x">What is the '<a class="term" href="#vothG_action">Action</a>?'</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="689.744" end="x">The reaction.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="690.871" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="691.455" end="x">Those are the Polish Fascists . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="693.895" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="694.166" end="x">. . . those who have ruled until 1939, who at that time lost power from their hands . . . They, although they are aware that they shall not get their power back, endeavor by all means at home and abroad, to impede the new democratic government of Poland in the creation and upbuilding of a new Poland on a democratic foundation. One of the methods which is being used by the Reaction, the Fascists—the Polish Fascists in their fight against the government are the '<a class="term" href="#vothG_action">Actions</a>'—the fights against the Jews. In Poland assaults on Jews [two words not clear] are taking place, day in and day out. That is why there was the <a class="term" href="#vothG_pogrom">pogrom</a> in <a class="placename" href="#vothL84">Kielce</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="741.526" end="x">Tell me about the <a class="term" href="#vothG_pogrom">pogrom</a> with all the details that you know . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="745.604" end="x">The <a class="term" href="#vothG_pogrom">pogrom</a>, as revealed by the investigation of the various official agencies which have then taken place, was inspired by foreign agents.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="759.761" end="x">Polish . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="761.550" end="x">Polish foreign agents.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="762.815" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="763.327" end="x">The direct immediate provocation was the creation of a calumny [frame-up]—that the Jews had snatched a Polish child for the purpose of taking blood from him, but they had managed to rescue the child.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="779.171" end="x">Yes. But tell me, what did they say that the Jews needed the blood for:</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="784.424" end="x">Well, that is the old calumny that the Jews are using blood of Christian children for ritual purposes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="792.557" end="x">Was there not another calumny?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="795.581" end="x">No, in this case that was the only calumny.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="798.322" end="x">The old calumny. Well, I have heard a different story. But if you are reporting it this way . . . That is interesting. How could they need blood . . . ? It happened in July, the <a class="term" href="#vothG_pogrom">pogrom</a>..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="812.418" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="812.961" end="x">So how does that tie up with the Passover?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="814.178" end="x">No. That comes from the allegation that Jews use [blood] for various other . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="821.720" end="x">Oh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="822.413" end="x">..ritual needs the blood of Christian children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="826.341" end="x">Not only for mazos?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="827.498" end="x">Not only for mazos. And the child was going around. It was instigated by some 'agents,' and the child was going around; and it was said [alleged] that it was hidden by the Jews in a cellar for two days . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="839.498" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="839.950" end="x">..And only after that he managed to escape . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="842.251" end="x">Did he say that there were other children [with him], or not . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="844.269" end="x">No, only about himself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="846.016" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="846.378" end="x">Afterwards, when the investigation got under way, it was established that the child was instigated, that his own father had hidden the child and had talked him into creating such a calumny. The population, the Poles seized upon the calumny—the masses were instigated by specially sent-in agents. One started already in the morning . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="874.428" end="x">Agent sent in?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="875.663" end="x">Agents sent in from abroad . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="877.802" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="878.507" end="x">And already from the early morning crowds began to conglomerate. The word about the calumny spread from mouth to mouth; and so they started to drag out the Jews from the building in which the Jewish Committee of <a class="placename" href="#vothL84">Kielce</a> was located.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="896.200" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="896.875" end="x">And besides, they also grabbed Jews from the street. This <a class="term" href="#vothG_pogrom">pogrom</a> lasted nearly a full day. [Two words in between]. It was also revealed that a part of the officials of the militia . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="910.532" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="910.845" end="x">. . . have also participated in the '<a class="term" href="#vothG_action">action</a>.'</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="913.586" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="914.008" end="x">Only at the end of the day, thanks to the intervention of the Security Authorities and of the Polish Army, was the liquidation of the <a class="term" href="#vothG_pogrom">pogrom</a> accomplished.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="924.261" end="x">What was the name of the Chairman . . . president of the Jewish . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="930.767" end="x">The chairman of the Jewish Committee, who was also killed that day in a most disgraceful manner, was Doctor Kahane.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="938.981" end="x">Kahane..?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="939.535" end="x">Kahane.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="940.017" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="941.342" end="x">Only after that, when an investigation got under way—a special commission arrived from <a class="placename" href="#vothL79">Warsaw</a> and all measures were taken in order to bring about security for those Jews who still remained. They were transported in special automobiles to <a class="placename" href="#vothL82">Lodz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="959.264" end="x">The ones from <a class="placename" href="#vothL84">Kielce</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="960.168" end="x">The ones from <a class="placename" href="#vothL84">Kielce</a>. And already in a few days, in order to convince [to silence?] the Polish masses, the strong hand of the Polish government, in a strong reaction against the events [?] in <a class="placename" href="#vothL84">Kielce</a>, revealed itself in the fact that the trial of the main instigators of the <a class="term" href="#vothG_pogrom">pogrom</a> took place in only a few days, and within only ten days nine Poles were sentenced to death, and four days afterwards the death penalty was executed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="995.477" end="x">So you think that the events of the <a class="term" href="#vothG_pogrom">pogrom</a> will help to quieten things down, that the population will be pacified?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1005.236" end="x">The situation already now is such that thanks to the strong hand of the Polish government, which has responded so sharply to the <a class="term" href="#vothG_pogrom">pogrom</a> of <a class="placename" href="#vothL84">Kielce</a>, a firm order [calm] has emerged [all] over the country; more so, since the working masses—the Polish working masses have held special meetings in all cities, and have mobilized the Polish masses for a struggle against the Fascists—the Polish Fascists. The workers—the Polish workers, have demonstrated at meetings that they have proved to the Polish people that these pogroms are not only directed against the Jews, but that the hand that beats and kills the . . . the Polish 'democrats' [democratic people], the hand of intervention which fights against the Polish government, is provoking such pogroms in order to harm [the prestige, to prejudice against] the Polish people in [the eyes of] foreign countries; and in order to evoke unrest at home. And the effect is that during recent times order [calm] was established at all levels—more so, that the government takes all possible measures toward the aim that such events should not repeat themselves anymore. One of the measures is that the Polich government has released special pieces of armament to all Jewish committees—to all Jewish institutions; and they are specially guarded by the agencies of security. And so we hope that . . . that there shall not be repetitions of that what has happened.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1103.528" end="x">Well, did they permit the Jews to possess arms?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1107.082" end="x">All Jews who work in the Jewish committees, who occupy positions of responsibility . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1111.932" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1112.456" end="x">..have the right, and have received arms, and permission to bear arms on their person.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1119.384" end="x">Now tell me, one sees presently in <a class="placename" href="#vothL13">Paris</a> a lot of Jews who fled from Poland during the last few weeks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1130.270" end="x">Yes. It is clear that in connection with the <a class="term" href="#vothG_pogrom">pogroms</a> of <a class="placename" href="#vothL84">Kielce</a> a psychosis has come about within the Jewish masses . . . There was a time, a few weeks after the <a class="placename" href="#vothL84">Kielce</a> pogroms, that substantial groups of Jews from various regions of Poland have departed, for the sole purpose of saving their bare lives. But we must say that besides the objective conditions which have created the alarmed [?] mood among the Jews in Poland, there were different, additional factors which have created the mood of alarm despair[?]. A number of irresponsible community [last word in Hebrew] workers have taken advantage . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1177.146" end="x">. . . irresponsible what . . . ? [The corresponding words did not sound clear in the actual interview, although they were understandable in part from context on the wire].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1178.532" end="x">. . . community [same word in Hebrew] workers . . . [repeats in German] community workers have taken advantage of the conditions; the objective factors, the alarmed mood which was brought about by the occurrence of the <a class="placename" href="#vothL84">Kielce</a>
+                        <a class="term" href="#vothG_pogrom">pogroms</a> [He often uses the plural for this word], and started to call a special . . . to use a special propaganda—reinforcing the mood of alarm [unrest], so that the Jews should get away. In fact . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1200.140" end="x">..so that the Jews should flee?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1201.195" end="x">..so that the Jews should flee; notwithstanding that at this time no real possibilities for emigration of the Jew are available. It is clear that for every Jew who has chances for emigration, it is proper and timely to . . . to leave [the country]. This view is also shared by the representatives of the Polish government, who have announced that they shall support the aspirations of the Jews to emigrate by legal methods. On the other hand, the Polish government in the interests of the Polish . . . the Jewish masses are against the moods of unrest and against the fact that the Jews should emigrate chaotically without an aim and without legal facilities of emigration. We deal here with a situation that would enhance the sufferings, the deprivations which are being undergone at present, by our brother refugees [?] from Poland, in the German <a class="term" href="#vothG_lager">lagers</a> of the English and American occupation [zones]. That is how the situation in Poland has recently quieted down. There now exists in Poland a Jewish community [last word in Hebrew].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1273.173" end="x">. . . a Jewish what . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1274.269" end="x">[again in Hebrew] . . . a Jewish community . . . [in German/Yiddish] a Jewish community . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1277.101" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1277.384" end="x">. . . of the Jewish masses in Poland. A community of a hundred and thirty to a hundred and forty thousand Jews, who have the greatest desire to remain in Poland, who occupy responsible positions in the economy and government. They work . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1294.854" end="x">Does the Polish government have Jews in the government?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1297.565" end="x">The Polish government has a policy that every Jew who possesses the proper qualifications, and wants to work—wants to undertake to serve the government—offers them all the possibilities to occupy the highest government posts, provided they have the corresponding qualifications. That is why we now have in the Polish government responsible men of state. We have Jews who occupy responsible positions of government, regardless of [the fact] that they are Jews. They occupy their posts because they possess the proper qualifications. Besides, that the Jewish committee has recently succeeded in incorporating the Jews into the heavy industries. In the coal mines—we have many workers nowadays who work [deep] under the ground as miners . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1353.848" end="x">Jewish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1354.583" end="x">Jewish . . . In Upper Silesia and Lower Silesia. All these Jews, especially those who have been incorporated in the industries—who are engaged in productive work—have the desire to remain in Poland, if only because they see that they have in the democratic government of Poland a near and devoted ally, which offers any guaranty that they shall be able to exist both nationally and socially . . . We Jews in Poland are given to the idea that the lot of the Jewish people—the aim of the Jewish people is intertwined with the coming to power of democracy all over the world. When democracy shall come to power, we shall be victorious all over the world. We hope, and we are sure that the tomorrow for the Jewish people will be a safer and happier [?]one; not like it is today. We Jews in Poland desire to take an active part in the reinforcement in the build-up of democracy in Poland because we believe that this is one of the most important steps for the reinforcement of democracy in the whole world. We combine our lot with the victory of democracy in Poland. And so just as we have faith in the victory of democracy in the whole world, so we are sure that democracy will win in Poland and that is how all the economic and objective conditions for the rebuilding of a new, healthy Jewish community in Poland will be brought about.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1459.765" end="x">Now tell me, how many Jews have remained in Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1461.629" end="x">Nowadays we have in Poland a population of a hundred and thirty to a hundred and forty thousand Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1466.629" end="x">That is all . . . all that has remained of the Jews in Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1471.117" end="x">That is what has remained after a part of the Jews have left Poland . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1478.045" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1478.449" end="x">. . . for various countries.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1479.606" end="x">How many . . . How many, do you estimate, have left?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1484.498" end="x">We estimate that during the time of repatriation, within a year . . . about a year, the number who have left comes to about a hundred thousand Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1497.251" end="x">A hundred thousand . . . Now, altogether how many Jews were there in Poland before the war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1502.944" end="x">Before the war there were three and half million Jews in Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1506.721" end="x">That is all?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1507.564" end="x">That was the Jewish population in Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1509.613" end="x">And what was the population in Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1512.215" end="x">Pardon . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1512.938" end="x">. . . the whole population of Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1514.384" end="x">The total population of Poland was about thirty million.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1518.300" end="x">So the Jews constituted about twelve percent.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1521.716" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1522.451" end="x">All right. And what is the Polish population now, according to new estimates?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1527.403" end="x">According to new estimates it is [twenty-] four . . . twenty-two million.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1531.240" end="x">How come?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1532.536" end="x">Because the rest were killed off in Poland, and part are still outside the country. [He refers apparently to the Andres' regiments, and other Poles who were taken to Germany as slave laborers, or fled to Russia and remained there].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1539.596" end="x">Yes. And then a part of Poland has been taken by Russia. Isn't that so?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1544.024" end="x">Yes. But they, according to an accord between Russia and Poland, have repatriated themselves to the regions which form present day Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1555.663" end="x">Now then, at present, with a Polish population of twenty-two million . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1560.765" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1561.187" end="x">. . . and about one hundred and fifty thousand Jews . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1564.169" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1564.380" end="x">. . . the . . . the population of the Jews amounts to less than one percent?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1571.500" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1572.585" end="x">And that has remained of all the Jews in Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1576.181" end="x">That has remained . . . in total there have remained of the Jews percent-wise, . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1579.916" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1580.398" end="x">. . . two percent of the former Jewish population of Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1586.362" end="x">And you say . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1586.904" end="x">Ninety-eight percent of the Polish Jews, those who were in the country during the occupation . . . not counting those who were abroad . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1596.272" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1596.676" end="x">Ninety-eight percent of the Polish Jews who were there during the occupation have been murdered. There remained only—they saved themselves on so-called Arian, Christian papers . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1608.013" end="x">Yes..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1608.435" end="x">. . . These have saved themselves [a few words in Hebrew] in certain numbers [??].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1615.875" end="x">[Pause] Now, Mr. Wilf, that is a very interesting point of view. Of course . . . now, what would you think would be the best solution of the problem for the Jews who are now all over—in the German <a class="term" href="#vothG_lager">lagers</a>, here in France? For example, I understand that last week a whole <a class="term" href="#vothG_yeshiva">Yeshiva</a> [Hebrew theological college] arrived from <a class="placename" href="#vothL82">Lodz</a>, and still more are coming from there. Now what do you think . . . what shall be done with all these people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1653.624" end="x">This is precisely the incorrect approach taken on the part of the social [political] parties [?]. To us it is clear that since there are Jews in Poland who desire to emigrate to their relatives, or who let us say, those who following an ideological view wish to go to the Land of Israel . . . it is clear that such people should be given a chance [to do so]. But the social agencies [?] who deal with this problem should and must first of all establish emigration opportunities—legal human emigration opportunities; not to lead out of Poland the Jews in a state of chaos. More so, since 'objective' facilities are not available for it. To lead them into <a class="term" href="#vothG_lager">lagers</a>, while we are being informed that the Jews in the German <a class="term" href="#vothG_lager">lagers</a> live under very hard economic conditions . . . very hard economic conditions . . . and, in addition to it, there are at present—at this time there are no legal facilities to lead out the Jews anywhere, into some land where they could find a place of [safe] settlement. At present they sit around in the <a class="term" href="#vothG_lager">lager</a> waiting to receive either 'certificates' for the Land of Israel, or emigration permits for other countries. It is clear that this situation—the liquidation of the Jewish <a class="term" href="#vothG_lager">lagers</a> in Germany—will take no less than two years; and the sufferings of the Jews during these two years—the life of the Jews in the <a class="term" href="#vothG_lager">lagers</a>—is obviously [to be] very hard.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1758.523" end="x">[A long pause] Would you really take it unto yourself to tell the Polish Jews who now dwell in Germany, or in France, that it is safe for them . . . for them to return to Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1771.366" end="x">We have already cases at present . . . although these are isolated cases . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1776.547" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1777.252" end="x">Very few cases, but there are cases where Jews are returning to Poland. Because, as I have already stated, if there are Jews who consider that there is no safety for them to live in Poland, or who want to leave for other reasons, it is clear that for such reasons they will have a chance to leave. Because the Polish government does not impose obstructions against departure. But it seems clear that since there are no proper conditions to live in the <a class="term" href="#vothG_lager">lagers</a> of Germany, that it would be more rational, logical, to remain in Poland—to make contact with relatives in America, in <a class="term" href="#vothG_canada">Canada</a>, [or] in other countries—to obtain immigration permits, and to jorney directly from Poland to their relatives and not to go through with one of the most horrible interludes as we picture to ourselves the <a class="term" href="#vothG_lager">lagers</a> of Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1838.856" end="x">[Pause] Are there some other instances that you would like to describe? You say that the Jews are active in other things. Have the Jewish professors returned to the University of <a class="placename" href="#vothL79">Warsaw</a>—to the other universities?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1855.212" end="x">What concerns the Jewish intelligentsia in Poland . . . most of them were murdered during the time of the occupation. But those who are at present in Poland—they continue working in their previous positions.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1876.730" end="x">[Pause] Anything else you want to talk about? About the whole situation? Do you have anything to add?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1886.941" end="x">I just want to make this remark . . . that we, the Jews in Poland, the Jewish committees in Poland, devote ourselves since recently, not only to the great activities of relief, but direct especially our attention [efforts] toward the goal that every Jew should be able to rebuild his former workshop . . . endeavor to create all the conditions so that the Jews will be able to work productively—that they should rebuild in time [?] the Jewish life in Poland—build-up again the Jewish community of Poland. Cultural institutions are being created nowadays in Poland. We have now in Poland a union of Jewish writers [or a Jewish Literary Society]; we have two Jewish theaters; and we are endeavoring to reconstruct not only the Jewish economic life of Poland but we are endeavoring to build up the cultural life. We are endeavoring that this small Jewish community in Poland should again be a substantial Jewish community like before the war, and we endeavor that the Jewish Yishuv in Poland . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1962.491" end="x">What is a 'Jewish Yishuv?' [He had used the term all the time during the interview and I understood him well from the context. However, I asked the question just to make sure the meaning of the term.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1963.726" end="x">The Jewish community [commonwealth] in Poland . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1965.503" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="1965.891" end="x">. . . that just as they have taken an active part during the time of the war with the German invaders; just as the Jews have taken an active part during the war on all fronts, be it in the war at the front, be it with the <a class="term" href="#vothG_partisans">partisans</a>, or in preparation of revolts. Just in the same manner, we Jews who are today in Poland desire to take part in the building up of a new Polish militia [army] on the basis of a new democratic principle. We desire to have a great part in the strengthening of democracy.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2004.965" end="x">Now tell me this, something about Russia. You told me that you have worked as a lawyer. Did the Russians permit one to practice privately . . . privately as a lawyer? And you were getting privately paid by the people for your services?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2022.174" end="x">The legal profession in Russia forms a guild . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2026.783" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2027.699" end="x">. . . a 'collective' [a cooperative].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2029.428" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2030.073" end="x">Everyone who has the proper qualification, joins the collective in the corresponding city and becomes a member of the legal profession . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2042.043" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2042.808" end="x">. . . which renders legal services to the population—appears at trials and deals with all Jewish problems [corrects himself], all Juridicial problems.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2050.639" end="x">Juridicial . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2052.447" end="x">The salary received by the lawyer in Russia is a percent of that what the client pays to the . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2060.622" end="x">. . . to the cooperative?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2061.839" end="x">. . . to the cooperative.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2062.755" end="x">Oh. Is the client able to choose which lawyer he wants?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2065.869" end="x">The client comes to the juridicial cooperative and demands specifically this or the other lawyer.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2073.490" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2074.074" end="x">In this way lawyers who have a greater juridicial prestige, greater juridicial abilities . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2081.454" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2081.737" end="x">. . . education . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2082.159" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2082.743" end="x">. . . have the right to take advantage of the better opportunities, and have a greater legal practice than other lawyers who are 'weaker' and . . . and [word not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2093.978" end="x">Could you tell me about some interesting cases that you had during your whole period of [legal] practice?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2099.400" end="x">During the time that I spent in Russia I participated very often, and that in spite of the fact that I came from Poland . . . So, in time, since I had been working, I was admitted to the trials against those who acted [?] during the war against the Russian government.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2122.514" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2122.755" end="x">Those were the so-called counter-revolutionary trials.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2126.183" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2126.978" end="x">And I was established as a lawyer in spite of the fact that I took part in the so-called counter-revolutionary trials . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2135.231" end="x">You defended them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2136.225" end="x">. . . I defended [them]. The government—the Soviet government—gives anyone who is indicted [and] that is already provided for in the Constitution, the right to have a defender [a lawyer, legal council]. He has a right to choose council; and if he has no council the government provides one. And so it happened often, that I had a chance to represent such [people] in counter-revolutionary trials; and I must affirm that they had all the rights of defense just like in any other country.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2171.324" end="x">Did you ever win [such] a case?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2173.113" end="x">There were cases when there were indicted citizens—Soviet citizens, also Polish citizens -for counter-revolutionary agitation and propaganda. And as a consequence [in course of] the trial, it was often revealed that the testimonies of the witnesses were not correct and there were often cases that the people were set free.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2197.365" end="x">That was not a military court?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2199.715" end="x">No. Such special general courts which handled all other cases; and they also decide the cases of the counter-revolutionary activities.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2210.028" end="x">Did they have a jury? [Repeats the term in Russian].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2213.131" end="x">There in Russia it is arranged that there is a president [presiding judge] who is elected, and in addition there are peoples' representatives.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2223.120" end="x">How many?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2223.994" end="x">Two.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2225.018" end="x">And they handle [?] the trial?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Jacob Wilf</span>:
+            </span>
+            <span class="utterance" who="#wilfJ" start="2228.602" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2230.168" end="x">Thank you very much, Mr. Wilf. This was a special report—a special message [Wire apparently terminates in the middle of the sentence].</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Dagmar Platt</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC26">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC26" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Danzig<br /><span class="alt">(Danzig-Burggraben)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Stutthof
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Gdańsk, Poland<br />
+                            </p>
+                            <div>
+                Concentration camp located in the Kokoszki quarter of the city of Danzig.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC26 = new OpenLayers.Map('map_vothC26', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC26.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC26.addLayer(markers);
+map_id_vothC26.zoomToMaxExtent();
+
+                        var lat_1 = 54.366700;
+                        var lon_1 = 18.683300;
+                        var vothC26 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC26_icon = new OpenLayers.Marker(vothC26);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC26);
+markers.addMarker(vothC26_icon);
+    addMarker(vothC26, popupClass, "", true, false, false);
+    map_id_vothC26.setCenter(vothC26, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_2 = 48.866700;
+                        var lon_2 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL81">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL81" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Katowice, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL81 = new OpenLayers.Map('map_vothL81', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL81.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL81.addLayer(markers);
+map_id_vothL81.zoomToMaxExtent();
+
+                        var lat_3 = 50.266700;
+                        var lon_3 = 19.016700;
+                        var vothL81 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL81_icon = new OpenLayers.Marker(vothL81);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL81);
+markers.addMarker(vothL81_icon);
+    addMarker(vothL81, popupClass, "", true, false, false);
+    map_id_vothL81.setCenter(vothL81, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL123">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL123" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            L&#39;viv, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL123 = new OpenLayers.Map('map_vothL123', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL123.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL123.addLayer(markers);
+map_id_vothL123.zoomToMaxExtent();
+
+                        var lat_4 = 49.833300;
+                        var lon_4 = 24.000000;
+                        var vothL123 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL123_icon = new OpenLayers.Marker(vothL123);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL123);
+markers.addMarker(vothL123_icon);
+    addMarker(vothL123, popupClass, "", true, false, false);
+    map_id_vothL123.setCenter(vothL123, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL258">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL258" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Gdynia, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL258 = new OpenLayers.Map('map_vothL258', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL258.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL258.addLayer(markers);
+map_id_vothL258.zoomToMaxExtent();
+
+                        var lat_5 = 54.516700;
+                        var lon_5 = 18.500000;
+                        var vothL258 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL258_icon = new OpenLayers.Marker(vothL258);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL258);
+markers.addMarker(vothL258_icon);
+    addMarker(vothL258, popupClass, "", true, false, false);
+    map_id_vothL258.setCenter(vothL258, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL186">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL186" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Gdańsk, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL186 = new OpenLayers.Map('map_vothL186', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL186.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL186.addLayer(markers);
+map_id_vothL186.zoomToMaxExtent();
+
+                        var lat_6 = 54.366700;
+                        var lon_6 = 18.683300;
+                        var vothL186 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL186_icon = new OpenLayers.Marker(vothL186);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL186);
+markers.addMarker(vothL186_icon);
+    addMarker(vothL186, popupClass, "", true, false, false);
+    map_id_vothL186.setCenter(vothL186, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL135">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL135" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Krak&#195;w, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL135 = new OpenLayers.Map('map_vothL135', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL135.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL135.addLayer(markers);
+map_id_vothL135.zoomToMaxExtent();
+
+                        var lat_7 = 50.050000;
+                        var lon_7 = 19.916700;
+                        var vothL135 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL135_icon = new OpenLayers.Marker(vothL135);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL135);
+markers.addMarker(vothL135_icon);
+    addMarker(vothL135, popupClass, "", true, false, false);
+    map_id_vothL135.setCenter(vothL135, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL587">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL587" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Mary, Turkmenistan
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL587 = new OpenLayers.Map('map_vothL587', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL587.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL587.addLayer(markers);
+map_id_vothL587.zoomToMaxExtent();
+
+                        var lat_8 = 37.700000;
+                        var lon_8 = 61.900000;
+                        var vothL587 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL587_icon = new OpenLayers.Marker(vothL587);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL587);
+markers.addMarker(vothL587_icon);
+    addMarker(vothL587, popupClass, "", true, false, false);
+    map_id_vothL587.setCenter(vothL587, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL84">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL84" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kielce, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL84 = new OpenLayers.Map('map_vothL84', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL84.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL84.addLayer(markers);
+map_id_vothL84.zoomToMaxExtent();
+
+                        var lat_9 = 50.850000;
+                        var lon_9 = 20.650000;
+                        var vothL84 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL84_icon = new OpenLayers.Marker(vothL84);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL84);
+markers.addMarker(vothL84_icon);
+    addMarker(vothL84, popupClass, "", true, false, false);
+    map_id_vothL84.setCenter(vothL84, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL403">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL403" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Bielsko-Biała, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL403 = new OpenLayers.Map('map_vothL403', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL403.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL403.addLayer(markers);
+map_id_vothL403.zoomToMaxExtent();
+
+                        var lat_10 = 49.833300;
+                        var lon_10 = 19.000000;
+                        var vothL403 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL403_icon = new OpenLayers.Marker(vothL403);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL403);
+markers.addMarker(vothL403_icon);
+    addMarker(vothL403, popupClass, "", true, false, false);
+    map_id_vothL403.setCenter(vothL403, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL372">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL372" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Bytom, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL372 = new OpenLayers.Map('map_vothL372', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL372.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL372.addLayer(markers);
+map_id_vothL372.zoomToMaxExtent();
+
+                        var lat_11 = 50.350000;
+                        var lon_11 = 18.966700;
+                        var vothL372 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL372_icon = new OpenLayers.Marker(vothL372);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL372);
+markers.addMarker(vothL372_icon);
+    addMarker(vothL372, popupClass, "", true, false, false);
+    map_id_vothL372.setCenter(vothL372, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL79">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL79" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Warsaw, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL79 = new OpenLayers.Map('map_vothL79', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL79.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL79.addLayer(markers);
+map_id_vothL79.zoomToMaxExtent();
+
+                        var lat_12 = 52.250000;
+                        var lon_12 = 21.000000;
+                        var vothL79 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL79_icon = new OpenLayers.Marker(vothL79);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL79);
+markers.addMarker(vothL79_icon);
+    addMarker(vothL79, popupClass, "", true, false, false);
+    map_id_vothL79.setCenter(vothL79, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL82">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL82" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            L&#195;dź, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL82 = new OpenLayers.Map('map_vothL82', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL82.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL82.addLayer(markers);
+map_id_vothL82.zoomToMaxExtent();
+
+                        var lat_13 = 51.816700;
+                        var lon_13 = 19.466700;
+                        var vothL82 = new OpenLayers.LonLat(lon_13, lat_13);
+            vothL82_icon = new OpenLayers.Marker(vothL82);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL82);
+markers.addMarker(vothL82_icon);
+    addMarker(vothL82, popupClass, "", true, false, false);
+    map_id_vothL82.setCenter(vothL82, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ort">
+                <a name="vothG_ort"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ORT.
+                </span>
+                <span class="definition">
+                    Acronym for the Russian, Society for Handicrafts and Agricultural Work. Founded in 1880 by Russian Jews, its goal was to promote and develop vocational training in skilled trades and agriculture among Jews. Following the Holocaust, ORT ran programs in Displaced Persons camps and in western European countries, especially in France.
+                </span>
+            </li>
+                        <li class="vothG_pogrom">
+                <a name="vothG_pogrom"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    pogrom.
+                </span>
+                <span class="definition">
+                    A form of riot or mob violence directed against a particular group, whether ethnic, religious, or other, and characterized by the killing and destruction of their homes, businesses, and religious centers. The term was originally used to denote extensive violence against Jews.
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_ajdc">
+                <a name="vothG_ajdc"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    American Joint Distribution Committee.
+                </span>
+                <span class="definition">
+                    Founded in 1914, the American Jewish Joint Distribution Committee, often referred to as the “Joint,” was a major relief and rehabilitation agency before, during, and after the Holocaust. The JDC’s operations were the main manner in which American Jewry provided aid to its fellow European Jews.
+                </span>
+            </li>
+                        <li class="vothG_action">
+                <a name="vothG_action"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    action.
+                </span>
+                <span class="definition">
+                    Episodes of coordinated violence against Jewish communities, including the rounding up of Jews for deportation to ghettos, concentration camps, or killing centers.
+                </span>
+            </li>
+                        <li class="vothG_yeshiva">
+                <a name="vothG_yeshiva"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    yeshiva.
+                </span>
+                <span class="definition">
+                    An institution unique to classical Judaism for study of its traditional, central texts. These comprise Torah study, the study of Rabbinic literature (especially the Talmud), Responsa for Jewish observance, and alternatively ethical (Mussar) or mystical (Hasidic philosophy) texts.
+                </span>
+            </li>
+                        <li class="vothG_canada">
+                <a name="vothG_canada"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Canada.
+                </span>
+                <span class="definition">
+                    An area of Birkenau where the possessions of newly arrived inmates were stored. It was so named because Canada was thought to be a country of great riches. The items were sorted and sent back to Germany, although some were stolen by SS guards.
+                </span>
+            </li>
+                        <li class="vothG_partisans">
+                <a name="vothG_partisans"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    partisans.
+                </span>
+                <span class="definition">
+                    Paramilitary forces engaged behind the front lines during World War II.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

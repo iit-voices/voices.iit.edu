@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Bronė Skudaikienė; September 21, 1946; München, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-bron-skudaikien-september-21-1946-mnchen-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Bronė Skudaikienė; September 21, 1946; München, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=skudaikieneB">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=skudaikieneB&display=skudaikieneB_de_lt_ru">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=skudaikieneB&display=skudaikieneB_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=skudaikieneB">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1.324" end="x">[In English] Munich, September 21st, 1946. At the Baltic camp, populated by Lithuanians, Latvians and Estonians. The Interview is Ms. Bronė Skudaikienė, widow who claims that her husband was killed in Lithuania at the time of the Sowjet. She is 36 years old and has here 2 children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="23.260" end="x">[In German] Wie alt sind die Kinder? Nochmal.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="29.227" end="x">[In English] One is 14 years old, und der andere six. Her German causes her difficulty. We will have interview probably part in German, part in Lithuanian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="42.054" end="x">[In German] Also, Frau Skudaykina, sagen Sie mir mal, wo waren Sie, wenn die Sowjets gekommen sind nach Litauen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="51.503" end="x">Ich war in Litauen. In . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="54.480" end="x">Welche Stadt?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="55.873" end="x">Žemaičių Kalvarija.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="57.588" end="x">Žemaičių Kalvarija? Wie weit ist das von Wilna?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="60.236" end="x">Von Wilna? Von Wilna ist das 200.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="61.982" end="x">Ungefähr 200 km?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="63.586" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="64.107" end="x">Und was haben Sie dort gemacht?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="65.711" end="x">Ich war Molkereibuchhalter und mein Mann war Molkereileiter.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="69.993" end="x">Molkerei—Molkereibuchhalter und der Mann war Molkerei . . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="73.101" end="x">Molkereileiter</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="75.298" end="x">Was hat Ihr Mann gelernt?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="77.985" end="x">Ich .. alles, alles machen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="80.723" end="x">Ja, ist er zur Schule gegangen, bevor . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="83.281" end="x">Ja</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="83.952" end="x">War er Agronom?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="85.065" end="x">Nein, nicht Agronom. Alles Molkerei machen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="88.074" end="x">Und was war das? Ein großes Gut? Wo war er in der Molkerei?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="96.048" end="x">Alles arbeiten.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="97.162" end="x">[In English/German] Ja. Alright.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="98.284" end="x">[In Russian] Ну, говорите по-литовски.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="99.669" end="x">[In German] So, sprechen Sie, erzählen Sie mir einfach, was hat passiert, wenn die Russen sind gekommen nach nach Litauen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="105.816" end="x">[In Lithuanian] Mano vyras dirbo, reiškia, pienininku, kaip visuomet, aš dirbau irgi pieninėj, kada bolševikai atėjo, mano vyras turėjo apykinkėj labai gerą pasitikėjimą terp ūkininkų, labai gerą pasitikėjimą terp ūkininkų, tas labai nepatiko bolševikams, mano bolševikas . . . kartu su bolševikais, mano vyras kartu su bolševikais nėjo išvien, tas labai nepatiko bolševikams, jie mano vyrą areštavo, areštavo keturiasdešimts pirmais metais sausio dvyliktą dieną. Uždarė Telšių kalėjime ir laikė ligi prasidėjo su vokiečiais karas. Karui prasidėsiant visus politiniu kaliniuss, jų tarpe ir mano vyrą, septyniasdešims tris vyrus žiauriausiu būdu nužudė Rainių miškelyje. Pirmiausia, buvo labai žiaurus jųjų suėmimas, sudėta į mašinas, ma . . . paleido motorus, kad negirdėtų jų riksmo, buvo surišti burnos, per burnas buvo pažaboti, rankos taip pat surištos, ir tuomet nuvežė į miškelį, tenai iškasė keturias duobes, juos žiauriausiu būdu nužudė. Būtent jie buvo labai žiauriai plikinami, paleistos elektrinės mašinos, paskui virinami kopūstai ir dedami jiems ant burnos . . . ir . . . buvo net išlupamos akys, nupjaustomi liežuviai, nupjaustomos ausys, ir tada jie buvo visi taip žiauriai nukankinti, sumušti, tiesiog suvirintos odos lūpuose, nuo rankų, nuo veidų, kūnas visas buvo kruvinas, ir surištomis rankomis, ir pažaboti jie buvo taip nužudyti, ir tuomet už . . . suversti visi į duobę ir užkasti. Ir tuomet jie visi bolševikai pabėgo iš Lietuvos. Praėjus keturioms dienoms tiktai tuomet reiškia rado partizanai tas duobes, buvo labai vis įtartina, ir atidarę duobes rado visus politkalinius. Tuomet juos visus iškasė, suguldė lauke, po tam susirinko visi ž . . . pažįstami, giminės, ir juos visus palaidojo labai iškilmingai, Telšių . . . Telšiuose tokių iškilmių ir tokio . . . tokios baisios eisenos turbūt labai retai kas yra matę.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="249.998" end="x">[In Russian] Ну, а ес . . . теперь расскажите мне . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="255.926" end="x">[In German] Ah, jetzt erzählen Sie mir bitte, was hat Ihnen passiert und wie, wenn die Deutschen gekommen sind nach Litauen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="263.668" end="x">[In Lithuanian] Kada vokiečiai atėjo, taip pat irgi nebuvo labai, ba ūkininkams ir labai sunku, dėl to kad . . . dėl to, kad buvo labai didelės prievolės, rεikėjo ūkininkams statyti labai daug pienas, pienines, ke . . . mėsą, taip pat viskam, ir paskutiniu laiku, kada matė, kad vokiečiams labai blogai sekasi, tada labai gaudė vyrus, vežti į darbus į Vokietiją. Atvažiuodavo žmonės į turgų, tai apsupdavo turgų, paimdavo vietos policija, karuomenė, ir visus visus vyrus sugaudydavo sodydavo į mašinas ir veždavo į Vokietiją. Veždavo visus darbams. Taip kad atskirdavo vyrus nuo žmonų, tėvus nuo vaikų.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="311.536" end="x">[In Russian] Как вы сюда . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="314.494" end="x">[In German] Wie sind Sie nach München gekommen? Litauisch.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="320.401" end="x">[In Lithuanian] Aš į Miuncheną atvažiavau keturiasdešimt penktais metais gegužės dvidešims trečią dieną.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="329.377" end="x">[In German] Haben Sie Verwandte in Amerika?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="332.184" end="x">[In Lithuanian] Turiu . . . Mamos brolis ir vyro brolis yra . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="335.795" end="x">[In German] Haben Sie schon Afidavit bekommen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="337.571" end="x">[In Lithuanian] Ne</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="338.423" end="x">Wollen Sie nach Amerika gehen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="340.147" end="x">[In Lithuanian] Jei galima, visuomet</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="341.802" end="x">[In German] Haben Sie geschrieben dort? Haben sie die Adresse?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="343.939" end="x">[In Lithuanian] Aš rašiau konsului paieškojimą, bet jokio atsakymo negavau.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="348.853" end="x">[In German] Haben Sie die Adresse?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="351.059" end="x">Nein, in Konsulat ich geschicken. Sofia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="354.920" end="x">Ach so, sie haben geschicken nach Sofia. Und was denken Sie, wie lange werden Sie hier sein?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="362.963" end="x">Ich weiß nicht.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="365.521" end="x">Und was machen Ihre Kinder hier?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="367.366" end="x">Gehen Schule.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="368.880" end="x">Gehen zur Schule?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="369.701" end="x">Zur Schule.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="370.424" end="x">Litauische Schule?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="371.125" end="x">Litauische Schule.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="372.359" end="x">Aha, und was machen Sie selbst?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="373.632" end="x">Ich gehe in . . . Schneiderin machen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="376.770" end="x">Sie sind Schneiderin, oder Sie lernen Schneiderin?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="378.516" end="x">Nein, ich jetzt ausgelernt. Und jetzt arbeiten.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="382.888" end="x">Für wen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="383.821" end="x">Der Lagerschneider.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="385.816" end="x">Für die Lagerschneiderei. Danke sehr, Frau Skudaykina. Das ist sehr interessant. Es tut mir leid, dass ich nicht alles verstehe, aber hier ist es aufgeschrieben und wir werden es dort übersetzen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Bronė Skudaikienė</span>:
+            </span>
+            <span class="utterance" who="#skudaikieneB" start="397.560" end="x">Ja, danke.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="399.035" end="x">[In English] Munich, September the 21st of 1946. This concludes the short interview with B. Skudaykina, who insists on talking only Lithuanian and unfortunately very difficult for me to steer this conversation. It will be necessary that a competent Lithuanian anthropologist or psychologist really come over and really interview these people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="424.901" end="x">This concluded Spool 9-143A and 9-143B. The last part, 9-143C, the interview with Father Kharchenko, is on a separate spool. This spool contains two interviews, one with Mr. Sevalkaitis or Suvalkaitis, and the other, 9-143B, is Bronė Skudaikienė. Chicago, October the 7th, 1950. Boder.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription (German)
+                            </i>: 
+            <span class="Transcription (German)">
+                <name>S. Peters</name>, <name>P. Gaensicke</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Transcription (Lithuanian)
+                            </i>: 
+            <span class="Transcription (Lithuanian)">
+                <name>L. Paulauskaite</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Transcription (Russian)
+                            </i>: 
+            <span class="Transcription (Russian)">
+                
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation (German)
+                            </i>: 
+            <span class="English Translation (German)">
+                <name>S. Peters</name>, <name>P. Gaensicke</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation (Lithuanian)
+                            </i>: 
+            <span class="English Translation (Lithuanian)">
+                <name>L. Paulauskaite</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation (Russian)
+                            </i>: 
+            <span class="English Translation (Russian)">
+                
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_1 = 48.133300;
+                        var lon_1 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL154">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL154" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Zemaičių Kalvarija, Lithuania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL154 = new OpenLayers.Map('map_vothL154', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL154.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL154.addLayer(markers);
+map_id_vothL154.zoomToMaxExtent();
+
+                        var lat_2 = 56.110000;
+                        var lon_2 = 22.010000;
+                        var vothL154 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL154_icon = new OpenLayers.Marker(vothL154);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL154);
+markers.addMarker(vothL154_icon);
+    addMarker(vothL154, popupClass, "", true, false, false);
+    map_id_vothL154.setCenter(vothL154, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL74">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL74" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Vilnius, Lithuania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL74 = new OpenLayers.Map('map_vothL74', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL74.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL74.addLayer(markers);
+map_id_vothL74.zoomToMaxExtent();
+
+                        var lat_3 = 54.683300;
+                        var lon_3 = 25.316700;
+                        var vothL74 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL74_icon = new OpenLayers.Marker(vothL74);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL74);
+markers.addMarker(vothL74_icon);
+    addMarker(vothL74, popupClass, "", true, false, false);
+    map_id_vothL74.setCenter(vothL74, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL165">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL165" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Tel&#197;iai, Lithuania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL165 = new OpenLayers.Map('map_vothL165', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL165.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL165.addLayer(markers);
+map_id_vothL165.zoomToMaxExtent();
+
+                        var lat_4 = 55.966700;
+                        var lon_4 = 22.266700;
+                        var vothL165 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL165_icon = new OpenLayers.Marker(vothL165);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL165);
+markers.addMarker(vothL165_icon);
+    addMarker(vothL165, popupClass, "", true, false, false);
+    map_id_vothL165.setCenter(vothL165, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL578">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL578" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Rainiai, Lithuania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL578 = new OpenLayers.Map('map_vothL578', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL578.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL578.addLayer(markers);
+map_id_vothL578.zoomToMaxExtent();
+
+                        var lat_5 = 55.966667;
+                        var lon_5 = 22.300000;
+                        var vothL578 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL578_icon = new OpenLayers.Marker(vothL578);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL578);
+markers.addMarker(vothL578_icon);
+    addMarker(vothL578, popupClass, "", true, false, false);
+    map_id_vothL578.setCenter(vothL578, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL256">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL256" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chicago, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL256 = new OpenLayers.Map('map_vothL256', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL256.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL256.addLayer(markers);
+map_id_vothL256.zoomToMaxExtent();
+
+                        var lat_6 = 41.850000;
+                        var lon_6 = -87.650000;
+                        var vothL256 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL256_icon = new OpenLayers.Marker(vothL256);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL256);
+markers.addMarker(vothL256_icon);
+    addMarker(vothL256, popupClass, "", true, false, false);
+    map_id_vothL256.setCenter(vothL256, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_partisans">
+                <a name="vothG_partisans"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    partisans.
+                </span>
+                <span class="definition">
+                    Paramilitary forces engaged behind the front lines during World War II.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

@@ -1,0 +1,2740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Dimitri Odinets; October 4, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-dimitri-odinets-october-4-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Dimitri Odinets; October 4, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=odinetsD">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=odinetsD&display=odinetsD_ru">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=odinetsD&display=odinetsD_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=odinetsD">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=odinetsD">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="6.139" end="x">[In English] <a class="placename" href="#vothL13">Paris</a>, September the 4th, 1950 . . . excuse me . . . <a class="placename" href="#vothL13">Paris</a>, October the 4th, 1946, at Grand Hotel. This is apparently the last interview in <a class="placename" href="#vothL13">Paris</a>. The interviewee is Professor Dimitri Michailovitch Odinets, ah . . . a professor of history, of Russian history, and educator, a former director of . . . ah . . . gymnasium, a professor of several universities and at one time a member of the cabinet of the Ukrainian regional government. He will talk to us in Russian. [Pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="58.735" end="x">[In Russian] Dimitri Michailovitch kindly tell us first of all, briefly, your so to speak, official occupations of your official career, let us say beginning with the year 1912. Only, so to speak, in brief factual remarks. Let us begin with the time when we both worked together at the Dimitriev Gymnasium in <a class="placename" href="#vothL453">Petersburg</a> on the Novski Prospect. And you were at that time our professor of the Psycho-Neurological Institute as well, isn't that so?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="94.938" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="95.582" end="x">How old are you now, 62?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="98.486" end="x">Sixty-two years.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="99.953" end="x">Sixty-two years. Now then, just in a few words: let's begin with 1913 and proceed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="106.271" end="x">Beginning with the year 1912 I was at first a teacher in a number of gymnasiums in <a class="placename" href="#vothL453">Petersburg</a>, afterwards the director of the gymnasium in the name of Stolpzow,—a gymnasium for boys, which was fully accredited. I also was [at the same time] a professor of the Psycho-Neurological Institute. Also professor of the Raev Superior courses of Women. Since the time of the February Revolution, 1917, I was commissioned by the Central Interim—protem government to go to <a class="placename" href="#vothL240">Kiev</a> to become the minister [envoy] on all Russian affairs, that is to defend the Russian people from possible Ukrainian chauvinism.<note n="1"><span class="note">In July 1917, the Provisional government for which Professor Odinets worked passed a law stating that national minorities, such as the Ukrainians, were recognized as a having a right to national autonomy. Thus Professor Odinets was concerned above all, as he said, with combating right wing Ukrainian chauvinism, which would have led to the formation of a separate state.</span><sup><a href="#note_1">1</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="168.924" end="x">Proceed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="172.984" end="x">. . . In my role as minister of all great Russian affairs I remained for about a year and resigned after election of Skoropadsky as Hetman of the Ukraine—a man of definitely rightist and reactionary views.<note n="2"><span class="note">The Skoropadsky government, which had been sponsored by the German occupiers of Ukraine during World War I, fell with the defeat of Germany on November 11, 1918. Following this, rival groups of various political persuasions struggled for power. During this time, some 100,000 Ukrainian Jews were murdered in pogroms by Ukrainian nationalist extremists, White Army anti-communist forces, and Poles.</span><sup><a href="#note_2">2</a></sup></note> After this I was elected chairman of the Union for the Rebirth of Russia of its Southern committe. At this post I lived through in <a class="placename" href="#vothL240">Kiev</a> about twelve revolutions, one government succeeding the other. Finally at the end of 1920 at the approach of the Bolsheviks to <a class="placename" href="#vothL240">Kiev</a> I left on foot from <a class="placename" href="#vothL240">Kiev</a> to <a class="placename" href="#vothL311">Odessa</a>, on foot because then the railroads did not function. And finally in 1920 at the beginning of the year, after having become a machine gunner trained in an English machine gunners' school I left <a class="placename" href="#vothL311">Odessa</a> as a member of a military contingent with the purpose to fight our way through abroad. From our division of about 3,500 men about 36 remained alive.<note n="3"><span class="note"> By the end of 1920, the Red Army fully controlled southern Russian, including Ukraine.</span><sup><a href="#note_3">3</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="266.287" end="x">Through what kind of armies did you have to break through?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="268.411" end="x">. . . Through the Bolshevik armies . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="270.535" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="271.003" end="x">. . . Approximately 36 men. In Rumania I was interned but in about a month or two together with my compatriots, who were also interned we were released and found ourselves in Serbia. From Serbia, where I was for some time director of a gymnasium of the Russians in <a class="placename" href="#vothL551">Belgrade</a>, I went over to <a class="placename" href="#vothL79">Warsaw</a> and from <a class="placename" href="#vothL79">Warsaw</a> I finally got to <a class="placename" href="#vothL13">Paris</a>, where I remained all this time. My activities in <a class="placename" href="#vothL13">Paris</a> consisted of the following: together with my friend Dimitriev, we founded in <a class="placename" href="#vothL13">Paris</a> the "Russian Peoples University."<note n="4"><span class="note">In the aftermath of the defeat of anti-communist forces, some one million refugees fled from Russia. Several hundred thousand settled in France, among them Professor Odinets, who like others, sought to preserve his Russian identity.</span><sup><a href="#note_4">4</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="319.465" end="x">It was the same Dimitriev who took over at one time the so-called trusteeship of the Stolpzow gymnasium?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="328.418" end="x">. . . The very same Dimitriev who was as active as he was in <a class="placename" href="#vothL453">Petersburg</a> . . . besides this I was here chairman of the Russian Pedagogical Society in France, also professor and inspector of the Franco-Russian Institute which we founded, i.e. of the department of law. I was also the general secretary of the Russian Academic Union in France in which capacity I still remain. I have written several books and that seems to be all.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="366.009" end="x">All right, Dimitri Michailovitch, what are you at present—the editor?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="371.336" end="x">I am the editor of the paper "Sovietsky Patriot". A member of the Central Committee of the "Union of Soviet Patriots". I am continuing to be on the executive committee of the Russian Academic Union. Yes, I forgot, I am also chairman of the board of the Turgenev Library, which was removed and confiscated by the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="397.623" end="x">. . . In speaking of the Turgenev Library tell me something about it and it what state are its affairs?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="403.920" end="x">The Turgenev Library was founded with direct participation of the famous Russian writer, Ivan Sergeiewitch Turgenev in 1876, gradually the library has grown in the number of books . . .<note n="5"><span class="note">Ivan Turgenev (1818-1883) was master Russian novelist as well as playwright and poet. He acquired an international reputation as a result of his brilliant portrayals of Russian life. During the 1870s Turgenev lived in Paris where he was an esteemed unofficial Russian cultural ambassador.</span><sup><a href="#note_5">5</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="417.545" end="x">The library not only contained Turgenev's books, it was a library in general?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="426.551" end="x">It was a general library. A public library, which was growing gradually and has become finally a very valuable depository of books. All outstanding French scholars [one word not clear] were making use of the library. It was also attended without exception by all Russian emigrees of the time. Among the renowned emigrees scholars [who frequented the library] was also Lenin during his stay in <a class="placename" href="#vothL13">Paris</a>. The administrative staff of the library was chosen by elections because the library belonged to all subscribers and for the last three years of its existence I was the elected chairman of the board. The city of <a class="placename" href="#vothL13">Paris</a>, recognizing the value of the library, donated magnificent quarters [for the library]. As to the books:—before the war there were 110,000 books by titles, that means that there were a great many more volumes. When the Germans appeared in <a class="placename" href="#vothL13">Paris</a> a title was considered equivalent to an author.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="501.782" end="x">Yes, yes, explain.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="505.102" end="x">The title means the author, for instance: Gogols's whole collection of his writings was considered one title, but volumes there are many—twenty-four.<note n="6"><span class="note">Nikolai Gogol (1809-1852) was a Russian novelist and dramatist whose works were characterized by stylistic richness and sympathetic realism. His writings served as a model for later
+                        Russian writers and helped establish the great tradition of the Russian novel.</span><sup><a href="#note_6">6</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="516.927" end="x">Yes, yes, I just recall "Niva" [Footnote: A famous weekly magazine of pre-revolutionary times in Russia, which gave its readers every year a premium of twelve or twenty-four volumes of classical literature.] which was publishing the authors in twenty-four volumes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="525.313" end="x">So the Turgenev library had become the richest Russian library abroad, with references to old issues, not Soviet publications . . . but older books. After the Germans had besieged <a class="placename" href="#vothL13">Paris</a>, yet before the war with Soviet Russia, they offered me, as the chairman of the administration, on behalf of the German government . . .<note n="7"><span class="note">The Germans entered Paris on June 14, 1940. The war with the Soviet Union began on June 22, 1941.</span><sup><a href="#note_7">7</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="555.774" end="x">The Germans offered?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="556.524" end="x">Yes, the Germans offered in behalf of the [German] government, to buy the library, claiming that . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="563.991" end="x">On behalf of the German government?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="565.907" end="x">On behalf of the German government.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="568.454" end="x">What did they want it for?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="571.047" end="x">The Representative of Rosenfeld . . . Pardon me, <a class="placename" href="#vothL552">Rosenberg</a> who was coming to our library and had become to know it. He said that the library was a very interesting one and for this reason the German government would like to purchase it. I think they had in view to transfer the library to the "Rosenberg East European Institute."<note n="8"><span class="note">Alfred Rosenberg (1893-1946) was the Nazis' leading ideologist. His thinking, incorporating racism, occultism, German neo-paganism, anti-Semitism and anti-Communism, was contained in his influential 1930 work Der Mythus des zwanzigsten Jahrhunderts (The Myth of the Twentieth Century). From 1933-1945, he headed the Nazi party's foreign affairs department. After the fall of France, the so-called Operational Staff Rosenberg confiscated French cultural treasures.</span><sup><a href="#note_8">8</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="602.066" end="x">H—um . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="603.504" end="x">When I refused to sell the library to the Germans, in view of the fact that it did not belong to me and, also, because I did not want to do it, the library was liquidated the following day by the Germans. Part of the books we succeeded to save, but nine/tenths of the books were sent over to Germany, where the library still is at present. Only lately we succeeded in tracing it in Germany in the Soviet Occupied Zone, and we hope that with the help of our representative, we may be able to get back the library or what was left of it. But, meanwhile, it is a question [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="654.857" end="x">You will get it back to <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="656.169" end="x">Yes, to <a class="placename" href="#vothL13">Paris</a>. But as yet, the problem has not been solved.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="660.261" end="x">Well, let us begin again. Be so kind and inform us . . . I know that you are an historian, but I collect primarily the experience of eye witnesses.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="679.369" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="680.302" end="x">Tell me please, what happened to you personally and to your family, of course, evaluating the events—you could not do it otherwise, beginning with the moment of the German invasion in Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="700.733" end="x">At the moment of the German invasion in Poland, [a few words not clear] we Russians residing first in <a class="placename" href="#vothL13">Paris</a>, although at the time Soviet Russia was in alliance with Germany, understood clearly that war between Russia and Germany was imminent, that sooner or later the Germans will attack Russia. And so, forseeing these events I severed with the past as an emigre and for the first time went to the Soviet embassy. I told them, "I have come here because I am convinced that Russia is in danger and as a Russian moved by patriotism, I must be with my country in this critical period." I was very well recieved.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="776.586" end="x">Who was the ambassador then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="778.774" end="x">Ambassador Bogomol, but he was then in <a class="placename" href="#vothL268">Vichy</a>. In <a class="placename" href="#vothL13">Paris</a> there was the charge d'affaire Lerv Alexandrowich Tarasow, and exceptionally pleasant and cultured man. We met several times and it became obvious to me that in regard of the Russian-German relations we stand on identical grounds and are speaking the same language. I decided then that is was my duty to return to my native country. I told so to Tarasow [one word not clear] and Tarasow took certain steps in that direction. But it was too late. In fact within a few days war broke out. The Germans attacked Russia and I remained in France, in <a class="placename" href="#vothL13">Paris</a> and I am still here until this day. But I have not lost hope to state it better, I am absolutely sure that relatively soon I shall return to my native land.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="860.086" end="x">How then, this has taken place when the war started. Well, what happened when the Germans attacked France? How did it affect your personal life, and what were your experiences?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="879.905" end="x">When the Germans attacked France . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="885.108" end="x">When they attacked Russia, we were talking about that phase . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="888.326" end="x">When the Germans attacked Russia, the same day in the morning I was arrested by the Germans. They took me to the same offices of the <a class="term" href="#vothG_gestapo">Gestapo</a> on Rue [name not clear] in <a class="placename" href="#vothL13">Paris</a> and proposed me to go with them to <a class="placename" href="#vothL453">Petersburg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="909.242" end="x">When?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="910.117" end="x">To <a class="placename" href="#vothL453">Petersburg</a>, because as they said: "We are in need of intelligent people and as you know, the intelligensia there has been exterminated. Do you want to go with us or not? Or do you intend to remain outside Russia?" To this proposition I responded with a categorical refusal, either to go or to work with the Germans. As a result I was sent to the concentration camp in <a class="placename" href="#vothC22" type="camp">Compiègne</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="949.169" end="x"><a class="placename" href="#vothC22" type="camp">Compiègne</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="950.872" end="x"><a class="placename" href="#vothC22" type="camp">Compiègne</a>. After a preliminary detention in one of the prisons [?] in Compiègne I stayed close to two months and after I had become gravely ill from malnutrition I was sent to a hospital in <a class="placename" href="#vothL13">Paris</a>, the hospital "Van de Grasse" [??] was also under German control.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="983.818" end="x">Well give us some particulars, of course you were not the only Russian to be called. What did they do in general with the Russian colony, considering that in speaking of the Russian colony we are compelled to speak separately of the Russians of orthodox faith and the Russian Jews. In other words, about the Russian Christians and the Russian Jews. How large was the Russian non-Jewish colony when the war started?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1015.921" end="x">At the beginning of the war the whole Russian colony counting Russians and Jews together for we did not make any distinction in our midst—<note n="9"><span class="note">Here, as elsewhere, Professor Odinets shows himself to be free of anti-Semitic sentiments. He expresses genuine sympathy for the plight of the Jews in France during the Occupation and highlights the worse treatment given them.</span><sup><a href="#note_9">9</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1028.222" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1029.253" end="x">Consisted of approximately about forty thousand people. Among the Russians were arrested . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1040.440" end="x">Forty thousand altogether men, women, and children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1046.455" end="x">It seems so. The exact number no one knows.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1048.666" end="x">Yes, yes, we are not interested in exact statistics.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1052.791" end="x">The number of arrested Russians was [about] five hundred including again the Russians and the Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1064.619" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1065.478" end="x">From the beginning the Regime, the powers to be treated equally the Russians and the Russian Jews. We lived together under identical conditions, we starved together and suffered equally the various inconveniences of the <a class="term" href="#vothG_lager">lager</a>. But I must state that at the beginning the treatment was of course a thousand times better that, for instance, in the future <a class="term" href="#vothG_lager">lager</a> <a class="placename" href="#vothC27" type="camp">Drancy</a>, exclusively for Jews or more so in the regime in <a class="placename" href="#vothC15" type="camp">Buchenwald</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1103.675" end="x">Well, let us clear that up. From a military standpoint, the Germans have been interning the citizens of enemy countries as they would have done in Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1119.193" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1120.193" end="x">As for instance the American would have interned the Germans in their country.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1123.365" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1124.287" end="x">But obviously they did not observe to a large extent the <a class="placename" href="#vothL117">Geneva</a> convention. Continue.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1129.130" end="x">But one must keep in mind that according to our papers we were all <a class="term" href="#vothG_whiteR">White Russians</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1137.412" end="x">Which means . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1138.240" end="x">That means . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1140.021" end="x">Anti-Soviet Russians?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1140.849" end="x">According to our papers we were anti-Soviet Russians. So the reasons for their actions were of entirely different nature. What these reasons were we were never able to find out because nobody told us why we were arrested. And the people in power differed to such an extent in status and political outlook that to find any consistent reason for our arrest was absolutely impossible for us. And so this question remains a riddle. We obviously were arrested according to some lists [of names] delivered from varous sources and compiled on different basis. And so, I return [to the previous topic], we were about 500 people Russians in the narrow sense of the word and Jews. and at first we lived under identical conditions and under identical regime, and the treatment accorded us by the German authorities of the <a class="term" href="#vothG_lager">lager</a> was the same. But that changed comparatively soon. Since the contingent of the arrested as I stated before was most heterogeneous in its political convictions, so there appeared in our midst among the Russians, in the narrow sense of the word, some individuals who presented to the German Command a memorandum that they do not want to be imprisoned together with Jews. Obviously these people had in mind to get in the good graces [of the Germans].<note n="10"><span class="note">Among the Russian emigrés, there were those who were extreme anti-Semites, spreading the infamous Protocols of the Elders of Zion which described a supposed worldwide Jewish conspiracy to use nefarious means to undermine Christian civilization with the aim of ruling the world.</span><sup><a href="#note_10">10</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1262.581" end="x">To get where . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1263.050" end="x">To get into the good graces.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1264.646" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1266.346" end="x">To get into the good graces of the Germans. After the presentation of this memorandum the Jews . . . we were separated. We were transfered to another section of the same <a class="term" href="#vothG_lager">lager</a> behind a different wired fence.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1282.081" end="x">Behind what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1283.425" end="x">Behind another wired fence without the right to communicate. In spite of that, I—with whom the German authorities communicated as the representative of the <a class="term" href="#vothG_lager">lager</a>,—I managed to transfer again all the Jews who remained in the original section to us. I pointed out to the Germans that what they were doing is absolutely indecent, since among those Jews who remained there were people of deep conviction, enimies of the Soviet rule were people on whose money in times passed was formed the army of Volunteers. [Note: Here begins a conversation in whispers intended apparently to remain off the record, because due to the friendly relations between France and the Soviets in 1946 and the influence of the communists in France and it appeared uncomfortable to say the least, to speak openly of assistance rendered to the White armies during the counter-revolutionary attempts following the ascent of the Soviets to power. We reproduce whispers as much as possible. —D.P.B.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1346.718" end="x">Which Volunteer army? When? Continue. What kind of Volunteer army?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1349.540" end="x">The first army, Alexiew's. The very first army.<note n="11"><span class="note">Indeed, a French interventionist force arrived in Ukraine shortly after the November 11, 1918 armistice with Germany with the aim of supporting anti-Communist forces. However, the French withdrew their forces in the spring of 1919.</span><sup><a href="#note_11">11</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1351.934" end="x">That was during the first revolution? After the first world war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1356.848" end="x">During the first civil war . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1359.105" end="x">Yes, yes, in 1918.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1360.818" end="x">. . . the famous "March on the Ice," etc.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1362.858" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1365.243" end="x">And the Germans yielded to these arguments and our Jews, our comrades in imprisonement were transfered to our section. In the section where they were before remained only the French whom the Germans designated as communists [however] without sufficient grounds. Since there was no verification [of the accusations].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1391.857" end="x">You mean French Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1393.498" end="x">[In whispers] no, no, the communists.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1394.852" end="x">But you said that there remained the Frenchmen; what kind of Frenchmen, French Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1400.100" end="x">[It is possible that he shook his head in the negative and then continued] . . . in cases of attempts on the lives of the German soldiers and officers they used to take from this section those whom they shot as hostages.<note n="12"><span class="note">During the Occupation, there was a vicious cycle of reprisals for acts taken by the Resistance, followed by counter-reprisals and so on. The Germans highlighted that those they executed were communists and Jews in an attempt to show the population at large that these "anti-French" and "foreign" elements were the ones causing problems, and that if not for them, the occupation would be less harsh.</span><sup><a href="#note_12">12</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1412.040" end="x">That happened in <a class="placename" href="#vothC22" type="camp">Compiègne</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1413.774" end="x">Yes, in <a class="placename" href="#vothC22" type="camp">Compiègne</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1414.571" end="x">How far is <a class="placename" href="#vothC22" type="camp">Compiègne</a> from <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1416.961" end="x">Approximately 70 kilometers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1422.595" end="x">What is it, a kind of military installation?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1425.232" end="x">Yes, we lived in former armories, very neglected that belonged before to some French military divisions. In barracks built of stone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1436.253" end="x">Yes. Were there any beds?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1440.487" end="x">At first we had to sleep on the floor, but in about two weeks they provided iron beds and we slept in beds.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1454.001" end="x">Well. Were the families permitted to visit? Did they permit to write letters?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1458.832" end="x">The first visits were permitted after a month and a half after incarceration. Twice a month they permitted to write on postcards of government issue on which the content of the letter was printed beforehand and one had to answer the ready questions.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1488.077" end="x">Has any one saved such a postcard?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1492.514" end="x">I regret not to be able to say. I personally have not saved any.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1499.467" end="x">And your family has none?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1500.344" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1500.957" end="x">Well continue.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1502.451" end="x">Step by step, life became organized. And in our section, where there were five [Russian] university professors and two French university professors we soon started to give lectures. In the morning we delivered serious lectures, and in the evening [lectures] of more popular nature. We started to teach languages. We taught French, German, Italian, Spanish, English, and Russian. Every Sunday we organized a concert. We organized a wonderful church for there were in our midst also artists, of course the Germans soon deprived us of our church hall, claiming to need it for the storage of potatoes. To be sure, a week after our church was devastated they deposited there three sacks of potatoes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1578.545" end="x">Tell me, were there also priests among the internees?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1582.669" end="x">There were three priests among us. One of them a very old man who wore fetters and was a great faster. He arrived in times past from Soviet Russia, and failing to be interested in any worldly affairs he did not bother to exchange his Soviet passport. Apparently he was arrested on account of his passport. For what reason the other priests were arrested remains a matter of conjuncture. One of them was apparently arrested for secretly helping the Jews, by issuing to them certain church certificates, which he expected would save them form arrest and imprisonment. And, so I repeat, from the start the regime was not too bad. But things were getting worse, gradually worse and worse. Gradually new, stricter rules were introduced. But these regulations fell with special impact upon the Jews [in our camp]. They became a group apart not in terms of location but in terms of the treatment accorded to them. For instance when a German commission would arrive for investigation [of the status of the internees] the Jews were the last to be called. No promises of any sort were given to them. But at first there were cases when prisoners were set free. And from the start, sixteen Jews were released and in proportion a larger number of Russians were released. In the month of August, at the end of the month, I, ill from malnutrition, was transfered to a hospital [name not clear] where I underwent a very serious operation, followed by several months in bed, without moving. When I left the hospital, after a measure of improvement I found among the internees a most horrible regime. We were not sick but crushed by the imprisonment. And again the worst sufferers were the Jews. In my capacity as an elected prison <a class="term" href="#vothG_trusty">trusty</a> I represented in the hospital the Russians, French, Yugoslavs, and Americans. Only the English had their own representative. And in the capacity of such a representative I had to negotiate with the German authorities on a number of matters pertaining to the prisoners in Van de Grasse [not clear] and among them . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1791.751" end="x">Prisoners where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1792.579" end="x">In Van de Grasse [??].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1793.173" end="x">What was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1794.298" end="x">A hospital, I told you that before.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1795.798" end="x">Yes, yes. I always try to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1798.157" end="x">Yes, yes. And here I was a witness to several horrible scenes. "This is not my husband. What have you scoundrels done to him?" And the condition of the Jews among us remained all the time the same nightmare. Our situation was getting worse in the sense of stricter regulations, but except for insults and scoldings they did not perpetrate any special atrocities upon us. After ten months of incarceration I was released on account of illness, but again without any explanation as to the reasons. After that I lived in <a class="placename" href="#vothL13">Paris</a>, existing on lessons which I gave, and every new victory of the Red Army gave me new pupils desirous to learn the Russian language.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1870.349" end="x">From among the French?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1874.286" end="x">French, Dutch, a few Spainiards, two three Swedes, and even one Turk. All but the Germans—since for the Germans—"I had not time", and I refused [to accept them].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1898.242" end="x">Tell me, how did they happen to release you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1902.304" end="x">They set me free without giving me any reasons, just how they had arrested me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1911.412" end="x">Did your family intervee, did a lawyer intervene?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="1914.005" end="x">Nobody intervened, nobody intervened. I did not want that anybody of my family should plead with the Germans. During these years besides my lessons, I participated in the anti-German press of the underground. The Russian [underground] press. The newspaper—the paper which was published in the underground under the most difficult and dangerous conditions was called "The Russian Patriot". It coincided with the birth of a new organization which calls itself now "The Soviet Patriot", embraces a membership in excess of ten thousand and publishes a newspaper under the name "The Soviet Patriot", of which I am at present the editor and director.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1986.826" end="x">Now let us recapitulate a bit. Were there any Russians who collaborated with the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2000.887" end="x">Unfortunately there were such Russians, but I must state that among the intelligentsia, the workers with the pen such as scientists, writers there were no such people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2026.446" end="x">There were no such people among the collaborationists?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2029.571" end="x">Hardly two - three names could be named from among writers and scientists who went along with the Germans. The rest held out very firmly, preferring to starve rather than help the enemies of our Native land.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2054.262" end="x">Now tell me Dimitri Michailovich, you once mentioned to me an episode, about a Russian officer who was married to a Jewish woman.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2068.359" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2069.546" end="x">Tell us about that episode with some detail [some remarks in whispers].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2073.139" end="x">And so I must say that a considerable part of the Russians, possibly a larger part considering the whole Russian colony, conducted themselves in a political sense very well and with firmness. But there were cases when Russians . . . She worked as a nurse in a French hospital [??] and was considered among the best. And so this Russian . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2111.299" end="x">What was he, a military man?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2115.424" end="x">At that time he was no more a military man.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2117.846" end="x">Oh, yes, he was an ex-military man . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2120.033" end="x">An ex-military man. And he reported to the German authorities his own wife making the following statement: "My wife is a Jewess. She is corrupting my children." But these my children were also her children. In consequence of this report she was arrested and incarcerated in a most horrible <a class="term" href="#vothG_lager">lager</a> which was run like a real prison for hard labor, the famous <a class="term" href="#vothG_lager">lager</a> <a class="placename" href="#vothC27" type="camp">Drancy</a>. When the director of the French hospital appeared at this German <a class="term" href="#vothG_lager">lager</a> and petitioned the German commandment to set free a most useful worker at his hospital, he was faced with the most disastrous refusal, in the following words, "What are you troubling yourself, if her own husband has requested . . . her husband himself has petitioned that we should apprehend his wife, in view of her corrupting influence on the children. The Frenchman, the director of the hospital was unable to believe that such a thing could happen. The <a class="term" href="#vothG_commandant">commandant</a> replied: "What is there to argue about, here is the letter." And he showed him the lelter, such things did happen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2227.298" end="x">[In English] This concludes Spool 168. The interview with Professor Dimitri Michailovich Odinets . . . ahh . . . in <a class="placename" href="#vothL13">Paris</a>. [Pause, whispers and laughter] We are going over to the next spool for some short . . . question and answer . . . for a short question and answer session. <a class="placename" href="#vothL13">Paris</a>, September the . . . <a class="placename" href="#vothL13">Paris</a>, October the . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2260.023" end="x"><a class="placename" href="#vothL256">Chicago</a>, July the 6th, 1950. The Spool 168 ends rather abruptly which very often used to happen. The continuation of the interview is on Spool 169. Since that part of the interview lasted only ten to twelve minutes we have decided to record it right on this same spool. This spool then will be 9-168 and 9-169A. Spool 169B contains some incidental conversations and songs taken during the last evening of my stay in <a class="placename" href="#vothL13">Paris</a>. Boder. This is part of the project MH156.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2343.548" end="x"><a class="placename" href="#vothL13">Paris</a>, October 4th, 1946. [Pause] This is Spool 169, we continue the interview with Professor Dimitri Michailovich Odinets, which begins on Spool 168.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2360.015" end="x">[In Russian] Dimitri Michailovich . . . what about that story which you mentioned—talked before—about the officer who betrayed his own wife. By the way is it known what hapened to her finally?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2378.638" end="x">She died.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2379.997" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2380.700" end="x">In one of the German <a class="term" href="#vothG_lager">lagers</a>, in Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2384.621" end="x">Now tell me . . . what happened to him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2390.339" end="x">His fate is not clear to me. I know only that at the time of the liberation of <a class="placename" href="#vothL13">Paris</a> from the Germans he was in the possession of large sums of money and walked openly through the streets of <a class="placename" href="#vothL13">Paris</a>. However, the authorities of liberation caught up with him and for a time he was arrested. His further fate is not known to me, but rumors have it that he was released.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2437.077" end="x">Now tell me in general . . . give us a general picture to the extent to which you were able to observe, or read . . . in your capacity of the editor of a newspaper . . . First of all, the "Soviet Patriot" has emerged from the underground?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2457.450" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2458.043" end="x">And who publishes it now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2461.276" end="x">The Union of Soviet Patriots . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2464.698" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2465.573" end="x">By its central board.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2467.057" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2468.979" end="x">It appears once a week.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2470.978" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2471.728" end="x">Its platform is pro-Soviet. That does not mean that those who write for it are communists. People of most divergent outlooks are able to write for it, provided they satisfy one condition: that they be patriots of their Native Land.<note n="13"><span class="note">Professor Odinets does not further specify what he meant by "patriots of their native land."</span><sup><a href="#note_13">13</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2497.357" end="x">Well, now tell me, how started . . . you were an eyewitness of the Russian revolution, you know, . . . how started here in France the selection, the screening out, the dispostition, so to speak, to those who collaborated with the Germans—what happened in this matter after the Germans were expelled from <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2533.478" end="x">At every police station, that is at each of twenty police stations of <a class="placename" href="#vothL13">Paris</a> [two words not clear] were formed special "Councils of Liberation" in charge of the cleanup.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2549.613" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2550.426" end="x">These councils were composed of representatives of the so-called Resistance, that is those who, arms in hand, fought against the Germans. One must state here, that among those French forces of resistance were very many Russians. Many of course in proportion to the general number of Russians. And certain [people] among the, not small in number, were presently rewarded military decorations for their demonstrated bravery. Many were killed in battle. The Councils of Liberation were in charge of calling to account of persons who had discredited themselves by collaboration with the Germans. of course often occurred great misunderstandings, especially in the early days when people were apprehended sometimes on sheer suspicion and at times due to dishonest accusations. I personally was heading in those days the legal committee within the newly formed organization the Union of Soviet Patriots. This committee devoted itself to the review of complaints of people who came to it claiming false incarceration or arrest. I must tell that the French authorities heeded to a very high degree to our conclusions, the conclusions of our legal committee, which I was heading. In consequence this committe was able to attain the release of numerous innocent individuals, who were apprehended due to error. But this committee did not occupy itself with extrication of "criminal" elements. We only intervened for those who deserved such intervention.<note n="14"><span class="note">Marshall Pétain and others argued that they had collaborated due to patriotic motives and that theirs had been a benevolent collaboration, which had saved France from what would have been far greater destruction had they not cooperated with the occupiers. When General Charles de Gaulle assumed power following the liberation, he helped to destroy this myth.</span><sup><a href="#note_14">14</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2700.379" end="x">By the way: tell me what about those shavings of heads of French women, which we saw in the movies, what about that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2711.550" end="x">That was in my opinion a very bad incident. But fortunately it lasted only a few days.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2724.532" end="x">What was that all about?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2726.579" end="x">It was like this. Women who were suspected or actally proved to have had intimate dealings with the Germans, these women were submitted to shaving of their heads; on their faces and shaven heads were painted the sign of the Swastika, and not seldom they were paraded through the streets. Such vehicles were followed by crowds of children and it was in all respects a horrible sight [Note: My personal inquiries suggest that by "dealings with the Germans"—was meant betrayal of <a class="term" href="#vothG_maquis">maquis</a>, and general collaboration in terms of betrayal of Jewish neighbors, or underground activities. —D.P.B.].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2766.120" end="x">So you consider that an inappropriate expression of popular wrath?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2772.744" end="x">I consider that such a form [of expression] was unworthy of the French people. And in particular, the Americans and the English who were then in <a class="placename" href="#vothL13">Paris</a> were most sincerely provoked by it. At least many of them demonstrated their indignation. These things were done without any trial, they were perpetrated by the mob.<note n="15"><span class="note">These acts were part of the first phase of uncontrolled retribution by the Resistance during which many accused collaborators were summarily executed and women accused of fraternizing with the German occupiers were publicly humiliated. Subsequently, investigations and trials of accused collaborators took place.
+                    </span><sup><a href="#note_15">15</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2800.678" end="x">Now then. What do you intend to do in Russia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2807.567" end="x">In Russia I plan to continue my scientific work. I have hope that I will be able to obtain a chair in the University of <a class="placename" href="#vothL554">Tiflis</a>, or how it is now called, not <a class="placename" href="#vothL554">Tiflis</a>, but <a class="placename" href="#vothL554">Tbilisi</a> in Grusian. I am unable to return to <a class="placename" href="#vothL453">Leningrad</a> on account of my health—because as a consequence of all that I had gone through here—at one time I was paralyzed, my whole right side was paralyzed, now I have recuperated.<note n="16"><span class="note">Given the post-war reassertion of Stalinist totalitarianism, these hopes seem at best naive.</span><sup><a href="#note_16">16</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2848.041" end="x">You look very well now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2850.806" end="x">I have recovered, but the results of this illness make themselves felt. This is the price which I finally paid as a consequence of my detention in a German concentration camp . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2865.241" end="x">Dimitri Michailovitch, last night at supper we happened to mention casually one of the versions of the origin, of the racial origin of the Russian Jews. Could you sum up for me this material.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2879.740" end="x">For me as an historian it appears beyond any question that an overwhelming percent of persons of Jewish faith who lived in Russia are not of Semitic origin but Turks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2905.065" end="x">Are the Turks not Semites?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2906.721" end="x">No, they are a different race [that the Jews were] Turks. The Jewish religion was prevalent among the ruling strata of the Khazar [?]. In the 7th century the Khazars were a strong and powerful empire, which spread in part over the Caucasus, in part over the lower basin of the Volga. Their prestige was so great that even the Byzantine emperors intermarried with them. The Khazars were zealously proselyting [people] into the Jewish religion.<note n="17"><span class="note">The Khazars were a group of tribes of Turkish ancestry who inhabited a vast territory in southern Russia north of the Caucasus mountains. They converted to Judaism in the year 740 C.E. In about the year 960 C.E., an exchange of letters took place between Hasdai ibn Shaprut (c. 915-c. 975), an important Jewish minister of the Caliph of Cordoba, Spain and Joseph, king of the Khazars. In this letter, Joseph relates how his ancestor, the king Bulan, converted to Judaism. The Khazar ruling elite followed suit, and Judaism by degrees came to be accepted by the population at large. In 1016 C.E., the kingdom of the Khazars was crushed by the Russians and the Byzantines. What became of the Khazars remains a matter of dispute. Some might have been among the forebears of Polish and Russian Jewry. However, it is generally accepted that Russian Jewry were of central European origin.</span><sup><a href="#note_17">17</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2950.598" end="x">But how did the Khazars themselves happen to become converted into Judaism?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2954.153" end="x">This question was once posed by the Califf of Cardoz [<a class="placename" href="#vothL555">Cordova</a>, Spain] to his advisers in matters of finances—a Jew Chas Da"i' Ibn-Shaprut.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2971.541" end="x">In what year was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2973.181" end="x">That was . . . of course in the 7th century.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="2975.071" end="x">Oh, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="2976.352" end="x">The Chas Da'i' Ibn-Shaprut has dispatched an interesting letter to the Jewish . . . to the Khazar Tzar Joseph [??]. The letter was carried to him through all of Europe by a Jewish trading organization Rodanitza [??]<note n="18"><span class="note">Odinets is referring to the so-called Radanites, intrepid Jewish traders in the ninth century C.E. who exchanged goods from the Frankish kingdom of Europe for those of Asia. Their name probably comes from a Persian phrase meaning, "knowing the way."</span><sup><a href="#note_18">18</a></sup></note>. Rodanitza comes from the word Rodansk [?] Ronsk [?] <a class="placename" href="#vothL129">Riga</a> [?]. It was delivered this letter—through <a class="placename" href="#vothL240">Kiev</a> to Joseph the Tzar of the Khazars and both have reached our times—the letter as well as the reply of Tzar Joseph. It was a reply also of his financial adviser. These documents were found in 1912 in the synagouge in <a class="placename" href="#vothL556">Cairo</a>. And so when Ibn-Shaprut asked Joseph how did it come to happen that in the distant east there is a kingdom of true believers who profess the true faith, the faith of the Jews. To this Joseph answered with an historical legend: It happened once that the Khazars found themselves in a very difficult strategic position, and here there appeared an unknown youth—an experienced military leader who beat off the enemy. This youth was of Jewish faith and the victory made such an impression that the whole upper strata [of the khazars] have adopted the Jewish religion. So says Tzar Joseph of the Khazars [Footnote: See remarks at the end of the chapter.]. Exact information on this question is not available.<note n="19"><span class="note">It should be emphasized that this is indeed a legend.</span><sup><a href="#note_19">19</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="3082.706" end="x">Dimitri Michailovitch is there anything you would like to tell the American scientists as a result of your experiences during the war and in Europe?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="3094.954" end="x">There is so much to tell the American scientists. Having lived in France more than 25 years I have been doing scientific work under very difficult conditions, I most sincerely envied my American colleagues because they were able to pursue their scientific work always under exceptionally favorable conditions with the support of the people and the American government. As an historian I might say that among the American historians there are a great many names of world significance. Personally I became acquainted with the eminent historian Shotwell [??]—the head editor of a publication of many volumes undertaken by the Carnegie Institute on "Influence of War on the Life of a Country." In the case of us the Russian scientists with reference to Russia [I was commissioned to write] a book on the subject: the lower and middle level schools under the impact of the war between the years 1914-1918. Shotwell made upon me the finest impression as a genuine representative of scientific thought and as an exceptionally fascinating person.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="3223.607" end="x">Well, anything else.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Dimitri Odinets</span>:
+            </span>
+            <span class="utterance" who="odinetsD" start="3227.044" end="x">[in whispers] no.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="3231.936" end="x">[In English] This concludes the interview of great interest with . . . ah . . . Professor Dimitri Michailovitch Odinets, a leader of the Russian colony in <a class="placename" href="#vothL13">Paris</a>. <a class="placename" href="#vothL13">Paris</a>, October the 4th, 1946, Illinois Institute of Technology wire recording, taken at the Grand Hotel. [Pause] Professor Odinets wants a correction. He is not the leader of the Russian colony, he considers that he is one of possible representatives or leaders but the colony is by no means something a unified group of unique convictions, tendencies and interests. Well, we will make that correction.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="3302.298" end="x"><a class="placename" href="#vothL256">Chicago</a>, July 6th, 1950. This concludes spool 9-169A. Two spools are on this reproduction, 9-168 and 9-169A. The other part of Spool 169 contains some rather irrelevant material. This reproduction is part of a project supported in part by a research grant from the National Institute of Mental Health, United States Public Health.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            In July 1917, the Provisional government for which Professor Odinets worked passed a law stating that national minorities, such as the Ukrainians, were recognized as a having a right to national autonomy. Thus Professor Odinets was concerned above all, as he said, with combating right wing Ukrainian chauvinism, which would have led to the formation of a separate state.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            The Skoropadsky government, which had been sponsored by the German occupiers of Ukraine during World War I, fell with the defeat of Germany on November 11, 1918. Following this, rival groups of various political persuasions struggled for power. During this time, some 100,000 Ukrainian Jews were murdered in pogroms by Ukrainian nationalist extremists, White Army anti-communist forces, and Poles.
+        </li>
+                <li>
+            <a name="note_3"></a>
+             By the end of 1920, the Red Army fully controlled southern Russian, including Ukraine.
+        </li>
+                <li>
+            <a name="note_4"></a>
+            In the aftermath of the defeat of anti-communist forces, some one million refugees fled from Russia. Several hundred thousand settled in France, among them Professor Odinets, who like others, sought to preserve his Russian identity.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            Ivan Turgenev (1818-1883) was master Russian novelist as well as playwright and poet. He acquired an international reputation as a result of his brilliant portrayals of Russian life. During the 1870s Turgenev lived in Paris where he was an esteemed unofficial Russian cultural ambassador.
+        </li>
+                <li>
+            <a name="note_6"></a>
+            Nikolai Gogol (1809-1852) was a Russian novelist and dramatist whose works were characterized by stylistic richness and sympathetic realism. His writings served as a model for later
+                        Russian writers and helped establish the great tradition of the Russian novel.
+        </li>
+                <li>
+            <a name="note_7"></a>
+            The Germans entered Paris on June 14, 1940. The war with the Soviet Union began on June 22, 1941.
+        </li>
+                <li>
+            <a name="note_8"></a>
+            Alfred Rosenberg (1893-1946) was the Nazis' leading ideologist. His thinking, incorporating racism, occultism, German neo-paganism, anti-Semitism and anti-Communism, was contained in his influential 1930 work Der Mythus des zwanzigsten Jahrhunderts (The Myth of the Twentieth Century). From 1933-1945, he headed the Nazi party's foreign affairs department. After the fall of France, the so-called Operational Staff Rosenberg confiscated French cultural treasures.
+        </li>
+                <li>
+            <a name="note_9"></a>
+            Here, as elsewhere, Professor Odinets shows himself to be free of anti-Semitic sentiments. He expresses genuine sympathy for the plight of the Jews in France during the Occupation and highlights the worse treatment given them.
+        </li>
+                <li>
+            <a name="note_10"></a>
+            Among the Russian emigrés, there were those who were extreme anti-Semites, spreading the infamous Protocols of the Elders of Zion which described a supposed worldwide Jewish conspiracy to use nefarious means to undermine Christian civilization with the aim of ruling the world.
+        </li>
+                <li>
+            <a name="note_11"></a>
+            Indeed, a French interventionist force arrived in Ukraine shortly after the November 11, 1918 armistice with Germany with the aim of supporting anti-Communist forces. However, the French withdrew their forces in the spring of 1919.
+        </li>
+                <li>
+            <a name="note_12"></a>
+            During the Occupation, there was a vicious cycle of reprisals for acts taken by the Resistance, followed by counter-reprisals and so on. The Germans highlighted that those they executed were communists and Jews in an attempt to show the population at large that these "anti-French" and "foreign" elements were the ones causing problems, and that if not for them, the occupation would be less harsh.
+        </li>
+                <li>
+            <a name="note_13"></a>
+            Professor Odinets does not further specify what he meant by "patriots of their native land."
+        </li>
+                <li>
+            <a name="note_14"></a>
+            Marshall Pétain and others argued that they had collaborated due to patriotic motives and that theirs had been a benevolent collaboration, which had saved France from what would have been far greater destruction had they not cooperated with the occupiers. When General Charles de Gaulle assumed power following the liberation, he helped to destroy this myth.
+        </li>
+                <li>
+            <a name="note_15"></a>
+            These acts were part of the first phase of uncontrolled retribution by the Resistance during which many accused collaborators were summarily executed and women accused of fraternizing with the German occupiers were publicly humiliated. Subsequently, investigations and trials of accused collaborators took place.
+                    
+        </li>
+                <li>
+            <a name="note_16"></a>
+            Given the post-war reassertion of Stalinist totalitarianism, these hopes seem at best naive.
+        </li>
+                <li>
+            <a name="note_17"></a>
+            The Khazars were a group of tribes of Turkish ancestry who inhabited a vast territory in southern Russia north of the Caucasus mountains. They converted to Judaism in the year 740 C.E. In about the year 960 C.E., an exchange of letters took place between Hasdai ibn Shaprut (c. 915-c. 975), an important Jewish minister of the Caliph of Cordoba, Spain and Joseph, king of the Khazars. In this letter, Joseph relates how his ancestor, the king Bulan, converted to Judaism. The Khazar ruling elite followed suit, and Judaism by degrees came to be accepted by the population at large. In 1016 C.E., the kingdom of the Khazars was crushed by the Russians and the Byzantines. What became of the Khazars remains a matter of dispute. Some might have been among the forebears of Polish and Russian Jewry. However, it is generally accepted that Russian Jewry were of central European origin.
+        </li>
+                <li>
+            <a name="note_18"></a>
+            Odinets is referring to the so-called Radanites, intrepid Jewish traders in the ninth century C.E. who exchanged goods from the Frankish kingdom of Europe for those of Asia. Their name probably comes from a Persian phrase meaning, "knowing the way."
+        </li>
+                <li>
+            <a name="note_19"></a>
+            It should be emphasized that this is indeed a legend.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Olga Collin</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC22">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC22" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Royallieu<br /><span class="alt">(Compiègne-Royallieu)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Compi&#195;gne, France<br />
+                            </p>
+                            <div>
+                This detention camp operated from June 1941 to August 1944 and was located in the French commune of Compi&#195;gne. Prisoners included French Communists, Resistance fighters, and Soviet citizens as well as Jews.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC22 = new OpenLayers.Map('map_vothC22', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC22.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC22.addLayer(markers);
+map_id_vothC22.zoomToMaxExtent();
+
+                        var lat_1 = 49.416700;
+                        var lon_1 = 2.833300;
+                        var vothC22 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC22_icon = new OpenLayers.Marker(vothC22);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC22);
+markers.addMarker(vothC22_icon);
+    addMarker(vothC22, popupClass, "", true, false, false);
+    map_id_vothC22.setCenter(vothC22, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC27">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC27" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Drancy
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Drancy, France<br />
+                            </p>
+                            <div>
+                The camp was opened after a roundup of in Paris Jews in August, 1941, in which over 4000 Jews were arrested.  Drancy was under the control of the French police until July 3, 1943 when Nazi Germany took day-to-day control as part of the major stepping up at all facilities for the mass exterminations.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC27 = new OpenLayers.Map('map_vothC27', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC27.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC27.addLayer(markers);
+map_id_vothC27.zoomToMaxExtent();
+
+                        var lat_2 = 48.933300;
+                        var lon_2 = 2.433300;
+                        var vothC27 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC27_icon = new OpenLayers.Marker(vothC27);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC27);
+markers.addMarker(vothC27_icon);
+    addMarker(vothC27, popupClass, "", true, false, false);
+    map_id_vothC27.setCenter(vothC27, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC15">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC15" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Buchenwald
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Weimar, Germany<br />
+                            </p>
+                            <div>
+                Established in July 1937 near the city of Weimar for prisoners from central Germany, who were put to work making bricks at a nearby clay pit.  Around 9000 were normally housed there, but the population reached around 48,000 by April 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC15 = new OpenLayers.Map('map_vothC15', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC15.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC15.addLayer(markers);
+map_id_vothC15.zoomToMaxExtent();
+
+                        var lat_3 = 50.983300;
+                        var lon_3 = 11.316700;
+                        var vothC15 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC15_icon = new OpenLayers.Marker(vothC15);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC15);
+markers.addMarker(vothC15_icon);
+    addMarker(vothC15, popupClass, "", true, false, false);
+    map_id_vothC15.setCenter(vothC15, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_4 = 48.866700;
+                        var lon_4 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL453">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL453" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Sankt-Peterburg, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL453 = new OpenLayers.Map('map_vothL453', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL453.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL453.addLayer(markers);
+map_id_vothL453.zoomToMaxExtent();
+
+                        var lat_5 = 59.950000;
+                        var lon_5 = 30.316667;
+                        var vothL453 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL453_icon = new OpenLayers.Marker(vothL453);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL453);
+markers.addMarker(vothL453_icon);
+    addMarker(vothL453, popupClass, "", true, false, false);
+    map_id_vothL453.setCenter(vothL453, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL240">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL240" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kiyev, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL240 = new OpenLayers.Map('map_vothL240', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL240.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL240.addLayer(markers);
+map_id_vothL240.zoomToMaxExtent();
+
+                        var lat_6 = 50.433300;
+                        var lon_6 = 30.516700;
+                        var vothL240 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL240_icon = new OpenLayers.Marker(vothL240);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL240);
+markers.addMarker(vothL240_icon);
+    addMarker(vothL240, popupClass, "", true, false, false);
+    map_id_vothL240.setCenter(vothL240, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL311">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL311" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Odessa, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL311 = new OpenLayers.Map('map_vothL311', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL311.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL311.addLayer(markers);
+map_id_vothL311.zoomToMaxExtent();
+
+                        var lat_7 = 46.466667;
+                        var lon_7 = 30.733333;
+                        var vothL311 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL311_icon = new OpenLayers.Marker(vothL311);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL311);
+markers.addMarker(vothL311_icon);
+    addMarker(vothL311, popupClass, "", true, false, false);
+    map_id_vothL311.setCenter(vothL311, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL551">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL551" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Beograd, Serbia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL551 = new OpenLayers.Map('map_vothL551', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL551.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL551.addLayer(markers);
+map_id_vothL551.zoomToMaxExtent();
+
+                        var lat_8 = 44.833300;
+                        var lon_8 = 20.500000;
+                        var vothL551 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL551_icon = new OpenLayers.Marker(vothL551);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL551);
+markers.addMarker(vothL551_icon);
+    addMarker(vothL551, popupClass, "", true, false, false);
+    map_id_vothL551.setCenter(vothL551, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL79">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL79" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Warsaw, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL79 = new OpenLayers.Map('map_vothL79', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL79.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL79.addLayer(markers);
+map_id_vothL79.zoomToMaxExtent();
+
+                        var lat_9 = 52.250000;
+                        var lon_9 = 21.000000;
+                        var vothL79 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL79_icon = new OpenLayers.Marker(vothL79);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL79);
+markers.addMarker(vothL79_icon);
+    addMarker(vothL79, popupClass, "", true, false, false);
+    map_id_vothL79.setCenter(vothL79, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL552">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL552" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Rosenberg, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL552 = new OpenLayers.Map('map_vothL552', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL552.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL552.addLayer(markers);
+map_id_vothL552.zoomToMaxExtent();
+
+                        var lat_10 = 49.018889;
+                        var lon_10 = 10.031389;
+                        var vothL552 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL552_icon = new OpenLayers.Marker(vothL552);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL552);
+markers.addMarker(vothL552_icon);
+    addMarker(vothL552, popupClass, "", true, false, false);
+    map_id_vothL552.setCenter(vothL552, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL268">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL268" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Vichy, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL268 = new OpenLayers.Map('map_vothL268', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL268.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL268.addLayer(markers);
+map_id_vothL268.zoomToMaxExtent();
+
+                        var lat_11 = 46.133300;
+                        var lon_11 = 3.416700;
+                        var vothL268 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL268_icon = new OpenLayers.Marker(vothL268);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL268);
+markers.addMarker(vothL268_icon);
+    addMarker(vothL268, popupClass, "", true, false, false);
+    map_id_vothL268.setCenter(vothL268, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL117">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL117" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Gen&#195;ve, Switzerland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL117 = new OpenLayers.Map('map_vothL117', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL117.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL117.addLayer(markers);
+map_id_vothL117.zoomToMaxExtent();
+
+                        var lat_12 = 46.216700;
+                        var lon_12 = 6.150000;
+                        var vothL117 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL117_icon = new OpenLayers.Marker(vothL117);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL117);
+markers.addMarker(vothL117_icon);
+    addMarker(vothL117, popupClass, "", true, false, false);
+    map_id_vothL117.setCenter(vothL117, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL256">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL256" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chicago, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL256 = new OpenLayers.Map('map_vothL256', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL256.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL256.addLayer(markers);
+map_id_vothL256.zoomToMaxExtent();
+
+                        var lat_13 = 41.850000;
+                        var lon_13 = -87.650000;
+                        var vothL256 = new OpenLayers.LonLat(lon_13, lat_13);
+            vothL256_icon = new OpenLayers.Marker(vothL256);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL256);
+markers.addMarker(vothL256_icon);
+    addMarker(vothL256, popupClass, "", true, false, false);
+    map_id_vothL256.setCenter(vothL256, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL554">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL554" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Tbilisi, Georgia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL554 = new OpenLayers.Map('map_vothL554', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL554.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL554.addLayer(markers);
+map_id_vothL554.zoomToMaxExtent();
+
+                        var lat_14 = 41.716700;
+                        var lon_14 = 44.816700;
+                        var vothL554 = new OpenLayers.LonLat(lon_14, lat_14);
+            vothL554_icon = new OpenLayers.Marker(vothL554);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL554);
+markers.addMarker(vothL554_icon);
+    addMarker(vothL554, popupClass, "", true, false, false);
+    map_id_vothL554.setCenter(vothL554, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL555">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL555" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            C&#195;rdoba, Spain
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL555 = new OpenLayers.Map('map_vothL555', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL555.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL555.addLayer(markers);
+map_id_vothL555.zoomToMaxExtent();
+
+                        var lat_15 = 37.883300;
+                        var lon_15 = -4.766700;
+                        var vothL555 = new OpenLayers.LonLat(lon_15, lat_15);
+            vothL555_icon = new OpenLayers.Marker(vothL555);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL555);
+markers.addMarker(vothL555_icon);
+    addMarker(vothL555, popupClass, "", true, false, false);
+    map_id_vothL555.setCenter(vothL555, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL129">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL129" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Rīga, Latvia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL129 = new OpenLayers.Map('map_vothL129', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL129.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL129.addLayer(markers);
+map_id_vothL129.zoomToMaxExtent();
+
+                        var lat_16 = 56.883300;
+                        var lon_16 = 24.133300;
+                        var vothL129 = new OpenLayers.LonLat(lon_16, lat_16);
+            vothL129_icon = new OpenLayers.Marker(vothL129);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL129);
+markers.addMarker(vothL129_icon);
+    addMarker(vothL129, popupClass, "", true, false, false);
+    map_id_vothL129.setCenter(vothL129, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL556">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL556" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Cairo, Egypt
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL556 = new OpenLayers.Map('map_vothL556', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL556.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL556.addLayer(markers);
+map_id_vothL556.zoomToMaxExtent();
+
+                        var lat_17 = 30.050000;
+                        var lon_17 = 31.250000;
+                        var vothL556 = new OpenLayers.LonLat(lon_17, lat_17);
+            vothL556_icon = new OpenLayers.Marker(vothL556);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL556);
+markers.addMarker(vothL556_icon);
+    addMarker(vothL556, popupClass, "", true, false, false);
+    map_id_vothL556.setCenter(vothL556, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_whiteR">
+                <a name="vothG_whiteR"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    White Russian.
+                </span>
+                <span class="definition">
+                    Russians who were opposed the Bolshevik movement after the October 1917 revolution.
+                </span>
+            </li>
+                        <li class="vothG_trusty">
+                <a name="vothG_trusty"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    trusty.
+                </span>
+                <span class="definition">
+                    Similar to a capo or blockälteste. A prisoner in the camps who held some authority over other prisoners, and in return received special treatment. These were often convicts.
+                </span>
+            </li>
+                        <li class="vothG_commandant">
+                <a name="vothG_commandant"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    commandant.
+                </span>
+                <span class="definition">
+                    A commander of a Nazi camp. In the death camps the commandant was required to witness every gassing carried out through a peephole, and supervise both the preparations and the aftermath.
+                </span>
+            </li>
+                        <li class="vothG_maquis">
+                <a name="vothG_maquis"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Maquis.
+                </span>
+                <span class="definition">
+                    The predominantly rural guerrilla bands of the French Resistance.
+                </span>
+            </li>
+                        <li class="vothG_aryan">
+                <a name="vothG_aryan"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Aryan.
+                </span>
+                <span class="definition">
+                    Derived from a Sanskrit word meaning “noble,” the term was used in Nazi pseudo-scientific jargon to denote a race which had supposedly superior blood and culture. During the Holocaust, “Aryan” came to mean anyone who was not Jewish or Roma (Gypsy).
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            In July 1917, the Provisional government for which Professor Odinets worked passed a law stating that national minorities, such as the Ukrainians, were recognized as a having a right to national autonomy. Thus Professor Odinets was concerned above all, as he said, with combating right wing Ukrainian chauvinism, which would have led to the formation of a separate state.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Skoropadsky government, which had been sponsored by the German occupiers of Ukraine during World War I, fell with the defeat of Germany on November 11, 1918. Following this, rival groups of various political persuasions struggled for power. During this time, some 100,000 Ukrainian Jews were murdered in pogroms by Ukrainian nationalist extremists, White Army anti-communist forces, and Poles.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+             By the end of 1920, the Red Army fully controlled southern Russian, including Ukraine.
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            In the aftermath of the defeat of anti-communist forces, some one million refugees fled from Russia. Several hundred thousand settled in France, among them Professor Odinets, who like others, sought to preserve his Russian identity.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Ivan Turgenev (1818-1883) was master Russian novelist as well as playwright and poet. He acquired an international reputation as a result of his brilliant portrayals of Russian life. During the 1870s Turgenev lived in Paris where he was an esteemed unofficial Russian cultural ambassador.
+        </li>
+                <li class="note_6">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Nikolai Gogol (1809-1852) was a Russian novelist and dramatist whose works were characterized by stylistic richness and sympathetic realism. His writings served as a model for later
+                        Russian writers and helped establish the great tradition of the Russian novel.
+        </li>
+                <li class="note_7">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Germans entered Paris on June 14, 1940. The war with the Soviet Union began on June 22, 1941.
+        </li>
+                <li class="note_8">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Alfred Rosenberg (1893-1946) was the Nazis' leading ideologist. His thinking, incorporating racism, occultism, German neo-paganism, anti-Semitism and anti-Communism, was contained in his influential 1930 work Der Mythus des zwanzigsten Jahrhunderts (The Myth of the Twentieth Century). From 1933-1945, he headed the Nazi party's foreign affairs department. After the fall of France, the so-called Operational Staff Rosenberg confiscated French cultural treasures.
+        </li>
+                <li class="note_9">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Here, as elsewhere, Professor Odinets shows himself to be free of anti-Semitic sentiments. He expresses genuine sympathy for the plight of the Jews in France during the Occupation and highlights the worse treatment given them.
+        </li>
+                <li class="note_10">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Among the Russian emigrés, there were those who were extreme anti-Semites, spreading the infamous Protocols of the Elders of Zion which described a supposed worldwide Jewish conspiracy to use nefarious means to undermine Christian civilization with the aim of ruling the world.
+        </li>
+                <li class="note_11">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Indeed, a French interventionist force arrived in Ukraine shortly after the November 11, 1918 armistice with Germany with the aim of supporting anti-Communist forces. However, the French withdrew their forces in the spring of 1919.
+        </li>
+                <li class="note_12">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            During the Occupation, there was a vicious cycle of reprisals for acts taken by the Resistance, followed by counter-reprisals and so on. The Germans highlighted that those they executed were communists and Jews in an attempt to show the population at large that these "anti-French" and "foreign" elements were the ones causing problems, and that if not for them, the occupation would be less harsh.
+        </li>
+                <li class="note_13">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Professor Odinets does not further specify what he meant by "patriots of their native land."
+        </li>
+                <li class="note_14">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Marshall Pétain and others argued that they had collaborated due to patriotic motives and that theirs had been a benevolent collaboration, which had saved France from what would have been far greater destruction had they not cooperated with the occupiers. When General Charles de Gaulle assumed power following the liberation, he helped to destroy this myth.
+        </li>
+                <li class="note_15">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            These acts were part of the first phase of uncontrolled retribution by the Resistance during which many accused collaborators were summarily executed and women accused of fraternizing with the German occupiers were publicly humiliated. Subsequently, investigations and trials of accused collaborators took place.
+                    
+        </li>
+                <li class="note_16">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Given the post-war reassertion of Stalinist totalitarianism, these hopes seem at best naive.
+        </li>
+                <li class="note_17">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Khazars were a group of tribes of Turkish ancestry who inhabited a vast territory in southern Russia north of the Caucasus mountains. They converted to Judaism in the year 740 C.E. In about the year 960 C.E., an exchange of letters took place between Hasdai ibn Shaprut (c. 915-c. 975), an important Jewish minister of the Caliph of Cordoba, Spain and Joseph, king of the Khazars. In this letter, Joseph relates how his ancestor, the king Bulan, converted to Judaism. The Khazar ruling elite followed suit, and Judaism by degrees came to be accepted by the population at large. In 1016 C.E., the kingdom of the Khazars was crushed by the Russians and the Byzantines. What became of the Khazars remains a matter of dispute. Some might have been among the forebears of Polish and Russian Jewry. However, it is generally accepted that Russian Jewry were of central European origin.
+        </li>
+                <li class="note_18">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Odinets is referring to the so-called Radanites, intrepid Jewish traders in the ninth century C.E. who exchanged goods from the Frankish kingdom of Europe for those of Asia. Their name probably comes from a Persian phrase meaning, "knowing the way."
+        </li>
+                <li class="note_19">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            It should be emphasized that this is indeed a legend.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

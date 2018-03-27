@@ -1,0 +1,2474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Mira Milgram; August 9, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-mira-milgram-august-9-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Mira Milgram; August 9, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=milgramM">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=milgramM&display=milgramM_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=milgramM&display=milgramM_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=milgramM">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.241" end="x">[In English] This is Spool 9-40A: Mrs. Milgram. Spool 9-40B will be reproduced on a separate spool. 9-40B is the little daughter of Mrs. Fania Freilich, Esther Freilich. It is a short spool, but we are putting it separate.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="49.694" end="x">This is Spool 40. August 9th, 1946, <a class="placename" href="#vothL13">Paris</a>, 9 Rue de Patin, and Frau, eh, Mrs. Mira Milgram continues the interview.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="64.754" end="x">[In German] Well, Mrs. Milgram, you were, eh, you spoke with the <a class="term" href="#vothG_gestapo">Gestapo</a> guy, whether the children would be [unintelligible word, maybe it means taken through].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="72.654" end="x">So he explained to me . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="74.086" end="x">[interrupts] That he had children, too?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="75.202" end="x">. . . that he had children, too, and they were all victims. I felt veritably ridiculous that he reprimanded me very much; I explained to him that I had a brother with me, relatives and so on . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="87.730" end="x">Where did you have your brother with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="89.916" end="x">I had my brother with me in, eh the camp, my cousin, and three other persons as well. All together we were eight persons. My brother came to me during the insurgence.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="102.413" end="x">I see, yes, and the others. And did your brother live as a Jew?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="106.454" end="x">No, <a class="term" href="#vothG_aryan">Aryan</a>!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="107.645" end="x"><a class="term" href="#vothG_aryan">Aryan</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="108.203" end="x"><a class="term" href="#vothG_aryan">Aryan</a>. [unintelligible word].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="109.304" end="x">Yes. Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="109.982" end="x">He too went through a lot, a few times he was [unintelligible word; could perhaps mean harassed].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="115.168" end="x">Yes. So you had, you were together with eight people. Who were they, your brother, your . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="121.440" end="x">My brother, the two children, a female friend . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="125.073" end="x">Yes. And yourself, that is five . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="129.234" end="x">Five. Eh, then there was an acquaintance with her son . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="135.098" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="135.460" end="x">. . . an <a class="term" href="#vothG_aryan">Aryan</a>, and yet another female friend of mine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="138.113" end="x">Yes. Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="139.289" end="x">[Unintelligible sentence]. Eh, <a class="term" href="#vothG_gestapo">Gestapo</a> guy, well, my first name is Bernhard. Pray for me and everything will be well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="149.842" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="150.174" end="x">I veritably laughed at him. I go away from him, after an hour in [unintelligible word].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="155.405" end="x">Did the <a class="term" href="#vothG_gestapo">Gestapo</a> guy speak Polish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="157.395" end="x">No, German. But back then I was already so agitated, I didn't care anymore, and in answer to his question why I spoke German, I explained to him I was from <a class="placename" href="#vothL178">Posen</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="167.646" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="168.913" end="x">. . . and that is why I speak German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="170.647" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="171.265" end="x">And when he comes to segregation, she says, he is organizing the segregation. He points towards the right or the left, those on the right go to Germany into the concentration camps, left was for staying.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="184.351" end="x">For what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="185.090" end="x">For staying in the "gouvernement."</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="187.095" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="187.909" end="x">And as I approach him he says to me, how do you think it will [unintelligible word], and in this way I dealt with all eight persons.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="196.050" end="x">Where to, to Germany?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="196.909" end="x">No, just . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="197.844" end="x">[interrupts] Home.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="198.251" end="x">. . . for staying . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="199.065" end="x">in the "gouvernement."</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="200.030" end="x">. . . in the "gouvernement." There we were taken to another camp, and from there we were taken to <a class="placename" href="#vothL84">Kielce</a> by train the next day.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="208.186" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="209.347" end="x">In <a class="placename" href="#vothC52" type="camp">Kielce</a> we were until January 16th, until the day, on which the German, eh, the Russian army including the Polish . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="221.362" end="x">liberated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="222.146" end="x">liberated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="222.855" end="x">So, in <a class="placename" href="#vothC52" type="camp">Kielce</a> you were free in the city, weren't you . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="225.644" end="x">[interrupts] Yes, we lived, I already had a flat there . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="229.337" end="x">What did you live on?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="230.996" end="x">Eh, I earned money again.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="232.850" end="x">Doing what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="233.453" end="x">I traded.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="234.870" end="x">Traded.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="235.413" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="235.956" end="x">In hard liquor?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="236.514" end="x">No, not that, there I already couldn't trade in hard liquor. I traded in goods.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="240.841" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="241.942" end="x">And the youngest two days before the liberation where the worst for me . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="248.892" end="x">Why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="249.299" end="x">Because the first bullets hit the house where I lived. The flat burned down . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="256.776" end="x">[interrupts] Burned.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="257.349" end="x">and I . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="258.043" end="x">[interrupts] That was [unintelligible word], right?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="260.048" end="x">No, they were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="261.013" end="x">[interrupts] canons.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="261.450" end="x">. . . from canons.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="262.204" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="262.732" end="x">And again I found myself on the street with the whole family and two small children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="269.742" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="270.405" end="x">We had gone into a nearby flat, in which Germans lived. But the first time was terrible, you couldn't get bread, you know. You could . . . . three days after the liberation of <a class="placename" href="#vothL81">Katowice</a> I went to <a class="placename" href="#vothL81">Katowice</a> day after day, where I traded for a little something to eat for the children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="292.732" end="x"><a class="placename" href="#vothL81">Katowice</a>, that was right north of <a class="placename" href="#vothL98">Sosnowiec</a>, right?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="294.964" end="x">Yes, yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="295.944" end="x">Yes. Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="297.859" end="x">Well, it so happened that the Polish army, there were Jewish soldiers there, who got to know that children, Jewish children, were in town. They helped me a lot. They were the only Jewish children in town</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="312.286" end="x">In <a class="placename" href="#vothL84">Kielce</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="313.010" end="x">Yes, in <a class="placename" href="#vothL84">Kielce</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="314.985" end="x">Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="315.573" end="x">My brother became president of . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="320.684" end="x"><a class="placename" href="#vothL84">Kielce</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="321.362" end="x"><a class="placename" href="#vothL84">Kielce</a> and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="322.297" end="x">What was your brother's profession?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="323.202" end="x">My brother was an attorney.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="324.785" end="x">He was an advocate, wasn't he?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="325.102" end="x">In <a class="placename" href="#vothL123">Lemberg</a> [Lviv], advocate in <a class="placename" href="#vothL123">Lemberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="327.650" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="329.263" end="x">And was appointed director of <a class="placename" href="#vothL84">Kielce</a> and vicinity.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="334.419" end="x">Yes. Yes. Now tell me, eh, and then you were liberated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="343.841" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="344.293" end="x">And then you. Where did you go, and what was the last story you know of <a class="placename" href="#vothL84">Kielce</a>? What really happened in <a class="placename" href="#vothL84">Kielce</a>? And how do you know it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="354.665" end="x">My brother, as I have already said, was president there. I had moved to <a class="placename" href="#vothL79">Warsaw</a> half a year ago.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="364.657" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="365.110" end="x">Where I worked.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="366.753" end="x">As what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="368.020" end="x">I worked in a, eh, factory, in a private factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="373.673" end="x">Yes. Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="375.754" end="x">At the same time I also worked in the <a class="term" href="#vothG_zionist">Zionist</a> organization, in youth. And the organisation made it possible for me to obtain a passport and a visa.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="388.613" end="x">Where to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="389.277" end="x">To [unintelligible word, maybe <a class="placename" href="#vothL13">Paris</a>] with, so that I will go on to Palestine from here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="394.960" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="395.202" end="x">My husband was a <a class="term" href="#vothG_zionist">Zionist</a>, too, he worked a lot as a <a class="term" href="#vothG_zionist">Zionist</a>, My brother, too.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="403.297" end="x">And?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="403.629" end="x">A couple of days ago, eh, eh, a day after the Jewish <a class="term" href="#vothG_pogrom">pogrom</a>, I'm in the electrical [public transport] and all of a sudden in the newspaper I see . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="413.398" end="x">Which <a class="term" href="#vothG_pogrom">pogrom</a> [unintelligible word]? In <a class="placename" href="#vothL84">Kielce</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="415.071" end="x">In <a class="placename" href="#vothL84">Kielce</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="415.705" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="416.112" end="x">That there <a class="term" href="#vothG_pogrom">pogrom</a> . . . that there had been a <a class="term" href="#vothG_pogrom">pogrom</a>  Immediately I was certain that my brother was not alive, because I knew him as a man who did not shrink from anything, who wasn't scared. Besides I knew, he would have informed me immediately, because he knew how close we were. We had nobody else.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="439.935" end="x">Yes</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="440.297" end="x">Only him.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="441.624" end="x">Well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="442.212" end="x">He also helped me a lot financially. And . . . [unintelligible word] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="447.684" end="x">[interrupts] And what did you find out from the newspaper?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="449.554" end="x">That there had been a <a class="term" href="#vothG_pogrom">pogrom</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="451.167" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="451.770" end="x">I went to the post office straight away. I phoned the militia. There they told me that they didn't know anything specific yet, but I should be prepared for everything. And then I already know something was happening.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="465.790" end="x">You phoned the <a class="placename" href="#vothL84">Kielce</a> militia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="467.328" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="467.976" end="x">Yes. Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="469.333" end="x">Then I went to <a class="placename" href="#vothL84">Kielce</a> the next day. By car.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="475.393" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="475.876" end="x">It was something terrible. Because it was almost only intelligentsia on the way, they spoke about the <a class="term" href="#vothG_pogrom">pogrom</a> in such way I got out and called to them, you are animals.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="490.997" end="x">You are what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="492.007" end="x">Animals.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="492.881" end="x">Brutes!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="493.545" end="x">You are brutes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="494.857" end="x">I understand.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="495.264" end="x">Yes. Because they talked about it like when you watch a dog being killed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="502.259" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="502.862" end="x">With laughter.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="505.696" end="x">And they were Polish people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="506.993" end="x">They were Polish, amongst them a clergyman from <a class="placename" href="#vothL84">Kielce</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="512.375" end="x">Why? You went to <a class="placename" href="#vothL84">Kielce</a> after all.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="514.470" end="x">I went to <a class="placename" href="#vothL84">Kielce</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="515.586" end="x">. . . and you already met people who came from <a class="placename" href="#vothL84">Kielce</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="517.516" end="x">No, no. They merely talked about it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="519.973" end="x">Yes. Yes. Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="520.848" end="x">It was something terrible. Yes, the civil, civilian population.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="525.506" end="x">Yes. Not drunkards?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="527.466" end="x">So . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="528.702" end="x">Yes. Well? And, in <a class="placename" href="#vothL84">Kielce</a>, what did you . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="531.717" end="x">[speaks over the interviewer] . . . angry.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="532.984" end="x">. . . find?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="534.145" end="x">In <a class="placename" href="#vothL84">Kielce</a> I learned that my brother ran about from nine in the morning and went everywhere in the city, to the militia and so on, and asked for help. Because they already knew something would be happening there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="552.582" end="x">Oh, the militia knew?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="553.577" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="554.271" end="x">And the militia was all Polish. Weren't there any Jewish people in the militia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="557.753" end="x">No. There were maybe one or two, but they didn't [unintelligible word].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="562.155" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="566.768" end="x">And my brother, who was in the city, went back to his Jews. I didn't want to leave them alone. Although you know, he lived in <a class="placename" href="#vothL84">Kielce</a> with <a class="term" href="#vothG_aryan">Aryan</a> papers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="577.651" end="x">Oh, he, he lived in <a class="placename" href="#vothL84">Kielce</a> as an <a class="term" href="#vothG_aryan">Aryan</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="580.244" end="x">Yes, no, only in his committee he was Jewish. Doctor [unintelligible Name], and in his flat he lived as [unintelligible name], that was his conspiracy name. Because he worked in the conspiracy all the time.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="597.641" end="x">But you say he was mayor in <a class="placename" href="#vothL84">Kielce</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="599.511" end="x">Not mayor.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="600.672" end="x">What then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="601.531" end="x">He was the president of the community, the Jewish community.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="604.185" end="x">Oh, he was president of the Jewish community, I see. He became president of the Jewish community, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="609.838" end="x">Yes. Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="610.562" end="x">Yes. Now tell me what actually happened there during the <a class="term" href="#vothG_pogrom">pogrom</a>, you read something. What were the particulars?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="617.602" end="x">Well, it happened . . . in the town a rumour was spread that eleven children were missing. And that Jews had killed them to get their blood for the . . . .Jews from Russia, who do not look well at all . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="634.987" end="x">I see.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="635.379" end="x">. . . and are very . . . eh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="638.967" end="x">Famished.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="639.630" end="x">. . . famished. And for those they took the blood of the <a class="term" href="#vothG_aryan">Aryan</a> children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="643.761" end="x">Oh, they didn't even say [hard to understand; could mean "matzo"].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="645.359" end="x">No, no, no. It isn't the time now after all.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="647.500" end="x">Which month . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="647.967" end="x">Easter, right?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="648.902" end="x">Yes. Which month was it approximately?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="650.651" end="x">That was July the 4th.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="653.349" end="x">July. Yes. Well, it was said they needed the blood for the sick Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="658.701" end="x">Needed it for the sick Jews from Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="661.309" end="x">Well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="662.153" end="x">And there was one boy who claimed that the Jews had held him in the cellar of the Jewish committee for some days.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="671.862" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="672.390" end="x">Although it turned out there wasn't even a cellar.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="676.506" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="677.154" end="x">The boy had already said this to the militia one day before.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="683.516" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="684.481" end="x">And they let it take its way.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="687.210" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="687.979" end="x">And the next day, from nine in the morning, people started to gather in front of the house of the Jewish community, where the elders lived.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="698.758" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="699.647" end="x">And then the militia came, cordoned off the house.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="703.145" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="704.125" end="x">Demanded that everybody hand over their, eh, . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="709.447" end="x">Weapons.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="710.125" end="x">Weapons.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="711.512" end="x">The Jewish community?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="712.266" end="x">The Jewish community.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="713.502" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="713.774" end="x">Because in town they said that Jews shoot and they didn't want to be guilty eh, let this happen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="722.593" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="723.166" end="x">That, that eh, this is said, you know . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="727.975" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="728.156" end="x">Because it is not true.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="729.015" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="729.633" end="x">And when the last Jew had handed over his weapon, they began to shoot the Jews with those weapons, to beat them and so on. The robbed them. My brother, who spoke to them, and asked them to stop.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="747.271" end="x">. . . who spoke to the people, yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="750.045" end="x">Who [unintelligible sentence end]. It will not happen without danger.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="754.643" end="x">Yes. The militia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="755.638" end="x">To the militia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="756.512" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="756.904" end="x">Then the military joined them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="759.105" end="x">Polish military.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="759.708" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="761.668" end="x">Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="762.000" end="x">He told them: You have to, eh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="769.734" end="x">Have to defend yourselves?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="771.558" end="x">Have to, have to, eh, . . . [Speaks Polish]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="775.267" end="x">What are you saying in Polish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="775.855" end="x">[speaks Polish] You have to watch, what you are doing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="780.785" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="781.192" end="x">It will not happen without danger.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="782.669" end="x">The military said it to whom, to the Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="784.117" end="x">My brother said it to them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="785.941" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="786.876" end="x">We, the whole world will shout at you: What are you doing here? They shot him then, and he was the only one who was shot, because the rest was murdered in terrible ways. One woman, who was eight months pregnant, they threw from the second floor onto bayonets. And that was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="811.901" end="x">Who had bayonets, the soldiers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="813.333" end="x">The soldiers are downstairs.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="815.112" end="x">Well, [unintelligible word] do tell me, [unintelligible word].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="818.549" end="x">Well, the soldiers stood downstairs. The soldiers afterwards claimed, they knew why they were sent there. They found out from there, when they were sent to the house that Jews had taken <a class="term" href="#vothG_aryan">Aryan</a> children and had . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="837.988" end="x">Destroyed them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="839.330" end="x">Murdered them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="839.948" end="x">Murdered them. Where there no officers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="841.908" end="x">There were officers. My husband, eh, my brother, a "Major" [probably: shot him; "Major" is a military rank].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="846.717" end="x">A "Major" [shot] him. Was he punished?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="849.883" end="x">That. I left Poland straight away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="855.717" end="x">You left Poland straight away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="858.069" end="x">After three days I left Poland. I couldn't stay there. [Unintelligible sentence beginning] . . . not. They . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="871.953" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="873.883" end="x">Five people were massacred in such a way, that you didn't know anymore whether they were a woman or a man. They couldn't identify them, they don't know who they are. 40 people where beaten to death, and two little children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="892.669" end="x">Now tell me what did the Polish government do afterwards.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="897.689" end="x">The Polish government did everything it could.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="901.096" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="901.820" end="x">The <a class="term" href="#vothG_pogrom">pogrom</a> went on from nine in the morning until five in the afternoon.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="906.494" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="906.780" end="x">They dragged people out of the train, out of flats, and so on. The government sent people from <a class="placename" href="#vothL79">Warsaw</a>. They set up a, eh, they set up a drumhead court-martial.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="923.197" end="x">Yes. Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="924.463" end="x">Closing time and so on. But the worst is that people really believed that the Jews had killed the children and not only . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="936.988" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="937.471" end="x">. . . the, even the intelligentsia believed it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="942.069" end="x">The intelligentsia . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="943.019" end="x">Yes. Because I myself spoke with some, who told me there has to be truth in it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="950.723" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="951.220" end="x">And when I explained to them, but where are the children. They boarded up the house, you know. Show me one mother who is missing a child. To that I did not get an answer.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="966.959" end="x">So the general disposition in Poland concerning Jews is what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="972.839" end="x">Hitler has worked there too long. It is a wordless anti-Semitism. The Jews are afraid to be there. And in my opinion the Jews have achieved so much that they deserve to be left in peace. I myself know. [Unintelligible sentence]. I went to school there, I studied at university, I have friends amongst the Polish. But I didn't have a good feeling, I was afraid. I think this will maybe improve after years. But now this is not the place for Jews. The government will do such a thing again, the government does not [unintelligible sentence end].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1033.899" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="1034.683" end="x">But the population, that [unintelligible sentence end].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1041.618" end="x">Mrs. Milgram, and now you want to go to Palestine. And you want . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="1046.698" end="x">[interrupts] This is my only wish now. I want to bring up my child in Palestine. Because . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1052.970" end="x">But then, yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="1054.643" end="x">His father was a <a class="term" href="#vothG_zionist">Zionist</a>, the little one is a <a class="term" href="#vothG_zionist">Zionist</a>, he has only the one [unintelligible word] in Palestine [unintelligible sentence end].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1064.684" end="x">Tell me, that the, that the child has been taught in Catholic religion, has that not in one way or another . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="1070.247" end="x">But he has forgotten everything, he is a hot Jew, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1076.744" end="x">But for a short period of time did he not really pray in Polish, Catholic . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="1080.604" end="x">No, never.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1082.519" end="x">And he acted the part all the time . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="1084.253" end="x">He acted the part all the time as a five-year-old child, in a way you can really believe in it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1089.454" end="x">And he knew it wasn't the truth . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="1092.409" end="x">He knew everything. Everything, but now he speaks little. He sees a lot . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1099.298" end="x">Speaks little.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="1099.841" end="x">. . . and speaks little.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1101.047" end="x">Well, but tell me, Mrs. Milgram, it isn't all quiet in Palestine either. What do you think of that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="1107.922" end="x">I would rather want to be unpopular there, than in another, popular in another place. There I at least know what I will fight for when I go there. In Poland I didn't know it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1126.389" end="x">Oh well. Thank you very much, Mrs. Milgram. Does the boy maybe want to say something? No? Alright.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="1133.535" end="x">He maybe [unintelligible sentence end].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1136.339" end="x">Does he have family in America; do you have family in America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Mira Milgram</span>:
+            </span>
+            <span class="utterance" who="#milgramM" start="1138.691" end="x">In America as well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1142.143" end="x">[In English] This concl—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1147.691" end="x">I am taking now for a short statement eh, Esther, eh, Esther Frieden . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="1156.555" end="x">Freilich.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1157.249" end="x">Esther Freilich, whose mother has covered Spool 36, 37 and 38. Esther is 13 years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1180.782" end="x">This concludes Spool 9-40A. The interview with Mrs. Milgram. 9-40B is a separate spool, and has the interview with Esther Freilich, the daughter of Mrs. Frieda Freilich. Boder. Now . . .</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Veronika Schmideder</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>Veronika Schmideder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC52">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC52" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Kielce Ghetto
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Kielce, Poland<br />
+                            </p>
+                            <div>
+                Established on March 31, 1941 for area Jews, this ghetto was largely liquidated in August 1942 when 20,000-21,000 inhabitants were sent to the extermination camp at Treblinka.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC52 = new OpenLayers.Map('map_vothC52', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC52.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC52.addLayer(markers);
+map_id_vothC52.zoomToMaxExtent();
+
+                        var lat_1 = 50.850000;
+                        var lon_1 = 20.650000;
+                        var vothC52 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC52_icon = new OpenLayers.Marker(vothC52);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC52);
+markers.addMarker(vothC52_icon);
+    addMarker(vothC52, popupClass, "", true, false, false);
+    map_id_vothC52.setCenter(vothC52, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_2 = 48.866700;
+                        var lon_2 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL178">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL178" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Poznań, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL178 = new OpenLayers.Map('map_vothL178', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL178.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL178.addLayer(markers);
+map_id_vothL178.zoomToMaxExtent();
+
+                        var lat_3 = 52.416700;
+                        var lon_3 = 16.883300;
+                        var vothL178 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL178_icon = new OpenLayers.Marker(vothL178);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL178);
+markers.addMarker(vothL178_icon);
+    addMarker(vothL178, popupClass, "", true, false, false);
+    map_id_vothL178.setCenter(vothL178, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL84">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL84" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kielce, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL84 = new OpenLayers.Map('map_vothL84', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL84.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL84.addLayer(markers);
+map_id_vothL84.zoomToMaxExtent();
+
+                        var lat_4 = 50.850000;
+                        var lon_4 = 20.650000;
+                        var vothL84 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL84_icon = new OpenLayers.Marker(vothL84);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL84);
+markers.addMarker(vothL84_icon);
+    addMarker(vothL84, popupClass, "", true, false, false);
+    map_id_vothL84.setCenter(vothL84, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL81">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL81" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Katowice, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL81 = new OpenLayers.Map('map_vothL81', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL81.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL81.addLayer(markers);
+map_id_vothL81.zoomToMaxExtent();
+
+                        var lat_5 = 50.266700;
+                        var lon_5 = 19.016700;
+                        var vothL81 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL81_icon = new OpenLayers.Marker(vothL81);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL81);
+markers.addMarker(vothL81_icon);
+    addMarker(vothL81, popupClass, "", true, false, false);
+    map_id_vothL81.setCenter(vothL81, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL98">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL98" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Sosnowiec, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL98 = new OpenLayers.Map('map_vothL98', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL98.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL98.addLayer(markers);
+map_id_vothL98.zoomToMaxExtent();
+
+                        var lat_6 = 50.266700;
+                        var lon_6 = 19.116700;
+                        var vothL98 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL98_icon = new OpenLayers.Marker(vothL98);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL98);
+markers.addMarker(vothL98_icon);
+    addMarker(vothL98, popupClass, "", true, false, false);
+    map_id_vothL98.setCenter(vothL98, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL123">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL123" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            L&#39;viv, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL123 = new OpenLayers.Map('map_vothL123', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL123.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL123.addLayer(markers);
+map_id_vothL123.zoomToMaxExtent();
+
+                        var lat_7 = 49.833300;
+                        var lon_7 = 24.000000;
+                        var vothL123 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL123_icon = new OpenLayers.Marker(vothL123);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL123);
+markers.addMarker(vothL123_icon);
+    addMarker(vothL123, popupClass, "", true, false, false);
+    map_id_vothL123.setCenter(vothL123, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL79">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL79" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Warsaw, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL79 = new OpenLayers.Map('map_vothL79', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL79.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL79.addLayer(markers);
+map_id_vothL79.zoomToMaxExtent();
+
+                        var lat_8 = 52.250000;
+                        var lon_8 = 21.000000;
+                        var vothL79 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL79_icon = new OpenLayers.Marker(vothL79);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL79);
+markers.addMarker(vothL79_icon);
+    addMarker(vothL79, popupClass, "", true, false, false);
+    map_id_vothL79.setCenter(vothL79, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_aryan">
+                <a name="vothG_aryan"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Aryan.
+                </span>
+                <span class="definition">
+                    Derived from a Sanskrit word meaning “noble,” the term was used in Nazi pseudo-scientific jargon to denote a race which had supposedly superior blood and culture. During the Holocaust, “Aryan” came to mean anyone who was not Jewish or Roma (Gypsy).
+                </span>
+            </li>
+                        <li class="vothG_zionist">
+                <a name="vothG_zionist"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Zionist.
+                </span>
+                <span class="definition">
+                    Having to do with the international political movement known as Zionism that supports a homeland for the Jewish people in the Land of Israel. The word "Zionism" is derived from the word "Zion"—one of the names of Jerusalem and the Land of Israel as mentioned in the Bible.
+                </span>
+            </li>
+                        <li class="vothG_pogrom">
+                <a name="vothG_pogrom"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    pogrom.
+                </span>
+                <span class="definition">
+                    A form of riot or mob violence directed against a particular group, whether ethnic, religious, or other, and characterized by the killing and destruction of their homes, businesses, and religious centers. The term was originally used to denote extensive violence against Jews.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

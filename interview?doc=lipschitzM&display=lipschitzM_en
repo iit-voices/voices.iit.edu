@@ -1,0 +1,1512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Maximillian Lipschitz; August 4, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-maximillian-lipschitz-august-4-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Maximillian Lipschitz; August 4, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=lipschitzM">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=lipschitzM&display=lipschitzM_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=lipschitzM&display=lipschitzM_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=lipschitzM">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=lipschitzM">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.753" end="x">[In English] <a class="placename" href="#vothL256">Chicago</a>, June the 26th, 1950, project MH156. This is reproduction Spool 9-21A, Dr. Maximilian Lipschitz. It is the first half of Spool 21.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="63.972" end="x">August the 4th, Rue de Patin [<i>checks recorder</i>] . . . August the 4th, Rue, 9 Rue de Patin, in a home for adult deportees. <a class="placename" href="#vothL13">Paris</a>, August 4th, 1946, at Rue Patin, number 9, in a home for adult Jews. We are going to interview Dr. Maximilian Lipschitz, eh, age thirty-five. This is Spool 21.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="104.402" end="x">[In German] Eh, so tell me again, tell us, what is your full name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="111.372" end="x">Dr. Maximilian Lipschitz.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="114.155" end="x">And, eh, where were you born, Dr. Lipschitz?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="116.806" end="x">In <a class="placename" href="#vothL352">Neuschonstau</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="118.173" end="x">Where is that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="119.017" end="x">That is in Czechoslovakia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="120.897" end="x">Yes. Eh, and, eh, where, and where did you study?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="126.602" end="x">I studied in <a class="placename" href="#vothL298">Prague</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="128.331" end="x">And, eh, you received your doctorate in what subject?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="131.506" end="x">In science, and mainly chemistry.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="134.470" end="x">In science, and mainly chemistry. [pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="142.012" end="x">So, please speak a little louder, do you want to tell us, where were you when the war began, and what happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="151.078" end="x">When the war began I was in <a class="placename" href="#vothL135">Cracow</a> because I had my family there, my child that was six weeks old, and my sister.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="161.332" end="x">And your wife?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="162.428" end="x">My wife had died before the war. I had my family there, and for a while lived relatively, eh, undisturbed, until the larger repressions began. It began in December of 1939 with several registrations, and, eh, and then, in December, with the, eh, with the, with the rule to wear a band with the star on the right arm. Then came the various Verbote, to ride the train, the Verbote—the . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="208.151" end="x">With what train, outside of the city or within the city?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="210.603" end="x">Ride with the, with the, eh, national railroad, with the railroad.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="214.561" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="216.230" end="x">Then came, eh, the bans, to have independent businesses, to be in official, eh, civil servant positions, so that the Jews became more and more oppressed in their, eh, housing and in their living. For a while, Jews were still allowed to live in larger cities, then it became more oppressed, and by 1941 most Jews were mostly crowded into <a class="term" href="#vothG_ghetto">ghettos</a> in most Polish cities.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="249.642" end="x">Yes, so, tell us only about your city, and where you were, and what happened there. So you were in <a class="placename" href="#vothL135">Cracow</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="256.943" end="x">I was in <a class="placename" href="#vothL135">Cracow</a>, in 1942 we were, all Jews who had lived in <a class="placename" href="#vothL135">Cracow</a> and the vicinity of <a class="placename" href="#vothL135">Cracow</a>, were mostly crowded, eh, crowded together in the <a class="placename" href="#vothC55" type="camp">Cracow ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="271.973" end="x">Yes, eh, now describe the <a class="placename" href="#vothC55" type="camp">ghetto</a> a little, and how was the <a class="placename" href="#vothC55" type="camp">ghetto</a> made and so on?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="278.332" end="x">The <a class="placename" href="#vothC55" type="camp">ghetto</a> was established in <a class="placename" href="#vothL539">Podgórze</a>, eh, a suburb of <a class="placename" href="#vothL135">Cracow</a>, there on a very small, in a very small area approximately 15,000 Jews who had been left in the city were pressed together in very tight living conditions.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="302.109" end="x">Had Jews lived there before?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="304.903" end="x">There were Jews who had lived there before, but the apartments were vacated by [the people who had lived there] before and emptied for the guests . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="313.638" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="314.331" end="x">. . . and the Jews were squeezed together in very tight living quarters, so that three to four people lived in one room.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="322.705" end="x">Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="323.621" end="x">And more. I, for instance, lived in a pretty large room, and there we were 12 people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="332.850" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="333.495" end="x">However, there lived, there lived three children . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="333.929" end="x">All men?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="335.296" end="x">No, families, strangers, and so on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="337.586" end="x">Men and women among them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="338.803" end="x">Men and women and children in one . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="340.110" end="x">In one room . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="340.923" end="x">. . . in one room.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="341.707" end="x">Yes. Now, what did one live on?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="344.641" end="x">You could only live from the work that the Germans offered, that was mainly, eh, in factories, as workers, mainly in military factories, ammunition factories, in military workshops, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="357.304" end="x">And did they pay for the work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="359.997" end="x">They paid for the work, but so little that one could hardly make ends meet, and mainly people could only live by selling items they still had, bed linens or pots, living off the sale of those goods.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="374.346" end="x">Who did one sell that to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="376.214" end="x">That was sold to Poles.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="377.581" end="x">That was sold to Poles.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="379.148" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="379.371" end="x">Eh, was there a special currency, was there <a class="term" href="#vothG_ghetto">ghetto</a> money there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="383.419" end="x">In <a class="placename" href="#vothL135">Cracow</a> there was no special money.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="385.648" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="386.160" end="x">That was in <a class="placename" href="#vothL82">Lodz</a>, that was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="387.907" end="x">In <a class="placename" href="#vothL82">Lodz</a> there was <a class="term" href="#vothG_ghetto">ghetto</a> money . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="388.931" end="x">Yes, that was <a class="placename" href="#vothC65" type="camp">Lodz</a>, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="389.534" end="x">Now, so you lived with twelve people in one room. Who was with you of your relatives?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="396.203" end="x">I was with my sister and brother-in-law, my child, two of my sister's children . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="403.323" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="403.986" end="x">Then there was also, eh, a cousin of mine with wife and child . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="412.058" end="x">Yes, and?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="412.480" end="x">An uncle and an aunt . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="414.528" end="x">Yes. And were there also strangers . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="416.576" end="x">And there were strangers with their families, unknown, unknown people also there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="419.980" end="x">So, how did you sleep?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="423.031" end="x">One, eh, there were either beds there, and if there was not enough space we were, eh, we had to sleep on the floor.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="429.688" end="x">Now, go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="430.784" end="x">I worked in a factory, in a foundry, had to, because I was away, that, eh, was far outside of the city, I worked in a Zinc foundry [unintelligible], and earned about eighty to ninety zloty per week, that was hardly enough to buy bread for two, for two to three days.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="455.090" end="x">So, go on. Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="460.313" end="x">In these bad times we held out until May of 1942. In May of 1942 the first incidents happened that we had not expected at all. Those were the evacuations.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="481.289" end="x">Now, describe in detail the procedure of the evacuations there. Hm?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="486.783" end="x">There were, the <a class="placename" href="#vothC55" type="camp">ghetto</a> was cordoned off, all around was <a class="term" href="#vothG_ss">SS</a> Waffen who let no one in or out of the <a class="placename" href="#vothC55" type="camp">ghetto</a>. All people were registered, and those who had a certificate that they worked in a military factory, got a certificate that they could stay, all others were rounded up in a square, and were deported.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="522.921" end="x">Did you get the certification?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="524.518" end="x">I obtained the certification back then because I was working in the foundry.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="528.054" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="528.928" end="x">But there were many people who also worked for Germans, in workshops, and who came through the different, eh, commotions to the collection square, and were taken away, too. Until . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="543.609" end="x">So, now comes your family, eh, did your family stay together with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="550.458" end="x">I managed back then to get the certification for my sister and for, for my child, for the sister of the children [he means "for the children of the sister"]—that was the first time, otherwise the family members of the workers were considered, and, eh, they were left there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="564.914" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="566.342" end="x">Back then approximately . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="568.222" end="x">Where were the people led to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="569.349" end="x">. . . 5,000 to 10,000 thousand people were taken away . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="570.837" end="x">Yes. To where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="571.964" end="x">According to our later investigations we were told that they were brought to <a class="placename" href="#vothC7" type="camp">Belzec</a> where there was an annihilation facility. We in the <a class="placename" href="#vothC55" type="camp">ghetto</a> did not know about the fate of these people for approximately three or four months. And, eh, still one and two years later some rumours circulated that were probably started by the Germans, that those people were brought to the [unintelligible] and worked in a camp there, but that was not true. Because we learned later, two, three, four years later, that the people, all as they were, were led to the annihilation facilities, and were burnt or gassed there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="618.327" end="x">Yes, what did the—you say, burnt, did one not only, eh, burn the dead?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="624.940" end="x">Yes, that, eh—I have, later in the camp and also after the liberation, I met people who had worked in these camps themselves. The scenes that were told to me were not even—are not to be rendered, [it is] hardly imaginable that a human brain could think—think up such plans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="649.639" end="x">So?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="650.540" end="x">In parts, people were packed into a tight room, the people were already half dead from the [endurance of the] transport, they were crowded together, and the gas, the gas containers were opened. When there were not enough gas containers, the people were barely suffocated but only half dead, and, as they were, they were brought to the fire room, and burnt there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="683.424" end="x">What do you call a fire room?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="685.966" end="x">Well—crematorium.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="687.322" end="x">Yes. Now, let us come back, you stayed in <a class="placename" href="#vothC55" type="camp">Cracow</a> back then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="692.515" end="x">I stayed back in <a class="placename" href="#vothC55" type="camp">Cracow</a>. After this, after the first evacuation in May the <a class="placename" href="#vothC55" type="camp">ghetto</a> was downsized, because there were fewer Jews. The conditions worsened. Then, in October of 1942, came the second evacuation. There, family members were not considered anymore. At that time, I lost most of my family. Just by happenstance I was able to save my sister and the children . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="727.884" end="x">Whom from your family did you lose?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="730.083" end="x">Back then, that is, with the first evacuation, I lost [an] uncle, an aunt, a cousin, a young person with his wife and a fourteen-year-old girl. All blossoming human beings who could have lived a long life.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="747.858" end="x">Yes, well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Maximillian Lipschitz</span>:
+            </span>
+            <span class="utterance" who="#lipschitzM" start="748.431" end="x">Of course, I was not the only one, there were, when you walked through the town, through the streets of the <a class="placename" href="#vothC55" type="camp">ghetto</a> after the evacuation, you would only hear the weeping and . . . [pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="763.292" end="x">[In English] This interview was discontinued because Dr. Lipschitz had to go on an important appointment of which he either had forgotten or didn't know before. We are now introducing another interview, at, eh, about the, eh, fourteenth minute of the spool.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="794.210" end="x"><a class="placename" href="#vothL256">Chicago</a>, June 26th, 1950. This concludes the section of Dr. Lipschitz. We have separated this from Spool 21, that has now the interview with Mr. Lea, and this will be Spool 9-21A, while the interview with Mr. Lea will be Spool 9-21B. Illinois Institute of Technology wire recording, project MH156. That's all.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Stefan Meuser</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>Stefan Meuser</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC55">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC55" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Krakow Ghetto<br /><span class="alt">(Cracow)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Krak&#195;w, Poland<br />
+                            </p>
+                            <div>
+                This ghetto was established in March 1941 and liquidated in March 1943.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC55 = new OpenLayers.Map('map_vothC55', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC55.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC55.addLayer(markers);
+map_id_vothC55.zoomToMaxExtent();
+
+                        var lat_1 = 50.050000;
+                        var lon_1 = 19.916700;
+                        var vothC55 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC55_icon = new OpenLayers.Marker(vothC55);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC55);
+markers.addMarker(vothC55_icon);
+    addMarker(vothC55, popupClass, "", true, false, false);
+    map_id_vothC55.setCenter(vothC55, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC65">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC65" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                L&#195;dź Ghetto<br /><span class="alt">(Litzmannstadt Ghetto)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                L&#195;dź, Poland<br />
+                            </p>
+                            <div>
+                Created on May 1, 1940 to intern the 164,000 original Jewish inhabitants of Ł&#195;dź, most of whom were killed at Chelmno or sent to labor camps. During the war, some 43,000 people died there from starvation and disease. When the Russian army occupied Ł&#195;dź in January 1945, only 877 Jews remained.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC65 = new OpenLayers.Map('map_vothC65', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC65.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC65.addLayer(markers);
+map_id_vothC65.zoomToMaxExtent();
+
+                        var lat_2 = 51.816700;
+                        var lon_2 = 19.466700;
+                        var vothC65 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC65_icon = new OpenLayers.Marker(vothC65);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC65);
+markers.addMarker(vothC65_icon);
+    addMarker(vothC65, popupClass, "", true, false, false);
+    map_id_vothC65.setCenter(vothC65, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC7">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC7" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Belzec
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Bełżec, Poland<br />
+                            </p>
+                            <div>
+                Created to to murder the Jews of the Lublin district of Poland, Belzec was the first of the three so called &#34;Aktion Reinhard&#34; extermination camps. Belzec began operation in March 1942, and by December, when operations ceased, the total number of deaths had reached about 434,000.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC7 = new OpenLayers.Map('map_vothC7', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC7.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC7.addLayer(markers);
+map_id_vothC7.zoomToMaxExtent();
+
+                        var lat_3 = 50.350000;
+                        var lon_3 = 23.466700;
+                        var vothC7 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC7_icon = new OpenLayers.Marker(vothC7);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC7);
+markers.addMarker(vothC7_icon);
+    addMarker(vothC7, popupClass, "", true, false, false);
+    map_id_vothC7.setCenter(vothC7, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL256">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL256" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chicago, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL256 = new OpenLayers.Map('map_vothL256', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL256.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL256.addLayer(markers);
+map_id_vothL256.zoomToMaxExtent();
+
+                        var lat_4 = 41.850000;
+                        var lon_4 = -87.650000;
+                        var vothL256 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL256_icon = new OpenLayers.Marker(vothL256);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL256);
+markers.addMarker(vothL256_icon);
+    addMarker(vothL256, popupClass, "", true, false, false);
+    map_id_vothL256.setCenter(vothL256, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_5 = 48.866700;
+                        var lon_5 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL352">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL352" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Neuschonstau, Czechoslovakia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL352 = new OpenLayers.Map('map_vothL352', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL352.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL352.addLayer(markers);
+map_id_vothL352.zoomToMaxExtent();
+
+                        var lat_6 = 0.000000;
+                        var lon_6 = 0.000000;
+                        var vothL352 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL352_icon = new OpenLayers.Marker(vothL352);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL352);
+markers.addMarker(vothL352_icon);
+    addMarker(vothL352, popupClass, "", true, false, false);
+    map_id_vothL352.setCenter(vothL352, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL298">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL298" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Praha, Czechoslovakia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL298 = new OpenLayers.Map('map_vothL298', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL298.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL298.addLayer(markers);
+map_id_vothL298.zoomToMaxExtent();
+
+                        var lat_7 = 50.100000;
+                        var lon_7 = 14.433300;
+                        var vothL298 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL298_icon = new OpenLayers.Marker(vothL298);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL298);
+markers.addMarker(vothL298_icon);
+    addMarker(vothL298, popupClass, "", true, false, false);
+    map_id_vothL298.setCenter(vothL298, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL135">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL135" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Krak&#195;w, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL135 = new OpenLayers.Map('map_vothL135', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL135.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL135.addLayer(markers);
+map_id_vothL135.zoomToMaxExtent();
+
+                        var lat_8 = 50.050000;
+                        var lon_8 = 19.916700;
+                        var vothL135 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL135_icon = new OpenLayers.Marker(vothL135);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL135);
+markers.addMarker(vothL135_icon);
+    addMarker(vothL135, popupClass, "", true, false, false);
+    map_id_vothL135.setCenter(vothL135, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL539">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL539" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Podg&#195;rze, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL539 = new OpenLayers.Map('map_vothL539', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL539.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL539.addLayer(markers);
+map_id_vothL539.zoomToMaxExtent();
+
+                        var lat_9 = 50.033300;
+                        var lon_9 = 19.966700;
+                        var vothL539 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL539_icon = new OpenLayers.Marker(vothL539);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL539);
+markers.addMarker(vothL539_icon);
+    addMarker(vothL539, popupClass, "", true, false, false);
+    map_id_vothL539.setCenter(vothL539, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL82">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL82" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            L&#195;dź, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL82 = new OpenLayers.Map('map_vothL82', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL82.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL82.addLayer(markers);
+map_id_vothL82.zoomToMaxExtent();
+
+                        var lat_10 = 51.816700;
+                        var lon_10 = 19.466700;
+                        var vothL82 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL82_icon = new OpenLayers.Marker(vothL82);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL82);
+markers.addMarker(vothL82_icon);
+    addMarker(vothL82, popupClass, "", true, false, false);
+    map_id_vothL82.setCenter(vothL82, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                        <li class="vothG_ss">
+                <a name="vothG_ss"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    SS.
+                </span>
+                <span class="definition">
+                    Acronym for the German Schutzstaffel (“Protective Echelon”), a major Nazi organization. It grew from a small paramilitary unit to a powerful force that served as Hitler's "Praetorian Guard," the Nazi Party's "Shield Squadron" and a force that, fielding almost a million men (both on the front lines and as political police), managed to exert as much political influence as the German Army. Built upon the Nazi racial ideology, the SS, under Heinrich Himmler's command, was responsible for many (and most of the worst) of the crimes against humanity perpetrated by the Nazis during World War II.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

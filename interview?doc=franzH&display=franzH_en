@@ -1,0 +1,3588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Hildegarde Franz; September 20, 1946; Munich, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-hildegarde-franz-september-20-1946-munich-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Hildegarde Franz; September 20, 1946; Munich, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=franzH">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=franzH&display=franzH_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=franzH&display=franzH_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=franzH">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=franzH">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.633" end="x">[In English] <a class="placename" href="#vothL29">München</a>, September the 20th, 1946, at Funkenkasernen, a camp for transient displaced people [such who are ready to leave for overseas in the more or less near future]. I have here before me Mrs. Hildegarde Franz who is expecting to go to the United States.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="17.182" end="x">[In German] Now, Mrs. Franz, please turn around, make yourself comfortable. You will be warm. Take off your coat. [Speak] in this direction. Right?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="23.337" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="24.087" end="x">Now, Mrs. Franz, will you tell me again, what is your full name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="28.118" end="x">Hildegarde Franz.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="29.228" end="x">How old are you, if one may know?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="30.916" end="x">Seventy-five years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="32.354" end="x">[<i>surprised</i>] No-o-o!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="33.541" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="34.197" end="x">That is impossible. You look so young [and that was indeed so].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="40.001" end="x">Yes. I am.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="41.219" end="x">You are seventy-five years old?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="42.688" end="x">[<i>in a soft, fading voice</i>] Yes, yes, yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="43.798" end="x">Now then, Mrs. Franz, will you be so kind and tell me where you were when the war started?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="51.766" end="x">My . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="52.704" end="x">And then what happened to you afterwards until now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="59.422" end="x">I was in <a class="placename" href="#vothL34">Nuremberg</a>. With my sons and my husband we were working with my relatives at Schloss Ardien [?] near <a class="placename" href="#vothL34">Nuremberg</a>, in a "ready to wear" [business].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="73.127" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="73.638" end="x">And in the '34 we were compelled to sell the business since we were Jews, no?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="79.927" end="x">Already so far back, '34?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="81.842" end="x">'34.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="83.123" end="x">Now, Hitler was elected when?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="84.670" end="x">In '33.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="85.358" end="x">Yes, if one figures that way. He came to power in '33.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="88.264" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="88.920" end="x">And in '34 you were compelled . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="90.623" end="x">We were compelled to sell our business for certain reasons, because our employees were completely of National Socialist [Nazi] orientation and reported every customer who purchased from us to the Braunhaus [Nazi headquarters], so that the people . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="110.026" end="x">Withdrew? [German word order does not permit verbatim translation of this sentence].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="110.728" end="x">. . . withdrew their patronage. They were afraid to buy from us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="113.538" end="x">What kind of a business did you say it was?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="114.940" end="x">"Ready-to-wear" for ladies. A very large business of ladies' "ready-to-wear".</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="118.860" end="x">A "ready-to-wear" establishment. Did you yourselves also manufacture the dresses?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="123.307" end="x">No, no, not that.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="124.573" end="x">You simply purchased them from the manufacturer . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="126.354" end="x">Purchased.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="126.854" end="x">. . . and then sold them ready-made.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="128.229" end="x">Sold.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="128.667" end="x">And that was in <a class="placename" href="#vothL304">Heidelberg</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="129.714" end="x">That was in <a class="placename" href="#vothL34">Nuremberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="131.167" end="x">In <a class="placename" href="#vothL34">Nuremberg</a>, excuse me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="132.151" end="x">Of course.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="132.760" end="x">That is exactly there where now the trial takes place of the . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="137.533" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="138.220" end="x">. . . of the Nazis.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="138.721" end="x">Yes, yes. And so . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="139.659" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="140.050" end="x">. . . then my husband . . . Ours was a mixed marriage. It was . . . So my husband wanted . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="144.372" end="x">Your husband was a Christian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="145.653" end="x">Yes. Because I was a Jewess, my husband with my sons had to be discharged, simply put out on the street, so to speak. No?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="152.734" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="153.734" end="x">Nu, yes. The sons then emigrated to America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="159.093" end="x">Oh, in 1934 your sons still had a chance to emigrate to America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="162.749" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="163.812" end="x">Who sent them the affidavits?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="164.906" end="x">My son happened to meet a gentleman at . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="168.531" end="x">You, you have no relatives [in the United States], so they were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="170.329" end="x">. . . the <a class="placename" href="#vothC58" type="camp">Leipzig</a> Fair.<note n="1"><span class="note">She refers to the Leipzig Trade Fair, a major European trade fair which began in the Middle Ages and still continues today.</span><sup><a href="#note_1">1</a></sup></note> He provided for my son a contact with America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="174.407" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="175.172" end="x">And he remained there [where?] for a year, and from there [?] he . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="178.297" end="x">To . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="178.828" end="x">. . . he got his . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="180.328" end="x">Affidavit.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="181.406" end="x">. . . his entrance [permit] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="183.052" end="x">To America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="183.630" end="x">. . . was obtained. Since then he is in America with one and the same firm, since ten years ago, since ten years ago with the same firm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="188.797" end="x">With the same firm, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="190.438" end="x">Employed by Kresge.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="192.906" end="x">Kresge?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="193.671" end="x">Kresge, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="194.733" end="x">What is that, the five-and-ten firm. Or . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="197.139" end="x">A very large firm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="198.435" end="x">That very large five-and-ten [firm?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="199.413" end="x">Employed already for ten years.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="201.173" end="x">Yes. Yes. Now that means one son is there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="203.125" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="203.812" end="x">And do you have any more in America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="205.108" end="x">One son is in the state of Colorado. Yes, Colorado.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="209.608" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="210.248" end="x">In <a class="placename" href="#vothL492">Durango</a>. And for six years he holds the same position.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="214.451" end="x">Aha. Are they married there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="216.608" end="x">One of my sons is married.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="218.640" end="x">He did not take his wife with him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="219.890" end="x">Yes. His wife is there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="221.344" end="x">He took her with him from here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="223.640" end="x">[<i>words not clear; they speak simultaneously</i>] No. He got married in America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="224.314" end="x">He got married in America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="225.923" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="226.360" end="x">Now with whom then are you here, Mrs. Franz?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="228.907" end="x">I am all alone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="230.141" end="x">What happened to your husband?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="232.000" end="x">My husband died.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="233.360" end="x">When?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="233.829" end="x">My husband was very, very ill due to all these harassments and the hardships that we endured. Then my husband became very, very ill, true [you see?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="245.610" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="246.188" end="x">And due to the air raids . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="248.766" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="249.328" end="x">. . . which we lived through. It was afterwards, so [that] I for nearly a full half-year hardly got out of my clothes, only in order to help my sick husband, when the [air] attacks would start, so that I could take him to the cellar. For a full half-year I did not take off my clothes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="264.273" end="x">Where were you during all that time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="265.335" end="x">In <a class="placename" href="#vothL34">Nuremberg</a>, in <a class="placename" href="#vothL34">Nuremberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="266.616" end="x">In <a class="placename" href="#vothL34">Nuremberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="267.319" end="x">Yes. Then in '43 I was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="269.203" end="x">Now one moment [<i>apparently adjustment of the equipment</i>]. Now go on. What happened then in '43?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="274.234" end="x">Now in '43 it was . . . when it [the war] became so frightful, I went with my husband for a few weeks to the country. There he became very, very sick. I had [to provide for] an operation. I had to return him to <a class="placename" href="#vothL34">Nuremberg</a> in order to submit him to an operation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="288.268" end="x">Now your husband was a Christian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="290.242" end="x">Yes, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="290.804" end="x">He was a German?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="291.554" end="x">He was German. And then he died in <a class="placename" href="#vothL34">Nuremberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="293.655" end="x">And he died in <a class="placename" href="#vothL34">Nuremberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="294.967" end="x">In 40— . . . on the 19th of October, '43, my husband died, and on the 17th of January, '44, I was, within two days, from my apartment remo— . . . [<i>she weeps silently</i>]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="308.076" end="x">What do you mean by "within two days"?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="310.591" end="x">[<i>choking with tears</i>] I had to vacate my apartment and was moved to the <a class="term" href="#vothG_kz">KZ</a>, where . . . horribly . . . [<i>she cries bitterly</i>] Let me take hold of myself a bit. [Pause.] At the age of seventy-three, after two months I was dragged away to <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="332.004" end="x">Now well, what did they say? Why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="334.439" end="x">Just nothing. I am a Jewess.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="336.501" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="337.048" end="x">So I was . . . was simply dragged off.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="339.610" end="x">Now tell me. You say they gave you two days to liquidate your apartment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="343.655" end="x">They wanted . . . yes. I could not move any more from the apartment. I was compelled to leave everything as it stood and lay. No? [<i>in a fading voice</i>] I was simply . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="350.250" end="x">[<i>whispers</i>] A bit louder.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="350.922" end="x">[<i>in full voice</i>] I was simply dragged away to <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="354.511" end="x">Now tell me, how many people went with you to <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="358.167" end="x">With my transport . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="360.354" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="360.839" end="x">. . . went fifteen people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="362.761" end="x">And how were you transported to <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="364.979" end="x">We were [sent] to <a class="placename" href="#vothC110" type="camp">Theresienstadt</a> by train under guard, that is under the SA [Sturmabteilung, also sometimes known as Brown Shirts or Storm Troopers] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="370.967" end="x">From . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="371.561" end="x">. . . of the <a class="term" href="#vothG_gestapo">Gestapo</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="372.718" end="x">Was that a passenger RR-car?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="374.453" end="x">It was a third class RR-car [an ordinary passenger car, normally decent transportation].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="376.968" end="x">A third class RR-car?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="377.468" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="377.952" end="x">Who were the other people with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="379.749" end="x">There was a Mr. Kaufman, a . . . also a [Mrs.] Dessauer—he, too, had died [her husband]—Dessauer, Kaufman, a Mr. Krengel, a Frau Dr. Rodmar [?] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="392.053" end="x">[<i>whispers</i>] A bit louder.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="392.912" end="x">A Frau Dr. Rodmar, a . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="395.819" end="x">Now well, I mean what kind of people were they that they had remained in <a class="placename" href="#vothL34">Nuremberg</a> so long in the first place?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="401.511" end="x">They all were of mixed marriages.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="404.433" end="x">Oh, they were people of mixed marriages [Jew-Christian].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="406.933" end="x">Yes, and they were all in '3 . . . [<i>correction</i>] '44 dragged away to <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="411.886" end="x">But of these mixed marriages they took only the Jewish half?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="415.605" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="416.198" end="x">The Jewish half of the mixed marriages.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="418.448" end="x">The Jewish half of the mixed marriages, yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="419.760" end="x">These were then [possibly after the death of the Christian half] sent away to <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="421.088" end="x">Only the Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="421.541" end="x">Now tell me, how did you find <a class="placename" href="#vothC110" type="camp">Theresienstadt</a> at that time? [See Mr. Schlaefrig, Chapter 26.]<note n="2"><span class="note">Boder's note refers to the interview with Friedrich Schläfrig, conducted on August 23, 1946 in Paris, France. Schläfrig was also imprisoned in the ghetto for older adults at Theresienstadt.</span><sup><a href="#note_2">2</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="424.791" end="x">Well, we have <a class="placename" href="#vothC110" type="camp">Theresienstadt</a> . . . we were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="426.337" end="x">There were various periods in <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="427.916" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="429.244" end="x">Now then, where, what kind of a place [accommodations] was assigned to you? Where . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="432.295" end="x">They assigned to us an attic.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="435.357" end="x">An attic? Of a building?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="437.091" end="x">Of a building, where we had to live . . . sleep and live. And . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="440.653" end="x">And who lived below?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="441.840" end="x">Below was a Siechenheim where sick people were lying. [The interviewer did not get the word "Siechenhiem." It sounded somewhat like "Ziegenheim," goat home, hence the confusion below.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="448.101" end="x">What kind of a home?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="448.835" end="x">Siechenheim, where only sick [people] were lying.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="450.820" end="x">Why is it called Ziegenheim?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="452.554" end="x">That's what they called it. I don't know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="454.101" end="x">Aha. How do you spell it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="456.726" end="x">S . . . S-I-E-C-H . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="459.451" end="x">S?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="460.014" end="x">Siechen. S-I-E-C-H-E-N-H-E-I-M. Siechenheim.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="464.150" end="x">Siechenhiem [the word "Siech" meaning chronic, incurable, or incapacitating illness].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="465.275" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="465.822" end="x">Yes. And you lived there upstairs . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="467.620" end="x">Upstairs.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="468.417" end="x">. . . Above that home for the incurables [Siechenheim].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="469.334" end="x">We lived . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="470.761" end="x">Now how many people were you in one room?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="472.464" end="x">About thirty-five people were lodged in that attic.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="476.464" end="x">Only women?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="478.370" end="x">Only . . . [<i>correction</i>] women and men. Everybody together.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="480.365" end="x">In the same room?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="481.349" end="x">Everything in the same room.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="482.442" end="x">So how did you sleep there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="483.692" end="x">Now, well, we slept in a kind of box with a paillasse [sack of straw].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="487.155" end="x">Aha. For each one separately? A bed for each one, so to speak?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="490.653" end="x">A bed, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="491.668" end="x">With a paillasse.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="492.621" end="x">Paillasse, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="493.636" end="x">Now what kind of things did you take with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="495.479" end="x">A little . . . I was permitted to take with me only the most indispensable. A coffer with clothes, which I had been using at the time, a little underwear, a blanket and a pillow.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="507.327" end="x">Aha. And that they let you keep in <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="510.093" end="x">I was allowed to keep it. But many . . . I happened to be lucky, but from many it was stolen, so that they had nothing. They . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="517.235" end="x">So. And tell me, how was it afterwards in <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="523.800" end="x">Nu, yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="524.641" end="x">How long were you there, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="525.437" end="x">A year and a half. Until the liberation by the Russians had come.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="528.922" end="x">Were you well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="530.484" end="x">For seven weeks I lay in the hospital.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="533.574" end="x">In the same Siechenheim?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="534.886" end="x">No, no. In a hospital. "The Grand Hotel" it was called.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="538.901" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="539.619" end="x">And there I lay for seven weeks, because I lost weight so quickly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="543.522" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="544.022" end="x">Within three months, four months, I lost forty pounds. That was too much. So all my inner organs, heart and everything, were affected by it. True?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="555.577" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="556.249" end="x">And so I lay for seven weeks in the hospital.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="557.984" end="x">And what did they do for you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="560.546" end="x">[<i>weeping</i>] In the hospital? Oh, dear God. How much could they do? I was lying in the hospital. I was treated with [<i>unclear; still in tears</i>]. I was discharged too early, because this hospital was really used only for people sick of the lungs.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="574.155" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="574.827" end="x">And so I was returned to my attic.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="577.526" end="x">Who were the physicians in this hospital?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="579.651" end="x">That was a Dr. Guttman.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="582.557" end="x">Were they Jewish physicians?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="584.291" end="x">They were Jewish physicians. There were only Jews there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="586.276" end="x">Yes, and the . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="586.619" end="x">Only Jewish . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="587.291" end="x">Yes, I understand. And the physicians were Jewish, true?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="589.710" end="x">They were Jewish, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="591.085" end="x">Now tell me, as time passed and it came nearer to the defeat, did the conditions change a bit in <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="599.767" end="x">No. I mean at the end we did not believe any more in general [<i>she weeps</i>]—how should I say?—to be freed [?]. We were completely cut off from the world. We did not get any news, nothing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="613.316" end="x">No newspapers, no magazines?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="614.801" end="x">Nothing, nothing. No newspapers, no radio, no . . . not even a letter placed in a package. That too they took away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="622.763" end="x">Did you get any packages?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="624.545" end="x">I . . . No. Not a single one did I receive.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="626.413" end="x">Why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="626.991" end="x">[<i>in tears</i>] I got nothing. Nobody sent me anything. [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="629.913" end="x">Didn't you have any friends left in <a class="placename" href="#vothL304">Heidelberg</a></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="632.381" end="x">[<i>correcting</i>] In <a class="placename" href="#vothL34">Nuremberg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="633.787" end="x">In <a class="placename" href="#vothL34">Nuremberg</a>, who had remained there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="636.303" end="x">Yes, but I was . . . none of them sent me anything. I also did not request [demand] anything, because I did not want to embarrass those people. True? Because it was strictly prohibited that the Jews should have anything sent to them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="649.643" end="x">Now tell me, did you still have any money?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="652.721" end="x">In <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>, no, not a penny.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="654.784" end="x">How come?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="655.613" end="x">I was not permitted to take any money.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="657.738" end="x">Oh. Did you have any money in . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="659.816" end="x">But in <a class="placename" href="#vothC110" type="camp">Theresienstadt</a> there was—sorry I don't have it with me—there was a <a class="term" href="#vothG_ghetto">ghetto</a> money [currency].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="664.637" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="665.324" end="x">True? And . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="666.840" end="x">And who got that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="668.012" end="x">That we got . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="669.215" end="x">For what . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="670.450" end="x">. . . so we could buy something.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="672.278" end="x">Now, did you get that money for nothing, or . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="674.747" end="x">We got every month fifty crowns, true?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="677.537" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="678.115" end="x"><a class="term" href="#vothG_ghetto">Ghetto</a> money.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="678.912" end="x">Yes. With that Moses picture on it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="680.177" end="x">Moses' picture on it. Yes, yes. I have saved [as a curiosity] a few of them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="683.493" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="684.493" end="x">We all had to wear the Jewish star, no?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="686.634" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="687.384" end="x">And we were . . . Now the food was more [less] than little.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="693.884" end="x">How were you fed? Did you cook there in your quarters or . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="697.169" end="x">No. With . . . we were fed from a [central] kitchen with . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="701.834" end="x">And who fetched the food?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="703.387" end="x">That all of us had to get. We had to call for it. We had to fetch the food.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="708.637" end="x">Did you stand in a queue? [She may not have understood the word queue. Maybe it was mispronounced.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="710.527" end="x">No. Just on the street. There were streets.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="712.652" end="x">And so you fetched your food and . . . Where did you eat it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="715.496" end="x">[<i>in tears; words not clear</i>] . . . and we sat down on the bed and ate. A table we didn't know any more. True? There were no tables in our room. Nu, so one had to sit down on his bed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="728.022" end="x">Yes. So. Did you keep your own bed linen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="732.162" end="x">Yes. I had my own bed linen. These I took with me. And I washed them regularly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="739.647" end="x">Hm. Did you have enough soap?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="741.725" end="x">Soap? [<i>chuckle</i>] What soap? Well, we got some soap paste.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="746.515" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="747.187" end="x">And of that there was very little.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="748.531" end="x">Yes. And then? Did it not get better towards the end?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="752.264" end="x">Oh. There began to come commissions.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="755.060" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="756.029" end="x">From Sweden and from Switzerland [International Red Cross?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="757.979" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="758.745" end="x">And it had to become a bit better for us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="760.917" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="761.385" end="x">And everything had . . . Now what they wanted to show, the Nazis, that they showed, that was put in order. And the rest remained as it was. Then we would get once a bit more food, and when they were gone, the commission, then they deducted it again from us. Then we got less again. No?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="776.421" end="x">So. Yes. Who were the Nazis with whom you had come in contact?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="780.374" end="x">We had less contact with the Nazis. It was the Council of the Elders who received the orders from the Nazis, and the Council of the Elders had to execute them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="792.070" end="x">Do you remember any people from the Council of the Elders?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="794.679" end="x">[<i>recollecting</i>] From the Council of the Elders? I really . . . Wait please . . . One—what was his name? I met a Mr. Meier. Otherwise, no one.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="803.571" end="x">No one.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="804.055" end="x">Because once I was summoned to the <a class="term" href="#vothG_commandant">commandant's</a> office where I was confronted with a will which I and my husband had made out in the year '32. And they asked me at the <a class="term" href="#vothG_commandant">commandant's</a> office [<i>in tears</i>] if that was in the handwriting of my husband, and they told me to declare it void.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="825.377" end="x">Why void it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="826.361" end="x">Well, I don't know. I did not agree to that. I said to myself that I have lived with my husband in a very happy marriage, a forty-three year old happy marriage, and that the family of my husband is sacred to me [a will in their favor should stand]. Thus I explained it to them. That was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="840.031" end="x">Was that a Jewish group that [told] you . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="842.126" end="x">No. These were the . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="843.251" end="x">The S[S] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="844.189" end="x">The S[S]. That was the <a class="term" href="#vothG_gestapo">Gestapo</a> that questioned me. The <a class="term" href="#vothG_ss">SS</a> were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="847.717" end="x">Yes. What was there in the will that was not to their liking?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="850.764" end="x">Well, at that time I assigned everything to the name of my husband, no?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="856.202" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="856.546" end="x">And if I somehow had voided it then they would have taken over everything. No?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="861.744" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="862.385" end="x">And so there was [?] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="863.073" end="x">Now what was there to take over?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="864.261" end="x">Well, my husband . . . we had some property. No? And the apartment . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="868.245" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="868.729" end="x">. . . and the furniture, everything that there was. And so they were very eagerly after it in order to distribute it among their Nazis. And so they were greatly interested in getting it, but they could not do that, because everything was in the name of my husband [a Christian]. No?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="882.004" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="882.598" end="x">And I did not agree to give it up.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="886.741" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="887.210" end="x">True?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="888.100" end="x">Did they not threaten you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="889.584" end="x">No. I just told them that under no circumstances would I acquiesce to counteract the wishes of my husband, and the will should remain as is.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="903.952" end="x">Yes. Now tell me, Mrs. Franz, how did the liberation come about?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="908.720" end="x">Liberation came through the Russians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="910.829" end="x">How did they come in?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="913.219" end="x">That was the 8th, 9th of May. The 8th or 9th of May they came.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="915.551" end="x">'45.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="916.328" end="x">'45.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="917.484" end="x">And what happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="918.437" end="x">Then it happened . . . They got away in flight, those [Nazis] who were still there. True? They retreated and abandoned everything in disorder.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="923.591" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="924.294" end="x">And the Russians treated us decently.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="927.544" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="928.029" end="x">We got more food, and we were given proper maintenance.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="935.230" end="x">So, and when did you return to <a class="placename" href="#vothL34">Nuremberg</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="936.948" end="x">We returned the 2nd of July, '45. We were called for [fetched] by the Americans from <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="946.323" end="x">In camions, buses?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="949.526" end="x">In buses, in such cargo trucks we were called for.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="953.167" end="x">Now what did you find in <a class="placename" href="#vothL34">Nuremberg</a> of your property?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="955.995" end="x">Nothing at all. [Pause.] The house was bombed out.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="961.329" end="x">Was it your own house?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="962.439" end="x">No, it was not my own house. Of my whole apartment I salvaged hardly anything. The people who had sublet from me have helped themselves [to my things] rather well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="976.032" end="x">Did you find some clothing? Did you . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="978.626" end="x">Nothing. There were only a few things, a few valuables that I had stored away with a Dr. Mombart.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="986.527" end="x">A Christian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="987.417" end="x">Yes. He kept it for me wonderfully, while the intermarried couple who lived in my apartment did exactly the contrary. [See note at end of chapter.] But I don't want [to do anything] against these people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="996.016" end="x">Oh yes, you don't want to complain . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="997.328" end="x">It is over. I don't want to demand [prosecute]. They have deprived me of a lot.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1001.919" end="x">That was an intermarried family that lived there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1003.653" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1004.247" end="x">And nothing happened to them during . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1006.059" end="x">They left the apartment afterwards. A bomb hit [the house], true?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1012.168" end="x">Oh, and then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1013.792" end="x">It tore off one wall, but the things, the furniture remained standing. No?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1018.019" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1018.550" end="x">At least a large part. And what happened to it? I got a few pieces back, but in part they said they had nothing more.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1028.082" end="x">So. And your bank account? Did you get that back?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1030.942" end="x">That I got back.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1032.083" end="x">That the Americans have returned to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1033.317" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1033.911" end="x">And they permit you to take it out?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1036.043" end="x">They have . . . that [the permission] I got, too.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1037.684" end="x">Yes. So that was safe.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1039.512" end="x">Yes, that was safe. But of the furnishings of my apartment, I have lost very, very much.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1044.794" end="x">Now tell me, did you make quick contact with your sons?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1050.411" end="x">Yes, I obtained it through an American.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1054.297" end="x">Did you telegraph, or what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1055.957" end="x">My son sent me a cable first, because I had sent him a letter. And then he sent me a cable full of great joy about me still being alive [<i>tears</i>].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1066.863" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1067.395" end="x">They didn't figure that I was still alive.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1069.739" end="x">Now when do you think you are leaving?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1072.427" end="x">I am leaving on the 24th.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1074.255" end="x">Which 24th?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1076.240" end="x">The 24th of September, with the transport.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1078.136" end="x">Where to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1078.698" end="x">To <a class="placename" href="#vothL175">Bremen</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1079.604" end="x">Oh. And then your ship leaves from <a class="placename" href="#vothL175">Bremen</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1082.526" end="x">Oh, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1084.432" end="x">I thought that you are possibly going to <a class="placename" href="#vothL13">Paris</a>, because I am leaving the 29th . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1088.729" end="x">No, no.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1089.433" end="x">. . . on the [S.S.] Washington.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1090.012" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1090.778" end="x">Then you are traveling on a military ship?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1092.184" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1093.059" end="x">So, that is, after all, a happy ending to such a bitter play ["gutes Ende zum boesen Spiel"].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1098.731" end="x">Yes. I have suffered much, and much.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1101.324" end="x">Oh, that we know. That . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1103.434" end="x">[<i>weeps bitterly</i>] I have suffered frightfully. I really should not think about it, how hard it was for me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1112.059" end="x">Where are you going now? To <a class="placename" href="#vothL493">Newark</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1113.856" end="x">To my son.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1114.559" end="x">To <a class="placename" href="#vothL493">Newark</a>. And the other one you say is in . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1116.871" end="x">Is in <a class="placename" href="#vothL492">Durango</a>, Colorado. In the state of Colorado.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1119.745" end="x">Yes. You would like it there, too. It is warm and beautiful there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1122.401" end="x">[<i>in tears</i>] The children are, of course, glad that they still have a mother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1125.479" end="x">Of course, they should be glad.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1127.541" end="x">It was frightful. I can't explain it to you at all, how terrible that all was. [<i>She apparently weeps.</i>]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1131.385" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1133.448" end="x">I have gained fifty pounds.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1138.010" end="x">How much did you weigh? How much do you weigh now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1142.057" end="x">Now I must have about my old [original] weight.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1144.057" end="x">How much?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1144.620" end="x">About one hundred fifteen to one hundred twenty pounds. But when I returned from <a class="placename" href="#vothC110" type="camp">Theresienstadt</a> I weighed only 70 pounds.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1149.849" end="x">Tell me please, were there in <a class="placename" href="#vothC110" type="camp">Theresienstadt</a> any selections, so that people were sent away from there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1154.835" end="x">You mean transports [shipments usually to extermination camps]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1156.663" end="x">Yes, from <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1157.991" end="x">Oh. God in heaven!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1159.679" end="x">Tell us about it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1160.866" end="x">Well, in my time [?] many, many people were sent to Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1166.397" end="x">For what reason? How were they chosen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1169.038" end="x">Simply. [<i>she speaks very fast, barely understandable, with great apprehension</i>] For transport so-and-so many people were simply ordered. And the transports came for them, [and they went] part to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, part to <a class="placename" href="#vothC8" type="camp">Belsen</a>. They went to <a class="placename" href="#vothC90" type="camp">Posen</a> where they were kept in <a class="term" href="#vothG_kz">KZs</a>, and most of these people have all perished. Then there was one transport that was the last one, in October. There were eighteen thousand people dragged off from <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1192.913" end="x">[<i>astonished</i>] Eighteen thousand?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1195.444" end="x">Eighteen thousand people were dragged off from <a class="placename" href="#vothC110" type="camp">Theresienstadt</a> to Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1199.288" end="x">How were they selected? Were any Reichs-Germans [actual German citizens whether Jews or non-Jews] with . . . among them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1203.466" end="x">Germans and all possible . . . all possible nations were among them [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1206.763" end="x">And how did you succeed in remaining there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1208.966" end="x">Where? I?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1210.872" end="x">In <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1211.731" end="x">[<i>in a feeble voice</i>] Yes, that I don't know. I just was not among them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1214.387" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1214.981" end="x">I was not among them. I just did not get to it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1217.690" end="x">[You] had luck.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1218.628" end="x">I had luck.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1219.597" end="x">Were there any in the transports who came with you from <a class="placename" href="#vothL34">Nuremberg</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1226.113" end="x">There were such [?] who were dragged off to Poland, to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1229.144" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Hildegarde Franz</span>:
+            </span>
+            <span class="utterance" who="#franzH" start="1229.909" end="x">And of them only a single one [a woman] has returned. She was a younger person. The others have all perished.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1236.737" end="x">[After a long pause possibly due to difficulty with the equipment, at which times some statements were made that could not be recorded; in English] There is a correction: four people from her transport were sent to Poland, and one returned of these four, a younger person.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1254.319" end="x">This concludes the interview with Miss Hildegarde— [<i>correction</i>] with Mrs. Hildegarde Franz, age seventy-five, born in <a class="placename" href="#vothL34">Nuremberg</a>, or who lived in <a class="placename" href="#vothL34">Nuremberg</a> in a mixed marriage with a Christian husband, and who after his death was sent to <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>. She is now in the <a class="term" href="#vothG_unrra">UNRRA</a> camp at Funkenkasernen in <a class="placename" href="#vothL29">Munich</a>. And the 24th of this month—that means in four days—she is going to <a class="placename" href="#vothL175">Bremen</a>, and from <a class="placename" href="#vothL175">Bremen</a> sailing to the United States to her son in <a class="placename" href="#vothL493">Newark</a>, and to the other one in Colorado. This concludes the interview with Miss [Mrs.] Hildegarde Franz at twenty minutes of the spool [about 25 minutes running on 50 cycles]. An Illinois Institute of Technology wire recording.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            She refers to the Leipzig Trade Fair, a major European trade fair which began in the Middle Ages and still continues today.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            Boder's note refers to the interview with Friedrich Schläfrig, conducted on August 23, 1946 in Paris, France. Schläfrig was also imprisoned in the ghetto for older adults at Theresienstadt.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Dagmar Platt</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English translation
+                            </i>: 
+            <span class="Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Eben E. English</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC58">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC58" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Leipzig
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Buchenwald
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Leipzig, Germany<br />
+                            </p>
+                            <div>
+                Located in an industrial suburb of Leipzig; many political prisoners held there.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC58 = new OpenLayers.Map('map_vothC58', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC58.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC58.addLayer(markers);
+map_id_vothC58.zoomToMaxExtent();
+
+                        var lat_1 = 51.333300;
+                        var lon_1 = 12.333300;
+                        var vothC58 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC58_icon = new OpenLayers.Marker(vothC58);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC58);
+markers.addMarker(vothC58_icon);
+    addMarker(vothC58, popupClass, "", true, false, false);
+    map_id_vothC58.setCenter(vothC58, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC110">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC110" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Theresienstadt<br /><span class="alt">(Terezín)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Flossenb&#195;rg
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Terez&#195;n, Czechoslovakia<br />
+                            </p>
+                            <div>
+                By November 24, 1941 the heart of Theresienstadt was turned into a walled ghetto. To the outside it was presented by the Nazis as a model Jewish settlement, but in reality it was a concentration camp. Theresienstadt was also used as a transit camp for European Jews en route to Auschwitz.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC110 = new OpenLayers.Map('map_vothC110', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC110.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC110.addLayer(markers);
+map_id_vothC110.zoomToMaxExtent();
+
+                        var lat_2 = 50.500000;
+                        var lon_2 = 14.150000;
+                        var vothC110 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC110_icon = new OpenLayers.Marker(vothC110);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC110);
+markers.addMarker(vothC110_icon);
+    addMarker(vothC110, popupClass, "", true, false, false);
+    map_id_vothC110.setCenter(vothC110, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Flossenb&#195;rg
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_3 = 50.033300;
+                        var lon_3 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC8">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC8" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Bergen-Belsen
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Flossenb&#195;rg
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Bergen, Germany<br />
+                            </p>
+                            <div>
+                Established in the spring of 1943 and initially intended as a transit camp, it soon was integrated into the concentration camp network.  Its population swelled late in the war as inmates from other camps further east were moved into it--from around 15,000 in late 1944 to 41,250 in March 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC8 = new OpenLayers.Map('map_vothC8', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC8.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC8.addLayer(markers);
+map_id_vothC8.zoomToMaxExtent();
+
+                        var lat_4 = 52.766700;
+                        var lon_4 = 9.916700;
+                        var vothC8 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothC8_icon = new OpenLayers.Marker(vothC8);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC8);
+markers.addMarker(vothC8_icon);
+    addMarker(vothC8, popupClass, "", true, false, false);
+    map_id_vothC8.setCenter(vothC8, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC90">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC90" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Posen<br /><span class="alt">(Poznan, Fort VII)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Flossenb&#195;rg
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Poznań, Poland<br />
+                            </p>
+                            <div>
+                Originally build as a Prussian fort on the outskirts of Posen (Poznan), this compound was the first on Polish soil to be designated as a concentration camp following the fall of Poland in September 1939.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC90 = new OpenLayers.Map('map_vothC90', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC90.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC90.addLayer(markers);
+map_id_vothC90.zoomToMaxExtent();
+
+                        var lat_5 = 52.416700;
+                        var lon_5 = 16.883300;
+                        var vothC90 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothC90_icon = new OpenLayers.Marker(vothC90);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC90);
+markers.addMarker(vothC90_icon);
+    addMarker(vothC90, popupClass, "", true, false, false);
+    map_id_vothC90.setCenter(vothC90, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_6 = 48.133300;
+                        var lon_6 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL34">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL34" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            N&#195;rnberg, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL34 = new OpenLayers.Map('map_vothL34', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL34.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL34.addLayer(markers);
+map_id_vothL34.zoomToMaxExtent();
+
+                        var lat_7 = 49.450000;
+                        var lon_7 = 11.066700;
+                        var vothL34 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL34_icon = new OpenLayers.Marker(vothL34);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL34);
+markers.addMarker(vothL34_icon);
+    addMarker(vothL34, popupClass, "", true, false, false);
+    map_id_vothL34.setCenter(vothL34, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL304">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL304" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Heidelberg, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL304 = new OpenLayers.Map('map_vothL304', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL304.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL304.addLayer(markers);
+map_id_vothL304.zoomToMaxExtent();
+
+                        var lat_8 = 49.412222;
+                        var lon_8 = 8.710000;
+                        var vothL304 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL304_icon = new OpenLayers.Marker(vothL304);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL304);
+markers.addMarker(vothL304_icon);
+    addMarker(vothL304, popupClass, "", true, false, false);
+    map_id_vothL304.setCenter(vothL304, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL492">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL492" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Durango, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL492 = new OpenLayers.Map('map_vothL492', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL492.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL492.addLayer(markers);
+map_id_vothL492.zoomToMaxExtent();
+
+                        var lat_9 = 37.266700;
+                        var lon_9 = -107.866700;
+                        var vothL492 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL492_icon = new OpenLayers.Marker(vothL492);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL492);
+markers.addMarker(vothL492_icon);
+    addMarker(vothL492, popupClass, "", true, false, false);
+    map_id_vothL492.setCenter(vothL492, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL175">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL175" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Bremen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL175 = new OpenLayers.Map('map_vothL175', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL175.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL175.addLayer(markers);
+map_id_vothL175.zoomToMaxExtent();
+
+                        var lat_10 = 53.083300;
+                        var lon_10 = 8.800000;
+                        var vothL175 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL175_icon = new OpenLayers.Marker(vothL175);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL175);
+markers.addMarker(vothL175_icon);
+    addMarker(vothL175, popupClass, "", true, false, false);
+    map_id_vothL175.setCenter(vothL175, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_11 = 48.866700;
+                        var lon_11 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL493">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL493" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Newark, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL493 = new OpenLayers.Map('map_vothL493', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL493.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL493.addLayer(markers);
+map_id_vothL493.zoomToMaxExtent();
+
+                        var lat_12 = 40.733300;
+                        var lon_12 = -74.166700;
+                        var vothL493 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL493_icon = new OpenLayers.Marker(vothL493);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL493);
+markers.addMarker(vothL493_icon);
+    addMarker(vothL493, popupClass, "", true, false, false);
+    map_id_vothL493.setCenter(vothL493, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_kz">
+                <a name="vothG_kz"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    KZ.
+                </span>
+                <span class="definition">
+                    Abbreviation for “konzentrationslager” (concentration camp).
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                        <li class="vothG_commandant">
+                <a name="vothG_commandant"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    commandant.
+                </span>
+                <span class="definition">
+                    A commander of a Nazi camp. In the death camps the commandant was required to witness every gassing carried out through a peephole, and supervise both the preparations and the aftermath.
+                </span>
+            </li>
+                        <li class="vothG_ss">
+                <a name="vothG_ss"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    SS.
+                </span>
+                <span class="definition">
+                    Acronym for the German Schutzstaffel (“Protective Echelon”), a major Nazi organization. It grew from a small paramilitary unit to a powerful force that served as Hitler's "Praetorian Guard," the Nazi Party's "Shield Squadron" and a force that, fielding almost a million men (both on the front lines and as political police), managed to exert as much political influence as the German Army. Built upon the Nazi racial ideology, the SS, under Heinrich Himmler's command, was responsible for many (and most of the worst) of the crimes against humanity perpetrated by the Nazis during World War II.
+                </span>
+            </li>
+                        <li class="vothG_unrra">
+                <a name="vothG_unrra"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    UNRRA.
+                </span>
+                <span class="definition">
+                    Acronym for the United Nations Relief and Rehabilitation Administration. Established in 1943, its principal executive post was held by a representative of the United States, which supplied forty percent of its budget. Among its chief duties was the repatriation of displaced persons—when the war ended, UNRRA had to cope with the task of caring for millions of displaced persons and refugees.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            She refers to the Leipzig Trade Fair, a major European trade fair which began in the Middle Ages and still continues today.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Boder's note refers to the interview with Friedrich Schläfrig, conducted on August 23, 1946 in Paris, France. Schläfrig was also imprisoned in the ghetto for older adults at Theresienstadt.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

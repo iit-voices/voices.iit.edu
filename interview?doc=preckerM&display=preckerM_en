@@ -1,0 +1,2948 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Marcelle Precker; August 12, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-marcelle-precker-august-12-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Marcelle Precker; August 12, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=preckerM">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=preckerM&display=preckerM_en">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=preckerM">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=preckerM">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1.628" end="x">Sunday, August the . . . 12th, <a class="placename" href="#vothL13">Paris</a> . . . Monday August the 12th. <a class="placename" href="#vothL13">Paris</a> . . . [mumbling]. <a class="placename" href="#vothL13">Paris</a>, August the 12th, 1946 at the headquarters of the <a class="term" href="#vothG_ajdc">American Joint Distribution Committee</a>. The interviewee is Mrs. Marcelle Precker born in France who spent here the time during the occupation. Also, Mrs. Precker, will you please tell us where were you born, how large was your family and where did you live before the war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="47.414" end="x">I am born in <a class="placename" href="#vothL13">Paris</a> . . . and at the beginning of the war my family was composed by my father, mother and my daughter.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="59.284" end="x">And they think your husband died in 1939?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="62.706" end="x">Yes sir.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="63.430" end="x">Yeah. Nu? What happened when the Germans came to <a class="placename" href="#vothL13">Paris</a>? [pause] What happened to you when the Germans came to <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="73.998" end="x">I was just [arrested?]<note n="1"><span class="note">As we learn subsequently, although the Germans occupied Paris in June 1940, Mrs. Precker narrowly escaped arrest in July 1942 and was arrested with her family in June 1944 in the city of Cannes.</span><sup><a href="#note_1">1</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="76.516" end="x">You? Were your whole family here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="79.003" end="x">No. My family was in the south—in the south of France.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="83.044" end="x">With your child?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="84.114" end="x">With my child.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="84.868" end="x">Why did they go there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="86.707" end="x">They went to south of France to escape from the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="91.652" end="x">To escape from the Germans. And you remained here . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="95.722" end="x">I tried to remain in <a class="placename" href="#vothL13">Paris</a> to save our apartment and my father's business.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="103.351" end="x">All right. And so . . . (mumbling) will you close the . . . yes. And so, what happened?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="110.452" end="x">But in July '42, I was arrested one morning at six o'clock by the . . . two French police.<note n="2"><span class="note">On July 16th and 17th in 1942, some 4,500 French policemen rounded  up a total of 12,884 mostly foreign-born Jews in Paris who had not become naturalized French citizens. Nearly 10,000 of those arrested were women and children. Although Mrs. Precker saved herself by bribing the two French policemen who came to arrest her, the fact that she was a French-born Jew might have played a role in her release. Few of those arrested in the July roundup survived.</span><sup><a href="#note_2">2</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="118.668" end="x">All right. Now why did they arrest you and where did they arrest you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="123.462" end="x">They arrest me in the morning at my apartment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="128.196" end="x">At your apartment . . . yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="130.593" end="x">And I escaped them in giving them all the money I . . . have with me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="136.216" end="x">Yes. How much was it . . . about?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="138.206" end="x">Oh, I . . . I don't . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="140.980" end="x">Well in estimate, about . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="143.709" end="x">It was a lot because they take all the jewels we have in the apartment . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="150.116" end="x">Yes . . . they took what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="152.076" end="x">The jewels we had in the apartment . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="153.629" end="x">Oh, the jewels. All your jewels and all the money you had in the apartment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="157.142" end="x">. . . apartment [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="161.650" end="x">[speaking over the interviewee] and they let you go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="162.901" end="x">And they let me go. So I went in the south of France . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="168.479" end="x">You went to the south of France, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="170.258" end="x">. . . to stay with my father—my parents and my daughter.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="173.062" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="173.605" end="x">We stayed there . . . two years.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="177.087" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="177.600" end="x">And . . . in '44—June '44—we were arrested all together in the evening one day.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="186.600" end="x">In what city was it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="188.047" end="x">It was at <a class="placename" href="#vothL27">Cannes</a>.<note n="3"><span class="note">Like Nice, Cannes was formerly in the Italian-occupied zone of southeastern France. Until the collapse of the Italian fascist government and the withdrawal of Italian troops from the zone in September 1943, some 50,000 Jews, among them the Mrs. Precker and her family, had sought refuge there. Most refugees, like Mrs. Precker and her family, at first went to the city of Nice. After the departure of Italian troops, the family moved to Cannes.</span><sup><a href="#note_3">3</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="189.977" end="x">At <a class="placename" href="#vothL27">Cannes</a> and you were arrested the whole family?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="193.113" end="x">The whole family. My father, my mother, my daughter and I.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="196.173" end="x">Yes. How old was your daughter?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="198.073" end="x">My daughter was at that moment eleven years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="201.766" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="203.003" end="x">We were put in the prison . . . in the prison.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="206.425" end="x">In the prison, yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="208.385" end="x">We stayed there some days and put in another prison at <a class="placename" href="#vothL26">Nice</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="213.707" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="214.928" end="x">And after eight days we were put in a train.<note n="4"><span class="note">Given the fact that Mrs. Precker and her family arrived in Drancy at the beginning of August 1944, they must have spent over a month in the two prisons in Nice.</span><sup><a href="#note_4">4</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="218.486" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="219.526" end="x">And bring in a . . . brought . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="222.119" end="x">And you were taken to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="224.049" end="x">Taken to <a class="placename" href="#vothC27" type="camp">Drancy</a>. The concentration camp <a class="placename" href="#vothC27" type="camp">Drancy</a>.<note n="5"><span class="note">Despite the Allied landings in Normandy on June 6, 1944 and the increase in resistance activity throughout the country, deportation of Jews to the infamous Drancy camp in the suburbs of Paris continued, as did deportations from Drancy to Auschwitz. A convoy of some 1,300 Drancy internees left for Auschwitz on July 31, 1944. Mrs. Precker and her family narrowly missed sharing their fate.</span><sup><a href="#note_5">5</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="227.501" end="x">Yes, now <a class="placename" href="#vothC27" type="camp">Drancy</a> is where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="230.004" end="x">Is near <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="232.853" end="x">Yes. <a class="placename" href="#vothC27" type="camp">Drancy</a> is near <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="234.964" end="x">Near <a class="placename" href="#vothL13">Paris</a> . . . about ten kilometers from <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="237.994" end="x">Yes, and so? [pause] Well what happened in <a class="placename" href="#vothC27" type="camp">Drancy</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="244.929" end="x">I have to tell you that at <a class="placename" href="#vothL26">Nice</a> my father was . . . [trails off]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="249.678" end="x">[Well tell me who did it?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="264.407" end="x">[Pause] [It's difficult in English for me?] [mumbling]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="266.020" end="x">What happened to your father, what [?] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="270.754" end="x">[speaks in French] [tape skips]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="276.407" end="x">What in . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="278.563" end="x">. . . in <a class="placename" href="#vothL26">Nice</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="279.403" end="x">In <a class="placename" href="#vothL26">Nice</a> your father was beaten by the Germans?<note n="6"><span class="note">This must have occurred subsequent to the German occupation of Nice that began the evening of September 8, 1943. Two days later Alois Brunner, Adolf Eichmann's deputy, and highly trained SS police entered Nice and began a brutal roundup of Jews which, however, was inhibited by the lack of cooperation by many non-Jewish French men and women.</span><sup><a href="#note_6">6</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="281.710" end="x">Yes sir.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="282.207" end="x">Why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="283.082" end="x">Why, because we are . . . the Germans had found in our [unintelligible] for English papers.<note n="7"><span class="note">It is not clear from Mrs. Precker's testimony what sort of papers these were, but they raised German suspicions of a link between her father and their English enemy.</span><sup><a href="#note_7">7</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="290.846" end="x">Oh. They found with you English papers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="293.484" end="x">English papers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="294.600" end="x">How did you happen to have English papers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="296.665" end="x">Because my father was a . . . with a group of English [?] I received them so I don't know how we managed to keep them just at that moment because it was a very dangerous moment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="310.625" end="x">Yes. Yes, and . . . so your father was mistreated?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="316.896" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="317.168" end="x">And then you were all sent to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="319.505" end="x">. . . to <a class="placename" href="#vothC27" type="camp">Drancy</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="320.425" end="x">Now was your family alone at the [eskaton?] camp or did they arrest all the Jewish families?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="327.043" end="x">No. Each day they arrested another family.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="330.933" end="x">Yes. (mumbling instructions) Get your hands down . . . Each day they arrested a few families? All right. And how many people were you taken to <a class="placename" href="#vothC27" type="camp">Drancy</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="340.295" end="x">We were there at that moment . . . forty people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="344.049" end="x">Forty people. In what kind of railroad cars did they take you? [pause] In what kind of railroad cars—were they passenger cars?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="352.989" end="x">Yes, in passenger cars.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="353.909" end="x">In passenger cars they took you from <a class="placename" href="#vothL27">Cannes</a> to <a class="placename" href="#vothC27" type="camp">Drancy</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="357.633" end="x">To <a class="placename" href="#vothC27" type="camp">Drancy</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="358.342" end="x">All right. In <a class="placename" href="#vothC27" type="camp">Drancy</a> where did they put you? Did they separate the men from the women?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="363.422" end="x">No. Had to . . . we're to . . . go in Germany after that.<note n="8"><span class="note">They were probably told that they were going to be sent to Germany for forced labor and that their family would be kept together for the sake of family unity, whereas in reality they would have been sent to Auschwitz. The Germans regularly used deceptive techniques to hide the "Final Solution" from their victims.</span><sup><a href="#note_8">8</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="368.970" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="369.513" end="x">We were all put together men and women.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="372.603" end="x">Where, in the same room?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="373.719" end="x">In the same room</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="374.985" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="375.468" end="x">Sixty by room.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="376.569" end="x">Yes. Sixty people in a room.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="378.544" end="x">Sixty people in a room.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="379.765" end="x">And how long were you in <a class="placename" href="#vothC27" type="camp">Drancy</a> that way?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="383.112" end="x">Actually we stay only a few weeks. Because after that was the liberation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="387.891" end="x">Oh. You stayed in <a class="placename" href="#vothC27" type="camp">Drancy</a> three weeks?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="390.831" end="x">Three weeks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="391.268" end="x">Yes. Now tell me something about your stay in <a class="placename" href="#vothC27" type="camp">Drancy</a>, you say you were men and women and children all in one room?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="399.650" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="400.494" end="x">So did you remain with your family in the same room?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="404.233" end="x">In the same room.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="405.258" end="x">Well your little daughter with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="407.730" end="x">She was with me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="409.449" end="x">Well, what was the child doing all the time in the camp—or in the prison?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="415.540" end="x">The Germans at that moment were very nervous because the Americans were coming near <a class="placename" href="#vothL13">Paris</a> every day so it was terrible to meet them in the . . .<note n="9"><span class="note">Even as the Allies closed in on Paris in the first two weeks of August 1944, Alois Brunner, the Nazi fanatic who had turned Drancy into an SS-controlled concentration camp in 1943, continued his efforts to deport Jews to Auschwitz, including Mrs. Precker and her family. Fortunately, he did not succeed, and on the morning of Thursday, August 17, he turned the camp over to the German army and fled.</span><sup><a href="#note_9">9</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="429.244" end="x">In the halls—corridors.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="429.802" end="x">In the halls. So some people took all the children together and made sort of little school for them.<note n="10"><span class="note">The establishment of this school in the midst of such a squalid and dangerous environment may be considered a form of resistance. Solidarity and mutual help characterized the Drancy camp population.</span><sup><a href="#note_10">10</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="438.169" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="438.727" end="x">To keep them away from the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="440.672" end="x">Oh.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="441.200" end="x">And they were spending all day with those people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="444.502" end="x">Yes, a kind of a teacher or so.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="446.417" end="x">Yes sir.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="447.337" end="x">Was it a Jewish woman or a French woman?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="449.734" end="x">It was a Jewish woman.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="450.623" end="x">It was a Jewish woman and she took the children together . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="453.548" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="453.970" end="x">. . . and she kept them in a kind of kindergarten or a creation—arrangement.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="457.377" end="x">Exactly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="459.005" end="x">All right, did you pay for that or what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="462.533" end="x">No we did not pay for that because all the money we had—have—was taken by the German [with their things?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="469.422" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="470.387" end="x">Now, uh, how were you sleeping?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="473.252" end="x">We were sleeping in a very large room. On . . . straw beds.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="481.559" end="x">Straw beds.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="482.388" end="x">[unintelligible] . . . all sort of beast, it was terrible and awful.<note n="11"><span class="note">Mrs. Precker is referring here to the vermin that infested the mattresses and the rest of the camp.</span><sup><a href="#note_11">11</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="486.157" end="x">Yes. You had lice?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="488.825" end="x">[unintelligible] was not possible . . . to haven't.[?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="491.509" end="x">Yes. It was not possible not to have them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="494.358" end="x">. . . it wasn't possible.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="495.775" end="x">Yes. How were the facilities to wash yourself? Where would you wash yourself?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="501.414" end="x">[Actually?] we have . . . uh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="506.072" end="x">Showers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="507.158" end="x">Yes sir.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="507.565" end="x">There were showers. Were they separate from men and women?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="511.002" end="x">Yes. They were separated for . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="512.238" end="x">Yes. They were separated for men and women. But you slept in the same room, men and women?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="517.937" end="x">Yes sir.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="518.917" end="x">All right so how were the beds arranged? [pause] You had a bed? Did you sleep alone in a bed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="526.470" end="x">Oh sure—we sleep alone in a bed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="528.385" end="x">You slept alone in a bed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="529.486" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="529.863" end="x">And where did your child sleep?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="531.054" end="x">She was in a bed near me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="533.330" end="x">In another bed alone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="534.506" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="535.139" end="x">And your father and mother had a bed for themselves each?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="538.426" end="x">Yes sir.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="539.165" end="x">Yes. All right and um . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="543.100" end="x">We were all was occupied doing something . . . peeling potatoes . . . doing mattresses and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="551.316" end="x">Yes. You were always doing something.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="553.608" end="x">Everybody was occupied.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="555.070" end="x">. . . was occupied. Did they allow people to bring you some food?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="560.105" end="x">No it was not possible.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="562.035" end="x">It was not possible to bring you some food. All right . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="567.945" end="x">[unintelligible] . . . write to somebody. It was impossible to write.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="570.855" end="x">It was not permitted to write to anybody also. And how long were you in <a class="placename" href="#vothC27" type="camp">Drancy</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="576.840" end="x">We stayed three weeks in <a class="placename" href="#vothC27" type="camp">Drancy</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="579.900" end="x">Yes. And then what happened?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="581.739" end="x">Then we were liberated by the . . . the Swedish Consulate.<note n="12"><span class="note">On the afternoon of August 17, 1944, the German army turned Drancy over to Raoul Nordling, the Consul General of neutral Sweden. Nordling then asked the French Red Cross to care for the camp's inmates, although they did not leave Drancy until about one week later.</span><sup><a href="#note_12">12</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="590.785" end="x">Oh.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="591.976" end="x">Who give . . . two . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="595.820" end="x">. . . yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="596.725" end="x">Two German . . . who liberated . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="599.966" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="600.418" end="x">Two German prisoners . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="603.011" end="x">Prisoners.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="603.403" end="x">. . . prisoners. For one Jewish . . . people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="606.298" end="x">For one Jewish person?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="607.459" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="608.047" end="x">Oh. Now let me see that . . . [where were?] German prisoners?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="613.821" end="x">It is impossible for me to give you any information on that.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="617.695" end="x">You don't know?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="618.660" end="x">I don't know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="619.293" end="x">Well where did they get the German prisoners that they said they liberated two German prisoners for one Jew? Who had the German prisoners?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="626.349" end="x">Oh I think that the . . . [?] American and English peoples.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="631.098" end="x">Oh [you were told that?] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="631.957" end="x">. . . had them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="632.802" end="x">Oh, at least they told you that. You really didn't know, you were just told.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="637.913" end="x">Yes sir.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="638.471" end="x">And you think that the Americans gave two German prisoners back . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="642.858" end="x">I suppose.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="643.657" end="x">. . . and the Germans gave back one Jew.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="647.652" end="x">One Jew.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="648.481" end="x">One Jew. To whom? To the Swedish Red Cross?<note n="13"><span class="note">It is not clear from Mrs. Precker's testimony whether this prisoner exchange actually took place.</span><sup><a href="#note_13">13</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="652.913" end="x">I think it was maybe . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="654.361" end="x">You cannot tell who it was. But it was to the Swedish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="657.451" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="658.024" end="x">And where did you go then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="659.532" end="x">Then we were allowed to go . . . in family . . . where at home . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="664.009" end="x">Oh you were released in . . . barracks? Oh, they let you go? All right. Now where did you live after that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="671.999" end="x">After that our apartment was taken by . . . French people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="677.879" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="678.286" end="x">We were obliged to go in . . . friend's family. But after that we found back our apartment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="686.125" end="x">When did you get your apartment back?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="688.658" end="x">In September.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="690.844" end="x">After the liberation?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="691.794" end="x">After the liberation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="692.503" end="x">But before the liberation what did the people say? You came home to your apartment and wanted your apartment . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="698.669" end="x">Yes sir.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="699.197" end="x">What did they tell you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="700.147" end="x">They were put in our apartment by the Germans.<note n="14"><span class="note">It is also not clear why the Germans placed this family in the apartment of Mrs. Precker and her family, which must have been in an upscale neighborhood in Paris. Mrs. Precker does indicate that the family was friendly to the Germans in some way and so might have been part of the collaborationist Vichy regime.</span><sup><a href="#note_14">14</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="702.695" end="x">Yes. And where was the furniture—where was your furniture?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="706.117" end="x">All the furniture was taken away by the Germans.<note n="15"><span class="note">It should not be forgotten that the Nazis were among the greatest plunderers in modern history. They not only took their victims' lives but their possessions as well.</span><sup><a href="#note_15">15</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="709.192" end="x">Your furniture was taken by . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="710.248" end="x">All. Everything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="711.680" end="x">Did you have good furniture?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="713.550" end="x">Yes. Very good furniture.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="715.042" end="x">You had very good furniture. Did you have rugs?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="717.726" end="x">We had everything it was possible to have.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="720.274" end="x">Yeah . . . You had everything that was possible to have.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="723.274" end="x">And . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="723.877" end="x">And that is what they . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="725.143" end="x">. . . nothing remained.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="725.927" end="x">. . . the Germans took away? And what furniture did the people have that lived in your apartment?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="731.023" end="x">They had . . . their furniture . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="732.907" end="x">. . . their own furniture.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="733.993" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="734.370" end="x">What did they say? That the Germans put them there and that they are going to stay?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="739.812" end="x">Yes. But we succeed to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="743.129" end="x">That was while the Germans still were here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="745.616" end="x">Yes sir.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="746.189" end="x">All right. Now we will come to that. Then, what . . . where were you when the liberation came? [pause] When the . . . who . . . where were you when <a class="placename" href="#vothL13">Paris</a> was liberated?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="760.420" end="x">It was at just at that moment that we were liberated from <a class="placename" href="#vothC27" type="camp">Drancy</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="764.039" end="x">Oh. You were liberated from <a class="placename" href="#vothC27" type="camp">Drancy</a> when . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="766.979" end="x">Just when . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="767.326" end="x">. . . <a class="placename" href="#vothL13">Paris</a> was liberated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="768.547" end="x">. . . when . . . Yes. One day before the American entered in <a class="placename" href="#vothL13">Paris</a>.<note n="16"><span class="note">The Americans entered Paris on August 25, 1944, the official date of the liberation of the city.</span><sup><a href="#note_16">16</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="773.763" end="x">Oh, so why did the Swedes have to negotiate with the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="777.743" end="x">Because.. you know . . . [unintelligible] concentration camp . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="782.658" end="x">Yeah.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="783.125" end="x">. . . just before the Germans leave.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="786.171" end="x">The . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="787.060" end="x">The . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="788.327" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="789.005" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="790.694" end="x">Oh, they hear it was that before the Germans left they would kill all the people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="794.779" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="795.533" end="x">So the Swedish intervened and they freed . . . what? Did they free all the Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="800.659" end="x">All the Jews who were in <a class="placename" href="#vothC27" type="camp">Drancy</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="802.996" end="x">All the Jews who . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="803.825" end="x">We were about two thousand at that month.<note n="17"><span class="note">Mrs. Precker and her family were among the 1,542 lice-ridden, famished and terrified Jews living under constant threat of deportation who were liberated from Drancy.</span><sup><a href="#note_17">17</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="805.845" end="x">Well so they really didn't count whether that they got that many Germans or not. I mean they freed all the Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="811.483" end="x">All the Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="812.358" end="x">And where did everybody go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="815.237" end="x">Some went in . . . [unintelligible] as we do.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="821.177" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="822.353" end="x">Also . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="824.660" end="x">Yeah . . . uh-huh. Yeah . . . Then . . . others went where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="833.600" end="x">At separate time . . . [?] in other places . . . we [traveling?] by the . . . at that manner that was called "ugit[?]"</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="842.087" end="x">Yes. And?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="844.711" end="x">And stayed there . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="846.023" end="x">By who was it arranged?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="847.455" end="x">It was arranged by a Jewish organization . . . "Fugita[?]".<note n="18"><span class="note">Mrs. Precker might be referring here to the UGIF (Union Générale des Israélites de France) the controversial body which, under the Vichy regime, was the sole government-recognized Jewish representative organization.</span><sup><a href="#note_18">18</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="851.103" end="x">Uh-huh. That was . . . Did they work while the Germans were here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="857.827" end="x">Yes it was . . . [speaking over each other]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="862.154" end="x">Yes sir.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="862.832" end="x">Yes. And then, so that's where the people went?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="867.128" end="x">Went . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="867.460" end="x">All right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="868.304" end="x">[difficult to understand] . . . before it [?] to them to [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="873.400" end="x">Now tell me what do you remember of the liberation? The day after liberation? How did that come about?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="879.475" end="x">[difficult to understand—car horns in background] It was a [performance?] to . . . win them there because I [?] from <a class="placename" href="#vothC27" type="camp">Drancy</a> that I should do it with my friend and I . . . didn't go . . . [?] moment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="892.621" end="x">Yeah. But you hear that the Germans have left <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="896.541" end="x">Yes sir.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="897.521" end="x">All right. And who came in?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="900.521" end="x">At that moment, French troops came in <a class="placename" href="#vothL13">Paris</a> with American after that.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="906.823" end="x">And the Americans came in after that.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="909.009" end="x">All right and then how long did it last until you had to get your apartment back? Tell us how did you get your apartment back?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="925.637" end="x">As the people who had taken our apartment were put in by the Germans it was able for us to take it . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="936.360" end="x">To take it back?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="937.310" end="x">Back. Because the French troops tell us that if they don't . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="943.446" end="x">. . . move out?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="943.943" end="x">Move out . . . we'll move them [from it].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="947.049" end="x">So you just came and told them to move out.<note n="19"><span class="note">Mrs. Precker and her family had the authority of the victorious Free French forces behind them.</span><sup><a href="#note_19">19</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="949.823" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="950.411" end="x">And they moved out.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="951.059" end="x">They moved from the flat.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="952.718" end="x">And then, you moved in your apartment? Where did you get some furniture?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="956.834" end="x">My father had a very big country house near <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="960.527" end="x">He had what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="961.010" end="x">A very big country house.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="962.955" end="x">Oh your father had a country house near <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="965.925" end="x">Which was occupied [?] by the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="968.985" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="969.679" end="x">And [for the?] rooms . . . [we were?] furniture.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="972.830" end="x">What? . . . yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="975.468" end="x">We . . . had to change to us from furniture remaining in the . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="981.709" end="x">In the house there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="982.704" end="x">So we put them in our apartment in <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="986.473" end="x">Oh you had a house in the suburbs so you moved that to the apartment in <a class="placename" href="#vothL13">Paris</a>. All right. And then . . . the people moved out from your apartment without much argument.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="999.033" end="x">Not very much because at that moment it was not very good to have be the friend of the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1003.586" end="x">Now tell me how does it happen that still here people are suing others for their apartments and so they have difficulty in getting their apartments back? They say that there are still some people who have not gotten their apartments back by now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1019.732" end="x">Yes. But it's very [intertwined?] if it is people who have lost a house . . . demolition by . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1028.250" end="x">Oh . . . if there are people you have had their apartments destroyed? Was everything destroyed in <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1037.099" end="x">Not in <a class="placename" href="#vothL13">Paris</a> but many of them . . . [?] who were living in the . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1042.768" end="x">In the country and other cities and came here</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1044.683" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1046.025" end="x">. . . and they have nowhere to go.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1049.296" end="x">And that is why some people don't get their apartments back.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1052.553" end="x">Yes. It's the only reason.<note n="20"><span class="note">Mrs. Precker means that if the apartments were occupied by people from areas surrounding Paris who had had their homes destroyed, she believes that they were able to at least temporarily remain in the apartments they had lived in during the German occupation. In the postwar period, French Jewry had only partial success in reclaiming the apartments and businesses of those who had been deported.</span><sup><a href="#note_20">20</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1054.558" end="x">All right. What does your little daughter do now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1057.633" end="x">Now she's at school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1059.201" end="x">She's at school? How old is she now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1061.010" end="x">She's nearly fifteen.<note n="21"><span class="note">Since Mrs. Precker previously indicated that her daughter was eleven years old in 1944, and this interview took place in August 1946, her account is inconsistent in this regard.</span><sup><a href="#note_21">21</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1063.302" end="x">To what school is she going?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1066.121" end="x">Now she is in school only for [?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1070.222" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1071.413" end="x">Near <a class="placename" href="#vothL13">Paris</a>, at Buffémont. It's a very beautiful place.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1074.232" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1071.413" end="x">After that she'll be in a college in <a class="placename" href="#vothL13">Paris</a>.<note n="22"><span class="note">"College" here means secondary school.</span><sup><a href="#note_22">22</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1077.956" end="x">What kind of a school is it in Buffémont?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1080.353" end="x">It's a French feminine . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1085.072" end="x">Is it a private . . . private school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1086.987" end="x">Yes it's a private school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1087.696" end="x">Yes, and so . . . Is your father back in business?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1091.118" end="x">My father is back in business since one year.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1094.676" end="x">Yes. He has his fur business again?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1097.525" end="x">Yes sir.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1098.369" end="x">Uh-huh. And you are working here with the <a class="term" href="#vothG_ajdc">Joint</a>?<note n="23"><span class="note">It is not clear what kind of work Mrs. Precker was doing for the Joint and whether or not it was paid or volunteer work. In any case, Mrs. Precker was working for an organization which at the time was providing invaluable aid to survivors of Nazi tyranny.</span><sup><a href="#note_23">23</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1103.284" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1105.606" end="x">Well, do you have many French friends that are not Jewish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1114.184" end="x">. . . I have some.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1115.797" end="x">Well uh . . . how do they feel now about the whole situation? [very long pause] I mean this . . . Well there were of course all kind of French. There were some who were collaborating with the Germans . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1138.681" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1139.600" end="x">And there were others who were fighting the Germans and so on. Now, uh, what do they think? How soon will France come back to normal?<note n="24"><span class="note">As Boder indicates, some French men and women during the years of German occupation behaved with cruelty or cold indifference, while others demonstrated compassion and selflessness. In the immediate postwar period, however, the myth of France as a nation of resisters, apart from a few collaborators and traitors, predominated.</span><sup><a href="#note_24">24</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1149.791" end="x">It's difficult . . . to know exactly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1154.193" end="x">Well what do you think? [pause.] Can't tell, huh?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1161.550" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1162.515" end="x">You wouldn't be able to tell.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1164.007" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1165.002" end="x">Now uh . . . tell me this . . . did you know somebody when you were in <a class="placename" href="#vothL27">Cannes</a> or so on . . . did you know something about the resistance movement in France?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1180.409" end="x">In fact, I was [?] in <a class="placename" href="#vothL27">Cannes</a> [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1188.328" end="x">You didn't see much of it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Precker</span>:
+            </span>
+            <span class="utterance" who="#preckerM" start="1189.579" end="x">No sir.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1190.152" end="x">There's not much of a resistance movement there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1194.403" end="x">All right, Ms. Precker that is some very interesting material and I thank you very much. This is a Illinois Institute of Technology wire recording taken from Ms. Marcel Precker working at present at the <a class="term" href="#vothG_ajdc">American Joint Distribution Committee</a> and . . . she was born in <a class="placename" href="#vothL13">Paris</a> and continues to live here. All right, thank you.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            As we learn subsequently, although the Germans occupied Paris in June 1940, Mrs. Precker narrowly escaped arrest in July 1942 and was arrested with her family in June 1944 in the city of Cannes.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            On July 16th and 17th in 1942, some 4,500 French policemen rounded  up a total of 12,884 mostly foreign-born Jews in Paris who had not become naturalized French citizens. Nearly 10,000 of those arrested were women and children. Although Mrs. Precker saved herself by bribing the two French policemen who came to arrest her, the fact that she was a French-born Jew might have played a role in her release. Few of those arrested in the July roundup survived.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            Like Nice, Cannes was formerly in the Italian-occupied zone of southeastern France. Until the collapse of the Italian fascist government and the withdrawal of Italian troops from the zone in September 1943, some 50,000 Jews, among them the Mrs. Precker and her family, had sought refuge there. Most refugees, like Mrs. Precker and her family, at first went to the city of Nice. After the departure of Italian troops, the family moved to Cannes.
+        </li>
+                <li>
+            <a name="note_4"></a>
+            Given the fact that Mrs. Precker and her family arrived in Drancy at the beginning of August 1944, they must have spent over a month in the two prisons in Nice.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            Despite the Allied landings in Normandy on June 6, 1944 and the increase in resistance activity throughout the country, deportation of Jews to the infamous Drancy camp in the suburbs of Paris continued, as did deportations from Drancy to Auschwitz. A convoy of some 1,300 Drancy internees left for Auschwitz on July 31, 1944. Mrs. Precker and her family narrowly missed sharing their fate.
+        </li>
+                <li>
+            <a name="note_6"></a>
+            This must have occurred subsequent to the German occupation of Nice that began the evening of September 8, 1943. Two days later Alois Brunner, Adolf Eichmann's deputy, and highly trained SS police entered Nice and began a brutal roundup of Jews which, however, was inhibited by the lack of cooperation by many non-Jewish French men and women.
+        </li>
+                <li>
+            <a name="note_7"></a>
+            It is not clear from Mrs. Precker's testimony what sort of papers these were, but they raised German suspicions of a link between her father and their English enemy.
+        </li>
+                <li>
+            <a name="note_8"></a>
+            They were probably told that they were going to be sent to Germany for forced labor and that their family would be kept together for the sake of family unity, whereas in reality they would have been sent to Auschwitz. The Germans regularly used deceptive techniques to hide the "Final Solution" from their victims.
+        </li>
+                <li>
+            <a name="note_9"></a>
+            Even as the Allies closed in on Paris in the first two weeks of August 1944, Alois Brunner, the Nazi fanatic who had turned Drancy into an SS-controlled concentration camp in 1943, continued his efforts to deport Jews to Auschwitz, including Mrs. Precker and her family. Fortunately, he did not succeed, and on the morning of Thursday, August 17, he turned the camp over to the German army and fled.
+        </li>
+                <li>
+            <a name="note_10"></a>
+            The establishment of this school in the midst of such a squalid and dangerous environment may be considered a form of resistance. Solidarity and mutual help characterized the Drancy camp population.
+        </li>
+                <li>
+            <a name="note_11"></a>
+            Mrs. Precker is referring here to the vermin that infested the mattresses and the rest of the camp.
+        </li>
+                <li>
+            <a name="note_12"></a>
+            On the afternoon of August 17, 1944, the German army turned Drancy over to Raoul Nordling, the Consul General of neutral Sweden. Nordling then asked the French Red Cross to care for the camp's inmates, although they did not leave Drancy until about one week later.
+        </li>
+                <li>
+            <a name="note_13"></a>
+            It is not clear from Mrs. Precker's testimony whether this prisoner exchange actually took place.
+        </li>
+                <li>
+            <a name="note_14"></a>
+            It is also not clear why the Germans placed this family in the apartment of Mrs. Precker and her family, which must have been in an upscale neighborhood in Paris. Mrs. Precker does indicate that the family was friendly to the Germans in some way and so might have been part of the collaborationist Vichy regime.
+        </li>
+                <li>
+            <a name="note_15"></a>
+            It should not be forgotten that the Nazis were among the greatest plunderers in modern history. They not only took their victims' lives but their possessions as well.
+        </li>
+                <li>
+            <a name="note_16"></a>
+            The Americans entered Paris on August 25, 1944, the official date of the liberation of the city.
+        </li>
+                <li>
+            <a name="note_17"></a>
+            Mrs. Precker and her family were among the 1,542 lice-ridden, famished and terrified Jews living under constant threat of deportation who were liberated from Drancy.
+        </li>
+                <li>
+            <a name="note_18"></a>
+            Mrs. Precker might be referring here to the UGIF (Union Générale des Israélites de France) the controversial body which, under the Vichy regime, was the sole government-recognized Jewish representative organization.
+        </li>
+                <li>
+            <a name="note_19"></a>
+            Mrs. Precker and her family had the authority of the victorious Free French forces behind them.
+        </li>
+                <li>
+            <a name="note_20"></a>
+            Mrs. Precker means that if the apartments were occupied by people from areas surrounding Paris who had had their homes destroyed, she believes that they were able to at least temporarily remain in the apartments they had lived in during the German occupation. In the postwar period, French Jewry had only partial success in reclaiming the apartments and businesses of those who had been deported.
+        </li>
+                <li>
+            <a name="note_21"></a>
+            Since Mrs. Precker previously indicated that her daughter was eleven years old in 1944, and this interview took place in August 1946, her account is inconsistent in this regard.
+        </li>
+                <li>
+            <a name="note_22"></a>
+            "College" here means secondary school.
+        </li>
+                <li>
+            <a name="note_23"></a>
+            It is not clear what kind of work Mrs. Precker was doing for the Joint and whether or not it was paid or volunteer work. In any case, Mrs. Precker was working for an organization which at the time was providing invaluable aid to survivors of Nazi tyranny.
+        </li>
+                <li>
+            <a name="note_24"></a>
+            As Boder indicates, some French men and women during the years of German occupation behaved with cruelty or cold indifference, while others demonstrated compassion and selflessness. In the immediate postwar period, however, the myth of France as a nation of resisters, apart from a few collaborators and traitors, predominated.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>David Palmer</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC27">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC27" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Drancy
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Drancy, France<br />
+                            </p>
+                            <div>
+                The camp was opened after a roundup of in Paris Jews in August, 1941, in which over 4000 Jews were arrested.  Drancy was under the control of the French police until July 3, 1943 when Nazi Germany took day-to-day control as part of the major stepping up at all facilities for the mass exterminations.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC27 = new OpenLayers.Map('map_vothC27', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC27.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC27.addLayer(markers);
+map_id_vothC27.zoomToMaxExtent();
+
+                        var lat_1 = 48.933300;
+                        var lon_1 = 2.433300;
+                        var vothC27 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC27_icon = new OpenLayers.Marker(vothC27);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC27);
+markers.addMarker(vothC27_icon);
+    addMarker(vothC27, popupClass, "", true, false, false);
+    map_id_vothC27.setCenter(vothC27, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_2 = 48.866700;
+                        var lon_2 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL27">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL27" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Cannes, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL27 = new OpenLayers.Map('map_vothL27', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL27.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL27.addLayer(markers);
+map_id_vothL27.zoomToMaxExtent();
+
+                        var lat_3 = 43.550000;
+                        var lon_3 = 7.000000;
+                        var vothL27 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL27_icon = new OpenLayers.Marker(vothL27);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL27);
+markers.addMarker(vothL27_icon);
+    addMarker(vothL27, popupClass, "", true, false, false);
+    map_id_vothL27.setCenter(vothL27, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL26">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL26" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Nice, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL26 = new OpenLayers.Map('map_vothL26', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL26.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL26.addLayer(markers);
+map_id_vothL26.zoomToMaxExtent();
+
+                        var lat_4 = 43.700000;
+                        var lon_4 = 7.266700;
+                        var vothL26 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL26_icon = new OpenLayers.Marker(vothL26);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL26);
+markers.addMarker(vothL26_icon);
+    addMarker(vothL26, popupClass, "", true, false, false);
+    map_id_vothL26.setCenter(vothL26, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ajdc">
+                <a name="vothG_ajdc"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    American Joint Distribution Committee.
+                </span>
+                <span class="definition">
+                    Founded in 1914, the American Jewish Joint Distribution Committee, often referred to as the “Joint,” was a major relief and rehabilitation agency before, during, and after the Holocaust. The JDC’s operations were the main manner in which American Jewry provided aid to its fellow European Jews.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            As we learn subsequently, although the Germans occupied Paris in June 1940, Mrs. Precker narrowly escaped arrest in July 1942 and was arrested with her family in June 1944 in the city of Cannes.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            On July 16th and 17th in 1942, some 4,500 French policemen rounded  up a total of 12,884 mostly foreign-born Jews in Paris who had not become naturalized French citizens. Nearly 10,000 of those arrested were women and children. Although Mrs. Precker saved herself by bribing the two French policemen who came to arrest her, the fact that she was a French-born Jew might have played a role in her release. Few of those arrested in the July roundup survived.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Like Nice, Cannes was formerly in the Italian-occupied zone of southeastern France. Until the collapse of the Italian fascist government and the withdrawal of Italian troops from the zone in September 1943, some 50,000 Jews, among them the Mrs. Precker and her family, had sought refuge there. Most refugees, like Mrs. Precker and her family, at first went to the city of Nice. After the departure of Italian troops, the family moved to Cannes.
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Given the fact that Mrs. Precker and her family arrived in Drancy at the beginning of August 1944, they must have spent over a month in the two prisons in Nice.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Despite the Allied landings in Normandy on June 6, 1944 and the increase in resistance activity throughout the country, deportation of Jews to the infamous Drancy camp in the suburbs of Paris continued, as did deportations from Drancy to Auschwitz. A convoy of some 1,300 Drancy internees left for Auschwitz on July 31, 1944. Mrs. Precker and her family narrowly missed sharing their fate.
+        </li>
+                <li class="note_6">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            This must have occurred subsequent to the German occupation of Nice that began the evening of September 8, 1943. Two days later Alois Brunner, Adolf Eichmann's deputy, and highly trained SS police entered Nice and began a brutal roundup of Jews which, however, was inhibited by the lack of cooperation by many non-Jewish French men and women.
+        </li>
+                <li class="note_7">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            It is not clear from Mrs. Precker's testimony what sort of papers these were, but they raised German suspicions of a link between her father and their English enemy.
+        </li>
+                <li class="note_8">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            They were probably told that they were going to be sent to Germany for forced labor and that their family would be kept together for the sake of family unity, whereas in reality they would have been sent to Auschwitz. The Germans regularly used deceptive techniques to hide the "Final Solution" from their victims.
+        </li>
+                <li class="note_9">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Even as the Allies closed in on Paris in the first two weeks of August 1944, Alois Brunner, the Nazi fanatic who had turned Drancy into an SS-controlled concentration camp in 1943, continued his efforts to deport Jews to Auschwitz, including Mrs. Precker and her family. Fortunately, he did not succeed, and on the morning of Thursday, August 17, he turned the camp over to the German army and fled.
+        </li>
+                <li class="note_10">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The establishment of this school in the midst of such a squalid and dangerous environment may be considered a form of resistance. Solidarity and mutual help characterized the Drancy camp population.
+        </li>
+                <li class="note_11">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mrs. Precker is referring here to the vermin that infested the mattresses and the rest of the camp.
+        </li>
+                <li class="note_12">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            On the afternoon of August 17, 1944, the German army turned Drancy over to Raoul Nordling, the Consul General of neutral Sweden. Nordling then asked the French Red Cross to care for the camp's inmates, although they did not leave Drancy until about one week later.
+        </li>
+                <li class="note_13">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            It is not clear from Mrs. Precker's testimony whether this prisoner exchange actually took place.
+        </li>
+                <li class="note_14">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            It is also not clear why the Germans placed this family in the apartment of Mrs. Precker and her family, which must have been in an upscale neighborhood in Paris. Mrs. Precker does indicate that the family was friendly to the Germans in some way and so might have been part of the collaborationist Vichy regime.
+        </li>
+                <li class="note_15">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            It should not be forgotten that the Nazis were among the greatest plunderers in modern history. They not only took their victims' lives but their possessions as well.
+        </li>
+                <li class="note_16">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Americans entered Paris on August 25, 1944, the official date of the liberation of the city.
+        </li>
+                <li class="note_17">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mrs. Precker and her family were among the 1,542 lice-ridden, famished and terrified Jews living under constant threat of deportation who were liberated from Drancy.
+        </li>
+                <li class="note_18">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mrs. Precker might be referring here to the UGIF (Union Générale des Israélites de France) the controversial body which, under the Vichy regime, was the sole government-recognized Jewish representative organization.
+        </li>
+                <li class="note_19">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mrs. Precker and her family had the authority of the victorious Free French forces behind them.
+        </li>
+                <li class="note_20">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mrs. Precker means that if the apartments were occupied by people from areas surrounding Paris who had had their homes destroyed, she believes that they were able to at least temporarily remain in the apartments they had lived in during the German occupation. In the postwar period, French Jewry had only partial success in reclaiming the apartments and businesses of those who had been deported.
+        </li>
+                <li class="note_21">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Since Mrs. Precker previously indicated that her daughter was eleven years old in 1944, and this interview took place in August 1946, her account is inconsistent in this regard.
+        </li>
+                <li class="note_22">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            "College" here means secondary school.
+        </li>
+                <li class="note_23">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            It is not clear what kind of work Mrs. Precker was doing for the Joint and whether or not it was paid or volunteer work. In any case, Mrs. Precker was working for an organization which at the time was providing invaluable aid to survivors of Nazi tyranny.
+        </li>
+                <li class="note_24">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            As Boder indicates, some French men and women during the years of German occupation behaved with cruelty or cold indifference, while others demonstrated compassion and selflessness. In the immediate postwar period, however, the myth of France as a nation of resisters, apart from a few collaborators and traitors, predominated.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

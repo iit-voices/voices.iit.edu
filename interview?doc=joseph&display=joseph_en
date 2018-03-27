@@ -1,0 +1,2806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Joseph [last name unknown]; September 25, 1946; Wiesbaden, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-joseph-last-name-unknown-september-25-1946-wiesbaden-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Joseph [last name unknown]; September 25, 1946; Wiesbaden, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=joseph">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=joseph&display=joseph_yi_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=joseph&display=joseph_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=joseph">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2.613" end="x">[In English] <a class="placename" href="#vothL35">Wiesbaden</a>, September the 25th, 1946, in the community house of a Jewish community maintained by <a class="term" href="#vothG_unrra">UNRRA</a> but billeted in German homes. The interviewee is Mr. Joseph from Poland, who prefers not to give his full name.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="20.708" end="x">[In German] So, Mr. Joseph, come closer.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="23.749" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="25.437" end="x">And can you tell me . . . can you speak Yiddish? Which is better?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="29.071" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="30.036" end="x">[In Yiddish] Do you want to tell me where you were when the war started, eh . . . the last years before the war, when various events occurred that brought people out of their normal lives.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="48.512" end="x">Before the war I lived in Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="53.258" end="x">[In German] In which city?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="55.094" end="x">[In Yiddish] In <a class="placename" href="#vothL603">Krynica</a>, the spa town. In '39 I was drafted into the army.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="66.502" end="x">How old are you now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="68.182" end="x">Forty-five years old. Well. . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="72.111" end="x">Were you a soldier before?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="74.736" end="x">Yes. I was a soldier in Austria and in Poland from the time I was eighteen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="79.784" end="x">Were you mobilized?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="81.341" end="x">I was mobilized. Due to my illness, I was let go for three month's vacation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="89.363" end="x">How large was your family?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="92.746" end="x">[In German] I want you to tell me everything. You do not have to tell me their names. Were you taken into the Polish Army?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="100.864" end="x">[In Yiddish] Yes. Yes. Because of my illness . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="104.127" end="x">But, I have already asked you: How large was your family?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="107.372" end="x">My family consisted of a husband and wife.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="111.358" end="x">No children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="112.045" end="x">No children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="113.381" end="x">And because of your illness? What was your illness?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="115.569" end="x">My illness affected my kidneys. [unintelligible] the kidneys, so I was released for three months. I wanted to go home to my family. The front had already been broken through, so I went to <a class="placename" href="#vothL604">Drohobych</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="131.599" end="x">Which front?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="133.398" end="x">The front between Germany and Poland. We went to <a class="placename" href="#vothL604">Drohobych</a> on foot. And we arrived in <a class="placename" href="#vothL604">Drohobych</a>. . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="141.368" end="x">With your wife?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="142.463" end="x">My wife could no longer come, because the front had been broken . . . [break in wire]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="142.463" end="x">. . . in Austria and in Poland from the time I was eighteen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="150.618" end="x">Were you mobilized?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="152.195" end="x">I was mobilized. Due to my illness, I was let go for three month's vacation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="160.054" end="x">How large was your family?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="163.465" end="x">[In German] I want you to tell me everything. You do not have to tell me their names. Were you taken into the Polish Army?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="171.319" end="x">[In Yiddish] Yes. Yes. Because of my illness . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="174.508" end="x">But, I have already asked you: How large was your family?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="177.623" end="x">My family consisted of a husband and wife.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="181.461" end="x">No children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="182.148" end="x">No children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="183.410" end="x">And because of your illness? What was your illness?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="185.543" end="x">My illness affected my kidneys. [unintelligible] the kidneys, so I was released for three months. I wanted to go home to my family. The front had already been broken through, so I went to <a class="placename" href="#vothL604">Drohobych</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="200.943" end="x">Which front?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="202.835" end="x">The front between Germany and Poland. We went to <a class="placename" href="#vothL604">Drohobych</a> on foot. And we arrived in <a class="placename" href="#vothL604">Drohobych</a>. . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="210.453" end="x">With your wife?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="211.604" end="x">My wife could no longer come, because the front had been broken. So she could not come to me anymore. I arrived in <a class="placename" href="#vothL604">Drohobych</a>. I had been in <a class="placename" href="#vothL604">Drohobych</a> two days when the Germans came in and found me in <a class="placename" href="#vothL604">Drohobych</a>. Then I saw that there was nothing else I could do, so I began the trip back home to <a class="placename" href="#vothL603">Krynica</a>. I went through <a class="placename" href="#vothL138">Przemyśl</a>. When I got to right before <a class="placename" href="#vothL138">Przemyśl</a>, two kilometers before <a class="placename" href="#vothL138">Przemyśl</a>, there was a bomb in the middle of the street, which had ripped up half a <a class="term" href="#vothG_block">block</a>. There were eighteen of us Jews passing by. The Germans got a hold of us and told us to dig a ditch for ourselves, two meters long, and with this earth cover what, what the bomb . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="259.226" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="260.266" end="x">. . . blew up. For every shovel full of earth that we dug up we were beaten. It was raining heavily at that time, and we wanted to take off the coats that we were wearing, but we were not allowed. We were forced to keep our coats on in the biggest mud: "This is what you have to do!" We worked for three hours. At eight o'clock at night, when it was already very dark, the Commander, the Lieutenant, said: "Crew, halt! One, two, three." Cursing and beating and they disappeared in the direction of <a class="placename" href="#vothL123">Lemberg</a>. We didn't know what they meant, we were going toward <a class="placename" href="#vothL138">Przemyśl</a> and the direction of <a class="placename" href="#vothL123">Lemberg</a> was back toward <a class="placename" href="#vothL604">Drohobych</a>. We went toward <a class="placename" href="#vothL138">Przemyśl</a>. Then the shooting started. Luckily, it was dark. We lay down on the ground and no one was hit. We continued toward <a class="placename" href="#vothL138">Przemyśl</a>, all eighteen of us Jews. We entered <a class="placename" href="#vothL138">Przemyśl</a>. "Halt! Martial law! One cannot walk in the town at night." We asked that we be released, because we had just finished our work. They let us [go]. A Jew, who owned a restaurant near the train, took us home with him. Locked! So he knocked on the gate. A woman comes out and says, "Why did you come? Have mercy! Today six hundred and fifty Jews were killed. You came at the absolutely worst time." "Where?" we asked. "Who knows that Jews were killed? Who? What kind of Jews?" "They took both rabbis, all the lawyers, their daughters and their sons and their children and killed them." "Well, let us in." And we were admitted. And we spent the whole night hidden in the attic. In the morning two <a class="term" href="#vothG_gestapo">Gestapo</a> men came and asked, "Where are the men who arrived last night? The woman stood outside and says, "There are no men here. No one came." He asked, "Aren't you lying?" She says, "No." Well, we continued, and we lay there until the evening before Yom Kippur. On Yom Kippur Eve, we went to the synagogue to pray. We prayed there and the next morning, the next morning, there came an order that the whole street has to be evacuated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="424.844" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="425.680" end="x">And . . . nothing. There was no arguing. Out into the street! This street was near the synagogue, a temple and near the synagogue.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="434.298" end="x">The Christians and the Jews had to evacuate?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="436.764" end="x">No. Just the Jews. Just the Jews. But we were afraid to go out, so we didn't go out and we stayed where we were. The evening before Sukkos, three o'clock in the morning, the Jews were standing at the baker's to buy bread. He was standing selling, when out of the third floor window I saw, when I was looking down, that they took benzene and began to pour it on the synagogue and they ignited it right away. One woman began to scream, "Jews, get up. It's burning." So he took out a revolver and shot it. They first set fire to the temple, that was the first thing. Second . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="481.655" end="x">A synagogue and a temple . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="483.343" end="x">A synagogue and a temple.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="485.167" end="x">What is the difference?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="486.675" end="x">A temple, that is modern. A synagogue is more Orthodox. Three hours later, all three synagogues were burning.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="500.648" end="x">What was the third one?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="501.873" end="x">The third one was a Khassidic study house. All three synagogues were burning, and the order came that we had to go out into the street. So everyone gathered together, everyone who was able to—[even] small children—and they ran outside the city. And it burned a whole day; it burned and burned and burned until twelve o'clock at night, Sukkos Eve at night. At twelve o'clock it became quiet and at four o'clock in the morning the Red Army came in.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="537.784" end="x">The Red Army.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="538.497" end="x">Yes. The Red Army came in and divided <a class="placename" href="#vothL138">Przemyśl</a>. Half of <a class="placename" href="#vothL138">Przemyśl</a> was red, the Red Army, and the other half of <a class="placename" href="#vothL138">Przemyśl</a>, across the [river?] was German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="550.237" end="x">The Russians were not yet fighting with the Germans at that time.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="553.926" end="x">No, no. At that time they were not yet fighting each other; at that time they were still quite friendly. So we remained in <a class="placename" href="#vothL138">Przemyśl</a> under the Russians, and in <a class="placename" href="#vothL138">Przemyśl</a> I began to work. I wrote to my wife asking her to write to me about what was going on at home. My wife wrote that she wants to come to me, so I wrote her that she should come. She arrived at <a class="placename" href="#vothL605">Sanok</a> to the [unintelligible], but the Germans would not let her cross the water. They even told her to go into the water, but she could not go into the water, because she had a lot of bundles, so she waited until she would have the opportunity to cross the border on dry land. She waited there for two weeks, and they did not permit her across. She went home, and to this day I have not seen her. She died. She was shot in [<a class="placename" href="#vothL606">Grybów</a>?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="610.893" end="x">Who told you this?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="612.729" end="x">Those who were together [with her] in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, in the camp, saw this.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="621.403" end="x">You weren't in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="622.702" end="x">I was not in <a class="placename" href="#vothC4" type="camp">Auschwitz</a>, no.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="624.067" end="x">Yes. The people here . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="627.561" end="x">She was together with them. Those people managed to save themselves, and these were shot. They were shot this way: my wife, my brother. . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="635.271" end="x">Whose brother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="636.346" end="x">One of my brothers, and one of my brothers-in-law, and, um, two other brothers-in-law: three brothers-in-law were shot. One brother-in-law had six children, one had four and one had five children. There were other brothers-in-law from <a class="placename" href="#vothL606">Grybów</a>. I have no idea what happened to them. We worked in <a class="placename" href="#vothL138">Przemyśl</a>. We worked through the month of May. In May, a new Diaspora started. The Russians began coming into houses at night and began to take people out. No one knew where to, what. A day later a note was posted saying that there was a registration. [People could say] where they wanted to go: if they wanted to go home to the Germans or if they wanted to take out a passport. A lot of people registered for passports and a lot of people registered to go home. And those people, who registered requesting to go home, were taken and sent by transport to Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="708.899" end="x">To Russia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="709.578" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="709.887" end="x">But they said that they wanted to go home to the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="711.691" end="x">Yes, they were sent to Russia. Those who said that they wanted to go home to, to to the Germans, home! Not to the Germans, home to their wives.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="719.753" end="x">But the Germans were, after all, there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="721.642" end="x">Yes, but I did not go home to the Germans. I wanted to go home to my wife, to my brothers . . .[they] were sent to Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="729.116" end="x">And you also signed up to go home.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="731.155" end="x">Yes, because my wife could not come [to me].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="735.504" end="x">So you were exiled to Russian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="736.802" end="x">. . . sent to Russia. As we were being transported to Russia—this is what was done to us: those who had wives and children, these were sent together, together. And those who were alone, like I was alone without a wife, were taken off and imprisoned in the jail in <a class="placename" href="#vothL511">Tarnopol</a>, and I was held in jail for four weeks and every day there were protocols: what one was, and when one was. And after all this questioning, we were exiled to Russia some for terms of three years, or five years or eight years, or ten year. We were in a camp . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="775.252" end="x">Sentenced.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="776.551" end="x">Sentenced!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="777.640" end="x">Why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="778.320" end="x">Why, no one knew. At night they wrote a script, and one had to say what they wanted, and one received either eight years or ten years or three or five years. And that was that!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="790.885" end="x">Who? Five years. Who? Where were they sent?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="795.965" end="x">They were sentenced to the jail in <a class="placename" href="#vothL511">Tarnopol</a>. From there they were sent to Camp <a class="placename" href="#vothL611">Sukhobezvodnoye</a> and to other camps. Siberia. Various camps. We were there. . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="809.660" end="x">Where were you sent? Where were you sent to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="813.514" end="x">To <a class="placename" href="#vothL611">Sukhobezvodnoye</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="814.869" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="816.650" end="x">Yes. <a class="placename" href="#vothL611">Sukhobezvodnoye</a>. We worked in the camp there. We worked very hard. We found . . . a lot of people died of starvation. People could not withstand the cold. It was very cold.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="836.955" end="x">Where is the city where you were sent? Where is it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="840.626" end="x">This is near the Volga, three hundred kilometers from the Volga.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="844.290" end="x">From [Nozber?]? From [<a class="placename" href="#vothL612">Novgorod</a>?]? What work did you do there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="853.228" end="x">In the woods . . . [break in wire]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="860.140" end="x">Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="863.162" end="x">I worked in the forest cutting wood, chopping trees. Many of our brothers were . . . if a tree fell badly, if he [unintelligible] they were killed by the tree.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="881.970" end="x">[<i>speaking over each other</i>] Who organized the work? Who stood guard?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="886.123" end="x">Guard? These were the Russians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="888.311" end="x">Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="888.776" end="x">The Russians were the guards.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="890.427" end="x">Well, how did you live? What did you eat?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="894.987" end="x">We ate . . . we received six hundred grams of bread a day. If someone was a good worker and he had the strength to do more than the norm, he had the right to buy an additional three hundred grams of bread a day.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="909.905" end="x">To buy? They paid for the work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="912.742" end="x">For the work we, yes we received [something]. It was very little but we did get something. Those who fulfilled the complete quota of work, but the quota was very difficult to fulfill, because it was very large. And it was very cold that winter, frost about 48 degrees [?] and we weren't very used to that climate, a very hard climate. It was very cold, and winter lasted very long. The winter lasted about seven or eight months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="942.482" end="x">What kinds of clothes did you wear?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="945.115" end="x">We wore . . . they were. . . the clothes were cotton clothes, made of cotton.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="950.120" end="x">What kind of shoes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="951.975" end="x">There were shoes. At that time there was a dearth and many still had boot liners . . . they had . . . and there weren't enough for everyone so they got shoes. On top of the shoes, people wore things made of straw that, in any case, let the water through. There were terrible snowstorms, a lot of them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="970.914" end="x">And what did they make of wood? What kind of wood was cut?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="973.955" end="x">The wood was cut . . . tall trees were cut into two meters, meters, two meters . . . into meters, into four meters. There were also half meters. And this was brought into the camp. The train came into the woods there and took the wood away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="994.207" end="x">Well . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="997.657" end="x">But I was not used to the food that was there. We had very little. Food was very scarce and I got swollen feet. The doctor said that I needed better food. After that, my hands swelled up and I developed abscesses over my entire body. Six months later, a commission arrived from <a class="placename" href="#vothL361">Moscow</a> and saw . . . inspected the whole camp and divided the camp into three camps. Those who were very healthy were sent to the twenty-third camp. The average ones, those who had to rest, were sent to another camp to rest for three weeks, to the fifteenth camp, and those who were very weak [unintelligible] were sent to the ninth camp. There the work was easier and these people were no longer forced to work. It was an easy camp there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1055.565" end="x">Where were you sent?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1057.753" end="x">I was sent to the ninth camp.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1059.626" end="x">For the weak?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1060.906" end="x">For the weak. Yes. There I worked at an easier job. I worked there until the liberation. Until the liberation was declared.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1073.175" end="x">Wait. What happened to your abscesses, to your illness? Were they healed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1079.051" end="x">In the ninth camp they gave [us] certain medicine, that is they gave us medicine for this. They gave us yeast to drink. They gave us potatoes, onions.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1091.320" end="x">What did they give you to drink?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1092.915" end="x">Yeast, yeast.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1094.158" end="x">Yeast. [In English] Yeast!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1094.986" end="x">[In Yiddish] Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1096.421" end="x">[In Polish] Yeast.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1096.914" end="x">Yeast, yeast.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1098.378" end="x">[In Yiddish] Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1099.597" end="x">There . . . there things were no longer so awful. One could stand it. We did not go to work so early.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1107.856" end="x">Were there only Jews in this camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1110.074" end="x">Seventy percent were Jews there and thirty percent were mixed: some Russians, some gentiles, some Poles . . .mixed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1118.902" end="x">Did you have Sundays off there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1122.003" end="x">We had one day off every two weeks . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1126.086" end="x">Sunday or Saturday?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1128.143" end="x">Sometimes it fell on Saturday and sometimes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1132.572" end="x">[unintelligible] holidays . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1135.581" end="x">[unintelligible] sometimes it came out.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1136.758" end="x">Aha. What do you say, were those who wanted to permitted to pray?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1146.744" end="x">In the first camp, in the seventh camp, praying was a bit disrupted.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1154.565" end="x">Disrupted?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1155.234" end="x">Disrupted. Yes, they, they tore off the prayer shawls during their prayers. In the second camp, they, they ridiculed [them].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1165.483" end="x">What does that mean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1166.133" end="x">They laughed at the prayers, so that the people were careful. Someone's prayer book was stolen. When we came in, our prayer books were confiscated. They took away our phylacteries. Among five or six hundred Jews there were only two pairs of phylacteries. Those who could prayed or [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1183.942" end="x">But there was no quorum of ten?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1185.445" end="x">No, we were not allowed to make a minyan. We were absolutely forbidden to form a minyan. That would be called organizing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1193.452" end="x">Was this in the third camp or in the second camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1197.734" end="x">That is exactly how it was with praying in the third camp. If one needed to pray, he prayed alone, quietly. Then nothing was said.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1207.217" end="x">What did the Christians do? Did they have their icons there, their crosses?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1216.407" end="x">There were two priests there, but they were sent to a special camp. I have no idea which camp it was. They were not in the seventeenth, not in the fifteenth, not in the nineteenth. They were sent to an entirely separate camp.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1230.994" end="x">You were there until the liberation. What kind of liberation was it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1237.092" end="x">There came an order that Poland had made a treaty with Russia and that all the Polish citizens were to be freed on. . .on . . on the amnesty that was announced. Everyone was freed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1256.346" end="x">[In Polish] On the basis of amnesty . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1258.609" end="x">[In Yiddish] . . . that means amnesty.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1259.334" end="x">What does that mean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1262.245" end="x">We were permitted to return to Poland and we were [unintelligible] to Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1265.860" end="x">But you were Polish citizens.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1267.492" end="x">So? But we could not go to Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1269.662" end="x">Why? Who then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1272.165" end="x">We were liberated and we traveled to find each other's relatives. We traveled and traveled and traveled. We spent whole months traveling. We became ill. We died from traveling. We became ill on the way.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1286.157" end="x">That means that you were permitted to travel.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1287.752" end="x">Yes. They gave us tickets.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1288.788" end="x">Tickets.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1289.424" end="x">We were given money.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1291.577" end="x">Where did you travel?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1294.271" end="x">We traveled . . . At that time the army was founded, Anders Army, Sikorski-Anders Army . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1300.965" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1301.275" end="x">. . . was founded at that time. Then all the Jews served in the Polish Army. Those who . . . for the most part they traveled to <a class="placename" href="#vothL607">Buzuluk</a>, to <a class="placename" href="#vothL608">Totskoye</a>. That is where the army was being formed; the Army was being founded. When we got there a new Diaspora started, a new, fresh Diaspora. There one first felt that one was a Jew.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1324.632" end="x">Hmm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1325.590" end="x">Yes. We were punished there. If one asked for a bit of soup, we caught a bone in the head and we got a good slap. Every step we took was taking a risk. It was not bearable. A lot of Jews served in the Polish Army and they could not take it, so they left the Polish Army. Then again, many went with the Army to Iran.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1349.848" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1350.739" end="x">To Iran. They traveled to Iran.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1352.096" end="x">Ooh. Tell me, how was it by the Russians there? Did they beat [people]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1359.026" end="x">By the Russians? No, I did not see [that]. I was not beaten.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1362.641" end="x">It was difficult to work, but they did not beat [people].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1365.459" end="x">No, they did not beat [people]. But if one did not make one's quota, that which one had to make . . . then, of course, one became sick, because one could not get any food. Those people who could not meet their quota. [Among] those people who could not meet their quota . . . one was a lawyer, one was a doctor and one was a dental technician, who had to chop wood, but he could not make his quota, so he became weak.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1387.993" end="x">Where did you go to then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1389.940" end="x">We went to Central Asia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1392.777" end="x">You went into the Army?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1395.929" end="x">We went into the Army. The Army did not know what to do with us, because it didn't have any place, any place for so many. The Army fed us quite well, but a Jew was [despised?]. They couldn't stand to look at a Jew, and Jews had to run away from there, and everyone went to Central Asia, because there in Middle Asia it was warm and there it was very cold.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1424.086" end="x">Aha, yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1424.827" end="x">So it turned out . . . then it turned out that we were already in winter there . . . [break in wire] . . . in Central Asia. [unintelligible] but there in Central Asia it was the same thing. Sikorski's Army was also there. One could also go into the Army there, but there were also a lot of mistakes when one went into the Army. On the day that the Army left for Iran, they told the Jews to take off their uniforms. They remained in Central Asia while they left. Many of us became ill. I came down with typhus. I was in the hospital for seven weeks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1462.305" end="x">What is typhus? Typhus?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1463.590" end="x">Typhus, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1464.709" end="x">From lice.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1465.383" end="x">Lice, yes. Typhus. Then I contracted dysentery. Then I got diarrhea. I was in the hospital for five months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1475.871" end="x">What kind of hospital? Polish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1478.393" end="x">It was good that it was a military hospital. The Russians . . . the Russians . . . the doctors were Russian and the staff was Russian, but it was a hospital, a military hospital, and it was named for the Army, Sikorski's Army. We were treated quite well there. We were fed quite well there. Those who survived, survived . . . and we left.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1511.956" end="x">Well, when did you get out?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1514.552" end="x">I got out of the hospital and I went to . . . at that time there opened relief agency; they were Polish agencies for support. It was support from the British. People began to receive support. Every refugee who arrived and showed that he had been in a camp, a Polish one, began to receive support. It was. . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1540.402" end="x">It was a Russian camp.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1542.055" end="x">Yes, a Russian camp.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1544.269" end="x">[In Russian] A certificate.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1545.536" end="x">[In Yiddish] He showed that he had been in a camp. He registered. There was an office in every city. One received soap, one received money, one received clothes, shoes, one received . . . they were given [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1559.580" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1560.344" end="x">Yes. But those who went to work got the best things. Those who did not go to work had no right to receive [anything], unless they were sick and the doctor cured them. At that time one could get [something] only if he went to work. I . . . during the course of the day, I had to work even though I was unable to, because if I didn't . . . Without working I couldn't have survived, but I did thanks to what I received from these relief offices. Even sick, I had to work. I worked until . . . after working I once again got swollen feet. There was a doctor from <a class="placename" href="#vothL79">Warsaw</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1597.306" end="x">Where did your feet become swollen? On the sides? Show me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1599.976" end="x">At the bottom. He said that this was due to a weakened heart.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1602.342" end="x">Oh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1604.258" end="x">From the heart, from the heart. He said that I was not allowed to work anymore. He sent me to a convalescent home. There was a convalescent home in <a class="placename" href="#vothL609">Gusar</a>, Central Asia. There was also a relief agency there. Jews. People there did not work. It was figured that one would spend three or four weeks there resting. The food they served was quite good. Then a decree was issued (this was in '43 in the month of March) saying that all Polish people had to accept Russian passports . . . become Russian citizens. If not . . . many were arrested.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1654.539" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1655.574" end="x">Yes. I didn't want to think too much about it. I was, by this time, afraid. I had spent fourteen months in jail, so I immediately got a passport, and as soon as I got the passport, I . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1666.972" end="x">To be a Russian citizen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1668.030" end="x">To be a Russian citizen. I began to work, and I worked. It wasn't bad.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1676.037" end="x">[unintelligible] the Polish relief agencies?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1682.784" end="x">No. At that time all the relief agencies were disbanded. All the relief agencies were liquidated, and no more Polish relief agencies existed. Then we really had to go to work, and we went to work. Whatever one had the strength to do, but one had to take a passport. One could not exist without a passport. As soon as one got a passport . . . they took people and sent them to the front.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1712.647" end="x">What was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1714.039" end="x">That means . . . a front, that is called a job . . . a mobilization of . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1722.064" end="x">A mobilization to work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1724.073" end="x">To work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1724.870" end="x">And where did you work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1726.198" end="x">Me . . . various things. I was sent to [Astroyik?]. This is near <a class="placename" href="#vothL610">Tashkent</a> [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1734.230" end="x">Not to the front.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1736.463" end="x">No. Behind the front. All of this was behind. One person was sent [unintelligible] another was sent to [unintelligible] work. So everyone took passports and he began to work. Now we had the right to live in the city. We improved everything. We were there in '43, '44, '45 . . . until the end of the war. When the war ended, we once again heard news that people were traveling to Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1770.704" end="x">With Russian passports?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1772.707" end="x">The Russian passports were taken back. They gave out a document, half in Polish, half in Russian. And at the border . . . we went home to Poland. . .at the border they took back the Russian document and the passport. They took everything away. All that remained was a small document written in Polish. We went home to Poland with transport and we arrived in Poland in the month of . . . July.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1810.258" end="x">'46?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1811.242" end="x">'46.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1813.393" end="x">So late?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1814.488" end="x">Yes, yes. The last transport.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1817.028" end="x">July '46?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1817.715" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="x1818.773" end="x">July '46? That was four weeks ago.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1819.664" end="x">Four weeks ago. Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1822.482" end="x">Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1823.038" end="x">What is it today?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1824.447" end="x">What is it? September already.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1825.966" end="x">September . . . well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1826.930" end="x">Two months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1827.451" end="x">Two months. When we arrived in Poland . . . we thought that we would be able to exist at home. Poland was, after all, our home. We had lived there for so many years . . . our fathers, our grandfathers. But we were told that we could not go out into the street.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1846.001" end="x">Who said that? Other Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1848.060" end="x">The Jews who came to meet the train. Jews came out to meet the train said that we should not loiter in the street, because there had been some shooting today. At night a train went through going to <a class="placename" href="#vothL79">Warsaw</a>-<a class="placename" href="#vothL92">Lublin</a>, and four Jews were taken off. No one knew what had happened. In the morning it was discovered that they had been shot.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1868.929" end="x">In which city was it that you arrived when you came home?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Joseph [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#joseph" start="1871.843" end="x">[<a class="placename" href="#vothC76" type="camp">Mielec</a>?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1872.139" end="x">[In English] This concludes Spool 158 with the report of a Mr. Joseph, and we will continue Spool 159. Illinois Institute of Technology wire recording. <a class="placename" href="#vothL35">Wiesbaden</a>, September the 26th, 19— . . . eh, 25th, September the 25th, 1946. Illinois Institute of Technology wire recording.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>Khane-Faygl Turtletaub</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_1 = 50.033300;
+                        var lon_1 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC76">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC76" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Mielec
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Mielec, Poland<br />
+                            </p>
+                            <div>
+                After the transport of most of Mielec&#226;s Jews in 1942 a labor camp was established there. One use of these laborers was to obliterate all traces of earlier mass murders. The laborers were usually murdered once their work was completed.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC76 = new OpenLayers.Map('map_vothC76', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC76.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC76.addLayer(markers);
+map_id_vothC76.zoomToMaxExtent();
+
+                        var lat_2 = 50.300000;
+                        var lon_2 = 21.416700;
+                        var vothC76 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC76_icon = new OpenLayers.Marker(vothC76);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC76);
+markers.addMarker(vothC76_icon);
+    addMarker(vothC76, popupClass, "", true, false, false);
+    map_id_vothC76.setCenter(vothC76, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL35">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL35" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Wiesbaden, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL35 = new OpenLayers.Map('map_vothL35', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL35.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL35.addLayer(markers);
+map_id_vothL35.zoomToMaxExtent();
+
+                        var lat_3 = 50.083300;
+                        var lon_3 = 8.233300;
+                        var vothL35 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL35_icon = new OpenLayers.Marker(vothL35);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL35);
+markers.addMarker(vothL35_icon);
+    addMarker(vothL35, popupClass, "", true, false, false);
+    map_id_vothL35.setCenter(vothL35, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL603">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL603" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Krynica-Zdr&#195;j, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL603 = new OpenLayers.Map('map_vothL603', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL603.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL603.addLayer(markers);
+map_id_vothL603.zoomToMaxExtent();
+
+                        var lat_4 = 49.433333;
+                        var lon_4 = 20.966667;
+                        var vothL603 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL603_icon = new OpenLayers.Marker(vothL603);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL603);
+markers.addMarker(vothL603_icon);
+    addMarker(vothL603, popupClass, "", true, false, false);
+    map_id_vothL603.setCenter(vothL603, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL604">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL604" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Drohobych, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL604 = new OpenLayers.Map('map_vothL604', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL604.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL604.addLayer(markers);
+map_id_vothL604.zoomToMaxExtent();
+
+                        var lat_5 = 49.350000;
+                        var lon_5 = 23.500000;
+                        var vothL604 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL604_icon = new OpenLayers.Marker(vothL604);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL604);
+markers.addMarker(vothL604_icon);
+    addMarker(vothL604, popupClass, "", true, false, false);
+    map_id_vothL604.setCenter(vothL604, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL138">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL138" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Przemyśl, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL138 = new OpenLayers.Map('map_vothL138', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL138.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL138.addLayer(markers);
+map_id_vothL138.zoomToMaxExtent();
+
+                        var lat_6 = 49.783300;
+                        var lon_6 = 22.783300;
+                        var vothL138 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL138_icon = new OpenLayers.Marker(vothL138);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL138);
+markers.addMarker(vothL138_icon);
+    addMarker(vothL138, popupClass, "", true, false, false);
+    map_id_vothL138.setCenter(vothL138, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL123">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL123" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            L&#39;viv, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL123 = new OpenLayers.Map('map_vothL123', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL123.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL123.addLayer(markers);
+map_id_vothL123.zoomToMaxExtent();
+
+                        var lat_7 = 49.833300;
+                        var lon_7 = 24.000000;
+                        var vothL123 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL123_icon = new OpenLayers.Marker(vothL123);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL123);
+markers.addMarker(vothL123_icon);
+    addMarker(vothL123, popupClass, "", true, false, false);
+    map_id_vothL123.setCenter(vothL123, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL605">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL605" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Sanok, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL605 = new OpenLayers.Map('map_vothL605', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL605.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL605.addLayer(markers);
+map_id_vothL605.zoomToMaxExtent();
+
+                        var lat_8 = 49.566700;
+                        var lon_8 = 22.200000;
+                        var vothL605 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL605_icon = new OpenLayers.Marker(vothL605);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL605);
+markers.addMarker(vothL605_icon);
+    addMarker(vothL605, popupClass, "", true, false, false);
+    map_id_vothL605.setCenter(vothL605, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL606">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL606" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Gryb&#195;w, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL606 = new OpenLayers.Map('map_vothL606', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL606.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL606.addLayer(markers);
+map_id_vothL606.zoomToMaxExtent();
+
+                        var lat_9 = 49.624444;
+                        var lon_9 = 20.948333;
+                        var vothL606 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL606_icon = new OpenLayers.Marker(vothL606);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL606);
+markers.addMarker(vothL606_icon);
+    addMarker(vothL606, popupClass, "", true, false, false);
+    map_id_vothL606.setCenter(vothL606, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL511">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL511" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Ternopol, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL511 = new OpenLayers.Map('map_vothL511', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL511.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL511.addLayer(markers);
+map_id_vothL511.zoomToMaxExtent();
+
+                        var lat_10 = 49.583300;
+                        var lon_10 = 25.650000;
+                        var vothL511 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL511_icon = new OpenLayers.Marker(vothL511);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL511);
+markers.addMarker(vothL511_icon);
+    addMarker(vothL511, popupClass, "", true, false, false);
+    map_id_vothL511.setCenter(vothL511, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL611">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL611" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Sukhobezvodnoye, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL611 = new OpenLayers.Map('map_vothL611', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL611.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL611.addLayer(markers);
+map_id_vothL611.zoomToMaxExtent();
+
+                        var lat_11 = 57.044625;
+                        var lon_11 = 44.872675;
+                        var vothL611 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL611_icon = new OpenLayers.Marker(vothL611);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL611);
+markers.addMarker(vothL611_icon);
+    addMarker(vothL611, popupClass, "", true, false, false);
+    map_id_vothL611.setCenter(vothL611, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL612">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL612" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Nizhniy Novgorod, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL612 = new OpenLayers.Map('map_vothL612', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL612.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL612.addLayer(markers);
+map_id_vothL612.zoomToMaxExtent();
+
+                        var lat_12 = 56.333300;
+                        var lon_12 = 44.000000;
+                        var vothL612 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL612_icon = new OpenLayers.Marker(vothL612);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL612);
+markers.addMarker(vothL612_icon);
+    addMarker(vothL612, popupClass, "", true, false, false);
+    map_id_vothL612.setCenter(vothL612, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL361">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL361" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Moskva, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL361 = new OpenLayers.Map('map_vothL361', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL361.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL361.addLayer(markers);
+map_id_vothL361.zoomToMaxExtent();
+
+                        var lat_13 = 55.750000;
+                        var lon_13 = 37.700000;
+                        var vothL361 = new OpenLayers.LonLat(lon_13, lat_13);
+            vothL361_icon = new OpenLayers.Marker(vothL361);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL361);
+markers.addMarker(vothL361_icon);
+    addMarker(vothL361, popupClass, "", true, false, false);
+    map_id_vothL361.setCenter(vothL361, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL607">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL607" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Buzuluk, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL607 = new OpenLayers.Map('map_vothL607', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL607.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL607.addLayer(markers);
+map_id_vothL607.zoomToMaxExtent();
+
+                        var lat_14 = 52.816700;
+                        var lon_14 = 52.316700;
+                        var vothL607 = new OpenLayers.LonLat(lon_14, lat_14);
+            vothL607_icon = new OpenLayers.Marker(vothL607);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL607);
+markers.addMarker(vothL607_icon);
+    addMarker(vothL607, popupClass, "", true, false, false);
+    map_id_vothL607.setCenter(vothL607, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL608">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL608" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Totskoye, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL608 = new OpenLayers.Map('map_vothL608', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL608.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL608.addLayer(markers);
+map_id_vothL608.zoomToMaxExtent();
+
+                        var lat_15 = 52.533300;
+                        var lon_15 = 52.800000;
+                        var vothL608 = new OpenLayers.LonLat(lon_15, lat_15);
+            vothL608_icon = new OpenLayers.Marker(vothL608);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL608);
+markers.addMarker(vothL608_icon);
+    addMarker(vothL608, popupClass, "", true, false, false);
+    map_id_vothL608.setCenter(vothL608, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL79">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL79" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Warsaw, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL79 = new OpenLayers.Map('map_vothL79', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL79.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL79.addLayer(markers);
+map_id_vothL79.zoomToMaxExtent();
+
+                        var lat_16 = 52.250000;
+                        var lon_16 = 21.000000;
+                        var vothL79 = new OpenLayers.LonLat(lon_16, lat_16);
+            vothL79_icon = new OpenLayers.Marker(vothL79);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL79);
+markers.addMarker(vothL79_icon);
+    addMarker(vothL79, popupClass, "", true, false, false);
+    map_id_vothL79.setCenter(vothL79, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL609">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL609" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Gusar, Tajikistan
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL609 = new OpenLayers.Map('map_vothL609', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL609.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL609.addLayer(markers);
+map_id_vothL609.zoomToMaxExtent();
+
+                        var lat_17 = 39.466700;
+                        var lon_17 = 67.833300;
+                        var vothL609 = new OpenLayers.LonLat(lon_17, lat_17);
+            vothL609_icon = new OpenLayers.Marker(vothL609);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL609);
+markers.addMarker(vothL609_icon);
+    addMarker(vothL609, popupClass, "", true, false, false);
+    map_id_vothL609.setCenter(vothL609, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL610">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL610" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Tashkent, Uzbekistan
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL610 = new OpenLayers.Map('map_vothL610', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL610.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL610.addLayer(markers);
+map_id_vothL610.zoomToMaxExtent();
+
+                        var lat_18 = 41.266700;
+                        var lon_18 = 69.216700;
+                        var vothL610 = new OpenLayers.LonLat(lon_18, lat_18);
+            vothL610_icon = new OpenLayers.Marker(vothL610);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL610);
+markers.addMarker(vothL610_icon);
+    addMarker(vothL610, popupClass, "", true, false, false);
+    map_id_vothL610.setCenter(vothL610, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL92">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL92" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Lublin, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL92 = new OpenLayers.Map('map_vothL92', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL92.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL92.addLayer(markers);
+map_id_vothL92.zoomToMaxExtent();
+
+                        var lat_19 = 51.300000;
+                        var lon_19 = 22.516700;
+                        var vothL92 = new OpenLayers.LonLat(lon_19, lat_19);
+            vothL92_icon = new OpenLayers.Marker(vothL92);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL92);
+markers.addMarker(vothL92_icon);
+    addMarker(vothL92, popupClass, "", true, false, false);
+    map_id_vothL92.setCenter(vothL92, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_unrra">
+                <a name="vothG_unrra"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    UNRRA.
+                </span>
+                <span class="definition">
+                    Acronym for the United Nations Relief and Rehabilitation Administration. Established in 1943, its principal executive post was held by a representative of the United States, which supplied forty percent of its budget. Among its chief duties was the repatriation of displaced persons—when the war ended, UNRRA had to cope with the task of caring for millions of displaced persons and refugees.
+                </span>
+            </li>
+                        <li class="vothG_block">
+                <a name="vothG_block"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    block.
+                </span>
+                <span class="definition">
+                    A single concentration camp barrack.
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

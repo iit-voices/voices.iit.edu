@@ -1,0 +1,2575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Ioan Kharchenko; September 21, 1946; München, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-ioan-kharchenko-september-21-1946-mnchen-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Ioan Kharchenko; September 21, 1946; München, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=kharchenkoI">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=kharchenkoI&display=kharchenkoI_ru ">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=kharchenkoI&display=kharchenkoI_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=kharchenkoI">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.241" end="x">This is Spool 9-143C, Father Yoan Kharchenko. It starts with a few sentences introducing Mr. Paulus, but he yields the interview to Father Kharchenko. <a class="placename" href="#vothL256">Chicago</a>, October the 7th, 1950 —Boder.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="52.799" end="x">Spool 143, starting at the 23rd minute, the interviewee is Alphonus Paulus, a Lithuanian, thirty three [?] years old, at a Baltic <a class="term" href="#vothG_dp">DP</a> camp in <a class="placename" href="#vothL29">Munich</a> at Lohengrin Strasse.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="71.688" end="x">[In Russian] Come on here, tell us first in Lithuanian where you were and what happened to you when the Soviets came to Lithuania. I [it is not clear - who speaks and which words he says]. [Pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="91.947" end="x"><a class="placename" href="#vothL29">Munich</a>, September the 21st, 1946. We are . . . we interrupt the interview with Alphonus Paulus because the Greek Orthodox Minister of the Displaced Persons Camps of Lohengrinstrasse, <a class="placename" href="#vothL29">Munich</a>, came in by appointment; he has services [?] in the evening and we will get a short interview with him. The interview of course will take place in Russian. His name is Father Yoan Kharglenko or Kharbenko?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="127.056" end="x">Khar-chen-ko.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="127.996" end="x">Oh,—Yoan Kharchenko. I will write it down in Russian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="136.730" end="x">[In Russian] Yes, move over a little bit nearer. Tell me, Father Yoan, where are you from and from what region in Russia are you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="152.427" end="x">From <a class="placename" href="#vothL74">Vilna</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="153.940" end="x">So. And where were you a priest, when the German-Soviet treaty was signed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="165.038" end="x">When the German-Soviet treaty was signed I was a priest in <a class="placename" href="#vothL129">Riga</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="170.429" end="x">Aha . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="170.863" end="x">In a women's convent.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="173.455" end="x">So you were then in the Baltic Provinces in <a class="placename" href="#vothL129">Riga</a>, in a women's convent. Well, begin with this and tell us, what happened to you, when the Soviets entered the Baltic Provinces.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="187.017" end="x">When the Soviets entered the Baltic Provinces, so at the beginning everything was all right, but later they gradually began to harass us. First people started disappearing; it turned out that they were arrested, and later already at the end of the Soviet power people in large numbers were taken away somewhere to the center, deep into Soviet-Russia: these people were mostly from the privileged classes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="214.762" end="x">And tell me, how big was the Orthodox population in Latvia during the independence of Latvia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="222.430" end="x">A . . . During the independence of Latvia, there was in Latvia a fully free . . . Greek-Orthodox church not persecuted by anybody and everybody was able to worship freely regardless of whether he was Greek-Orthodox, whether he was Hebrew, Moslem. He could freely pursue his . . . his cultural needs.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="246.420" end="x">Yes, but I would like to know how many Greek-Orthodox people were there in Latvia at that time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="249.904" end="x">It is difficult for me to say.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="251.046" end="x">It is difficult for you to say. Did you have a bishop?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="254.069" end="x">We had archbishop Yoan Kamar [?] who was found in an unknown way burned in his villa.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="262.131" end="x">When?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="263.004" end="x">Already in 1934. Later there was the Metropolitan Augustine..who is still alive and is in Germany now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="274.300" end="x">And where is he?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="275.461" end="x">A . . . a . . . I really don't know exact . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="278.177" end="x">Didn't he establish, so to say, an office?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="282.121" end="x">No, no, he did not establish a consistory [?], he too belongs to our Church.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="287.679" end="x">So then for the time being he has no official position.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="291.546" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="292.012" end="x">So. Then, and tell me this . . . a . . . the old Greek-Orthodox Cathedrals—did all of them remain Greek-Orthodox after the establishment of an independent Latvia [after the first World War]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="303.803" end="x">A . . . I can say only about <a class="placename" href="#vothL129">Riga</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="307.291" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="307.472" end="x">. . . That there, it means, the cathedrals as such remained the same . . . only . . . well, the buildings in which the clergy lived were expropriated in behalf of the State. There was even a time when Bishop Augustine lived for a certain time in the basement of the Cathedral and had to recieve even one of the Patriarchs, who visited him, seems the one from <a class="placename" href="#vothL371">Constantinople</a>, in the same cellar.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="333.669" end="x">But this happened while the Latvians were in power.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="335.024" end="x">It was while the Latvians were in power.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="337.366" end="x">Well, when the Soviets came, what happened then? Was the Latvian government changed? What happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="344.063" end="x">No, the Soviet rule was established.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="347.073" end="x">The Soviet rule was established. You mean at the first arrival of the Soviet forces. [not clear "rule" or "life"]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="351.823" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="352.707" end="x">Well, what happened then to the churches?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="357.833" end="x">They did not have time to do anything to the churches. They were not doing anything yet as far as I know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="364.747" end="x">How long were they there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="366.337" end="x">For about a year.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="367.780" end="x">And they did not molest the churches?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="369.819" end="x">The churches were not molested.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="371.328" end="x">Well, you had a parish. Did you notice that anything happened to your parishioners?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="378.489" end="x">. . . The parishioners, as far as I know continued to attend the church in a normal way, as they used to attend before. But at the end of the Soviet power many of our parishioners disappeared, and as it turned out later they were exiled deep into the Soviet Union.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="397.553" end="x">Yes, well . . . and now tell me, about the exodus of the Soviets from Latvia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="405.657" end="x">H-um.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="406.393" end="x">. . . under the pressure of the Germans, of course.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="408.730" end="x">Yes, of course.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="409.382" end="x">What happened then to you? What happened to you personally? What were you personal experiences, your personal life during this transitional period?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="419.672" end="x">You see, the Metropolitan Sergi lived with us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="423.127" end="x">Which Sergi was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="424.169" end="x">The one who was killed in 1944 in the month of June.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="428.603" end="x">Oh, which Metropolitan Sergei was that? Where was he before the Metropolitan?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="433.047" end="x">In <a class="placename" href="#vothL361">Moscow</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="434.255" end="x">Was he a Metropolitan, or a Bishop? [one sound is not clear]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="435.924" end="x">He was an archbishop.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="437.138" end="x">Archbishop Sergey from <a class="placename" href="#vothL361">Moscow</a>. And how did he happen to get to Latvia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="442.623" end="x">The Soviet authorities had sent him, he was sent by the Patriarch of <a class="placename" href="#vothL361">Moscow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="448.665" end="x">So, during the stay of the Soviets in Latvia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="453.712" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="454.114" end="x">Well. Did your church recognize him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="457.810" end="x">Yes, naturally. Since the Latvian church was an autonomous church, it recognized the Patriarch of <a class="placename" href="#vothL361">Moscow</a>, and recognized him as the Bishop of the Baltic Province.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="473.395" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="473.678" end="x">But later when the Russians were leaving, he hid himself; three days he was hiding in the cellars of the monastary. He remained when the Germans came, and, he proclaimed an autonomous church, separated from <a class="placename" href="#vothL361">Moscow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="489.266" end="x">Well, and what happened then? A . . . in the Germans' time what was your situation and that of your parishioners during the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="497.562" end="x">You, see, at the beginning when the Germans came, one could not notice particularly the German pressure on the church. But subsequently the German civil authorities as well as the Latvian authorities started, to poke their nose everywhere.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="524.354" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="524.956" end="x">I, since I still served during the first period of the Germans in the women's convent, and was close to Bishop Sergi, I happen to know, that they persecuted him in every possible way.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="541.268" end="x">The Germans or the Latvians?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="542.427" end="x">Germans . . . Latvians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="544.188" end="x">In what way?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="544.635" end="x">There were even cases when some nuns were compelled . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="551.115" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="551.608" end="x">. . . and some of the servants of the convent, you see, to spy on Metropolitan Sergi, suspecting him to be a Soviet spy.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="560.490" end="x">So . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="560.770" end="x">Actually, of course, he was no spy at all. We were deeply convinced of this; and even now, his death—although the Germans were trying to brand it a terroristic act of the Soviet Union—we are deeply convinced that his death . . . that obviously he was killed by the Germans. That is with the help of the Latvians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="585.948" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="586.499" end="x">And they misrepresented it as a raid of the Soviet <a class="term" href="#vothG_partisans">partisans</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="590.845" end="x">Now tell me, a man who had the opportunity to observe. Tell me what was the attitude of the Latvians toward the Soviets?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="601.733" end="x">Ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="601.959" end="x">[interrupting] or . . . the attitude of the Latvians first toward the Soviets and then toward the Germans. Start with the Soviets.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="607.715" end="x">Well, about the Soviets—the Latvians in my opinion . . . the attitude of the Latvians toward the Soviets, upon the arrival of the Soviets was good.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="617.103" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="620.383" end="x">But there was much . . . when . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="622.687" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="622.904" end="x">. . . when the Latvians . . . when the Soviets started to transport Latvians . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="626.626" end="x">Oh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="626.796" end="x">. . . deep into the country [of the Soviet Union]. At that time the Germans moved in.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="629.882" end="x">Ha . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="630.115" end="x">The Latvians became friendly toward the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="633.022" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="633.809" end="x">And to the end, all the time there was a great bond between them and the Germans, a big friendship.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="640.392" end="x">Well . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="641.117" end="x">And a Latvian army existed with the same rights as the German [army].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="650.107" end="x">Were they like the <a class="term" href="#vothG_ss">SS</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="651.994" end="x">I, really, do not know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="652.782" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="653.185" end="x">I . . . in military affairs . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="656.612" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="656.879" end="x">. . . I do not understand them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="658.115" end="x">So?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="658.553" end="x">But a large number of Latvians were military men, and there were mobilizations, and they were considered equal to the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="666.165" end="x">Please, before I forget. In this . . . there was in <a class="placename" href="#vothL129">Riga</a> a pastor Fetler.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="673.008" end="x">Yes . . . he was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="673.491" end="x">A Baptist?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="674.448" end="x">A Baptist.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="675.021" end="x">What happened to him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="676.318" end="x">I do not know. I had no contact with him.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="678.358" end="x">You don't know by any chance what happened to him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="681.373" end="x">No, I have no idea.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="682.625" end="x">So. I only was interested.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="685.113" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="685.698" end="x">. . . because he has very many friends in America and they undoubtedly would have liked to know. Now, tell me, please, when the Germans . . . let me ask another question. Did you know . . . we will go over to this . . . Did you know anything about that what the Germans used to do to the Jews in Latvia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="711.499" end="x">I served in a convent close to which was the German [corrects himself], the Jewish <a class="term" href="#vothG_ghetto">ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="719.854" end="x">So?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="720.450" end="x">And I had very many acquaintances among Jews who were in the <a class="term" href="#vothG_ghetto">ghetto</a>, mostly intelligensia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="727.192" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="727.622" end="x">By the way. I and my wife, we used to get up very early in the morning especially with the purpose only to see them when they were led to the work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="736.415" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="736.679" end="x">And so we greeted them on the sly and they used to answer us in the same manner in passing. Because if the Germans would only have noticed our greetings, they would have either put us in the <a class="term" href="#vothG_gestapo">Gestapo</a> or would have put us in the <a class="term" href="#vothG_ghetto">ghetto</a>, taking us . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="754.451" end="x">. . . for Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="755.415" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="755.734" end="x">Now what happened, what was the fate of those people in the <a class="term" href="#vothG_ghetto">ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="759.151" end="x">Many of them were led away, even, people say, there were cases, that very many of them were annihilated. But in what way . . . people didn't talk about this, but very many of them were transported away somewhere to some other places. In the end result, the Jews, you see, already at the time, in 1943, there were comparatively few of them who were led to work in the mornings.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="784.649" end="x">So. You did not know a family Michelson in <a class="placename" href="#vothL129">Riga</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="788.397" end="x">I know, I was hiding one Jew until the present time [Footnote: Of course he means until the evacuation. This phenomenon of speaking in the present tense when dealing with some vivid memories repeatedly occurs in these interviews.] in <a class="placename" href="#vothL129">Riga</a>. He is a former . . . a former attorney at law; we forged for him documents of a German and consequently . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="801.428" end="x">He lived?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="801.917" end="x">He was able to live on them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="803.258" end="x">What was his name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="805.089" end="x">His name was Schmidt.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="807.164" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="807.764" end="x">It just suited for a German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="809.082" end="x">Suited for a German, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="812.940" end="x">Moreover, in order to save themselves, they used to visit our convent, and so to say, completely pretended to be Greek-Orthodox Germans. And in this way they managed now [Footnote: Like the Nazis, the collaborationists rarely failed to play up the "favors to their Jewish friends", favors which only most too often could not be corroborated.] to remain in <a class="placename" href="#vothL129">Riga</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="826.957" end="x">Aha [vague sounds].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="827.770" end="x">One moment. This concludes spool 143. We are going over to spool 144 still continuing with the interview with Father Yoan Kharchenko.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="854.196" end="x">This is spool 144, continuing the interview with the Russian minister, Yoan Kharchenko.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="866.948" end="x">[In Russian] Tell me Father Yoan what happened afterwards when the Germans started to retreat; or in general give me an appraisal of the situation during the interregnum in Latvia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="885.613" end="x">When the Germans started leaving Latvia, we all found ourselves in this kind of situation; to remain in Latvia meant to be surely shot by the Bolsheviks because, we having remained in Latvia at the departure of the Bolsheviks were already to be traitors to the Soviet regime. Or . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="908.032" end="x">One moment. Tell me what happened to the Bishop? You told me something before.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="913.647" end="x">In the month of May they killed the Metropolitan Seraphim. Between . . . at the time he was traveling from <a class="placename" href="#vothL74">Vilna</a>, <a class="placename" href="#vothL76">Kovno</a>..through..well [he was traveling] by automobile.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="926.138" end="x">Was he in religious attire?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="928.355" end="x">Yes, he was in religious attire. There was with them together a famous basso and the wife of the basso, he was an artist, his name I don't recall now.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="942.308" end="x">They killed him too?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="943.373" end="x">Yes, and the chauffer, also, four persons. They killed four persons and a little girl who was standing approximately 200 meters from the place. This seven year old girl the bandits also killed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="956.461" end="x">Well, this was that archbishop who was sent from <a class="placename" href="#vothL361">Moscow</a> and then remained in <a class="placename" href="#vothL129">Riga</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="961.629" end="x">Yes, yes that was the same metropolitan.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="964.446" end="x">The metropolitan. Well, continue with your story.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="969.220" end="x">Well, when the Germans started leaving everyone of us had the feeling that to remain in <a class="placename" href="#vothL129">Riga</a> means to be for sure annihilated by the Soviet authorities because we happened already to be enemies of the Soviet power insofar as we did not leave together with the Soviet troops when they departed from Latvia [retreating from the onmarch of the Germans]. At the same time one didn't feel like leaving <a class="placename" href="#vothL129">Riga</a> going somewhere into the unknown and so with the Germans whom we already had learned to know during their one and a half - two year stay in Latvia and have found out that this is . . . that this is a nation which is exclusively dedicated to aggression and enslavement of mankind, and were compelled kind of, to choose the lessor of two evils. But we had no chance even to do so since the Germans in a compulsory manner made everybody join the evacuation; and after having embarked us in the <a class="term" href="#vothG_lager">lagers</a>, and in order that we may not escape from these <a class="term" href="#vothG_lager">lagers</a> fenced around by a triple wiring, they hanged on the chest of everybody his own number and the number of the <a class="term" href="#vothG_lager">lager</a> and photograped us. After that regardless of his specialty or social status, all were sent to public works and frequently families were broken up—transporting the children and mothers somewhere in one direction and sending the heads of families, the husbands and sons in another direction. And so, when my family was sent away I didn't know where it was sent in the month of August and only by accident having escaped from this <a class="term" href="#vothG_lager">lager</a> I learned that my family was in the city of <a class="placename" href="#vothL176">Auerbach</a> [one word not clear] working in a clothing factory as Ostovzi [apparently a term which he proceeds to explain] that means as compulsory labor, Ostovzi.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1096.215" end="x">From the East.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1096.901" end="x">Yes, yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1097.950" end="x">Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1099.323" end="x">It was called "Ost".</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1102.566" end="x">Tell me more detail about the life in the <a class="term" href="#vothG_lager">lager</a>, how you were transported, how they treated you, and how you escaped.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1111.979" end="x">I personally had to travel not by steamer, but by train, so that I had to travel towards <a class="placename" href="#vothL76">Kovno</a>, in freight cars. From <a class="placename" href="#vothL76">Kovno</a> we were sent to <a class="placename" href="#vothL362">Kretingen</a> and in <a class="placename" href="#vothL362">Kretingen</a> they disembarked us. And for two weeks laying around on the railroad station literally between the rails since all the Germans had fled and all roling stock was taken. A crowd of twenty thousand people were abandoned, they did not feed us and we existed just how one could manage.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1156.822" end="x">What does it mean, 'How one could manage'?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1159.821" end="x">That means that we led a half hungry existence and were forced in every way on the border of <a class="placename" href="#vothL362">Kretingen</a> to go to work, diging trenches. But we tried by hook and crook to avoid it and so we did not go to dig the trenches. After that they left us to the mercy of the fate, but when the last detatchments, a kind of demolishing squad, were leaving who used to blow up the stations they gave us a chance to assemble open cattle cars. And by means of these . . . on these . . . open cars they loaded us, attached a small locomotive, a switching engine from <a class="placename" href="#vothL362">Kretingen</a> to <a class="placename" href="#vothL363">Memel</a>, eighteen kilometers, they transported us in twelve hours. It must be stated that the whole time during our evacuation from <a class="placename" href="#vothL129">Riga</a> to <a class="placename" href="#vothL134">Berlin</a> there was a large and very strict guard, so if somebody only attempted to escape they treated him very cruelly. He was beated and there were even cases that they [the would-be escapees] were killed. Well, and about the events after we were brought to <a class="placename" href="#vothL134">Berlin</a> I have already told. We were brought to <a class="placename" href="#vothC122" type="camp">Wilhelmshafen</a> to the so-called transit <a class="term" href="#vothG_lager">lager</a> which has three yards—the first yard, there one only spends one night; they they lead [the people] to the second yard, and [afterwards] to the third, the innermost one. And from there, there is no way out, except for being assigned as a chattel slave to one of the German military factories.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1258.254" end="x">How did they treat people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1259.856" end="x">They treated them like animals.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1262.925" end="x">Did they beat?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1263.651" end="x">Yes, they used to beat; they fed very poorly and in general there was a state of complete misrule. They forced us to work regardless of hours and they fed us exclusively on turnip—rather on water from under turnips, and they provided no more than a hundred grams of bread a day.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1282.117" end="x">Who were the supervisors? Were they your own Russians, Latvians or were they Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1286.133" end="x">No, in <a class="placename" href="#vothC122" type="camp">Wilhelmshafen</a> the supervisors were young Russians who were formerly under the Soviets. One must say, that there were even cases when our own Russian girls while selling themselves to Germans, obtaining so to speak, some temporary comforts, tried in every way to persecute and oppress their own brothers the Russians; not only the Russians but all the others too; there were there also Latvians, there were there also Lithuanians, there were there also Estonians, there were there also Poles. One must say that the Poles were treated worse of all. Well, one felt badly hurt, when in <a class="placename" href="#vothC122" type="camp">Wilhelmshafen</a> some Russian little punk of a girl, sixteen-seventeen years old, but enjoying the favors of the head of this <a class="term" href="#vothG_lager">lager</a> slapped the face of some aged professor. In the other <a class="term" href="#vothG_lager">lagers</a>, however, in the labor-<a class="term" href="#vothG_lager">lagers</a> at the factories and plants the supervisors were only Germans and there the discipline was still worse and still more rude. With greater cruelty they treated different trifling offences. It was not permitted to leave the quarters of the very <a class="term" href="#vothG_lager">lager</a>, and even if they let one go out to the city once in a month or two, for an hour or two one had no right to ride on a streetcar or on a bus but had to walk in the middle of the street, in the middle of the street on foot.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1375.397" end="x">And what kind of clothing did you wear?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1377.165" end="x">We wore our own clothing but only wore a sign, a sign, such a blue sign [badge?] on the chest marked with the white letters Ost.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1385.884" end="x">Ost. Well, how did you escape from the <a class="term" href="#vothG_lager">lager</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1389.348" end="x">I managed to escape from the <a class="term" href="#vothG_lager">lager</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1392.054" end="x">Did you keep your beard?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1393.964" end="x">Yes, yes, I . . . I was so to speak already in complete priestly . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1399.180" end="x">. . . attire?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1399.716" end="x">. . . attire, and I learned in the office that I, as a clergyman, would be allowed to go from the <a class="term" href="#vothG_lager">lager</a> in <a class="placename" href="#vothC122" type="camp">Wilhelmshafen</a> to the cathedral for the services. There was a friend of mine engineer Korablikov, whom I asked, in case I should not return [to take care of] my little things, which I had, and to forward them to me somehow later. And I myself got a permission. I left on Saturday night for the cathedral, I asked the Metropolitan to keep me there and didn't return any more to the <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1438.911" end="x">How come? Was the Metropolitan at liberty?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1441.460" end="x">Yes, the Metropolitan was a German [Footnote: Apparently a Greek-Orthodox clergyman who had resigned his Russian citizenship after the revolution of 1917.]. Yes, yes, the Metropolitan of Germany, he was free, in the cathedral, in twon . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1452.073" end="x">Well, what happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1454.558" end="x">Well, after that I did not return to the <a class="term" href="#vothG_lager">lager</a>. For about two weeks I slept at the stations, on Fridrichstrasse, Alexander Square and then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1462.961" end="x">And what? Didn't they arrest you? Didn't they ask for documents?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1466.181" end="x">Yes, you know at the time, so to say things were already in a mess insofar as the Germans felt already that their discipline was on decline.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1479.921" end="x">Where, in what city did that happen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1481.286" end="x">In <a class="placename" href="#vothL134">Berlin</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1481.988" end="x">Hm . . . well . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1483.251" end="x">All the stations were crowded with soldiers, with deserters, it was comparatively free. But later however our Emigrant Committee got for me a little room.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1495.124" end="x">But the government was still German?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1496.757" end="x">German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1498.333" end="x">And was the city bombed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1499.477" end="x">Every day, several times, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1502.491" end="x">Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1502.799" end="x">Later, in about two weeks they got for me a document, they got for me also a little room and I lived in <a class="placename" href="#vothL134">Berlin</a> until the arrival of the Americans, rather until February until the biggest bombing. And later I found out where my family was. On the ninth of February I left for <a class="placename" href="#vothL176">Auerbach</a> to join my family, and there I was met by the Americans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1527.602" end="x">And how . . . and when did the Americans meet you in <a class="placename" href="#vothL176">Auerbach</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1531.161" end="x">The sixth of April, 1945.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1533.915" end="x">Well, what did you do then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1536.921" end="x">There the Americans gave me the possibility right away to organize an Orthodox church, placing at my disposal a little Catholic Kirk.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1546.981" end="x">Hm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1547.597" end="x">And I worshipped there until I decided to go to a <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1551.448" end="x">Hm..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1551.870" end="x">Where I have been until this day.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1553.643" end="x">So, that means, you are over a year here in the <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1556.494" end="x">No, not that long. I was [for a long time] in the <a class="placename" href="#vothL34">Nuremburg</a>
+                        <a class="term" href="#vothG_lager">lager</a>, and here I am now eight months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1561.361" end="x">And do you have here a church?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1563.400" end="x">That's it, I have a magnificent church equipped by our own efforts.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1569.470" end="x">Did you take out some icons, do you have any?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1572.040" end="x">We had no icons, but we ourselves are drawing here [our own] and our icons will enviously compare with the ancient.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1577.157" end="x">And do you know, that on the house where the UNNRA people have dinner I saw today a very ancient Russian icon with a silver Sacerdotal Vestment, which the Germans obviously have shipped out of Russia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1590.237" end="x">Yes, I too had the opportunity to see here at the homes of some German acquaintances when I happened to meet them, I too saw Russian icons and they used to show them to me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1604.427" end="x">They did not give them up?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1605.450" end="x">No, they did not give them up because they consider them of financial value. And in most cases the Germans used to tell me that these were sent as gifts by their relatives who were in Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1620.434" end="x">Well, so this is stolen property?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1621.715" end="x">Quite right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1623.460" end="x">And you, do you know here some Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1626.296" end="x">No, one happens occasionally to meet them, sometimes to exchange something, one had to exchange some things for food-stuffs. The peasants had food-stuffs and we were starving.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1639.002" end="x">You bartered with the peasants?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1640.041" end="x">Yes, with the peasants.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1641.564" end="x">Tell me this, you used to meet Germans and all kinds of people, what did they think about the war, and what are they thinking about it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1650.048" end="x">In my opinion the Germans were aggressors for centuries.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1656.399" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1657.969" end="x">Personally I am not a politician but I think German always thought of how to enslave Europe.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1668.296" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1669.077" end="x">. . . and if they right now to a certain extent are silent because they were utterly defeated, nevertheless as soon as they will have materially recuperated they will start again holding speeches claiming that they are a pure <a class="term" href="#vothG_aryan">Aryan</a> race and that all the others are [Untermenschen] — sub-men.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1693.313" end="x">Yes. Did they use this expression Untermensch?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1697.192" end="x">They not only used it but I myself read a magazine—they—it had a very beautiful cover and printed on fine paper, a magazine called "Untermensch", where they—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1708.667" end="x">It was called by that name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1709.440" end="x">Yes, it really was called so officially. . . . where they presented types of different nations, mostly as degenerates and pointed out: this is a Russian, this is a Jew, this is a Tartar, this is a Ukrainian and next to them they put some <a class="term" href="#vothG_ss">SS</a> man and they wrote [underneath] this is a pure <a class="term" href="#vothG_aryan">Aryan</a>—a German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1735.308" end="x">So. So you don't think that they are sorry that all this has happened and so on . . . that they have thrown the world into a sea of blood and so on. Do they repent . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1747.268" end="x">In my opinion, in my opinion if there are repenting Germans they are in small number, a small percentage. They look at us even now as an extraneous element, an element unnecessary for them. Though they are guilty in all misfortunes and in all troubles they whose government had forced us to leave our fatherland. And still they don't give us here a chance to enjoy full rights. At present, though they don't show it openly, in all their actions, in all their movements, in all their behavior one can see how they hate us. It is sufficient that if you take a streetcar . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1791.881" end="x">So?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1793.467" end="x">If I enter in my religious attire none of the Germans will ever offer me . . . a . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1800.208" end="x">A seat . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1800.505" end="x">. . . a seat. But if at the same time, my deacon in "regular" clothing is traveling with me, the Germans taking him for a German immediately offered a seat. However, when he without sitting down started offering me the seat in Russian, they seeing that he too was a foreigner occupied again the seat and did not give us a chance to sit down. These are the kind of trifles they show in everything; not only toward Russians or Poles, toward Jews, but even toward those Germans who now left Poland considering them as people who have already become more or less "easternized" . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1846.883" end="x">Yes, of lower culture.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1848.562" end="x">Yes, and they have become [people] of lower culture.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1850.875" end="x">Now, well Father Yoan is there anything else you wanted to say? Would you like to tell something to your brothers in <a class="placename" href="#vothL256">Chicago</a>, the clergy of <a class="placename" href="#vothL256">Chicago</a>? Say . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ioan Kharchenko</span>:
+            </span>
+            <span class="utterance" who="#kharchenkoI" start="1860.960" end="x">I would like to say [he speaks in a raised voice, passionately after a long pause] Our brethern in Christ, save us, save us from the abuse [he sobs] to which we are subjected already for twenty-seven years. We suffer, we smart, we lost our fatherland, we [many of us] have lost their families, we lost all our property, we are now given our piece of bread like alms thrown to beggars. Regardless of that—that thousands of us belonging to the intelligensia, thousands of engineers, thousands of professors sit around without utilizing their skill, and how much benefit could they have brought to mankind? But that is not all, one ting more, which is in store for us, and that is the most terrible; we got used already to all deprivation, but to go back to our fatherland, to go back to the "Father of Nations", to Stalin, that threatens us with inevitable death. And if you, our brethern in Christ, if you won't help us if you won't redeem us from here, if you won't take us over to your lands, then you must know that many more of us will have to die there, on their native soil. Our request to you is—save us, as once upon a time Minin and Pozharsky [Footnote: Minin and Pozharsky were a merchant and military man, respectively, who called for the redemption of Russia from the yoke of the Tartars in the century. Their famous call "Let us mortgage our women and children but save the land", has become a traditional patriotic stereotype.] have mortgaged their . . . had given away all their belongings, they even said, that they would mortgage their wives and children and still would save Russia, so you too, Oh, redeem the ruins of that Russia, which for twenty-seven years now is navigating without sails and without rudder on the great ocean of sorrow and blood. Amen!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1973.978" end="x">[In English] This concludes the interview with Father Yoan Kharchenko on the displaced people camp of the Baltics, <a class="placename" href="#vothL29">Munich</a>, Lohengrin-Strasse, September 21, 1946. Thank you.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Olga Collin</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC122">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC122" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Wilhelmshaven<br /><span class="alt">(Alter Bant Weg)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Neuengamme
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Wilhelmshaven, Germany<br />
+                            </p>
+                            <div>
+                Alter Bant Weg (No. 1582 Wilhelmshaven) was a subcamp of the Neuengamme concentration camp.  Two-thirds of the town&#39;s buildings were destroyed during bombing by the Allies of World War II.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC122 = new OpenLayers.Map('map_vothC122', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC122.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC122.addLayer(markers);
+map_id_vothC122.zoomToMaxExtent();
+
+                        var lat_1 = 53.533300;
+                        var lon_1 = 8.116700;
+                        var vothC122 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC122_icon = new OpenLayers.Marker(vothC122);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC122);
+markers.addMarker(vothC122_icon);
+    addMarker(vothC122, popupClass, "", true, false, false);
+    map_id_vothC122.setCenter(vothC122, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL256">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL256" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chicago, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL256 = new OpenLayers.Map('map_vothL256', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL256.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL256.addLayer(markers);
+map_id_vothL256.zoomToMaxExtent();
+
+                        var lat_2 = 41.850000;
+                        var lon_2 = -87.650000;
+                        var vothL256 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL256_icon = new OpenLayers.Marker(vothL256);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL256);
+markers.addMarker(vothL256_icon);
+    addMarker(vothL256, popupClass, "", true, false, false);
+    map_id_vothL256.setCenter(vothL256, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_3 = 48.133300;
+                        var lon_3 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL74">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL74" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Vilnius, Lithuania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL74 = new OpenLayers.Map('map_vothL74', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL74.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL74.addLayer(markers);
+map_id_vothL74.zoomToMaxExtent();
+
+                        var lat_4 = 54.683300;
+                        var lon_4 = 25.316700;
+                        var vothL74 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL74_icon = new OpenLayers.Marker(vothL74);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL74);
+markers.addMarker(vothL74_icon);
+    addMarker(vothL74, popupClass, "", true, false, false);
+    map_id_vothL74.setCenter(vothL74, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL129">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL129" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Rīga, Latvia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL129 = new OpenLayers.Map('map_vothL129', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL129.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL129.addLayer(markers);
+map_id_vothL129.zoomToMaxExtent();
+
+                        var lat_5 = 56.883300;
+                        var lon_5 = 24.133300;
+                        var vothL129 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL129_icon = new OpenLayers.Marker(vothL129);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL129);
+markers.addMarker(vothL129_icon);
+    addMarker(vothL129, popupClass, "", true, false, false);
+    map_id_vothL129.setCenter(vothL129, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL371">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL371" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            İstanbul, Turkey
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL371 = new OpenLayers.Map('map_vothL371', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL371.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL371.addLayer(markers);
+map_id_vothL371.zoomToMaxExtent();
+
+                        var lat_6 = 41.033300;
+                        var lon_6 = 28.950000;
+                        var vothL371 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL371_icon = new OpenLayers.Marker(vothL371);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL371);
+markers.addMarker(vothL371_icon);
+    addMarker(vothL371, popupClass, "", true, false, false);
+    map_id_vothL371.setCenter(vothL371, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL361">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL361" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Moskva, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL361 = new OpenLayers.Map('map_vothL361', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL361.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL361.addLayer(markers);
+map_id_vothL361.zoomToMaxExtent();
+
+                        var lat_7 = 55.750000;
+                        var lon_7 = 37.700000;
+                        var vothL361 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL361_icon = new OpenLayers.Marker(vothL361);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL361);
+markers.addMarker(vothL361_icon);
+    addMarker(vothL361, popupClass, "", true, false, false);
+    map_id_vothL361.setCenter(vothL361, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL76">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL76" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kaunas, Lithuania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL76 = new OpenLayers.Map('map_vothL76', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL76.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL76.addLayer(markers);
+map_id_vothL76.zoomToMaxExtent();
+
+                        var lat_8 = 54.866700;
+                        var lon_8 = 23.916700;
+                        var vothL76 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL76_icon = new OpenLayers.Marker(vothL76);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL76);
+markers.addMarker(vothL76_icon);
+    addMarker(vothL76, popupClass, "", true, false, false);
+    map_id_vothL76.setCenter(vothL76, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL176">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL176" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Auerbach, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL176 = new OpenLayers.Map('map_vothL176', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL176.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL176.addLayer(markers);
+map_id_vothL176.zoomToMaxExtent();
+
+                        var lat_9 = 50.500000;
+                        var lon_9 = 12.400000;
+                        var vothL176 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL176_icon = new OpenLayers.Marker(vothL176);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL176);
+markers.addMarker(vothL176_icon);
+    addMarker(vothL176, popupClass, "", true, false, false);
+    map_id_vothL176.setCenter(vothL176, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL362">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL362" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kretinga, Lithuania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL362 = new OpenLayers.Map('map_vothL362', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL362.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL362.addLayer(markers);
+map_id_vothL362.zoomToMaxExtent();
+
+                        var lat_10 = 55.866700;
+                        var lon_10 = 21.200000;
+                        var vothL362 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL362_icon = new OpenLayers.Marker(vothL362);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL362);
+markers.addMarker(vothL362_icon);
+    addMarker(vothL362, popupClass, "", true, false, false);
+    map_id_vothL362.setCenter(vothL362, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL363">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL363" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Klaipėda, Lithuania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL363 = new OpenLayers.Map('map_vothL363', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL363.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL363.addLayer(markers);
+map_id_vothL363.zoomToMaxExtent();
+
+                        var lat_11 = 55.716700;
+                        var lon_11 = 21.116700;
+                        var vothL363 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL363_icon = new OpenLayers.Marker(vothL363);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL363);
+markers.addMarker(vothL363_icon);
+    addMarker(vothL363, popupClass, "", true, false, false);
+    map_id_vothL363.setCenter(vothL363, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL134">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL134" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Berlin, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL134 = new OpenLayers.Map('map_vothL134', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL134.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL134.addLayer(markers);
+map_id_vothL134.zoomToMaxExtent();
+
+                        var lat_12 = 52.533300;
+                        var lon_12 = 13.416700;
+                        var vothL134 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL134_icon = new OpenLayers.Marker(vothL134);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL134);
+markers.addMarker(vothL134_icon);
+    addMarker(vothL134, popupClass, "", true, false, false);
+    map_id_vothL134.setCenter(vothL134, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL34">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL34" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            N&#195;rnberg, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL34 = new OpenLayers.Map('map_vothL34', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL34.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL34.addLayer(markers);
+map_id_vothL34.zoomToMaxExtent();
+
+                        var lat_13 = 49.450000;
+                        var lon_13 = 11.066700;
+                        var vothL34 = new OpenLayers.LonLat(lon_13, lat_13);
+            vothL34_icon = new OpenLayers.Marker(vothL34);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL34);
+markers.addMarker(vothL34_icon);
+    addMarker(vothL34, popupClass, "", true, false, false);
+    map_id_vothL34.setCenter(vothL34, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_dp">
+                <a name="vothG_dp"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    DP.
+                </span>
+                <span class="definition">
+                    Displaced Person, or refugee.
+                </span>
+            </li>
+                        <li class="vothG_partisans">
+                <a name="vothG_partisans"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    partisans.
+                </span>
+                <span class="definition">
+                    Paramilitary forces engaged behind the front lines during World War II.
+                </span>
+            </li>
+                        <li class="vothG_ss">
+                <a name="vothG_ss"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    SS.
+                </span>
+                <span class="definition">
+                    Acronym for the German Schutzstaffel (“Protective Echelon”), a major Nazi organization. It grew from a small paramilitary unit to a powerful force that served as Hitler's "Praetorian Guard," the Nazi Party's "Shield Squadron" and a force that, fielding almost a million men (both on the front lines and as political police), managed to exert as much political influence as the German Army. Built upon the Nazi racial ideology, the SS, under Heinrich Himmler's command, was responsible for many (and most of the worst) of the crimes against humanity perpetrated by the Nazis during World War II.
+                </span>
+            </li>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_aryan">
+                <a name="vothG_aryan"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Aryan.
+                </span>
+                <span class="definition">
+                    Derived from a Sanskrit word meaning “noble,” the term was used in Nazi pseudo-scientific jargon to denote a race which had supposedly superior blood and culture. During the Holocaust, “Aryan” came to mean anyone who was not Jewish or Roma (Gypsy).
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

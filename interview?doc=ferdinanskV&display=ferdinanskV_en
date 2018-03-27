@@ -1,0 +1,1886 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Victor Ferdinansk; September 24, 1946; München, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-victor-ferdinansk-september-24-1946-mnchen-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Victor Ferdinansk; September 24, 1946; München, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=ferdinanskV">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=ferdinanskV&display=ferdinanskV_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=ferdinanskV&display=ferdinanskV_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=ferdinanskV">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=ferdinanskV">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.625" end="x">[In English] <a class="placename" href="#vothL29">Munich</a>, September the 24th, 1946, at the <a class="term" href="#vothG_unrra">UNRRA</a> University of the Deutsches Museum. The interviewee is Mr. Victor Ferdinansk, a Lithuanian, who will talk to us in German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="12.663" end="x">[In German:] Now tell me, Victor, what happened to you when the Russians had come to Lithuania?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="20.122" end="x">[He speaks rather fluently, but it is the German of a foreigner.] And so the Russians came to Lithuania. They came in 1940. At that time I was a gymnasium pupil of third grade [possibly counting from the top], and in the autumn of that year I came to <a class="placename" href="#vothL148">Tallinn</a> and entered the eighth year of the Ritter Seminary [Seminary of the Knights; origin of the name is not clear, but possibly named after the Crusaders].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="34.662" end="x">What is your religion?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="36.740" end="x">I am a Roman Catholic.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="38.302" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="39.958" end="x">And it was clear to all of us that the Ritter Seminary will not continue to exist for long.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="46.696" end="x">In what city was that seminary?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="48.868" end="x">In <a class="placename" href="#vothL148">Tallinn</a> . . . [<i>correction</i>] in <a class="placename" href="#vothL76">Kovno</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="50.227" end="x">In <a class="placename" href="#vothL76">Kovno</a>? A so-called [in Russian] theological seminary.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="55.241" end="x">A theological seminary.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="56.585" end="x">Near <a class="placename" href="#vothL129">Riga</a>? Well . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="58.335" end="x">And as a member of the Franciscan Order, I was sent by my superiors to Germany with instructions to go to Italy, since at that time a number of our compatriots studied in Italy, and they had already obtained for us the [proper] documents.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="90.034" end="x">Now what does that mean, "the documents"? What kind of documents did you need?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="92.871" end="x">That means entrance documents [permits] to Italy.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="95.465" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="96.309" end="x">But we were deeply disappointed when we came to Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="101.958" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="102.646" end="x">I had the intention to get to Italy, but instead of that something different happened. At the illegal crossing of the border I was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="116.370" end="x">Oh, you had crossed the border to Germany illegally?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="118.528" end="x">Yes. I was arrested and placed in a <a class="term" href="#vothG_lager">lager</a> where I spent seven days. But then it was established [?] that I was not a spy. So then supplied with a pass, I was sent to <a class="placename" href="#vothL134">Berlin</a> where I had to render services as a prisoner [?] together with French prisoners who were in Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="144.154" end="x">Oh, so you did not get a traveler's permit to Italy?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="146.903" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="147.965" end="x">You were simply taken prisoner?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="151.558" end="x">I was arrested and taken to work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="154.714" end="x">Now go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="156.229" end="x">After I had worked approximately three or four months . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="160.979" end="x">Did you live in a <a class="term" href="#vothG_lager">lager</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="162.932" end="x">That was a work <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="167.072" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="167.666" end="x">Very many slept in one room. I believe there were fifty people, at least.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="175.765" end="x">Yes. Nu, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="176.734" end="x">And once the whole building where we lived together was searched, and of the basis of my nationality [Lithuanian] I was again arrested by the <a class="term" href="#vothG_gestapo">Gestapo</a> and taken to the police headquarters of <a class="placename" href="#vothL134">Berlin</a>. They questioned me at length for three hours, asked about various things, but it was established then that I was not a dangerous person, but just a student of theology . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="207.522" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="208.178" end="x">. . . and I was released after the three-hour questioning.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="212.073" end="x">Nu.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="212.948" end="x">But the whole story was very unpleasant to me, and I did not want it to have possibly any [bad] consequences. For that reason I went from <a class="placename" href="#vothL134">Berlin</a> to <a class="placename" href="#vothL29">Munich</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="230.430" end="x">Now how come? Ille— . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="231.997" end="x">Illegally . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="233.216" end="x">Illegally. Now tell me, could you not come to an understanding with the Catholic clergy in Germany that they should help you? With the Franciscans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="242.313" end="x">No. In <a class="placename" href="#vothL134">Berlin</a> that was hardly possible, because all the authorities were badly set against religion, and there was nothing one could do.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="252.892" end="x">Now . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="253.720" end="x">I was then very young, and was in very poor command of the German language.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="256.980" end="x">Were you permitted to go to church?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="258.819" end="x">One was permitted to go to church.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="261.069" end="x">Could you not talk there with the priest?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="263.553" end="x">Practically [in fact] they could not help much. And then in order to be able to admit [to the parish] all the foreigners, they also had to have a police permit. And without such a police permit they could not admit one at all. That is why I decided to flee to Bavaria, where the whole country is Catholic.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="285.039" end="x">Nu.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="286.008" end="x">And . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="286.992" end="x">You came then to <a class="placename" href="#vothL29">Munich</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="288.648" end="x">To <a class="placename" href="#vothL29">Munich</a>. In 1941 in the spring I came to <a class="placename" href="#vothL29">Munich</a> where I was accepted by a Franciscan monastery, where I was working until 1945 as a Lithuanian and foreigner.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="302.977" end="x">Ah. So afterwards the Germans knew that you were there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="307.633" end="x">Later on . . . They did not know it. But later on, when I was registered, that was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="315.429" end="x">Cleared up?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="316.210" end="x">An employee of the <a class="term" href="#vothG_gestapo">Gestapo</a> arrived. The whole affair was cleared up, and he gave the following orders: I have no right to go out into the city in "civvies," that means in civilian clothes, only in the habit of the order . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="337.254" end="x">Nu.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="337.941" end="x">. . . which [although it] then was permitted, that people of the order could go into the city in civilian clothes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="347.087" end="x">Nu.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="347.915" end="x">Then, second, it was ordered that every week I had to present myself to the nearby police station.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="350.134" end="x">Nu.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="351.008" end="x">It was prohibited for me to speak Lithuanian on the street.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="351.581" end="x">Oh, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="352.643" end="x">And [I] was also not permitted to write Lithuanian letters to others, in the Lithuanian language.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="357.293" end="x">Hm. But you could write in the German language.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="359.525" end="x">In the German language I was not [?] permitted to write.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="361.869" end="x">To whom could you or did you want to write?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="364.494" end="x">Ordinarily I maintained no other correspondence with my friends, with other . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="372.327" end="x">Where, here in Germany?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="374.234" end="x">Here in Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="375.077" end="x">In <a class="term" href="#vothG_lager">lagers</a>, et cetera [?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="375.514" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="376.139" end="x">Aha. Now continue. During all that time did the Germans ever beat you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="381.889" end="x">Thanks to the fact that I was a student, it is self-understood that I did not have the occasion to get into beatings.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="387.197" end="x">Why is that so self-understood? You have told me that the Germans did not respect religion too much.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="392.884" end="x">That is of course correct.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="394.837" end="x">But . . . but as far as you are concerned?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="397.665" end="x">In the monastery . . . in the monastery I still had a Catholic environment, and it did not come to it [to beatings].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="404.117" end="x">And what were you doing in the monastery?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="405.929" end="x">In the monastery? That is very hard to tell. We were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="410.710" end="x">Were you treated there like all the others?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="414.866" end="x">That cannot be said. I always felt that I was a foreigner. And they always gave us [?] to understand that we are foreigners, and we were in all . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="423.851" end="x">. . . respects.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="425.258" end="x">. . . respects slighted, for that reason.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="426.946" end="x">By the other people, by the other Franciscans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="430.243" end="x">As well, as well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="430.993" end="x">By the brothers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="431.993" end="x">By the brothers as well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="433.165" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="433.634" end="x">And that is why I decided in 1945, when the Americans arrived and had established the civilian [?] camps, to enter the monastery . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="446.821" end="x">To leave?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="448.353" end="x">Yes, to leave, and that is what I did.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="451.369" end="x">Hm. And what do you study here now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="453.682" end="x">At this university I study jurisprudence, and I am now in the second semester.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="459.056" end="x">Then you have given up theology?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="459.056" end="x">I have given up theology, and only for the reason that I did not want to remain in Germany, and work among the Germans as such, as a clergyman.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="470.914" end="x">Now tell me this. That you . . . It is very interesting to have met you. What did the Franciscan brothers think about the Nazis? I mean in general. What was the mood during the war? It is very important for us that you give us such an appraisal. I don't ask the others about it. I just want personalia [personal experiences]. But you are a theologian. You have lived in a monastery. What was their attitude towards the war, towards the Nazis and all that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="503.405" end="x">This mood [attitude] varied greatly. It depended on what kind of a person one was. The older ones were, so to speak, avowed enemies of Nazism.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="520.513" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="521.153" end="x">But there also were younger ones, Germans, [among whom] we as foreigners did not count. We were left in the monastery, but the young German clergy were incorporated . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="533.567" end="x">What does that mean, "incorporated"?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="534.661" end="x">"Incorporated," that means in the army.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="537.056" end="x">Oh, they were taken?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="538.665" end="x">Taken, and were to fight also for the Hitler cause.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="544.009" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="545.041" end="x">These of course have passed through the Hitler school, had military . . . had gone through military service, and as young people they were not shrewd enough to appraise the events properly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="562.200" end="x">Now when did you see those, after they were through with the army? How was that all?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="567.793" end="x">Yes. We . . . during the war they time and again, repeatedly, were coming on furlough.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="573.647" end="x">Oh, yes. Well . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="574.803" end="x">And so one could, through brief conversations, gain an insight into their way of thinking. All of them, one might say most of them, were inspired by Hitler.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="585.795" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="586.327" end="x">The young people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="587.312" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="587.765" end="x">But I also have met others who understood the Hitler cause differently than Hitler himself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="596.249" end="x">Nu.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="596.687" end="x">They . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="597.375" end="x">Now tell me, where was Bishop Faulhaber?<note n="1"><span class="note">Boder is referring to Michael von Faulhaber, a Roman Catholic Cardinal and Archbishop of Munich from 1917 to 1952. Faulhaber was an outspoken ideological opponent of the violent and racist policies of the Nazis. He was involved in Reichskonkordat negotiations of 1933, an agreement between the Holy See and the Nazi government that guaranteed Catholics freedom of religion in Germany. Although on the surface, this agreement appeared to sanction the activities of the Nazis, but in fact most Catholic leaders remained fundamentally opposed to Hitler's rule.</span><sup><a href="#note_1">1</a></sup></note> Where was he, in <a class="placename" href="#vothL29">Munich</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="602.749" end="x">Yes. At that time Bishop . . . [<i>correction</i>] Cardinal Faulhaber . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="607.659" end="x">Cardinal Faulhaber.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="608.643" end="x">. . . was in <a class="placename" href="#vothL29">Munich</a>. He was in <a class="placename" href="#vothL29">Munich</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="610.633" end="x">Well, he was not pro-Hitler.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="613.378" end="x">No. Definitely no.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="616.519" end="x">Well, and the others? Tell me, what did you [they?] know about the persecution of various nationalities? Say, for instance, what did you know about what was done with the Jews, with the Norwegians, with the Gypsies, and so on?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="633.878" end="x">Yes. Well, what was done with the Jews has become clear to everybody. We all knew that the Jews were incarcerated and murdered. That all the Germans knew as well. It is self-understood that against that there was nothing to do . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="651.564" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="652.486" end="x">. . . since we, as foreigners, could feel fortunate that we [ourselves] could in some way live as humans and are not locked up.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="663.126" end="x">Hm. But the Germans, the German clergy, they knew it, and what did they say about it? Did they say "it serves them right," or . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="671.813" end="x">The German clergy never approved of it, and at the lectures about the Old Testament, the question was often brought up concerning the Jews. So I can well remember that the Herr Professor had categorically expressed himself against the mistreatment of the Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="690.781" end="x">And what did the German students say?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="693.250" end="x">The German students too rejected the humiliation [degrading] of a certain nation. As theologians they did so always.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="710.906" end="x">Now tell me, what was their attitude towards the war? Did they want Germany to win the war and the like?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="720.040" end="x">That varied a great deal.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="721.899" end="x">You understand . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="723.243" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="723.852" end="x">. . . that I ask only you such a question . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="724.821" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="725.352" end="x">. . . because I think that you were a better observer than the others.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="729.417" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="730.105" end="x">You were not in a <a class="term" href="#vothG_lager">lager</a>. You were in a way free. You could talk with the Germans. The others could not. True? Now then, go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="739.239" end="x">And so it varied. Most of them wanted the war to be won [by the Germans]. Then in it they saw their own chance of existence.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="757.019" end="x">Oh, yes, and they were . . . they belonged to the country, true?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="759.991" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="760.741" end="x">And one cannot take offense against a person if he wishes that his country should win a war. You understand that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="766.148" end="x">Yes, I understand.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="767.086" end="x">Well, they wanted to win. But how was it when the end [of the war] approached? Well? [Pause.] Were you in the monastery when the Americans arrived?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="780.819" end="x">Yes, I was still in the monastery.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="782.631" end="x">And how did things look then? Tell me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="784.850" end="x">Well, most remained calm and were very satisfied that the Hitler reign had finally come to an end.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="796.398" end="x">And they knew that the Americans won't do anything to them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="799.814" end="x">Yes, of course. But I have met quite a few young soldiers [German], that is former soldiers, who were greatly saddened that soldiers of other countries have entered their land.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="814.782" end="x">Now, well, weren't they themselves in other countries?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="817.204" end="x">That certainly is correct. But as children of their fatherland, they were not especially gladdened. I at least could observe that from aside.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="829.954" end="x">Now have you observed among the clergy or the Germans [in general] that they felt a certain war guilt?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="842.360" end="x">[Pause.] That I could not ascertain exactly. But I believe that if one thinks broader [deeper], that [then] every man is in some way guilty of the deeds of his fellow man . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="864.872" end="x">Well . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="865.715" end="x">. . . and in so far they too have felt guilty.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="868.278" end="x">Now have you observed that there was a kind of a feeling that one has [they have] to make good for that which one has [they have] done to the world?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="879.575" end="x">That exactly I have not noticed, that it unconditionally could be made good.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="887.543" end="x">[<i>as if correcting him</i>] Must be made good.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="890.355" end="x">Or must. That I did not notice.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="892.214" end="x">Now tell me, for instance, this. We are now being asked in America to send clothes for the Germans. Isn't that so? And so much is being sent.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="901.443" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="901.928" end="x">Now, did the Germans themselves give everything that they could have given?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="907.709" end="x">For whom? For whom?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="909.771" end="x">For the poor Germans, and for the other "dragged-away" [vershlepte, a standard term in Germany] people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="915.205" end="x">No. Because the Germans have all the time truly mistreated the dragged-away, or us foreigners. And I as a theologian have always felt that very deeply, and had to carry with pains this whole misfortune for five, six years. Because on every step, whether I was in the monastery or at any magistracy, it was always given to me to understand that I was a foreigner and have nothing to do [expect] here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="946.615" end="x">Now tell me, for instance, why do you attend now the <a class="term" href="#vothG_unrra">UNRRA</a> University and don't go directly to a German university to study law?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="954.381" end="x">I know the Germans very well, and it would hurt me indeed should I have to seek refuge with them as I had to. Just for this reason I don't want [to have] anything to do with the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="971.275" end="x">But you had . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="972.916" end="x">They were my enemies all the time. Because I know them well. I had the opportunity.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="978.727" end="x">[<i>some whispers</i>] Now where do you think then to practice law?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="981.258" end="x">Well, that is a question to which, for the time being, I can't give any answer. At least . . . I hope at least that the time will be favorable, and that we in a few years will be able to return to our homeland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1004.995" end="x">How do you imagine that? Do you think that the Russians will leave, or they will change for the better? Or . . . what do you think?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="1016.338" end="x">Yes, that is my personal viewpoint, that the present situation could not prevail for long.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1026.199" end="x">In what sense?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="1027.449" end="x">That means all . . . the political situation of the whole world.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1031.380" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="1031.818" end="x">Because this is a transition from one state [of affairs] to another.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1037.583" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="1038.474" end="x">And as such it cannot last long. That is a [unintelligible], an eternal march forward. And I believe that by peaceful or military means the possibility will be created for us to return to our homeland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1062.863" end="x">Do you have any communication with your homeland? What do you hear from your . . . Do you have there . . . you had parents there, true?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="1070.878" end="x">Yes, I had my parents in my homeland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1073.034" end="x">When did you hear from them last?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="1075.924" end="x">The communication with my parents was broken up in the year 1944, when the Russians stood [already] at the Lithuanian border . . . [<i>correction</i>] at the Estonian border, and all postal communication between Germany and Lithuania was broken.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1094.620" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="1095.558" end="x">Since then I heard nothing from my parents. And I fear greatly that they are not alive any more.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1104.995" end="x">Is there no way of any kind to make contact, through the Red Cross, or in some other way?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="1110.479" end="x">Even if there were, I would not try it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1114.650" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="1115.400" end="x">Because I am afraid to ask [tell] my parents that I am alive and live at present in Germany, because then the Russians, or the communists, will come to see in my parents something they dislike.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1142.542" end="x">Now tell me, how are things here at the [<a class="term" href="#vothG_unrra">UNRRA</a>] University?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="1146.192" end="x">I am very enthusiastic about this university, and I give myself to it with my whole heart. But every start is difficult, and so the start at this university is very difficult. We also have very little money, scarce [study] facilities, also no laboratories . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1170.931" end="x">How does it stand with books?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="1172.337" end="x">Too, there is no library.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1175.903" end="x">Now you are a student. You study law. Do you study German law? Or what kind of law do you study?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="1182.481" end="x">As jurists and students in the third or second semester, we usually study the introductions to law, that means Roman law.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1194.126" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="1195.251" end="x">Introduction to law, sociology, general economics, statistics, and with it the general subjects which are common to all nationalities and nations.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1207.656" end="x">Now then, I am sorry we have to stop. I would like indeed to have every one of you for an hour or two, and probably that would have been better, but you see . . . I should have preferred to have two persons or three persons for three hours [each] than each one [more people] for half an hour. True? But since there are here [so many] diverse groups, I don't want to hurt [offend] anybody. True? And maybe I would be able to make a composite from the whole story [from all the stories]. True? My name shall remain here with your director in case you want to write to me sometime. I don't know whether I could do much, but I shall forward it [your letter] to somebody who should be able to do something. It was indeed a pleasure to get to know you. Thank you, indeed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Victor Ferdinansk</span>:
+            </span>
+            <span class="utterance" who="#ferdinanskV" start="1259.257" end="x">I thank you, too.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            Boder is referring to Michael von Faulhaber, a Roman Catholic Cardinal and Archbishop of Munich from 1917 to 1952. Faulhaber was an outspoken ideological opponent of the violent and racist policies of the Nazis. He was involved in Reichskonkordat negotiations of 1933, an agreement between the Holy See and the Nazi government that guaranteed Catholics freedom of religion in Germany. Although on the surface, this agreement appeared to sanction the activities of the Nazis, but in fact most Catholic leaders remained fundamentally opposed to Hitler's rule.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Dagmar Platt</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English translation
+                            </i>: 
+            <span class="Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Eben E. English</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_1 = 48.133300;
+                        var lon_1 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL148">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL148" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Tallinn, Estonia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL148 = new OpenLayers.Map('map_vothL148', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL148.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL148.addLayer(markers);
+map_id_vothL148.zoomToMaxExtent();
+
+                        var lat_2 = 59.433000;
+                        var lon_2 = 24.728000;
+                        var vothL148 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL148_icon = new OpenLayers.Marker(vothL148);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL148);
+markers.addMarker(vothL148_icon);
+    addMarker(vothL148, popupClass, "", true, false, false);
+    map_id_vothL148.setCenter(vothL148, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL76">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL76" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kaunas, Lithuania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL76 = new OpenLayers.Map('map_vothL76', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL76.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL76.addLayer(markers);
+map_id_vothL76.zoomToMaxExtent();
+
+                        var lat_3 = 54.866700;
+                        var lon_3 = 23.916700;
+                        var vothL76 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL76_icon = new OpenLayers.Marker(vothL76);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL76);
+markers.addMarker(vothL76_icon);
+    addMarker(vothL76, popupClass, "", true, false, false);
+    map_id_vothL76.setCenter(vothL76, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL129">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL129" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Rīga, Latvia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL129 = new OpenLayers.Map('map_vothL129', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL129.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL129.addLayer(markers);
+map_id_vothL129.zoomToMaxExtent();
+
+                        var lat_4 = 56.883300;
+                        var lon_4 = 24.133300;
+                        var vothL129 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL129_icon = new OpenLayers.Marker(vothL129);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL129);
+markers.addMarker(vothL129_icon);
+    addMarker(vothL129, popupClass, "", true, false, false);
+    map_id_vothL129.setCenter(vothL129, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL134">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL134" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Berlin, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL134 = new OpenLayers.Map('map_vothL134', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL134.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL134.addLayer(markers);
+map_id_vothL134.zoomToMaxExtent();
+
+                        var lat_5 = 52.533300;
+                        var lon_5 = 13.416700;
+                        var vothL134 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL134_icon = new OpenLayers.Marker(vothL134);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL134);
+markers.addMarker(vothL134_icon);
+    addMarker(vothL134, popupClass, "", true, false, false);
+    map_id_vothL134.setCenter(vothL134, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_unrra">
+                <a name="vothG_unrra"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    UNRRA.
+                </span>
+                <span class="definition">
+                    Acronym for the United Nations Relief and Rehabilitation Administration. Established in 1943, its principal executive post was held by a representative of the United States, which supplied forty percent of its budget. Among its chief duties was the repatriation of displaced persons—when the war ended, UNRRA had to cope with the task of caring for millions of displaced persons and refugees.
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Boder is referring to Michael von Faulhaber, a Roman Catholic Cardinal and Archbishop of Munich from 1917 to 1952. Faulhaber was an outspoken ideological opponent of the violent and racist policies of the Nazis. He was involved in Reichskonkordat negotiations of 1933, an agreement between the Holy See and the Nazi government that guaranteed Catholics freedom of religion in Germany. Although on the surface, this agreement appeared to sanction the activities of the Nazis, but in fact most Catholic leaders remained fundamentally opposed to Hitler's rule.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

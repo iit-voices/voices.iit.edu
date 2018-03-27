@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Louis Kahn; August 21, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-louis-kahn-august-21-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Louis Kahn; August 21, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=kahnL">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=kahnL&display=kahnL_fr_en">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=kahnL&display=kahnL_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=kahnL">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=kahnL">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="7.658" end="x">[In English] We are asking now, the Admiral, to conclude this nice family and household report. Will you tell us, when did you return to France?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="21.965" end="x">[In French] Eh bien, Monsieur, puisque, grâce au Professeur Boder, vous pouvez assister à une scène de famille à Paris, j'en donnerais à sa demande la conclusion. Vous avez vu comment une famille française, dispersée, s'est trouvée réunie parce qu'ils ont eu confiance dans la victoire depuis le premier jour et qu'ils n'ont jamais désespéré du sort de leurs pays. Finalement, c'est leur volonté qui les a rassemblés, comme c'est la volonté de vous tous qui avait finalement eu raison de l'envahisseur et des tyrans du continent.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="73.750" end="x">[In English] What do you think, Admiral? When will it be possible for . . . that the French ships will begin to carry American guests and tourists again to France? We are all very eager to start it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="88.571" end="x">[In French] Eh bien, mais je pense que ça viendra bientôt. Moi-même, avec le concours de l'ingénieur et des ouvriers de la Marine française, j'ai réussi à remettre en condition les trois cents milles tonnes de bâtiments de guerre qui, au milieu des flottes alliées, ont contribué au Débarquement. Et depuis que nous sommes rentrés en France, nous avons repris le travail dans nos ports détruits et réussi à remettre en action nos ateliers de façon qu'actuellement nous pouvons espérer, à brefs délais, voir les navires français reprendre leur trafic d'autrefois, ce qui vous permettra de venir nous voir avec le concours aussi de votre magnifique flotte de commerce. J'espère que vous viendrez nombreux et que vous verrez le travail de mon pays dans son effort pour reprendre son activité d'autrefois.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="160.420" end="x">[In English] Now let me ask you a more serious question that was so much on the mind of Americans. I hope you can answer it, if you can. In America, there has been a tremendous propaganda from certain quarters that the war at the beginning has ended so badly for France because the workers were not working. They were striking and were not cooperating for national defense.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="202.765" end="x">[In French] C'est une question très importante, en effet, à laquelle je désire répondre. Je crois que le grand problème qui a causé les difficultés de la guerre dans ses débuts et qui a si gravement compromis pendant des années l'essor même du monde, ne peut être analysé simplement dans le cadre de ce qui s'est passé en France. Il est malheureusement vrai que le monde entier a laissé sur les épaules de la France, entre les deux guerres, un fardeau trop important. Lorsque la guerre s'est terminée, chacun est rentré chez lui et nous les Français, nous sommes restés face à face avec la puissance de l'Allemagne qui se reconstituait. Et qui se reconstituait quelquefois avec l'aide de ses anciens adversaires. Cependant, nous qui étions beaucoup plus près, beaucoup plus exposés, nous essayions de faire entendre la voix de la raison. Et ce n'est que plus tard que cette voix de la raison a été utilement comprise lorsque le danger est devenu menaçant pour le monde entier. Voilà la véritable raison des échecs que, à travers la France, le monde libre tout entier a connus dans la première partie de la guerre. Et il n'est pas exact d'en faire reporter la responsabilité sur tout ou partie de la population française. Chacun a fait de son mieux, dans un trouble économique grandissant, à cause précisément des menaces de la guerre qui, à tout instant, interrompait le travail politique, le travail, euh . . . pratique. Et à cause aussi des tentatives constantes que les Allemands et leurs agents en France essayaient de semer pour se rendre à eux-mêmes la tâche plus facile le jour venu. De sorte que je ne suis pas surpris vous ayez été soumis à cette propagande. On a représenté la France comme affaiblie pour décourager toutes les puissances qui auraient dû être à ses côtés dès le premier jour, en représentant sa cause comme insuffisamment défendue par elle-même. Et comme je voulais dire en commençant, ce n'était pas sur elle qu'il fallait laisser porter tout le poids grandissant de la menace allemande. Un pays pacifique sera toujours victime d'un pays d'assassins. Car il sera pris, lui, dans ses occupations de paix, pendant que l'autre prépare librement son entreprise de guerre en choisissant le jour le plus favorable, aussi bien dans la conjoncture politique générale que dans la conjoncture militaire particulière au pays qu'il veut attaquer le premier. Voilà quelle est la véritable cause des difficultés que le monde entier a connues, et il faut espérer que, éclairé une fois de plus par cette nouvelle menace de catastrophe, qu'il comprendra que ces catastrophes-là ne se préviennent pas au dernier instant, qu'elles peuvent être prévues de loin par des hommes compétents et qu'il faut avoir le courage que ceux-là disent à leurs peuples la vérité pour qu'ils se préparent pour les temps critiques.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="452.396" end="x">[In English] [aside] As I said before, I have to translate. I did not get the full statement, but I will have that translated. Could you think . . . ? Here is another question. Do you have a large number of refugees? Among them, Jewish refugees. Do you think they will be absorbed and given the opportunity to stay in France if they want to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="492.446" end="x">[In French] C'est en effet une question très importante que vous posez là. Vous savez que, en France, nous avons accueilli toujours très libéralement les réfugiés. Et il faut reconnaître que si d'autres pays ont été beaucoup plus réservés dans cette action philanthropique, la France, elle, a toujours considéré qu'il appartenait à ses devoirs, comme à sa tradition, d'être très libérale dans l'accueil. Vous devez savoir que les premiers enfants qui ont été tirés des camps allemands, après bien des hésitations de nombreuses nations, c'est la France qui les a accueillis la première. Elle a su le faire malgré les extrêmes difficultés où se trouvait son économie immédiatement après la Libération, non pas seulement par son aide à elle-même mais aussi grâce aux concours financiers très généreux de nombreux pays parmi lesquels il faut citer en première ligne l'aide très généreuse qui a été apportée par les Etats-Unis d'Amérique. Jamais on n'oubliera en France l'action qui a été poursuivie par les représentants d'Amérique. Les envois qu'ils ont fait de vivres, d'argent, de matériel. Le dévouement avec lequel les représentants de l'armée américaine, les représentants de l'UNRRA, les représentants du Joint Committee et de nombreuses associations constituaient libéralement par la bonne volonté de votre pays. Non, jamais ceci ne sera oublié en France. La générosité américaine, associée au libéralisme français, ont en réalité fait de leur mieux dans des circonstances effrayantes que le monde n'avait jamais connues à cause de véritables migrations forcées d'hommes, de femmes et d'enfants, et cette tâche, elle est loin d'être encore achevée. Nous espérons bien qu'avec votre aide et avec notre bonne volonté, nous finirons par avoir raison de cette inconcevable misère d'êtres humains, innocents et impuissants par eux-mêmes. Mais nous sommes tout à fait sûrs que quand nous leur aurons rendu avec leur dignité les possibilités de travailler, ils deviendront non pas un poids mort pour l'humanité mais au contraire un ensemble actif, intelligent, forgé par sa propre misère et ses propres réflexions, à remplir complètement leurs destinées d'hommes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="691.034" end="x">[In English] Now going from this to a more general question. Give us a little picture . . . you know, we know in America very little about it and only from the interviews here, I get the idea that the peaceful population in France has suffered a great deal from the Germans. Now can you tell me, how was this done? This completion of people, this selection of people for forced labor to Germany. How were they taken? How were they selected? Were they paid for their work? And are they repatriated now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="748.571" end="x">[In French] Eh bien, pour vous donner une simple idée . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="751.327" end="x" lang="en">[In English] [interrupts] Think of the French people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="752.881" end="x">[In French] Yes. Pour vous donner une simple idée des malheurs endurés par les Français, je voudrais vous donner un chiffre. Parmi mes amis, il y a soixante-sept personnes qui étaient ou mes parents ou des hommes chez lesquels j'avais l'habitude de passer la soirée ou qui venaient s'asseoir à ma table, qui ont été déportés par les Allemands et que je n'ai jamais revus parce qu'ils les ont assassinés. Pour vous donner une idée des procédés allemands, je vous parlerai d'un autre amiral du génie maritime qui a été déporté avec sa femme, avec la mère de sa femme et avec son fils âgé de quinze ans. Quand les Allemands les ont arrêtés . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="815.124" end="x">[interrupts off mic]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="816.669" end="x">[In French] Ils étaient juifs, oui. Quand les Allemands les ont arrêtés, quelques amis du même Corps, je veux dire, ce que vous appelez le Construction Corps, ce que nous appelons en France le Génie Maritime, ont tenté la démarche courageuse d'aller demander à la Gestapo de ne pas les déporter. Et ils sont tombés sur le chef de la Gestapo à Paris, qui était un homme qui ressemblait à un autre homme, et qui même paraissait encore plus poli qu'on ne l'attendait de ce chef d'une besogne cruelle. Et lorsqu'ils ont vu qu'il refusait de rendre ces prisonniers, ils lui ont dit "eh bien, puisque vous voulez emmener l'amiral, et comme nous ne pouvons pas aller au plus haut niveau vous y opposer, est-ce que vous ne pourriez pas rendre la liberté à cette vieille femme de quatre-vingt-quatre ans que vous avez prise avec lui et avec cet enfant de quinze ans, que vous êtes allé chercher au lycée?" Et alors, l'Allemand a pris son sourire le plus doux et il leur a répondu ceci: "voyez vous, en ce moment, on fait une propagande très grave contre l'Allemand. On prétend qu'il sépare les femmes et les enfants. Eh bien, nous ne séparerons pas les femmes, les enfants, du père et du mari. Ils partiront tous les quatre." Et effectivement, ils les ont tués tous les quatre. Voilà un tableau vécu qui peut être prouvé par toutes les pièces de ce qu'ont été les Allemands en France. Comment ils s'y sont pris? Eh bien, ils avaient déjà envoyé beaucoup d'agents avant la guerre en France. Et ils connaissaient les personnes qui pouvaient s'opposer à leurs actions. Et par tous les moyens, saisissant les listes d'habitants, des annuaires du téléphone, se servant de traîtres payés par eux, aidés souvent par les listes administratives qu'ils ont vidé de proche en proche par procédé à toute cette action effroyable dont je ne vous ai cité qu'une toute petite partie. Quant au travail, c'était bien simple. Pour avoir le travail obligatoire, ils ont d'abord essayé de la propagande. Ils ont fait croire aux Français que si des ouvriers partaient en Allemagne, ils seraient échangés contre des prisonniers et que ainsi la charge et les peines seraient plus également réparties entre toutes les parties de la population. Et au début, avec le concours des discours de Laval, ils auraient pu avoir quelques succès. Mais très rapidement, le peuple français s'est aperçu qu'on lui faisait jouer un rôle effrayant, celui d'aider purement et simplement le travail de guerre de son effroyable ennemi. Et c'est de là qu'est venue la résistance organisée au travail obligatoire. C'est de là qu'est sortie la première organisation des maquis. C'est de là qu'est sortie également toute cette organisation de la dissimulation des personnes qui a permis aux Allemands . . . qui a empêché les Allemands de réussir leur entreprise. Alors, quand ils ont vu cela, ils ont organisé les rafles. C'est-à-dire qu'ils cernaient un quartier et là indistinctement ils faisaient prisonniers tous les hommes qui leur tombaient sous la main. Ils les chargeaient dans les camions et ils les emmenaient de force en Allemagne. Voilà comment s'est faite cette terrible opération.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1114.702" end="x">[In English] Well, it's late. I could be listening and listening in spite of the fact that I don't understand now. First of all, it's in beautiful French and everything seems to be spoken with very great sentiment. Thank you very much for your hospitality and for your cooperation and I hope to be able through you to contact other people here in France, big and small ones whose stories have to be preserved. If I can get a larger amount of people here, maybe children, I think I will send the spools later to the Sorbonne to your French psychologists, Dr. [unintelligible] and others. And let them use it as a start and maybe start their own study which they certainly could do better than I can.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="1188.187" end="x">[In French] Eh bien, je suis ravi de vous avoir entendu, Professeur Boder, et d'avoir par vous la possibilité de communiquer avec . . . [ends abruptly]</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Deborah Joyce</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>Deborah Joyce</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_1 = 48.866700;
+                        var lon_1 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_unrra">
+                <a name="vothG_unrra"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    UNRRA.
+                </span>
+                <span class="definition">
+                    Acronym for the United Nations Relief and Rehabilitation Administration. Established in 1943, its principal executive post was held by a representative of the United States, which supplied forty percent of its budget. Among its chief duties was the repatriation of displaced persons—when the war ended, UNRRA had to cope with the task of caring for millions of displaced persons and refugees.
+                </span>
+            </li>
+                        <li class="vothG_ajdc">
+                <a name="vothG_ajdc"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    American Joint Distribution Committee.
+                </span>
+                <span class="definition">
+                    Founded in 1914, the American Jewish Joint Distribution Committee, often referred to as the “Joint,” was a major relief and rehabilitation agency before, during, and after the Holocaust. The JDC’s operations were the main manner in which American Jewry provided aid to its fellow European Jews.
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

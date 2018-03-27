@@ -1,0 +1,2082 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Sophia Zurilis; September 21, 1946; München, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-sophia-zurilis-september-21-1946-mnchen-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Sophia Zurilis; September 21, 1946; München, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=zurilisS">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=zurilisS&display=zurilisS_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=zurilisS&display=zurilisS_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=zurilisS">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.273" end="x">[In English] This is spool 9-141B. Mrs. Sophia, she at the beginning refused to give her name and wanted to go under only under the name Sophia. But it seems that we later got her name as Sophia Zurilis, or Z-U-R-I-L-I-S. November the 7th, 1950. Boder. One should check up, maybe Zurilis is another person. But for the time being, we are packing away the spool.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="55.477" end="x">Eh, <a class="placename" href="#vothL29">München</a>, September the 21st, 1946, at Camp Lohengrin, a displaced persons' camp for Baltics, Latvian, Lithuanian, and Estonian. I'm interviewing here, a, eh, teacher, eh, whose first name is Sophia. And, eh, that is all of the name that we will have in this report. Eh, eh, we will have the interview in German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="85.692" end="x">[In German] Well, tell me, eh, madam, eh, where were you when the . . . Eh, what nationality are you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="96.492" end="x">Latvian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="97.132" end="x">And from where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="98.163" end="x">I am Latvian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="99.377" end="x">You are Latvian, [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="100.715" end="x">Yes, absolutely.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="103.903" end="x">Latvian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="104.510" end="x">You are Latvian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="105.666" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="106.306" end="x">And, eh, tell me, where did you live when the Russians came back to Latvia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="114.041" end="x">They came back in the year 1940.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="115.740" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="116.350" end="x">I was in <a class="placename" href="#vothL129">Riga</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="117.930" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="118.567" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="118.901" end="x">And what did you do there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="120.084" end="x">At a school for girls.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="120.873" end="x">When? Well, do you want to tell me what happened, from the year 1940 when the Russians came to Latvia and onwards, of the Russian occupation, the German occupation, how you came here to, eh, <a class="placename" href="#vothL29">Munich</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="136.073" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="136.589" end="x">Well, proceed slowly; you don't need to [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="139.079" end="x">Yes. [unintelligible] June 17th the Bolsheviks came into the country. At first they appeared very inoffensive and promised us not to bring about any changes to our political system. Only the government had to be changed, and then only a different administration needed to come, and all else remains unchanged. But after a short period, maybe one, two weeks, after all we recognized they were lying. There were changes instantly. People were, eh, instantly "adopted"<note n="1"><span class="note">Zurilis probably means "deported" here.</span><sup><a href="#note_1">1</a></sup></note> and the, our "Eiszwerge"<note n="2"><span class="note">The word she uses sounds like the German "Eiszwerg," meaning "ice dwarf," the meaning of which is unclear. Possibly, the name of this organization is a similar sounding Latvian name.</span><sup><a href="#note_2">2</a></sup></note>, which are an organization of the, eh, of the, eh, Farmers and, eh, those of the farmers, they, eh, were, they were armed and all, and they were also instantly disestablished. All were disarmed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="195.510" end="x">Why did the farmers get armed? Were the farmers armed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="198.119" end="x">Well, that's some kind of a, hm, a land . . . , eh, a lan . . . , a land . . . , a "Landwehr" . . . <note n="3"><span class="note">A "Landwehr" roughly equals a militia.</span><sup><a href="#note_3">3</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="204.280" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="204.526" end="x"> . . . that we have.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="205.712" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="205.955" end="x">A, a civilian organization, probably . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="208.172" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="208.324" end="x"> . . . you could say.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="209.446" end="x">Yes. And what happened to Ulman, the President?<note n="4"><span class="note">Karlis Ulmanis is referenced here.</span><sup><a href="#note_4">4</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="212.419" end="x">Well, Ulman was instantly interned in his Palace.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="216.514" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="217.212" end="x">And, after that, he was. . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="223.312" end="x">Transported?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="224.070" end="x"> . . . yes, transported to <a class="placename" href="#vothL361">Moscow</a>, as a, eh, eh, a arrested person.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="227.589" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="227.953" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="228.196" end="x">Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="228.806" end="x">Well, and then, eh, and then immediately it was noticeable in school. We had to adopt the communist doctrine and to [unintelligible] all of the communist, eh, views to the children. And also, we have to, which [unintelligible], we could no longer, eh, eh, teach, eh, religion and we should, we should merely, whenever possible, direct against something.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="259.900" end="x">Yes. Who forced you to do that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="262.034" end="x">Well, that were the instructions from the, eh, administration.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="265.702" end="x">Were there any Latvian communists in the. . .?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="268.203" end="x">Yes, yes, there were Latvian communists. Latvian communists and, eh, mostly all came from <a class="placename" href="#vothL361">Moscow</a>, the, eh, instructions were from <a class="placename" href="#vothL361">Moscow</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="277.341" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="277.792" end="x">And all Latvian communists had to subject to that. That's how it was like. Only then, eh, after, eh, yes, we had to change the syllabus completely, there were differe . . ., different school books immediately, in school we had to show them all and, eh [unintelligible] and we had to hang up all the, the big portraits and, eh, all in red. And we were not allowed, eh, the subject Latvian, the word Latvia and our anthem, we were not allowed to sing that. And generally we were not allowed to speak of our flags, the flag was taken down and we were not allowed, eh, to talk of such things, not even in school, neither amongst the others.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="322.258" end="x">And then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="327.158" end="x">After that the [unintelligible] heard a lot, people were to be arrested and [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="344.266" end="x">And well, what is with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="345.108" end="x">Well, me, me, yes, yes. Eh, well, I have to say nothing had yet happened to me personally. For me it was very calm at school and, eh, lonely, I also didn't socialize with others and I now know that at the time of the Bolsheviks we were not permitted to speak anything special, because there were spies everywhere. And if you say anything against the Bolsheviks, you are instantly arrested at the [unintelligible] and then disappear without a trace. Many of my friends had disappeared like that, uh, and, eh, eh, after, the relatives went inquiring, but received no answer. Afterwards you only learned that they were sent to <a class="placename" href="#vothL361">Moscow</a> and from <a class="placename" href="#vothL361">Moscow</a> on and on towards Siberia. Well, and, eh, you constantly lived under pressure from the outside. There was always, eh, a terrible fear. At night you heard, eh, the bell ring at the, eh, door, you got scared and thought you went to [unintelligible name of place] and get arrested. Well, my husband, he was a, eh, artist, uh, he didn't have anything to do politically, eh, with the Bolsheviks and such, so it was that nothing happened to us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="423.967" end="x">Was your husband a painter?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="425.296" end="x">Yes, artist.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="426.925" end="x">Yes, well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="427.767" end="x">Well, and, eh, and so June 17th then, eh, we learnt that many people got arrested, and we don't know for which reasons, that wasn't told to us, and many got arrested and deported, to Siberia. Well, and I went to, eh, the beach with the children right after the holid . . ., the holidays came, and, eh, then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="454.502" end="x">I understand. How many children did you have?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="456.156" end="x">I had three children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="457.665" end="x">And, eh, where did you go with your . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="460.070" end="x">To the beach, to my villa, I had a villa . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="465.577" end="x">Well?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="466.148" end="x">Well, then, eh, then, eh, then I heard, eh, that, that soon the Germans come and the Russians are already pulling out from <a class="placename" href="#vothL129">Riga</a>. And on the 21st, the Germans arrived . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="479.465" end="x">Which 21st?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="480.283" end="x"> . . . July 21st came, eh, June 21st, excuse me, June 21st y— . . ., you hear of the Germans arriving. And on July 1st they came in along the beach and we were really glad to be freed from the Russians. Well, and, eh, for a, for some time we were very, eh, glad, but after two months we understood that the Germans want to suppress us just as the Russians did. Well and then, but in school we did not yet notice any special hint . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="517.930" end="x">Yes, again all, which . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="519.824" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="520.155" end="x"> . . . the, the wounded were let go . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="522.536" end="x">[unintelligible] we got different books, we knew by heart what we had during the time of Ulman, but they were completely printed anew. But they were not as, as, as biased as with the communists. [Longer passage unintelligible] we realized on every turn that we were regarded by the Germans as a, a, a, eh, as second rate humans. And [some words unintelligible] were a day off, we also couldn't [unintelligible]. And then, eh, afterwards, it was written down in the testimonies that the, eh, the Latvians, that they are a, eh, people, which, eh, will not remain here in Latvia, except maybe, eh, relocated somewhere to Russia [unintelligible]. So, we did not get anything exceptional from the Germans either. But the massive [unintelligible] fear, we did not have that. Because, eh, the arrest was [unintelligible], that was not as big as that of the Bolsheviks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="597.132" end="x">There were fewer . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="598.274" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="599.116" end="x">Well, and how did the Germans behave towards the Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="602.162" end="x">Yes, well, with the Jews, that was some kind of [unintelligible]. The Jews were immediately in, eh, in, in, in, how is that called . . .?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="610.669" end="x">In <a class="term" href="#vothG_ghetto">ghettos</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="611.240" end="x">Yes, the Jews were immediately dr . . ., eh, driven to the <a class="term" href="#vothG_ghetto">ghetto</a>, and then we heard, later we heard they were led out of the <a class="term" href="#vothG_ghetto">ghetto</a>,and shot. Indeed, little was written in the newspapers, it was all [unintelligible], but the Russians had promised it [rest of the sentence unintelligible]. Just like the Russians, eh, [unintelligible] shot the Latvians and others, the Germans did the . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="639.563" end="x">Yes, and what did the Germans do to the remaining Russians, who stayed there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="643.802" end="x">Well, the Russian, eh, the Russian, the communists?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="647.776" end="x">Yes, or did they kill the Russian soldiers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="649.946" end="x">Well. No, eh, soldiers, I don't know that. But the communists, they were arrested. Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="655.958" end="x">Well, and what did you do, and what happened after that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="660.588" end="x">Well, and then, then the front steadily closed in and then the, the Germans told us one would have to leave the country, <a class="placename" href="#vothL129">Riga</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="671.055" end="x">Who had to leave <a class="placename" href="#vothL129">Riga</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="672.113" end="x">The, the population had to leave <a class="placename" href="#vothL129">Riga</a>. Who doesn't want to leave <a class="placename" href="#vothL129">Riga</a> goes without food stamps [unintelligible] and without the [unintelligible] material and, eh, the others, eh, comes to you and you must leave.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="688.165" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="689.247" end="x">And then the people were already [unintelligible] with, eh, with, eh, with [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="695.199" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="696.066" end="x">I see. Well, me [unintelligible] I did not have to leave, I could stay. And I did not hesitate, and I did not hesitate, because the enemy, he came closer and <a class="placename" href="#vothL129">Riga</a> was already threatened [unintelligible] and also from, from the air, eh, the bombs came and, eh, and so we had to leave after all [some words unintelligible]. And especially for my [unintelligible] the bombs were very [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="726.079" end="x">Where did you live . . .?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="727.342" end="x">We lived in, eh, bunker overnight.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="730.264" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="730.871" end="x">Yes. [unintelligible] at the first [unintelligible]. And well [unintelligible] there was something in the newspaper again and [unintelligible] across the, eh, the river, and it was [unintelligible] in the newspaper . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="744.975" end="x"> . . . and [unintelligible] on toward the port, and from the port straight away into the train, and in <a class="placename" href="#vothC25" type="camp">Dachau</a> out of the train.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="765.749" end="x">In <a class="placename" href="#vothC25" type="camp">Dachau</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="766.386" end="x">Yes, in <a class="placename" href="#vothC25" type="camp">Dachau</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="767.078" end="x">[unintelligible]. What kind of vessel was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="769.339" end="x">That was a Danube vessel.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="771.329" end="x">Danube?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="772.117" end="x">Danube, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="773.055" end="x">Okay, was it a Russian vessel?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="774.504" end="x">No, that was a German vessel . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="779.139" end="x"> . . . with the vessels we would all be [some words unintelligible], we would all, eh, be brought to <a class="placename" href="#vothC25" type="camp">Dachau</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="786.835" end="x">So, you were [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="788.735" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="789.222" end="x">So, you personally might [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="791.843" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="792.647" end="x"> . . . tell me the single stages, what did you do? Did you take your husband along?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="796.172" end="x">No, my husband [unintelligible] in the year 1942.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="800.026" end="x">He is [unintelligible] not amongst the bodies?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="801.836" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="802.684" end="x">Aha. And you took along the three children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="804.313" end="x">No, I'm the only one [unintelligible], got out [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="816.404" end="x">And, eh, [unintelligible] children [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="818.454" end="x">Only the one. The other [unintelligible] only 1944, in the year 1944 on, eh, August 1st, yes, August 1, 1944 [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="829.546" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="830.779" end="x">The other is only [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="836.370" end="x">Tell me now, did he [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="840.501" end="x">No, [unintelligible] absolutely the Germans [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="842.772" end="x"> . . . the, the Germans together were . . ., did not have an army, but they were [unintelligible] people. So [unintelligible] the son drafted and, and, eh, all had to be recorded, so they are not [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="860.738" end="x">Yes. Now tell me, so you have [unintelligible] a child. A boy or a girl?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="864.982" end="x">A boy.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="865.974" end="x">Yes, and then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="867.117" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="868.295" end="x">[unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="870.941" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="871.729" end="x">Alone, with an infant?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="872.967" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="874.711" end="x">[unintelligible] you got picked up?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="875.949" end="x">No [unintelligible / both speaking at once]. [unintelligible] all had to be evacuated, otherwise they would not [unintelligible] life.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="884.186" end="x">And you don't have any other things?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="885.869" end="x">Well, concerning things, I only took some soap along. [unintelligible] to decide what to take along and, eh, [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="894.406" end="x">And your children [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="895.909" end="x">Everything, everything remained there. I could only take the things that I have for [unintelligible]. And [unintelligible], so I forgot, I was absolutely, eh, absolutely shattered, I was [unintelligible], I did not know what to do, what shall I do, [whole sentence unintelligible], that I did.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="920.695" end="x">And you came to [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="922.559" end="x">That [unintelligible] said. Oh, I see, from <a class="placename" href="#vothL129">Riga</a> we were, yes, then we thought like this: at first it was discussed that one should hide to [unintelligible], and then, eh, [unintelligible] a big front [unintelligible] to Finland. And we thought the train will bring us to Finland. But it goes on, it did not halt in [unintelligible], where we thought it would, but it goes on like that, and then to the port in [unintelligible], and then we saw that there we [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="955.631" end="x">So, how many did . . . how many did take the boat, how many people did . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="959.605" end="x">Well, we were 4000 peo . . ., 4000 people. There were [unintelligible] and people, all together.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="965.743" end="x">Well, how big was the boat?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="967.727" end="x">Oh, I don't know how big, but we were very many, 4000 people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="972.146" end="x">Did you have beds to sleep in?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="973.499" end="x">No, no beds, we were all in a bunch that was together. [unintelligible] we must both stay overnight with my son. [unintelligible] more than 50 people and [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="992.328" end="x">And your husband did [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="993.741" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="997.709" end="x">Well, and then [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1001.256" end="x">Yes, yes. And then . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1002.098" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1003.487" end="x">Well, I don't know, we were around twenty, forty [some words unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1012.301" end="x">And?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1013.269" end="x">And then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1014.267" end="x">You came to <a class="placename" href="#vothC25" type="camp">Dachau</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1015.175" end="x">Yes, that [unintelligible], came to <a class="placename" href="#vothC25" type="camp">Dachau</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1017.977" end="x">[unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1019.636" end="x">Well, <a class="placename" href="#vothC25" type="camp">Dachau</a>, that was a transit camp. [unintelligible] was a transit camp, and in the transit camp we were for five weeks. The food there was not all that bad. They had a little butter and, eh, eh, [unintelligible] and paste and, yes, paste, and, eh, eh, bread. [unintelligible] for dinner and for breakfast.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1047.345" end="x">And how did you [unintelligible] with water?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1051.163" end="x">[unintelligible] at first in <a class="placename" href="#vothC25" type="camp">Dachau</a> [some sentences unintelligible] . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1065.357" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1065.688" end="x"> . . . [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1067.792" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1068.183" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1069.055" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1070.384" end="x">And then [unintelligible] by [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1072.945" end="x">Only until [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1074.298" end="x">Yes, from . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1075.416" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1076.679" end="x">[unintelligible]. Well, then we had the, the terraces there, and in between a terrace [unintelligible], and there was also [unintelligible], and all was [unintelligible], and there we had to sleep on a cot, on, eh, two places three people had to sleep.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1099.651" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1100.318" end="x">And [unintelligible]. well . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1102.032" end="x">[unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1103.631" end="x">Eh, not yet, not yet. But they betr . . ., eh, betrayed us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1109.283" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1109.740" end="x">[unintelligible] a very big, eh, time they saw us [unintelligible]. [unintelligible] and then we were sent to <a class="placename" href="#vothC142" type="camp">Rosenheim</a> with the [unintelligible] and some other fellows to the, eh, to the job center.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1124.475" end="x">[unintelligible] beaten?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1131.660" end="x">No, not beaten. Not beaten, but very cold.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1145.363" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1145.363" end="x">Yes. And from <a class="placename" href="#vothC25" type="camp">Dachau</a> to <a class="placename" href="#vothC142" type="camp">Rosenheim</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1147.448" end="x">To <a class="placename" href="#vothC142" type="camp">Rosenheim</a>, and from <a class="placename" href="#vothC142" type="camp">Rosenheim</a> we were assigned to work in the job center. And sent [unintelligible], and then to the [unintelligible] working in the clog factory there for, eh, five hours.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1159.809" end="x">Yes. Were you paid?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1161.108" end="x">We got 68, eh, "pfennig" an hour.<note n="5"><span class="note">Pfennig used to be the smallest unit of German currency.</span><sup><a href="#note_5">5</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1165.02" end="x">And how long . . .?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1166.140" end="x">And then I also worked in a, eh, clothing store, in a, in a [unintelligible], and there I also got 68 pfennig an hour. And then [unintelligible], then I was told that it's too much, I can not work that much when [unintelligible]. [Phrase unintelligible], and, eh, there I had to work for five hours.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1203.789" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1204.216" end="x">Five hours. Five hours. [several sentences unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1216.667" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1217.425" end="x">But, eh, eh, but [unintelligible], when we wouldn't work we wouldn't receive food stamps. And then we would have to [unintelligible] report our job center, but [unintelligible]. [Full sentence unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1233.363" end="x">Aha. And, eh, you were in the [unintelligible], right?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1238.239" end="x">Yes, [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1239.748" end="x">And how are you living in this camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1241.461" end="x">Living very well here in <a class="placename" href="#vothL32">Camp Lohengrin</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1244.437" end="x">Eh, how is it constructed, how, eh, how many people are living here [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1247.924" end="x">We are four persons in a room. Me and my son, then another [unintelligible] and one of my former pupils. We are four people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1254.477" end="x">Yes, so you were [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1255.920" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1257.273" end="x">Yes. And [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1258.989" end="x">[unintelligible] a bit, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1260.510" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1264.439" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1266.543" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1267.626" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1268.474" end="x">Well, and, eh, what did you have, where did you have [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1273.199" end="x">I don't know. [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1278.731" end="x">[unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1279.549" end="x">I don't know what [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1283.433" end="x">Eh, tell me, can you [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1288.519" end="x">The winter, the winter, no, the winter will [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1293.449" end="x">Latvian Gymnasium?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1294.110" end="x">Latvian Gymnasium, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1295.132" end="x">And, eh, did it have [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1297.567" end="x">Well, [some sentences unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1306.946" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1307.656" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1308.528" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1309.701" end="x">Eh, whose [unintelligible], but not with the school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1313.434" end="x">And then, what happened, eh, then, what [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1317.072" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1317.920" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1319.339" end="x">[unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1323.133" end="x">[unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1337.538" end="x"> . . . [some sentences unintelligible] . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Sophia Zurilis</span>:
+            </span>
+            <span class="utterance" who="#zurilisS" start="1366.498" end="x">[unintelligible]. We then tried to [unintelligible], but the neighbor, an Eastern [unintelligible], our neighbor, [unintelligible], they want to oppress us, and have always oppressed us, eh, for hundreds of years, eh, in the cell, they oppressed us [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1395.415" end="x">[some sentences unintelligible]. [spool stops]</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            Zurilis probably means "deported" here.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            The word she uses sounds like the German "Eiszwerg," meaning "ice dwarf," the meaning of which is unclear. Possibly, the name of this organization is a similar sounding Latvian name.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            A "Landwehr" roughly equals a militia.
+        </li>
+                <li>
+            <a name="note_4"></a>
+            Karlis Ulmanis is referenced here.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            Pfennig used to be the smallest unit of German currency.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Johannes Barthel</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>Johannes Barthel</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Johannes Barthel</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC25">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC25" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Dachau
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Dachau, Germany<br />
+                            </p>
+                            <div>
+                The first concentration camp opened in Germany (March 1933), located on the grounds of an abandoned munitions factory near the medieval town of Dachau, about 16 km (10 miles) northwest of Munich. In total, over 200,000 prisoners from more than 30 countries were housed in Dachau.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC25 = new OpenLayers.Map('map_vothC25', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC25.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC25.addLayer(markers);
+map_id_vothC25.zoomToMaxExtent();
+
+                        var lat_1 = 48.250000;
+                        var lon_1 = 11.433300;
+                        var vothC25 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC25_icon = new OpenLayers.Marker(vothC25);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC25);
+markers.addMarker(vothC25_icon);
+    addMarker(vothC25, popupClass, "", true, false, false);
+    map_id_vothC25.setCenter(vothC25, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC142">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC142" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Stephanskirchen<br /><span class="alt">(Rosenheim)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Dachau
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Stephanskirchen, Germany<br />
+                            </p>
+                            <div>
+                This subcamp was established in late 1944, where around 250 male inmates worked at a BMW aircraft engine factory.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC142 = new OpenLayers.Map('map_vothC142', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC142.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC142.addLayer(markers);
+map_id_vothC142.zoomToMaxExtent();
+
+                        var lat_2 = 47.850000;
+                        var lon_2 = 12.166700;
+                        var vothC142 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC142_icon = new OpenLayers.Marker(vothC142);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC142);
+markers.addMarker(vothC142_icon);
+    addMarker(vothC142, popupClass, "", true, false, false);
+    map_id_vothC142.setCenter(vothC142, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_3 = 48.133300;
+                        var lon_3 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL129">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL129" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Rīga, Latvia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL129 = new OpenLayers.Map('map_vothL129', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL129.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL129.addLayer(markers);
+map_id_vothL129.zoomToMaxExtent();
+
+                        var lat_4 = 56.883300;
+                        var lon_4 = 24.133300;
+                        var vothL129 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL129_icon = new OpenLayers.Marker(vothL129);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL129);
+markers.addMarker(vothL129_icon);
+    addMarker(vothL129, popupClass, "", true, false, false);
+    map_id_vothL129.setCenter(vothL129, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL361">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL361" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Moskva, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL361 = new OpenLayers.Map('map_vothL361', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL361.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL361.addLayer(markers);
+map_id_vothL361.zoomToMaxExtent();
+
+                        var lat_5 = 55.750000;
+                        var lon_5 = 37.700000;
+                        var vothL361 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL361_icon = new OpenLayers.Marker(vothL361);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL361);
+markers.addMarker(vothL361_icon);
+    addMarker(vothL361, popupClass, "", true, false, false);
+    map_id_vothL361.setCenter(vothL361, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL32">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL32" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL32 = new OpenLayers.Map('map_vothL32', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL32.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL32.addLayer(markers);
+map_id_vothL32.zoomToMaxExtent();
+
+                        var lat_6 = 48.133300;
+                        var lon_6 = 11.583300;
+                        var vothL32 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL32_icon = new OpenLayers.Marker(vothL32);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL32);
+markers.addMarker(vothL32_icon);
+    addMarker(vothL32, popupClass, "", true, false, false);
+    map_id_vothL32.setCenter(vothL32, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Zurilis probably means "deported" here.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The word she uses sounds like the German "Eiszwerg," meaning "ice dwarf," the meaning of which is unclear. Possibly, the name of this organization is a similar sounding Latvian name.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            A "Landwehr" roughly equals a militia.
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Karlis Ulmanis is referenced here.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Pfennig used to be the smallest unit of German currency.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

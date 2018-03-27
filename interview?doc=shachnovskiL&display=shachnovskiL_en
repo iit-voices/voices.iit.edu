@@ -1,0 +1,1578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Leon Shachnovski; July 29, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-leon-shachnovski-july-29-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Leon Shachnovski; July 29, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=shachnovskiL">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=shachnovskiL&display=shachnovskiL_ru">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=shachnovskiL&display=shachnovskiL_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=shachnovskiL">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.181" end="x">[In Russian] What is your last name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="1.449" end="x">My last name is Shachnovski.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="3.803" end="x">And your name and father's name?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="6.579" end="x">My name and father's name is Leon Moiseievich.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="10.081" end="x">Leon Moiseievich. Now then Leon Moiseievich, we are today here in <a class="placename" href="#vothL13">Paris</a>, on the 29th of July, the day of the Peace Conference. Tell me Leon Moiseievich, when did [you] leave Russia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="23.004" end="x">I left Russia a very long time ago. I left Russia in '41.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="28.787" end="x">Oh, that is not very long ago. That means you left Soviet Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="32.161" end="x">Yes from Soviet . . . I left Soviet Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="34.424" end="x">Now . . . was Russia then already at war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="39.532" end="x">That was . . . yes that was already at the start . . . the 22nd of June the war started and then the Germans quickly took over <a class="placename" href="#vothL76">Kovno</a>; in two days they rounded us up and deported [us] to Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="52.293" end="x">Oh, that means you did not run away from Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="54.704" end="x">No. I did not run away from Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="56.694" end="x">Aha . . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="57.326" end="x">The Germans have deported me by force. And all the time I worked in various concentration camps, rambled around through Germany until the Americans liberated us in the year '45 on the 22nd of April.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="69.850" end="x">Aha. Now let us start a bit in order. The Germans took <a class="placename" href="#vothL76">Kovno</a> and what about you? They arrested you, took you prisoner?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="76.915" end="x">It was like this. Before . . . The war started the 22nd of June, that was on Sunday, no on Saturday over Sunday . . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="88.591" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="90.285" end="x">Sunday afternoon, and mostly Monday before noon. The Lithuanian Partizans who fought on the side of the Germans had occupied <a class="placename" href="#vothL76">Kovno</a>, before the Germans marched into <a class="placename" href="#vothL76">Kovno</a>. These same Lithuanian Partizans went after the retreating Red Army soldiers and fired at them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="110.480" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="111.573" end="x">The Germans appeared only on Tuesday. And so we remained in the city until the 15th of August. On the 15th of August there was issued and order, that we were [all] to assemble . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="122.113" end="x">Who were those we?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="122.873" end="x">All we Jews living in the city of <a class="placename" href="#vothL76">Kovno</a>, have to abandon said city. They fenced in for us the section, and transferred us into that section.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="134.799" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="136.428" end="x">This section was called the <a class="placename" href="#vothC50" type="camp">ghetto</a>. We stayed in that <a class="placename" href="#vothC50" type="camp">ghetto</a>. I personally, at once, during the first months was deported with others to Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="146.724" end="x">Oh, Now who did they deport?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="149.241" end="x">That was a small group of people of five hundred fifty people. The majority have perished [he speaks very fast] probably only a few have remained. From all those who were then deported I have not seen a single person until this day, because we afterwards were dispersed over different <a class="term" href="#vothG_lager">lagers</a>. I afterwards happened to get here [!!] in <a class="placename" href="#vothC25" type="camp">Dachau</a>, that is near <a class="placename" href="#vothL29">Munich</a>, and from <a class="placename" href="#vothC25" type="camp">Dachau</a> I "went over" to <a class="placename" href="#vothC3" type="camp">Augsburg</a>. My last <a class="term" href="#vothG_lager">lager</a> was <a class="placename" href="#vothC3" type="camp">Augsburg</a>. I worked at Messersmith, a factory of airplanes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="175.679" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="176.087" end="x">And there the Americans have liberated us [word not clear]. All that I went through during this time, is impossible to narrate briefly. I only may say that I suffered badly, because I have lost all my family. My father and mother, the Germans have shot in '41. Under my own eyes, in 1941, on the 28th of October. Under my own eyes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="200.376" end="x">How did that happen? In <a class="placename" href="#vothL76">Kovno</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="202.357" end="x">That happened when we were still in the <a class="placename" href="#vothC50" type="camp">ghetto</a>. They led out part of the people, then they . . . we were about thirty thousand people, they pick twelve thousand from the <a class="placename" href="#vothC50" type="camp">ghetto</a>. and shot them on the spot from a machine gun not far from our <a class="placename" href="#vothC50" type="camp">ghetto</a>. They compelled them at first to undress, to take off their clothes and to hand over their clothes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="222.636" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="224.959" end="x">[A pause]. They . . . and they were shot.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="228.222" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="229.263" end="x">Nearly all of us saw this so called <a class="term" href="#vothG_action">action</a>, which they executed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="236.753" end="x">Now in one day, they have shot all at once, twelve thousand people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="239.582" end="x">Twelve thousand people were shot in the course of a single day.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="244.109" end="x">And who buried them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="245.673" end="x">There were prepared beforehand excavated ditches. They stood at the ditches, and fell into the ditches. The were lying in the ditches one over the other and patrols, Lithuanians and Americans [a slip of the tongue] passed around and if one of them was still alive, they finished him off with a revolver.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="264.627" end="x">What are you saying? Americans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="266.228" end="x">Excuse me, please. I meant to say German patrols.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="269.346" end="x">Yes. It's all right. You slipped . . . [laughter]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="271.785" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="272.254" end="x">Now tell me, the others were left alive?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="277.154" end="x">The others were left alive, and the next day, all of them, as if nothing had happened had to go out to work, and to continue with their day's work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="286.496" end="x">What kind of work were they doing? What kind of work were you doing?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="289.007" end="x">We worked thus. We were sent in groups to all kind of work. The largest group was the one of one thousand men which used to go to work on the airdrome. The Germans were reconditioning the <a class="placename" href="#vothL76">Kovno</a> [?] airdrome. They intended to remodel it, to make of it a most modern airdrome. Besides, as it was told, there was to be a school for pilots of so called dive-bombers. And so on this airdrome were working Russian prisoners and we. The Russian prisoners were kept in desperate conditions. Much worse [again a slip, he says "much better"], they were absolutely not considered as human beings.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="330.619" end="x">You mean "much worse," you mean.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="331.457" end="x">Much worse.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="332.573" end="x">[in a low voice] you said "much better"</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="333.137" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="333.625" end="x">That is all right, go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="334.941" end="x">[He is confused] I did not say it correctly—"much worse," under worse conditions than we. They lived under sheds [roofs on pillars without walls] completely in the open.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="344.894" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="345.413" end="x">Under sheds, completely in the open. They were not permitted to wash. They were given for dinner and obviously for supper—I did not see it, I only saw their dinner—a kind of black "muddy fluid," and a little piece of bread. That is all that they were getting. They were given inhuman treatment. For every move, for every word they were beaten mercilessly. They were beaten—the sick who could not properly walk or move the way the Germans wanted were on the spot beaten to death by the Germans with clubs. We . . . it was impossible to look at such treatment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="383.802" end="x">And from there you were afterwards sent . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="387.524" end="x">I personally got afterwards into Germany, spent much time in various <a class="term" href="#vothG_lager">lagers</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="392.359" end="x">What do you mean you got there? You were sent . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="394.459" end="x">I was sent to Germany, deported to Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="397.110" end="x">Yes. And afterwards you were sent where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="400.198" end="x">First they sent me to <a class="placename" href="#vothC107" type="camp">Stuthof</a>, this was a <a class="term" href="#vothG_lager">lager</a> near <a class="placename" href="#vothC26" type="camp">Danzig</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="405.204" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="405.975" end="x">From there I got to <a class="placename" href="#vothC25" type="camp">Dachau</a>. <a class="placename" href="#vothC25" type="camp">Dachau</a> had a large number of so called outside <a class="term" href="#vothG_lager">lagers</a>. In which I also worked.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="415.595" end="x">And what is an outside <a class="term" href="#vothG_lager">lager</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="417.429" end="x">There the concentration camp had special sub-branches, various different <a class="term" href="#vothG_lager">lagers</a>. That was . . . let us suppose that some factory, or construction job is located in the same region as the main <a class="term" href="#vothG_lager">lager</a>. In order to send people to work there, they built little <a class="term" href="#vothG_lager">lagers</a> not far, within say three, four or ten kilometers of such a factory or such a construction job. These people then lived in those little <a class="term" href="#vothG_lager">lagers</a> and were going to the construction jobs; to work, to construction jobs, or to the factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="457.737" end="x">Now tell me, did they feed . . . how did they feed in <a class="placename" href="#vothC25" type="camp">Dachau</a>, the people who were working?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="464.530" end="x">They fed us variously. In the morning we got coffee, so called coffee. Because it was not some real coffee but some kind of a black "muddy fluid" [burda].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="475.683" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="476.821" end="x">Then, for dinner we used to get three quarters of a liter of some kind of cooked soup. This was sometimes with potatoes, sometimes with cabbage, somethimes with something else. Meat there was nearly never.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="492.135" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="492.852" end="x">In the evening we could get again a bit of coffee, again some black "muddy fluid." With it we got bread. The bread rations varied. They, at the beginning the ration . . . [word not finished], that is, at the beginning we were getting five hundred grams, and it reached to one hundred and fiftey grams of bread a day. It varied greatly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="514.365" end="x">So . . . and where did you work. What did you work on in <a class="placename" href="#vothC25" type="camp">Dachau</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="517.797" end="x">I personally . . . .I personally as a specialist technician endeavored to work all the time in some kind of shops. In this manner I saved my life; by being able, possessing a certain trade, I could from time to time work in the shops. In the shops the work was easier because it took place under a roof, it was not in the open air, [he coughs, that happens at times in other interviews when they speak of cold, or the gas chambers] while the majority had to work with a shovel, or spade, or with something else in the open air, in any weather, in snow rain, blizzards and the like. Many worked at concrete jobs, and there they would fall into the concrete, were buried alive in that concrete, they would get in . . . they were afterwards crushed by the machines, and would get in—and would become a component part of the concrete in the construction of many buildings, foundations and similar things. [The tales of workers being ground up with mortar which later would go into construction, or foundry workers falling into, or foremen being drowned in molten steel which was then used for the casting of cannons—were current in Europe since olden times. This does not diminish the veracity of certain reports on such incidents—but may rather stimulate plans of atrocities or vengeance. —D.P.B.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="576.968" end="x">How would they get into the concrete?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="578.877" end="x">Simply so. They were thrown into the pits, into the machinery, I personally have not seen it, so I cannot tell you exactly, but I know about such facts, when they were simply thrown down where the concrete was prepared in those machines, and they were crushed to pieces together with the rocks and concrete.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="599.863" end="x">Now then. That happened in <a class="placename" href="#vothC25" type="camp">Dachau</a>. And how long were you in <a class="placename" href="#vothC25" type="camp">Dachau</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="606.039" end="x">I was in <a class="placename" href="#vothC25" type="camp">Dachau</a> from the year '42 to the 45th, because all the other <a class="term" href="#vothG_lager">lagers</a>, even the one where I worked with Messersmith, were all under [the jurisdiction of] <a class="placename" href="#vothC25" type="camp">Dachau</a>. Although it was far from <a class="placename" href="#vothC25" type="camp">Dachau</a>, it was considered nevertheless a branch of <a class="placename" href="#vothC25" type="camp">Dachau</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="622.608" end="x">Now then, would you travel every day to work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="625.626" end="x">No, I have explained already before that we were located in various buildings, in barracks which were erected not far from the place of work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="634.188" end="x">Oh, but it was all under the authority of <a class="placename" href="#vothC25" type="camp">Dachau</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="636.718" end="x">That was all under the authority . . . we were managed from <a class="placename" href="#vothC25" type="camp">Dachau</a>. We were all registered in <a class="placename" href="#vothC25" type="camp">Dachau</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="641.973" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="642.179" end="x">I have all my documents in my possession from the <a class="placename" href="#vothC25" type="camp">Lager Dachau</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="647.442" end="x">Now tell me, were you paid anything for your work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="652.170" end="x">We were paid nothing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="654.568" end="x">But I have seen, for example in the States, some kind of concentration camp money.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="660.439" end="x">This was money . . . yes, this was concentration camp money, that is perfectly correct</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="665.731" end="x">Well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="666.156" end="x">These were <a class="term" href="#vothG_aryan">Aryan</a> [moneys]. We Jews did not get them. But the <a class="term" href="#vothG_aryan">Aryans</a> were entitled to some kind of premiums. And then they were given these premiums, they received some kind of tokens.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="678.759" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="679.428" end="x">And with these tokens they could buy something in the canteens which were in the <a class="term" href="#vothG_lager">lagers</a>. We had no such privileges, so I can not tell you anything exactly about it. Moreover, not in the <a class="term" href="#vothG_lager">lager</a>, but in the <a class="term" href="#vothG_ghetto">ghetto</a> there was money. Say the <a class="placename" href="#vothC110" type="camp">Ghetto Theresienstadt</a> had its own money.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="703.383" end="x">And where did you go from <a class="placename" href="#vothC25" type="camp">Dachau</a>? Were you in <a class="placename" href="#vothC25" type="camp">Dachau</a> up to the liberation?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="707.848" end="x">From <a class="placename" href="#vothC25" type="camp">Dachau</a> I got to <a class="placename" href="#vothC3" type="camp">Augsburg</a>. And I worked at Messersmith's as I have told you before.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="713.433" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="713.621" end="x">But Messerschmidt also was a <a class="term" href="#vothG_lager">lager</a> of <a class="placename" href="#vothC25" type="camp">Dachau</a>, it also belonged to <a class="placename" href="#vothC25" type="camp">Dachau</a>, although it was approximately seventy kilometers from <a class="placename" href="#vothC25" type="camp">Dachau</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="727.814" end="x">I am very grateful to you [Mr. Shachnovski says something in a low voice, apparently apologizing for the slips of the tongue]. Oh, that is nothing, these are slips of the tongue. Thank you. I think if I get a travel permit, I will find you—you are where, in <a class="placename" href="#vothL29">Munich</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Leon Shachnovski</span>:
+            </span>
+            <span class="utterance" who="#shachnovskiL" start="740.753" end="x">In <a class="placename" href="#vothL29">Munich</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="741.129" end="x">That is fine, now . . .</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Olga Collin</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC50">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC50" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Kaunas Ghetto<br /><span class="alt">(Kovno Ghetto)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Kaunas, Lithuania<br />
+                            </p>
+                            <div>
+                Created in the summer of 1941 for Lithuanian Jews of the Kaunas area.  In the summer of 1943 it was converted into the Kovno concentration camp, which the Germans largely evacuated in July 1944.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC50 = new OpenLayers.Map('map_vothC50', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC50.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC50.addLayer(markers);
+map_id_vothC50.zoomToMaxExtent();
+
+                        var lat_1 = 54.866700;
+                        var lon_1 = 23.916700;
+                        var vothC50 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC50_icon = new OpenLayers.Marker(vothC50);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC50);
+markers.addMarker(vothC50_icon);
+    addMarker(vothC50, popupClass, "", true, false, false);
+    map_id_vothC50.setCenter(vothC50, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC25">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC25" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Dachau
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Dachau, Germany<br />
+                            </p>
+                            <div>
+                The first concentration camp opened in Germany (March 1933), located on the grounds of an abandoned munitions factory near the medieval town of Dachau, about 16 km (10 miles) northwest of Munich. In total, over 200,000 prisoners from more than 30 countries were housed in Dachau.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC25 = new OpenLayers.Map('map_vothC25', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC25.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC25.addLayer(markers);
+map_id_vothC25.zoomToMaxExtent();
+
+                        var lat_2 = 48.250000;
+                        var lon_2 = 11.433300;
+                        var vothC25 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC25_icon = new OpenLayers.Marker(vothC25);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC25);
+markers.addMarker(vothC25_icon);
+    addMarker(vothC25, popupClass, "", true, false, false);
+    map_id_vothC25.setCenter(vothC25, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC3">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC3" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Augsburg
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Dachau
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Augsburg, Germany<br />
+                            </p>
+                            <div>
+                Messerschmitt production factory
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC3 = new OpenLayers.Map('map_vothC3', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC3.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC3.addLayer(markers);
+map_id_vothC3.zoomToMaxExtent();
+
+                        var lat_3 = 48.350000;
+                        var lon_3 = 10.900000;
+                        var vothC3 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC3_icon = new OpenLayers.Marker(vothC3);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC3);
+markers.addMarker(vothC3_icon);
+    addMarker(vothC3, popupClass, "", true, false, false);
+    map_id_vothC3.setCenter(vothC3, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC107">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC107" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Stutthof
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Dachau
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Sztutowo, Poland<br />
+                            </p>
+                            <div>
+                Completed in September 1939, it was located in the small town of Sztutowo (German: Stutthof) in the former territory of the Free City of Danzig. Stutthof was the last camp liberated by the Allies. More than 85,000 victims died in the camp out of as many 110,000 who were sent there.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC107 = new OpenLayers.Map('map_vothC107', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC107.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC107.addLayer(markers);
+map_id_vothC107.zoomToMaxExtent();
+
+                        var lat_4 = 54.333300;
+                        var lon_4 = 19.183300;
+                        var vothC107 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothC107_icon = new OpenLayers.Marker(vothC107);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC107);
+markers.addMarker(vothC107_icon);
+    addMarker(vothC107, popupClass, "", true, false, false);
+    map_id_vothC107.setCenter(vothC107, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC26">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC26" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Danzig<br /><span class="alt">(Danzig-Burggraben)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Stutthof
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Gdańsk, Poland<br />
+                            </p>
+                            <div>
+                Concentration camp located in the Kokoszki quarter of the city of Danzig.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC26 = new OpenLayers.Map('map_vothC26', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC26.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC26.addLayer(markers);
+map_id_vothC26.zoomToMaxExtent();
+
+                        var lat_5 = 54.366700;
+                        var lon_5 = 18.683300;
+                        var vothC26 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothC26_icon = new OpenLayers.Marker(vothC26);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC26);
+markers.addMarker(vothC26_icon);
+    addMarker(vothC26, popupClass, "", true, false, false);
+    map_id_vothC26.setCenter(vothC26, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC110">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC110" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Theresienstadt<br /><span class="alt">(Terezín)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Flossenb&#195;rg
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Terez&#195;n, Czechoslovakia<br />
+                            </p>
+                            <div>
+                By November 24, 1941 the heart of Theresienstadt was turned into a walled ghetto. To the outside it was presented by the Nazis as a model Jewish settlement, but in reality it was a concentration camp. Theresienstadt was also used as a transit camp for European Jews en route to Auschwitz.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC110 = new OpenLayers.Map('map_vothC110', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC110.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC110.addLayer(markers);
+map_id_vothC110.zoomToMaxExtent();
+
+                        var lat_6 = 50.500000;
+                        var lon_6 = 14.150000;
+                        var vothC110 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothC110_icon = new OpenLayers.Marker(vothC110);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC110);
+markers.addMarker(vothC110_icon);
+    addMarker(vothC110, popupClass, "", true, false, false);
+    map_id_vothC110.setCenter(vothC110, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_7 = 48.866700;
+                        var lon_7 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL76">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL76" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kaunas, Lithuania
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL76 = new OpenLayers.Map('map_vothL76', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL76.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL76.addLayer(markers);
+map_id_vothL76.zoomToMaxExtent();
+
+                        var lat_8 = 54.866700;
+                        var lon_8 = 23.916700;
+                        var vothL76 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL76_icon = new OpenLayers.Marker(vothL76);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL76);
+markers.addMarker(vothL76_icon);
+    addMarker(vothL76, popupClass, "", true, false, false);
+    map_id_vothL76.setCenter(vothL76, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_9 = 48.133300;
+                        var lon_9 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ort">
+                <a name="vothG_ort"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ORT.
+                </span>
+                <span class="definition">
+                    Acronym for the Russian, Society for Handicrafts and Agricultural Work. Founded in 1880 by Russian Jews, its goal was to promote and develop vocational training in skilled trades and agriculture among Jews. Following the Holocaust, ORT ran programs in Displaced Persons camps and in western European countries, especially in France.
+                </span>
+            </li>
+                        <li class="vothG_whiteR">
+                <a name="vothG_whiteR"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    White Russian.
+                </span>
+                <span class="definition">
+                    Russians who were opposed the Bolshevik movement after the October 1917 revolution.
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_action">
+                <a name="vothG_action"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    action.
+                </span>
+                <span class="definition">
+                    Episodes of coordinated violence against Jewish communities, including the rounding up of Jews for deportation to ghettos, concentration camps, or killing centers.
+                </span>
+            </li>
+                        <li class="vothG_aryan">
+                <a name="vothG_aryan"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Aryan.
+                </span>
+                <span class="definition">
+                    Derived from a Sanskrit word meaning “noble,” the term was used in Nazi pseudo-scientific jargon to denote a race which had supposedly superior blood and culture. During the Holocaust, “Aryan” came to mean anyone who was not Jewish or Roma (Gypsy).
+                </span>
+            </li>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                        <li class="vothG_dp">
+                <a name="vothG_dp"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    DP.
+                </span>
+                <span class="definition">
+                    Displaced Person, or refugee.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

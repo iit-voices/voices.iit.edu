@@ -1,0 +1,3115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Helena Neufeld; August 3, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-helena-neufeld-august-3-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Helena Neufeld; August 3, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=neufeldH">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=neufeldH&display=neufeld_pl_ru">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=neufeldH&display=neufeld_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=neufeldH">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=neufeldH">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.594" end="x">[In English] For some reasons the first few words in this spool are missing. This is Spool 9-20. In other words this is a reproduction of the original Spool number 20. Boder.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="80.208" end="x">[Missing: "This is Spool number 20, taken at the Jewish Committee's home in <a class="placename" href="#vothL13">Paris</a> on Rue Guy Patin on August the 3rd, 1946. The person to be interviewed is Mrs. Helena Neufeld . . ."] . . . a young married woman. She understands a bit of English, German, and Yiddish, but she prefers, for fluency, to speak Polish. Eh . . . [unintelligible] eh, Mrs. Neufeld . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="95.631" end="x">[In Russian] Tell me where you are from, and how did you come to <a class="placename" href="#vothL13">Paris</a>? Speak Polish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="110.167" end="x">[In Polish] I was in Camp Belsen in Germany till the liberation.<note n="1"><span class="note">When Bergen Belsen was liberated by British troops on  April 15, 1945, there were some 58,000 surviving inmates and 10,000 corpses. Anne Frank and her sister had died about a month before of typhus and were buried in a mass grave. The survivors were suffering from extreme malnutrition and virulent diseases such as tuberculosis, dysentery and typhus. Nearly 14,000 died in the two months following the liberation of the camp.</span><sup><a href="#note_1">1</a></sup></note> Afterwards I came to <a class="placename" href="#vothL13">Paris</a> where I have relatives, the only ones who remained alive.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="125.408" end="x">[In Russian] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="126.011" end="x">[In Polish] The rest of the family in Poland was killed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="129.448" end="x">[In Russian] And where were you born?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="131.378" end="x">[In Polish] In <a class="placename" href="#vothL79">Warsaw</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="132.614" end="x">[In Russian] Yes. You were born in <a class="placename" href="#vothL79">Warsaw</a>. Tell me what happened when the Germans came there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="142.981" end="x">When the Germans arrived in <a class="placename" href="#vothL79">Warsaw</a>. I remained in <a class="placename" href="#vothL79">Warsaw</a> a short time, till October, '39. In October I crossed the Soviet-German border. I went to <a class="placename" href="#vothL123">Lwow</a>.<note n="2"><span class="note">World War II began with Germany's attack on Poland on September 1, 1939. On September 28, 1939, Warsaw, Poland's capital, surrendered, and in the early days of October the last battles were fought. On September 17, 1939, Soviet forces invaded eastern Poland and overran large parts of the country including the large industrial and cultural center of Lwow (Ger. Lemberg).
+Lwow had a Jewish community in 1939 of approximately 110,000 making it the third largest Jewish community in Poland. Mrs. Neufeld was one of the some 100,000 Jewish refugees from German occupied western Poland who fled to the city.</span><sup><a href="#note_2">2</a></sup></note> There I lived about a year and a half. Then I lived through the entry . . . the outbreak of the Soviet-German war.<note n="3"><span class="note">The Soviet German war began on June 22, 1941 with the German invasion of the Soviet Union. The Germans routed Soviet forces in the early weeks of the invasion and rapidly captured Lwow, which fell on June 30, 1941.</span><sup><a href="#note_3">3</a></sup></note> I wasn't able to leave <a class="placename" href="#vothL123">Lwow</a> fast enough, because the evacuation took place very fast. I was trapped by the Germans in <a class="placename" href="#vothL123">Lwow</a>. There I lived through a terrible <a class="term" href="#vothG_pogrom">pogrom</a> which took place in the first days after the Germans arrived.<note n="4"><span class="note">There had been a great deal of antisemitism in Lwow in part because the Poles and Ukrainians in the city each accused the Jews of helping the other. The murder of Jews began on the same day as the German occupation with Germans and Ukrainians taking part. The Lwow pogrom lasted from June 30 to July 3, 1941. In four days of killing, approximately 4,000 Jews were murdered. From July 25-27, the Ukrainians carried out another pogrom this time murdering a further 2,000. Only a handful of the Jews of Lwow survived the war.</span><sup><a href="#note_4">4</a></sup></note> I was in <a class="placename" href="#vothL123">Lwow</a> till [words not clear] . . . till the creation of the <a class="term" href="#vothG_ghetto">Ghetto</a> in <a class="placename" href="#vothL123">Lwow</a>.<note n="5"><span class="note">The Germans established the Lwow ghetto in November/December 1941. 5,000 sick and elderly Jews were killed during the move to the ghetto.</span><sup><a href="#note_5">5</a></sup></note> Then I ran away from <a class="placename" href="#vothL123">Lwow</a> illegally, to <a class="placename" href="#vothL79">Warsaw</a>, because my family was living in <a class="placename" href="#vothL79">Warsaw</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="218.818" end="x">[In Russian] You said that there was a pogom in <a class="placename" href="#vothL123">Lwow</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="225.331" end="x">[In Polish] Yes. The <a class="term" href="#vothG_pogrom">pogrom</a> in <a class="placename" href="#vothL123">Lwow</a> took place a few days after the Germans arrived. The Pogrom was carried out actually not by the Germans themselves, but mostly by the Ukrainians. It was really a bestial pogrom. The Ukr- . . . Ukrainians simply made use of the old Polish system. They beat people to death with clubs. They killed children. There were many Jewish victims at that time.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="261.346" end="x">[In Russian] The Germans allowed them to make a <a class="term" href="#vothG_pogrom">pogrom</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="264.271" end="x">[In Polish] The Germans? [Chuckle.] It had actually been arranged by the Germans. But the Germans preferred not to take an active part, but they preferred that it should look like a spontaneous uprising of the Ukrainians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="279.603" end="x">[In Russian] How did you return to <a class="placename" href="#vothL79">Warsaw</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="283.206" end="x">[In Polish] <a class="placename" href="#vothL79">Warsaw</a> . . . to <a class="placename" href="#vothL79">Warsaw</a> I traveled actually as an <a class="term" href="#vothG_aryan">Aryan</a>, as a Polish woman, a Catholic. However, I didn't have any documents. Since I look quite a bit like a Jewess, the trip was dangerous. In <a class="placename" href="#vothL135">Cracow</a> on the railroad station—it was twelve o'clock at night—some <a class="term" href="#vothG_folk">Folk-German</a>, that means . . . eh . . . eh . . . a <a class="term" href="#vothG_folk">Folk-German</a> . . .<note n="6"><span class="note">Folk German (volksdeutsche) was the Nazi term for an ethnic Germans residing outside of Germany who was a national in their country of residence. Nazi Germany received a good deal of support from these individuals in countries such as Poland.</span><sup><a href="#note_6">6</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="312.387" end="x">[In Russian] Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="313.337" end="x">[In Polish] . . . a German informer, yes, he caught me. He asked me for papers. I didn't have any papers. I found myself at the <a class="term" href="#vothG_gestapo">Gestapo</a>, but by accident, thanks to that, that I had met there some railway official, a Pole, a very fine and descent person, I succeeded in getting out. He accompanied me to the station, and I went to <a class="placename" href="#vothL79">Warsaw</a>. In <a class="placename" href="#vothL79">Warsaw</a>, too, at that time Jews were not permitted to go to the so-called <a class="term" href="#vothG_aryan">Aryan</a> side. They locked me up in the <a class="term" href="#vothG_ghetto">ghetto</a>. But somehow I succeeded in crossing the . . . the Polish section, and I got in . . . I got into the <a class="term" href="#vothG_ghetto">ghetto</a> through an opening in the wall.<note n="7"><span class="note">The Warsaw ghetto was established in mid November 1940. It was surrounded by a high wall topped by jagged shards of glass and sealed off from the "Aryan" section of the city. Mrs. Neufeld was fortunate in finding an opening in the wall through which she could enter the ghetto and rejoin her family. Perhaps the opening had been made by those who smuggled food into the ghetto.</span><sup><a href="#note_7">7</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="358.279" end="x">[In Russian] Were you married then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="361.581" end="x">[In Polish] No, I wasn't married.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="362.380" end="x">[In Russian] You weren't married.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="363.511" end="x">[In Polish] No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="364.220" end="x">[In Russian] In <a class="placename" href="#vothL79">Warsaw</a> you lived in the <a class="term" href="#vothG_ghetto">Ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="367.733" end="x">[In Polish] Yes. I was in the <a class="placename" href="#vothC117" type="camp">Warsaw Ghetto</a> from November, '41, throughout the entire time till the resettlement <a class="term" href="#vothG_action">action</a>.<note n="8"><span class="note">The mass deportation from the Warsaw ghetto began on July 22, 1942 and lasted until September 12 of that year. During this time, more than a quarter of a million Warsaw ghetto Jews were deported to the Treblinka extermination camp where they were murdered by gas.</span><sup><a href="#note_8">8</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="379.778" end="x">[In Russian] Tell me, how was life in the <a class="placename" href="#vothC117" type="camp">Warsaw Ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="385.175" end="x">[In Polish] Upon first coming into the <a class="placename" href="#vothC117" type="camp">Ghetto</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="389.004" end="x">[In Russian] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="389.607" end="x">[In Polish] I cannot describe the shocking impression it had aroused in me. At once I came upon sights which I later encountered much too often, but which I shall never be able to forget. There were many houses in ruins inside the <a class="placename" href="#vothC117" type="camp">Ghetto</a>. Jewish children were sitting among the ruins, pale, emaciated, like skeletons, thin little hands and legs. And [they] were begging. With thin little voices they were begging for bread. This was, I remember, my first impression. The second, and an equally shocking one, was [the fact] that all the people were wearing armbands on the arms. It was a strange world of people with armbands. But people were behaving as if that was normal. They were moving about . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="444.771" end="x">[In Russian] What? [For some reason there is a chuckle in which both participate.] Yes. And how long were you in the <a class="placename" href="#vothC117" type="camp">Ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="449.505" end="x">[In Polish] I was in the <a class="term" href="#vothG_ghetto">Ghetto</a> till the moment of the main <a class="term" href="#vothG_action">action</a>, that means till Jul- . . . till the 22nd of July, 1942. Then I lived through there the entire <a class="term" href="#vothG_action">action</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="466.570" end="x">[In Russian] Wait a moment. Who was with you? Was your father there? Your mother? Who else was there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="471.694" end="x">[In Polish] No. When I arrived in <a class="placename" href="#vothL79">Warsaw</a> my father wasn't alive any more, and my brother had been killed by the Germans. My brother had been very early taken away. In '40 yet the Germans had taken many Jewish intellectuals as hostages and shot them afterwards. So that I was [there] with my mother and my sister.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="496.508" end="x">[In Russian] Aha. And where was your father? Eh . . . how did your father . . . did your father die before, or what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="503.263" end="x">[In Polish] My father died a few months after the outbreak of the war. I do not know exactly when, because I was in <a class="placename" href="#vothL123">Lwow</a>. He was a very frail man. He had lived through the bombing . . .<note n="9"><span class="note">From the outbreak of the war, Warsaw experienced German air raids, but the antiaircraft defenses of the city were crippled after the first week. The Germans then bombed the city at will and many Warsaw residents perished. German artillery also indiscriminately shelled the city.</span><sup><a href="#note_9">9</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="512.565" end="x">[In Russian] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="513.032" end="x">[In Polish] . . . of <a class="placename" href="#vothL79">Warsaw</a>. And he was altogether a very delicate person, and everything that he saw . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="517.947" end="x">[In Russian] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="518.264" end="x">[In Polish] . . . and things were looking very bad, and that made his condition worse, so that he died a few months later.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="523.676" end="x">[In Russian] What was your father's occupation? What did your family live on before the war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="527.023" end="x">[In Polish] My father was a teacher.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="529.269" end="x">[In Russian] What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="529.902" end="x">[In Polish] My father was a teacher.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="531.983" end="x">[In Russian] A teacher? What did he teach?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="535.224" end="x">[In Polish] Father taught the Polish language, mathematics, in the public schools for Jewish children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="542.249" end="x">[In Russian] Aha. And he himself, what did he finish [what training did he have] ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="546.621" end="x">[In Polish] My father studied in schools established by Jewish synagogues for Jews who wanted to receive a liberal education.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="559.902" end="x">[In Russian] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="560.219" end="x">[In Polish] And afterwards he passed a teacher's examination with a certain Polish professor.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="566.294" end="x">[In Russian] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="566.807" end="x">[In Polish] He received a teacher's diploma.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="568.722" end="x">[In Russian] That means he died before the Germans entered Poland?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="572.235" end="x">[In Polish] Yes. He died a few . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="573.004" end="x">[In Russian] Where did he die, in <a class="placename" href="#vothL79">Warsaw</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="574.406" end="x">[In Polish] In <a class="placename" href="#vothL79">Warsaw</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="575.371" end="x">[In Russian] Aha. Nu, and . . . did he die in the <a class="placename" href="#vothC117" type="camp">Ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="578.642" end="x">[In Polish] There was no <a class="term" href="#vothG_ghetto">Ghetto</a> yet.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="580.451" end="x">[In Polish] There was no <a class="term" href="#vothG_ghetto">Ghetto</a> yet.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="581.657" end="x">[In Russian] So you were in the <a class="term" href="#vothG_ghetto">Ghetto</a>. With whom were you in the <a class="term" href="#vothG_ghetto">Ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="586.150" end="x">[In Polish] With [my] mother, with [my] sister, and with [my] sister's husband.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="589.723" end="x">[In Russian] Where did you live?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="591.969" end="x">[In Polish] We lived on Nowolipia, in . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="595.165" end="x">[In Russian] In a house?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="596.552" end="x">[In Polish] In our apartment. That apartment . . . Nowolipia belonged to the <a class="placename" href="#vothC117" type="camp">Ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="601.979" end="x">[In Russian] Aha. So you remained in your apartment . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="604.301" end="x">[In Polish] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="605.432" end="x">[In Russian] . . . because Nowolipia was made a part of the <a class="placename" href="#vothC117" type="camp">Ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="607.467" end="x">[In Polish] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="607.708" end="x">[In Russian] All right. That house belonged to whom? [Pause.] Well, who was the landlord of the house?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="616.226" end="x">[In Polish] Nu, there was the owner of the house. Before the war he was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="619.091x" end="x">[In Russian] A Jew or . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="619.950" end="x">[In Polish] It was a Jew. [Words not clear.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="622.061" end="x">[In Russian] Yes. And did you pay rent?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="626.719" end="x">[In Polish] In the beginning we paid and later on . . . I don't remember.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="631.332" end="x">[In Russian] All right. When did you go into the <a class="placename" href="#vothC117" type="camp">Ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="635.131" end="x">[In Polish] Then the resettlement <a class="term" href="#vothG_action">action</a> started, on the 22nd of July, 1942. At that time . . . we were hiding a little . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="651.435" end="x">[In Russian] In the <a class="placename" href="#vothC117" type="camp">Ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="652.400" end="x">[In Polish] In the <a class="term" href="#vothG_ghetto">Ghetto</a> itself. If the <a class="term" href="#vothG_action">action</a> took place on one street, we would go over to the next street.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="659.516" end="x">[In Russian] What kind of <a class="term" href="#vothG_action">action</a> was it? Tell me about the <a class="term" href="#vothG_action">action</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="662.787" end="x">[In Polish] Then appeared . . . the Germans . . . posters appeared upon the walls, even signed by the Jewish Community Council, that all the Jews have to report to resettlement points, and they will be resettled to the East. Everyone will receive three kilos of bread, a kilo of marmalade. RR-cars will be supplied, and in these RR-cars the Germans . . . [correction] the Jews will go to the East. There they will be settled in small towns, and there they will work. Next it was mentioned that the Jews who are working in German plants are exempted from this resettlement. Next, the workers in the Jewish Community Council . . . I don't remember. My husband . . .<note n="10"><span class="note">In place of the traditional Jewish Community Council of the city, the Germans installed a Judenrat. It was this body that carried out their orders. Adam Czerniakow, head of the Warsaw Judenrat, committed suicide rather than sign the order for deportation that was couched in the usual deceptive language employed by the Germans. Obviously, Mrs. Neufeld and her family resisted German blandishments by doing everything possible to avoid deportation.</span><sup><a href="#note_10">10</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="712.241" end="x">[In Russian] And there, what . . . Were there any hospitals in the <a class="term" href="#vothG_ghetto">Ghetto</a>? Were there doctors?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="716.447" end="x">[In Polish] Yes. There were hospitals in the <a class="term" href="#vothG_ghetto">Ghetto</a>. There were doctors. Only the sick were dying simply of hunger. There was little medicine. Even if they did succeed in curing a sick person, there still was no food to nurse him back to health, so that there was a very high mortality.<note n="11"><span class="note">The mortality rate in the Warsaw ghetto was atrocious. The monthly death toll from June 1941 through April 1942 fluctuated from 4,000-5,500. At its height in March 1941, there were about 445,000 inhabitants of the Warsaw ghetto. By the time of the beginning of deportations in July, 1942, the population had shrunk by more than 100,000 in what can only be described as gradual extermination. Jewish medical personnel tried to stem the death rate as best they could, but, as Mrs. Neufeld indicates, they were often helpless in the face of acute shortages of food and medicine.</span><sup><a href="#note_11">11</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="735.472" end="x">[In Russian] And where to . . . where were the people buried?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="738.922" end="x">[In Polish] What is that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="740.038" end="x">[In Russian] Where were they buried? [In German] Where were they buried?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="743.611" end="x">[In Polish] Oh. People were buried in the Jewish cemetery.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="747.184" end="x">[In German/English] Was . . . was the Jewish cemetery inside the Ghetto?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="755.973" end="x">[In Polish] The Jewish cemetery was a little outside the <a class="term" href="#vothG_ghetto">Ghetto</a>, but passes could be gotten, and one could . . . even the family could accompany the deceased.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="767.476" end="x">[In Russian] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="767.853" end="x">[In Polish] Yes. And they could be buried in the cemetery on Gesia [Street] , in the old Jewish cemetery.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="773.235" end="x">[In Russian] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="773.823" end="x">[In Polish] The poor were buried in communal graves. There were huge communal graves, because the mortality toward the end was around five thousand people a month, and those who could afford it were buried in individual graves.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="790.119" end="x">[In Russian] Yes. Nu? Afterwards how did you leave the <a class="term" href="#vothG_ghetto">Ghetto</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="795.366" end="x">[In Polish] Afterwards, after the first <a class="term" href="#vothG_action">action</a>, I remained, because there was . . . there had remained around forty thousand Jews after the first <a class="term" href="#vothG_action">action</a>. Of them a part was left in a few German plants in which were manufactured uniforms for the army, shoes, fur coats, and so forth. I was able to hide myself. I was working there in a kind of factory dispensary.<note n="12"><span class="note">When the first phase of deportations ("the first action") ended in September 1942, there were about 35,000 Jews who remained legally  in the ghetto and about 25,000 who were there illegally.</span><sup><a href="#note_12">12</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="829.270" end="x">[In Russian] Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="830.416" end="x">[In Polish] I was in the <a class="term" href="#vothG_ghetto">Ghetto</a> till January, '43. In January the second <a class="term" href="#vothG_action">action</a> broke out, and in January I escaped to the <a class="term" href="#vothG_aryan">Aryan</a> side during the course of the second <a class="term" href="#vothG_action">action</a>.<note n="13"><span class="note">The Germans launched a second wave of deportations on January 18, 1943 but were met with Jewish armed and passive resistance. The deportations were halted after a few days but not before they managed to seize 5,000-6,000 Jews.</span><sup><a href="#note_13">13</a></sup></note> Also the escape was very dangerous, but we drove out in a factory truck. I pretending to be a worker of that factory. There was a check point, that means a gate in the wall. There stood German <a class="term" href="#vothG_gendarme">gendarmes</a> checking on everybody leaving the <a class="placename" href="#vothC117" type="camp">Ghetto</a>. Well, just as the truck was driving out, as <a class="term" href="#vothG_ss">SS</a> patrol which was carrying out the <a class="term" href="#vothG_action">action</a> drove by. Everybody was told to get out of the truck. We were searched. I was the only woman. All the men were sure that I would be taken away to the distribution depot. That was the assembly place where all the Jews were being assembled. But for some strange reason they permitted me to get back on the truck, and we drove away. Near Pulaski Street the truck stopped. I had friends there, <a class="term" href="#vothG_aryan">Aryans</a>. I got out of the truck, and in this way I left the <a class="placename" href="#vothC117" type="camp">Ghettov</a>.<note n="14"><span class="note">Mrs. Neufeld's escape, as was the case with so many others, was most fortuitous. She was among the more than 25,000 Jews hidden by sympathetic Poles in "Aryan" Warsaw.</span><sup><a href="#note_14">14</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="912.022" end="x">[In Russian] What happened then? Continue, please.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="916.937" end="x">[In Polish] Nu, it was very difficult for me to hide, because I have a very Semitic appearance. The Poles with whom I was hiding received me well, but I had to change my lodgings several times. The last time I was living on Muranowski Street right across from the <a class="term" href="#vothG_ghetto">Ghetto</a>. Well, and that is how I was able to see the German <a class="term" href="#vothG_action">action</a> of April, '43, the uprising of the <a class="placename" href="#vothC117" type="camp">Warsaw Ghetto</a>.<note n="15"><span class="note">The uprising of the Warsaw ghetto, the most sustained and famous Jewish revolt during the Holocaust, began on April 19, 1943, the eve of the Passover holiday.
+</span><sup><a href="#note_15">15</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="949.469" end="x">[In Russian] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="950.133" end="x">[In Polish] Because our windows . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="951.475" end="x">[In Russian] Did you live there during the uprising?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="953.450" end="x">I lived vis-a-vis. I saw [it]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="955.545" end="x">Yes, you saw [it] Now tell about the uprising.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="958.983" end="x">[In Polish] Our windows faced directly the corner of Muranowska and Nalewki Streets. In this way we could observe the whole Muranowska Square, part of Nalewki [Street] , and, I think, Mila Street which led precisely to that distribution depot where all the Jews were assembled. So that I was able to see all the Jewish convoys which the Germans were leading to the distribution depot. On the 18th of April in the morning shots were suddenly heard. We didn't know what was going on. We went over to the windows. We saw that the wall of the <a class="term" href="#vothG_ghetto">Ghetto</a> was thickly surrounded by numerous patrols. Each patrol ordinarily consisted of one German, one Ukrainian, and one Polish policeman. The patrols were ten, fifteen feet apart, and I don't remember if each or every other patrol had a machine gun. We knew right away that an <a class="term" href="#vothG_action">action</a> in the <a class="term" href="#vothG_ghetto">Ghetto</a> was in the offing, because every <a class="term" href="#vothG_action">action</a> always began by just such an encirclement of the entire wall. Well, and there began a regular battle, a very furious battle. At first we heard machine guns, then grenades. Suddenly we heard a familiar . . . I heard a familiar noise, but I couldn't believe that they were tanks. I looked on Nalewki [Street] , and there, indeed, two German tanks were slowly driving into Nalewki. Well, that meant the end of the <a class="placename" href="#vothC117" type="camp">Ghetto</a>.<note n="16"><span class="note">Despite the German use of tanks, artillery and aircraft, the fighters in the Warsaw ghetto fought courageously for about one month. The civilian population hid in ingeniously constructed underground bunkers throughout the ghetto. The Germans burned every building in the ghetto to the ground in an effort to quell the rebellion, but it took them about one month to do so, more time that it had taken them to conquer some European countries.</span><sup><a href="#note_16">16</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1085.741" end="x">[In Russian] Tell me, what happened to you afterwards? How long were you in <a class="placename" href="#vothL79">Warsaw</a>, and how did you get out of <a class="placename" href="#vothL79">Warsaw</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1091.937" end="x">[In Polish] Afterwards I was still hiding for some time, but it was very difficult for me to hide. Later on the Germans took us to . . . took me to the <a class="term" href="#vothG_lager">lager</a>, to <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>. This was in July in the year '43. In this <a class="term" href="#vothG_lager">lager</a> I was twenty months, over twenty months, till around the 13th of April of the year '45. At that time they started to evacuate the camp. It seemed that the English were approaching. We were evacuated on the 10th of April. Two weeks I was in the train, until the 23rd of April.<note n="17"><span class="note">Mrs. Neufeld was evacuated just five days before Bergen Belsen was liberated.</span><sup><a href="#note_17">17</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1137.238" end="x">[In Russian] You were evacuated from <a class="placename" href="#vothC8" type="camp">Belsen</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1139.620" end="x">[In Polish] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1140.284" end="x">[In Russian] Who?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1141.445" end="x">[In Polish] The Germans. The Germans were in the habit of evacuating all the camps which the English or the Americans were approaching, provided they had time.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1149.269" end="x">[In Russian] Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1149.812" end="x">[In Polish] They began to evacuate <a class="placename" href="#vothC8" type="camp">Belsen</a>, too, and I was evacuated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1153.747" end="x">[In Russian] Did they know in <a class="placename" href="#vothC8" type="camp">Belsen</a> that you are a Jewess?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1156.054" end="x">[In Polish] Yes. In <a class="placename" href="#vothC8" type="camp">Belsen</a> there were very many Jews. There were Polish Jews, Hungarian Jews, Rumanian Jews, Yugoslavian, Dutch Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1169.275" end="x">[In Russian] Aha. How long were you in <a class="placename" href="#vothC8" type="camp">Belsen</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1174.129" end="x">[In Polish] Over twenty months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1176.843" end="x">[In Russian] How many?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1177.974" end="x">Over twenty months.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1179.738" end="x">Twenty months?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1180.658" end="x">[In Polish] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1181.186" end="x">[In Russian] Tell me about the life in Belsen. How were you living in your <a class="term" href="#vothG_block">block</a> and so forth?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1187.533" end="x">[In Polish] So . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1189.086" end="x">[In Russian] Did you work in <a class="placename" href="#vothC8" type="camp">Belsen</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1190.006" end="x">[In Polish] No, we didn't . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1191.197" end="x">[In Russian] No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1191.393" end="x">[In Polish] . . . work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1191.890" end="x">[In Russian] That means you didn't work for twenty months?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1194.574" end="x">[In Polish] No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1195.102" end="x">[In Russian] How many people were in a <a class="term" href="#vothG_block">block</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1198.826" end="x">[In Polish] In the beginning there were . . . we were kept separately, the Polish Jews. This was a group of over two thousand five hundred persons, in the beginning. Later on they began . . . in October, after three months, they sent out over a thousand people from our group.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1221.364" end="x">[In Russian] Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1222.555" end="x">[In Polish] About two thousand people. Later we found out that they were sent to <a class="placename" href="#vothC4" type="camp">Auschwitz</a>.<note n="18"><span class="note">Bergen Belsen was established in July 1943 so Mrs. Neufeld was there almost from its inception. It began as a prisoner of war camp but had five satellite camps among which was one for Jews from Poland who had papers issued by various countries mainly in Latin America. As Mrs. Neufeld subsequently indicates, the prisoners in this satellite camp did not have to engage  in forced labor and conditions were at first better than those elsewhere in Belsen. The deportation of some 1,700 prisoners from this satellite camp to Auschwitz did indeed occur in October 1943.
+350 more were deported to Auschwitz in early 1944. Mrs. Neufeld and, as she will later reveal, her husband, who had been sent to Belsen with her, were among the several hundred who remained in the camp. Just why they were spared is unknown.</span><sup><a href="#note_18">18</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1228.299" end="x">[In Russian] How did you sleep there in the barracks?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1231.721" end="x">[In Polish] In the beginning conditions were still a little better. It wasn't that crowded, and every one of us had his plank bed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1238.234" end="x">[In Russian] Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1239.968" end="x">[In Polish] But the plank beds were two-tiered, a lower one and an upper one, very closely set. One couldn't turn around. The spaces between them were very narrow. This fatigued us very much. We covered ourselves with blankets. We had such paillasses. We received a soup, bread, sometimes a little margarine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1263.350" end="x">[In Russian] What did you do all day?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1265.295" end="x">[In Polish] Nothing, nothing. Our group didn't work. There were groups which worked, and which didn't work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1272.757" end="x">[In Russian] Did you know in <a class="placename" href="#vothC8" type="camp">Belsen</a> that woman . . . What was she called? . . . eh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1278.154" end="x">[In Polish] Irma . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1279.179" end="x">[In Russian] Irma Gray, or . . . [reference to Irma Grese]<note n="19"><span class="note">Irma Grese, a female camp supervisor, was known as "the bitch of Belsen" due to the inhuman cruelty she displayed towards the prisoners. She was sentence to death for her crimes by a British military court and hanged in December 1945 at the age of twenty one.</span><sup><a href="#note_19">19</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1280.747" end="x">[In Polish] No, I didn't know her, but I knew the <a class="term" href="#vothG_commandant">Commandant</a> Kramer.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1284.305" end="x">[In Russian] You did know Kramer?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1285.722" end="x">[In Polish] Yes. I saw him a few times. In the beginning we had a different <a class="term" href="#vothG_commandant">Commandant</a>, Kass [?] , and afterwards Kramer took his place.<note n="20"><span class="note">Josef Kramer was appointed commandant of Bergen Belsen on December 2, 1944. Before his appointment, he worked in other concentration camps including Auschwitz where he became known for his ruthless and sadistic behavior. He was tried by a British military court, sentenced to death and hanged on December 12, 1945 at the age of thirty nine. Adolf Hass and Siegfried Leidle preceded Kramer as Auschwitz commandants.</span><sup><a href="#note_20">20</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1294.984" end="x">[In Russian] Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1295.467" end="x">[In Polish] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1296.537" end="x">[In Russian] Yes. And you, were you in good health in <a class="placename" href="#vothC8" type="camp">Belsen</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1300.065" end="x">[In Polish] No. In <a class="placename" href="#vothC8" type="camp">Belsen</a> . . . I arrived in <a class="placename" href="#vothC8" type="camp">Belsen</a> already sick, because I had been in prison for two weeks in <a class="placename" href="#vothL79">Warsaw</a>, in the Pawiak [Prison]<note n="21"><span class="note">Pawiak prison was located in the Jewish quarter of Warsaw. It was the main prison used by German security forces in the Warsaw district from October 1939 to August 1944 and was known for the harsh conditions under which prisoners were incarcerated. Pawiak held a number of Jewish prisoners caught on the "Aryan" side of Warsaw such as Mrs. Neufeld.</span><sup><a href="#note_21">21</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1308.824" end="x">[In Russian] Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1309.593" end="x">[In Polish] Well, and besides, I had gone through a great deal during the time when I was hiding. I arrived sick, and later on . . . everybody was sick, because we got very little food, so that everybody was very weak. At first we received food. Later on it became worse and worse. The first year we lived through somehow, even though during the winter we lived in stone barracks. It was cold. The roofs were leaky. Water was pouring in.<note n="22"><span class="note">Conditions in Bergen Belsen deteriorated steadily in 1944 and underwent a profound deterioration from January through March of 1945 as thousands of prisoners on death marches from other camps were sent there resulting in chaotic conditions and the spread of infectious diseases. At its height in March 1945, the typhus epidemic in Belsen claimed more than 18,000 lives. From January 1945 to mid April of that year, some 35,000 prisoners perished and were buried in mass graves.</span><sup><a href="#note_22">22</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1350.719" end="x">[In Russian] Yes. Tell me, if anybody got sick what did they do then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1357.518" end="x">[In Polish] There were . . . among the prisoners there were doctors. They treated the sick, and besides that there was a large hospital. In case there were any serious cases it was reported to the German doctor. Well, and the sick were taken to the hospital.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1377.855" end="x">[In Russian] Yes. And later on you were evacuated from <a class="placename" href="#vothC8" type="camp">Belsen</a>. Where to?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1383.719" end="x">[In Polish] The train was traveling there and back, there and back. Because all the roads were out and were bombed. Railroad stations were burning, so that . . . the train was supposed to go to <a class="placename" href="#vothL50">Theresenstadt</a>, to Czechoslovakia.<note n="23"><span class="note">Theresienstadt (Czech, Terezin) was a ghetto established by the Germans in northwest Czechoslovakia. It was liberated by the Red Army on May 8, 1945. 33,000 Jews perished in Theresienstadt, and 88,000 were deported from there to extermination camps.</span><sup><a href="#note_23">23</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1398.041" end="x">[In German] Czech— . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1398.689" end="x">[In Polish] Yes. But it didn't travel very far, because the engineer couldn't run the train on the bombed out roads.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1407.523" end="x">[In Russian] Yes. [Words not clear.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1408.277" end="x">[In Polish] There were air raids. No? There were air raids. We were bombed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1411.594" end="x">[In Russian] You didn't go to <a class="placename" href="#vothL50">Theresenstadt</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1413.659" end="x">[In Polish] No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1414.081" end="x">[In Russian] No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1414.217" end="x">[In Polish] We were of course . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1414.745" end="x">[In Russian] And who liberated you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1416.629" end="x">[In Polish] The Russians.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1417.926" end="x">[In Russian] The Russians?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1418.846" end="x">[In Polish] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1419.555" end="x">[In Russian] The Russians liberated you. Tell [me] , how did it happen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1424.575" end="x">[In Polish] During one . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1425.811" end="x">[In Russian] Were you in trains?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1427.168" end="x">[In Polish] We were in RR-cars, in a freight car, even during the night. All night the train was standing. It was even quite peaceful. From afar shots could be heard, but there was no air raid. Early in the morning, around six, someone ran past our RR-car and said, 'The Russians are already here.'</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1451.534" end="x">[In Russian] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1452.182" end="x">[In Polish] The Germans had already run away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1453.720" end="x">[In Russian] Did the Russians feed you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1456.358" end="x">[In Polish] Yes. Then all the people ran out of the RR-cars, and there really were two Russian soldiers on horses. And they said, 'You can leave the RR-cars now. Everybody can go to the village. There you will find . . . go into the houses. There . . . '</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1474.901" end="x">[In Russian] In what town was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1476.876" end="x">[In Polish] It was . . . somewhat around <a class="placename" href="#vothL150">Falkenburg</a>, near <a class="placename" href="#vothL50">Theresenstadt</a>.<note n="24"><span class="note">Falkenberg is actually in eastern Germany northeast of Leipzig.</span><sup><a href="#note_24">24</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1483.464" end="x">[In Russian] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1483.871" end="x">[In Polish] A small town.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1484.534" end="x">[In Russian] All right. After the liberation where did you go from there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1488.273" end="x">[In Polish] We were very sick then.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1491.017" end="x">[In Russian] Your sister was with you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1492.751" end="x">[In Polish] No, there was no one from my family, no one.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1494.756" end="x">[In Russian] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1495.359" end="x">[In Polish] Then we went to the nearest German village. There we went into a German house. First of all we bathed and climbed into beds and [chuckle] lay in the beds.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1507.359" end="x">[In Russian] Yes. And from there where did you go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1511.460" end="x">[In Polish] We lay . . . a month's time we lay there, because we had no strength to walk. We were very weak, and afterwards I went to <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1523.023" end="x">[In Russian] Why did you go to <a class="placename" href="#vothL13">Paris</a>? You have . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1524.787" end="x">[In Polish] Because in Poland I had no family. I knew, of course, my mother had perished during the <a class="term" href="#vothG_action">action</a>. And my sister I also knew had perished. So that I went to <a class="placename" href="#vothL13">Paris</a> where I have family.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1538.521" end="x">[In Russian] You do have family in <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1540.345" end="x">[In Polish] I have two [female] cousins.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1541.913" end="x">[In Russian] You have two cousins here . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1543.466" end="x">[In Polish] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1543.572" end="x">[In Russian] . . . in <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1544.160" end="x">[In Polish] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1544.477" end="x">[In Russian] And what do you intend to . . . Where did you get married?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1549.799" end="x">[In Polish] I got married in the <a class="term" href="#vothG_ghetto">Ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1553.251" end="x">[In Russian] Oh! You got married in the <a class="term" href="#vothG_ghetto">Ghetto</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1555.090" end="x">[In Polish] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1555.452" end="x">[In Russian] And what happened to your husband?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1556.628" end="x">[In Polish] My husband was also in a <a class="term" href="#vothG_lager">lager</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1559.432" end="x">[In Russian] Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1560.307" end="x">[In Polish] He was also . . . he was in <a class="placename" href="#vothC8" type="camp">Belsen</a>.<note n="25"><span class="note">It is not clear whether or not Mrs. Neufeld's husband was with her in hiding in "Aryan" Warsaw or in Pawiak prison though this was probably the case. It is also not clear why the couple was transferred to the satellite camp at Belsen for those who had papers from foreign countries in their possession. It is quite plausible that the Neufeld's had such papers, but the interview does not reveal to where.</span><sup><a href="#note_25">25</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1562.312" end="x">[In Russian] Oh. They sent men and women. Did the Germans know that he was your husband?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1566.895" end="x">[In Polish] Yes. Yes, they knew that he was my husband.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1571.222" end="x">[In Russian] And he went with you together all the time, and arrived in <a class="placename" href="#vothC8" type="camp">Belsen</a>? And from <a class="placename" href="#vothC8" type="camp">Belsen</a> you were evacuated . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1577.719" end="x">[In Polish] In <a class="placename" href="#vothC8" type="camp">Belsen</a>, there we lived separately. And then we were again together. And then we were evacuated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1583.931" end="x">[In Russian] And you were together . . . And when the Russsians arrived you were together?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1586.750" end="x">[In Polish] Yes. Everybody . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1587.745" end="x">[In Russian] Yes, you were together. And then you two decided to go to <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1591.936" end="x">[In Polish] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1592.358" end="x">[In Russian] How did you travel? Did you have money?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1594.408" end="x">[In Polish] No, we had no money whatsoever, but we traveled without money all the time. In military cars and later in trains for the repatriates.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1606.318" end="x">[In Russian] Did they allow you to enter France, or you . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1608.805" end="x">[In Polish] They let us in. I speak a little French, and I have family in <a class="placename" href="#vothL13">Paris</a>.<note n="26"><span class="note">Had Mrs. Neufeld and her husband been liberated in Bergen Belsen and remained there, they would have become part of the largest Displaced Persons camp in Europe after the war. Located in the British zone of occupation of Germany, the Displaced Persons camp at Belsen had a largely self-governed and self contained Jewish community Jewish community from 1945-1950. The DP camp focused on the physical and spiritual rehabilitation of the survivors, the search for relatives, and the political struggle for rights and immigration to Palestine and then the State of Israel.</span><sup><a href="#note_26">26</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1612.484" end="x">[In Russian] Where did you learn to speak French?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1614.549" end="x">[In Polish] I learned it in school yet. I liked the French language very much.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1617.564" end="x">[In Russian] Did you attend the gymnasium in <a class="placename" href="#vothL79">Warsaw</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1619.343" end="x">[In Polish] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1620.037" end="x">[In Russian] Yes. And where did your husband study?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1622.042" end="x">[In Polish] Also in <a class="placename" href="#vothL79">Warsaw</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1623.308" end="x">[In Russian] How come he knows English?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1626.444" end="x">[In Polish] He studied English.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1628.193" end="x">[In Russian] Aha, and what does your husband do in <a class="placename" href="#vothL13">Paris</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1632.942" end="x">[In Polish] Well, in the beginning we didn't do anything. We weren't feeling well. Now he is working a little as an interpreter.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1641.218" end="x">[In Russian] Aha, and what do you intend to do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1644.445" end="x">[In Polish] We don't know yet. It is a very hard decision. We have friends in America who want us very much to come over. I don't have any family anywhere else. Maybe I will remain in <a class="placename" href="#vothL13">Paris</a>. We don't know yet.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1656.219" end="x">[In Russian] Aha. You have relatives in America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1658.526" end="x">No. Just girl friends.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1662.400" end="x">[In Polish] In America I have friends, a girl friend.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1664.179" end="x">[In Russian] But you have no relatives. And your husband, what is his occupation? What does he do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1668.431" end="x">[In Polish] He was working as an interpreter.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1670.587" end="x">[In Russian] What is that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1671.296" end="x">[In Polish] With the Americans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1673.934" end="x">[In Russian] With the Americans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1674.989" end="x">[In Polish] Here. In Americans institutions, because he knows English.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1678.065" end="x">[In Russian] What institutions?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1679.377" end="x">[In Polish] I don't even know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1681.653" end="x">[In Russian] For the American government or for Jewish organizations?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1685.965" end="x">[In Polish] No, no. They aren't . . . I don't know whether for Polish or for American.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1690.563" end="x">[In Russian] Yes. He is working for them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1693.412" end="x">[In Polish] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1694.076" end="x">[In Russian] And he will return home by ten o'clock?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1695.749" end="x">[In Polish] Yes. He will return . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1697.166" end="x">[In Russian] [Words not clear.] Tell me, in Belsen did you have any songs which the prisoners were singing?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1706.875" end="x">[In Polish] We?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1707.734" end="x">[In Russian] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1709.996" end="x">[In Polish] Songs? Very few . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1711.971" end="x">[In Russian] Yes. Jewish or . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1713.916" end="x">[In Polish] Yes, there were.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1715.017" end="x">[In Russian] . . . new songs which were composed there in the <a class="term" href="#vothG_lager">lager</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1718.288" end="x">[In Polish] No, no, no, no.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1721.394" end="x">[In Russian] You don't know any?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1722.072" end="x">[In Polish] No, no. By us . . . Of course, people wrote verse.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1726.384" end="x">[In Russian] What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1726.881" end="x">[In Polish] Verse. [In Russian] Verse.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1728.902" end="x">[In Russian] People wrote.<note n="27"><span class="note">This was a form of resistance, a way of affirming one's humanity in inhuman conditions.</span><sup><a href="#note_27">27</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1729.520" end="x">[In Polish] Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1729.942" end="x">[In Russian] Did you also write poetry? Do you know any?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1731.812" end="x">[In Polish] No, I didn't write [any] Maybe my husband will remember some.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1735.807" end="x">[In Russian] Do you know any?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1737.812" end="x">[In Polish] No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1738.717" end="x">[In Russian] You don't know any.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1740.358" end="x">[In English] Well, this concludes the record of Mrs. Helena Neufeld. She insists on making her record in Polish. She is apparently conscious about her language. And she is saying that she married her husband in the <a class="placename" href="#vothC117" type="camp">ghetto of Warsaw</a>. And it so happened that during all the deportations they were together. August the 3rd, 1946. <a class="placename" href="#vothL13">Paris</a>. The home for adult Jews . . . After concluding the record, how so many . . . how [it] often happens, you have some new data. On the question 'What is she working in?' she tells me she is a dentist, graduated from <a class="placename" href="#vothL79">Warsaw</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1796.366" end="x">[In German] When did you study dentistry?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1802.487" end="x">[In Polish] [Words not clear.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1804.100" end="x">[In Russian] When did you study in <a class="placename" href="#vothL79">Warsaw</a>? How long ago?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1807.236" end="x">[In Polish] I studied from 1931 to the end of 1935. From 1931 to the end of 1935.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1819.311" end="x">[In Russian] How old are you now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1821.603" end="x">Thirty-three.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1823.978" end="x">[In Polish] Trzydzieści trzy.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1825.266" end="x">[In Russian] Did you enter a technical school in <a class="placename" href="#vothL79">Warsaw</a>? When? Right after the gymnasium?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1831.869" end="x">[In Polish] No. I really didn't want to study for a dentist. One year I studied Romantics,<note n="28"><span class="note">Mrs. Neufeld might have been alluding to romance languages. She indicated earlier that she was very fond of the French language in her Warsaw gymnasium.  </span><sup><a href="#note_28">28</a></sup></note> I wanted to travel abroad, to France, but my parents insisted that I study for a dentist, so then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1847.846" end="x">[In Russian] Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1848.359" end="x">[In Polish] . . . after a year, after . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1849.173" end="x">[In Russian] Where are you working here? For a dentist, or are you working for yourself?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Helena Neufeld</span>:
+            </span>
+            <span class="utterance" who="#neufeldH" start="1855.474" end="x">[In Polish] For myself. I can't [words not clear]</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            When Bergen Belsen was liberated by British troops on  April 15, 1945, there were some 58,000 surviving inmates and 10,000 corpses. Anne Frank and her sister had died about a month before of typhus and were buried in a mass grave. The survivors were suffering from extreme malnutrition and virulent diseases such as tuberculosis, dysentery and typhus. Nearly 14,000 died in the two months following the liberation of the camp.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            World War II began with Germany's attack on Poland on September 1, 1939. On September 28, 1939, Warsaw, Poland's capital, surrendered, and in the early days of October the last battles were fought. On September 17, 1939, Soviet forces invaded eastern Poland and overran large parts of the country including the large industrial and cultural center of Lwow (Ger. Lemberg).
+Lwow had a Jewish community in 1939 of approximately 110,000 making it the third largest Jewish community in Poland. Mrs. Neufeld was one of the some 100,000 Jewish refugees from German occupied western Poland who fled to the city.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            The Soviet German war began on June 22, 1941 with the German invasion of the Soviet Union. The Germans routed Soviet forces in the early weeks of the invasion and rapidly captured Lwow, which fell on June 30, 1941.
+        </li>
+                <li>
+            <a name="note_4"></a>
+            There had been a great deal of antisemitism in Lwow in part because the Poles and Ukrainians in the city each accused the Jews of helping the other. The murder of Jews began on the same day as the German occupation with Germans and Ukrainians taking part. The Lwow pogrom lasted from June 30 to July 3, 1941. In four days of killing, approximately 4,000 Jews were murdered. From July 25-27, the Ukrainians carried out another pogrom this time murdering a further 2,000. Only a handful of the Jews of Lwow survived the war.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            The Germans established the Lwow ghetto in November/December 1941. 5,000 sick and elderly Jews were killed during the move to the ghetto.
+        </li>
+                <li>
+            <a name="note_6"></a>
+            Folk German (volksdeutsche) was the Nazi term for an ethnic Germans residing outside of Germany who was a national in their country of residence. Nazi Germany received a good deal of support from these individuals in countries such as Poland.
+        </li>
+                <li>
+            <a name="note_7"></a>
+            The Warsaw ghetto was established in mid November 1940. It was surrounded by a high wall topped by jagged shards of glass and sealed off from the "Aryan" section of the city. Mrs. Neufeld was fortunate in finding an opening in the wall through which she could enter the ghetto and rejoin her family. Perhaps the opening had been made by those who smuggled food into the ghetto.
+        </li>
+                <li>
+            <a name="note_8"></a>
+            The mass deportation from the Warsaw ghetto began on July 22, 1942 and lasted until September 12 of that year. During this time, more than a quarter of a million Warsaw ghetto Jews were deported to the Treblinka extermination camp where they were murdered by gas.
+        </li>
+                <li>
+            <a name="note_9"></a>
+            From the outbreak of the war, Warsaw experienced German air raids, but the antiaircraft defenses of the city were crippled after the first week. The Germans then bombed the city at will and many Warsaw residents perished. German artillery also indiscriminately shelled the city.
+        </li>
+                <li>
+            <a name="note_10"></a>
+            In place of the traditional Jewish Community Council of the city, the Germans installed a Judenrat. It was this body that carried out their orders. Adam Czerniakow, head of the Warsaw Judenrat, committed suicide rather than sign the order for deportation that was couched in the usual deceptive language employed by the Germans. Obviously, Mrs. Neufeld and her family resisted German blandishments by doing everything possible to avoid deportation.
+        </li>
+                <li>
+            <a name="note_11"></a>
+            The mortality rate in the Warsaw ghetto was atrocious. The monthly death toll from June 1941 through April 1942 fluctuated from 4,000-5,500. At its height in March 1941, there were about 445,000 inhabitants of the Warsaw ghetto. By the time of the beginning of deportations in July, 1942, the population had shrunk by more than 100,000 in what can only be described as gradual extermination. Jewish medical personnel tried to stem the death rate as best they could, but, as Mrs. Neufeld indicates, they were often helpless in the face of acute shortages of food and medicine.
+        </li>
+                <li>
+            <a name="note_12"></a>
+            When the first phase of deportations ("the first action") ended in September 1942, there were about 35,000 Jews who remained legally  in the ghetto and about 25,000 who were there illegally.
+        </li>
+                <li>
+            <a name="note_13"></a>
+            The Germans launched a second wave of deportations on January 18, 1943 but were met with Jewish armed and passive resistance. The deportations were halted after a few days but not before they managed to seize 5,000-6,000 Jews.
+        </li>
+                <li>
+            <a name="note_14"></a>
+            Mrs. Neufeld's escape, as was the case with so many others, was most fortuitous. She was among the more than 25,000 Jews hidden by sympathetic Poles in "Aryan" Warsaw.
+        </li>
+                <li>
+            <a name="note_15"></a>
+            The uprising of the Warsaw ghetto, the most sustained and famous Jewish revolt during the Holocaust, began on April 19, 1943, the eve of the Passover holiday.
+
+        </li>
+                <li>
+            <a name="note_16"></a>
+            Despite the German use of tanks, artillery and aircraft, the fighters in the Warsaw ghetto fought courageously for about one month. The civilian population hid in ingeniously constructed underground bunkers throughout the ghetto. The Germans burned every building in the ghetto to the ground in an effort to quell the rebellion, but it took them about one month to do so, more time that it had taken them to conquer some European countries.
+        </li>
+                <li>
+            <a name="note_17"></a>
+            Mrs. Neufeld was evacuated just five days before Bergen Belsen was liberated.
+        </li>
+                <li>
+            <a name="note_18"></a>
+            Bergen Belsen was established in July 1943 so Mrs. Neufeld was there almost from its inception. It began as a prisoner of war camp but had five satellite camps among which was one for Jews from Poland who had papers issued by various countries mainly in Latin America. As Mrs. Neufeld subsequently indicates, the prisoners in this satellite camp did not have to engage  in forced labor and conditions were at first better than those elsewhere in Belsen. The deportation of some 1,700 prisoners from this satellite camp to Auschwitz did indeed occur in October 1943.
+350 more were deported to Auschwitz in early 1944. Mrs. Neufeld and, as she will later reveal, her husband, who had been sent to Belsen with her, were among the several hundred who remained in the camp. Just why they were spared is unknown.
+        </li>
+                <li>
+            <a name="note_19"></a>
+            Irma Grese, a female camp supervisor, was known as "the bitch of Belsen" due to the inhuman cruelty she displayed towards the prisoners. She was sentence to death for her crimes by a British military court and hanged in December 1945 at the age of twenty one.
+        </li>
+                <li>
+            <a name="note_20"></a>
+            Josef Kramer was appointed commandant of Bergen Belsen on December 2, 1944. Before his appointment, he worked in other concentration camps including Auschwitz where he became known for his ruthless and sadistic behavior. He was tried by a British military court, sentenced to death and hanged on December 12, 1945 at the age of thirty nine. Adolf Hass and Siegfried Leidle preceded Kramer as Auschwitz commandants.
+        </li>
+                <li>
+            <a name="note_21"></a>
+            Pawiak prison was located in the Jewish quarter of Warsaw. It was the main prison used by German security forces in the Warsaw district from October 1939 to August 1944 and was known for the harsh conditions under which prisoners were incarcerated. Pawiak held a number of Jewish prisoners caught on the "Aryan" side of Warsaw such as Mrs. Neufeld.
+        </li>
+                <li>
+            <a name="note_22"></a>
+            Conditions in Bergen Belsen deteriorated steadily in 1944 and underwent a profound deterioration from January through March of 1945 as thousands of prisoners on death marches from other camps were sent there resulting in chaotic conditions and the spread of infectious diseases. At its height in March 1945, the typhus epidemic in Belsen claimed more than 18,000 lives. From January 1945 to mid April of that year, some 35,000 prisoners perished and were buried in mass graves.
+        </li>
+                <li>
+            <a name="note_23"></a>
+            Theresienstadt (Czech, Terezin) was a ghetto established by the Germans in northwest Czechoslovakia. It was liberated by the Red Army on May 8, 1945. 33,000 Jews perished in Theresienstadt, and 88,000 were deported from there to extermination camps.
+        </li>
+                <li>
+            <a name="note_24"></a>
+            Falkenberg is actually in eastern Germany northeast of Leipzig.
+        </li>
+                <li>
+            <a name="note_25"></a>
+            It is not clear whether or not Mrs. Neufeld's husband was with her in hiding in "Aryan" Warsaw or in Pawiak prison though this was probably the case. It is also not clear why the couple was transferred to the satellite camp at Belsen for those who had papers from foreign countries in their possession. It is quite plausible that the Neufeld's had such papers, but the interview does not reveal to where.
+        </li>
+                <li>
+            <a name="note_26"></a>
+            Had Mrs. Neufeld and her husband been liberated in Bergen Belsen and remained there, they would have become part of the largest Displaced Persons camp in Europe after the war. Located in the British zone of occupation of Germany, the Displaced Persons camp at Belsen had a largely self-governed and self contained Jewish community Jewish community from 1945-1950. The DP camp focused on the physical and spiritual rehabilitation of the survivors, the search for relatives, and the political struggle for rights and immigration to Palestine and then the State of Israel.
+        </li>
+                <li>
+            <a name="note_27"></a>
+            This was a form of resistance, a way of affirming one's humanity in inhuman conditions.
+        </li>
+                <li>
+            <a name="note_28"></a>
+            Mrs. Neufeld might have been alluding to romance languages. She indicated earlier that she was very fond of the French language in her Warsaw gymnasium.  
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription (Polish)
+                            </i>: 
+            <span class="Transcription (Polish)">
+                <name>M. Holiday</name>, <name>I. Laskawiec</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Transcription (Russian)
+                            </i>: 
+            <span class="Transcription (Russian)">
+                <name>Argos Multilingual</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC117">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC117" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Warsaw Ghetto
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Warsaw, Poland<br />
+                            </p>
+                            <div>
+                Established on October 16, 1940 with around 400,000 people (about 30% of the population of Warsaw but housed in an area covering only 2.4% of the city).  Fighting broke out in January 1943 and ended on April 23; survivors were either killed or deported to concentration and death camps.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC117 = new OpenLayers.Map('map_vothC117', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC117.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC117.addLayer(markers);
+map_id_vothC117.zoomToMaxExtent();
+
+                        var lat_1 = 52.250000;
+                        var lon_1 = 21.000000;
+                        var vothC117 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC117_icon = new OpenLayers.Marker(vothC117);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC117);
+markers.addMarker(vothC117_icon);
+    addMarker(vothC117, popupClass, "", true, false, false);
+    map_id_vothC117.setCenter(vothC117, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC8">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC8" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Bergen-Belsen
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Bergen, Germany<br />
+                            </p>
+                            <div>
+                Established in the spring of 1943 and initially intended as a transit camp, it soon was integrated into the concentration camp network.  Its population swelled late in the war as inmates from other camps further east were moved into it--from around 15,000 in late 1944 to 41,250 in March 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC8 = new OpenLayers.Map('map_vothC8', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC8.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC8.addLayer(markers);
+map_id_vothC8.zoomToMaxExtent();
+
+                        var lat_2 = 52.766700;
+                        var lon_2 = 9.916700;
+                        var vothC8 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC8_icon = new OpenLayers.Marker(vothC8);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC8);
+markers.addMarker(vothC8_icon);
+    addMarker(vothC8, popupClass, "", true, false, false);
+    map_id_vothC8.setCenter(vothC8, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_3 = 50.033300;
+                        var lon_3 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_4 = 48.866700;
+                        var lon_4 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL79">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL79" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Warsaw, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL79 = new OpenLayers.Map('map_vothL79', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL79.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL79.addLayer(markers);
+map_id_vothL79.zoomToMaxExtent();
+
+                        var lat_5 = 52.250000;
+                        var lon_5 = 21.000000;
+                        var vothL79 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL79_icon = new OpenLayers.Marker(vothL79);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL79);
+markers.addMarker(vothL79_icon);
+    addMarker(vothL79, popupClass, "", true, false, false);
+    map_id_vothL79.setCenter(vothL79, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL123">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL123" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            L&#39;viv, Ukraine
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL123 = new OpenLayers.Map('map_vothL123', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL123.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL123.addLayer(markers);
+map_id_vothL123.zoomToMaxExtent();
+
+                        var lat_6 = 49.833300;
+                        var lon_6 = 24.000000;
+                        var vothL123 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL123_icon = new OpenLayers.Marker(vothL123);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL123);
+markers.addMarker(vothL123_icon);
+    addMarker(vothL123, popupClass, "", true, false, false);
+    map_id_vothL123.setCenter(vothL123, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL135">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL135" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Krak&#195;w, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL135 = new OpenLayers.Map('map_vothL135', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL135.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL135.addLayer(markers);
+map_id_vothL135.zoomToMaxExtent();
+
+                        var lat_7 = 50.050000;
+                        var lon_7 = 19.916700;
+                        var vothL135 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL135_icon = new OpenLayers.Marker(vothL135);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL135);
+markers.addMarker(vothL135_icon);
+    addMarker(vothL135, popupClass, "", true, false, false);
+    map_id_vothL135.setCenter(vothL135, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL50">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL50" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Terez&#195;n, Czechoslovakia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL50 = new OpenLayers.Map('map_vothL50', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL50.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL50.addLayer(markers);
+map_id_vothL50.zoomToMaxExtent();
+
+                        var lat_8 = 50.500000;
+                        var lon_8 = 14.150000;
+                        var vothL50 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL50_icon = new OpenLayers.Marker(vothL50);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL50);
+markers.addMarker(vothL50_icon);
+    addMarker(vothL50, popupClass, "", true, false, false);
+    map_id_vothL50.setCenter(vothL50, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL150">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL150" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Falkenberg, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL150 = new OpenLayers.Map('map_vothL150', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL150.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL150.addLayer(markers);
+map_id_vothL150.zoomToMaxExtent();
+
+                        var lat_9 = 49.850000;
+                        var lon_9 = 12.233300;
+                        var vothL150 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL150_icon = new OpenLayers.Marker(vothL150);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL150);
+markers.addMarker(vothL150_icon);
+    addMarker(vothL150, popupClass, "", true, false, false);
+    map_id_vothL150.setCenter(vothL150, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_pogrom">
+                <a name="vothG_pogrom"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    pogrom.
+                </span>
+                <span class="definition">
+                    A form of riot or mob violence directed against a particular group, whether ethnic, religious, or other, and characterized by the killing and destruction of their homes, businesses, and religious centers. The term was originally used to denote extensive violence against Jews.
+                </span>
+            </li>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                        <li class="vothG_aryan">
+                <a name="vothG_aryan"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Aryan.
+                </span>
+                <span class="definition">
+                    Derived from a Sanskrit word meaning “noble,” the term was used in Nazi pseudo-scientific jargon to denote a race which had supposedly superior blood and culture. During the Holocaust, “Aryan” came to mean anyone who was not Jewish or Roma (Gypsy).
+                </span>
+            </li>
+                        <li class="vothG_folk">
+                <a name="vothG_folk"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    folk-german (Volkdeutsche).
+                </span>
+                <span class="definition">
+                    The Nazi term for ethnic Germans living outside of Germany. The Nazis made every effort to win the support of these German minorities.
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_action">
+                <a name="vothG_action"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    action.
+                </span>
+                <span class="definition">
+                    Episodes of coordinated violence against Jewish communities, including the rounding up of Jews for deportation to ghettos, concentration camps, or killing centers.
+                </span>
+            </li>
+                        <li class="vothG_gendarme">
+                <a name="vothG_gendarme"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    gendarme.
+                </span>
+                <span class="definition">
+                    Policeman.
+                </span>
+            </li>
+                        <li class="vothG_ss">
+                <a name="vothG_ss"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    SS.
+                </span>
+                <span class="definition">
+                    Acronym for the German Schutzstaffel (“Protective Echelon”), a major Nazi organization. It grew from a small paramilitary unit to a powerful force that served as Hitler's "Praetorian Guard," the Nazi Party's "Shield Squadron" and a force that, fielding almost a million men (both on the front lines and as political police), managed to exert as much political influence as the German Army. Built upon the Nazi racial ideology, the SS, under Heinrich Himmler's command, was responsible for many (and most of the worst) of the crimes against humanity perpetrated by the Nazis during World War II.
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_block">
+                <a name="vothG_block"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    block.
+                </span>
+                <span class="definition">
+                    A single concentration camp barrack.
+                </span>
+            </li>
+                        <li class="vothG_commandant">
+                <a name="vothG_commandant"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    commandant.
+                </span>
+                <span class="definition">
+                    A commander of a Nazi camp. In the death camps the commandant was required to witness every gassing carried out through a peephole, and supervise both the preparations and the aftermath.
+                </span>
+            </li>
+                        <li class="vothG_dp">
+                <a name="vothG_dp"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    DP.
+                </span>
+                <span class="definition">
+                    Displaced Person, or refugee.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            When Bergen Belsen was liberated by British troops on  April 15, 1945, there were some 58,000 surviving inmates and 10,000 corpses. Anne Frank and her sister had died about a month before of typhus and were buried in a mass grave. The survivors were suffering from extreme malnutrition and virulent diseases such as tuberculosis, dysentery and typhus. Nearly 14,000 died in the two months following the liberation of the camp.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            World War II began with Germany's attack on Poland on September 1, 1939. On September 28, 1939, Warsaw, Poland's capital, surrendered, and in the early days of October the last battles were fought. On September 17, 1939, Soviet forces invaded eastern Poland and overran large parts of the country including the large industrial and cultural center of Lwow (Ger. Lemberg).
+Lwow had a Jewish community in 1939 of approximately 110,000 making it the third largest Jewish community in Poland. Mrs. Neufeld was one of the some 100,000 Jewish refugees from German occupied western Poland who fled to the city.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Soviet German war began on June 22, 1941 with the German invasion of the Soviet Union. The Germans routed Soviet forces in the early weeks of the invasion and rapidly captured Lwow, which fell on June 30, 1941.
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            There had been a great deal of antisemitism in Lwow in part because the Poles and Ukrainians in the city each accused the Jews of helping the other. The murder of Jews began on the same day as the German occupation with Germans and Ukrainians taking part. The Lwow pogrom lasted from June 30 to July 3, 1941. In four days of killing, approximately 4,000 Jews were murdered. From July 25-27, the Ukrainians carried out another pogrom this time murdering a further 2,000. Only a handful of the Jews of Lwow survived the war.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Germans established the Lwow ghetto in November/December 1941. 5,000 sick and elderly Jews were killed during the move to the ghetto.
+        </li>
+                <li class="note_6">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Folk German (volksdeutsche) was the Nazi term for an ethnic Germans residing outside of Germany who was a national in their country of residence. Nazi Germany received a good deal of support from these individuals in countries such as Poland.
+        </li>
+                <li class="note_7">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Warsaw ghetto was established in mid November 1940. It was surrounded by a high wall topped by jagged shards of glass and sealed off from the "Aryan" section of the city. Mrs. Neufeld was fortunate in finding an opening in the wall through which she could enter the ghetto and rejoin her family. Perhaps the opening had been made by those who smuggled food into the ghetto.
+        </li>
+                <li class="note_8">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The mass deportation from the Warsaw ghetto began on July 22, 1942 and lasted until September 12 of that year. During this time, more than a quarter of a million Warsaw ghetto Jews were deported to the Treblinka extermination camp where they were murdered by gas.
+        </li>
+                <li class="note_9">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            From the outbreak of the war, Warsaw experienced German air raids, but the antiaircraft defenses of the city were crippled after the first week. The Germans then bombed the city at will and many Warsaw residents perished. German artillery also indiscriminately shelled the city.
+        </li>
+                <li class="note_10">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            In place of the traditional Jewish Community Council of the city, the Germans installed a Judenrat. It was this body that carried out their orders. Adam Czerniakow, head of the Warsaw Judenrat, committed suicide rather than sign the order for deportation that was couched in the usual deceptive language employed by the Germans. Obviously, Mrs. Neufeld and her family resisted German blandishments by doing everything possible to avoid deportation.
+        </li>
+                <li class="note_11">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The mortality rate in the Warsaw ghetto was atrocious. The monthly death toll from June 1941 through April 1942 fluctuated from 4,000-5,500. At its height in March 1941, there were about 445,000 inhabitants of the Warsaw ghetto. By the time of the beginning of deportations in July, 1942, the population had shrunk by more than 100,000 in what can only be described as gradual extermination. Jewish medical personnel tried to stem the death rate as best they could, but, as Mrs. Neufeld indicates, they were often helpless in the face of acute shortages of food and medicine.
+        </li>
+                <li class="note_12">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            When the first phase of deportations ("the first action") ended in September 1942, there were about 35,000 Jews who remained legally  in the ghetto and about 25,000 who were there illegally.
+        </li>
+                <li class="note_13">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Germans launched a second wave of deportations on January 18, 1943 but were met with Jewish armed and passive resistance. The deportations were halted after a few days but not before they managed to seize 5,000-6,000 Jews.
+        </li>
+                <li class="note_14">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mrs. Neufeld's escape, as was the case with so many others, was most fortuitous. She was among the more than 25,000 Jews hidden by sympathetic Poles in "Aryan" Warsaw.
+        </li>
+                <li class="note_15">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The uprising of the Warsaw ghetto, the most sustained and famous Jewish revolt during the Holocaust, began on April 19, 1943, the eve of the Passover holiday.
+
+        </li>
+                <li class="note_16">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Despite the German use of tanks, artillery and aircraft, the fighters in the Warsaw ghetto fought courageously for about one month. The civilian population hid in ingeniously constructed underground bunkers throughout the ghetto. The Germans burned every building in the ghetto to the ground in an effort to quell the rebellion, but it took them about one month to do so, more time that it had taken them to conquer some European countries.
+        </li>
+                <li class="note_17">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mrs. Neufeld was evacuated just five days before Bergen Belsen was liberated.
+        </li>
+                <li class="note_18">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Bergen Belsen was established in July 1943 so Mrs. Neufeld was there almost from its inception. It began as a prisoner of war camp but had five satellite camps among which was one for Jews from Poland who had papers issued by various countries mainly in Latin America. As Mrs. Neufeld subsequently indicates, the prisoners in this satellite camp did not have to engage  in forced labor and conditions were at first better than those elsewhere in Belsen. The deportation of some 1,700 prisoners from this satellite camp to Auschwitz did indeed occur in October 1943.
+350 more were deported to Auschwitz in early 1944. Mrs. Neufeld and, as she will later reveal, her husband, who had been sent to Belsen with her, were among the several hundred who remained in the camp. Just why they were spared is unknown.
+        </li>
+                <li class="note_19">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Irma Grese, a female camp supervisor, was known as "the bitch of Belsen" due to the inhuman cruelty she displayed towards the prisoners. She was sentence to death for her crimes by a British military court and hanged in December 1945 at the age of twenty one.
+        </li>
+                <li class="note_20">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Josef Kramer was appointed commandant of Bergen Belsen on December 2, 1944. Before his appointment, he worked in other concentration camps including Auschwitz where he became known for his ruthless and sadistic behavior. He was tried by a British military court, sentenced to death and hanged on December 12, 1945 at the age of thirty nine. Adolf Hass and Siegfried Leidle preceded Kramer as Auschwitz commandants.
+        </li>
+                <li class="note_21">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Pawiak prison was located in the Jewish quarter of Warsaw. It was the main prison used by German security forces in the Warsaw district from October 1939 to August 1944 and was known for the harsh conditions under which prisoners were incarcerated. Pawiak held a number of Jewish prisoners caught on the "Aryan" side of Warsaw such as Mrs. Neufeld.
+        </li>
+                <li class="note_22">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Conditions in Bergen Belsen deteriorated steadily in 1944 and underwent a profound deterioration from January through March of 1945 as thousands of prisoners on death marches from other camps were sent there resulting in chaotic conditions and the spread of infectious diseases. At its height in March 1945, the typhus epidemic in Belsen claimed more than 18,000 lives. From January 1945 to mid April of that year, some 35,000 prisoners perished and were buried in mass graves.
+        </li>
+                <li class="note_23">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Theresienstadt (Czech, Terezin) was a ghetto established by the Germans in northwest Czechoslovakia. It was liberated by the Red Army on May 8, 1945. 33,000 Jews perished in Theresienstadt, and 88,000 were deported from there to extermination camps.
+        </li>
+                <li class="note_24">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Falkenberg is actually in eastern Germany northeast of Leipzig.
+        </li>
+                <li class="note_25">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            It is not clear whether or not Mrs. Neufeld's husband was with her in hiding in "Aryan" Warsaw or in Pawiak prison though this was probably the case. It is also not clear why the couple was transferred to the satellite camp at Belsen for those who had papers from foreign countries in their possession. It is quite plausible that the Neufeld's had such papers, but the interview does not reveal to where.
+        </li>
+                <li class="note_26">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Had Mrs. Neufeld and her husband been liberated in Bergen Belsen and remained there, they would have become part of the largest Displaced Persons camp in Europe after the war. Located in the British zone of occupation of Germany, the Displaced Persons camp at Belsen had a largely self-governed and self contained Jewish community Jewish community from 1945-1950. The DP camp focused on the physical and spiritual rehabilitation of the survivors, the search for relatives, and the political struggle for rights and immigration to Palestine and then the State of Israel.
+        </li>
+                <li class="note_27">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            This was a form of resistance, a way of affirming one's humanity in inhuman conditions.
+        </li>
+                <li class="note_28">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mrs. Neufeld might have been alluding to romance languages. She indicated earlier that she was very fond of the French language in her Warsaw gymnasium.  
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

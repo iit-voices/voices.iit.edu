@@ -1,0 +1,2038 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Esther Freilich; August 9, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-esther-freilich-august-9-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Esther Freilich; August 9, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=freilichE">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=freilichE&display=freilichE_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=freilichE&display=freilichE_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=freilichE">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="25.407" end="x">[In English] <a class="placename" href="#vothL256">Chicago</a>, November the 16th, 1950. This is spool 9-40. The . . . a short interview with a child, Esther Freilich, the daughter of Mrs. Frieda Freilich . . . of whom we have that long interview, reported in the book as, eh . . . "Mrs. Freich." Boder.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="25.407" end="x">Now for a short statement . . . eh . . . Esther . . . Esther Frieden . . . was hat?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="37.650" end="x">Freilich.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="38.298" end="x">Esther Freilich, whose mother has covered Spool 36, 37 and 38. Esther is 13 years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="48.430" end="x">[In German] So, Esther, tell me [unintelligible] what is your name and how old are you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="54.359" end="x">My, my name is Esther Freilich. I am [unintelligible, already?] thirteen years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="58.670" end="x">You are [unintelligible]. When was your birthday?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="61.658" end="x">On March 11th.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="63.214" end="x">On March 11th, you turned thirteen years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="66.747" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="67.167" end="x">Yes. So, Esther, tell me, err, you have been taken with your mother how many times?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="72.661" end="x">Oh, three, four times.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="75.540" end="x">Three, four times</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="76.505" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="77.096" end="x">Err, tell me, how was . . . how was it in <a class="placename" href="#vothC27" type="camp">Drancy</a>. Were you in <a class="placename" href="#vothC27" type="camp">Drancy</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="83.803" end="x">Yes. I was in the <a class="placename" href="#vothC27" type="camp">Drancy</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="84.444" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="85.080" end="x">I come at [unintelligible] at two o'clock at night. In [unintelligible] and we do in the Commissariat. In, err, Commissariat is preparing. And afterwards we do take the train and we ride to <a class="placename" href="#vothC27" type="camp">Drancy</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="99.523" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="100.146" end="x">We are walking.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="100.737" end="x">So, who came to your home, to get you and when was this?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="104.395" end="x">The French Poli . . . Police.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="106.123" end="x">The Police came. At what time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="107.819" end="x">Two o'clock of the night.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="108.831" end="x">At two o'clock at night.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="110.030" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="110.372" end="x">And what did they tell you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="111.632" end="x">The told me that [unintelligible]. We were to prepare our packages, where they [unintelligible]. Where [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="116.161" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="117.794" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="120.030" end="x">Well, and what kind of packages did you prepare?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="121.543" end="x">Err, we taked, what one thinks, the necessary.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="125.209" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="125.770" end="x">But they said, we could not [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="127.486" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="128.235" end="x">Because, err, [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="129.077" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="130.980" end="x">We had understood, when we went . . . we taked, what they thought . . . meant . . . we could . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="136.565" end="x">Uh, hm. And where was your father? Where is the . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="139.047" end="x">Our father, he worked at nights.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="140.780" end="x">I see. Well, and who went then, your mother and who else?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="144.917" end="x">Mother, my brother and I.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="147.025" end="x">Yes, and you. Well? Then you were taken to the Commissariat.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="150.600" end="x">Yes. At the Commissariat they looked at [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="154.253" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="155.034" end="x">The [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="155.815" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="156.142" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="156.828" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="157.812" end="x">I went with Mama . . . she was then gone to <a class="placename" href="#vothC27" type="camp">Drancy</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="160.747" end="x">And the brother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="161.998" end="x">With the brother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="162.700" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="163.385" end="x">They left to <a class="placename" href="#vothC27" type="camp">Drancy</a>. I was a big [unintelligible] . . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="168.099" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="168.768" end="x">Big! And . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="169.530" end="x">Yes, how did you go to <a class="placename" href="#vothC27" type="camp">Drancy</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="171.179" end="x">By autobus.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="172.921" end="x">By autobus. Yes and then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="174.290" end="x">Then we came to <a class="placename" href="#vothC27" type="camp">Drancy</a>. Had [unintelligible] also taken, the . . . because of the command.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="180.154" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="180.558" end="x">And we waited in a, err, a big, err, house. And [unintelligible] all things.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="185.524" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="185.960" end="x">She took everything. And [unintelligible], the me . . . the men, they said then, the women . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="190.085" end="x">Yes, and where did they take your brother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="195.129" end="x">The brother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="195.923" end="x">To the men . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="196.982" end="x">Yes, to the men.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="197.885" end="x">And you stayed with . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="199.426" end="x">With mother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="200.205" end="x">Yes. Well, tell me, what is there happened?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="203.069" end="x">That was . . . there . . . then I . . . [unintelligible] . . . one bed on top of the other..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="212.066" end="x">Yes. Where did you sleep?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="214.074" end="x">With mother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="214.837" end="x">You slept by your mother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="216.020" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="216.534" end="x">And what did they give you to eat?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="218.184" end="x">At first I was with mother [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="221.624" end="x">Hmm, yes, with your mother at [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="223.804" end="x">Also there and [unintelligible] children. Then they were all [unintelligible] sent to the Red Cross and [unintelligible, sounds like "Aral"] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="229.097" end="x">Hmm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="229.657" end="x">They, err, all sent to [unintelligible, sounds like "Aral"], because the children were sick. The children had a big camp, all children went with. With the . . . there, there was coffee and a miller . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="237.783" end="x">Hmm. Yes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="238.732" end="x">And there was bread . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="239.619" end="x">I see . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="240.211" end="x">And a little [unintelligible, sounds like "Polish"] doll.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="241.410" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="241.461" end="x">And, err, then they, err, deported.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="243.842" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="244.386" end="x">They gi . . . give a little, err, flour to the children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="247.608" end="x">A little bit of flour.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="248.573" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="248.978" end="x">For the deported children?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="249.896" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="250.301" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="250.876" end="x">Well . . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="251.623" end="x">Well, and err, what happened to you then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="253.506" end="x">To me? We were . . . yes, err . . . [unintelligible, sounds like "averted"]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="259.763" end="x">What [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="261.382" end="x">The Police. Did just [unintelligible] and had there their . . . [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="267.271" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="267.723" end="x">[Unintelligible, sounds like "Stollwitz"]. Took it from me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="269.935" end="x">Hmm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="270.745" end="x">And this guy left . . . from <a class="placename" href="#vothC27" type="camp">Drancy</a> . . . was deported to Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="273.752" end="x">Who? The other people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="275.248" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="275.684" end="x">And you and your brother left.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="277.476" end="x">I with my brother, with the, err, err, mother, with other family . . . we left . . . and also a little animal.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="281.776" end="x">Yes, why did you leave?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="283.334" end="x">Because my father David had [unintelligible] learned . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="286.403" end="x">I see.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="287.384" end="x">And while, while the, err, flu . . . laughed except [unintelligible], you understand?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="290.499" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="291.029" end="x">No?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="291.574" end="x">Well? What else to you want to tell me?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="293.661" end="x">I want tell you . . . .me . . . because [unintelligible] of <a class="placename" href="#vothL13">Paris</a>. I was [unintelligible]. I was used to . . . [unintelligible]. So, I saw that children are playing in the streets.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="303.315" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="303.938" end="x">[Unintelligible] . . . sorry. I didn't [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="306.322" end="x">Why not?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="306.945" end="x">The police didn't let me. Forbidden in Germany. Children [unintelligible] in the cinema.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="310.358" end="x">Yes. The Jewish children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="312.041" end="x">Yes, Jewish children.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="312.992" end="x">Did you meet, err . . . [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="315.501" end="x">[Unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="316.997" end="x">The [unintelligible] you met?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="318.961" end="x">Yes. I also [unintelligible, sounds like "head"] . . . I still have . . . [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="320.301" end="x">Yes, you have to show me next time.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="321.734" end="x">I will show . . . [unintelligible] . . . had [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="323.916" end="x">Yes. And, err, did they let you play in the garden?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="326.643" end="x">No, no, they didn't.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="328.669" end="x">Did you go to school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="328.669" end="x">Only four days. [Unintelligible] . . . the last moment I was [unintelligible]. I had [unintelligible], because, err, [unintelligible] . . . in school [unintelligible]. And me, I didn't know that [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="344.839" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="345.263" end="x">Do you understand? I didn't go then.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="347.927" end="x">I see. [Unintelligible]. That is where you lived. Who was there? Your father or your mother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="353.194" end="x">No, I was there alone. Two years I was alone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="355.828" end="x">[Unintelligible] . . . Two years you were alone?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="357.277" end="x">[My parents no know . . . unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="358.758" end="x">Why? Who sent those to you there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="361.252" end="x">[Unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="363.247" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="364.587" end="x">Didn't tell her that . . . she knows a young woman . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="369.387" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="369.917" end="x">[Unintelligible] . . . claimed</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="370.821" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="372.676" end="x">Yes, I traveled. Mother . . . [unintelligible] . . . because I didn't know what mother had done . . . I thought, mother was long gone to Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="379.437" end="x">Which mother?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="380.502" end="x">My mother.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="381.129" end="x">Why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="381.724" end="x">Because I didn't know what mother . . . I didn't know how to write.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="385.090" end="x">Oh! You didn't know how to write!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="386.875" end="x">Yes! Because, err, mother had written [unintelligible] . . . err, I wrote . . . well, my, err . . . letters . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="393.222" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="394.537" end="x">The woman in the camp, she wrote, when I was coming. All, err, to the "gare" [she probably means: train station] with false documents.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="398.159" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="398.843" end="x">[Unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="399.814" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="400.237" end="x">And I, I [unintelligible] you win a basket and there were four thousand soldiers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="404.448" end="x">Who said that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="406.515" end="x">I did. I am [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="413.796" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="414.720" end="x">[Unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="417.945" end="x">And so then you left?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="419.855" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="420.262" end="x">To where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="420.997" end="x">I went home. Mother came with the things.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="425.044" end="x">I see. And then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="425.544" end="x">After two years. I came back from <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="427.497" end="x">I see. When did your mother come to look for you? When the Germans had already left?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="431.029" end="x">No, and [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="434.964" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="435.464" end="x">[Unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="437.546" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="438.074" end="x">Yes, I forgot to say . . . [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="442.528" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="442.872" end="x">So then I went to [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="445.545" end="x">You went to [unintelligible] with whom?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="446.483" end="x">Yes. With the, err, with mother, with the, err, with my brother and with the sister. The other one . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="450.562" end="x">With the other sister.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="451.250" end="x">Other sister. With the other sister.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="451.984" end="x">Yes, and what happened there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="453.109" end="x">There [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="456.513" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="463.403" end="x">You understand? The train from [unintelligible] . . . put us on . . . [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="464.356" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="464.777" end="x">And we rode all day and all night . . . and we couldn't, err . . . without we know, without they give us something to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="470.747" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="471.449" end="x">[Unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="473.732" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="474.263" end="x"> I had [unintelligible] . . . I had a plastic . . . err, seat . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="477.870" end="x">Hmm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="478.760" end="x">[Unintelligible] and then I went outside.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="481.914" end="x">In [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="482.445" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="482.695" end="x">Hmm . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="483.195" end="x">And then I went outside, I, I had left the hospital . . . I didn't know, what [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="487.551" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="488.066" end="x">What good luck . . . she already left again, because, err . . . they wanted to [unintelligible, sounds like "separate"] me . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="492.750" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="493.500" end="x">And then I left. The . . . err . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="494.671" end="x">And to whom did you go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="495.717" end="x">To Mama.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="496.450" end="x">I see.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="496.918" end="x">[Unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="499.354" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="499.838" end="x">And, err, and the thing. And we left at night . . . they took us out [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="504.319" end="x">Yes, that was again . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="506.973" end="x">Yes. We left and the day, I saw, how my sister was deported . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="511.313" end="x">Your sister?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="512.343" end="x">And she called my name!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="515.262" end="x">I saw, how they called the name . . . my sister left . . . and I said, I give you something [unintelligible] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="529.231" end="x">I see.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="529.855" end="x">I left [unintelligible] and carried her. Afterward the brother went outside again, thought, they are going to deport him . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="537.962" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="538.602" end="x">The mother with the other kids could deported. [Unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="541.162" end="x">And what are you doing now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="545.128" end="x">I don't know? Now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="546.549" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="547.111" end="x">What do I want to do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="547.720" end="x">Yes. What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="548.282" end="x">[Unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="548.954" end="x">Yes, but are you going to school right now? Are you studying . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="551.765" end="x">Naw, now I go to school for Ge . . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="553.467" end="x">Yes, but before you came, did you go to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="555.497" end="x">School.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="556.184" end="x">Which school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="556.808" end="x">I went to . . . err, the [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="559.275" end="x">Yes, to French school?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="560.712" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="561.040" end="x">With French kids?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="562.039" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="562.461" end="x">And are they good to, err, to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="564.163" end="x">They are . . . well, one kid wrote, "you dirty Jew" . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="568.831" end="x">No! And the teach . . . who is the teacher?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="571.485" end="x">The teacher doesn't . . . a French woman . . . she doesn't like me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="574.389" end="x">Why not?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="575.060" end="x">I don't know. She doesn't like everybody.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="578.120" end="x">Oh! How many Jews are there in your class?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="580.977" end="x">In my class, there are four Jews . . . [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="583.959" end="x">Four Jews. And nobody noticed that [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="587.909" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="588.299" end="x">Well, and, err, how long do you have to go to school for?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="592.296" end="x">One year.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="592.546" end="x">One year and then what will you do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="594.045" end="x">And then I'll go to the other school, a German school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="597.011" end="x">What do you learn?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="597.917" end="x">I [unintelligible], err, what I'm learning? The machine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="600.352" end="x">What machine?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="601.976" end="x">Err, shorthand.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="602.944" end="x">Oh! You are learning the machine in order to write?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="604.739" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="605.114" end="x">Well, you'll learn that.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Esther Freilich</span>:
+            </span>
+            <span class="utterance" who="#freilichE" start="607.627" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="608.360" end="x">[In English] Alright. This concludes a short [unintelligible] . . . Freilich, whose mother insisted that the child be interview— [unintelligible] . . . appeal. And, eh [unintelligible] now all her difficulties at school are due to the fact that she is Jewish. Eh, this is, eh, August the 9th, taken at . . . number 9 Rue de Patin, the home for aged Jews. The child is a child of a concierge here at the place. And, umm, this concludes the recording . . . wire recording of Illinois Institute of Technology.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Dorothea Walter</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>Dorothea Walter</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC27">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC27" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Drancy
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Drancy, France<br />
+                            </p>
+                            <div>
+                The camp was opened after a roundup of in Paris Jews in August, 1941, in which over 4000 Jews were arrested.  Drancy was under the control of the French police until July 3, 1943 when Nazi Germany took day-to-day control as part of the major stepping up at all facilities for the mass exterminations.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC27 = new OpenLayers.Map('map_vothC27', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC27.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC27.addLayer(markers);
+map_id_vothC27.zoomToMaxExtent();
+
+                        var lat_1 = 48.933300;
+                        var lon_1 = 2.433300;
+                        var vothC27 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC27_icon = new OpenLayers.Marker(vothC27);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC27);
+markers.addMarker(vothC27_icon);
+    addMarker(vothC27, popupClass, "", true, false, false);
+    map_id_vothC27.setCenter(vothC27, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL256">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL256" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chicago, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL256 = new OpenLayers.Map('map_vothL256', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL256.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL256.addLayer(markers);
+map_id_vothL256.zoomToMaxExtent();
+
+                        var lat_2 = 41.850000;
+                        var lon_2 = -87.650000;
+                        var vothL256 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL256_icon = new OpenLayers.Marker(vothL256);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL256);
+markers.addMarker(vothL256_icon);
+    addMarker(vothL256, popupClass, "", true, false, false);
+    map_id_vothL256.setCenter(vothL256, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_3 = 48.866700;
+                        var lon_3 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

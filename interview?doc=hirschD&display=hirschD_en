@@ -1,0 +1,1534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews David Hirsch; August 26, 1946; Genève, Switzerland : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-david-hirsch-august-26-1946-genve-switzerland interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews David Hirsch; August 26, 1946; Genève, Switzerland</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=hirschD">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=hirschD&display=hirschD_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=hirschD&display=hirschD_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=hirschD">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=hirschD">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            At the time of the Nazi assumption of power, Mannheim had a Jewish population of 6,509. Due to Nazi economic and social anti-Semitic measures, 3,927 Mannheim Jews emigrated from 1933 to 1940, including David Hirsch's parents.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            Mannheim is located in Baden. After the fall of France, some 2,000 Jews from Mannheim were deported in late October 1940 to Gurs concentration camp, located in southern France. The camp was administered by the collaborationist French Vichy government. Despite the harsh living conditions endured by the detainees, Jewish cultural and religious life was maintained in the camp.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            Gurs was established in April 1939. It was situated some fifty miles from the Spanish border. Its establishment came at the same time as the defeat of the Spanish republicans in the bitter and bloody Spanish Civil War from 1936-39 by Francisco Franco, who became the Fascist dictator of Spain. Many republicans fled across the border, and a number were interned in Gurs.
+        </li>
+                <li>
+            <a name="note_4"></a>
+            Like Gurs, Rivesaltes was at first used to imprison Spanish republican loyalists and troops who had fled to France. It was located in southeastern France, not far from the Spanish border and a few miles from the town of Perpignan. At the time of the arrival of David and his grandparents, Rivesaltes had at least 3,000 children and was considered a family camp despite its primitive and unhealthy living and sanitary conditions.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            The OSE was especially active in providing medical and social assistance to those interned at the time in Gurs and Rivesaltes.
+        </li>
+                <li>
+            <a name="note_6"></a>
+            Southern France was under the control of the Vichy government following the armistice of June 1940, and was not occupied by German troops until November 1942 when the Allies landed in North Africa.
+        </li>
+                <li>
+            <a name="note_7"></a>
+            Hirsch's grandparents were deported from Rivesaltes by Vichy French authorities during the large deportations of Jews from France to Nazi extermination camps in the summer and fall of 1942. They most likely were murdered in Auschwitz immediately upon arrival, along with some 42,500 Jews sent eastward from France in 1942—approximately one-third from the Vichy zone of France.
+        </li>
+                <li>
+            <a name="note_8"></a>
+            The OSE worked assiduously to save Jewish children in France. David benefited from the efforts of this organization by first being placed in a children's refuge center near the town of Limoges in the Haute Vienne department in central France.
+        </li>
+                <li>
+            <a name="note_9"></a>
+            Following the roundups (Fr. raffles) of Jews in 1942 and the occupation of all of France by the Germans in November of that year, the situation for the Jews deteriorated, and the OSE had to move David and others to safer locations. The "circuit Garel," named after its leader Georges Garel, was created to hide children such as David who were being hunted by the Nazis.
+        </li>
+                <li>
+            <a name="note_10"></a>
+            The OSE could not have functioned without the help of Christian institutions and individual Christians such as the farmers in the Grenoble area of southwestern France mentioned by David.
+        </li>
+                <li>
+            <a name="note_11"></a>
+            False identity papers were absolutely essential to living clandestinely. Skillfully forged papers could make the difference between life and death for those on the run from the Nazis and their Vichy French collaborators.
+        </li>
+                <li>
+            <a name="note_12"></a>
+            Robert Gamzon, who became a French partisan commander, founded the Jewish scout movement (Eclaireurs Israelites de France) in France. After the French surrender, Gamzon re-established the movement's network in the cities of unoccupied France where many Jewish refugees were located. He spearheaded the establishment of children's homes, welfare centers, workshops, agricultural training farms and Jewish educational undertakings. David benefited from the efforts of this organization, which worked alongside the OSE. The scouts were especially active in the southwestern area of France where he was located.
+        </li>
+                <li>
+            <a name="note_13"></a>
+            The reference is to the EIF (Eclaireurs Israélites de France), the Jewish Boy Scout organization of France, which was engaged in liberating Jewish children and adolescents from labor and concentration camps during World War II.
+        </li>
+                <li>
+            <a name="note_14"></a>
+            The sentence in the letter about going to a big school in Lyon, the second largest city in the country at the time, located in southeastern France, was a code for getting prepared to be transferred across the border into Switzerland.
+        </li>
+                <li>
+            <a name="note_15"></a>
+            "The Sixth" (La Sixième) was  the code name for a clandestine scout rescue network formed by Robert Gamzon in the summer of 1942. It produced false identity papers, found asylum for Jewish children in non-Jewish institutions and private homes, and worked in smuggling Jews of all ages across the border into neutral Spain and Switzerland.
+        </li>
+                <li>
+            <a name="note_16"></a>
+            The OSE in France was actually a part of the Union Generale des Israelites de France (UGIF), the French Jewish council established by the Germans on November 29, 1941. Its counterpart in the Vichy zone did not begin to function until May 1942. The UGIF and its components functioned legally while certain UGIF agencies, such as the OSE and the scouts, engaged in illegal work, at times with the knowledge and participation of UGIF officials. Eventually the OSE and the scouts went almost completely underground. The UGIF was eventually disbanded after the liberation of France in August 1944.
+        </li>
+                <li>
+            <a name="note_17"></a>
+            The man David is referring was most probably from the OSE. He had accompanied the children from Paris to Annecy to attempt to transfer them across the Swiss border.
+        </li>
+                <li>
+            <a name="note_18"></a>
+            Official Swiss policy at the time was that "refugees on racial grounds only, for example Jews" did not fall under the category of political refugees to whom Switzerland had traditionally offered refuge. These "racial refugees" were therefore refused admittance into the country. Consequently, many thousands of Jews were denied entry, and many others who had managed to slip across the border were expelled. This policy was carried out despite full knowledge on the part of the Swiss government that Jews were being murdered by Nazi Germany.
+        </li>
+                <li>
+            <a name="note_19"></a>
+             It is unclear if David was actually expelled to France, or if this would have been his fate had the Swiss official, as he subsequently indicates, not relented. It seems that after the official's first refusal to admit him, David tried again while still at the refugee office and was finally admitted.
+        </li>
+                <li>
+            <a name="note_20"></a>
+            The so-called OSE Union was headquartered in Geneva and cared for David in the various Swiss locations he describes, including Speicher and the the Pont de la Foret home in Geneva.
+        </li>
+                <li>
+            <a name="note_21"></a>
+            David was diligently studying to make up for his lost education and to prepare for his new post-war life.
+        </li>
+                <li>
+            <a name="note_22"></a>
+            As in many other instances, Boder offers his help to his interviewee.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Johannes Barthel</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>Johannes Barthel</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC40">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC40" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Gurs
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Gurs, France<br />
+                            </p>
+                            <div>
+                This camp in southwestern France near the Spanish border received German Jews from Baden in October 1942.  The camp was largely emptied in August 1942 when its inmates were sent east to other camps; most were sent to Auschwitz.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC40 = new OpenLayers.Map('map_vothC40', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC40.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC40.addLayer(markers);
+map_id_vothC40.zoomToMaxExtent();
+
+                        var lat_1 = 43.288333;
+                        var lon_1 = -0.752500;
+                        var vothC40 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC40_icon = new OpenLayers.Marker(vothC40);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC40);
+markers.addMarker(vothC40_icon);
+    addMarker(vothC40, popupClass, "", true, false, false);
+    map_id_vothC40.setCenter(vothC40, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC96">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC96" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Rivesaltes
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Rivesaltes, France<br />
+                            </p>
+                            <div>
+                In 1942, under German pressure, the camp became a &#34;Centre national de rassemblement des Isra&#195;lites&#34; - a &#34;sorting centre&#34; for Jews who were then sent on to the death camps such as Auschwitz, via Drancy. Two thousand five hundred and fifty one Jews are recorded as having been deported from Rivesaltes.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC96 = new OpenLayers.Map('map_vothC96', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC96.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC96.addLayer(markers);
+map_id_vothC96.zoomToMaxExtent();
+
+                        var lat_2 = 42.766700;
+                        var lon_2 = 2.866700;
+                        var vothC96 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC96_icon = new OpenLayers.Marker(vothC96);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC96);
+markers.addMarker(vothC96_icon);
+    addMarker(vothC96, popupClass, "", true, false, false);
+    map_id_vothC96.setCenter(vothC96, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC59">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC59" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Les Avants
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Montreux, Switzerland<br />
+                            </p>
+                            <div>
+                Internment camp for political refugees seeking asylum, maintained by the Swiss government.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC59 = new OpenLayers.Map('map_vothC59', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC59.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC59.addLayer(markers);
+map_id_vothC59.zoomToMaxExtent();
+
+                        var lat_3 = 46.450000;
+                        var lon_3 = 6.916700;
+                        var vothC59 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC59_icon = new OpenLayers.Marker(vothC59);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC59);
+markers.addMarker(vothC59_icon);
+    addMarker(vothC59, popupClass, "", true, false, false);
+    map_id_vothC59.setCenter(vothC59, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_4 = 48.866700;
+                        var lon_4 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL117">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL117" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Gen&#195;ve, Switzerland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL117 = new OpenLayers.Map('map_vothL117', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL117.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL117.addLayer(markers);
+map_id_vothL117.zoomToMaxExtent();
+
+                        var lat_5 = 46.216700;
+                        var lon_5 = 6.150000;
+                        var vothL117 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL117_icon = new OpenLayers.Marker(vothL117);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL117);
+markers.addMarker(vothL117_icon);
+    addMarker(vothL117, popupClass, "", true, false, false);
+    map_id_vothL117.setCenter(vothL117, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL140">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL140" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Mannheim, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL140 = new OpenLayers.Map('map_vothL140', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL140.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL140.addLayer(markers);
+map_id_vothL140.zoomToMaxExtent();
+
+                        var lat_6 = 49.500000;
+                        var lon_6 = 8.466700;
+                        var vothL140 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL140_icon = new OpenLayers.Marker(vothL140);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL140);
+markers.addMarker(vothL140_icon);
+    addMarker(vothL140, popupClass, "", true, false, false);
+    map_id_vothL140.setCenter(vothL140, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL1319">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL1319" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            , 
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL1319 = new OpenLayers.Map('map_vothL1319', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL1319.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL1319.addLayer(markers);
+map_id_vothL1319.zoomToMaxExtent();
+
+                
+});
+</script>
+</div>
+                                <div class="map widget vothL21">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL21" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Limoges, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL21 = new OpenLayers.Map('map_vothL21', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL21.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL21.addLayer(markers);
+map_id_vothL21.zoomToMaxExtent();
+
+                        var lat_8 = 45.833300;
+                        var lon_8 = 1.250000;
+                        var vothL21 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL21_icon = new OpenLayers.Marker(vothL21);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL21);
+markers.addMarker(vothL21_icon);
+    addMarker(vothL21, popupClass, "", true, false, false);
+    map_id_vothL21.setCenter(vothL21, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL267">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL267" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Lyon, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL267 = new OpenLayers.Map('map_vothL267', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL267.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL267.addLayer(markers);
+map_id_vothL267.zoomToMaxExtent();
+
+                        var lat_9 = 45.766700;
+                        var lon_9 = 4.833300;
+                        var vothL267 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL267_icon = new OpenLayers.Marker(vothL267);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL267);
+markers.addMarker(vothL267_icon);
+    addMarker(vothL267, popupClass, "", true, false, false);
+    map_id_vothL267.setCenter(vothL267, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL320">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL320" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Annecy, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL320 = new OpenLayers.Map('map_vothL320', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL320.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL320.addLayer(markers);
+map_id_vothL320.zoomToMaxExtent();
+
+                        var lat_10 = 45.900000;
+                        var lon_10 = 6.130278;
+                        var vothL320 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL320_icon = new OpenLayers.Marker(vothL320);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL320);
+markers.addMarker(vothL320_icon);
+    addMarker(vothL320, popupClass, "", true, false, false);
+    map_id_vothL320.setCenter(vothL320, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL321">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL321" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Chamb&#195;ry, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL321 = new OpenLayers.Map('map_vothL321', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL321.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL321.addLayer(markers);
+map_id_vothL321.zoomToMaxExtent();
+
+                        var lat_11 = 45.570000;
+                        var lon_11 = 5.911800;
+                        var vothL321 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL321_icon = new OpenLayers.Marker(vothL321);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL321);
+markers.addMarker(vothL321_icon);
+    addMarker(vothL321, popupClass, "", true, false, false);
+    map_id_vothL321.setCenter(vothL321, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL331">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL331" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Saint-Julien-en-Genevois, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL331 = new OpenLayers.Map('map_vothL331', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL331.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL331.addLayer(markers);
+map_id_vothL331.zoomToMaxExtent();
+
+                        var lat_12 = 46.133300;
+                        var lon_12 = 6.083300;
+                        var vothL331 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL331_icon = new OpenLayers.Marker(vothL331);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL331);
+markers.addMarker(vothL331_icon);
+    addMarker(vothL331, popupClass, "", true, false, false);
+    map_id_vothL331.setCenter(vothL331, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL200">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL200" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Montreux, Switzerland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL200 = new OpenLayers.Map('map_vothL200', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL200.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL200.addLayer(markers);
+map_id_vothL200.zoomToMaxExtent();
+
+                        var lat_13 = 46.450000;
+                        var lon_13 = 6.916700;
+                        var vothL200 = new OpenLayers.LonLat(lon_13, lat_13);
+            vothL200_icon = new OpenLayers.Marker(vothL200);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL200);
+markers.addMarker(vothL200_icon);
+    addMarker(vothL200, popupClass, "", true, false, false);
+    map_id_vothL200.setCenter(vothL200, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL506">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL506" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Speicher, Switzerland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL506 = new OpenLayers.Map('map_vothL506', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL506.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL506.addLayer(markers);
+map_id_vothL506.zoomToMaxExtent();
+
+                        var lat_14 = 47.416700;
+                        var lon_14 = 9.450000;
+                        var vothL506 = new OpenLayers.LonLat(lon_14, lat_14);
+            vothL506_icon = new OpenLayers.Marker(vothL506);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL506);
+markers.addMarker(vothL506_icon);
+    addMarker(vothL506, popupClass, "", true, false, false);
+    map_id_vothL506.setCenter(vothL506, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL507">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL507" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Sankt Gallen, Switzerland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL507 = new OpenLayers.Map('map_vothL507', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL507.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL507.addLayer(markers);
+map_id_vothL507.zoomToMaxExtent();
+
+                        var lat_15 = 47.416700;
+                        var lon_15 = 9.383300;
+                        var vothL507 = new OpenLayers.LonLat(lon_15, lat_15);
+            vothL507_icon = new OpenLayers.Marker(vothL507);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL507);
+markers.addMarker(vothL507_icon);
+    addMarker(vothL507, popupClass, "", true, false, false);
+    map_id_vothL507.setCenter(vothL507, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_ort">
+                <a name="vothG_ort"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ORT.
+                </span>
+                <span class="definition">
+                    Acronym for the Russian, Society for Handicrafts and Agricultural Work. Founded in 1880 by Russian Jews, its goal was to promote and develop vocational training in skilled trades and agriculture among Jews. Following the Holocaust, ORT ran programs in Displaced Persons camps and in western European countries, especially in France.
+                </span>
+            </li>
+                        <li class="vothG_kz">
+                <a name="vothG_kz"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    KZ.
+                </span>
+                <span class="definition">
+                    Abbreviation for “konzentrationslager” (concentration camp).
+                </span>
+            </li>
+                        <li class="vothG_ose">
+                <a name="vothG_ose"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    OSE.
+                </span>
+                <span class="definition">
+                    Acronym for the Oeuvre de Secours aux Enfants, a French Jewish humanitarian organization that saved hundreds of Jewish refugee children in Vichy France during World War II.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            At the time of the Nazi assumption of power, Mannheim had a Jewish population of 6,509. Due to Nazi economic and social anti-Semitic measures, 3,927 Mannheim Jews emigrated from 1933 to 1940, including David Hirsch's parents.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mannheim is located in Baden. After the fall of France, some 2,000 Jews from Mannheim were deported in late October 1940 to Gurs concentration camp, located in southern France. The camp was administered by the collaborationist French Vichy government. Despite the harsh living conditions endured by the detainees, Jewish cultural and religious life was maintained in the camp.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Gurs was established in April 1939. It was situated some fifty miles from the Spanish border. Its establishment came at the same time as the defeat of the Spanish republicans in the bitter and bloody Spanish Civil War from 1936-39 by Francisco Franco, who became the Fascist dictator of Spain. Many republicans fled across the border, and a number were interned in Gurs.
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Like Gurs, Rivesaltes was at first used to imprison Spanish republican loyalists and troops who had fled to France. It was located in southeastern France, not far from the Spanish border and a few miles from the town of Perpignan. At the time of the arrival of David and his grandparents, Rivesaltes had at least 3,000 children and was considered a family camp despite its primitive and unhealthy living and sanitary conditions.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The OSE was especially active in providing medical and social assistance to those interned at the time in Gurs and Rivesaltes.
+        </li>
+                <li class="note_6">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Southern France was under the control of the Vichy government following the armistice of June 1940, and was not occupied by German troops until November 1942 when the Allies landed in North Africa.
+        </li>
+                <li class="note_7">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Hirsch's grandparents were deported from Rivesaltes by Vichy French authorities during the large deportations of Jews from France to Nazi extermination camps in the summer and fall of 1942. They most likely were murdered in Auschwitz immediately upon arrival, along with some 42,500 Jews sent eastward from France in 1942—approximately one-third from the Vichy zone of France.
+        </li>
+                <li class="note_8">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The OSE worked assiduously to save Jewish children in France. David benefited from the efforts of this organization by first being placed in a children's refuge center near the town of Limoges in the Haute Vienne department in central France.
+        </li>
+                <li class="note_9">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Following the roundups (Fr. raffles) of Jews in 1942 and the occupation of all of France by the Germans in November of that year, the situation for the Jews deteriorated, and the OSE had to move David and others to safer locations. The "circuit Garel," named after its leader Georges Garel, was created to hide children such as David who were being hunted by the Nazis.
+        </li>
+                <li class="note_10">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The OSE could not have functioned without the help of Christian institutions and individual Christians such as the farmers in the Grenoble area of southwestern France mentioned by David.
+        </li>
+                <li class="note_11">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            False identity papers were absolutely essential to living clandestinely. Skillfully forged papers could make the difference between life and death for those on the run from the Nazis and their Vichy French collaborators.
+        </li>
+                <li class="note_12">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Robert Gamzon, who became a French partisan commander, founded the Jewish scout movement (Eclaireurs Israelites de France) in France. After the French surrender, Gamzon re-established the movement's network in the cities of unoccupied France where many Jewish refugees were located. He spearheaded the establishment of children's homes, welfare centers, workshops, agricultural training farms and Jewish educational undertakings. David benefited from the efforts of this organization, which worked alongside the OSE. The scouts were especially active in the southwestern area of France where he was located.
+        </li>
+                <li class="note_13">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The reference is to the EIF (Eclaireurs Israélites de France), the Jewish Boy Scout organization of France, which was engaged in liberating Jewish children and adolescents from labor and concentration camps during World War II.
+        </li>
+                <li class="note_14">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The sentence in the letter about going to a big school in Lyon, the second largest city in the country at the time, located in southeastern France, was a code for getting prepared to be transferred across the border into Switzerland.
+        </li>
+                <li class="note_15">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            "The Sixth" (La Sixième) was  the code name for a clandestine scout rescue network formed by Robert Gamzon in the summer of 1942. It produced false identity papers, found asylum for Jewish children in non-Jewish institutions and private homes, and worked in smuggling Jews of all ages across the border into neutral Spain and Switzerland.
+        </li>
+                <li class="note_16">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The OSE in France was actually a part of the Union Generale des Israelites de France (UGIF), the French Jewish council established by the Germans on November 29, 1941. Its counterpart in the Vichy zone did not begin to function until May 1942. The UGIF and its components functioned legally while certain UGIF agencies, such as the OSE and the scouts, engaged in illegal work, at times with the knowledge and participation of UGIF officials. Eventually the OSE and the scouts went almost completely underground. The UGIF was eventually disbanded after the liberation of France in August 1944.
+        </li>
+                <li class="note_17">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The man David is referring was most probably from the OSE. He had accompanied the children from Paris to Annecy to attempt to transfer them across the Swiss border.
+        </li>
+                <li class="note_18">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Official Swiss policy at the time was that "refugees on racial grounds only, for example Jews" did not fall under the category of political refugees to whom Switzerland had traditionally offered refuge. These "racial refugees" were therefore refused admittance into the country. Consequently, many thousands of Jews were denied entry, and many others who had managed to slip across the border were expelled. This policy was carried out despite full knowledge on the part of the Swiss government that Jews were being murdered by Nazi Germany.
+        </li>
+                <li class="note_19">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+             It is unclear if David was actually expelled to France, or if this would have been his fate had the Swiss official, as he subsequently indicates, not relented. It seems that after the official's first refusal to admit him, David tried again while still at the refugee office and was finally admitted.
+        </li>
+                <li class="note_20">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The so-called OSE Union was headquartered in Geneva and cared for David in the various Swiss locations he describes, including Speicher and the the Pont de la Foret home in Geneva.
+        </li>
+                <li class="note_21">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            David was diligently studying to make up for his lost education and to prepare for his new post-war life.
+        </li>
+                <li class="note_22">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            As in many other instances, Boder offers his help to his interviewee.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

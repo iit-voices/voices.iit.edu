@@ -1,0 +1,2104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Nino Barzilai; August 04, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-nino-barzilai-august-04-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Nino Barzilai; August 04, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=barzilaiN">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=barzilaiN&display=barzilaiN_es">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=barzilaiN&display=barzilaiN_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=barzilaiN">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=barzilaiN">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.603" end="x">[In English] Chicago, June the 26th, 1950. This is Spool 9-21B, the second half of Spool 9-21. The first half is Dr. Lipschitz which we called 9-21A, the second is Mr. Nino Barzilai which we call 9-21B.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="53.917" end="x">[In Spanish] You have to speak in this direction . . . </span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="63.636" end="x">[In English] <a class="placename" href="#vothL13">Paris</a>, August the 4th, Sunday, in the home for adult Jews. We are now going to interview a gentleman from Greece, Señor Nino Barzilai . . . who speaks Spanish.<note n="1"><span class="note">Nino Barzilai's native language was Ladino, which was spoken by many Sephardic Jews (Jews who originally came from Spain) who lived in the Balkans. Ladino contains elements of Spanish and Hebrew. Ladino's Spanish component enabled Nino Barzilai to speak Spanish in a fluent manner.</span><sup><a href="#note_1">1</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="82.442" end="x">[In Spanish] Mr. Barzilai, can you tell me if you were born in Greece?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="89.200" end="x">Yes, Sir. I was born in <a class="placename" href="#vothL68">Thessaloniki</a>, Greece.<note n="2"><span class="note">Thessaloniki or Salonika was home to the most flourishing Sephardic Jewish community in the world before the Holocaust. Nearly all of its pre-war Jewish population of some 56,000 perished in the Holocaust, most of them in Auschwitz-Birkenau. The vibrant Sephardic Jewish community of Salonika, the heart of Sephardic world Jewry, was almost totally annihilated.</span><sup><a href="#note_2">2</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="92.954" end="x">How old are you now?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="97.056" end="x">Fifty-four years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="98.716" end="x">Oh, you are fifty-four! You don't look . . . you don't seem that age! So, tell me . . . have you always lived in Greece?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="110.180" end="x">No, Sir. I lived in Spain for twenty years. When the war was declared, the Spanish Civil War, I came back to Greece where I had my family.<note n="3"><span class="note">The Spanish Civil War (1936-39) began with a military revolt led by General Francisco Franco against the republican government in Spain. The revolt was supported by conservative elements in the country. When the initial military coup failed to win control of the entire country,  bloody civil war ensued, which was fought with great ferocity on both sides. The nationalists-as the rebels were called-received aid from Fascist Italy and Nazi Germany. The republicans received help from the Soviet Union as well as from the International Brigades, sympathetic volunteers who came from other European countries and the United States.</span><sup><a href="#note_3">3</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="120.296" end="x">Are you married?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="123.025" end="x">Yes, sir. I have a fifteen-year-old son.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="127.020" end="x">What about your wife?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="128.874" end="x">My wife is also here with me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="130.834" end="x">They are here with you. So, please tell us . . . how were you affected by the occupation of Greece by Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="145.894" end="x">Well . . . you see . . . as I have told you, we came back to Greece because we had some relatives, and we were going to wait till the end of the Spanish Civil War to come back to our place. When we arrived in Greece, the Italian-Greek War started and, naturally, we had no chance of coming back to Spain, either because communications had been interrupted or because the Civil War had not come to an end in Spain.<note n="4"><span class="note">The Italian army attacked Greece on October 28, 1940. The Greeks fought valiantly, and the war stalemated for a time. Even though the Spanish Civil War ended in 1939, Spain was a ravaged and devastated country.</span><sup><a href="#note_4">4</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="183.598" end="x">And what did you do for a living, Mr. Barzilai?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="186.869" end="x">In Greece, I sold fabrics for women's garments. I was well established . . . I had my own office . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="197.442" end="x">In Greece.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="198.241" end="x">In Greece, <a class="placename" href="#vothL126">Athens</a>, near [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="201.543" end="x">And what did you do in Spain?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="203.850" end="x">In Spain I was in the business of bijouterie.<note n="5"><span class="note">The business of bijouterie Mr. Barzilai refers to is the jewelry business.</span><sup><a href="#note_5">5</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="207.785" end="x">So, you came back to Greece. Were the Germans already there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="212.443" end="x">When I came back to Greece, the Germans had not invaded yet.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="217.418" end="x">OK, then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="218.654" end="x">Later, the Italian War started . . . Italy and Greece, and then, after some time, the Germans came and occupied Greece. We left <a class="placename" href="#vothL68">Salonica</a>, and moved to <a class="placename" href="#vothL126">Athens</a>, where we settled.<note n="6"><span class="note">Mr. Barzilai and his family were among the thousands of Greek Jews who fled to Athens seeking sanctuary in the benevolent Italian zone of occupation. In 1941, the Athenian Jewish population was some 3,500. During the time of the Italian occupation (April, 1941-September, 1943), it rose to between eight thousand to ten thousand.</span><sup><a href="#note_6">6</a></sup></note> As I told you, I had a nice business there, but when the Germans came, they published an announcement in the newspapers: all Jews were summoned and they had to present themselves as Portuguese foreign subjects, so I had to do it . . .<note n="7"><span class="note">The Germans invaded Greece on April 6, 1941 and by the end of the month, along with its Italian and Bulgarian allies, conquered the whole of the country. Athens, where the Barzilai's had fled, was in the Italian zone of occupation until Italy went over to the Allied side in September, 1943. On September 8, 1943, the Germans occupied Athens. From the outset, they instituted anti-Jewish such as the measures such as the confiscation of Jewish property, which resulted in the impoverishment of the community and plunged many Jews into destitution.</span><sup><a href="#note_7">7</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="255.595" end="x">Are you Portuguese?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="257.404" end="x">Yes, I am.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="258.068" end="x">Were you born in Portugal?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="259.802" end="x">No, Sir. I am [unintelligible] my family was from [unintelligible] . . . so . . . I presented myself to the German authorities as Portuguese, with Portuguese documents. And since the Chief Rabbi was a relative of mine and happened to have the same name as my father, the Germans took me for the Rabbi's son.<note n="8"><span class="note">Rabbi Barzilai courageously refused to cooperate with the Germans. He destroyed the Jewish communal lists they demanded and exhorted the Jews to flee. He escaped with the help of the Greek partisan network to the mountains of central Greece where he issued calls to the Western powers to aid the main Greek resistance group to save the Jews and fight the Germans. A number of Greek Jews were active in the resistance.</span><sup><a href="#note_8">8</a></sup></note> They sent me to a concentration camp in <a class="placename" href="#vothC41" type="camp">Haidari</a>, <a class="placename" href="#vothL126">Athens</a>, where I spent five and a half months doing forced labor.<note n="9"><span class="note">The Haidary concentration camp operated  from September 2, 1943 to September 20, 1944. It was located in the town of Haidary near Athens. The majority of its inmates were transported to Bergen-Belsen or to Auschwitz.</span><sup><a href="#note_9">9</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="303.818" end="x">What kind of labor did you do at the concentration camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="307.029" end="x">We had to move stones and sand during the whole day, from one place to another. It was hard and we were hit and punished a lot.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="319.368" end="x">What did you do with the sand?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="323.031" end="x">They "invented" this labor for us to work, to make us feel tired, because we transported stones from one place to another, and the following day, we would move the same stones back to their original place. We were not working on the fortification nor doing any other tasks, we just carried stones and they made us work every day [unintelligible].<note n="10"><span class="note">Moving stones and sand for no purpose and other forms of useless labor were used in many concentration camps for tormenting and weakening the prisoners.</span><sup><a href="#note_10">10</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="358.447" end="x">You can continue, we have good reception.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="361.598" end="x">After more than five and a half months in the <a class="placename" href="#vothC41" type="camp">Haidari</a> concentration camp, all Jews from <a class="placename" href="#vothL126">Athens</a> were brought to the same camp. We were together . . . for about eight days . . . all Jews coming from <a class="placename" href="#vothL126">Athens</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="388.150" end="x">Still in Greece?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="389.733" end="x">Yes. In Greece. And the day of our deportation came . . . we were woken up at four in the morning and we were given ten minutes to get ready to depart.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="405.083" end="x">How many people do you think there were in that camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="408.415" end="x">I think there were around two thousand people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="411.612" end="x">Two thousand Jews. Look Mr. Barzilai, in this research, we usually do not speak about the mem— . . . about papers, but since you have the memorandum about Jews in Greece and we do not know much about this, we are going to make an exception and I will ask you to read the memorandum you have here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="434.609" end="x">Allow me to tell you that in the convoy that was sent to Poland all foreign subjects were included and we were sent in a separate convoy. This means the Argentine subjects stayed in the <a class="placename" href="#vothC41" type="camp">Haidari</a> camp while the Spanish and Portuguese subjects were placed on a separate train, telling us we would be sent to Spain and Portugal in a period of 12 days.<note n="11"><span class="note">Portugal and Spain remained neutral throughout World War II. Contrary to most Latin American countries, which declared war on Germany in 1941 and 1942 (after the United States had entered the war),  Argentina maintained a policy of neutrality during the war motivated by anti-American, anti-democratic and anti-communist sentiments among its ruling elite. It was not until March, 1945, two months before the German surrender, that Argentina declared  war on Nazi Germany.</span><sup><a href="#note_11">11</a></sup></note> After having traveled for 8 days by train, we arrived in Germany, we were taken to <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a> camp where we were held for 14 months.<note n="12"><span class="note">Bergen-Belsen was a Nazi concentration camp near Hanover, Germany, established in April, 1943. During the first eighteen months of the camp's existence, five satellite camps were established, one of which was the "neutral camp" in which Mr. Barzilai and his family were interned.</span><sup><a href="#note_12">12</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="487.232" end="x">In <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="488.770" end="x">In <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>, Germany. And from there . . . when the English were near <a class="placename" href="#vothL134">Berlin</a>,<note n="13"><span class="note">What Mr. Barzilai meant was that the British army was nearing the camp which was liberated on April 15, 1945. The British found 60,000 emaciated and starving prisoners. 14,000 died in the first five days following liberation, and another 14,000 perished during the weeks following.</span><sup><a href="#note_13">13</a></sup></note> we were taken on another train to <a class="placename" href="#vothC13" type="camp">Börgermoor</a>. We stayed there, on a train, for one night.<note n="14"><span class="note">Boegermoor was located in Lower Saxony, not too far from Hanover. It was one of the first concentration camps established in Nazi Germany. It was liberated on April 22, 1945. Those on the Barzilai's deportation train were freed by American troops before they reached Boegermoor.</span><sup><a href="#note_14">14</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="514.642" end="x">Where were your wife and your son?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="517.205" end="x">I found my wife and my son on the train that was taking us to Germany, to <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="526.220" end="x">All right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="526.763" end="x">The Germans took us to the train station, and from there we departed on a joint convoy both Spaniards and Portuguese.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="538.416" end="x">OK.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="540.195" end="x">And, I was together with my wife and my son in <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="545.502" end="x">Were you in the same <a class="term" href="#vothG_block">block</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="547.296" end="x">We were in the same camp, but in different barracks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="550.085" end="x">I see.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="550.974" end="x">Women and men were separate.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="554.231" end="x">I see.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="555.543" end="x">As I told you, we were there for 14 months and we were placed on a train and we were told we were to be taken to Spain, but we came to <a class="placename" href="#vothC13" type="camp">Börgermoor</a>. There, there were a number of bombings by Americans, that lasted for a whole night. In the morning, when we woke up, we noticed the Germans had left the train and we had been left on our own in the camp . . . completely abandoned. A number of us marched to some nearby German houses to see what was going on. We were looking for some food, because we did not cook, and we had eaten all the food we had been given for the journey. We found some potatoes and we came back to the train where we boiled them to eat something. Meanwhile, there was a rumor that the Americans had arrived. And some time later, we happily received the Americans who had come to [unintelligible]. Their first concern was to give us something hot to eat, and we were served a soup right there on the train. After a day, we were told we were going to be transported to another place. We were told to gather in the park of the town to march together to some houses they had prepared for us to stay in. So we all marched . . . [unintelligible]<note n="15"><span class="note">These and other initial contacts which liberated concentration camp inmates had with the American army were most positive.</span><sup><a href="#note_15">15</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="671.480" end="x">What did you do during those 14 months in <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="674.375" end="x">We, as foreign subjects, did not work. We were locked in the barracks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="682.983" end="x">Didn't the Spaniards . . . or somebody from the neighboring areas come . . . or from . . . [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="692.486" end="x">Nobody. Nobody did anything for us. Many letters were written but there were no replies.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="700.687" end="x">Were there only Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="703.522" end="x">All of us were Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="704.924" end="x">All Jews . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="705.768" end="x">In <a class="placename" href="#vothC8" type="camp">Bergen-Belsen</a> we were together with Argentine subjects, Turkish subjects.<note n="16"><span class="note">Although Turkey had fought on the German side during World War I, it was neutral during World War II so those Jews with Turkish citizenship received some protection.</span><sup><a href="#note_16">16</a></sup></note> Before we left, the Turkish subjects had been freed. They were freed eight days before us. We learnt about it some days later, when we left.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="722.897" end="x">Who freed them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="726.259" end="x">It was said they had been escorted to the Swiss border, and there, the Consulate took care of them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="734.535" end="x">OK. Then, tell me . . . well . . . tell me . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="740.176" end="x">As I have told you, after being freed by Americans, we were sent to France . . . the first French station we reached was . . . [<i>audio interruption</i>]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="761.255" end="x">No, no . . . it will be good, wherever . . . What happened then? [unintelligible] Don't worry, it is just fine.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="776.607" end="x">I really can't remember. We were taken directly to <a class="placename" href="#vothL13">Paris</a> and all those who had been deported reached <a class="placename" href="#vothL13">Paris</a> very thankful to the French government and to the French people in general because of the support they offered us. We were given everything we needed, they dressed us, because we were almost naked and barefoot, we were given great food and none of us will ever forget what France did for us.<note n="17"><span class="note">In particular, the Jewish Committee for Social Action and Reconciliation was able to provide food and shelter for some 75% of the some 40,000 Holocaust survivors who came to France following their liberation.</span><sup><a href="#note_17">17</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="815.582" end="x">Good. And what are you doing now, Sir?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="818.959" end="x">We are still in the center located on [unintelligible] Street. We still have not found a house to settle. My son is learning a trade in the French school.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="836.345" end="x">What trade is he learning?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="838.199x" end="x">Woodworking.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="839.888" end="x">Oh, woodworking.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="841.049" end="x">As I am an electrician, I have been given a job.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="849.401" end="x">So you are working.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="850.699" end="x">Well, I will soon start to work. We believe we can stay here in France, in this area.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="862.048" end="x">To settle here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="863.405" end="x">Yes. To settle here. I have a list that will be of great interest to all Jews from Greece who are still abroad. It is a list of the few Jews that returned to Greece in each Greek province. It includes the inhabitants before the war, and the ones left or those who returned.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="889.319" end="x">Good.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="891.708" end="x">In the Province of <a class="placename" href="#voth250">Didymoteicho</a>, there were 900 Jews, and 33 have returned to this date, so 96% are missing. In <a class="placename" href="#voth251">Orestiada</a> town [<i>audio interruption</i>] . . . 3 have returned, 98% are still missing. In <a class="placename" href="#voth251"> Alexandroupoli</a>, 140 Jews, 97% are missing; in <a class="placename" href="#vothL244">Komotini</a>, there were 819, 28 have returned, 96% missing; in <a class="placename" href="#vothL245">Xanthi</a>, 550, 6 have returned, 99% are missing; in Macedonia, in <a class="placename" href="#vothL246">Kavala</a>, there were 2,100 Jews, 42 have returned, 98% are missing; in <a class="placename" href="#vothL247">Drama</a>, 1,200, 79 have returned, 97% missing; [unintelligible] 600, only 3 have returned, 98% missing; in <a class="placename" href="#vothL68">Thessaloniki</a>, the great Jewish community, there were 56,000, 1,950 have returned, 96% are missing.<note n="18"><span class="note">Greek Jewish losses as a result of the Holocaust were staggering and heartbreaking. Some 65,000 of the 75,000 Jews in Greece in 1939 were murdered. Mr. Barzilai's lists provide some indication of the awful death toll.</span><sup><a href="#note_18">18</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="977.759" end="x">96% missing?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="979.900" end="x">Missing, Sir. <a class="placename" href="#vothL248">Veroia</a>, 460 Jews, 131 have returned . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="988.990" end="x">Well, Sir . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="989.744" end="x">32%.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="990.980" end="x">Can you give me a copy of this document or can we get it somewhere?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="995.141" end="x">I will be pleased to give it to you, Sir.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="996.711" end="x">All right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="997.412" end="x">I will give you the copy. Let's continue . . . [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1000.068" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Nino Barzilai</span>:
+            </span>
+            <span class="utterance" who="#barzilaiN" start="1006.394" end="x"><a class="placename" href="#vothL249">Kastoria</a>, 900 Jews, 35 have returned, 96% missing; <a class="placename" href="#vothL253">Florina</a>, 400 Jews, 74 have returned, 84%; <a class="placename" href="#vothL254">Thessalia</a>, 520, 360, 31% . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1029.004" end="x">Well, Sir, [unintelligible] if you give me the copy. Then, Sir . . . I thank you for this information and particularly [unintelligible], because I am trying to go to Mexico, and a report . . . [<i>ends abruptly</i>]</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            Nino Barzilai's native language was Ladino, which was spoken by many Sephardic Jews (Jews who originally came from Spain) who lived in the Balkans. Ladino contains elements of Spanish and Hebrew. Ladino's Spanish component enabled Nino Barzilai to speak Spanish in a fluent manner.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            Thessaloniki or Salonika was home to the most flourishing Sephardic Jewish community in the world before the Holocaust. Nearly all of its pre-war Jewish population of some 56,000 perished in the Holocaust, most of them in Auschwitz-Birkenau. The vibrant Sephardic Jewish community of Salonika, the heart of Sephardic world Jewry, was almost totally annihilated.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            The Spanish Civil War (1936-39) began with a military revolt led by General Francisco Franco against the republican government in Spain. The revolt was supported by conservative elements in the country. When the initial military coup failed to win control of the entire country,  bloody civil war ensued, which was fought with great ferocity on both sides. The nationalists-as the rebels were called-received aid from Fascist Italy and Nazi Germany. The republicans received help from the Soviet Union as well as from the International Brigades, sympathetic volunteers who came from other European countries and the United States.
+        </li>
+                <li>
+            <a name="note_4"></a>
+            The Italian army attacked Greece on October 28, 1940. The Greeks fought valiantly, and the war stalemated for a time. Even though the Spanish Civil War ended in 1939, Spain was a ravaged and devastated country.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            The business of bijouterie Mr. Barzilai refers to is the jewelry business.
+        </li>
+                <li>
+            <a name="note_6"></a>
+            Mr. Barzilai and his family were among the thousands of Greek Jews who fled to Athens seeking sanctuary in the benevolent Italian zone of occupation. In 1941, the Athenian Jewish population was some 3,500. During the time of the Italian occupation (April, 1941-September, 1943), it rose to between eight thousand to ten thousand.
+        </li>
+                <li>
+            <a name="note_7"></a>
+            The Germans invaded Greece on April 6, 1941 and by the end of the month, along with its Italian and Bulgarian allies, conquered the whole of the country. Athens, where the Barzilai's had fled, was in the Italian zone of occupation until Italy went over to the Allied side in September, 1943. On September 8, 1943, the Germans occupied Athens. From the outset, they instituted anti-Jewish such as the measures such as the confiscation of Jewish property, which resulted in the impoverishment of the community and plunged many Jews into destitution.
+        </li>
+                <li>
+            <a name="note_8"></a>
+            Rabbi Barzilai courageously refused to cooperate with the Germans. He destroyed the Jewish communal lists they demanded and exhorted the Jews to flee. He escaped with the help of the Greek partisan network to the mountains of central Greece where he issued calls to the Western powers to aid the main Greek resistance group to save the Jews and fight the Germans. A number of Greek Jews were active in the resistance.
+        </li>
+                <li>
+            <a name="note_9"></a>
+            The Haidary concentration camp operated  from September 2, 1943 to September 20, 1944. It was located in the town of Haidary near Athens. The majority of its inmates were transported to Bergen-Belsen or to Auschwitz.
+        </li>
+                <li>
+            <a name="note_10"></a>
+            Moving stones and sand for no purpose and other forms of useless labor were used in many concentration camps for tormenting and weakening the prisoners.
+        </li>
+                <li>
+            <a name="note_11"></a>
+            Portugal and Spain remained neutral throughout World War II. Contrary to most Latin American countries, which declared war on Germany in 1941 and 1942 (after the United States had entered the war),  Argentina maintained a policy of neutrality during the war motivated by anti-American, anti-democratic and anti-communist sentiments among its ruling elite. It was not until March, 1945, two months before the German surrender, that Argentina declared  war on Nazi Germany.
+        </li>
+                <li>
+            <a name="note_12"></a>
+            Bergen-Belsen was a Nazi concentration camp near Hanover, Germany, established in April, 1943. During the first eighteen months of the camp's existence, five satellite camps were established, one of which was the "neutral camp" in which Mr. Barzilai and his family were interned.
+        </li>
+                <li>
+            <a name="note_13"></a>
+            What Mr. Barzilai meant was that the British army was nearing the camp which was liberated on April 15, 1945. The British found 60,000 emaciated and starving prisoners. 14,000 died in the first five days following liberation, and another 14,000 perished during the weeks following.
+        </li>
+                <li>
+            <a name="note_14"></a>
+            Boegermoor was located in Lower Saxony, not too far from Hanover. It was one of the first concentration camps established in Nazi Germany. It was liberated on April 22, 1945. Those on the Barzilai's deportation train were freed by American troops before they reached Boegermoor.
+        </li>
+                <li>
+            <a name="note_15"></a>
+            These and other initial contacts which liberated concentration camp inmates had with the American army were most positive.
+        </li>
+                <li>
+            <a name="note_16"></a>
+            Although Turkey had fought on the German side during World War I, it was neutral during World War II so those Jews with Turkish citizenship received some protection.
+        </li>
+                <li>
+            <a name="note_17"></a>
+            In particular, the Jewish Committee for Social Action and Reconciliation was able to provide food and shelter for some 75% of the some 40,000 Holocaust survivors who came to France following their liberation.
+        </li>
+                <li>
+            <a name="note_18"></a>
+            Greek Jewish losses as a result of the Holocaust were staggering and heartbreaking. Some 65,000 of the 75,000 Jews in Greece in 1939 were murdered. Mr. Barzilai's lists provide some indication of the awful death toll.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Roberta Hopson</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English translation
+                            </i>: 
+            <span class="Translation">
+                <name>Patricia Sanner</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Reviewer
+                            </i>: 
+            <span class="Reviewer">
+                <name>Adriana Barrós Tomé</name>, <name>Andrea Castro</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC41">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC41" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Haidari
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Ath&#195;nai, Greece<br />
+                            </p>
+                            <div>
+                Located in the Haidari suburb of Athens, it operated from September 1943 until September 1944 as the largest concentration camp in Greece.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC41 = new OpenLayers.Map('map_vothC41', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC41.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC41.addLayer(markers);
+map_id_vothC41.zoomToMaxExtent();
+
+                        var lat_1 = 38.000000;
+                        var lon_1 = 23.733300;
+                        var vothC41 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC41_icon = new OpenLayers.Marker(vothC41);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC41);
+markers.addMarker(vothC41_icon);
+    addMarker(vothC41, popupClass, "", true, false, false);
+    map_id_vothC41.setCenter(vothC41, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC8">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC8" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Bergen-Belsen
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Bergen, Germany<br />
+                            </p>
+                            <div>
+                Established in the spring of 1943 and initially intended as a transit camp, it soon was integrated into the concentration camp network.  Its population swelled late in the war as inmates from other camps further east were moved into it--from around 15,000 in late 1944 to 41,250 in March 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC8 = new OpenLayers.Map('map_vothC8', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC8.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC8.addLayer(markers);
+map_id_vothC8.zoomToMaxExtent();
+
+                        var lat_2 = 52.766700;
+                        var lon_2 = 9.916700;
+                        var vothC8 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC8_icon = new OpenLayers.Marker(vothC8);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC8);
+markers.addMarker(vothC8_icon);
+    addMarker(vothC8, popupClass, "", true, false, false);
+    map_id_vothC8.setCenter(vothC8, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC13" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                B&#195;rgermoor<br /><span class="alt">(Emslandlager I)</span>
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                B&#195;rgermoor, Germany<br />
+                            </p>
+                            <div>
+                Initially created in 1933 as a camp for political prisoners and other criminals, later used to imprison resistance fighters and other military prisoners. In 1944 it became a subcamp of Neuengamme; in April 1945 most prisoners were sent on a forced death march to Aschendorfermoor.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC13 = new OpenLayers.Map('map_vothC13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC13.addLayer(markers);
+map_id_vothC13.zoomToMaxExtent();
+
+                        var lat_3 = 53.016667;
+                        var lon_3 = 7.500000;
+                        var vothC13 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC13_icon = new OpenLayers.Marker(vothC13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC13);
+markers.addMarker(vothC13_icon);
+    addMarker(vothC13, popupClass, "", true, false, false);
+    map_id_vothC13.setCenter(vothC13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_4 = 48.866700;
+                        var lon_4 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL68">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL68" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Thessalon&#195;ki, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL68 = new OpenLayers.Map('map_vothL68', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL68.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL68.addLayer(markers);
+map_id_vothL68.zoomToMaxExtent();
+
+                        var lat_5 = 40.633300;
+                        var lon_5 = 22.933300;
+                        var vothL68 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL68_icon = new OpenLayers.Marker(vothL68);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL68);
+markers.addMarker(vothL68_icon);
+    addMarker(vothL68, popupClass, "", true, false, false);
+    map_id_vothL68.setCenter(vothL68, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL126">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL126" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Ath&#195;nai, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL126 = new OpenLayers.Map('map_vothL126', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL126.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL126.addLayer(markers);
+map_id_vothL126.zoomToMaxExtent();
+
+                        var lat_6 = 38.000000;
+                        var lon_6 = 23.733300;
+                        var vothL126 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL126_icon = new OpenLayers.Marker(vothL126);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL126);
+markers.addMarker(vothL126_icon);
+    addMarker(vothL126, popupClass, "", true, false, false);
+    map_id_vothL126.setCenter(vothL126, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL134">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL134" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Berlin, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL134 = new OpenLayers.Map('map_vothL134', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL134.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL134.addLayer(markers);
+map_id_vothL134.zoomToMaxExtent();
+
+                        var lat_7 = 52.533300;
+                        var lon_7 = 13.416700;
+                        var vothL134 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL134_icon = new OpenLayers.Marker(vothL134);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL134);
+markers.addMarker(vothL134_icon);
+    addMarker(vothL134, popupClass, "", true, false, false);
+    map_id_vothL134.setCenter(vothL134, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget voth250">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_voth250" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            , 
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_voth250 = new OpenLayers.Map('map_voth250', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_voth250.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_voth250.addLayer(markers);
+map_id_voth250.zoomToMaxExtent();
+
+                
+});
+</script>
+</div>
+                                <div class="map widget voth251">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_voth251" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            , 
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_voth251 = new OpenLayers.Map('map_voth251', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_voth251.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_voth251.addLayer(markers);
+map_id_voth251.zoomToMaxExtent();
+
+                
+});
+</script>
+</div>
+                                <div class="map widget vothL244">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL244" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Komotin&#195;, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL244 = new OpenLayers.Map('map_vothL244', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL244.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL244.addLayer(markers);
+map_id_vothL244.zoomToMaxExtent();
+
+                        var lat_10 = 41.100000;
+                        var lon_10 = 25.416700;
+                        var vothL244 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL244_icon = new OpenLayers.Marker(vothL244);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL244);
+markers.addMarker(vothL244_icon);
+    addMarker(vothL244, popupClass, "", true, false, false);
+    map_id_vothL244.setCenter(vothL244, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL245">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL245" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            X&#195;nthi, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL245 = new OpenLayers.Map('map_vothL245', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL245.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL245.addLayer(markers);
+map_id_vothL245.zoomToMaxExtent();
+
+                        var lat_11 = 41.116700;
+                        var lon_11 = 24.933300;
+                        var vothL245 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL245_icon = new OpenLayers.Marker(vothL245);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL245);
+markers.addMarker(vothL245_icon);
+    addMarker(vothL245, popupClass, "", true, false, false);
+    map_id_vothL245.setCenter(vothL245, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL246">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL246" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kav&#195;la, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL246 = new OpenLayers.Map('map_vothL246', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL246.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL246.addLayer(markers);
+map_id_vothL246.zoomToMaxExtent();
+
+                        var lat_12 = 40.933300;
+                        var lon_12 = 24.416700;
+                        var vothL246 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL246_icon = new OpenLayers.Marker(vothL246);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL246);
+markers.addMarker(vothL246_icon);
+    addMarker(vothL246, popupClass, "", true, false, false);
+    map_id_vothL246.setCenter(vothL246, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL247">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL247" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Dr&#195;ma, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL247 = new OpenLayers.Map('map_vothL247', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL247.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL247.addLayer(markers);
+map_id_vothL247.zoomToMaxExtent();
+
+                        var lat_13 = 41.166700;
+                        var lon_13 = 24.183300;
+                        var vothL247 = new OpenLayers.LonLat(lon_13, lat_13);
+            vothL247_icon = new OpenLayers.Marker(vothL247);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL247);
+markers.addMarker(vothL247_icon);
+    addMarker(vothL247, popupClass, "", true, false, false);
+    map_id_vothL247.setCenter(vothL247, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL248">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL248" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            V&#195;roia, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL248 = new OpenLayers.Map('map_vothL248', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL248.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL248.addLayer(markers);
+map_id_vothL248.zoomToMaxExtent();
+
+                        var lat_14 = 40.516700;
+                        var lon_14 = 22.200000;
+                        var vothL248 = new OpenLayers.LonLat(lon_14, lat_14);
+            vothL248_icon = new OpenLayers.Marker(vothL248);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL248);
+markers.addMarker(vothL248_icon);
+    addMarker(vothL248, popupClass, "", true, false, false);
+    map_id_vothL248.setCenter(vothL248, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL249">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL249" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kastor&#195;a, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL249 = new OpenLayers.Map('map_vothL249', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL249.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL249.addLayer(markers);
+map_id_vothL249.zoomToMaxExtent();
+
+                        var lat_15 = 40.516700;
+                        var lon_15 = 21.266700;
+                        var vothL249 = new OpenLayers.LonLat(lon_15, lat_15);
+            vothL249_icon = new OpenLayers.Marker(vothL249);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL249);
+markers.addMarker(vothL249_icon);
+    addMarker(vothL249, popupClass, "", true, false, false);
+    map_id_vothL249.setCenter(vothL249, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL253">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL253" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Fl&#195;rina, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL253 = new OpenLayers.Map('map_vothL253', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL253.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL253.addLayer(markers);
+map_id_vothL253.zoomToMaxExtent();
+
+                        var lat_16 = 40.800000;
+                        var lon_16 = 21.433300;
+                        var vothL253 = new OpenLayers.LonLat(lon_16, lat_16);
+            vothL253_icon = new OpenLayers.Marker(vothL253);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL253);
+markers.addMarker(vothL253_icon);
+    addMarker(vothL253, popupClass, "", true, false, false);
+    map_id_vothL253.setCenter(vothL253, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL254">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL254" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Thessal&#195;a, Greece
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL254 = new OpenLayers.Map('map_vothL254', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL254.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL254.addLayer(markers);
+map_id_vothL254.zoomToMaxExtent();
+
+                        var lat_17 = 39.500000;
+                        var lon_17 = 22.250000;
+                        var vothL254 = new OpenLayers.LonLat(lon_17, lat_17);
+            vothL254_icon = new OpenLayers.Marker(vothL254);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL254);
+markers.addMarker(vothL254_icon);
+    addMarker(vothL254, popupClass, "", true, false, false);
+    map_id_vothL254.setCenter(vothL254, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_block">
+                <a name="vothG_block"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    block.
+                </span>
+                <span class="definition">
+                    A single concentration camp barrack.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Nino Barzilai's native language was Ladino, which was spoken by many Sephardic Jews (Jews who originally came from Spain) who lived in the Balkans. Ladino contains elements of Spanish and Hebrew. Ladino's Spanish component enabled Nino Barzilai to speak Spanish in a fluent manner.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Thessaloniki or Salonika was home to the most flourishing Sephardic Jewish community in the world before the Holocaust. Nearly all of its pre-war Jewish population of some 56,000 perished in the Holocaust, most of them in Auschwitz-Birkenau. The vibrant Sephardic Jewish community of Salonika, the heart of Sephardic world Jewry, was almost totally annihilated.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Spanish Civil War (1936-39) began with a military revolt led by General Francisco Franco against the republican government in Spain. The revolt was supported by conservative elements in the country. When the initial military coup failed to win control of the entire country,  bloody civil war ensued, which was fought with great ferocity on both sides. The nationalists-as the rebels were called-received aid from Fascist Italy and Nazi Germany. The republicans received help from the Soviet Union as well as from the International Brigades, sympathetic volunteers who came from other European countries and the United States.
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Italian army attacked Greece on October 28, 1940. The Greeks fought valiantly, and the war stalemated for a time. Even though the Spanish Civil War ended in 1939, Spain was a ravaged and devastated country.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The business of bijouterie Mr. Barzilai refers to is the jewelry business.
+        </li>
+                <li class="note_6">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Barzilai and his family were among the thousands of Greek Jews who fled to Athens seeking sanctuary in the benevolent Italian zone of occupation. In 1941, the Athenian Jewish population was some 3,500. During the time of the Italian occupation (April, 1941-September, 1943), it rose to between eight thousand to ten thousand.
+        </li>
+                <li class="note_7">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Germans invaded Greece on April 6, 1941 and by the end of the month, along with its Italian and Bulgarian allies, conquered the whole of the country. Athens, where the Barzilai's had fled, was in the Italian zone of occupation until Italy went over to the Allied side in September, 1943. On September 8, 1943, the Germans occupied Athens. From the outset, they instituted anti-Jewish such as the measures such as the confiscation of Jewish property, which resulted in the impoverishment of the community and plunged many Jews into destitution.
+        </li>
+                <li class="note_8">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Rabbi Barzilai courageously refused to cooperate with the Germans. He destroyed the Jewish communal lists they demanded and exhorted the Jews to flee. He escaped with the help of the Greek partisan network to the mountains of central Greece where he issued calls to the Western powers to aid the main Greek resistance group to save the Jews and fight the Germans. A number of Greek Jews were active in the resistance.
+        </li>
+                <li class="note_9">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Haidary concentration camp operated  from September 2, 1943 to September 20, 1944. It was located in the town of Haidary near Athens. The majority of its inmates were transported to Bergen-Belsen or to Auschwitz.
+        </li>
+                <li class="note_10">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Moving stones and sand for no purpose and other forms of useless labor were used in many concentration camps for tormenting and weakening the prisoners.
+        </li>
+                <li class="note_11">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Portugal and Spain remained neutral throughout World War II. Contrary to most Latin American countries, which declared war on Germany in 1941 and 1942 (after the United States had entered the war),  Argentina maintained a policy of neutrality during the war motivated by anti-American, anti-democratic and anti-communist sentiments among its ruling elite. It was not until March, 1945, two months before the German surrender, that Argentina declared  war on Nazi Germany.
+        </li>
+                <li class="note_12">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Bergen-Belsen was a Nazi concentration camp near Hanover, Germany, established in April, 1943. During the first eighteen months of the camp's existence, five satellite camps were established, one of which was the "neutral camp" in which Mr. Barzilai and his family were interned.
+        </li>
+                <li class="note_13">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            What Mr. Barzilai meant was that the British army was nearing the camp which was liberated on April 15, 1945. The British found 60,000 emaciated and starving prisoners. 14,000 died in the first five days following liberation, and another 14,000 perished during the weeks following.
+        </li>
+                <li class="note_14">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Boegermoor was located in Lower Saxony, not too far from Hanover. It was one of the first concentration camps established in Nazi Germany. It was liberated on April 22, 1945. Those on the Barzilai's deportation train were freed by American troops before they reached Boegermoor.
+        </li>
+                <li class="note_15">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            These and other initial contacts which liberated concentration camp inmates had with the American army were most positive.
+        </li>
+                <li class="note_16">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Although Turkey had fought on the German side during World War I, it was neutral during World War II so those Jews with Turkish citizenship received some protection.
+        </li>
+                <li class="note_17">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            In particular, the Jewish Committee for Social Action and Reconciliation was able to provide food and shelter for some 75% of the some 40,000 Holocaust survivors who came to France following their liberation.
+        </li>
+                <li class="note_18">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Greek Jewish losses as a result of the Holocaust were staggering and heartbreaking. Some 65,000 of the 75,000 Jews in Greece in 1939 were murdered. Mr. Barzilai's lists provide some indication of the awful death toll.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

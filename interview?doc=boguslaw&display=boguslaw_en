@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Boguslaw [last name unknown]; September 24, 1946; München, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-boguslaw-last-name-unknown-september-24-1946-mnchen-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Boguslaw [last name unknown]; September 24, 1946; München, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=boguslaw">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=boguslaw&display=boguslaw_pl_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=boguslaw&display=boguslaw_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=boguslaw">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=boguslaw">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4.521" end="x">[In English] <a class="placename" href="#vothL29">München</a>, September the 24th, 1946 at the <a class="term" href="#vothG_unrra">UNRRA</a> University in Deutsches Museum. The interviewee is now a young student, who simply calls himself Boguslaw. And like so many others he refuses . . . he refuses to, eh, give his full name, because he does not think it's exactly very safe yet to talk.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="28.973" end="x">[In German] Well, Boguslaw, tell me something about the Polish resistance movement in, eh, in Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="39.457" end="x">The Polish resistance movement originally started in 1933. I belonged to . . . this is I joined the German resistance movement 1939.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="55.676" end="x">The German resistance movement?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="56.957" end="x">No, I joined the Polish resistance movement.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="58.957" end="x">And who was the resistance against?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="62.691" end="x">The resistance . . . resistance movement was targeted against the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="68.035" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="68.645" end="x">[<i>coughs</i>] We have . . . the, the German occupation was especially difficult in Poland and in some areas the Polish population . . . had to . . . had to find another way to defend itself. Can I speak Polish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="100.757" end="x">Yes, say the entire thing in Polish. But not too fast, but . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="106.191" end="x">[In Polish] Yes. The Germans behaved dreadfully in our . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="111.810" end="x">[In German] But mainly talk about yourself. Everything you have done in the resistance movement.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="116.393" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="117.090" end="x">Continue.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="117.939" end="x">[In Polish] From 1939 I belonged to the Polish Resistance Movement. After capturing Polish lands, the Germans raged against us everywhere. Everywhere they wanted . . . to destroy everything which was Polish. Transported to concentration camps. In 1939, I, myself, was destined to be transported to <a class="placename" href="#vothC25" type="camp">Dachau</a>. Mercifully, I managed to avoid it, and started to work in the Polish military organization. The organization's aim was . . . the aim of the organization was to fight with the Germans. It was a matter of preserving . . . Polishness, a matter of not losing faith in victory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="183.828" end="x">From 1939 until 1940, a fierce training of Poles began. Military schools were established, schools for noncommissioned officers . . . officer cadet schools which were to train officers. Along with this, the Polish underground press came into being from 1939. A load of organizations came into being which then joined together and formed the resistance movement.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="230.514" end="x">The Resistance Movement aimed . . . to prepare society . . . to fight against the Germans and . . . not to allow despair. At first, the work was devoted to collecting arms, to army training. It then turned to sabotage. At first, there was the so-called small sabotage . . . then small sabotage exhorting sabotaging German orders, to . . . <a class="term" href="#vothG_action">actions</a> against deporting Poles to Germany, an <a class="term" href="#vothG_action">actions</a> which had as its aim the inform Poles what was happening in concentration camps.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="297.746" end="x">Then, it was time for large sabotage. I, myself, worked [unintelligible] of Poles in the Ghetto Uprising before Good Friday . . . at Easter of '43 the came the uprising in the <placeName type="camp" ref="#vothC117">Jewish Ghetto</a>.<note n="1"><span class="note">Boguslaw is referring to the unsuccessful Warsaw Ghetto Uprising which took place in April 1943. About 13,000 Jews were killed, and the ghetto was almost completely razed by the Germans after the fighting.</span><sup><a href="#note_1">1</a></sup></note> Three weeks before this, our leaders learned that the <placeName type="camp" ref="#vothC117">Jewish Ghetto</a> was threatened . . . was threatened with liquidation. . . [unintelligible] . . . weapons were provided, and apart from that the insurgents were informed about German positions . . . after the battle in the <placeName type="camp" ref="#vothC117">Ghetto</a> the Polish organization gave help . . . [unintelligible]. There, in 1941, I sat in Pawiak, saw terrible scenes, murder, [unintelligible], shootings, people thrown alive into ovens.<note n="2"><span class="note">Pawiak was the main prison in Warsaw at the time. After the German invasion of Poland in 1939 it became a Gestapo prison, and eventually part of the Warsaw concentration camp.</span><sup><a href="#note_2">2</a></sup></note> Then the <a class="term" href="#vothG_gestapo">Gestapo</a> officers, among them, the known executioner of <a class="placename" href="#vothL79">Warsaw</a>, A. Berger and [unintelligible] shot, . . . hunted the population, literally. [unintelligible] . . . beaten for hours.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="545.450" end="x">Then in prison I was subjected to a hunger and salt regime. I was given . . . a mass of salt, and got no water whatsoever, so I suffered horribly from thirst. Then after three months in prison, the day before the Uprising, I was evacuated to <placeName type="camp" ref="#vothC39">Gross-Rosen</a> concentration camp. The things that happened in prison were so dreadful, so macabre. They shot people by the hundreds, whom they dragged out of prison every two or three days . . . and shot them in the ruins of the destroyed <a class="term" href="#vothG_ghetto">ghetto</a>. Five days before the <a class="placename" href="#vothL79">Warsaw</a> Uprising, an uprising occurred in Pawiak . . . [unintelligible] . . . when conditions were too hard, and there was overcrowding. Then everybody, the whole of Ward 3 where that prison uprising broke out, was shot.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="641.703" end="x">I survived the prison . . . dreadfully [unintelligible] I weighed around 40 kilos, kilograms, I think. The treatment was terrible. One was beaten. Masses of scars remained imprinted on my flesh. If, today, one were to tell the Germans that they had done such things, nobody would ever admit to it . . . However, there is evidence of it, and it can be seen. When we arrived at the concentration camp we were told to forget that we were humans, and that we were just numbers. Beatings and torture at every step. People murdered one another, prisoner murdered prisoner. The <a class="term" href="#vothG_capo">capo</a> was not a human being, he was the same Ubermensch [superior] as every <a class="term" href="#vothG_gestapo">Gestapo</a>, he was just called a <a class="term" href="#vothG_capo">capo</a>. The <a class="term" href="#vothG_capo">capo</a> were normally recruited . . . the <a class="term" href="#vothG_capo">capo</a> were normally recruited from amid the criminal prisoners. They were criminals, notorious recidivists.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="748.768" end="x">Were they Germans? Poles?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="752.795" end="x">Most were Germans, but it depends on which camp. Usually they were Germans. A number were also Russian. Old-timers, Poles, Jews. I was in the camp [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="773.976" end="x">Were there Jewish <a class="term" href="#vothG_capo">capos</a> in the Polish <a class="term" href="#vothG_block">block</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="779.638" end="x">Yes, there were. Perhaps you have some questions, Professor?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="788.755" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Boguslaw [last name unknown]</span>:
+            </span>
+            <span class="utterance" who="#boguslaw" start="803.325" end="x">. . . after being liberated by the Anglo-American army, I first stayed in an army camp, then I discovered that it was possible to study. So I came to study in <a class="placename" href="#vothL29">Munich</a>. I'm currently studying music [unintelligible] I'm finishing the second semester.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="835.716" end="x">[In English] This concludes the report—very brief but very interesting report—of Mr. Boguslaw, a . . . [ends abruptly]</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            Boguslaw is referring to the unsuccessful Warsaw Ghetto Uprising which took place in April 1943. About 13,000 Jews were killed, and the ghetto was almost completely razed by the Germans after the fighting.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            Pawiak was the main prison in Warsaw at the time. After the German invasion of Poland in 1939 it became a Gestapo prison, and eventually part of the Warsaw concentration camp.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription (German)
+                            </i>: 
+            <span class="Transcription (German)">
+                <name>Dagmar Platt</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Transcription (Polish)
+                            </i>: 
+            <span class="Transcription (Polish)">
+                <name>Alicia Nitecki</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Translation (German)
+                            </i>: 
+            <span class="Translation (German)">
+                <name>Dagmar Platt</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Translation (Polish)
+                            </i>: 
+            <span class="Translation (Polish)">
+                <name>Alicia Nitecki</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Eben E. English</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC25">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC25" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Dachau
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Dachau, Germany<br />
+                            </p>
+                            <div>
+                The first concentration camp opened in Germany (March 1933), located on the grounds of an abandoned munitions factory near the medieval town of Dachau, about 16 km (10 miles) northwest of Munich. In total, over 200,000 prisoners from more than 30 countries were housed in Dachau.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC25 = new OpenLayers.Map('map_vothC25', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC25.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC25.addLayer(markers);
+map_id_vothC25.zoomToMaxExtent();
+
+                        var lat_1 = 48.250000;
+                        var lon_1 = 11.433300;
+                        var vothC25 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC25_icon = new OpenLayers.Marker(vothC25);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC25);
+markers.addMarker(vothC25_icon);
+    addMarker(vothC25, popupClass, "", true, false, false);
+    map_id_vothC25.setCenter(vothC25, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC117">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC117" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Warsaw Ghetto
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Warsaw, Poland<br />
+                            </p>
+                            <div>
+                Established on October 16, 1940 with around 400,000 people (about 30% of the population of Warsaw but housed in an area covering only 2.4% of the city).  Fighting broke out in January 1943 and ended on April 23; survivors were either killed or deported to concentration and death camps.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC117 = new OpenLayers.Map('map_vothC117', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC117.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC117.addLayer(markers);
+map_id_vothC117.zoomToMaxExtent();
+
+                        var lat_2 = 52.250000;
+                        var lon_2 = 21.000000;
+                        var vothC117 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC117_icon = new OpenLayers.Marker(vothC117);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC117);
+markers.addMarker(vothC117_icon);
+    addMarker(vothC117, popupClass, "", true, false, false);
+    map_id_vothC117.setCenter(vothC117, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC39">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC39" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Gross-Rosen
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Rogoźnica, Poland<br />
+                            </p>
+                            <div>
+                Established in Silesia in 1940 as a satellite camp to Sachsenhausen, it became an independent camp in 1941. Work centered on a huge stone quarry and many sub-camps were established (reaching 60 in 1944).
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC39 = new OpenLayers.Map('map_vothC39', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC39.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC39.addLayer(markers);
+map_id_vothC39.zoomToMaxExtent();
+
+                        var lat_3 = 51.016700;
+                        var lon_3 = 16.300000;
+                        var vothC39 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC39_icon = new OpenLayers.Marker(vothC39);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC39);
+markers.addMarker(vothC39_icon);
+    addMarker(vothC39, popupClass, "", true, false, false);
+    map_id_vothC39.setCenter(vothC39, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_4 = 48.133300;
+                        var lon_4 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL79">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL79" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Warsaw, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL79 = new OpenLayers.Map('map_vothL79', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL79.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL79.addLayer(markers);
+map_id_vothL79.zoomToMaxExtent();
+
+                        var lat_5 = 52.250000;
+                        var lon_5 = 21.000000;
+                        var vothL79 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL79_icon = new OpenLayers.Marker(vothL79);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL79);
+markers.addMarker(vothL79_icon);
+    addMarker(vothL79, popupClass, "", true, false, false);
+    map_id_vothL79.setCenter(vothL79, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_unrra">
+                <a name="vothG_unrra"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    UNRRA.
+                </span>
+                <span class="definition">
+                    Acronym for the United Nations Relief and Rehabilitation Administration. Established in 1943, its principal executive post was held by a representative of the United States, which supplied forty percent of its budget. Among its chief duties was the repatriation of displaced persons—when the war ended, UNRRA had to cope with the task of caring for millions of displaced persons and refugees.
+                </span>
+            </li>
+                        <li class="vothG_action">
+                <a name="vothG_action"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    action.
+                </span>
+                <span class="definition">
+                    Episodes of coordinated violence against Jewish communities, including the rounding up of Jews for deportation to ghettos, concentration camps, or killing centers.
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                        <li class="vothG_capo">
+                <a name="vothG_capo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    capo.
+                </span>
+                <span class="definition">
+                    A term used for certain prisoners inside Nazi concentration camps during World War II in various lower administrative positions. Capos received more privileges than normal prisoners. They were often convicts who were offered this work in exchange for a reduced sentence or parole.
+                </span>
+            </li>
+                        <li class="vothG_block">
+                <a name="vothG_block"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    block.
+                </span>
+                <span class="definition">
+                    A single concentration camp barrack.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Boguslaw is referring to the unsuccessful Warsaw Ghetto Uprising which took place in April 1943. About 13,000 Jews were killed, and the ghetto was almost completely razed by the Germans after the fighting.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Pawiak was the main prison in Warsaw at the time. After the German invasion of Poland in 1939 it became a Gestapo prison, and eventually part of the Warsaw concentration camp.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Abraham Schrameck; August 21, 1946; Paris, France : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-abraham-schrameck-august-21-1946-paris-france interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Abraham Schrameck; August 21, 1946; Paris, France</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=schrameckA">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=schrameckA&display=schrameckA_fr_en">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=schrameckA&display=schrameck_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=schrameckA">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=schrameckA">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="22.545" end="x">[In English] Yes, introduce yourself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="26.831" end="x">[In French] Give your name and some details about your career.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="73.059" end="x">[In French] To date I have done fifty years of public service for my country. Twenty-five years of my administrative career and during the same time, elected office in the legislature. I never dreamed when I was very young, the son of an ordinary merchant in the Centre department at <a class="placename" href="#vothL524">St. Etienne</a> Loire,<note n="1"><span class="note">St. Etienne is located in south-eastern France. During the war, it had a population of about 200,000 and was the most important city in the Loire region.</span><sup><a href="#note_1">1</a></sup></note> that I would have a career as a public figure. Circumstances, in their own time, made the decision for me. It turned out that I was invited by the Prefect of the Department<note n="2"><span class="note">The prefect was the head of a department, a governmentally designated administrative area established by the French Revolution of 1789.</span><sup><a href="#note_2">2</a></sup></note> where I was born, to take a position as head of his office. It was Mr. Lépine who invited me, whom I then accompanied to <a class="placename" href="#vothL13">Paris</a>, where he was Prefect of Police and where he is still fondly remembered, because no matter what, no matter how great his successors were, none of them could supplant him in our memories. When I left the Prefecture of Police, when my boss became head of the general governor of Algeria . . . or rather General Governor of Algeria,<note n="3"><span class="note">Algeria was under French colonial control from 1830 until its independence in 1962.</span><sup><a href="#note_3">3</a></sup></note> I started working for myself in <a class="placename" href="#vothL236">Marseille</a>, as secretary general of the prefecture. I stayed a few years. I went to work in two other Departments. I returned to <a class="placename" href="#vothL13">Paris</a> to the Ministry of the Interior to take a management position, and I returned to <a class="placename" href="#vothL236">Marseille</a> to the same Prefecture. I stayed there without ever being named Prefect, for seven or eight years,<note n="4"><span class="note">Marseille is France's chief Mediterranean seaport, and during the years of World War II was its third-largest city. Mr. Schramack was in fact prefect of the Bouches du Rhone department (where Marseille is located) from 1911-1918. In that office, he was held in high esteem.</span><sup><a href="#note_4">4</a></sup></note> where I did my work in such a way that Mr. Clemenceau<note n="5"><span class="note">Georges Clemenceau (1841-1929), nicknamed "the tiger", was an important political figure in the Third Republic, and French premier from 1917-1920.</span><sup><a href="#note_5">5</a></sup></note> picked me for a general government position in Madagascar.<note n="6"><span class="note">The island of Madagascar was under French colonial rule at the time Mr. Schramack was Governor-General of Madagascar a position he held from August 1918 to July 1919.</span><sup><a href="#note_6">6</a></sup></note> And since my fellow citizens of <a class="placename" href="#vothL236">Marseille</a> offered, two years later, to put me in office to represent them in the Senate, I accepted . . . I responded to the confidence they placed in me. And that's how, some time later, circumstances led Mr. Painlevé,<note n="7"><span class="note">Paul Painlevé (1863-1933) was a brilliant mathematician and a significant political figure during the Third Republic. He was briefly prime minister in 1917 and was succeed by Clemenceau. He became prime minister again from April to November 1925. It was during this time that Mr. Schramack served as minister of the interior. He was denounced by the anti-Semitic, ultra-nationalist politician Charles Maurras, who called for Schramack's assassination after he had ordered the disarming of far-right associations.</span><sup><a href="#note_7">7</a></sup></note> as Head of the Government, to ask me to be Minister of the Interior. I was Minister of the Interior the whole time he was prime minister, not without difficulties on occasion in <a class="placename" href="#vothL13">Paris</a>, from the disruptive elements of the extreme Right who all too publicly demonstrated their hatred for republican institutions. And when that administration withdrew, I went back to my elected office.<note n="8"><span class="note">That is, his elected office as a French Senator. Mr. Schramack served four terms as French senator from 1920-1940. In the summer of 1940, he was one of the great majorities of representatives in the National Assembly who voted for the dissolution of the Third Republic. He completed his senatorial mandate in October, 1945.</span><sup><a href="#note_8">8</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="380.187" end="x">As a member of the Senate, on the finance committee and the aviation committee, which enabled me to be aware of the situation in which we found ourselves, from the standpoint of our defense against potential attacks from Germany that we were already able to predict, we didn't shy away, in the Senate committees to which I belonged, from frequently calling the attention of the government to the insufficiency of its preparation in the presence of the . . . of this . . . in the presence . . . [long pause] . . . of the accumulation of the attack capabilities that Germany was already acquiring and which were already known to the parliamentary committees.<note n="9"><span class="note">Mr. Schramack is speaking here of the post-World War I period when Germany was trying to skirt the provisions of the Treaty of Versailles limiting its armed forces.</span><sup><a href="#note_9">9</a></sup></note> We unfortunately were not always able to find, neither with the government nor even throughout the range of public opinion, the credit, the acceptance that our observations should have . . . [pause] . . . huh?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="474.725" end="x">. . . justified, yes . . . [aside off mic: "not the right word, but no matter"]. And unfortunately, events demonstrated that we were still underestimating the truth. We never stopped pointing out in particular the truly excessively inferior state of our air power as compared to [that of] our hawkish neighbors. [long pause] As war broke out, we relied up to a certain point, not being able to do otherwise, on eye witness reports by the heads of our army. As the war broke out and the disaster took on excessive proportions, all those who, as I, belonged to the Jewish faith,<note n="10"><span class="note">Mr. Schramack's family were part of the old-line French Jewish element who were well-integrated into French society and considered themselves strictly as a religious community. Like Mr. Schramack, most were staunch and sincere French patriots.</span><sup><a href="#note_10">10</a></sup></note> could expect . . . that they would be the object at the hands of the conquerors . . . of persecutions that did not fail to follow. Nor could they expect, given the conditions under which Maréchal Pétain and the head of his government under Laval had taken power, that they would do anything at all to spare them from these persecutions.<note n="11"><span class="note">Marshal Philippe Pétain, a hero of World War I, was chief of state of the Vichy French collaborationist government during the German occupation. The politician Pierre Laval dominated the Vichy government from July to December 1940, when he was dismissed by Pétain. In April 1942, aided by German pressure, he was restored to power by Pétain and remained in control of the government until its collapse in August 1944.</span><sup><a href="#note_11">11</a></sup></note> As for me, I didn't have to wait long. As early as September, I was sent away to <a class="placename" href="#vothL574">Pellevoisin</a> in administrative custody. The police commissioners . . . a police commissioner came to get me at my home in <a class="placename" href="#vothL236">Marseille</a> to take me to this institution where I found myself with other public figures and who had also attracted attention to themselves by the independence of their opinions, like Mandel, who unfortunately is gone<note n="12"><span class="note">Georges Mandel, a French Jewish politician, was a former minister of the interior who tried in June 1940 to continue the struggle against Nazi Germany from French North Africa. He was arrested and was eventually shot by the milice, an elite military force of French fascist volunteers, in July 1944.</span><sup><a href="#note_12">12</a></sup></note> . . . uh, by . . . because of agents working for Laval, like Marx Dormoy, another former Minister of the Interior, and like a few others . . . uh . . . [aside off mic: "I don't know how I started my sentence. I'll try to finish it . . . "]. I remained in that institution for several months. From there, I was sent, in the beginning of 1940 [prompt from someone off mic who corrects, saying "41"] Yes, in this . . . being watched. But continuously, uh . . . under the . . . uh . . . my mail was opened, I had limited visitation, and . . . I didn't . . . we were not able to leave this residence without government authorization. It is nevertheless true that when the Germans spoke again about having to open the demarcation line that they had accepted with the Armistice, I was going to leave this residence no matter what.<note n="13"><span class="note">Mr. Schramack, like Mandel and other prominent political figures, was first imprisoned by the Vichy government for three months. He was then placed in a residence where his movements were severely restricted. However, following the Allied landings in North Africa, the Germans occupied the part of France under Vichy control on November 11, 1942. Mr. Schramack then escaped from his confinement and returned to Marseille.</span><sup><a href="#note_13">13</a></sup></note> I returned to my home in <a class="placename" href="#vothL236">Marseille</a> . . . from which they didn't want me to wander off too far. And when I would go from time to time to a neighboring département [county], where the <a class="term" href="#vothG_gestapo">Gestapo</a> would come to look for me, I could only avoid being arrested by them with the help of the good will and the devotion of certain municipal employees who warned me that the <a class="term" href="#vothG_gestapo">Gestapo</a> was waiting for me. I was going home to <a class="placename" href="#vothL236">Marseille</a>, and there, because of our American friends, I was in a spot where my life was in danger, since when they bombed <a class="placename" href="#vothL236">Marseille</a> on May 27, all the windows of my house, the house in which I lived, exploded. The smoke permeated the house and I had to return to my personal pied-à-terre, up until the moment when I saw Moroccans, or Moroccan troops arriving, descending on the city, and who several days earlier had disembarked in the Mediterranean under orders from General de Lattre de Tassigny.<note n="14"><span class="note">Mr. Schramack is referring here to the Allied assault on southern France which began on August 15, 1944. General Jean de Lattre de Tassigny commanded French Army B (later the First French Army) in the Allied landing operations in southern France and then in the liberation of France and advance into Germany.  To the very end of the Occupation, the Vichy regime sought to enforce its anti-Jewish measures and the threat of arrest and deportation hung over the heads of French Jews.</span><sup><a href="#note_14">14</a></sup></note> Such were the Latin tribulations I experienced during this time of war, knowing . . . fortunately warned during the time I was in <a class="placename" href="#vothL236">Marseille</a>, knowing that they were looking for me, and not without suspecting the serious risks to which I would be exposed if by chance I fell into their hands. I have to say that [unintelligible] because of the way in which my fellow citizens of <a class="placename" href="#vothL236">Marseille</a> did what they could to avoid . . . to keep me from this extreme cruelty, coming to me even from high up in the government, letting me know that if need be, I would be able to hide, if I felt the situation warranted it, in the very Prefecture in which I had worked as head of the département for a certain number of years, if I felt that staying there for several hours would shelter me from the search that was being done to find me. And, from various other parts, some political friends . . . met with one or two other friends who were . . . filled with emotion by the risk that we faced, persons whose names I hardly knew from way back, made themselves available to me to do what they could to facilitate my chances of staying alive.<note n="15"><span class="note">There is no doubt that the assistance Mr. Schramack describes help save his life, especially since he was the object of anti-Semitic hatred directed against him by French right-wingers. Of the approximately 77,000 Jews from France who perished during the Holocaust, about one-third were citizens of long standing. 8,700 were age 67 or older.</span><sup><a href="#note_15">15</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="912.694" end="x">That's enough. Did I answer your question?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="919.787" end="x">[In English] Yes. I'm thinking of something.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="924.513" end="x">[In French] At that time, in <a class="placename" href="#vothL13">Paris</a> where I had an apartment, it goes without saying that the Germans made a clean sweep of the place. Nothing remained of all my things, not a bookshelf, or anything that once belonged to my parents, for more than a hundred years. Everything was taken, and I found myself deprived of any means of taking up or continuing my former life.<note n="16"><span class="note">This was but one example of the Nazi zeal for lawless plunder and pillage.</span><sup><a href="#note_16">16</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="958.124" end="x">[In English] [To interpreter] I want to know if there were many of your father's friends collaborating with <a class="term" href="#vothG_vichy">Vichy</a> and the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="984.529" end="x">[In French] Political friends?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="996.620" end="x">I can't think of any. They are very rare. There just aren't any. And here's why. It's because Mr. Laval, who had previously been in the Parliament, already did not have a very good reputation. He was already considered as, for quite a few years, as doing in Parliament whatever would be agreeable to Germany. He was remembered as having gone, in the last war, to . . . where was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="1035.753" end="x">. . . to <a class="placename" href="#vothL575">Quintal</a> to try to work out a peaceful solution in favor of the Germans, isn't that right? And each time that we had debates on foreign politics . . . when these debates took place in Parliament, he showed himself to be anti-British, anti-American, and pro-German. Consequently, we weren't very supportive of him.<note n="17"><span class="note">Indeed, during the 1930s Laval's fascist sympathies were well-known. He showed little determination to resist fascist territorial aims and advocated a policy of appeasement.</span><sup><a href="#note_17">17</a></sup></note> And he . . . I do believe that, if those in Parliament who put their faith in Maréchal Pétain in <a class="term" href="#vothG_vichy">Vichy</a> suspected that Maréchal Pétain, well aware of what Laval was, would continue nevertheless to entrust the government to him, well, they would not have voted as they had. As for me, I know members of parliament with very moderate politics who, during the short time I was in <a class="term" href="#vothG_vichy">Vichy</a>, went to see the Maréchal and told him what they thought of Laval. They had reason to believe that, given the faith that the Maréchal would have in what they said, that the Maréchal would not trust Laval and then that he would get rid of him as quickly as he could. Instead of that, it seems that he let himself be completely . . . uh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="1151.519" end="x">. . . guided, inspired by this evil genius, and . . . it is very true that this did not enable . . . that this separated many who knew the Maréchal, from the government, from the Maréchal himself, and from <a class="term" href="#vothG_vichy">Vichy</a>. Furthermore, what proves this, is that the Maréchal believed [unintelligible] to advise Laval, who was nevertheless a capable politician, that it was in his best interest to create a sort of . . . advisory assembly within the <a class="term" href="#vothG_vichy">Vichy government</a>. He created it; he tried to fill it by recruiting from all parties a variety of public figures fairly representative of a large proportion of the two former chambers, the former National Assembly [Chamber of Deputies] and the former Senate. Well, right away such opposition arose against the measures that he himself was advocating that he didn't dare call the group to meet more than once. And the committees that he appointed didn't even meet and none of them honored the objectives that Maréchal Pétain proposed for their last [unintelligible].<note n="18"><span class="note">Mr. Schramack makes reference here to the early months of the Vichy regime. Laval was responsible for persuading the French National Assembly to dissolve itself after the German victory in June 1940 and subsequent armistice. Thus, the Third Republic ended on July 10, 1940.  Soon thereafter, Marshal Pétain and his advisors embarked upon a series of reforms, grandiloquently termed the National Revolution, advocated by the right-wing traditionalists and authoritarians who surrounded him. The watchwords of the xenophobic and chauvinistic National Revolution were, work, family and patriotism.</span><sup><a href="#note_18">18</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1259.882" end="x">[In English] What I wanted to know is when France was split so to speak in two, to what extent were all [Schrameck interrupts with a sneeze] personally good or bad to each other? Now for instance, your father was in prison for three months. Where did your friends from before, that would have done something to get him out and not . . . [inaudible]? That's what I mean.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Louis Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnL" start="1294.882" end="x">[In French] Professor Boder would like to know if, after France was divided into two zones, the French were themselves divided. And if, specifically, given the fact that you had been imprisoned, your friends turned away from you.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="1320.375" end="x">I cannot say that they turned away from me. But I can definitely say that for the most part, with a few interesting exceptions, that they were taking lots of precautions, and that if some of them came to see me, well, there were others who weren't that far away and who could have gone just a bit out of their way to come see how I was doing. Well, in any other time, they would have done so, and at that time, for their own safety, well, they didn't venture to do so. I admit that I have no right to be angry with them, because they would have been taking personal risks that it would have been pointless to take.<note n="19"><span class="note">Mr. Schramack is taking the wise and humane position of not judging others too harshly. They and their families were living in a police state, under foreign occupation, enduring shortages and privations of various kinds and concerned about survival for themselves and their families.</span><sup><a href="#note_19">19</a></sup></note> And so those who gave me help during the last period I spent in <a class="placename" href="#vothL236">Marseille</a> unquestionably took a lot of risks. I was hiding in the homes of friends. If I had been found with these friends, it's not certain, and it is even possible that I was jeopardizing the hospitality that they were offering and that they themselves would have been subjected to measures, obviously for some of them, to which they maybe wouldn't normally have been exposed. They [unintelligible] however, you see, because it's thanks to them that I came away unharmed from all these tribulations. Well, there were some who were quite courageous. And a relatively large number of them.<note n="20"><span class="note">Nevertheless, there were those whose compassion, patriotism and courage overcame self-interest, apathy, and fear to extend a helping hand.</span><sup><a href="#note_20">20</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1449.959" end="x">[In English] Well, Monsieur Schrameck, I did not understand everything you said, but you said it so interestingly that I think that the people in America and our students would listen to your story with very great interest. Would you tell me how old you are?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="1475.349" end="x">[In French] Well, I'm presently seventy-eight years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1481.473" end="x">[In English] Seventy-eight. Well, looks still like a young man.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="1493.761" end="x">When my father was in prison in <a class="placename" href="#vothL574">Pellevoisin</a>, his birthday was celebrated with a cake, his seventy-fourth birthday was celebrated with Marx Dormoy, with Mandel who has been killed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Abraham Schrameck</span>:
+            </span>
+            <span class="utterance" who="#schrameckA" start="1546.349" end="x">[In French] The Administrator, the President of the Chamber, what was his name? Vincent Auriol?<note n="21"><span class="note">This remark is out of context so it is difficult to know why Mr. Schramack asked the question. Vincent Auriol served as president of the French Fourth Republic from 1947-1954.</span><sup><a href="#note_21">21</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Marcelle Kahn</span>:
+            </span>
+            <span class="utterance" who="#kahnM" start="1551.243" end="x">Vincent Auriol.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1558.101" end="x">[In English] Well, it takes great courage to celebrate it.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            St. Etienne is located in south-eastern France. During the war, it had a population of about 200,000 and was the most important city in the Loire region.
+        </li>
+                <li>
+            <a name="note_2"></a>
+            The prefect was the head of a department, a governmentally designated administrative area established by the French Revolution of 1789.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            Algeria was under French colonial control from 1830 until its independence in 1962.
+        </li>
+                <li>
+            <a name="note_4"></a>
+            Marseille is France's chief Mediterranean seaport, and during the years of World War II was its third-largest city. Mr. Schramack was in fact prefect of the Bouches du Rhone department (where Marseille is located) from 1911-1918. In that office, he was held in high esteem.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            Georges Clemenceau (1841-1929), nicknamed "the tiger", was an important political figure in the Third Republic, and French premier from 1917-1920.
+        </li>
+                <li>
+            <a name="note_6"></a>
+            The island of Madagascar was under French colonial rule at the time Mr. Schramack was Governor-General of Madagascar a position he held from August 1918 to July 1919.
+        </li>
+                <li>
+            <a name="note_7"></a>
+            Paul Painlevé (1863-1933) was a brilliant mathematician and a significant political figure during the Third Republic. He was briefly prime minister in 1917 and was succeed by Clemenceau. He became prime minister again from April to November 1925. It was during this time that Mr. Schramack served as minister of the interior. He was denounced by the anti-Semitic, ultra-nationalist politician Charles Maurras, who called for Schramack's assassination after he had ordered the disarming of far-right associations.
+        </li>
+                <li>
+            <a name="note_8"></a>
+            That is, his elected office as a French Senator. Mr. Schramack served four terms as French senator from 1920-1940. In the summer of 1940, he was one of the great majorities of representatives in the National Assembly who voted for the dissolution of the Third Republic. He completed his senatorial mandate in October, 1945.
+        </li>
+                <li>
+            <a name="note_9"></a>
+            Mr. Schramack is speaking here of the post-World War I period when Germany was trying to skirt the provisions of the Treaty of Versailles limiting its armed forces.
+        </li>
+                <li>
+            <a name="note_10"></a>
+            Mr. Schramack's family were part of the old-line French Jewish element who were well-integrated into French society and considered themselves strictly as a religious community. Like Mr. Schramack, most were staunch and sincere French patriots.
+        </li>
+                <li>
+            <a name="note_11"></a>
+            Marshal Philippe Pétain, a hero of World War I, was chief of state of the Vichy French collaborationist government during the German occupation. The politician Pierre Laval dominated the Vichy government from July to December 1940, when he was dismissed by Pétain. In April 1942, aided by German pressure, he was restored to power by Pétain and remained in control of the government until its collapse in August 1944.
+        </li>
+                <li>
+            <a name="note_12"></a>
+            Georges Mandel, a French Jewish politician, was a former minister of the interior who tried in June 1940 to continue the struggle against Nazi Germany from French North Africa. He was arrested and was eventually shot by the milice, an elite military force of French fascist volunteers, in July 1944.
+        </li>
+                <li>
+            <a name="note_13"></a>
+            Mr. Schramack, like Mandel and other prominent political figures, was first imprisoned by the Vichy government for three months. He was then placed in a residence where his movements were severely restricted. However, following the Allied landings in North Africa, the Germans occupied the part of France under Vichy control on November 11, 1942. Mr. Schramack then escaped from his confinement and returned to Marseille.
+        </li>
+                <li>
+            <a name="note_14"></a>
+            Mr. Schramack is referring here to the Allied assault on southern France which began on August 15, 1944. General Jean de Lattre de Tassigny commanded French Army B (later the First French Army) in the Allied landing operations in southern France and then in the liberation of France and advance into Germany.  To the very end of the Occupation, the Vichy regime sought to enforce its anti-Jewish measures and the threat of arrest and deportation hung over the heads of French Jews.
+        </li>
+                <li>
+            <a name="note_15"></a>
+            There is no doubt that the assistance Mr. Schramack describes help save his life, especially since he was the object of anti-Semitic hatred directed against him by French right-wingers. Of the approximately 77,000 Jews from France who perished during the Holocaust, about one-third were citizens of long standing. 8,700 were age 67 or older.
+        </li>
+                <li>
+            <a name="note_16"></a>
+            This was but one example of the Nazi zeal for lawless plunder and pillage.
+        </li>
+                <li>
+            <a name="note_17"></a>
+            Indeed, during the 1930s Laval's fascist sympathies were well-known. He showed little determination to resist fascist territorial aims and advocated a policy of appeasement.
+        </li>
+                <li>
+            <a name="note_18"></a>
+            Mr. Schramack makes reference here to the early months of the Vichy regime. Laval was responsible for persuading the French National Assembly to dissolve itself after the German victory in June 1940 and subsequent armistice. Thus, the Third Republic ended on July 10, 1940.  Soon thereafter, Marshal Pétain and his advisors embarked upon a series of reforms, grandiloquently termed the National Revolution, advocated by the right-wing traditionalists and authoritarians who surrounded him. The watchwords of the xenophobic and chauvinistic National Revolution were, work, family and patriotism.
+        </li>
+                <li>
+            <a name="note_19"></a>
+            Mr. Schramack is taking the wise and humane position of not judging others too harshly. They and their families were living in a police state, under foreign occupation, enduring shortages and privations of various kinds and concerned about survival for themselves and their families.
+        </li>
+                <li>
+            <a name="note_20"></a>
+            Nevertheless, there were those whose compassion, patriotism and courage overcame self-interest, apathy, and fear to extend a helping hand.
+        </li>
+                <li>
+            <a name="note_21"></a>
+            This remark is out of context so it is difficult to know why Mr. Schramack asked the question. Vincent Auriol served as president of the French Fourth Republic from 1947-1954.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Deborah Joyce</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>Deborah Joyce</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Elliot Lefkovitz</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothL524">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL524" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Saint-&#195;tienne, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL524 = new OpenLayers.Map('map_vothL524', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL524.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL524.addLayer(markers);
+map_id_vothL524.zoomToMaxExtent();
+
+                        var lat_1 = 45.433300;
+                        var lon_1 = 4.383300;
+                        var vothL524 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothL524_icon = new OpenLayers.Marker(vothL524);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL524);
+markers.addMarker(vothL524_icon);
+    addMarker(vothL524, popupClass, "", true, false, false);
+    map_id_vothL524.setCenter(vothL524, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_2 = 48.866700;
+                        var lon_2 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL236">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL236" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Marseille, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL236 = new OpenLayers.Map('map_vothL236', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL236.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL236.addLayer(markers);
+map_id_vothL236.zoomToMaxExtent();
+
+                        var lat_3 = 43.300000;
+                        var lon_3 = 5.366700;
+                        var vothL236 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL236_icon = new OpenLayers.Marker(vothL236);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL236);
+markers.addMarker(vothL236_icon);
+    addMarker(vothL236, popupClass, "", true, false, false);
+    map_id_vothL236.setCenter(vothL236, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL574">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL574" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Pellevoisin, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL574 = new OpenLayers.Map('map_vothL574', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL574.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL574.addLayer(markers);
+map_id_vothL574.zoomToMaxExtent();
+
+                        var lat_4 = 46.983333;
+                        var lon_4 = 1.416667;
+                        var vothL574 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL574_icon = new OpenLayers.Marker(vothL574);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL574);
+markers.addMarker(vothL574_icon);
+    addMarker(vothL574, popupClass, "", true, false, false);
+    map_id_vothL574.setCenter(vothL574, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL575">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL575" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Quintal, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL575 = new OpenLayers.Map('map_vothL575', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL575.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL575.addLayer(markers);
+map_id_vothL575.zoomToMaxExtent();
+
+                        var lat_5 = 45.833300;
+                        var lon_5 = 6.083300;
+                        var vothL575 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL575_icon = new OpenLayers.Marker(vothL575);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL575);
+markers.addMarker(vothL575_icon);
+    addMarker(vothL575, popupClass, "", true, false, false);
+    map_id_vothL575.setCenter(vothL575, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_vichy">
+                <a name="vothG_vichy"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Vichy Government.
+                </span>
+                <span class="definition">
+                    The right-wing government of unoccupied France after the country's defeat by the Germans in June 1940, named after the spa town of Vichy, France, where the national assembly was based under Prime Minister Pétain until liberation in 1944. Vichy France was that part of France not occupied by German troops until November 1942. Authoritarian and collaborationist, the Vichy regime cooperated with the Germans even after they had moved to the unoccupied zone in November 1942. It imprisoned some 135,000 people, interned another 70,000, deported some 76,000 Jews, and sent 650,000 French workers to Germany.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            St. Etienne is located in south-eastern France. During the war, it had a population of about 200,000 and was the most important city in the Loire region.
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The prefect was the head of a department, a governmentally designated administrative area established by the French Revolution of 1789.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Algeria was under French colonial control from 1830 until its independence in 1962.
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Marseille is France's chief Mediterranean seaport, and during the years of World War II was its third-largest city. Mr. Schramack was in fact prefect of the Bouches du Rhone department (where Marseille is located) from 1911-1918. In that office, he was held in high esteem.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Georges Clemenceau (1841-1929), nicknamed "the tiger", was an important political figure in the Third Republic, and French premier from 1917-1920.
+        </li>
+                <li class="note_6">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The island of Madagascar was under French colonial rule at the time Mr. Schramack was Governor-General of Madagascar a position he held from August 1918 to July 1919.
+        </li>
+                <li class="note_7">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Paul Painlevé (1863-1933) was a brilliant mathematician and a significant political figure during the Third Republic. He was briefly prime minister in 1917 and was succeed by Clemenceau. He became prime minister again from April to November 1925. It was during this time that Mr. Schramack served as minister of the interior. He was denounced by the anti-Semitic, ultra-nationalist politician Charles Maurras, who called for Schramack's assassination after he had ordered the disarming of far-right associations.
+        </li>
+                <li class="note_8">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            That is, his elected office as a French Senator. Mr. Schramack served four terms as French senator from 1920-1940. In the summer of 1940, he was one of the great majorities of representatives in the National Assembly who voted for the dissolution of the Third Republic. He completed his senatorial mandate in October, 1945.
+        </li>
+                <li class="note_9">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Schramack is speaking here of the post-World War I period when Germany was trying to skirt the provisions of the Treaty of Versailles limiting its armed forces.
+        </li>
+                <li class="note_10">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Schramack's family were part of the old-line French Jewish element who were well-integrated into French society and considered themselves strictly as a religious community. Like Mr. Schramack, most were staunch and sincere French patriots.
+        </li>
+                <li class="note_11">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Marshal Philippe Pétain, a hero of World War I, was chief of state of the Vichy French collaborationist government during the German occupation. The politician Pierre Laval dominated the Vichy government from July to December 1940, when he was dismissed by Pétain. In April 1942, aided by German pressure, he was restored to power by Pétain and remained in control of the government until its collapse in August 1944.
+        </li>
+                <li class="note_12">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Georges Mandel, a French Jewish politician, was a former minister of the interior who tried in June 1940 to continue the struggle against Nazi Germany from French North Africa. He was arrested and was eventually shot by the milice, an elite military force of French fascist volunteers, in July 1944.
+        </li>
+                <li class="note_13">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Schramack, like Mandel and other prominent political figures, was first imprisoned by the Vichy government for three months. He was then placed in a residence where his movements were severely restricted. However, following the Allied landings in North Africa, the Germans occupied the part of France under Vichy control on November 11, 1942. Mr. Schramack then escaped from his confinement and returned to Marseille.
+        </li>
+                <li class="note_14">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Schramack is referring here to the Allied assault on southern France which began on August 15, 1944. General Jean de Lattre de Tassigny commanded French Army B (later the First French Army) in the Allied landing operations in southern France and then in the liberation of France and advance into Germany.  To the very end of the Occupation, the Vichy regime sought to enforce its anti-Jewish measures and the threat of arrest and deportation hung over the heads of French Jews.
+        </li>
+                <li class="note_15">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            There is no doubt that the assistance Mr. Schramack describes help save his life, especially since he was the object of anti-Semitic hatred directed against him by French right-wingers. Of the approximately 77,000 Jews from France who perished during the Holocaust, about one-third were citizens of long standing. 8,700 were age 67 or older.
+        </li>
+                <li class="note_16">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            This was but one example of the Nazi zeal for lawless plunder and pillage.
+        </li>
+                <li class="note_17">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Indeed, during the 1930s Laval's fascist sympathies were well-known. He showed little determination to resist fascist territorial aims and advocated a policy of appeasement.
+        </li>
+                <li class="note_18">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Schramack makes reference here to the early months of the Vichy regime. Laval was responsible for persuading the French National Assembly to dissolve itself after the German victory in June 1940 and subsequent armistice. Thus, the Third Republic ended on July 10, 1940.  Soon thereafter, Marshal Pétain and his advisors embarked upon a series of reforms, grandiloquently termed the National Revolution, advocated by the right-wing traditionalists and authoritarians who surrounded him. The watchwords of the xenophobic and chauvinistic National Revolution were, work, family and patriotism.
+        </li>
+                <li class="note_19">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Mr. Schramack is taking the wise and humane position of not judging others too harshly. They and their families were living in a police state, under foreign occupation, enduring shortages and privations of various kinds and concerned about survival for themselves and their families.
+        </li>
+                <li class="note_20">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Nevertheless, there were those whose compassion, patriotism and courage overcame self-interest, apathy, and fear to extend a helping hand.
+        </li>
+                <li class="note_21">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            This remark is out of context so it is difficult to know why Mr. Schramack asked the question. Vincent Auriol served as president of the French Fourth Republic from 1947-1954.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

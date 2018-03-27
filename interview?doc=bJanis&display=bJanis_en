@@ -1,0 +1,1904 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Janis B.; September 24, 1946; München, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-janis-b-september-24-1946-mnchen-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Janis B.; September 24, 1946; München, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=bJanis">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=bJanis&display=bJanis_ru">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=bJanis&display=bJanis_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=bJanis">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="0.766" end="x">[In English] This is Spool 9-152-B, the second half of the original Spool 152. It is Mr. Janis A. [sic]; he does not give his full name, he refuses to give his full name. Chicago, November the 11th, 1949, a reproduction for the U.S. Public Health Service. Boder.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="65.089" end="x"><a class="placename" href="#vothL29">Munich</a>, September the 24th, 1946 . . . as a part of the German tour. I am now here at the Deutsches Museum which houses a <a class="term" href="#vothG_unrra">UNRRA</a> center and [serves also as?] the <a class="term" href="#vothG_unrra">UNRRA</a> University. The interviewee is Mr. Janis B . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="78.936" end="x">[In Russian] Are you a Latvian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="80.561" end="x">Yes. So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="81.983" end="x">[In English] . . . who is here as a Latvian. He will talk to us in Russian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="88.157" end="x">[In Russian] Mr. Janis, Janis, how old are you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="93.594" end="x">Forty-three.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="94.703" end="x">[In English] Eh, he is forty-three years old . . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="98.172" end="x">[In Russian] And what are you studying [at the university?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="101.313" end="x">Natural science.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="103.750" end="x">Natural science. What area are you [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="107.125" end="x">Ah, botany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="109.703" end="x">Botany. What, were you in natural science before?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="112.469" end="x">Yes. I had already begun earlier at a Latvian university, ah . . . ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="117.547" end="x">To study botany?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="120.359" end="x">. . . to study botany, but on arrival of the Bolsheviks, [I left?] my studies and now I am continuing here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="128.030" end="x">How many years ago was this?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="130.326" end="x">It was in 1940 [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="133.357" end="x">Well, ah, that mean you were thirty-eight years old then.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="136.154" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="136.685" end="x">And what were you doing before the university? Were you [not from?] a gymnasium or [unintelligible and weak] gymnasium?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="143.888" end="x">I was working as a [digger?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="145.341" end="x">So. And, and in the city of <a class="placename" href="#vothL129">Riga</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="148.044" end="x">In the city of <a class="placename" href="#vothL129">Riga</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="148.982" end="x">So, you, as you told me earlier, worked [unintelligible] before you [went?] to the university. Well, okay, now start and tell me in details, because it is also important in order to finish all the history. Do you understand? But that what you have told me, I would like you to tell me [regarding everything?] in detail. I am interested in your personal history, [not?] the history of [<a class="placename" href="#vothL129">Riga</a>?]. Do you understand? Not the history of the [Bolsheviks?]. But I am interested in your personal history. [Translator's note: "history" also translates as "story."] Ag, when did the Soviets arrive in <a class="placename" href="#vothL129">Riga</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="184.232" end="x">The Soviets arrived in <a class="placename" href="#vothL129">Riga</a> in July 1939.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="189.701" end="x">And you were there at the university then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="191.857" end="x">As a student.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="193.607" end="x">You were at the university?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="194.825" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="195.434" end="x">Well, tell me what happened to you and what happened [at the university?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="199.293" end="x">It was like this, upon the arrival of the Bolsheviks, and part of the students were supposed to [keep watch?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="211.387" end="x">Of the lessons.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="212.309" end="x">. . . of the lessons, because everyone who was considered to be nationalists began [to wash out?] the investigations from the [Bolsheviks?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="226.981" end="x">So. And what [happened?] to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="230.513" end="x">Since my father had property [with a house?] in <a class="placename" href="#vothL129">Riga</a>, ah, I was considered a capitalist, another kind of capitalist, and therefore, they already looked at me as a person who [unintelligible] the enemy [after the Fascist?] regi— . . . regime.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="256.325" end="x">Well . . . Then what happened to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="260.106" end="x">Our house was nationalized and . . . and [passage itself?] [<i>stumbles</i>], at the same time I was at [unintelligible], I also was working at the same time, ah, at a private, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="277.793" end="x">At a private [business?], ah, in a private, ah, office.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="284.371" end="x">In an office. We [unintelligible] there, again [our own?]. [Unintelligible] and since I [it made the chief?] organization, that [here?] I was considered suspicious and after this [definition?] I also was [convinced?] to be [unintelligible] being contemplated to be exiled to Siberia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="313.673" end="x">Well, what did you do then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="315.985" end="x">I, since there [already?] was the frame of mind . . . well, we began, ah, [among?] acquaintances already, some part was, ah, some parts of the acquaintances were [incorrect grammar] already . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="340.781" end="x">Arrested.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="342.749" end="x">. . . arrested, who were not able to be involved at the university, because already . . . [<i>audio becomes very weak</i>]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="354.222" end="x">[Well, yes?]. [Unintelligible]. Because what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="357.206" end="x">Because [<i>interrupted by Boder</i>] already—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="360.690" end="x">[Unintelligible] [police?] if [everything?] falls out [<i>weak and unintelligible, speaking over each other</i>]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="362.896" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="363.615" end="x">Again it [unintelligible] [would try to load there from?] [Turshchina?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="370.909" end="x">Well, go on. [Unintelligible]. Afterwards [better now?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="373.206" end="x">[Unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="375.206" end="x">[Stop?]. Well, what you consider important, what you have personally. What happened then personally to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="389.190" end="x">So. My father's house had been nationalized [unintelligible] residents to stay [unintelligible] in their [unintelligible] apartment and the whole family move to another smaller apartment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="406.533" end="x">[And tell me?]. The house was nationalized. Who took it? And who [moved?] there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="410.939" end="x">Ag, no one arrived, but it was [open?] and we were not able to [an apartment?] . . . oh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="425.095" end="x">[unintelligible] did you take?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="429.204" end="x">One part [unintelligible] was left.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="433.360" end="x">So, and the apartment payments you also were not able to take.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="435.415" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="436.259" end="x">And were other people left there to live?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="438.009" end="x">Others [already?] had remained.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="439.384" end="x">[Unintelligible] they live?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="442.008" end="x">[Unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="442.695" end="x">So. And you [forced yourself?] and they paid for the apartment, but how [unintelligible] taken the money?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="447.711" end="x">Well, for the apartment myself, ag— [<i>interrupted by Boder</i>]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="449.492" end="x">[Unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="450.133" end="x">[Unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="451.539" end="x">So . . . And where did you yourself then, what did he do with you? Are you a married man?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="458.117" end="x">No, I am not married.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="460.492" end="x">So. Well, so. Then what happened to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="464.023" end="x">I continued . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="473.726" end="x">What did you propose to do? To work?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="477.242" end="x">Ag, I continued working.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="478.929" end="x">Printing—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="479.507" end="x">[<i>interrupts</i>] . . . the printing business, because I worked there as a bookkeeper and the director [also?] was sent from the Communists, but he [unintelligible] only twenty-two, ah twenty-two years, ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="496.713" end="x">He was only twenty-two—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="497.900" end="x">[<i>interrupts</i>] Only twenty-two years old. He didn't know a thing about bookkeeping or about the printing business, but since he was supposed [to find room?] for some time in, ah, the old [unintelligible]. But gradually [those?] who he was unable for [any?] of the others [months?] everyone was released.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="521.180" end="x">And were many Latvians Communists? [Didn't anyone say?] that they were Communists?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="526.008" end="x">It is difficult to say, because at all the meetings where and if someone forgot [to deviate?] from them, then the meeting chairman always [hid?], there is someone against the [wise one?] because [there will be?] the understanding and no one was able to say that he was against it. So, that [all these?] people were being accepted [it was acceptable in part perhaps seventy-eight there, almost?] ninety percent would be against it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="557.429" end="x">Well, and what about you, did you work there until the Germans arrived?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="563.397" end="x">Yes, until then. Ag, because, ag, the large, ag, massive exodus to Siberia began only on 14 June, but . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="576.114" end="x">Of what year?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="577.051" end="x">1940.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="579.348" end="x">And the Germans arrived when?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="580.723" end="x">July 1, 1940.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="584.942" end="x">So that they had time [unintelligible] only two weeks?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="589.676" end="x">Two weeks. And on the 22nd of June the war started, so that ag, this ex . . . exodus was stopped.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="601.113" end="x">The war. Ag, they began [to send?] on July 14.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="605.691" end="x">Hmm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="606.425" end="x">The war started on the 22nd.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="607.909" end="x">The war.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="608.315" end="x">This means, [all?] they sent [unintelligible] eight days.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="611.096" end="x">Yes. [Unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="612.158" end="x">[How many do you think?] they [sent?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="614.048" end="x">Presumably . . . ah, presumably sixty thousand.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="619.376" end="x">So . . . [Over?] sixty thousand people were [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="623.610" end="x">[unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="624.844" end="x">Do you know what happened with them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="627.063" end="x">I don't know because almost no one came back, because afterwards after this the Germans arrived and the front was now . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="643.953" end="x">[Unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="645.265" end="x">[Same words, also unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="645.638" end="x">Well, okay. Just where were you yourself? What [was the example?] not to send you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="648.237" end="x">Everyone [unintelligible] time . . . there [such?] [unintelligible] ah, it was explained [let's say?] of the foundation was a so-called personnel [department?] and there were, there were [unintelligible] lists from, ah . . . from, ag, from those [unintelligible] who considered [them] suspicious. But, [unintelligible] were not, [only for years?] themselves ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="670.357" end="x">Suspicious.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="670.357" end="x">. . . suspicious. So [my?] [unintelligible] [was a customs man?] made hats after this [unintelligible] [about two months?] in a kitchen. Well, since the war had started, then thanks to it they did not succeed [to achieve?] everything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="702.678" end="x">Well, okay. Well then [for the Germans?]. What happened with all those who were your chiefs [weak]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="713.936" end="x">[Large?]. Ag, all the chiefs who had been repressed in Bolshevist times ah, they all left with the Bolsheviks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="725.210" end="x">Were they Estonians, too? . . . [unintelligible] were they also Es— [<i>stops</i>]. Where, ag, I'm sorry, were they also Latvians?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="732.482" end="x">No. Ah, ah, ah, the director was not a Latvian, the director was a Russian, and the chief bookkeeper, too [unintelligible] Russian . . . who left together with the Communists out of Rus— . . . [<i>corrects himself</i>] from Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="746.449" end="x">And what language were the books in?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="748.365" end="x">The books [unintelligible] again in Latvian.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="751.323" end="x">Well, yes. This means, the Germans arrived and what happened to your printing house? What was it, a state printing house?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="759.467" end="x">A state—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="760.464" end="x">[<i>interrupts</i>] What did they print there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="761.149" end="x">They printed [all?] the money, stocks and also books there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="769.387" end="x">Well, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="771.271" end="x">I am not, not [confirming?] our print from that [unintelligible] [students?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="779.717" end="x">[It was not confirmed from that?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="782.027" end="x">From the arrival of the Germans. [I/It remained?] until— [<i>stops</i>]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="783.525" end="x">Well, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="784.789" end="x">Right now it was not [whole?], it was not destroyed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="788.957" end="x">Go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="790.986" end="x">So, that work had been able to continue. Ag, the money was no longer great, they didn't print more because then a new currency was [introduced?] again, German, they sent all, ah, the German money from Germany, but [printing?] continued [unintelligible] to print books and various necessary papers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="824.073" end="x">Well, and tell me what . . . it . . . and did they print money there during the Soviets [occupation]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="832.859" end="x">They [also?] printed money during the Soviets.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="836.261" end="x">Latvian? [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="837.760" end="x">No, not Latvian, [it means everything was?] rubles were introduced everywhere.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="842.883" end="x">Well . . . So the Germans arrived. What happened to you and your family then? Did they give the house back to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="851.099" end="x">No, not right away. They only said that [after this?] we would get it back.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="858.924" end="x">Did you get it then? [<i>sound totally disappears for a few seconds</i>]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="863.594" end="x">It was necessary to take different evidence there that this house had belonged to us earlier, but since, ag, but we did not receive an official paper that this house belongs to us again.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="880.149" end="x">And the apartment money, did you begin to receive apartment money?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="883.336" end="x">We began to receive apartment money, but they were supposed to have been [a regular fund?] and were able only one part [a month?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="891.051" end="x">And the remaining [unintelligible]. Well, go on. What did you do then? Did you continue to be a bookkeeper?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="900.219" end="x">I continued to be a bookkeeper.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="902.343" end="x">And . . . how did the Germans relate to your then later? [He forgot about?] [unintelligible] so?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="902.343" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="909.809" end="x">Well, how did they relate to you, ah, to the population?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="910.309" end="x">Well, when the Germans arrived at first, everyone was very happy, because they thought it would be a lot better. But, [after?] it turned out that it was especially good with the Germans, because as we know, the Germans [liquidated some other?] peoples [unintelligible] [self?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="913.949" end="x">Well, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="940.097" end="x">But, but . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="941.640" end="x">Did they start to arrest someone?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="946.498" end="x">They arrested in several places those who had been avoiding, ah, ah . . . about whom they thought that they were working with the Bolsheviks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="961.647" end="x">[Did they start?] to arrest many people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="963.334" end="x">Not from our establishment—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="966.990" end="x">[<i>interrupts</i>] No, I am thinking [about Jews?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="969.161" end="x">Quite [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="970.708" end="x">And well, in particular? Latvians?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="973.036" end="x">Latvians too [unintelligible] Russians and Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="982.364" end="x">So. Well, and what did they do with the Jews?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="986.442" end="x">With the Jews they . . . they [sent?] to live in a separate quarter—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1000.239" end="x">[<i>interrupting each other</i>] to a <a class="term" href="#vothG_ghetto">ghetto</a> [weak], right?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1001.942" end="x">Yes, [to a <a class="term" href="#vothG_ghetto">ghetto</a>?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1002.270" end="x">Well, go on. And then what did they . . . and what did they do with them afterwards?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1007.583" end="x">Then it was [discussed?] that one part of the <a class="term" href="#vothG_ghetto">ghetto</a> leave, leave, but one can only guess what happened to them, than something [no longer was all good?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1026.361" end="x">[In English] This concludes Spool 152 in the middle of an interview with Mr. Janis from Latvia. We will continue on the Spool 15— ah, 153.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Herman Barnett</span>:
+            </span>
+            <span class="utterance" who="#barnettH" start="1038.936" end="x">Spool 153, Spool 153. Spool 153, this is Herman Barnett.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1079.495" end="x">Spool 153. <a class="placename" href="#vothL29">Munich</a>, September the 24th, 1946, at the Deutsches Museum which houses the <a class="term" href="#vothG_unrra">UNRRA</a> University for displaced persons. The interviewee is Mr. Janis B. . . . forty-three years old. Continuing from Spool 152.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1096.329" end="x">[In Russian] Well, what then happened? . . . You [unintelligible] were left to work there until when? What happened to your parents?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1111.269" end="x">When, when, when the Germans arrived in <a class="placename" href="#vothL129">Riga</a>, my mom ag, from, was killed by exploding grenades. From a grenade.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1124.617" end="x">What? Did they capture <a class="placename" href="#vothL129">Riga</a> with a huge battle?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1127.579" end="x">Yes. [Unintelligible] battles took place in the outskirts of <a class="placename" href="#vothL129">Riga</a>. There . . . There after the Germans arrived [there were hand . . . hand-to-hand battles?] on the streets [for several more days?] with the Russian, the Russians there because the Germans [buried them from Poland?] at once, but the Russians [surrendered worse?] for several more days.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1160.679" end="x">So . . . Well, your mother was killed [unintelligible] grenades. Ah, your father?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1167.303" end="x">My father survived, because ah, we [lived?] before, ah, across, across the river, which flows ah, through <a class="placename" href="#vothL129">Riga</a>, across the Dvina. And during the arrival ag, of the Germans, I was not in my apartment because [it had been described?] that the Bolsheviks [unintelligible?] [departure?] of the troops [beyond the "plyatina" of the dry?], therefore, I hid with my acquaintances in another apartment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1202.507" end="x">So. And really [were?] they weren't able to find you? What did they do, capture [them] using a list or did they search [for people there?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1211.226" end="x">No. They used a [list?] because [the residents had lists?] [unintelligible] [arrived?] for a home ah, they hung on vehicles and collected [everyone?] using a list.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1228.414" end="x">So. Well, okay. Then just how and when did you leave Latvia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1233.665" end="x">I left Latvia in 1944, on 4 October.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1242.134" end="x">Is this when the Germans left Latvia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1244.197" end="x">Yes. The front then already was nearly [only?] thirty kilometers from <a class="placename" href="#vothL129">Riga</a> and a decree was [introduced?] that all men were supposed to e—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1261.145" end="x">Evacuate.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1262.613" end="x">. . . evacuate, right. And German <a class="term" href="#vothG_gendarme">gendarmes</a> came to the house and said that if [supposed to meet?] [unintelligible] the men will [many unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1279.911" end="x">And then you what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1282.583" end="x">And they said that . . . that it was possible to go [to the harbor?] and get on a steamship there and, and go to Germany.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1293.786" end="x">So. And, and they where did they take you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1297.489" end="x">They took me to <a class="placename" href="#vothC26" type="camp">Danzig</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1300.645" end="x">And your father?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1302.426" end="x">My father was seventy-three, ah, seventy-three years old. [He was left?] and, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1310.035" end="x">And he stayed in <a class="placename" href="#vothL129">Riga</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1311.145" end="x">. . . and [he got ill?] so he was left, he stayed [home?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1314.973" end="x">Did the Germans allow him to stay or did he simply stay there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1318.426" end="x">He simply stayed there because it had been said that [unintelligible/weak].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1322.676" end="x">Well, so they took you to <a class="placename" href="#vothC26" type="camp">Danzig</a>. What did you do then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1326.192" end="x">They brought me to <a class="placename" href="#vothC26" type="camp">Danzig</a> and at first said that [we would] stay two weeks. But then [we were put?] onto a train and taken to [unintelligible], [prison?] so-called [unintelligible] camp.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1344.285" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1344.879" end="x">And from there they didn't let us out [anywhere?] for two weeks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1349.097" end="x">And then you worked with the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1352.019" end="x">Then they put us on a train again and . . . and [again?] they took me and nearly 30 people to <a class="placename" href="#vothL130">Hamburg</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1364.669" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1365.331" end="x">And there we were supposed to work ah, in a factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1372.237" end="x">And where did they ah, where did they liberate you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1374.799" end="x">Me? The British liberated me on 1 May . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1382.331" end="x">May. Where? In <a class="placename" href="#vothL130">Hamburg</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1385.706" end="x">Yes. [In the outskirts?] of <a class="placename" href="#vothL130">Hamburg</a>—</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1388.081" end="x">[<i>interrupting each other</i>] Did you work there in a factory?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1389.940" end="x">Yes, in a factory.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1392.315" end="x">Well, and what German . . . did you work together with German workers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1396.206" end="x">No. They gave us the most difficult work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1403.612" end="x">Difficult. And who worked? Only Latvians?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1405.628" end="x">No. Also [removed?] Ukrainians, [removed?] French and [unintelligible] worked there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1413.472" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1417.426" end="x">And I worked there as [unintelligible] [transport?] work [unintelligible] steamship of a train.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1424.613" end="x">So. Well, and just how did you reach <a class="placename" href="#vothL29">Munich</a> from the British military?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1427.784" end="x">I from, ah, after, ah, [the arrival?] of the British, I continued to live ah, there in the camp because in, in the time I was still working at the factory I lived in the camp. German [unintelligible?] [did not give?] us, but they gave us food in the camp. And after the arrival of the British, I [personally?] found out that the <a class="term" href="#vothG_unrra">UNRRA</a> University was opening here by the Germans. I wanted to continue my [pre-war?] work there. [Unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1464.472" end="x">And tell me, do you have relatives in America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1468.237" end="x">No. I have [again?]. [Unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1470.628" end="x">And what do you intend to do [when graduated?]? . . . Or if <a class="term" href="#vothG_unrra">UNRRA</a> leaves, what do you intend to do?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1480.300" end="x">For the time being I [unintelligible] all the time [for everything?] [unintelligible] [perhaps?] I should go back to [the motherland?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1490.003" end="x">What? If you can go [<i>interrupted by Janis</i>]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1492.175" end="x">[Yes, yes?]. [It is known?] the Bolsheviks are there again. Since I already have left the Bolsheviks twice in my life, 1939 and 1940, and I know what . . . they have . . . I . . . I [unintelligible] [it will be?] in my home town, it again will be [something in another?] [unintelligible] for the time being I am unable [unintelligible] [to be in a hurry?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1527.639" end="x">So. And what are you [weak and unintelligible] father?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Janis B.</span>:
+            </span>
+            <span class="utterance" who="#bJanis" start="1534.045" end="x">We have hope . . . [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1539.405" end="x">So . . . I [was?] very thankful. [I?] have wanted to speak with you [unintelligible] to speak with many students and therefore, we have concluded this interview.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1554.135" end="x">[In English] This concludes the interview with Mr. Janis, a Latvian, forty-three years old, a student at <a class="term" href="#vothG_unrra">UNRRA</a> University at Deutsches Museum in <a class="placename" href="#vothL29">Munich</a>. September the 24th, 1946, Illinois Institute of Technology wire recording.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Roy Cochrun</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English translation
+                            </i>: 
+            <span class="Translation">
+                <name>Roy Cochrun</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC26">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC26" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Danzig<br /><span class="alt">(Danzig-Burggraben)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Stutthof
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Gdańsk, Poland<br />
+                            </p>
+                            <div>
+                Concentration camp located in the Kokoszki quarter of the city of Danzig.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC26 = new OpenLayers.Map('map_vothC26', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC26.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC26.addLayer(markers);
+map_id_vothC26.zoomToMaxExtent();
+
+                        var lat_1 = 54.366700;
+                        var lon_1 = 18.683300;
+                        var vothC26 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC26_icon = new OpenLayers.Marker(vothC26);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC26);
+markers.addMarker(vothC26_icon);
+    addMarker(vothC26, popupClass, "", true, false, false);
+    map_id_vothC26.setCenter(vothC26, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_2 = 48.133300;
+                        var lon_2 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL129">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL129" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Rīga, Latvia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL129 = new OpenLayers.Map('map_vothL129', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL129.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL129.addLayer(markers);
+map_id_vothL129.zoomToMaxExtent();
+
+                        var lat_3 = 56.883300;
+                        var lon_3 = 24.133300;
+                        var vothL129 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL129_icon = new OpenLayers.Marker(vothL129);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL129);
+markers.addMarker(vothL129_icon);
+    addMarker(vothL129, popupClass, "", true, false, false);
+    map_id_vothL129.setCenter(vothL129, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL130">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL130" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Hamburg, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL130 = new OpenLayers.Map('map_vothL130', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL130.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL130.addLayer(markers);
+map_id_vothL130.zoomToMaxExtent();
+
+                        var lat_4 = 53.550000;
+                        var lon_4 = 10.000000;
+                        var vothL130 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL130_icon = new OpenLayers.Marker(vothL130);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL130);
+markers.addMarker(vothL130_icon);
+    addMarker(vothL130, popupClass, "", true, false, false);
+    map_id_vothL130.setCenter(vothL130, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_unrra">
+                <a name="vothG_unrra"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    UNRRA.
+                </span>
+                <span class="definition">
+                    Acronym for the United Nations Relief and Rehabilitation Administration. Established in 1943, its principal executive post was held by a representative of the United States, which supplied forty percent of its budget. Among its chief duties was the repatriation of displaced persons—when the war ended, UNRRA had to cope with the task of caring for millions of displaced persons and refugees.
+                </span>
+            </li>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                        <li class="vothG_gendarme">
+                <a name="vothG_gendarme"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    gendarme.
+                </span>
+                <span class="definition">
+                    Policeman.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

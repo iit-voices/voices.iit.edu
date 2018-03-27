@@ -1,0 +1,3202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Charlotte Schultze; September 20, 1946; München, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-charlotte-schultze-september-20-1946-mnchen-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Charlotte Schultze; September 20, 1946; München, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=schultzeC">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=schultzeC&display=schultzeC_de">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=schultzeC&display=schultzeC_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=schultzeC">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="0.001" end="x">[In English] <a class="placename" href="#vothL29">Munich</a>, September the 20th, 1946 [exactly ten years ago at the time of translation], at the transient <a class="term" href="#vothG_unrra">UNRRA</a> camp at the Funkenkasernen. The interviewee is Miss . . . eh, is Mrs. Doctor Charlotte Schultze, 47 years old, and she is a [words not clear]. She is an <a class="term" href="#vothG_aryan">Aryan</a>, married to a <a class="term" href="#vothG_aryan">Aryan</a> physician who was here during the war, because they . . . for various reasons we will hear. And her husband and eleven year old son are already across, and she is expecting now, from week to week, her affidavits to go over to the United States.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="48.767" end="x">[In German] Now, Frau doctor. [Whispers] You want to talk English, true?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="52.169" end="x">No, German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="53.833" end="x">You want to talk German.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="54.826" end="x">Yes [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="55.497" end="x">Well, yes. Come a bit nearer so you won't have to talk too loud. Make yourself comfortable. [A few words more in whispers, not clear.] Now Frau doctor, will you please tell me again what is your name and where were you born?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="66.434" end="x">Charlotte Schultze, from <a class="placename" href="#vothL36">Dresden</a>, born in Dresden, 1899.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="71.928" end="x">Yes. And who were your parents, Mrs. Shultze?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="76.001" end="x">Director Bruno Zomack and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="78.791" end="x">You are born [your maiden name is] what? Zomack?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="80.672" end="x">Zomack, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="81.423" end="x">And who . . . What was the occupation of your parents?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="84.469" end="x">Well, my father was the director of a factory [hence his title].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="86.286" end="x">Yes. A bit nearer [to the microphone].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="87.279" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="87.871" end="x">And . . . now tell me please, where were you . . . where were you when the war started?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="97.610" end="x">When the war started we were in <a class="placename" href="#vothL36">Dresden</a>. And we could not go back [to the United States], because my son of [my] first marriage was a German, and was not permitted any more to leave the country.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="108.000" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="108.381" end="x">Because he was able to work.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="109.985" end="x">Now, would they not have let you go across alone? Permitted you to go?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="113.663" end="x">I would have been permitted to go across, but I did not want to leave my son alone. No?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="117.412" end="x">You did not want to leave your son alone. And did your husband agree to it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="122.001" end="x">Oh, yes. I am not [word not clear; she apparently weeps].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="125.537" end="x">Now then, tell me please, how long . . . I understand that you have lived already once in America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="133.292" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="133.861" end="x">So when did you return to Germany?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="136.158" end="x">In 1934, because my mother had died, and my father was nostalgic for us, and we then expected our little boy, and [chuckle] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="146.606" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="146.967" end="x">. . . the grandparents wanted to live to see him [chuckle], no?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="150.028" end="x">Yes. And so you returned with your husband?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="153.072" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="153.895" end="x">Where did your Herr Doctor Schultze study?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="156.654" end="x">In <a class="placename" href="#vothC58" type="camp">Leipzig</a> . . . doctor.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="158.040" end="x">He has studied medicine in <a class="placename" href="#vothC58" type="camp">Leipzig</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="160.124" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="160.929" end="x">Yes. Now, so you all returned.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="165.359" end="x">We all returned, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="166.644" end="x">Did you leave anything behind in America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="169.457" end="x">Well, we had [chuckle] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="172.270" end="x">Did you have any property?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="173.725" end="x">Yes, we left property behind.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="175.241" end="x">Where did you leave it? In <a class="placename" href="#vothL429">Milwaukee</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="177.521" end="x">Yes, in <a class="placename" href="#vothL257">New York</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="178.575" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="178.722" end="x">My husband had a life insurance there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="182.050" end="x">Aha. Was he able to keep up this life insurance all this time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="185.964" end="x">No. That went on . . . on through loans. It . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="190.335" end="x">Oh, it was possible through a loan on the insurance . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="193.947" end="x">To maintain it further in force.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="194.427" end="x">. . . to continue paying for it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="194.805" end="x">Maintain it in force.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="196.854" end="x">Yes. And you came here. And did your husband resume again the practice of medicine?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="202.456" end="x">First he attended courses, true? That is what we had really come for.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="207.863" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="208.544" end="x">But then we were detained here by the illness of his father . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="211.605" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="212.210" end="x">. . . who had to go through an eye . . . a difficult eye operation, and due to that we at first could not return.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="220.833" end="x">What is the doctor's speciality? Did he have any?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="224.290" end="x">No. He practiced . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="224.893" end="x">General . . . general practice.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="225.866" end="x">In general, a practicing physician.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="227.889" end="x">Now would you please tell me what happened when . . . when the war started?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="235.546" end="x">Yes. We remained here then, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="237.750" end="x">You lived in <a class="placename" href="#vothL36">Dresden</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="238.647" end="x">We lived in <a class="placename" href="#vothL36">Dresden</a>. My husband practiced, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="243.660" end="x">You told me before that something happened with your boy, with your older boy? Will you please tell me about it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="250.266" end="x">Yes. My son was then the only one at school who did not belong to the Hitler Youth, and since my husband treated many Jewish patients, so he [the son] had a friend who was a Jew, and due to that we had a lot of trouble. And at the end of the first year of war he attempted to cross the Swiss border with his friend in order to open the road for us [to make it possible for us] to return to America, because he knew that he was . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="281.038" end="x">The obstacle.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="281.536" end="x">. . . the obstacle. No?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="283.265" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="283.916" end="x">But he was arrested at the Swiss border. He was thrown in jail for three months. Then I fetched them both in <a class="placename" href="#vothL430">Bregenz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="294.247" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="295.273" end="x">And from then on we were more or less under the surveillance of the <a class="term" href="#vothG_gestapo">Gestapo</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="299.324" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="300.379" end="x">Then the boy went into the labor service. There he made a second attempt to leave the <a class="term" href="#vothG_lager">lager</a>, but was again returned. Then he was drafted in 1941.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="313.436" end="x">As a soldier?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="314.087" end="x">So. And he was so unhappy there. He believed [felt] he could not serve such a cause.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="325.516" end="x">So.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="326.456" end="x">At any rate, in 1941, he again left his platoon, attempted to cross the Italian border, because an American clergyman who was there, the minister of the church with whom he was very friendly, of whom he knew that he was serving in the church of the embassy, a certain clergyman by the name [name not clear] Wolf . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="346.011" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="346.969" end="x">. . . from Elmira.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="348.454" end="x">He was an American clergyman?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="349.997" end="x">An American clergyman?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="351.117" end="x">From Elmira, New Jersey.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="352.254" end="x">Yes, with whom he was very, very friendly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="355.772" end="x">Yes. [Recollecting] Elmira, New York.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="357.066" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="357.350" end="x">Nu, yes. And?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="358.505" end="x">And . . . now we assume that that was the reason that he went across the Italian border.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="363.543" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="364.454" end="x">Now from there on we don't know anything more. At any rate the <a class="term" href="#vothG_gestapo">Gestapo</a> brought us his things, and asserted that he had shot himself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="374.420" end="x">Oh. The <a class="term" href="#vothG_gestapo">Gestapo</a> brought you his things.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="376.336" end="x">Yes. But I still don't know until this day . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="379.406" end="x">Did he not leave a letter?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="381.113" end="x">Nothing. [Pause.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="383.556" end="x">Tell me, why did the <a class="term" href="#vothG_gestapo">Gestapo</a> bother altogether to bring his things?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="387.149" end="x">Hm. That we don't know. At any rate, only after three weeks, after we had made inquiries [word not clear], only after more than three weeks, we got the first word just that he was dead, and that he was buried on Italian soil.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="404.266" end="x">Oh, on Italian soil.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="405.294" end="x">Yes. Possibly . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="405.891" end="x">Well, yes. At that time the Italians were already the allies of the Germans. True? It was Mussolini's Italy.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="413.397" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="415.997" end="x">Aha. Now tell me, you then . . . And your younger boy, how old was he?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="422.150" end="x">The boy is now eleven years old.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="424.019" end="x">Eleven years. This one was never in America?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="425.800" end="x">No. We arrived here in October, and he was born in December.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="431.147" end="x">He was born in December.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="432.441" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="433.143" end="x">And what was the doctor doing here all the time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="436.022" end="x">He practiced in <a class="placename" href="#vothL36">Dresden</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="437.699" end="x">He practiced in <a class="placename" href="#vothL36">Dresden</a> as a physician.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="439.092" end="x">Practiced.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="440.085" end="x">Could they not draft him?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="442.145" end="x">No. He maintained all the time his American citizenship. For that reason he did not get anything [any patients] assigned from the 'sickness insurance', and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="449.773" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="450.380" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="451.759" end="x">He was born an American?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="453.784" end="x">He was born there. Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="454.956" end="x">Yes. A German, he would not have been permitted . . . Tell me, if a German would have become an American citizen, the Germans would not have recognized it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="465.671" end="x">Yes. But he was naturalized [where?]. Although he was born there . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="468.579" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="468.705" end="x">. . . he had returned as a child.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="470.589" end="x">Yes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="470.888" end="x">And then he became naturalized. [She is apparently confused.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="473.634" end="x">Again?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="474.565" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="475.065" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="475.427" end="x">Because due to that he had lost his citizenship.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="477.932" end="x">Because he had returned as a child?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="480.949" end="x">Please? [Pardon?]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="481.466" end="x">Because he was returned as a child?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="483.161" end="x">Yes. Because . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="483.666" end="x">He was brought back by his parents?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="485.373" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="486.120" end="x">Aha. So. Now tell me, you say you lived in <a class="placename" href="#vothL36">Dresden</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="491.211" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="491.625" end="x">How were things going on in <a class="placename" href="#vothL36">Dresden</a>? I heard so much from people who were in <a class="term" href="#vothG_lager">lagers</a>. I have heard so little from people who were free.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="504.388" end="x">We had nothing. [Pause.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="506.514" end="x">How was life there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="510.829" end="x">Well, for us personally, we just were not permitted to leave the city.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="514.570" end="x">Why?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="515.346" end="x">On account of our citizenship.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="516.834" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="517.374" end="x">True? Well, otherwise we were all under strict surveilance. [Chuckle.] Nobody could say what he wanted.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="525.068" end="x">So, yes. Did you keep your radio?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="527.758" end="x">Yes, we were permitted to keep the radio.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="529.522" end="x">You could keep it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="529.958" end="x">We were just not permitted to listen to foreign transmitters. That means I used to do it, but I had a head-set. [Chuckle.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="535.997" end="x">Oh, you had ear . . . [phones].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="538.588" end="x">A head-set.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="539.507" end="x">A head-set. And so you could more or less . . . Did you believe what the foreign transmitter . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="545.253" end="x">I could listen to it every evening, and for that reason we were oriented about everything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="548.896" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="550.160" end="x">And since my husband had very many Jewish patients we were also oriented about everything that was going on. He had a patient who came from <a class="placename" href="#vothC15" type="camp">Buchenwald</a>, whose skull [scalp?] was completely battered up and so on. A certain doctor. A certain Doctor Magen . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="567.717" end="x">Oh, a doctor who was in <a class="placename" href="#vothC15" type="camp">Buchenwald</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="569.286" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="569.804" end="x">How come they let him out?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="572.154" end="x">Well, they locked him up for a short time, since he was the father of the boy with whom my son at times . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="577.555" end="x">Has gone away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="578.021" end="x">. . . had crossed the border.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="579.785" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="580.807" end="x">This Herr Doctor Magen was then sent to <a class="placename" href="#vothC15" type="camp">Buchenwald</a>, and then they set him free again. And a year later he was arrested again, and he was so unhappy [in such despair] that he took his own life in his cell. He tore his underwear and hanged himself.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="599.729" end="x">That was that Doctor Magen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="600.907" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="601.774" end="x">And what happened to his son?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="603.929" end="x">And his son, too, attempted to reach again the Swiss border, but was caught and was put . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="613.084" end="x">Did you . . . Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="614.124" end="x">. . . into a concentration camp, and in a few weeks they sent to the mother and the daughter, who had still survived, the underwear with a notice that he had died.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="625.208" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="626.358" end="x">And then the mother and daughter were taken to a barracks, and later on to Poland. Since then we never heard anything from both of them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="635.880" end="x">And the husband? He took his life . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="637.592" end="x">He took his life.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="638.971" end="x">Where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="640.114" end="x">In jail [?], still in prison, because he learned that he would be taken again to the concentration . . . concentration camp. No?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="646.360" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="646.946" end="x">The man was in such despair that he . . . [pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="649.955" end="x">Tell me please, how was it in general with sui- . . . suicide? Were there many?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="657.197" end="x">[With deliberation] Well, about that I could not tell much. Among the Jewish people naturally very many, because my husband was often called to patients, and among them to a Frau Pick . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="669.081" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="669.252" end="x">. . . who lived not far from us, an old, very fine lady of 70 years. Mostly they took their lived with veronal.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="678.449" end="x">With veronal, the sleep [remedy] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="679.598" end="x">Yes, yes. My husband was also called to a Mr. Fisch at the time when there was a transport to Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="688.440" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="689.099" end="x">And the man was gravely ill and was supposed to be sent away that night to Poland. And so my husband personally called [telephoned] the <a class="term" href="#vothG_gestapo">Gestapo</a> and . . . and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="700.307" end="x">Told [them].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="700.684" end="x">. . . reported that it was impossible that this man . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="703.764" end="x">Be taken.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="704.204" end="x">. . . be taken. No? So then only the sons were transported [sent away], because they were Poles, that is they were never in Poland.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="711.762" end="x">Yes. [Just] Polish citizens . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="712.291" end="x">They were born in Germany, no? The people were then disembarked there at the border, and . . . [See Matzner, Chapter 10.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="718.227" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="718.592" end="x">. . . and nobody cared about them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="722.049" end="x">Now tell me. You also associated [were friends] with Germans, true?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="726.509" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="728.167" end="x">And what was the German attitude toward the whole Hitler affair.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="732.977" end="x">Yes. We had, of course, the feeling that very, very few were for Hitler.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="737.620" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="738.324" end="x">Because I knew that, from the practice of my husband, hardly one per cent were Nazis.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="745.719" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="746.373" end="x">It is, of course, possible that these [chuckle] did not come to us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="749.705" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="750.040" end="x">No? [Chuckle.] Because they knew first of all that my husband was an American, and secondly they knew our [political] orientation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="757.388" end="x">Hm. Now tell me, was it known what was going on in the concentration camps?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="764.342" end="x">Oh well. I think [to] the majority of people—no.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="767.753" end="x">Hm. You believe the majority . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="768.320" end="x">No, no, they did not know.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="770.541" end="x">Now . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="770.698" end="x">If we . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="771.280" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="771.524" end="x">If we had not heard a great deal by accident from our patients, we, too, would not have know it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="778.448" end="x">Didn't some <a class="term" href="#vothG_gestapo">Gestapo</a> people come home and tell about it to their relatives?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="786.391" end="x">Yes. Well . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="786.776" end="x">It is not possible to have covered it up so completely.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="788.888" end="x">That I don't know. At any rate, everyone was threatened with punishment by death.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="794.308" end="x">Every <a class="term" href="#vothG_gestapo">Gestapo</a> man?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="795.863" end="x">[Words not clear.] Nobody could speak [openly]. One had to be so cautious. I, too, was often afraid when my husband would return late from his calls [chuckle]. That something might have happened to him [chuckle].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="807.220" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="808.630" end="x">Because often he spoke too frankly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="812.022" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="812.463" end="x">It was . . . it was . . . everything was so frightfully dangerous. There across in America no one can from for himself any idea about it, how [heavily] we stood under control, and how the whole population lived.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="825.908" end="x">Well. [Pause.] Tell me, did you retain your maids during the war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="833.485" end="x">Yes, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="834.705" end="x">And what kind of a person was she? What, for example, did you learn from her? What kind of ideas did she express?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="842.312" end="x">Oh, I had a very nice girl from Finster . . . from the proximity of Finsterwalde, from a little village. The parents had a farm, and they were completely oriented against Hitler. So that in this manner we did not have to gag our lips.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="860.148" end="x">It was not dangerous [?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="861.800" end="x">No. We could speak very frankly, because her parents were oriented in the same manner as she. From this angle we were not in danger. I also had a cleaning woman who took care of the laundry and such things. Her husband was entirely against Hitler, as well as she. In this manner, of all our neighbors, all of our acquaintances, nobody was in favor of the system.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="887.386" end="x">Now tell me, who then was for the system that it took on such [abrupt end of Spool 136B] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Herman Barnett</span>:
+            </span>
+            <span class="utterance" who="#barnettH" start="893.528" end="x">[In English] Spool 137 recording starts in about one minute. Spool 137 recording starts in about one minute. This is Herman Barnett.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="909.575" end="x">Spool 9-137A. The conclusion of interview with Miss Charlotte Schultze. Spool 9-137B will contain the interview with Jürgen Bassfreund—a part of it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="943.720" end="x"><a class="placename" href="#vothL29">Munich</a>, September the 20th, 1946 in a transient camp maintained by the <a class="term" href="#vothG_unrra">UNRRA</a>. The interviewee is Miss . . . Charlotte, Mrs. Charlotte Schultze, the wife pf a physician already in the United States and we have yet a short conclusion.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="968.544" end="x">[In German] Now tell me, we were discussing again the Germans, let us say, what they knew about Hitler, the concentration camps, and the war. Now what did they think about the war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="984.999" end="x">Now that is hard to tell. Everybody hoped that the war would be over soon . . . will come to an end, and everybody hoped near and far that the events that may come to be in case of Nazi victory, will fail to happen [the wire for the last sentence is not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1000.964" end="x">Hmm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1001.853" end="x">As sad as it may sound I was really in most cases . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1008.068" end="x">Did they not feel that Germany was attacked and must now defend itself?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1014.417" end="x">No. About that it was clear to everybody that Hitler was the one who attacked.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1022.658" end="x">Nu. Tell me, if the mood was such, how can one explain the strength, the large number of <a class="term" href="#vothG_ss">SS</a> [presumably volunteers], the large number of SA [volunteer Storm Troupers], the constant large rallies when Hitler was speaking, and so on?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1042.596" end="x">Well, the people were simply ordered to it [compelled to act that way].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1045.135" end="x">For example, who?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1046.021" end="x">Well, all the schools had to come and had to yell. The Hitler Youth was ordered out, all the industries had to march as closed units, and had to yell heil Hitler. Nobody had, any more, his own will, except for some of the free [independent] professions.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1068.250" end="x">And what free professions were those?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1070.864" end="x">Well, the lawyers and people who were not organized.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1078.622" end="x">Now, what to you think . . . Now I want to ask you one more question. Is it, in your way of thinking, is it true that the Germans at present are actually not so badly off?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1096.574" end="x">Well, of course. In the American Zone we have . . . we can't complain, after all.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1101.944" end="x">You mean the German public in general?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1104.604" end="x">In general, because I think that the enemy is very decent towards us, in complete contrast to that which we were [how we behaved] in other countries.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1112.885" end="x">Now . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1113.144" end="x">Because we have heard about countries . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1115.013" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1115.419" end="x">. . . which nearly perished from starvation when our occupation was there, because everything was removed from other countries, while in our case there is still something left [last words not clear; chuckle].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1128.297" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1128.740" end="x">[Chuckle.] So we have to be very thankful.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1132.124" end="x">Now tell me, how do you explain it, that the main value [of exchange] here consists of cigarettes? [Pause.] How does that come about?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1141.604" end="x">The . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1142.570" end="x">Do people have really such a strong desire to smoke that they are willing to give so much [in return] for cigarettes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1150.122" end="x">Now about that I can hardly speak, because I myself do not smoke. And so I . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1153.842" end="x">Well, yes. But, for example, one pays off a porter with two cigarettes [the porters at the railroad stations as well as the other services were all on fixed salaries]. One gives the waitress a tip of two cigarettes. What do they do with them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1163.813" end="x">She apparently sells them on the black market.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1166.097" end="x">Who buys them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1169.307" end="x">[Chuckle.] That I don't know. Not I. [Laughter.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1171.567" end="x">Well. Now tell me what can one barter out for two cigarettes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1177.959" end="x">That I can hardly inform you about, because I just don't [one almost feels that she is afraid that the interview may have some official purpose.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1181.522" end="x">Well, but you also get here [officially in the <a class="term" href="#vothG_unrra">UNRRA</a> camps] paid in cigarettes, and so on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1185.829" end="x">Well, maybe they [words not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1189.020" end="x">Yes, but they themselves [the <a class="term" href="#vothG_dp">DPs</a> and German traders] do not want [to accept] any money. They can't get anything for the money].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1195.605" end="x">[Whispers] Well, I don't know that either.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1198.199" end="x">Now well. Do the peasants barter for cigarettes?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1201.643" end="x">Surely they, too, because they are heavy smokers.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1205.233" end="x">And they give quite a bit for them?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1207.787" end="x">They give a lot for them. I heard that someone paid 90 marks for a package of cigarettes [the official exchange, as far as I remember, was about 10 marks to the dollar, or less].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1213.940" end="x">90 marks?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1214.568" end="x">30 [?] marks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1215.378" end="x">Nu, yes. One pays in France about 150 to 175 franks [official exchange of 117 franks to the dollar].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1221.304" end="x">Hm. Well, that is something that most people would be unable to understand.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1225.491" end="x">Hm. Now tell me something else. How do you explain that most of the Germans are so well dressed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1235.611" end="x">Hm. Many still had reserves, those who have preserved their homes, but most of the people are really not so well dressed any more. Most of the people were bombed out and had lost everything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1250.306" end="x">Now what has become of all the clothing which was taken from the Jews, let us say in <a class="placename" href="#vothC110" type="camp">Theresienstadt</a>, and was taken away everywhere before they were transported? [See Mr. Schlaefrig, Chapter 26.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1259.722" end="x">Well, you must consider that the warehouses [?] were bombed out, that all the things went up in flames.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1268.142" end="x">So that you think . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1268.598" end="x">So everything is gone. Take for instance, <a class="placename" href="#vothL36">Dresden</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1271.935" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1272.085" end="x"><a class="placename" href="#vothL36">Dresden</a> is completely destroyed, and with it all the clothing and everything. We, for instance, got out of our home only with that which I had on my body. Everything else was gone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1283.240" end="x">Oh, you were bombed out in <a class="placename" href="#vothL36">Dresden</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1284.824" end="x">Completely bombed out.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1286.674" end="x">When did that happen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1287.621" end="x">On the 13th of February, '45.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1290.055" end="x">What was there, an air attack? By whom?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1293.999" end="x">I don't know. It was at night.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1295.726" end="x">At night?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1296.261" end="x">And whooo!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1298.439" end="x">And there was a big bombardment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1300.940" end="x">There was a big bombardment.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1301.289" end="x">And where did you and your family go for safety?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1305.436" end="x">We were in a common shelter at the railroad station.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1308.624" end="x">Ah.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1308.987" end="x"><a class="placename" href="#vothL36">Dresden</a> had not a single bunker. It was completely without protection.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1313.812" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1314.108" end="x">Only the governer had a large bunker for his family.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1317.020" end="x">How come that here they had not dug bunkers?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1320.354" end="x">Well, that depended on . . . on the Gauleiter [governor appointed by the central government].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1324.887" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1325.365" end="x">On him [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1325.823" end="x">Now then. You went to the railroad station. But that was the most dangerous place?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1331.229" end="x">Well, yes. We were first in our cellar, at the first attack.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1334.256" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1334.902" end="x">But then our house was not damaged. There fell only incendiaries in the neighborhood.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1340.595" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1340.862" end="x">Then we went to the suburb to see our old parents.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1344.762" end="x">Your parents or those of your husband?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1346.256" end="x">My husband's parents. My father-in-law had died then at the age of 84 after the attack.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1351.853" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1352.188" end="x">My mother-in-law is still alive at the age of 78.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1355.371" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1356.175" end="x">Also my father [is still alive]. And when we went to the station [?] to get home there was a second alarm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1364.600" end="x">[Words not clear.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1365.521" end="x">There was no more time [words not clear]. So we had to take refuge in the railroad station, in the railroad station's shelter.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1371.788" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1372.772" end="x">And . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1373.612" end="x">Was the railroad station's shelter underground?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1375.728" end="x">Underground.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1376.532" end="x">Those must have been the tunnels [for pedestrians] which are [located] underground.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1378.648" end="x">No, no. These were the shelters of the administration of the government bank.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1382.942" end="x">Ja.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="#schultzeC" start="1383.241" end="x">In a large all-brick house.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1385.871" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1386.317" end="x">Very large. There stood [word not clear]. To be sure, hundreds of people have perished. And by a miracle we got out, that is my son, my little one, and I. We climbed out after all clear [?] through a break [in the floor?] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1401.625" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1401.951" end="x">And . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1403.174" end="x">Your husband?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1403.541" end="x">My husband returned only the next morning at eight.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1405.971" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1406.465" end="x">So all day we thought my husband was dead, and he thought that we were dead.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1410.783" end="x">You didn't . . . he did not know that you got out.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1413.105" end="x">No. We met only the next evening.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1416.010" end="x">At home.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1416.838" end="x">No. In the meantime our house, too, was gone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1419.169" end="x">Oh, the house was gone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1420.212" end="x">Completely demolished.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1421.973" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1422.419" end="x">His office was completely demolished.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1424.705" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1425.291" end="x">The house of my parents-in-law was gone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1427.371" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1427.578" end="x">And the house of my father. We were all completely bombed out.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1431.060" end="x">So <a class="placename" href="#vothL36">Dresden</a> was really so [badly] hit?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1432.868" end="x">Yes. It is completely destroyed.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1435.716" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1436.015" end="x">The whole [word not clear] city. My brother, too, is dead, and all my women friends . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1440.202" end="x">How come? Was your brother killed in the bombardment?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1444.377" end="x">He, too, passed on. He, too, perished.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1446.520" end="x">And what happened to the [your] old people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1449.209" end="x">My parents-in-law still extricated themselves from the rubble.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1455.894" end="x">Oh, the house was bombarded and you got them out?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1457.702" end="x">Yes, completely.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1459.498" end="x">And?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1459.702" end="x">And then they came as far as Cologne, to their home city.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1463.064" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1463.662" end="x">And there my father-in-law found one night his doom due to a weak heart. Strangely enough he left Thuringia as a young man of 20 years [of age].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1475.061" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1475.318" end="x">Then to Sweden.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1476.211" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1476.320" end="x">Then to America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1477.413" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1478.119" end="x">And on the day of his death . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1480.035" end="x">Again in Thuringia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1480.541" end="x">. . . landed again in Thuringia [incorrect: Cologne is not in Thuringia, but is in the Rhine province] in order to die there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1485.385" end="x">And your mother-in-law?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1486.739" end="x">My mother-in-law still lived in Coburg.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1488.906" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1490.953" end="x">We took her then to Coburg so that she could remain in the American Zone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1495.997" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1496.308" end="x">You see [?]? so that she would be in contact with us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1498.391" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1498.714" end="x">And <a class="placename" href="#vothL36">Dresden</a> belongs to the Russian Zone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1500.717" end="x">And who supports her?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1502.409" end="x">For the time being she has enough to live on, and we hope [chuckle] that we will be able from there to send here somthing to eat. Maybe . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1509.132" end="x">Aha. Did your acquaintances from America send you anything during this time [after the armistace]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1513.730" end="x">No. We received letters, but since everybody hoped that we shall soon return, they thought it not worthwhile [hearty laughter], and that is why . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1522.769" end="x">[Cordially] Well, now, you will soon be in America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="schultzeC" start="1525.218" end="x">We hope . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="boderD" start="1525.763" end="x">[In English] This concludes the interview with Mrs. Charlotte Schultze, wife of a physician, hm, what they call here a German <a class="term" href="#vothG_aryan">Aryan</a>, who is now in the United States with the child, and will probably send over the affidavit for the wife . . . for his wife. We conclude the interview at 8 minutes of the counter index. An Illinois Institute of Technology wire recording. <a class="placename" href="#vothL29">Munich</a>, Germany. September the 20th, 1946.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1556.859" end="x">[In German] Thank you very much, Frau doctor.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Charlotte Schultze</span>:
+            </span>
+            <span class="utterance" who="#schultzeC" start="1559.146" end="x">There you are then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1565.326" end="x">[In English] This concludes Spool 137A. The other part will be Spool 137B and is the beginning of Bassfreund's story. It may be advisable since we have only 8 minutes on this spool to combine this one with 136B and have Mrs. Charlotte Schultze all on one spool. But we will leave that for further checkup. Boder. October the 13th, 1950. MH156.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Dagmar Platt</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC58">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC58" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Leipzig
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Buchenwald
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Leipzig, Germany<br />
+                            </p>
+                            <div>
+                Located in an industrial suburb of Leipzig; many political prisoners held there.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC58 = new OpenLayers.Map('map_vothC58', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC58.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC58.addLayer(markers);
+map_id_vothC58.zoomToMaxExtent();
+
+                        var lat_1 = 51.333300;
+                        var lon_1 = 12.333300;
+                        var vothC58 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC58_icon = new OpenLayers.Marker(vothC58);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC58);
+markers.addMarker(vothC58_icon);
+    addMarker(vothC58, popupClass, "", true, false, false);
+    map_id_vothC58.setCenter(vothC58, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC15">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC15" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Buchenwald
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Buchenwald
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Weimar, Germany<br />
+                            </p>
+                            <div>
+                Established in July 1937 near the city of Weimar for prisoners from central Germany, who were put to work making bricks at a nearby clay pit.  Around 9000 were normally housed there, but the population reached around 48,000 by April 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC15 = new OpenLayers.Map('map_vothC15', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC15.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC15.addLayer(markers);
+map_id_vothC15.zoomToMaxExtent();
+
+                        var lat_2 = 50.983300;
+                        var lon_2 = 11.316700;
+                        var vothC15 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC15_icon = new OpenLayers.Marker(vothC15);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC15);
+markers.addMarker(vothC15_icon);
+    addMarker(vothC15, popupClass, "", true, false, false);
+    map_id_vothC15.setCenter(vothC15, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC110">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC110" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Theresienstadt<br /><span class="alt">(Terezín)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Flossenb&#195;rg
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Terez&#195;n, Czechoslovakia<br />
+                            </p>
+                            <div>
+                By November 24, 1941 the heart of Theresienstadt was turned into a walled ghetto. To the outside it was presented by the Nazis as a model Jewish settlement, but in reality it was a concentration camp. Theresienstadt was also used as a transit camp for European Jews en route to Auschwitz.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC110 = new OpenLayers.Map('map_vothC110', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC110.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC110.addLayer(markers);
+map_id_vothC110.zoomToMaxExtent();
+
+                        var lat_3 = 50.500000;
+                        var lon_3 = 14.150000;
+                        var vothC110 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC110_icon = new OpenLayers.Marker(vothC110);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC110);
+markers.addMarker(vothC110_icon);
+    addMarker(vothC110, popupClass, "", true, false, false);
+    map_id_vothC110.setCenter(vothC110, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_4 = 48.133300;
+                        var lon_4 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL36">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL36" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Dresden, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL36 = new OpenLayers.Map('map_vothL36', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL36.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL36.addLayer(markers);
+map_id_vothL36.zoomToMaxExtent();
+
+                        var lat_5 = 51.050000;
+                        var lon_5 = 13.750000;
+                        var vothL36 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL36_icon = new OpenLayers.Marker(vothL36);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL36);
+markers.addMarker(vothL36_icon);
+    addMarker(vothL36, popupClass, "", true, false, false);
+    map_id_vothL36.setCenter(vothL36, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL429">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL429" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Milwaukee, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL429 = new OpenLayers.Map('map_vothL429', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL429.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL429.addLayer(markers);
+map_id_vothL429.zoomToMaxExtent();
+
+                        var lat_6 = 43.050000;
+                        var lon_6 = -87.950000;
+                        var vothL429 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL429_icon = new OpenLayers.Marker(vothL429);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL429);
+markers.addMarker(vothL429_icon);
+    addMarker(vothL429, popupClass, "", true, false, false);
+    map_id_vothL429.setCenter(vothL429, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL257">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL257" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            New York, United States
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL257 = new OpenLayers.Map('map_vothL257', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL257.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL257.addLayer(markers);
+map_id_vothL257.zoomToMaxExtent();
+
+                        var lat_7 = 40.700000;
+                        var lon_7 = -74.000000;
+                        var vothL257 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL257_icon = new OpenLayers.Marker(vothL257);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL257);
+markers.addMarker(vothL257_icon);
+    addMarker(vothL257, popupClass, "", true, false, false);
+    map_id_vothL257.setCenter(vothL257, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL430">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL430" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Bregenz, Austria
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL430 = new OpenLayers.Map('map_vothL430', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL430.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL430.addLayer(markers);
+map_id_vothL430.zoomToMaxExtent();
+
+                        var lat_8 = 47.505000;
+                        var lon_8 = 9.749167;
+                        var vothL430 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL430_icon = new OpenLayers.Marker(vothL430);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL430);
+markers.addMarker(vothL430_icon);
+    addMarker(vothL430, popupClass, "", true, false, false);
+    map_id_vothL430.setCenter(vothL430, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_unrra">
+                <a name="vothG_unrra"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    UNRRA.
+                </span>
+                <span class="definition">
+                    Acronym for the United Nations Relief and Rehabilitation Administration. Established in 1943, its principal executive post was held by a representative of the United States, which supplied forty percent of its budget. Among its chief duties was the repatriation of displaced persons—when the war ended, UNRRA had to cope with the task of caring for millions of displaced persons and refugees.
+                </span>
+            </li>
+                        <li class="vothG_aryan">
+                <a name="vothG_aryan"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Aryan.
+                </span>
+                <span class="definition">
+                    Derived from a Sanskrit word meaning “noble,” the term was used in Nazi pseudo-scientific jargon to denote a race which had supposedly superior blood and culture. During the Holocaust, “Aryan” came to mean anyone who was not Jewish or Roma (Gypsy).
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_ss">
+                <a name="vothG_ss"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    SS.
+                </span>
+                <span class="definition">
+                    Acronym for the German Schutzstaffel (“Protective Echelon”), a major Nazi organization. It grew from a small paramilitary unit to a powerful force that served as Hitler's "Praetorian Guard," the Nazi Party's "Shield Squadron" and a force that, fielding almost a million men (both on the front lines and as political police), managed to exert as much political influence as the German Army. Built upon the Nazi racial ideology, the SS, under Heinrich Himmler's command, was responsible for many (and most of the worst) of the crimes against humanity perpetrated by the Nazis during World War II.
+                </span>
+            </li>
+                        <li class="vothG_dp">
+                <a name="vothG_dp"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    DP.
+                </span>
+                <span class="definition">
+                    Displaced Person, or refugee.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

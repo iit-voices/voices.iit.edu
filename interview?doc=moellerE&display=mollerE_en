@@ -1,0 +1,3354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Ernesto Moeller-Arnold; September 20, 1946; München, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-ernesto-moeller-arnold-september-20-1946-mnchen-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Ernesto Moeller-Arnold; September 20, 1946; München, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=moellerE">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=moellerE&display=mollerE_es">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=moellerE&display=mollerE_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=moellerE">
+            Audio player
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4.173" end="x">[In English] <a class="placename" href="#vothL30">München</a>, September the 20th, 1946, in an <a class="term" href="#vothG_unrra">UNRRA</a> transient camp in the Funkenkasernen [former armories of the German signal corps]. The interviewee is Mr. Ernesto Moeller-Arnold, fifty-one years old, nacido en . . . [chuckle, correction] born in Chile. I am beginning to mix the languages. Also . . . ah . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="31.250" end="x">[in Spanish] Senor Moeller-Arnold, come, please, nearer so that . . . no [words not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="42.907" end="x">I am sitting quite comfortably . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="46.125" end="x">I wish that you speak in a normal voice . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="48.625" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="49.547" end="x">. . . since then the recording will come out better.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="52.344" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="52.906" end="x">Will you do us the favor of telling us again your name . . . what your name is, how old you are, and where you were born?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="60.594" end="x">My name is Ernesto Moeller-Arnold, and I was born in <a class="placename" href="#vothL8">Santiago</a>, Chile, in the year nineteen hundred . . . [correction] 1894.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="75.390" end="x">Now tell me then, where were you, Sr. Moeller-Arnold, when the war started?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="85.530" end="x">At the start of the war I had a post as manager of [farm-] estates in Upper Silesia. I was administering the estates which belonged to people who simultaneously owned estates in Polish territory, Czechoslovak territory, and in German territory. And in consequence it was very difficult to find a person to administer them who would have the confidence of all, in all these countries.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="127.917" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="128.636" end="x">And I was such a person, as a Chilean, as a neutral person from a faraway country.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="135.701" end="x">Now, Sr. Moeller-Arnold, tell me, how did you get to Europe in the first place? When?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="143.184" end="x">When I came the first time to Europe, I came to <a class="placename" href="#vothL1">Vienna</a> to study in the famous Hochschule der Bodenkultur [Institute of Agriculture], because I had decided to study agronomy.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="159.433" end="x">Yes? So then you remained in Europe from that . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="164.438" end="x">No. I returned to Chile. I spent a considerable time in Chile, but during the world crisis in '28 [onset of the depression] which happened in those years, I did not have enough money to buy a good [farm-] estate, and since I was offered a good position in Upper Silesia, where I know some local people [whom I met] during my studies in <a class="placename" href="#vothL1">Vienna</a>, I accepted it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="202.778" end="x">Well . . . well now, who were the proprietors of that estate in Upper Silesia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="211.965" end="x">There were various [ones]. There was among others the mining company Shakoch [?] in <a class="placename" href="#vothC35" type="camp">Gleiwitz</a>, the mining company Godula in <a class="placename" href="#vothL81">Katowice</a>, the mining company Henkel [?] Limited in <a class="placename" href="#vothL293">London</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="233.589" end="x">Now then . . . yes? How . . . Now were these farm-estates?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="238.667" end="x">Those were estates which belonged to the companies, and which the companies maintained to feed their workers, whom they had . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="249.166" end="x">Oh, whom they had in their mines.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="250.447" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="250.932" end="x">Oh well. And so? You administered these estates. From what year?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="258.150" end="x">From the year '29 . . . '29, '30, '31, '32.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="268.884" end="x">Good. And until what time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="271.415" end="x">To the last moment. Until January '45 when these estates were occupied by . . . by the Russian army.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="282.821" end="x">Aha. Well, now tell me, sir, where were you when the war started?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="288.727" end="x">I was in Upper Silesia, exactly there where I worked.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="293.461" end="x">Yes. And what happened to you during the war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="298.789" end="x">During the war not much happened to me. I had plenty of difficulties with the German authorities, above all with the military authorities.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="312.370" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="313.307" end="x">The difficulties on account of the war were very great, because it came to a great need for food for the people. And for that reason, at the beginning, I was left in peace [unmolested].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="326.915" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="327.743" end="x">But because I also endeavored to protect persecuted individuals, and because, above all, I endeavored to feed as well as possible the workers who were brought over as foreign prisoners, and to guarantee them better rations, I had sufficient difficulties with the types [kinds of people] who ruled in those times.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="359.569" end="x">Aha. Well tell me, in order to work at your estates, at the estates in your charge, foreign workers were brought in?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="370.709" end="x">No, no. The foreign workers worked in the mines.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="374.876" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="375.345" end="x">And I had . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="376.407" end="x">Oh, you . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="377.688" end="x">. . . to take charge . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="379.657" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="380.532" end="x">. . . of feeding them. Not directly, but to supply them with the provisions needed for the kitchens of for the canteens which fed them.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="395.203" end="x">Now how did they live? In <a class="term" href="#vothG_lager">lagers</a>, in barracks? How did they live?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="399.234" end="x">It was different. Part of them lived in barracks and in <a class="term" href="#vothG_lager">lagers</a> [? sounds like lavas], and part of them lived . . . lived privately.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="413.624" end="x">. . . were billeted in private homes? Now tell me, sir, what kind of people did you have . . . did they have to work in the mines? Of what nationality, of what religion?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="429.888" end="x">Oh, they had people of nearly all nationalities. They had English prisoners. They had people of all countries, but mostly there were Ukranians which they had brought from Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="446.512" end="x">Ukranian people. Women, too?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="451.246" end="x">Women, no. I have not seen women at that time in the mines . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="456.198" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="456.917" end="x">. . . there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="458.074" end="x">Well, and indirectly you had the responsibility for their feeding. And who worked in the fields of your estate?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="467.401" end="x">In the fields worked . . . the remainder, mostly the workers who worked before. They also worked in the time of war, because the major part of [field] workers in Upper Silesia are the women. The men are [working] in the mines, and the women work on the estates. So it was for a long time before the war.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="492.727" end="x">And that was a tradition. Good. And then when the Russian army arrived, then what happened?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="502.914" end="x">Yes. When the Russian army arrived, all of us who lived there were evacuated by the Germans. We were ordered to Thruingia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="514.960" end="x">Yes. And where did you live in Thuringia? In . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="520.350" end="x">I was located with my family in Thuringia. I was thrown there in a village into very bad quarters, but since I intended to negotiate with the Russians about continuing my work also with them, I returned to Silensia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="537.771" end="x">Yes. And what happened then?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="541.380" end="x">I found all the estates more or less devastated and destroyed. Moreover, all the machinery was taken away, all the horses.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="554.301" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="555.098" end="x">And the estates proper were confiscated by the Polish authorities.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="561.129" end="x">Aha. They were confiscated in order to distribute them among the people as homesteads?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="568.113" end="x">Yes. They said that they wanted to distribute them, but I wanted somehow to negotiate the continuation of my work and met with very pleasant cooperation of the part of the Poles. I cannot complain about them. But since there were no means [facilities] whatsoever to work with, it was not possible to do anything. And to sit there only as a chief without doing any real work, I did not want to continue. To do that was just a farce.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="604.314" end="x">Where is your family now, don Ernesto?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="606.689" end="x">My family, too, is here in the camp with me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="610.548" end="x">An <a class="term" href="#vothG_unrra">UNRRA</a> camp here. Well. Now tell me, how . . . when did you leave those estates, [and] the Russians?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="618.923" end="x">The Russians told me frankly and clearly that I as a foreigner of an American [Chilean] nationality have nothing to do there but to return to my native country.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="637.062" end="x">Good.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="637.812" end="x">And . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="638.796" end="x">[Words not clear.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="639.921" end="x">They attempted at first to ship me home via Odessa, like so many other foreigners, French and Belgians, with whom I was together.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="649.888" end="x">Yes. How come you say you were together? Were you placed in a <a class="term" href="#vothG_lager">lager</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="654.854" end="x">No. I just lived ther. The Belgians and the French were . . . they had been locked up there in camps, but I for the short time was not in a camp. They endeavored to persuade me to go there to a camp. But since they told me that they intended to repatriate me via Odessa, that appeared to me a bit strange, and I took to the road at first on my own . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="685.617" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="686.148" end="x">. . . with some Belgians who too had no faith in the repatriation through Odessa.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="691.897" end="x">Well. Your family was already in Thuringia, so that you were alone and had not much difficulty in marching through?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="697.634" end="x">No.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="698.118" end="x">Now then, how did you get out of there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="701.274" end="x">I left with some Belgian prisoners.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="706.032" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="706.751" end="x">We marched together.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="709.090" end="x">Illegally.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="710.214" end="x">Illegally, but we had no great difficulty. Even the Russians helped me . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="716.276" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="716.589" end="x">. . . from time to time, and I marched with them [the Belgians] as far as Thuringia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="722.433" end="x">Aha. Now how long did you march in this manner through Polish or Russian territory?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="732.339" end="x">I do not remember well. It took at least, from Upper Silesia as far . . . as far . . . as far . . . where should I say? . . . as far as <a class="placename" href="#vothL383">Wurzen</a> in Saxony . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="746.276" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="747.026" end="x">. . . it took me about three weeks, more or less.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="749.698" end="x">Aha. Oh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="750.932" end="x">And at times by bus, at times on foot, at times . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="755.447" end="x">By . . . by . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="757.494" end="x">. . . by train, in freight cars.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="760.619" end="x">Did you have any money?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="763.400" end="x">No. The money was taken away from me en route by soldiers who were pillaging.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="771.415" end="x">How? Did they search you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="776.133" end="x">Yes. There were always soldiers who were doing there business on their own.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="781.914" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="782.508" end="x">Of all nations, that there were.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="784.383" end="x">Soldiers of all nations.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="785.711" end="x">But these, regretfully, were Russians. [Both laugh.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="788.804" end="x">Aha. Well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="791.397" end="x">They were Russian friends [chuckle].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="793.662" end="x">And so you reached Thuringia? And how did you get here, from Thuringia to this place?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="801.898" end="x">In Thuringia the Russian authorities declared again on their part that we had to leave their zone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="811.146" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="811.849" end="x">And I assembled my family and entered a Russian [<a class="term" href="#vothG_dp">DP</a>] camp, and I was transported by the Russians to the Amer- . . . American Zone and handed over by the Russians themselves to the American <a class="term" href="#vothG_unrra">UNRRA</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="826.348" end="x">Oh. From the Russian camp. Well. And the <a class="term" href="#vothG_unrra">UNRRA</a> brought you here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="832.223" end="x">And the <a class="term" href="#vothG_unrra">UNRRA</a> sent me here.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="833.785" end="x">And Thuringia? Is that in the Russian Zone?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="836.707" end="x">Thuringia is in the Russian Zone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="839.300" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="839.987" end="x">At the start it was an American region, but from the beginning of July, 1945 it has been a Russian region.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="847.565" end="x">Russian. And so you were sent over here. Well, now how much time have you already been here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="852.393" end="x">I? Nearly a year.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="853.956" end="x">And why does it take you so much time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="856.221" end="x">Because up to now they did not permit a single South American to leave officially. Only those people could leave who left on the black [illegally]. And a father of a family cannot travel on the black.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="874.395" end="x">Oh. By black is meant the illegal route.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="879.628" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="880.128" end="x">Well. How many people are in your family?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="884.503" end="x">I have five children, all minors.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="887.738" end="x">And your wife?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="888.956" end="x">And my wife. Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="890.924" end="x">And your wife is a Chilean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="892.330" end="x">Of Danish descent.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="895.127" end="x">What?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="896.096" end="x">Danish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="896.815" end="x">Danish. Did you get married here in Europe?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="899.440" end="x">Yes. I married in Europe.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="900.815" end="x">Oh. Well. Tell me, you are going not to Chile? Who pays your . . . your transportation?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="915.439" end="x">I could . . . could have paid for it at least twenty-fold with the money that I had at my disposal. But since part of it was lost, and the other part is worth nothing . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="931.282" end="x">What kind of money is it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="932.579" end="x">It is German money, because all other money was confiscated by the Germans . . . by the Germans, [the funds] that I still had in South America, and only . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="941.501" end="x">[With suprise] Money that you had in South America . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="947.078" end="x">South America.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="947.609" end="x">. . . was confiscated?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="948.453" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="948.797" end="x">How did they do that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="949.610" end="x">It was confiscated by the German currency control [surrender of foreign deposits].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="951.781" end="x">Now wait. You had Amer- . . . money in Chile.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="956.780" end="x">I had money in Chile.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="958.764" end="x">What could the Germans have to say over your money in Chile?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="962.951" end="x">Yes. They demanded a declaration about money kept abroad—under oath.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="969.747" end="x">And this money . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="970.184" end="x">For this they offered in exchang . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="976.231" end="x">Marks?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="976.856" end="x">. . . marks, and they took it away.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="979.340" end="x">Well. But you were a Chilean citizen.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="982.293" end="x">Yes, but that meant nothing.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="983.699" end="x">The consul could not protect you in any way?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="987.059" end="x">No. He could not protect me, because everybody who belonged . . . found himself here in Ger- . . . German territory was subject to the German laws, as I was notified, and I could not avoid it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1004.948" end="x">But look here. It seems that Chile was in the war on the side of the Allies, no?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1010.385" end="x">Yes, but it declared war the twelfth of April, '45 [this appears at least approximately correct].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1019.525" end="x">Oh. That late? [Both laugh heartily.] Consequently before that they could get your power of attorney and take your money.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1030.337" end="x">No. From 1943 the diplomatic relations were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1036.524" end="x">Interrupted.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1037.789" end="x">. . . were interrupted.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1039.461" end="x">Now how can you say that they got hold of your money?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1041.601" end="x">But . . . Of my money? That they got hold of still before.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1048.710" end="x">Before.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1049.429" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1049.850" end="x">Well, does the <a class="term" href="#vothG_unrra">UNRRA</a> supply passage for people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1057.693" end="x">No. I don't think that the <a class="term" href="#vothG_unrra">UNRRA</a> will supply the passage for us. We figure that our government will help us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1065.130" end="x">Well, have you heard already anything from your government?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1068.645" end="x">No. I know very little, because up to now it was very difficult to establish communication with the government.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1074.004" end="x">Don't you have a Chilean consulate in Germany?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1077.332" end="x">There is no Chilean consulate in Germany yet.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1079.832" end="x">Now then, the nearest consulate is where?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1081.942" end="x">The nearest consulate . . . consulates are in <a class="placename" href="#vothL116">Zurich</a> and in <a class="placename" href="#vothL13">Paris</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1088.454" end="x">In <a class="placename" href="#vothL13">Paris</a>. And what? Do they have a kind of representative who came to see you here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1093.360" end="x">No, up to this time—nobody.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1094.876" end="x">And how many Chileans are there in this camp?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1097.501" end="x">In this camp there are seventy-six Chileans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1101.188" end="x">[Suprised] Seventy-six Chileans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1103.282" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1103.907" end="x">That is rather a large number.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1108.422" end="x">Yes, because there are assembled here almost all [Chileans] from the American Zone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1112.687" end="x">Now tell me something else. Since you were a person relatively free in Germany during the war, how do you appraise the whole situation? You knew Germans. You had German friends or [the like].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1130.764" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1131.295" end="x">What was their opinion, their attitude so to speak, to all that which took place in Germany during the war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1145.592" end="x">Yes. I know the situation as it was understood in Upper Silesia, because I was in Upper Silesia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1156.966" end="x">Well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1157.966" end="x">In Upper Silesia . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1158.591" end="x">Upper Silesia is somewhat Polish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1160.450" end="x">Yes, Upper Silesia is something per se.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1165.403" end="x">Yes, well. Tell me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1166.778" end="x">It cannot be considered as representative, let us say, of the total German mentality, because, let us say, they talk among themselves . . . they talk Polish.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1179.700" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1180.638" end="x">And among them, of course, a great part of them were not very eager to participate in the war, and were hostile towards everything that was going on, towards all politics, and justifiably so, because they considered themselves in fact [?] Poles.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1210.950" end="x">Aha. Well, there was a group which considered themselves Reichsdeutsch [possible wanted to say Volksdeutsch], or something of the kind.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1216.965" end="x">Yes. Those were not many. The people who came there, first of all the engineers of the mines, had come from Westphalia. These were Catholic people who, too, were in a certain . . . certain opposition, since Upper Silesia is indeed a very Catholic country.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1244.854" end="x">Hm. And then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1247.229" end="x">They never wanted . . . did not want to work with the Prussians who were not Catholics.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1255.385" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1247.229" end="x">And they preferred to associate [?] with people from Westphalia. And since the people from Westphalia are mining people as well, that appeared very appropriate.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1266.170" end="x">Now tell me, sir, you know the situation in which the Jewish people found themselves. Now you as a person from the side, as an observer . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1281.018" end="x">Well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1281.487" end="x">. . . what do you know about the situation, and how do you appraise it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1285.105" end="x">Yes. The . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1286.120" end="x">Frankly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1287.011" end="x">The situation of the Jewish people was terrible. We had not far from there the <a class="term" href="#vothG_lager">lager</a>
+                        <a class="placename" href="#vothC4" type="camp">Auschwitz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1296.135" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1296.947" end="x">Never did anything come out from there, anything about what happened there. It was indeed well isolated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1303.509" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1304.322" end="x">But still it came out from there that the people are being treated very badly, and they suffered a great deal, those poor people who were transported there, and whom we saw being transported. We did not see much, because these transports passed either by night or by roads that one could not observe.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1331.269" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1332.238" end="x">There were only rumors [?] about them, and one did not know whether they were true or were exaggerated, but we knew enough that they suffered.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1342.800" end="x">Well. Near to <a class="placename" href="#vothC4" type="camp">Auschwitz</a> was <a class="placename" href="#vothC10" type="camp">Birkenau</a>. Well. Go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1342.800" end="x">Yes, <a class="placename" href="#vothC10" type="camp">Birkenau</a> was not far from there.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1349.987" end="x">Well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1350.597" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1351.128" end="x">It is said that in <a class="placename" href="#vothC10" type="camp">Birkenau</a> were located the crematories, and that there people were led through gas chambers and all that. Was it known by the people around there? Was it known that such things were done in <a class="placename" href="#vothC10" type="camp">Birkenau</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1370.471" end="x">No. In our region where I worked . . . It was more or less, let us say fifty kilometers from . . . from <a class="placename" href="#vothC4" type="camp">Auschwitz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1385.720" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1386.423" end="x">And there [in our region], frankly, nothing was known about those gas chambers and those crematories. It only was known that a lot of people went there, and where they remained—nothing was exactly known.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1399.953" end="x">Well, were there no people . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1403.015" end="x">We only knew that the people who worked . . . There were also Jews among the people who worked there on the roads.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1413.699" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1414.761" end="x">And that these were treated very badly. This we know, because this we saw. This was possible to observe, while about all the other [things] one only heard now and then a rumor, and nothing else.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1430.744" end="x">Hm. Well, were there no Germans, Poles who worked in <a class="placename" href="#vothC4" type="camp">Auschwitz</a> who had . . . who were there as soldiers, and when they returned did they not report anything about that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1444.712" end="x">No. In our parts we did not meet such soldiers. Well, I don't kow whether they were impeded in establishing contact with the rest . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1457.770" end="x">[Words not clear.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1459.504" end="x">. . . of the world. How that was done—I do not remember these things. I know only that it was said that people have been taken there, and what I personally have seen is that they were people who have suffered much under conditions of monstrous work, on the roads . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1479.754" end="x">[Words not clear.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1481.020" end="x">. . . on a road, precisely on a railroad, where I could observe it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1487.942" end="x">Could you describe a bit what I . . . [correction] you have seen?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1492.582" end="x">Yes. I saw that the people worked in . . . with . . . [were] nourished very badly, and . . . that . . . what . . . most of all it could be observed . . . and they were [ditch] diggers, that they were treated rather badly.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1516.331" end="x">Diggers? Were they physically mistreated?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1520.519" end="x">Yes. This too could be observed. One saw it happen from time to time, not often, but from time to time one observed that they were mistreated.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1530.628" end="x">Well. You . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1532.722" end="x">It was enough, for a person with human sentiment, for him, it was enough.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1539.456" end="x">Hm. Was enough. You were near <a class="placename" href="#vothL81">Katowice</a>, <a class="placename" href="#vothL98">Sosnowiec</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1543.471" end="x">Let us say between <a class="placename" href="#vothL81">Katowice</a> and <a class="placename" href="#vothC35" type="camp">Gleiwitz</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1547.909" end="x">Near [?] <a class="placename" href="#vothL81">Katowice</a> and <a class="placename" href="#vothC35" type="camp">Gleiwitz</a>. There is where you were approximately. Well. Did you know that in the cities like <a class="placename" href="#vothL81">Katowice</a> or <a class="placename" href="#vothL98">Sosnowiec</a>
+                        <a class="term" href="#vothG_ghetto">ghettos</a> were built?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1560.924" end="x">In <a class="placename" href="#vothL81">Katowice</a> I don't know whether there was a <a class="term" href="#vothG_ghetto">ghetto</a>. There was no <a class="term" href="#vothG_ghetto">ghetto</a>.in <a class="placename" href="#vothL81">Katowice</a>. I believe they were taken . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1570.393" end="x">Were taken to another . . . another place?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1571.643" end="x">Another place. Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1572.768" end="x">Yes. And <a class="placename" href="#vothL81">Katowice</a> was made—what was it called?—Judenrein [literally, "clean of Jews"].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1577.252" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1577.674" end="x">Yes. And there were no Jews.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1581.549" end="x">There were no Jews since the advent of Hitler.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1584.955" end="x">Well, [about] the other Chileans that you have here. What kind of people are they? How did they get here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1594.799" end="x">They vary a great deal. There are among them people who had come for medical treatment. For example, one . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1601.985" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1602.516" end="x">. . . who had a terrible disease of his eyes . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1608.580" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1609.002" end="x">Many were here to study [go to school], because it was customary to send their sons, their children to Europe . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1618.970" end="x">From Chile?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1619.907" end="x">. . . from Chile. For a time, at least for some time. Not for all the time, but for some two, three years, to Europe. And others have come here to visit their parents.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1630.656" end="x">Aha. They were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1632.797" end="x">They had here parents . . . parents..</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1634.953" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1635.610" end="x">. . . or grandparents whom they desired to visit, here or in Austria.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1640.153" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1640.934" end="x">And in central Europe.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1642.688" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1644.016" end="x">There were still some who were here on their own business . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1649.575" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1650.169" end="x">. . . for instance, working, perfecting themselves as engineers and similar things, in order to employ what they have learned in their own country.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1660.999" end="x">And how? Were they forced to enter the army? Were they dragged into service?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1664.755" end="x">Some of them. Some . . . some of them, some young people among them, were certainly forced to join the army, although some of them could avoid it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1677.598" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1678.129" end="x">But only a few knew how to avoid it. Of those that we have here, most of them . . . there are but a few young ones among them, boys and mostly girls that we have here, only a few young ones.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1691.578" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1692.172" end="x">We have also here a few who first were in the army, but managed to get out of it, and had found employment in the country in general.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1708.312" end="x">Hm. Well, they . . . there are some among them who are half German, half Chilean?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1719.797" end="x">Oh, yes, surely. They [some of them] are first of all, at least of German descent.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1726.250" end="x">Yes. Were there many [such] in Chile?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1727.938" end="x">No. Oh, there are . . . are quite a few. Still there were people of German descent first of all in the south of Chile, which was colonized . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1741.266" end="x">Oh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1741.890" end="x">. . . by people of German descent. In the provinces, <a class="placename" href="#vothL546">Osorno</a>, Temu- . . . <a class="placename" href="#vothL384">Temuco</a> are cities where one finds many German names.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1750.707" end="x">But it appears that they [the Germans] were, in South America, very good and useful citizens, and . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1757.472" end="x">Yes, certainly. Even . . . up to now, up to the war these people had in Chile a very good name, and they never interfered in Chilean politics, or disturbed the politics. Neither during the war did I hear something of that sort, and for that reason there were no great discords [?] among the people like, for example, existed in the Central Americas.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1785.533" end="x">Yes. Now tell me, you say you left Chile in what year?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1790.939" end="x">'28.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1792.064" end="x">'28. Well then, at that time . . . and you came to Germany, to Silesia, at that time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1803.672" end="x">I came at that time first to Austria.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1807.687" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1808.374" end="x">And afterwards I established my home in the country which played a part . . . which was the country over which the whole world was fighting. [Laughter.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1823.670" end="x">Which was that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1824.842" end="x">Upper Sile- . . . Upper Silesia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1826.045" end="x">Upper Silesia. But at that time you were in whose hands? Of the Czechs?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1831.529" end="x">Part belonged to the Czechs, part belonged to the Poles, and part to the Germans. And they [these regions] were of special [separate] jurisdiction.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1841.107" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1841.732" end="x">They were . . . they belonged to those countries, but . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1850.373" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1850.967" end="x">. . . the sovereignty [of these countries] was restricted, especially by administrative laws, and especially by economic laws. For instance, they did not have to pay taxes on certain products which they transported . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1868.216" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1868.903" end="x">. . . from one side to the other.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1870.325" end="x">Tell me this. You are an agronomist. How does it appear to you? Has German agriculture suffered much during the war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1879.949" end="x">[Pause.] I know only—because it was not possible to travel during the war—the agriculture in Upper Silesia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1894.292" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1894.839" end="x">And this one [agriculture] one may say is ruined.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1899.729" end="x">And that is why? Because the machinery was taken away [by the Allies, Russians], or . . . [words not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1903.565" end="x">Because everything was taken away that was possible to take. The animals, the machinery, the seed, everything that there was has disappeared.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1914.331" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1914.924" end="x">The battles did not cause great damage, and the aerial raids did not cause great damage, because there were not many raids. The Russians did not launch . . . launch raids . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1931.861" end="x">Air attacks.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1933.751" end="x">. . . by air. Yes. But the termination of the war created the greatest damage.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1939.860" end="x">Good. Well. Since you had the opportunity, you speak German, you had the opportunity to talk to the Germans now, what is the sentiment, what do they thing is going to happ- . . . happen to Germany?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1957.147" end="x">Yes. I know . . . among the Germans I know predominantly the unfortunate people who were thrown out of Silesia, They have no other sentiment than the desire to return to their native homeland where they were . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1973.692" end="x">To Silesia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1974.598" end="x">[Chuckle.] To Silesia, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1976.254" end="x">They desire to return to Silesia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1978.378" end="x">They desi- . . . they would like to return to silesia where . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1981.799" end="x">So why don't they return?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1984.377" end="x">Because . . . according to present treaties they have been de-classed [deprived of status] by the Poles. They were thrown out.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1995.377" end="x">You are talking about people who [during the war] considered themselves Germans [in Polish territory].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="1998.909" end="x">The Poles considered everybody who lived there before as Germans. [Words not clear.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2007.581" end="x">Did it not happen that Hitler imported many Germans to Silesia during the war?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2014.487" end="x">No. Because Silesia was sufficiently populated already before . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2019.081" end="x">Aha.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2020.784" end="x">There was no room for the importation of Germans. The Germans who were imported were imported to Wartagau [region of the Warta River] or what was called the Posen [<a class="placename" href="#vothL178">Poznan</a>] province. There . . . there Germans were pressed in, but to Silesia they did not bring a single person.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2038.690" end="x">And . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2039.508" end="x">There was not a single one of those people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2039.508" end="x">Where [words not on wire; apparently: these Germans at present]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2040.758" end="x">They are mostly in the Russian Zone, in the German part of the Russian Zone, and in the British Zone, and some of them, possibly a hundred thousand, are in the American Zone.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2057.054" end="x">[Suprised] A hundred thousand? Well, how many did they expel?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2061.069" end="x">They expelled more or less . . . Silesia was inhabited more or less by seven million people. All were expelled. Now there are left only, more or less, one million [the numbers are apparently incorrect].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2076.178" end="x">Who were considered, in fact Polish?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2078.256" end="x">No, whom they still want to expel from there. All the people [Germans?] were expelled up to [word not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2084.849" end="x">From Silesia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2085.974" end="x">From Silesia, yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2088.068" end="x">And then, when they are being expelled, are they given something of their property, are they given something of . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2094.182" end="x">What they are able [to carry?] . . . Those who were expelled until now were expelled like paupers, without anything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2101.088" end="x">Well, it is being said about the <a class="placename" href="#vothL228">Sudeten</a>, for instance, that in connection with the expulsion of the Germans there is a commissar . . . commission which sees to it that everybody has fifty kilos or so of his proper- . . . of his personal belongings.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2117.485" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2118.079" end="x">But the same thing was not done in Silesia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2120.993" end="x">In Silesia up to last year, or up to this year—what I have heard, what I was told by Silesian people with whom I talked—they were unable to take anything.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2134.539" end="x">Well. Now who do they blame, Hitler or the . . . or the Poles?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2142.399" end="x">Their sentiments in their hearts [?] are . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2147.101" end="x">. . . for the Russians . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2148.289" end="x">. . . for the Russians and for the Poles are not very friendly, because they were treated quite badly by them. It is clear the one who treats [people] badly much pay for it with bad sentiments [against him].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2161.101" end="x">Yes, surely. But on the other hand they could think, could understand, that if Hitler had not started all that . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2171.101" end="x">That is clear. That is said by people who think, but the majority of the people do not think, but they suffer only at the moment [of misfortune] and see only the one who makes them suffer. And that is the thing that causes great harm. One may beat the other and say you are guilty because you have beaten me. But the one who is beaten sees only the one who is right in front of him [who does the beating]. He does not see the causes which are more distant.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2207.146" end="x">Now this is a very interesting observation, don Ernesto, because at times we think whether humanity would have learned a lesson from this catastrophe. What do you think?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2224.568" end="x">Yes. The lesson that must be learned is simply that one day the hostilities [animosities] must be ended. and one has to start with ending them, because if we are to continue with the payment of accounts [retaliations] that would last until the Last Judgment [Judgment Day].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2250.660" end="x">Well, don Ernesto. Thank you so much. I wanted an informative report from a person who lived in Germany during all the time and could observe the events somewhat like a foreigner [outsider]. I believe that all of us would be very interested in studying what you have told us.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2276.049" end="x">[In English] This concludes Spool 135. The interviewee was don Ernesto Moeller-Arnold, a Chilean by birth who spent during the time . . . time of the war as manager of various estates, agricultural properties, and had some opportunity to observar . . . [chuckle and correction] to observe—I am mixing my Spanish with my English—what has happened. Muenchen, September the 20th, 1946. Spool 135, An Illinois Institute of Technology wire recording. Thank you very much Mr. Moeller.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Ernesto Moeller-Arnold</span>:
+            </span>
+            <span class="utterance" who="#moellerE" start="2322.829" end="x">[In Spanish] Don't mention it. [He apparently understood the last sentence spoken in English.]</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Roberta Hopson</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Reviewer (transcription)
+                            </i>: 
+            <span class="Reviewer (transcription)">
+                <name>Andrea Castro</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC35">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC35" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Gleiwitz<br /><span class="alt">(Gleiwitz I, II, III and IV)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Auschwitz
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Gliwice, Poland<br />
+                            </p>
+                            <div>
+                Gleiwitz was an Auschwitz subcamp from July 1944 to January 1945, consisting of four locations working in mining and industrial companies and railroad repair.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC35 = new OpenLayers.Map('map_vothC35', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC35.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC35.addLayer(markers);
+map_id_vothC35.zoomToMaxExtent();
+
+                        var lat_1 = 50.333300;
+                        var lon_1 = 18.666700;
+                        var vothC35 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC35_icon = new OpenLayers.Marker(vothC35);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC35);
+markers.addMarker(vothC35_icon);
+    addMarker(vothC35, popupClass, "", true, false, false);
+    map_id_vothC35.setCenter(vothC35, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC4">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC4" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Auschwitz<br /><span class="alt">(Auschwitz I)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Auschwitz
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Oświęcim, Poland<br />
+                            </p>
+                            <div>
+                This, the largest Nazi concentration and extermination camp, was established in June 1940. It was joined in 1941 by Auschwitz II (Birkenau) and in 1942 by Auschwitz III (Monowitz).  Between 2.1 and 2.5 million died in the seven gas chambers of the complex.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC4 = new OpenLayers.Map('map_vothC4', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC4.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC4.addLayer(markers);
+map_id_vothC4.zoomToMaxExtent();
+
+                        var lat_2 = 50.033300;
+                        var lon_2 = 19.233300;
+                        var vothC4 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothC4_icon = new OpenLayers.Marker(vothC4);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC4);
+markers.addMarker(vothC4_icon);
+    addMarker(vothC4, popupClass, "", true, false, false);
+    map_id_vothC4.setCenter(vothC4, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothC10">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC10" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Birkenau<br /><span class="alt">(Auschwitz II, <br /><span class="alt">(Brzezinka)</span>
+            </p>
+                            <p class="subcamp_of">
+                <strong>Subcamp of: </strong>
+                Auschwitz
+            </p>
+                            <p class="municipality">
+                <strong>Location:</strong>
+                Brzezinka, Poland<br />
+                            </p>
+                            <div>
+                An extension of Auschwitz consisting of crematoria, barracks, and workshops.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC10 = new OpenLayers.Map('map_vothC10', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC10.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC10.addLayer(markers);
+map_id_vothC10.zoomToMaxExtent();
+
+                        var lat_3 = 50.044722;
+                        var lon_3 = 19.181389;
+                        var vothC10 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothC10_icon = new OpenLayers.Marker(vothC10);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC10);
+markers.addMarker(vothC10_icon);
+    addMarker(vothC10, popupClass, "", true, false, false);
+    map_id_vothC10.setCenter(vothC10, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL30">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL30" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL30 = new OpenLayers.Map('map_vothL30', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL30.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL30.addLayer(markers);
+map_id_vothL30.zoomToMaxExtent();
+
+                        var lat_4 = 48.133300;
+                        var lon_4 = 11.583300;
+                        var vothL30 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL30_icon = new OpenLayers.Marker(vothL30);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL30);
+markers.addMarker(vothL30_icon);
+    addMarker(vothL30, popupClass, "", true, false, false);
+    map_id_vothL30.setCenter(vothL30, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL8">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL8" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Santiago, Chile
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL8 = new OpenLayers.Map('map_vothL8', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL8.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL8.addLayer(markers);
+map_id_vothL8.zoomToMaxExtent();
+
+                        var lat_5 = -33.450000;
+                        var lon_5 = -70.666700;
+                        var vothL8 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL8_icon = new OpenLayers.Marker(vothL8);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL8);
+markers.addMarker(vothL8_icon);
+    addMarker(vothL8, popupClass, "", true, false, false);
+    map_id_vothL8.setCenter(vothL8, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL1">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL1" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Wien, Austria
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL1 = new OpenLayers.Map('map_vothL1', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL1.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL1.addLayer(markers);
+map_id_vothL1.zoomToMaxExtent();
+
+                        var lat_6 = 48.216700;
+                        var lon_6 = 16.366700;
+                        var vothL1 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL1_icon = new OpenLayers.Marker(vothL1);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL1);
+markers.addMarker(vothL1_icon);
+    addMarker(vothL1, popupClass, "", true, false, false);
+    map_id_vothL1.setCenter(vothL1, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL81">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL81" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Katowice, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL81 = new OpenLayers.Map('map_vothL81', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL81.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL81.addLayer(markers);
+map_id_vothL81.zoomToMaxExtent();
+
+                        var lat_7 = 50.266700;
+                        var lon_7 = 19.016700;
+                        var vothL81 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL81_icon = new OpenLayers.Marker(vothL81);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL81);
+markers.addMarker(vothL81_icon);
+    addMarker(vothL81, popupClass, "", true, false, false);
+    map_id_vothL81.setCenter(vothL81, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL293">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL293" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            London, United Kingdom
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL293 = new OpenLayers.Map('map_vothL293', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL293.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL293.addLayer(markers);
+map_id_vothL293.zoomToMaxExtent();
+
+                        var lat_8 = 51.500000;
+                        var lon_8 = -0.166700;
+                        var vothL293 = new OpenLayers.LonLat(lon_8, lat_8);
+            vothL293_icon = new OpenLayers.Marker(vothL293);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL293);
+markers.addMarker(vothL293_icon);
+    addMarker(vothL293, popupClass, "", true, false, false);
+    map_id_vothL293.setCenter(vothL293, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL383">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL383" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Wurzen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL383 = new OpenLayers.Map('map_vothL383', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL383.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL383.addLayer(markers);
+map_id_vothL383.zoomToMaxExtent();
+
+                        var lat_9 = 51.366667;
+                        var lon_9 = 12.716667;
+                        var vothL383 = new OpenLayers.LonLat(lon_9, lat_9);
+            vothL383_icon = new OpenLayers.Marker(vothL383);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL383);
+markers.addMarker(vothL383_icon);
+    addMarker(vothL383, popupClass, "", true, false, false);
+    map_id_vothL383.setCenter(vothL383, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL116">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL116" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Zurich, Switzerland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL116 = new OpenLayers.Map('map_vothL116', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL116.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL116.addLayer(markers);
+map_id_vothL116.zoomToMaxExtent();
+
+                        var lat_10 = 47.383300;
+                        var lon_10 = 8.550000;
+                        var vothL116 = new OpenLayers.LonLat(lon_10, lat_10);
+            vothL116_icon = new OpenLayers.Marker(vothL116);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL116);
+markers.addMarker(vothL116_icon);
+    addMarker(vothL116, popupClass, "", true, false, false);
+    map_id_vothL116.setCenter(vothL116, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL13">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL13" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Paris, France
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL13 = new OpenLayers.Map('map_vothL13', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL13.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL13.addLayer(markers);
+map_id_vothL13.zoomToMaxExtent();
+
+                        var lat_11 = 48.866700;
+                        var lon_11 = 2.333300;
+                        var vothL13 = new OpenLayers.LonLat(lon_11, lat_11);
+            vothL13_icon = new OpenLayers.Marker(vothL13);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL13);
+markers.addMarker(vothL13_icon);
+    addMarker(vothL13, popupClass, "", true, false, false);
+    map_id_vothL13.setCenter(vothL13, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL98">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL98" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Sosnowiec, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL98 = new OpenLayers.Map('map_vothL98', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL98.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL98.addLayer(markers);
+map_id_vothL98.zoomToMaxExtent();
+
+                        var lat_12 = 50.266700;
+                        var lon_12 = 19.116700;
+                        var vothL98 = new OpenLayers.LonLat(lon_12, lat_12);
+            vothL98_icon = new OpenLayers.Marker(vothL98);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL98);
+markers.addMarker(vothL98_icon);
+    addMarker(vothL98, popupClass, "", true, false, false);
+    map_id_vothL98.setCenter(vothL98, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL546">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL546" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Osorno, Chile
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL546 = new OpenLayers.Map('map_vothL546', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL546.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL546.addLayer(markers);
+map_id_vothL546.zoomToMaxExtent();
+
+                        var lat_13 = -40.583300;
+                        var lon_13 = -73.233300;
+                        var vothL546 = new OpenLayers.LonLat(lon_13, lat_13);
+            vothL546_icon = new OpenLayers.Marker(vothL546);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL546);
+markers.addMarker(vothL546_icon);
+    addMarker(vothL546, popupClass, "", true, false, false);
+    map_id_vothL546.setCenter(vothL546, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL384">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL384" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Temuco, Chile
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL384 = new OpenLayers.Map('map_vothL384', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL384.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL384.addLayer(markers);
+map_id_vothL384.zoomToMaxExtent();
+
+                        var lat_14 = -38.750000;
+                        var lon_14 = -72.666667;
+                        var vothL384 = new OpenLayers.LonLat(lon_14, lat_14);
+            vothL384_icon = new OpenLayers.Marker(vothL384);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL384);
+markers.addMarker(vothL384_icon);
+    addMarker(vothL384, popupClass, "", true, false, false);
+    map_id_vothL384.setCenter(vothL384, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL178">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL178" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Poznań, Poland
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL178 = new OpenLayers.Map('map_vothL178', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL178.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL178.addLayer(markers);
+map_id_vothL178.zoomToMaxExtent();
+
+                        var lat_15 = 52.416700;
+                        var lon_15 = 16.883300;
+                        var vothL178 = new OpenLayers.LonLat(lon_15, lat_15);
+            vothL178_icon = new OpenLayers.Marker(vothL178);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL178);
+markers.addMarker(vothL178_icon);
+    addMarker(vothL178, popupClass, "", true, false, false);
+    map_id_vothL178.setCenter(vothL178, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL228">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL228" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Sudety Region, Czechoslovakia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL228 = new OpenLayers.Map('map_vothL228', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL228.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL228.addLayer(markers);
+map_id_vothL228.zoomToMaxExtent();
+
+                        var lat_16 = 50.500000;
+                        var lon_16 = 16.000000;
+                        var vothL228 = new OpenLayers.LonLat(lon_16, lat_16);
+            vothL228_icon = new OpenLayers.Marker(vothL228);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL228);
+markers.addMarker(vothL228_icon);
+    addMarker(vothL228, popupClass, "", true, false, false);
+    map_id_vothL228.setCenter(vothL228, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_unrra">
+                <a name="vothG_unrra"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    UNRRA.
+                </span>
+                <span class="definition">
+                    Acronym for the United Nations Relief and Rehabilitation Administration. Established in 1943, its principal executive post was held by a representative of the United States, which supplied forty percent of its budget. Among its chief duties was the repatriation of displaced persons—when the war ended, UNRRA had to cope with the task of caring for millions of displaced persons and refugees.
+                </span>
+            </li>
+                        <li class="vothG_lager">
+                <a name="vothG_lager"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    lager.
+                </span>
+                <span class="definition">
+                    German military term for camp or encampment. In the Nazi system these could include transit, labor, concentration, and death camps.
+                </span>
+            </li>
+                        <li class="vothG_dp">
+                <a name="vothG_dp"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    DP.
+                </span>
+                <span class="definition">
+                    Displaced Person, or refugee.
+                </span>
+            </li>
+                        <li class="vothG_ghetto">
+                <a name="vothG_ghetto"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    ghetto.
+                </span>
+                <span class="definition">
+                    A Yiddish word referring to a walled section of a city in which Jews were required to live during the Middle Ages. The concept was revived by the Nazi regime as part of the "Final Solution" to the "Jewish Question." 
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>

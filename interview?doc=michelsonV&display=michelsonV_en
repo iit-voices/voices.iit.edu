@@ -1,0 +1,2732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>David P. Boder Interviews Valerius Michelson; September 26, 1946; München, Germany : Voices of the Holocaust Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Voices of the Holocaust is a collection of interviews with Holocaust survivors and other displaced persons conducted by Dr. David P. Boder in Europe in 1946. The collection, curated by the Paul V. Galvin Library at Illinois Institute of Technology, features the text and audio of the interviews as well as maps, glossaries, and advanced searching and browsing features." />
+    <meta name="keywords" content="David Pablo Boder, voices of the holocaust, voices.iit.edu, Holocaust, survivors, testimony, interviews, transcripts, documentary, wire recorder, archive, I Did Not Interview the Dead, Illinois Institute of Technology, IIT, IIT Chicago, Chicago, Paul V. Galvin Library" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/navigation.css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/voices_main.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/TodaySB-Medium_500.font"></script>
+    <script type="text/javascript">
+        Cufon.replace('.navigation a');
+    </script><link media="screen, projection" href="css/maps.css"  rel="stylesheet" type="text/css" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA0xyVCvO7IKnAExY22l2QehS836YHSNG4g_xIZj9BM1cpeYlJVRQqsoC14ZLUkgxCP8ed-GNYCy6Hxg" type="text/javascript"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+    var map, markers, options, popupClass;
+    var zoom = 3.0;
+
+    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+        var feature = new OpenLayers.Feature(markers, ll); 
+        feature.closeBox = closeBox;
+        feature.popupClass = popupClass;
+        feature.data.popupContentHTML = popupContentHTML;
+        feature.data.overflow = (overflow) ? "auto" : "hidden";
+        var marker = feature.createMarker();
+        var markerClick = function (evt){
+            if (this.popup == null){
+                this.popup = this.createPopup(this.closeBox);
+                map.addPopup(this.popup);
+                this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+            currentPopup = this.popup;
+            OpenLayers.Event.stop(evt);
+        };
+        marker.events.register("mousedown", feature, markerClick);
+        markers.addMarker(marker);
+    }
+    var selected;
+    $(document).ready(function(){
+        $(".map").hide();
+        $(".terms h3").hide();
+        $(".terms li").each(function(i, elem){
+            $(elem).hide();
+        });
+        $("a.placename").each(function(i, elem){
+            $(elem).click(function(){
+                var marker_ref = $(this).attr("href").replace('#', '');
+                $("." + marker_ref).show().css({
+                    "top": $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "position": "absolute",
+                    "background": "#d3baa8"
+                });
+                return false;
+            });
+        });
+        $("a.term").each(function(i, elem){
+            $(elem).click(function(){
+                $("." + selected).hide();
+                selected = String($(elem).attr("href").replace('#', ''));
+                $(".terms").show();
+                $("." + selected).show().css({
+                    "top":  $(elem).offset().top,
+                    "left": $(elem).offset().left,
+                    "width": "300px",
+                    "position": "absolute",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                });
+                $(".terms p").show();  
+                return false;
+            });
+        });
+        $("#sidebar p b a.hide").click(function(){
+            $("." + selected).hide();
+            $(".terms h3").hide();
+            $(".map").hide();
+            $(".terms").hide();
+        });
+        $("sup a").each(function(i, elem){
+            var selected_note;
+            $(this).click(function(e){
+                $(".note_popup li.selected").hide().removeClass("selected");
+                selected_note = $(".note_popup li.note_" + parseInt(i + 1));
+                $(selected_note).css({
+                    "top": e.pageY,
+                    "left": e.pageX,
+                    "display": "block",
+                    "zIndex": "9999",
+                    "position": "absolute",
+                    "width": "300px",
+                    "background": "#d3baa8",
+                    "border": "1px solid #aaa",
+                    "padding": "10px"
+                    
+                }).addClass("selected");
+                return false;
+            });
+            $(".note_popup a.hide").click(function(){
+                $(".note_popup li").hide();
+                return false;
+            });
+        });
+    });
+    </script>
+</head>
+<body id="translation" class="david-p-boder-interviews-valerius-michelson-september-26-1946-mnchen-germany interview">
+    <div id="wrapper">
+                <div id="header">
+            <h3><a href="./">Voices of the Holocaust</a></h3>
+                        <!-- begin simple search form -->
+<form class="keyword_search" action="search_results" method="post" enctype="multipart/form-data" onsubmit="pageTracker._trackPageview('simple_search_keyword_query');">
+    <input type="text" value="enter keyword(s) here" name="keyword" 
+class="text" onclick="this.value='';" />
+    <input type="submit" value="Search" name="submit" class="submit" />
+</form>
+<a href="advanced_search" class="advanced_search_link">advanced search</a>
+<!-- end simple search form -->
+                    </div>        <ul class="navigation">
+    <li class="primary explore">
+        <a href="#explore">
+            EXPLORE THE ARCHIVE        </a>
+        <ul>
+            <li class="secondary language item_0">
+                <a href="search_results?filter_by=name">
+                    BY INTERVIEWEE NAME                </a>            </li>
+            <li class="secondary language item_0">
+                <a href="explore_by?by=interview_language">
+                    BY INTERVIEW LANGUAGE                </a>            </li>
+            <li class="secondary date">
+                <a href="explore_by?by=date">
+                    BY INTERVIEW DATE                </a>            </li>
+            <li class="secondary location">
+                <a href="explore_by?by=interview_location">
+                    BY INTERVIEW LOCATION                </a>            </li>
+            <li class="secondary camps">
+                <a href="explore_by?by=camps">
+                    BY CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary nationality">
+                <a href="explore_by?by=nationality">
+                    BY INTERVIEWEE NATIONALITY                </a>            </li>
+            <li class="secondary religion">
+                <a href="explore_by?by=religion">
+                    BY INTERVIEWEE RELIGION                </a>            </li>
+            <li class="secondary more item_7">
+                <a href="explore_by?by=more">
+                    MORE . . .                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary maps">
+        <a href="#maps">
+            REFERENCE MAPS        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="maps?type=camp">
+                    CAMPS                </a>            </li>
+            <li class="secondary ghettos ">
+                <a href="maps?type=ghetto">
+                    GHETTOS                </a>            </li>
+            <li class="secondary invasion">
+                <a href="maps?type=invasion_location">
+                    LOCATION DURING INVASION                </a>            </li>
+            <li class="secondary birthplace">
+                <a href="maps?type=birthplace">
+                    INTERVIEWEE BIRTHPLACES                </a>            </li>
+            <li class="secondary interview">
+                <a href="maps?type=interview_location">
+                    INTERVIEW LOCATIONS                </a>            </li>
+            <li class="secondary liberation">
+                <a href="maps?type=liberation_location">
+                    LIBERATION LOCATIONS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary resources">
+        <a href="#resources">
+            RESEARCH RESOURCES        </a>
+        <ul>
+            <li class="secondary camps item_0">
+                <a href="camps">
+                    LIST OF CAMPS & GHETTOS                </a>            </li>
+            <li class="secondary glossary ">
+                <a href="glossary">
+                    GLOSSARY OF TERMS                </a>            </li>
+            <li class="secondary bibliography">
+                <a href="bibliography">
+                    BIBLIOGRAPHY                </a>            </li>
+            <li class="secondary links">
+                <a href="links">
+                    LINKS                </a>            </li>
+        </ul>
+    </li>
+    <li class="primary about">
+        <a href="#about">
+            ABOUT THE PROJECT        </a>
+        <ul>
+            <li class="secondary boder item_0">
+                <a href="david_boder">
+                    DAVID BODER                </a>            </li>
+            <li class="secondary project">
+                <a href="voices_project">
+                    VOICES PROJECT                </a>            </li>
+            <li class="secondary notes">
+                <a href="project_notes">
+                    PROJECT NOTES                </a>            </li>
+            <li class="secondary contributors">
+                <a href="contributors">
+                    CONTRIBUTORS                </a>            </li>
+            <li class="secondary credits">
+                <a href="credits">
+                    CREDITS                </a>            </li>
+            <li class="secondary news">
+                <a href="project_news">
+                    IN THE NEWS                </a>            </li>
+            <li class="secondary contact">
+                <a href="contact">
+                    CONTACT                </a>            </li>
+            <li class="secondary contact"><a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&amp;dpid=23454" target="_blank">GIVING TO VOH </a> </li>
+            <li class="secondary requirements">
+                <a href="requirements">
+                    SITE REQUIREMENTS                </a>            </li>
+        </ul>
+    </li>
+</ul>
+        <div id="content_wrapper">
+            <div id="content">
+                                <h1>David P. Boder Interviews Valerius Michelson; September 26, 1946; München, Germany</h1>
+                                            <ul class="transcripts">
+    <li class="interview_home">
+        <a href="interviewee?doc=michelsonV">
+            Interview homepage
+        </a>
+        //
+    </li>
+        <li class="transcription">
+        <a href="interview?doc=michelsonV&display=michelsonV_ru ">
+                            Transcript
+                    </a>
+        //
+    </li>
+        <li class="english_translation">
+        <a href="interview?doc=michelsonV&display=michelsonV_en">
+                            English translation
+                    </a>
+        //
+    </li>
+        <li class="audio">
+        <a href="audio?doc=michelsonV">
+            Audio player
+        </a>
+    </li>
+        <li class="commentary">
+        //
+        <a href="commentary?doc=michelsonV">
+            Commentary
+        </a>
+    </li>
+    </ul>        <ul>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="4.243" end="x">[In English] <a class="placename" href="#vothL29">Munich</a>, September the 24th, 1946, at the <a class="term" href="#vothG_unrra">UNRRA</a> University in the Deutsches Museum, a university for displaced students from all over the world; about more than a dozen nationalities.<note n="1"><span class="note">In August 1945, DP students and professors began organizing university courses at the Deutsches Museum DP camp in Munich. The UNRRA University grew out of this initiative, officially opening in February 1946. It was named after the United Nations Relief and Rehabilitation Administration, the international relief agency created by the Allies to assist victims of the war. Michelson was the president of the UNRRA University Students' Union. He helped to define the university as an international institution. He discusses his goals for the university later in the interview. On the history of the university, see Bernhard Zittel, 'Die UNRRA-Universität in München, 1945-1947,' in Archivalische Zeitschrift 75 (1979); Anna Holian, 'Displacement and the Postwar Reconstruction of Education: Displaced Persons at the UNRRA University of Munich, 1945-1948,' in Contemporary European History 17:2 (May 2008); and Nina Bschorr, '"Wir wollten alle so gerne lernen..." Die UNRRA-Universität im DP-Camp Deutsches Museum in München,' in Jahrbuch für Antisemitismusforschung 17 (2008).</span><sup><a href="#note_1">1</a></sup></note> The interviewee is a gentleman, Valerius Michelson...</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="29.394" end="x">[In German] How old are you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="32.478" end="x">[In English] 30 years of age, a student at the university, and he is [to Michelson] Lithuanian? Or Latvian? Or... or he is Russian!</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="44.431" end="x">[In Russian] Then perhaps we could continue in Russian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="x" end="x">But of course.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="49.953" end="x">And he will talk to us in Russian [this last sentence was apparently intended in English, but was said in Russian]. Turn around [apparently referring to the microphone]. Take it this way. Mr. Michelson, I should like to ask you [pause] to tell me where you were and what happened to you . . . ehh . . . from the moment either when the war began or when the movement of Soviet armies started towards the west.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="83.586" end="x">At that time I was in Estonia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="x" end="x">Where in Estonia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="x" end="x">In the city of <a class="placename" href="#vothL148">Revel</a>. Or <a class="placename" href="#vothL148">Tallinn</a>.<note n="2"><span class="note">Revel is the Russian name for Tallinn, the capital of Estonia.</span><sup><a href="#note_2">2</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="85.802" end="x">Right. And . . . ehh . . . since what time did you live in <a class="placename" href="#vothL148">Revel</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="95.299" end="x">I lived [there] since the year '19 [1919].<note n="3"><span class="note">Michelson and his family were part of the substantial Russian émigré community that developed in Estonia after the Bolshevik Revolution. In 1922, there were approximately 14,000-16,000 unassimilated (i.e., non-citizen) Russian refugees in Estonia. On the history of the Russian emigration, see Marc Raeff, Russia Abroad: A Cultural History of the Russian Emigration, 1919-1939 (New York: Oxford University Press, 1990).</span><sup><a href="#note_3">3</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="97.609" end="x">That means right after the first revolution.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="100.124" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="100.608" end="x">Did you live there with your parents?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="102.959" end="x">I lived together with [words not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="106.733" end="x">And so in what year . . . ehh . . . did the Soviets come to <a class="placename" href="#vothL148">Revel</a> for the first time?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="112.871" end="x">In the year '39.<note n="4"><span class="note">Under the terms of the German-Soviet Non-Aggression Pact of August 1939, Estonia was assigned to the Soviet sphere of influence. In September 1939, seeking to make good on its claim to Estonia, the Soviet Union demanded that the Estonian government sign a mutual assistance treaty and allow the Soviets to establish military bases on Estonian soil. The Estonian government felt compelled to accede to this demand. In June 1940, claiming that the Estonian government had not fully complied with the treaty, the Soviet Union invaded and occupied Estonia.</span><sup><a href="#note_4">4</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="114.403" end="x">Good. What happened to you? What were you doing then, and so forth?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="119.413" end="x">At the time I lived in <a class="placename" href="#vothL148">Revel</a> and [pause] occupied myself with drawing, et cetera. I was preparing myself to graduate soon from the technical school in <a class="placename" href="#vothL148">Revel</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="136.434" end="x">Right. You were then a student?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="138.019" end="x">I was a student.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="139.026" end="x">Begin with that. Then you were a student of the technical school in <a class="placename" href="#vothL148">Revel</a> and were near graduation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="143.365" end="x">I was near graduation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="147.462" end="x">Well, what happened to you personally, and to your immediate family, when the Soviets arrived in <a class="placename" href="#vothL148">Revel</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="154.648" end="x">At first we were waiting for the Soviets, as Russians [pause], and for that reason we were glad about their coming. [Footnote: Estonia belonged to Russia for centuries. It became independent after the first world war, but there were always certain elements, no necessarily communistic, who desired a reunification with Russia.] But [pause] in a very short time we became convinced that there was not much to be especially glad about. My father was the editor of a Russian [language] newspaper in <a class="placename" href="#vothL148">Revel</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="176.600" end="x">What was the name of the paper?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="178.145" end="x">The name of the paper was Freedom of Russia.<note n="5"><span class="note">Freedom of Russia (Svoboda Rossii) was a socialist literary and political newspaper published in  from 1919 to 1920. Although Michelson implies that his father's association with the newspaper lasted up to the period of Soviet occupation, in fact he is describing his father's work during the very beginning of the emigration period.</span><sup><a href="#note_5">5</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="180.711" end="x">[With surprise] In <a class="placename" href="#vothL148">Revel</a>? And it was called Freedom of Russia?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="183.626" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="184.244" end="x">How did the Estonians permit such a newspaper? Or what was it? Oh, it was [meant] the freedom of Russia and implied the freedom from the Soviets?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="193.579" end="x">No. It was a rather leftist paper.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="196.789" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="197.461" end="x">But it was 'undercover' and on it were working communists [??].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="200.161" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="200.511" end="x">And it was so secretive [unintelligible], my father worked as an economist.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="203.761" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="206.340" end="x">. . . ehh . . . I specifically mentioned this newspaper because it was of very leftist views.<note n="6"><span class="note">While the political spectrum among Russian émigrés was very broad, most leading émigré institutions were of a monarchist or rightist orientation. Michelson here stresses that the politics of his father's newspaper were outside the mainstream.</span><sup><a href="#note_6">6</a></sup></note> It was constantly under attack [?]. My father was at one time an SR and therefore sympathized with the movement in Russia and thought that, if not directly Bolshevism, then, in any case, the socialist revolution in Russia is necessary.<note n="7"><span class="note">SR: Socialist Revolutionary. The Socialist Revolutionary Party (SRP) was one of the leading socialist parties in Russia in the period leading up to the Bolshevik Revolution. Founded in 1901, it grew out of the Russian populist movement and focused on the plight of both peasants and industrial workers under capitalism. In contrast to the Social Democratic Workers' Party (Mensheviks and Bolsheviks), which called for the nationalization of the land, the SRP advocated the socialization of the land: its transformation into public property that would be worked individually by peasant tenants. Socialist Revolutionaries, most notably Alexander Kerensky, held important posts in the Provisional Government formed after the Russian Revolution of February 1917. The SRP won the most seats of any party in the election for the Constituent Assembly in November 1917. However, the Bolshevik Revolution of October 1917 caused a split in the party, with a new left wing siding with the Bolsheviks in calling for a communist revolution. After the Bolsheviks definitively seized power, many members of the mainstream SRP went into exile.</span><sup><a href="#note_7">7</a></sup></note> I was brought up on these same viewpoints, and I always considered myself . . . ehh . . . not a person . . . anyway not . . . ehh . . . of Fascist, nor even capable of capitalistic persuasion. [Pause] In spite of all that, after the arrival of the Soviets in Estonia [pause], in a short time, my father began to experience problems [pause] and at the end . . . the beginning of 1940 . . . upon establishment of a Bolshevik government [these sentences are not clear; the recording is poor] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="260.833" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="263.331" end="x">And by the end . . . that is at the beginning of the year '40 . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="269.585" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="274.273" end="x">he was called . . . he was twice called by . . . by the NKVD.<note n="8"><span class="note">The NKVD (Narodnyy Komissariat Vnutrennikh Del or People's Commissariat of Internal Affairs) was the secret police organ of the Soviet Union. Created in 1922, it took over the functions exercised earlier by the Cheka, the state security organization formed by the Bolsheviks shortly after the October Revolution.</span><sup><a href="#note_8">8</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="281.459" end="x">What is the NKVD?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="282.843" end="x">This is . . . ehh . . . uhmm . . . Peoples' Commissariat.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="291.158" end="x">Soviet police or something?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="292.891" end="x">. . . of Internal Affairs of the republic. Some kind of . . . yes, some kind of a Soviet <a class="term" href="#vothG_gestapo">Gestapo</a>. [Chuckle.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="297.767" end="x">Intelligence.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="298.936" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="301.032" end="x">What did they call the GPU?<note n="9"><span class="note">Created in 1922, the GPU (Gosudarstvennoye Politicheskoye Upravlenie or State Political Directorate) was the state security organization of the Soviet Union and was intermittently part of the NKVD. In 1934, it was succeeded by the Main Directorate of State Security (Glavnoe Upravlenie Gosudarstvennoi Bezopasnosti or GUGB). This is presumably the organization to which Michelson refers.</span><sup><a href="#note_9">9</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="305.800" end="x">I don't know. At one time it was called GPU, and then it was renamed. When [that was done] I don't know exactly. At any rate, when they [father and others?] came there, there were [people from] the border forces and some kind of a secret police, et cetera. They were all under the same name, . et cetera. [Pause] And afterwards [pause], in March of the year '41, the father on his way to work in the morning . . . Of course, he did not expect not to return home. [Pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="347.252" end="x">Well . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="348.397" end="x">He disappeared, and since then I have not had from him any information.<note n="10"><span class="note">Michelson's story about his father, while not strictly speaking true, is likely grounded in fact. According to one obituary for Michelson, his father was the victim of a Stalinist purge (St. Paul Pioneer Press, 5 August 2006). While Michelson's father met his fate in the Soviet Union, purges did take place in Soviet-occupied Estonia. During the first year of occupation, Soviet forces deported or killed some 60,000 persons, under the guise of eliminating "anti-Soviet elements." Although most of the victims were ethnic Estonians, Russian émigré intellectuals and community leaders were also targeted.</span><sup><a href="#note_10">10</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="352.951" end="x">Neither you nor your mother, nobody?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="355.221" end="x">Not I . . . My mother had died already before.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="357.088" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="357.491" end="x">And I did not receive any more information.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="358.955" end="x">Who in your family was [unintelligible]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="360.930" end="x">I had an aunt, who brought me up, [pause] and who managed to leave for Finland. [Pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="371.405" end="x">Did you hear from her [?]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="373.823" end="x">I . . . ehh . . . received a letter from her sent through my cousin in Belgium. I have three [male] cousins who are in Belgium, and through them I have received these letters [about her], because there is no direct communication at present with Finland. [Pause] Well, after that episode, you know, . . . ehh . . . in the fall, rather in the early fall, [pause] in August, at the end of July, at the beginning of August the Germans arrived.<note n="11"><span class="note">The Nazi occupation of Estonia began in July 1941, with German troops reaching Tallinn at the end of August. Michelson's vacillation here may have to do with the fact that he was not in Estonia when the events occurred.</span><sup><a href="#note_11">11</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="414.437" end="x">Right. [Pause] So your father did not return? You couldn't make inquiries, ask around . . . ?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="419.049" end="x">I endeavored to inquire, but I received no information. I was even twice summoned, and I was questioned about alleged anti-Soviet views of my father and work, which [unintelligible].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="435.768" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="436.959" end="x">But I was released, because I was at that time sufficiently on my own. I did not live together with him [the father], and so they did not find me in anything especially guilty. I . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="448.954" end="x">[Unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="451.525" end="x">Yes, yes. I personally think that [pause] my father hardly had committed any anti-Soviet acts, because first of all he was quite old, and second, it is my personal belief, I think he could not have been an enemy of Soviet authority.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="472.175" end="x">What is your religion?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="474.311" end="x">Orthodox.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="476.796" end="x">I am asking your faith because I have encountered an Orthodox priest [Father Kharchenko, Chapter 15] among the . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="484.874" end="x">Yes. Now then. I told you that I am Orthodox, but I don't want to assert it definitely. I am baptized as a Orthodox, but . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="495.996" end="x">Well, I understand. It is your family. The family background [this word was said in English] is Orthodox.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="499.421" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="500.133" end="x">That I understand.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="501.409" end="x">Entirely correct. Well, afterwards [pause] when they started calling to the NKVD, et cetera, et cetera, it did not give me in peace and . . . ehh . . . our financial situation was bad. [Pause] I had to work a great deal. Mainly I made all kinds of drawings, pictures, et cetera, in order to earn [something] for myself. [Pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="531.957" end="x">Well, continue then . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="533.354" end="x">I continued to do all of this until the moment when the Germans arrived. [Pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="542.340" end="x">Wait please.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="x" end="x">Yes</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="x" end="x">I am interested in this. The Soviets were then in <a class="placename" href="#vothL148">Revel</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="549.177" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="550.507" end="x">How was life going on? You, for instance, were working. You yourself could sell your work, receive money for it? The stores were open? How was all that going on?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="561.952" end="x">Yes . . . ehh . . . It was thus: such abundance that prevailed before in Estonia as well as in the other Baltic countries was no more. But . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="572.545" end="x">You are talking about the economic organization?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="574.842" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="575.258" end="x">Were there private stores?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="576.910" end="x">Private stores had remained, but started to close up [liquidate]. At that time there were already attempts to proceed with a kind of socialization—- I don't know how to call it. At any rate . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="587.911" end="x">[Unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="592.102" end="x">. . . ehh . . . state . . . ehh . . . [They proceeded] to convert all the separate businesses into state enterprises. At the same time . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="597.968" end="x">But not at once?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="599.284" end="x">Not at once. At the same time establishments were opened in which . . . uhmm . . . in which people traded who arrived from Russia.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="610.486" end="x">How was that? They traded on their own?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="611.958" end="x">No. In the capacity of government enterprises.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="615.491" end="x">Like cooperatives?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="616.485" end="x">Like cooperatives. Or I would even say that it was actually favorable . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="620.165" end="x">You would say what?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="620.890" end="x">I would say that they were . . . ehh . . . that they were not cooperatives, because a cooperative implies the existence of members, shareholders, et cetera, which did not exist in these establishments.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="631.649" end="x">[In English] This concludes Spool 153, in the middle of an interview with Mr. Valerius Michelson, age 30, a student of the <a class="term" href="#vothG_unrra">UNRRA</a> University at the Deutsches Museum in <a class="placename" href="#vothL29">Munich</a>. September the 24th, 1946. An Illinois Institute [of Technology] wire recording.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="657.777" end="x">[In English] Spool 154. We continue from Spool 153. The interview with Mr. Valecius Michel-...[correction] Valerius Michelson. Mr. Michelson is apparently an important person in the life of the university, and he has an urge to talk about it [apparently there was some non-recorded conversation while the spools were changed]. Well, we shall try to see what we can get [recorded] in this short program, because we have changed our rule, and instead of letting everybody talk as long as possible, we are taking them in one half hour turns, because it simply would be a very great hardship to them of [my] not having listened to the representatives of each nationality. Maybe scientifically this would not be immediately convertible into useful material, but we just have to do it.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="719.765" end="x">[In Russian] And so, it means, Mr. Michelson, let us start thus: It means . . . ehh . . . your father disappeared during the time of the Soviets.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="729.874" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="730.210" end="x">You made ends meet by making drawings and . . . ehh . . . pictures too?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="735.247" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="735.623" end="x">For whom did you do it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="737.571" end="x">I created them for sale.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="x" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="x" end="x">I sold them . . . in part to acquaintances. And in part through them I would reach people who had an interest in them. And I continued to do this also when the Germans arrived.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="748.965" end="x">Good. Now tell us, how did the Germans come in? How did that change [of power] proceed?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="754.042" end="x">You see, I cannot tell you the details, because we . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="756.809" end="x">I don't want generalities. How . . . The environment you were located in.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="760.771" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="761.067" end="x">There were people who fled? There were people who were evacuated? How did all that occur?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="766.131" end="x">Those people who had come from the Soviet side—there were quite a few of them; I had some acquaintances from there [pause]— they nearly all had fled before. There remained a very small number [of them].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="779.671" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="781.283" end="x">What concerns the so-called old Russian immigration ['old time' refugees from the Soviets] who were there—they, in the majority, remained, and to some extent were even glad about the arrival of the Germans. But not all [of them]. I, of course, at that time was absorbed in preoccupations for existence, because [chuckle] with the departure of the father our [economic] status had become much worse. . . . ehh . . . The aunt with whom I lived together was already very old, and she, of course, in no way was able to help me, and I had to feed her and myself. And for that reason I had but little chance to get into conversations with strangers, only incidentally.. At any rate up to the arrival of the Germans I expected that there would be fierce battles, and endeavored together with my aunt, since we lived in a suburb, to penetrate still farther away from the suburb of the city of <a class="placename" href="#vothL148">Revel</a> to [name of the locality not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="837.704" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="839.746" end="x">And there we weathered through the whole [laughter] German advent. There were no big battles in <a class="placename" href="#vothL148">Revel</a> at that time, and everything proceeded rather quietly . . . ehh . . . Just not long before the march forward of the Germans I was astonished by the great confusion of the Soviet . . . Soviet soldiers, the army, and the few ships which were lying in the bay of <a class="placename" href="#vothL148">Revel</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="861.978" end="x">How did the confusion manifest itself on the ships?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="864.665" end="x">Ehh . . . they . . . ehh . . . , as far as I know, were unable to get out, because they had no fuel. I had the opportunity to hear literally on the streets when they were yelling to each other, of course, in Russian, about, 'Where should we obtain fuel? We are not given any. there is no [word not clear].'</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="882.184" end="x">What kind of fuel or oil?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="883.581" end="x">I don’t know. Oil, probably oil or kerosene, et cetera. I was on the very coast . Ehh . . . on the coast of the gulf I could observe how . . . what do you call it <note n="12"><span class="note">The phrase Michelson uses here, 'это самое,' is a filler with no real meaning or direct translation.</span><sup><a href="#note_12">12</a></sup></note> . . . the ships maneuvered several times, how at night they would send [launches] ashore in order to obtain fuel from the shore, because at that time the German planes already endeavored to bomb these ships. The same occurred with the military forces below . . . ehh . . . meaning not below but on the coast where . . . ehh . . . in a very strange way [human] figures were running back and forth, individual figures, like messengers, or something like that, who made the impression of greatly frightened and perplexed people.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="934.853" end="x">Well, this is a general picture of [hasty] evacuation. Well, then the Germans came, and you continued working on your own [?].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="940.804" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="942.174" end="x">Now what happened to you?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="944.229" end="x">To me personally? I returned to my apartment, to the two rooms, with my aunt, and we continued to live there together, and I continued to draw [paint] little pictures, et cetera, and did not experience, especially . . . ehh . . . at the beginning, any special inconveniences on the part of the Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="958.038" end="x">What happened afterwards?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="960.657" end="x">Afterwards? This lasted about up to . . . ehh . . . the beginning of the year '42, that is, nearly a whole year, no, less than a year.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="969.724" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="972.209" end="x">After that I was called . . . ehh . . . to the Arbeitsamt <note n="13"><span class="note">Michelson uses the German word for labor office here.</span><sup><a href="#note_13">13</a></sup></note> in the center of the city. I arrived there, and they asked me a series of questions as to what my occupation was, et cetera, et cetera. And told me that actually . . . I spoke German satisfactorily, because at one time I had attended a German Gymnasium <note n="14"><span class="note">Michelson uses the German word for classical high school here.</span><sup><a href="#note_14">14</a></sup></note> [the name not clear] Schule.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="993.628" end="x">Where? In <a class="placename" href="#vothL148">Revel</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="992.924" end="x">In <a class="placename" href="#vothL148">Revel</a>. Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="994.753" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="995.599" end="x">And . . . ehh . . . meaning . . . ehh . . . they [said] that was unimportant work, et cetera, et cetera. They asked me who I was by nationality. I told them I was Russian. They filled out a proper [index] card and suggested that I come around in another week. When I came in a week I was handed . . . ehh . . . some kind, how to say [chuckle] . . . they handed me a paper, in general, with a content or an order about me having to journey to Austria or they did not say Austria, just named the city of <a class="placename" href="#vothL5">Linz</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1025.273" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1025.689" end="x">. . . where I indeed went after three days.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1027.959" end="x">Hm. They called this [<a class="placename" href="#vothL5">Linz</a>] Ostmark [name for Austria after the annexation by Hitler].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1029.531" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1030.283" end="x">And so you went alone or with an echelon?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1032.365" end="x">No. there went a rather large number, and some of the people were even . . . ehh . . . my acquaintances . . . ehh . . . from <a class="placename" href="#vothL148">Revel</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1040.975" end="x">And how were you transported? What kind of train cars, and how were the conditions?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1044.615" end="x">Ehh . . . the conditions of travel were rather satisfactory. To be sure, the train cars were freight cars, but with plank beds, et cetera. Moreover . . . ehh . . . , we were given food on the road [pause] of average quality. At any rate we did not go hungry.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1060.974" end="x">Was anybody beaten?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1062.210" end="x">No. [Pause] The only inconvenience was that we hardly could get off [the train] except for . . . in such . . . ehh . . . instances when we stopped for a long time. And that was for me the cause of an accident.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1061.525" end="x">How come?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1076.956" end="x">Near <a class="placename" href="#vothL1">Vienna</a> . . . ehh . . . I went out . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1080.046" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1080.650" end="x">I don't know the name—a little hamlet, just in the immediate vicinity of Vienna.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1085.150" end="x">Hm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1085.701" end="x">There we stood for three days, and we were getting off to wash and get cleaned up. And near the water tower . . . ehh . . . next to which [laughter] we were washing,, during the re-arrangement of the rolling stock I was hit by a train car. I fell and broke a leg.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1102.938" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1104.107" end="x">And for that reason I was [not?] transported farther with the echelon, but was sent from the start . . . ehh . . . to some small hospital or something of the kind in that little hamlet or suburb of <a class="placename" href="#vothL1">Vienna</a>. And afterwards I was transferred to <a class="placename" href="#vothL1">Vienna</a> proper, to the Samaritan Hospital. [Pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1122.082" end="x">Well.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1125.212" end="x">After I . . . I was put in a cast, and I remained there for quite a long time. And there . . . ehh . . . they took rather good care of me, and more so when I afterwards requested some paper and started to draw everybody who was there, my nurses, afterwards the doctor—surgeon, a young and very handsome physician who was taking care of me. And I and this doctor became afterwards such friends that he proposed that I remain in—the doctor was an activist—and he proposed that I remain in <a class="placename" href="#vothL1">Vienna</a> and help his wife, who was doing some Kunstgewerbe <note n="15"><span class="note">Michelson uses the German word for handicrafts here.</span><sup><a href="#note_15">15</a></sup></note> with her work. In this manner I remained in <a class="placename" href="#vothL1">Vienna</a>. Through the acquaintance [influence] of this doctor I succeeded in arranging with the Arbeitsamt <note n="16"><span class="note">See fn 13.</span><sup><a href="#note_16">16</a></sup></note> [so that] I was considered . . . ehh . . . how to say, an independent professional man, and I was able to occupy myself during the following three years with the same activities with which I occupied myself already in <a class="placename" href="#vothL148">Revel</a>, that is, drawing all kinds of little pictures, et cetera.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1184.631" end="x">Yes. You came to be . . . ehh . . . , so to speak, a colleague of Hitler. He too was an artist. <note n="17"><span class="note">Hitler spent most of his youth in and around Linz. In comparing Michelson to Hitler, Boder seems to be giving voice to his misgivings about Michelson's character, as evidenced by the latter's activities in Nazi-occupied Vienna.</span><sup><a href="#note_17">17</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1188.701" end="x">Yes, in some way. With the difference that [laughter] I occupied myself with the drawing of pictures, while he occupied himself . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1196.854" end="x">Well, go on.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="x" end="x">And this is . . . now so.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="x" end="x">And so, where were you at the moment of liberation?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1205.195" end="x">At the moment of liberation . . . I was in <a class="placename" href="#vothL1">Vienna</a> all the time, up to the moment when it . . . the Bolsheviks started approaching <a class="placename" href="#vothL1">Vienna</a>. <note n="18"><span class="note">Soviet forces arrived in Vienna in mid-April 1945.</span><sup><a href="#note_18">18</a></sup></note> Since I knew the Soviets from my experiences in <a class="placename" href="#vothL148">Revel</a>, or rather from the experiences of my father, because these were just [personal] experiences and not final complete conclusions—such knowledge I did not have—I did not want to remain in <a class="placename" href="#vothL1">Vienna</a>, and got out of there with a whole stream [of people] running away from <a class="placename" href="#vothL1">Vienna</a>. <note n="19"><span class="note">What Michelson of course neglects to state is that as a Red Army soldier who surrendered to the Germans and served in the German army, he had his own reasons for wanting to avoid an encounter with Soviet forces.</span><sup><a href="#note_19">19</a></sup></note> And moved from there to the West. [Pause] Ehh . . . At the beginning of May, about the 6th, I crossed the Bavarian border [pause] and [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1247.245" end="x">Tell me, you legally went over to the West?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1251.503" end="x">I went illegally together, as I told you, with those innumerable echelons. And, moreover, I managed to travel part of the road with my compatriots, who were running away from somewhere in Russia, from near <a class="placename" href="#vothL441">Smolensk</a> . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1265.768" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1266.091" end="x">with whom I managed [laughter] to chat during the journey, and who told me about Soviet Russia a multitude of sad things [stories], about how they were left . . . left without a homeland, without anything. And when I asked them how come they are abandoning their homeland, they answered that for them it would also have been hard to sta . . . remain . . . How to say it?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1287.287" end="x">To live.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1287.959" end="x">. . . as hard to live as here in a foreign country. I parted afterwards from them, and together with another man I proceeded through devastated <a class="placename" href="#vothL29">Munich</a>. It was thus. Barely did I cross the border between . . . ehh . . . Austria and Bavaria when I met the first American forces.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1308.806" end="x">It was as simple as that.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1310.042" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1310.458" end="x">Well, and afterwards, how did you get to <a class="placename" href="#vothL29">Munich</a>? Or . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1313.063" end="x">I . . . ehh . . . moved on to southern Bavaria and arrived partly on foot, partly on conveyances, in <a class="placename" href="#vothL381">Kempten</a>. <note n="20"><span class="note">A city in southwestern Bavaria where UNRRA established a camp for displaced persons.</span><sup><a href="#note_20">20</a></sup></note> In <a class="placename" href="#vothL381">Kempten</a> I went to a camp . . . ehh . . . for <a class="term" href="#vothG_dp">DP's</a> where I remained for eight days. The life in the camp was very hard for me.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1333.389" end="x">Well, what did you eat en route? How did you . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1335.471" end="x">En route I sustained myself in the most varied ways. Until I reached the American forces I sustained myself by going to various peasants, and asking for something, et cetera. And it must be said that in Austria the people in this respect were much kinder than afterwards [the people] in Bavaria.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1354.642" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1355.327" end="x">But in Bavaria I spent one day without the Americans. There was a frightful confusion, and . . . ehh . . . I was not surprised that nobody cared to feed me, because all people were in frightful agitation and fear.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1369.554" end="x">Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1369.836" end="x">Germans.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1370.602" end="x">And where were the troops?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1372.254" end="x">The troops? . . . ehh . . . I happened to meet only in one of the villages which I passed. I endeavored not to walk on the main highways . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1379.816" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1379.924" end="x">. . . because I proceeded without documents, and that was dangerous, and I think that I managed to pass through because of the reign of a peculiar and tense mood. [Pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1389.424" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1390.243" end="x">Ehh . . . At any rate, I attempted not to march on the large highways, but tried to walk from farmhouse to farmhouse through the little villages.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1396.046" end="x">Right.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1397.201" end="x">And in this way . . . ehh . . . I sustained myself until the instant when I met the first American division. And this first American division supplied me with dry [food] packages, and on these dry packages I managed to get to southern Bavaria to [the city of] <a class="placename" href="#vothL381">Kempten</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1410.890" end="x">On foot or . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1412.126" end="x">Part by automobile, a short distance across from the border of Bavaria and as far as . . . ehh . . . <a class="placename" href="#vothL29">Munich</a>, and through <a class="placename" href="#vothL29">Munich</a>, a short distance past, I covered by automobile, on an American . . . a truck. And afterwards I still walked a short distance, and in fact this was the most interesting part of my recent life. At that time I had paper with me, I had watercolors, and I sketched all kinds of particular . . . ehh . . . buildings which had impressed me and aroused my interest. I sketched pictures of Bavarian life. That was most interesting, and I felt myself truly—for the first time after many years—free and gained . . . full of hope for the future.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1454.444" end="x">Right. Well, tell me this. [Pause] . . . ehh . . . You told me that you wanted to tell me something about your . . . the <a class="term" href="#vothG_unrra">UNRRA</a> University. What faculty are you personally attending?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1464.668" end="x">The faculty of architecture.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1465.837" end="x">Architecture. I kind of suspected it, but did not want to jump to conclusions. Well let us take ten minutes, and tell me something about the [<a class="term" href="#vothG_unrra">UNRRA</a>] University.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1474.689" end="x">Good. I really did not want to talk about the university. I wanted to talk about that which interests me personally . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1480.156" end="x">Yes, that is not in the university.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1480.922" end="x">. . . concerning the university. I told you already that in <a class="placename" href="#vothL381">Kempten</a> I got into a camp [apparently for non-Jewish <a class="term" href="#vothG_dp">DP's</a>]. I . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1485.717" end="x"><a class="placename" href="#vothL381">Kempten</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1486.658" end="x"><a class="placename" href="#vothL381">Kempten</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1487.612" end="x">Where is it [located]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1488.754" end="x">That is in the Allgäu in southern Bavaria. In the <a class="term" href="#vothG_dp">DP</a> camp [unintelligible]. I withstood this camp for exactly eight days, because to live doing nothing, to get help for nothing, it was so painful for me . Life itself with a kind of people who do not see for themselves a way out, do not see that they could become useful to other people by starting to work [see Jacob Oleiski, Chapter 30], and [with] people who rely on . . . ehh . . . getting help from somewhere without deserving it in some way, that was very difficult for me [see Note 1 at the end of this chapter].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1525.169" end="x">Do you mean to say without deserving [being worthy] or without earning?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1529.304" end="x">Without earning.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1530.270" end="x">There is a difference.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1531.538" end="x">Yes. Without earning.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1532.896" end="x">You understand that people who were for years in Buchenwald . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1534.974" end="x">I would say thus . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1536.331" end="x">. . . and who . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1536.935" end="x">People who were in <a class="placename" href="#vothC15" type="camp">Buchenwald</a>, people who worked hard for the Germans, worked very hard—because I know many people who had to do things which hardly any other nation could compel [a person] to do—. . . ehh . . . such people, of course, deserved a rest, and, of course, earned the opportunity to . . . ehh . . . for some time, really relax, so as to be capable again in the future . . . ehh . . . of creativity and work . But [pause] I, however, want to say that I not only earn but in addition deserve, because I have seen these camps [for <a class="term" href="#vothG_dp">DP's</a>], and particularly in the camp where I had a chance to be, an enormous number of people who by their psychology [personality], by their [pause] . . . ehh . . . [some distance of silence on the wire] were no sufficiently high morally and . . . ehh . . . [pause], how to say ethically . . . people who took advantage of the possibility of being supported at the cost . . . ehh . . . of somebody else's wealth . . . ehh . . . , took advantage in the sense that they attempted to organize all kinds of [unintelligible] in the sense that they tried to arrange any kind of sale [pause][black markets], or . . . ehh . . . [pause] devoted themselves to all kinds of love affairs, and simply rob the peasants in the vicinity, et cetera.[See again Jacob Oleiski, Chapter 30.] I understand the burst of anger, the burst of hatred towards people who oppressed us for a long time , but to enrich yourself at the cost of these people, in my opinion, is shameless and immoral [unscrupulous]. And these circumstances compelled me to leave the camp. I left and told myself that never again shall I enter into such a camp.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1662.488" end="x">Hold on, let us ask you another question. It is very interesting for us because. You say 'to become enriched' . . . ehh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1668.422" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1669.387" end="x">You were . . . you had a chance to earn all the time. During all that time you probably were not struck [beaten] a single time. Were you struck [beaten] at any time during your whole stay in Germany?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1679.181" end="x">No, no.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1680.449" end="x">And now you take people who were searched, whose things were constantly taken away. These things were distributed among the Germans [pause] as gifts, and [or] were sold. [unintelligible]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1693.883" end="x">I understand.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1694.607" end="x"> And then, meaning, if we assume, entered the village and took away [their] trunks, took away [their] things</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1700.221" end="x">That is not theft . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1701.640" end="x">Then how could you say 'to enrich themselves at the cost of the population of the region'?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1704.779" end="x">I shall say something else. That I understand. And I said that I understand the burst of anger and I understand the hatred for the Germans. And I would say that I do not like the Germans. And they are obnoxious to me. And I wanted to talk about it then, when I thought of talking about it, why I am with this university, why I work in this [<a class="term" href="#vothG_unrra">UNRRA</a>] university as my social activity [public service]. But I would say [that] in order to answer your question about the methods they use . . . I know that there were a large number of purely criminal elements, partly from Soviet Russia—because I am in good command of the Russian language. I talked to them. I saw that they had remained . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1743.477" end="x">Were these war prisoners?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1744.745" end="x">Not necessarily war prisoners. People of all kinds. I talked to them, and I saw to what kind of psychological depths they had sunk. What were they thinking about? They did not think of taking back what was taken from them by force. What they thought about was that in Soviet Russia they had no chance to steal, they had no opportunity to rob people, to kill. Here they literally organized in gangs in order to promote their own [selfish] business, and not for the purpose of having avenged the evil which the Germans had done to them. No. And precisely these people I consider people who under no condition are deserving of the help of any nation.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1783.518" end="x">And were there many such people?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1785.570" end="x">I reckon that from among those people . . . I reckon that from among those people who came from the East [pause], predominantly from Soviets regions, only a small part of those not belonging to the intelligentsia was not of that kind. All those who came here honestly, who were dragged over here [to Germany], who were compelled to work here, peasantry, [industrial] workers from Russia, they have returned. However, those who have remained here, in most cases, were people of a criminal bent of personality, and I figure that there are no reasons whatsoever to lend support to such people. Only those people who have felt a kind of spiritual oppression—and these are for the most part the intelligentsia who had come from Soviet Russia—they have remained honest, and for that reason poor as well. And [pause] in the majority, they did not want to live together with these [criminal] elements. [pause] I now meet these people rather often. I know they are people from Soviet Russia, but I associate with them, I like to talk with them, because in them I see the real characteristics of intelligent [pause], understanding people, who know why they are here. I divide . . . ehh . . . the Russians, those who have come now from Soviet Russia, into two categories. They are either people who knew why they are going away from there, [pause] because there there was no opportunity to develop their creative abilities. There was no . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1885.564" end="x">You mean they took advantage of the invasion of the Germans to get away from there?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1888.733" end="x">To get out of Russia, or, if they were taken out by force from Russia, to remain here. Or in part [the second category] they are the element which left Russia, because they did not have there a chance to make use of the other . . . the other one's [person's] property, the other one's possessions, and live here day in, day out by a chance to live on the labors of others. [Pause] Those people who have come from there or were taken out of there [by force], who were accustomed to work there, those also went to work here. And these are mostly the intelligent . . . the group of the intelligentsia—in part, of course, not only the intelligentsia. And these people are also working now. They, in most cases, don't conglomerate in [<a class="term" href="#vothG_dp">DP</a>] camps, but endeavor to make a living in some other way away but away from those people [the criminal element].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1940.422" end="x">And the Germans? Do they permit them to work here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1942.746" end="x">In some instances, yes. It is very difficult, but possible. I know quite a few cases where people live . . . ehh . . . outside the [<a class="term" href="#vothG_dp">DP</a>] camps and work, say, for the American forces and</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="x" end="x">Mm hmm.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="x" end="x">or work for American camps. This the Germans cannot prohibit. <note n="21"><span class="note">In general, displaced persons had few opportunities for paid work, with the U.S. Army serving as the main employer in the U.S. zone. DPs who lived 'on the German economy,' as the phrase went, tended to lose their DP benefits.</span><sup><a href="#note_21">21</a></sup></note></span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1958.634" end="x">And where do you live?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1959.962" end="x">I live near [name not clear].</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1961.411" end="x">In a dormitory?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1962.679" end="x">Privately, like the majority of our students.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1965.033" end="x">Not with <a class="term" href="#vothG_unrra">UNRRA</a>?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1965.576" end="x">Not with <a class="term" href="#vothG_unrra">UNRRA</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1966.361" end="x">How? Were you billeted with the Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1969.258" end="x">Yes. That was done nearly for all students of our university.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1972.639" end="x">Does anybody pay for their apartments?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1975.023" end="x">According to the latest . . . ehh . . . orders . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1975.559" end="x">The Germans?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1977.034" end="x">The German government has to pay, or rather the Bavarian government, to be exact. Up to now we paid ourselves, and we ourselves earned the money. But I have to say that now . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="1986.728" end="x">How did you earn?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="1988.268" end="x">I earned all the time in the same way. Like before, I was drawing, make all kinds of . . . ehh . . . sketches for coloring, and sold them in German stores. And the German stores accepted them. In this respect the Germans did not exercise any special pressure over me. [Pause]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2003.740" end="x">Yes, and?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2004.978" end="x">For some time I worked here and for one firm. In a firm, however, managed by a Russian. Ehh . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2010.290" end="x">What Russian?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2010.743" end="x">A certain engineer of [the] Kaiser . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2013.821" end="x">How can he manage a firm?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2015.995" end="x">Here are quite a few firms which are managed mostly not only by Russians but by many foreigners. Construction firms and engineering firms.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2024.344" end="x">Are these, so to speak, new firms?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2026.215" end="x">These are firms which were founded after the Americans had arrived and liberated prisoners . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2030.380" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2031.074" end="x">. . . because there were quite a few [businesses] here either taken out of Russia or taken our of Czechia, or other countries occupied at one time by the Germans, who [the employees] have remained here and endeavored, at any rate, to work in some way so that they could make a living.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2047.311" end="x">And they intend to remain here?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2049.816" end="x">In the majority of cases, no. I don't know a single case when the foreigners wanted . . . [correction] would have wanted to remain.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2055.037" end="x">Now why is that?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2056.426" end="x">Why? I will tell you about that right away together with our talk about the university in order to . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2060.591" end="x">Yes, yes, yes, I won't interrupt you.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2062.975" end="x">I myself [pause] found out that a university is being organized in connection with <a class="term" href="#vothG_unrra">UNRRA</a> [pause], and I went to that university not withstanding [in spite of] my knowledge of the German language and not withstanding my knowledge that here is a definite norm for the admission of foreigners into the Germans educational institutions. <note n="22"><span class="note">In the U.S. and British zones, 10% of all university places were reserved for displaced persons.</span><sup><a href="#note_22">22</a></sup></note> I considered that to go to people who have started this war, and who according to their psychology, as previously, hate foreigners, that would mean to go into an environment known to be hostile. On the other hand, during this war, especially here, I had the opportunity to meet not only with Russians who had come from the East, but also with Poles, in part war prisoners who worked with farmers, in part . . . ehh . . . people taken out of there [Poland], and with Ukrainians, and most recently with Balts. And in all of them I noticed one common [character] streak, a streak of desire, after the war [pause], in some way to build, life on a new foundation, especially among the young people. On the basis of understanding each other, and friendship with each other . And it appeared to me that if this university, which is just now being created, would gain strength, if this university [pause] will come to be an entity which could really live and exist, then it could bring about a real collaboration of work with one with another, and especially for us, the people from the East who, as I observed for the last three years, could never come to terms to be friends with each other. They wanted it, but always continued thinking, 'No, I am a Ukrainian.' 'I am a Pole. We can't be together,' or 'I am a Ukrainian, and you are a Muscovite, a Russian. You . . . ehh . . . are oppressing our nation,' et cetera. And it appeared to me that in this university we, the youth, who after [pause] sufficient preparation will become the leaders in their own countries, in their own lands . . . if we should be friends among ourselves we would be able to create a rapprochement between our countries to an extent necessary in order that there will be neither wars nor these horrible totalitarian regimes which humiliate man and [oppress] his abilities to think and to create for the good of other [his fellow] men. And with this idea I came to the university. The first thing that I noticed at the university [pause] was that there was no such idea, that people have come here after the long years, during which they were torn away from learning, in order to study. That was good. But [pause] that was not all. What was missing here was unity, and for that reason the scholastic, academic spirit was also missing. [Pause] And already during the first month [pause] I, we, meaning, at the faculty started to talk thus: That in order to live actually in friendship, and in order to create academic conditions not akin to an average <a class="term" href="#vothG_dp">DP</a> camp, which very many have experienced and which very many have left for the same reasons that I have left, we have to hold together and demand toward ourselves a different attitude, different than accorded to the average masses [of <a class="term" href="#vothG_dp">DP's</a>], an attitude toward us as students, as studying youth.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2281.496" end="x">Now what kind of a special attitude toward students at the university [are you talking about]?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2284.484" end="x">This I can describe by means of an example which not long ago happened among us in a camp. I think that would interest you. We had here a strike, a very real hunger . . . hunger revolt, I would say. Ehh . . . That may appear strange. However, there were reasons for it. When the students once arrived in the morning at their university, they were not permitted to enter the university by the so-called <a class="term" href="#vothG_dp">DP</a> police, that is, <a class="term" href="#vothG_dp">DP's</a> who were organized to maintain order.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2324.580" end="x">By <a class="term" href="#vothG_dp">DP</a> you mean displaced persons? [The interviewer was apparently surprised that he used the English term.]</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2328.021" end="x"> These <a class="term" href="#vothG_dp">DP</a> . . . this <a class="term" href="#vothG_dp">DP</a> police aroused the indignation of the students by their sheer appearance, because it is proper that there be no police in the university. But what was most strange was that they permitted themselves first to push and chase students from corner to corner, and when our professors arrived, after detaining the dean of the university, they submitted him to a meticulous . . . ehh . . . search, compelled him to present all kinds of documents, and treated him most impertinently. This aroused the students most of all. Afterwards quite a few professors of advanced age, in order to get into the university, had to jump over benches, among them a lady . . . ehh . . . , a microbiologist, most respected among us as a professor, was obliged to do the same and this was the reason that the students started a frightful noise and literally were beside themselves [Pause]. For me as the president of the student organization of our university it was very hard to quiet down the aroused students. After assembling them with great difficulty in the yard of the university, I asked the people to calm down, not to cause great debauchery, and if they want at all to do something . . . I agreed to the demand of the majority of the students to decide not to take any nourishment, not to eat, until we would be promised that the police will be removed and police method will not be used in our university. The strike lasted, all together, one day, only two times [meaning twice they staged a hunger strike] but it proved that during the six months which we had spent in the university all the students, without distinction of nationality or creed, had united into such a family that all went out on such a risky venture as a strike. There was complete solidarity. This is just an example, an example of that which we consider a wrong attitude towards students, and which arouses our indignation. That is precisely why we are talking about the academic spirit and relationships.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2460.972" end="x">Now permit me. How did they explain it to you? How did that whole police episode come about?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2466.314" end="x">It had come about by mistake. By a big mistake . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2468.185" end="x">But since it was a mistake [?] . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2469.483" end="x">Entirely correct. But it seems to me that concerning students such mistakes are not permissible, [as if correcting himself] and in general concerning people, not only students. After all, there exist different norms of conduct . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2479.413" end="x">Well, yes, but here is a theater of military operations . . .</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2482.310" end="x">That is correct. But in spite of that I don't think that we have given any grounds for such treatment. We endeavor [unintelligible] always to behave correctly, and [pause] I personally consider that the strike was a very bad thing. I . . . personally do not like it, because it is not proper to do such things.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2500.419" end="x">What was improper?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2501.234" end="x">It was improper to organize a strike, et cetera. I think it would have been possible to come to terms without it. But it was provoked, because that was not the first time, and that is why it occurred, due to the mood.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2512.190" end="x">You see, I think we have to give here some explanation. Deutsches Museum is not only a university. You have here also a center for the registration of <a class="term" href="#vothG_dp">DP's</a>.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2523.266" end="x">Entirely correct.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2523.870" end="x">And it is possible, when the police was posted, they . . . [apparently coughs] police were posted, they were not exactly told which points . . . ehh . . . to say, to guard and which to open.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2535.339" end="x">Unfortunately this did not take place. The fact of the matter is that there are entrances from two sides. At one side the <a class="term" href="#vothG_dp">DPs</a> enter, and this was directed definitely against the students, because on that day . . . ehh . . . there was a check-up on the attendance of the lectures, which the student body exercises on its own, on its own initiative, since we don't want to have idlers in our university, or people who would come to the university solely to take advantage of the privileges given by <a class="term" href="#vothG_unrra">UNRRA</a>, and for which we are very grateful to <a class="term" href="#vothG_unrra">UNRRA</a>, but only . . . ehh . . . [people who would come] to study. And people who study we want in our university. And that is why we maintained through our student organization such registrations, and we were able to furnish information about who the people were, et cetera.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="x" end="x">Yes.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="x" end="x">At this time an error occurred.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2576.443" end="x">Well, [pause] is there anything else that you would like to tell us or you would like to tell the American students?</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">Valerius Michelson</span>:
+            </span>
+            <span class="utterance" who="#michelsonV" start="2583.355" end="x">To the American students I should like to say this, that the students, the foreigners who study in our university and who in a very large part study in German universities, all of them endeavor to rally together, endeavor to overcome all the hatred among nations, which is still up to now very strong in Europe, in order to work towards the construction of their countries in the spirit of cooperation [friendship] with the rest, in the spirit of actual all-human friendship, so that there be no more events like the past war, that here would be no more events similar to Hitler’s state. And we want the creation of an international university. We know that what we have here now in <a class="placename" href="#vothL29">Munich</a> is not an international university. Or better, it is international, but not yet a university, because we are short of very many things. Even we ourselves, in our own views about the world, [and] in our . . . ehh . . . opportunities, needed to call ourselves a real international university. But we think that we could serve as a kernel for such a cooperation, and for such a university in which would be brought up the intelligentsia of the future. That is about all.</span>
+        </li>
+                <li>
+            <span class="who">
+                <span class="">David Boder</span>:
+            </span>
+            <span class="utterance" who="#boderD" start="2660.025" end="x">So. [In English] This concludes the interview of Mr. Valerius Michelson, a student of architecture at the International University of <a class="term" href="#vothG_unrra">UNRRA</a>. <a class="placename" href="#vothL29">Munich</a>, September the 24th, 1946. We had here quite some interruptions of some very important visitors which [whom] I could not stave away, and from that standpoint we have lost at times quite a bit some time [of material]. An Illinois Institute of Technology wire recording.</span>
+        </li>
+            </ul>
+    <ol class="notes">
+                <li>
+            <a name="note_1"></a>
+            In August 1945, DP students and professors began organizing university courses at the Deutsches Museum DP camp in Munich. The UNRRA University grew out of this initiative, officially opening in February 1946. It was named after the United Nations Relief and Rehabilitation Administration, the international relief agency created by the Allies to assist victims of the war. Michelson was the president of the UNRRA University Students' Union. He helped to define the university as an international institution. He discusses his goals for the university later in the interview. On the history of the university, see Bernhard Zittel, 'Die UNRRA-Universität in München, 1945-1947,' in Archivalische Zeitschrift 75 (1979); Anna Holian, 'Displacement and the Postwar Reconstruction of Education: Displaced Persons at the UNRRA University of Munich, 1945-1948,' in Contemporary European History 17:2 (May 2008); and Nina Bschorr, '"Wir wollten alle so gerne lernen..." Die UNRRA-Universität im DP-Camp Deutsches Museum in München,' in Jahrbuch für Antisemitismusforschung 17 (2008).
+        </li>
+                <li>
+            <a name="note_2"></a>
+            Revel is the Russian name for Tallinn, the capital of Estonia.
+        </li>
+                <li>
+            <a name="note_3"></a>
+            Michelson and his family were part of the substantial Russian émigré community that developed in Estonia after the Bolshevik Revolution. In 1922, there were approximately 14,000-16,000 unassimilated (i.e., non-citizen) Russian refugees in Estonia. On the history of the Russian emigration, see Marc Raeff, Russia Abroad: A Cultural History of the Russian Emigration, 1919-1939 (New York: Oxford University Press, 1990).
+        </li>
+                <li>
+            <a name="note_4"></a>
+            Under the terms of the German-Soviet Non-Aggression Pact of August 1939, Estonia was assigned to the Soviet sphere of influence. In September 1939, seeking to make good on its claim to Estonia, the Soviet Union demanded that the Estonian government sign a mutual assistance treaty and allow the Soviets to establish military bases on Estonian soil. The Estonian government felt compelled to accede to this demand. In June 1940, claiming that the Estonian government had not fully complied with the treaty, the Soviet Union invaded and occupied Estonia.
+        </li>
+                <li>
+            <a name="note_5"></a>
+            Freedom of Russia (Svoboda Rossii) was a socialist literary and political newspaper published in  from 1919 to 1920. Although Michelson implies that his father's association with the newspaper lasted up to the period of Soviet occupation, in fact he is describing his father's work during the very beginning of the emigration period.
+        </li>
+                <li>
+            <a name="note_6"></a>
+            While the political spectrum among Russian émigrés was very broad, most leading émigré institutions were of a monarchist or rightist orientation. Michelson here stresses that the politics of his father's newspaper were outside the mainstream.
+        </li>
+                <li>
+            <a name="note_7"></a>
+            SR: Socialist Revolutionary. The Socialist Revolutionary Party (SRP) was one of the leading socialist parties in Russia in the period leading up to the Bolshevik Revolution. Founded in 1901, it grew out of the Russian populist movement and focused on the plight of both peasants and industrial workers under capitalism. In contrast to the Social Democratic Workers' Party (Mensheviks and Bolsheviks), which called for the nationalization of the land, the SRP advocated the socialization of the land: its transformation into public property that would be worked individually by peasant tenants. Socialist Revolutionaries, most notably Alexander Kerensky, held important posts in the Provisional Government formed after the Russian Revolution of February 1917. The SRP won the most seats of any party in the election for the Constituent Assembly in November 1917. However, the Bolshevik Revolution of October 1917 caused a split in the party, with a new left wing siding with the Bolsheviks in calling for a communist revolution. After the Bolsheviks definitively seized power, many members of the mainstream SRP went into exile.
+        </li>
+                <li>
+            <a name="note_8"></a>
+            The NKVD (Narodnyy Komissariat Vnutrennikh Del or People's Commissariat of Internal Affairs) was the secret police organ of the Soviet Union. Created in 1922, it took over the functions exercised earlier by the Cheka, the state security organization formed by the Bolsheviks shortly after the October Revolution.
+        </li>
+                <li>
+            <a name="note_9"></a>
+            Created in 1922, the GPU (Gosudarstvennoye Politicheskoye Upravlenie or State Political Directorate) was the state security organization of the Soviet Union and was intermittently part of the NKVD. In 1934, it was succeeded by the Main Directorate of State Security (Glavnoe Upravlenie Gosudarstvennoi Bezopasnosti or GUGB). This is presumably the organization to which Michelson refers.
+        </li>
+                <li>
+            <a name="note_10"></a>
+            Michelson's story about his father, while not strictly speaking true, is likely grounded in fact. According to one obituary for Michelson, his father was the victim of a Stalinist purge (St. Paul Pioneer Press, 5 August 2006). While Michelson's father met his fate in the Soviet Union, purges did take place in Soviet-occupied Estonia. During the first year of occupation, Soviet forces deported or killed some 60,000 persons, under the guise of eliminating "anti-Soviet elements." Although most of the victims were ethnic Estonians, Russian émigré intellectuals and community leaders were also targeted.
+        </li>
+                <li>
+            <a name="note_11"></a>
+            The Nazi occupation of Estonia began in July 1941, with German troops reaching Tallinn at the end of August. Michelson's vacillation here may have to do with the fact that he was not in Estonia when the events occurred.
+        </li>
+                <li>
+            <a name="note_12"></a>
+            The phrase Michelson uses here, 'это самое,' is a filler with no real meaning or direct translation.
+        </li>
+                <li>
+            <a name="note_13"></a>
+            Michelson uses the German word for labor office here.
+        </li>
+                <li>
+            <a name="note_14"></a>
+            Michelson uses the German word for classical high school here.
+        </li>
+                <li>
+            <a name="note_15"></a>
+            Michelson uses the German word for handicrafts here.
+        </li>
+                <li>
+            <a name="note_16"></a>
+            See fn 13.
+        </li>
+                <li>
+            <a name="note_17"></a>
+            Hitler spent most of his youth in and around Linz. In comparing Michelson to Hitler, Boder seems to be giving voice to his misgivings about Michelson's character, as evidenced by the latter's activities in Nazi-occupied Vienna.
+        </li>
+                <li>
+            <a name="note_18"></a>
+            Soviet forces arrived in Vienna in mid-April 1945.
+        </li>
+                <li>
+            <a name="note_19"></a>
+            What Michelson of course neglects to state is that as a Red Army soldier who surrendered to the Germans and served in the German army, he had his own reasons for wanting to avoid an encounter with Soviet forces.
+        </li>
+                <li>
+            <a name="note_20"></a>
+            A city in southwestern Bavaria where UNRRA established a camp for displaced persons.
+        </li>
+                <li>
+            <a name="note_21"></a>
+            In general, displaced persons had few opportunities for paid work, with the U.S. Army serving as the main employer in the U.S. zone. DPs who lived 'on the German economy,' as the phrase went, tended to lose their DP benefits.
+        </li>
+                <li>
+            <a name="note_22"></a>
+            In the U.S. and British zones, 10% of all university places were reserved for displaced persons.
+        </li>
+                
+    </ol>
+    <ul class="meta">
+        <li>
+            <b>Contributors to this text:</b>
+        </li>
+                        <li>
+            <i>
+                                Transcription
+                            </i>: 
+            <span class="Transcription">
+                <name>Olga Collin</name>, <name>Yan Mann</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                English Translation
+                            </i>: 
+            <span class="English Translation">
+                <name>David P. Boder</name>, <name>Yan Mann</name>, <name>Anna Holian</name>
+            </span>
+        </li>
+                                <li>
+            <i>
+                                Footnotes
+                            </i>: 
+            <span class="Footnotes">
+                <name>Anna Holian</name>
+            </span>
+        </li>
+                                    </ul>
+            </div>
+            <div id="sidebar">
+                        <div class="map widget vothC15">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothC15" style="width: 250px; height: 250px;"></div>
+                        <p class="placename">
+                Buchenwald
+            </p>
+                                    <p class="municipality">
+                <strong>Location:</strong>
+                Weimar, Germany<br />
+                            </p>
+                            <div>
+                Established in July 1937 near the city of Weimar for prisoners from central Germany, who were put to work making bricks at a nearby clay pit.  Around 9000 were normally housed there, but the population reached around 48,000 by April 1945.
+            </div>
+                            <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothC15 = new OpenLayers.Map('map_vothC15', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothC15.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothC15.addLayer(markers);
+map_id_vothC15.zoomToMaxExtent();
+
+                        var lat_1 = 50.983300;
+                        var lon_1 = 11.316700;
+                        var vothC15 = new OpenLayers.LonLat(lon_1, lat_1);
+            vothC15_icon = new OpenLayers.Marker(vothC15);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothC15);
+markers.addMarker(vothC15_icon);
+    addMarker(vothC15, popupClass, "", true, false, false);
+    map_id_vothC15.setCenter(vothC15, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL29">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL29" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            M&#195;nchen, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL29 = new OpenLayers.Map('map_vothL29', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL29.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL29.addLayer(markers);
+map_id_vothL29.zoomToMaxExtent();
+
+                        var lat_2 = 48.133300;
+                        var lon_2 = 11.583300;
+                        var vothL29 = new OpenLayers.LonLat(lon_2, lat_2);
+            vothL29_icon = new OpenLayers.Marker(vothL29);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL29);
+markers.addMarker(vothL29_icon);
+    addMarker(vothL29, popupClass, "", true, false, false);
+    map_id_vothL29.setCenter(vothL29, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL148">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL148" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Tallinn, Estonia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL148 = new OpenLayers.Map('map_vothL148', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL148.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL148.addLayer(markers);
+map_id_vothL148.zoomToMaxExtent();
+
+                        var lat_3 = 59.433000;
+                        var lon_3 = 24.728000;
+                        var vothL148 = new OpenLayers.LonLat(lon_3, lat_3);
+            vothL148_icon = new OpenLayers.Marker(vothL148);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL148);
+markers.addMarker(vothL148_icon);
+    addMarker(vothL148, popupClass, "", true, false, false);
+    map_id_vothL148.setCenter(vothL148, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL5">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL5" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Linz, Austria
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL5 = new OpenLayers.Map('map_vothL5', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL5.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL5.addLayer(markers);
+map_id_vothL5.zoomToMaxExtent();
+
+                        var lat_4 = 48.316700;
+                        var lon_4 = 14.300000;
+                        var vothL5 = new OpenLayers.LonLat(lon_4, lat_4);
+            vothL5_icon = new OpenLayers.Marker(vothL5);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL5);
+markers.addMarker(vothL5_icon);
+    addMarker(vothL5, popupClass, "", true, false, false);
+    map_id_vothL5.setCenter(vothL5, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL1">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL1" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Wien, Austria
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL1 = new OpenLayers.Map('map_vothL1', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL1.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL1.addLayer(markers);
+map_id_vothL1.zoomToMaxExtent();
+
+                        var lat_5 = 48.216700;
+                        var lon_5 = 16.366700;
+                        var vothL1 = new OpenLayers.LonLat(lon_5, lat_5);
+            vothL1_icon = new OpenLayers.Marker(vothL1);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL1);
+markers.addMarker(vothL1_icon);
+    addMarker(vothL1, popupClass, "", true, false, false);
+    map_id_vothL1.setCenter(vothL1, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL441">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL441" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Smolensk, Russia
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL441 = new OpenLayers.Map('map_vothL441', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL441.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL441.addLayer(markers);
+map_id_vothL441.zoomToMaxExtent();
+
+                        var lat_6 = 54.783333;
+                        var lon_6 = 32.050000;
+                        var vothL441 = new OpenLayers.LonLat(lon_6, lat_6);
+            vothL441_icon = new OpenLayers.Marker(vothL441);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL441);
+markers.addMarker(vothL441_icon);
+    addMarker(vothL441, popupClass, "", true, false, false);
+    map_id_vothL441.setCenter(vothL441, 4); 
+        
+});
+</script>
+</div>
+                                <div class="map widget vothL381">
+    <p>
+        <b>
+            <a href="#close" class="hide">
+                [x] click to close
+            </a>
+        </b>
+    </p>
+    <div id="map_vothL381" style="width: 250px; height: 250px;"></div>
+            <p class="municipality">
+            Kempten, Germany
+            <br />
+                    </p>
+    <style type="text/css">
+.olLayerDiv{
+width:250px !important;
+height:250px !important;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    var map_id_vothL381 = new OpenLayers.Map('map_vothL381', {controls: []});
+/*    gphy = new OpenLayers.Layer.Google(
+                  "Google Physical",
+                  {type: G_PHYSICAL_MAP,
+                  'sphericalMercator': true,
+     'maxExtent': new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
+}
+               );
+*/
+ var ol_wms = new OpenLayers.Layer.WMS(
+         "OpenLayers WMS",
+         "http://labs.metacarta.com/wms/vmap0",
+         {layers: 'basic'}
+     );
+   map_id_vothL381.addLayer(ol_wms);
+    markers = new OpenLayers.Layer.Markers("Markers");
+    map_id_vothL381.addLayer(markers);
+map_id_vothL381.zoomToMaxExtent();
+
+                        var lat_7 = 47.733333;
+                        var lon_7 = 10.316667;
+                        var vothL381 = new OpenLayers.LonLat(lon_7, lat_7);
+            vothL381_icon = new OpenLayers.Marker(vothL381);
+            
+var bounds = new OpenLayers.Bounds();
+bounds.extend(vothL381);
+markers.addMarker(vothL381_icon);
+    addMarker(vothL381, popupClass, "", true, false, false);
+    map_id_vothL381.setCenter(vothL381, 4); 
+        
+});
+</script>
+</div>
+                <div class ="terms widget">
+        <ul>
+                        <li class="vothG_unrra">
+                <a name="vothG_unrra"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    UNRRA.
+                </span>
+                <span class="definition">
+                    Acronym for the United Nations Relief and Rehabilitation Administration. Established in 1943, its principal executive post was held by a representative of the United States, which supplied forty percent of its budget. Among its chief duties was the repatriation of displaced persons—when the war ended, UNRRA had to cope with the task of caring for millions of displaced persons and refugees.
+                </span>
+            </li>
+                        <li class="vothG_gestapo">
+                <a name="vothG_gestapo"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    Gestapo.
+                </span>
+                <span class="definition">
+                    Contraction of Geheime Staatspolizei: "Secret State Police." The German internal security police (secret police) under the Nazis, headed by SS chief Heinrich Himmler. Organized in 1933 to protect the regime from political opposition. Often used by Holocaust victims generically to refer to any German police or military unit.
+                </span>
+            </li>
+                        <li class="vothG_dp">
+                <a name="vothG_dp"></a>
+                <p>
+                    <b>
+                        <a href="#close" class="hide">
+                            [x] click to close
+                        </a>
+                    </b>
+                </p>
+                <span class="term">
+                    DP.
+                </span>
+                <span class="definition">
+                    Displaced Person, or refugee.
+                </span>
+            </li>
+                    </ul>
+    </div>
+    <ul class="note_popup widget">
+                <li class="note_1">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            In August 1945, DP students and professors began organizing university courses at the Deutsches Museum DP camp in Munich. The UNRRA University grew out of this initiative, officially opening in February 1946. It was named after the United Nations Relief and Rehabilitation Administration, the international relief agency created by the Allies to assist victims of the war. Michelson was the president of the UNRRA University Students' Union. He helped to define the university as an international institution. He discusses his goals for the university later in the interview. On the history of the university, see Bernhard Zittel, 'Die UNRRA-Universität in München, 1945-1947,' in Archivalische Zeitschrift 75 (1979); Anna Holian, 'Displacement and the Postwar Reconstruction of Education: Displaced Persons at the UNRRA University of Munich, 1945-1948,' in Contemporary European History 17:2 (May 2008); and Nina Bschorr, '"Wir wollten alle so gerne lernen..." Die UNRRA-Universität im DP-Camp Deutsches Museum in München,' in Jahrbuch für Antisemitismusforschung 17 (2008).
+        </li>
+                <li class="note_2">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Revel is the Russian name for Tallinn, the capital of Estonia.
+        </li>
+                <li class="note_3">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Michelson and his family were part of the substantial Russian émigré community that developed in Estonia after the Bolshevik Revolution. In 1922, there were approximately 14,000-16,000 unassimilated (i.e., non-citizen) Russian refugees in Estonia. On the history of the Russian emigration, see Marc Raeff, Russia Abroad: A Cultural History of the Russian Emigration, 1919-1939 (New York: Oxford University Press, 1990).
+        </li>
+                <li class="note_4">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Under the terms of the German-Soviet Non-Aggression Pact of August 1939, Estonia was assigned to the Soviet sphere of influence. In September 1939, seeking to make good on its claim to Estonia, the Soviet Union demanded that the Estonian government sign a mutual assistance treaty and allow the Soviets to establish military bases on Estonian soil. The Estonian government felt compelled to accede to this demand. In June 1940, claiming that the Estonian government had not fully complied with the treaty, the Soviet Union invaded and occupied Estonia.
+        </li>
+                <li class="note_5">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Freedom of Russia (Svoboda Rossii) was a socialist literary and political newspaper published in  from 1919 to 1920. Although Michelson implies that his father's association with the newspaper lasted up to the period of Soviet occupation, in fact he is describing his father's work during the very beginning of the emigration period.
+        </li>
+                <li class="note_6">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            While the political spectrum among Russian émigrés was very broad, most leading émigré institutions were of a monarchist or rightist orientation. Michelson here stresses that the politics of his father's newspaper were outside the mainstream.
+        </li>
+                <li class="note_7">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            SR: Socialist Revolutionary. The Socialist Revolutionary Party (SRP) was one of the leading socialist parties in Russia in the period leading up to the Bolshevik Revolution. Founded in 1901, it grew out of the Russian populist movement and focused on the plight of both peasants and industrial workers under capitalism. In contrast to the Social Democratic Workers' Party (Mensheviks and Bolsheviks), which called for the nationalization of the land, the SRP advocated the socialization of the land: its transformation into public property that would be worked individually by peasant tenants. Socialist Revolutionaries, most notably Alexander Kerensky, held important posts in the Provisional Government formed after the Russian Revolution of February 1917. The SRP won the most seats of any party in the election for the Constituent Assembly in November 1917. However, the Bolshevik Revolution of October 1917 caused a split in the party, with a new left wing siding with the Bolsheviks in calling for a communist revolution. After the Bolsheviks definitively seized power, many members of the mainstream SRP went into exile.
+        </li>
+                <li class="note_8">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The NKVD (Narodnyy Komissariat Vnutrennikh Del or People's Commissariat of Internal Affairs) was the secret police organ of the Soviet Union. Created in 1922, it took over the functions exercised earlier by the Cheka, the state security organization formed by the Bolsheviks shortly after the October Revolution.
+        </li>
+                <li class="note_9">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Created in 1922, the GPU (Gosudarstvennoye Politicheskoye Upravlenie or State Political Directorate) was the state security organization of the Soviet Union and was intermittently part of the NKVD. In 1934, it was succeeded by the Main Directorate of State Security (Glavnoe Upravlenie Gosudarstvennoi Bezopasnosti or GUGB). This is presumably the organization to which Michelson refers.
+        </li>
+                <li class="note_10">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Michelson's story about his father, while not strictly speaking true, is likely grounded in fact. According to one obituary for Michelson, his father was the victim of a Stalinist purge (St. Paul Pioneer Press, 5 August 2006). While Michelson's father met his fate in the Soviet Union, purges did take place in Soviet-occupied Estonia. During the first year of occupation, Soviet forces deported or killed some 60,000 persons, under the guise of eliminating "anti-Soviet elements." Although most of the victims were ethnic Estonians, Russian émigré intellectuals and community leaders were also targeted.
+        </li>
+                <li class="note_11">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The Nazi occupation of Estonia began in July 1941, with German troops reaching Tallinn at the end of August. Michelson's vacillation here may have to do with the fact that he was not in Estonia when the events occurred.
+        </li>
+                <li class="note_12">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            The phrase Michelson uses here, 'это самое,' is a filler with no real meaning or direct translation.
+        </li>
+                <li class="note_13">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Michelson uses the German word for labor office here.
+        </li>
+                <li class="note_14">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Michelson uses the German word for classical high school here.
+        </li>
+                <li class="note_15">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Michelson uses the German word for handicrafts here.
+        </li>
+                <li class="note_16">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            See fn 13.
+        </li>
+                <li class="note_17">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Hitler spent most of his youth in and around Linz. In comparing Michelson to Hitler, Boder seems to be giving voice to his misgivings about Michelson's character, as evidenced by the latter's activities in Nazi-occupied Vienna.
+        </li>
+                <li class="note_18">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            Soviet forces arrived in Vienna in mid-April 1945.
+        </li>
+                <li class="note_19">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            What Michelson of course neglects to state is that as a Red Army soldier who surrendered to the Germans and served in the German army, he had his own reasons for wanting to avoid an encounter with Soviet forces.
+        </li>
+                <li class="note_20">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            A city in southwestern Bavaria where UNRRA established a camp for displaced persons.
+        </li>
+                <li class="note_21">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            In general, displaced persons had few opportunities for paid work, with the U.S. Army serving as the main employer in the U.S. zone. DPs who lived 'on the German economy,' as the phrase went, tended to lose their DP benefits.
+        </li>
+                <li class="note_22">
+            <p>
+                <b>
+                    <a href="#close" class="hide">
+                        [x] click to close
+                    </a>
+                </b>
+            </p>
+            In the U.S. and British zones, 10% of all university places were reserved for displaced persons.
+        </li>
+            </ul>
+</div>
+        </div>
+            <div id="footer">
+        <div class="contact">
+            <span class="copyright">
+                copyright &#169; 2009 
+                <a href="http://library.iit.edu/" target="_blank" class="iit_link">Paul V. Galvin Library</a>, 
+                <a href="http://iit.edu/" target="_blank" class="iit_link">Illinois Institute of Technology</a>
+            </span>
+            <span class="address">
+                33 W. 33rd St., Chicago, IL 60616
+            </span>	
+        </div>
+        <div class="brand">
+            <span class="iit">
+                <a href="http://iit.edu/" target="_blank">Illinois Institute of Technology</a>
+            </span>
+            <span class="galvin">
+                <a href="http://library.iit.edu/" target="_blank">Paul V. Galvin Library</a>
+            </span>
+        </div>		
+		<div align="left"><span class="links">
+                <a href="privacy_policy">privacy policy</a>
+                 // 
+                <a href="contact">contact us </a>
+				//
+				<a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=0B32C7DD%2DCB8A%2D4600%2D9877%2D10712BED01E5&dpid=23454" target="_blank">giving to Voices of the Holocaust</a>
+            </span>	</div>		
+        <div class="commons">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javscript">
+        Cufon.now();
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7129730-4");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>    </div>
+</body>
+</html>
